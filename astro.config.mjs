@@ -1,17 +1,21 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
 import cloudflare from "@astrojs/cloudflare";
+import clerk from "@clerk/astro";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
-	integrations: [mdx(), sitemap()],
+	site: "https://medicolegal2026.pages.dev",
+	output: "server",
+	integrations: [clerk(), sitemap()],
 	adapter: cloudflare({
 		platformProxy: {
 			enabled: true,
 		},
 	}),
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });

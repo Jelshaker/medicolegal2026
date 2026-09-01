@@ -1,0 +1,4 @@
+# Local `wrangler dev` secrets (used by the Cloudflare adapter at runtime).
+# Copy to `.dev.vars` for local wrangler preview.
+CLERK_SECRET_KEY=sk_test_YOUR_SECRET_KEY
+COURTLISTENER_TOKEN=

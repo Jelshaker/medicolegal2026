@@ -1,0 +1,18 @@
+---
+import { PRACTITIONER, SITE_TITLE } from "../consts";
+---
+
+<footer>
+	<p>
+		&copy; {new Date().getFullYear()} {PRACTITIONER.name} &middot; {SITE_TITLE}
+	</p>
+</footer>
+
+<style>
+	footer {
+		padding: 3em 0;
+		text-align: center;
+		color: var(--gray-dark);
+		font-size: 0.85rem;
+	}
+</style>

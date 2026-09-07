@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props as Props;
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Astro" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
+{
+	gaId && (
+		<script is:inline>{`
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', '${gaId}');
+		`}</script>
+	)
+}

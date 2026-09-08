@@ -1,18 +1,95 @@
 ---
-import { PRACTITIONER, SITE_TITLE } from "../consts";
+import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../consts";
 ---
 
-<footer>
-	<p>
-		&copy; {new Date().getFullYear()} {PRACTITIONER.name} &middot; {SITE_TITLE}
-	</p>
-</footer>
+<footer class="mt-auto bg-navy-950 text-slate-300">
+	<div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+		<div>
+			<a href="/" class="flex items-center gap-2.5">
+				<span class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-white">
+					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+						<path d="M2.5 12h3.2l2.2-5.5 3.6 11 2.6-6.5h1.9" />
+						<path d="M17.5 12h2.6v3.1" opacity=".6" />
+					</svg>
+				</span>
+				<span>
+					<span class="block font-bold text-white">{PRACTITIONER.shortName}</span>
+					<span class="block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-teal-400">Medico-legal Imaging</span>
+				</span>
+			</a>
+			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+				Independent CPR Part 35 / EMA compliant radiological expert opinions for solicitors,
+				barristers and insurers. Anonymised case discussions and plain-language insight into
+				the intersection of radiology and the law.
+			</p>
+			<div class="mt-5 flex flex-wrap gap-2">
+				{
+					MEMBERSHIPS.slice(0, 4).map((m) => (
+						<span class="rounded-full border border-navy-700 px-3 py-1 text-[0.7rem] font-medium text-slate-400">{m.split("— ").at(-1)}</span>
+					))
+				}
+			</div>
+		</div>
 
-<style>
-	footer {
-		padding: 3em 0;
-		text-align: center;
-		color: var(--gray-dark);
-		font-size: 0.85rem;
-	}
-</style>
+		<div>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Explore</h3>
+			<ul class="mt-4 space-y-2.5 text-sm">
+				{
+					NAVIGATION_LINKS.map((link) => (
+						<li>
+							<a href={link.href} class="transition-colors hover:text-teal-400">{link.label}</a>
+						</li>
+					))
+				}
+				<li>
+					<a href="/portal" class="transition-colors hover:text-teal-400">Secure Client Portal</a>
+				</li>
+			</ul>
+		</div>
+
+		<div>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Instructing Me</h3>
+			<ul class="mt-4 space-y-2.5 text-sm">
+				<li><a href="/referrals#terms" class="transition-colors hover:text-teal-400">Terms of engagement</a></li>
+				<li><a href="/referrals#imaging" class="transition-colors hover:text-teal-400">Imaging transfer (DICOM / PACS)</a></li>
+				<li><a href="/referrals#fees" class="transition-colors hover:text-teal-400">Fee structure & turnaround</a></li>
+				<li><a href="/blog" class="transition-colors hover:text-teal-400">Case discussions archive</a></li>
+				<li><a href="/cv" class="transition-colors hover:text-teal-400">Curriculum vitae</a></li>
+			</ul>
+		</div>
+
+		<div>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Contact</h3>
+			<ul class="mt-4 space-y-2.5 text-sm text-slate-400">
+				<li>
+					<span class="font-semibold text-slate-200">Email</span>
+					<br />
+					<a href={`mailto:${PRACTITIONER.email}`} class="hover:text-teal-400">{PRACTITIONER.email}</a>
+				</li>
+				<li>
+					<span class="font-semibold text-slate-200">Phone</span>
+					<br />
+					{PRACTITIONER.phone}
+				</li>
+				<li>
+					<span class="font-semibold text-slate-200">GMC</span>
+					<br />
+					{PRACTITIONER.gmcNumber}
+				</li>
+				<li class="max-w-[16rem] leading-snug">{PRACTITIONER.address}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="border-t border-navy-800">
+		<div class="container-page flex flex-col gap-3 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+			<p>
+				© {new Date().getFullYear()} {PRACTITIONER.name} · {SITE_TITLE}. All rights reserved.
+			</p>
+			<p class="max-w-xl leading-relaxed md:text-right">
+				All case discussions are fully anonymised in accordance with GMC guidance and CPR Part 35.
+				Nothing on this site constitutes legal advice.
+			</p>
+		</div>
+	</div>
+</footer>

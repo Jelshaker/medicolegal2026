@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-label="Anonymised CT chest axial placeholder">
+	<defs>
+		<radialGradient id="bg" cx="50%" cy="45%" r="70%">
+			<stop offset="0" stop-color="#142039" />
+			<stop offset="1" stop-color="#0a0f1d" />
+		</radialGradient>
+		<linearGradient id="lung" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#26405f" />
+			<stop offset="1" stop-color="#101e35" />
+		</linearGradient>
+		<pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+			<path d="M50 0H0V50" fill="none" stroke="#223359" stroke-width="1" opacity=".5" />
+		</pattern>
+	</defs>
+	<rect width="1500" height="900" fill="url(#bg)" />
+	<rect width="1500" height="900" fill="url(#grid)" />
+	<!-- chest wall -->
+	<ellipse cx="760" cy="450" rx="420" ry="330" fill="none" stroke="#b9cbe4" stroke-width="8" opacity=".8" />
+	<ellipse cx="760" cy="450" rx="372" ry="288" fill="none" stroke="#8aa3cf" stroke-width="3" opacity=".5" />
+	<!-- lungs -->
+	<ellipse cx="600" cy="450" rx="150" ry="240" fill="url(#lung)" opacity=".9" />
+	<ellipse cx="920" cy="450" rx="150" ry="240" fill="url(#lung)" opacity=".9" />
+	<!-- pulmonary vessels -->
+	<g stroke="#4e719c" stroke-width="4" opacity=".7" fill="none">
+		<path d="M600 330v60m0 60v40m0 60v60M600 350c-36 30-40 80-16 118M600 350c34 30 44 84 18 122" />
+		<path d="M920 330v60m0 60v40m0 60v60M920 350c-34 30-40 80-18 118M920 350c36 30 44 84 20 122" />
+	</g>
+	<!-- mediastinum / heart -->
+	<path d="M600 420c-4-70 60-118 122-112 48 4 92 40 92 96 0 40-30 66-62 82-40 20-90 44-150 16-18-8-26-44-2-82Z" fill="#3f5d7f" opacity=".85" />
+	<!-- sternum -->
+	<rect x="744" y="196" width="36" height="110" rx="8" fill="#c2d3e9" opacity=".8" />
+	<circle cx="600" cy="400" r="26" fill="#6f93c4" opacity=".5" />
+	<path d="M560 240c-130 30-166 150-118 246" fill="none" stroke="#ffcf8a" stroke-width="4" stroke-dasharray="10 8" opacity=".75" />
+	<text x="522" y="222" fill="#ffd98a" font-family="ui-monospace, monospace" font-size="30" font-weight="700">NODULE ↗</text>
+	<text x="96" y="84" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SERIES 5 · CT CHEST</text>
+	<text x="96" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SLICE 42/60 · 1mm</text>
+	<text x="1210" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">W:1400 L:-400</text>
+	<text x="560" y="790" fill="#e2e9f5" font-family="ui-sans-serif, sans-serif" font-size="30" font-weight="600" letter-spacing="4" opacity=".35">ANONYMISED — NOT FOR DIAGNOSIS</text>
+</svg>

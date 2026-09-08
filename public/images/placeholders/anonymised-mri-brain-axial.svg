@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-label="Anonymised axial brain MRI placeholder">
+	<defs>
+		<radialGradient id="bg" cx="50%" cy="42%" r="70%">
+			<stop offset="0" stop-color="#1b2a4a" />
+			<stop offset="1" stop-color="#0b1020" />
+		</radialGradient>
+		<linearGradient id="tissue" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#3e5a86" />
+			<stop offset="1" stop-color="#26365a" />
+		</linearGradient>
+		<pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+			<path d="M50 0H0V50" fill="none" stroke="#2b3d67" stroke-width="1" opacity=".5" />
+		</pattern>
+	</defs>
+	<rect width="1500" height="900" fill="url(#bg)" />
+	<rect width="1500" height="900" fill="url(#grid)" />
+	<circle cx="750" cy="440" r="290" fill="none" stroke="#4a67a6" stroke-width="2" opacity=".35" />
+	<g stroke="#4a67a6" stroke-width="2" opacity=".3">
+		<path d="M60 0v900M150 0v900M1110 0v900M1200 0v900M1300 0v900M1390 0v900M0 460h1500" />
+	</g>
+	<!-- skull -->
+	<ellipse cx="750" cy="430" rx="300" ry="330" fill="none" stroke="#d9e4f5" stroke-width="7" opacity=".9" />
+	<ellipse cx="750" cy="430" rx="236" ry="262" fill="none" stroke="#8aa3cf" stroke-width="3" opacity=".5" />
+	<!-- brain parenchyma -->
+	<ellipse cx="750" cy="430" rx="212" ry="238" fill="url(#tissue)" opacity=".85" />
+	<!-- interhemispheric fissure -->
+	<path d="M750 196v468" stroke="#0d1a33" stroke-width="5" opacity=".7" />
+	<!-- lateral ventricles -->
+	<path d="M688 336c-34 4-58 34-52 66s34 44 62 32M812 336c34 4 58 34 52 66s-34 44-62 32" fill="none" stroke="#0d1a33" stroke-width="9" stroke-linecap="round" opacity=".75" />
+	<!-- thalami highlight -->
+	<circle cx="718" cy="430" r="26" fill="#57729f" opacity=".55" />
+	<circle cx="782" cy="430" r="26" fill="#57729f" opacity=".55" />
+	<!-- frontal horns -->
+	<path d="M648 330c-44 16-50 60-30 84M852 330c44 16 50 60 30 84" fill="none" stroke="#0d1a33" stroke-width="8" opacity=".6" />
+	<text x="96" y="84" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SERIES 3 · AX T2 FLAIR</text>
+	<text x="96" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SLICE 17/28 · 5mm · THK</text>
+	<text x="1210" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">W:800 L:400</text>
+	<text x="560" y="790" fill="#e2e9f5" font-family="ui-sans-serif, sans-serif" font-size="30" font-weight="600" letter-spacing="4" opacity=".35">ANONYMISED — NOT FOR DIAGNOSIS</text>
+	<g transform="translate(1330 700)">
+		<rect width="90" height="10" fill="#d9e4f5" opacity=".8" />
+		<text x="0" y="34" fill="#93aacf" font-family="ui-monospace, monospace" font-size="24">5 cm</text>
+	</g>
+</svg>

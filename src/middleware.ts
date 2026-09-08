@@ -3,7 +3,9 @@ import { clerkMiddleware } from "@clerk/astro/server";
 // Registers Clerk with the Astro server so that `Astro.locals.auth()` and
 // `Astro.locals.currentUser()` are available on every request.
 //
-// Route protection is enforced per-resource (per the @clerk/astro v4 guidance):
-//   - /members  -> guards in src/pages/members.astro
-//   - /api/*    -> guards in each API route handler
-export const onRequest = clerkMiddleware();
+// If CLERK_SECRET_KEY is not configured (local/demo environments), the
+// middleware is bypassed so pages and API routes still render.
+export const onRequest = (context, next) => {
+	if (!import.meta.env.CLERK_SECRET_KEY) return next();
+	return clerkMiddleware()(context, next);
+};

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-label="Anonymised sagittal spine MRI placeholder">
+	<defs>
+		<radialGradient id="bg" cx="50%" cy="40%" r="75%">
+			<stop offset="0" stop-color="#17233f" />
+			<stop offset="1" stop-color="#0b1020" />
+		</radialGradient>
+		<linearGradient id="v" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#3a5580" />
+			<stop offset="1" stop-color="#253a63" />
+		</linearGradient>
+		<pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+			<path d="M50 0H0V50" fill="none" stroke="#24355c" stroke-width="1" opacity=".5" />
+		</pattern>
+	</defs>
+	<rect width="1500" height="900" fill="url(#bg)" />
+	<rect width="1500" height="900" fill="url(#grid)" />
+	<!-- spinal canal -->
+	<rect x="560" y="120" width="86" height="660" rx="30" fill="#0d1830" opacity=".85" />
+	<rect x="576" y="140" width="54" height="620" rx="24" fill="#223a5c" opacity=".55" />
+	<rect x="576" y="140" width="54" height="620" rx="24" fill="#223a5c" opacity=".55" />
+	<rect x="588" y="152" width="30" height="596" rx="14" fill="#91b6e6" opacity=".35" />
+	<!-- vertebral bodies -->
+	<g>
+		<rect x="416" y="96" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="196" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="296" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="396" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="496" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="596" width="120" height="74" rx="16" fill="url(#v)" />
+		<rect x="416" y="696" width="120" height="74" rx="16" fill="url(#v)" />
+	</g>
+	<!-- intervertebral discs -->
+	<g fill="#5d79a6">
+		<rect x="438" y="176" width="76" height="16" rx="8" />
+		<rect x="438" y="276" width="76" height="16" rx="8" />
+		<rect x="438" y="376" width="76" height="16" rx="8" />
+		<rect x="438" y="476" width="76" height="16" rx="8" />
+		<rect x="438" y="576" width="76" height="16" rx="8" />
+		<rect x="438" y="676" width="76" height="16" rx="8" />
+	</g>
+	<ellipse cx="476" cy="342" rx="46" ry="34" fill="none" stroke="#e8f1ff" stroke-width="2" stroke-dasharray="8 8" opacity=".85" />
+	<text x="410" y="354" fill="#ffd98a" font-family="ui-monospace, monospace" font-size="30" font-weight="700">L4</text>
+	<path d="M560 140h540v54l-26 12 26 10v52l-26 12 26 10" fill="#223a5c" opacity=".12" />
+	<text x="96" y="84" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SERIES 4 · SAG T2</text>
+	<text x="96" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">SLICE 11/20 · 3mm</text>
+	<text x="1210" y="846" fill="#93aacf" font-family="ui-monospace, monospace" font-size="34" opacity=".9">W:450 L:180</text>
+	<text x="560" y="790" fill="#e2e9f5" font-family="ui-sans-serif, sans-serif" font-size="30" font-weight="600" letter-spacing="4" opacity=".35">ANONYMISED — NOT FOR DIAGNOSIS</text>
+</svg>

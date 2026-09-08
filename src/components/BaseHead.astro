@@ -1,13 +1,15 @@
 ---
 import "../styles/global.css";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 interface Props {
 	title?: string;
 	description?: string;
 }
 
-const { title, description } = Astro.props as Props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props as Props;
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://imagingmedico.legal");
 ---
 
 <meta charset="utf-8" />
@@ -16,8 +18,37 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<!-- Inter + Source Serif 4 (system fallbacks if offline) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+	rel="stylesheet"
+/>
+
+<!-- Apply saved theme before first paint to avoid a flash -->
+<script is:inline>
+	(() => {
+		try {
+			const saved = localStorage.getItem("ml-theme");
+			if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+				document.documentElement.classList.add("dark");
+			}
+		} catch {}
+	})();
+</script>
+
 {gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
 {
 	gaId && (

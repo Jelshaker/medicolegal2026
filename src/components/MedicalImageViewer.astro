@@ -1,0 +1,179 @@
+---
+// Interactive medical image card with an embedded Lightbox modal.
+// Supports high-res zoom (wheel / pinch + pan), captioning and a modality badge.
+interface Props {
+	src: string;
+	alt: string;
+	caption: string;
+	subtitle?: string;
+	modality?: string;
+}
+
+const { src, alt, caption, subtitle = "", modality = "CT / MRI" } = Astro.props as Props;
+const uid = "v" + Math.random().toString(36).slice(2, 10);
+---
+
+<div
+	class="viewer-card group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800 shadow-xl transition-all duration-300 hover:border-cyan-500/50 hover:shadow-cyan-500/10"
+	data-viewer
+	data-uid={uid}
+>
+	<button
+		type="button"
+		class="viewer-open relative block h-64 w-full cursor-zoom-in overflow-hidden text-left outline-none"
+		aria-haspopup="dialog"
+		aria-label={`Open image viewer: ${caption}`}
+	>
+		<img
+			src={src}
+			alt={alt}
+			loading="lazy"
+			class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+		/>
+		<span
+			class="absolute top-3 left-3 rounded-full bg-slate-950/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-400 backdrop-blur-md"
+		>
+			{modality}
+		</span>
+		<span
+			class="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-slate-950/60 text-white opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100"
+			aria-hidden="true"
+		>
+			<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /><path d="M11 8v6M8 11h6" />
+			</svg>
+		</span>
+	</button>
+	<div class="p-4 bg-slate-900/90 backdrop-blur-sm">
+		<p class="text-sm text-slate-300 font-medium">{caption}</p>
+		{subtitle && <p class="mt-1 text-xs text-slate-500">{subtitle}</p>}
+	</div>
+</div>
+
+<!-- Lightbox modal -->
+<div class="lightbox" id={`lb-${uid}`} role="dialog" aria-modal="true" aria-label={caption} hidden tabindex="-1">
+	<div class="lightbox-backdrop" data-close></div>
+	<div class="lightbox-panel">
+		<div class="lightbox-stage">
+			<img src={src} alt={alt} class="lightbox-img" data-lightbox-img draggable="false" />
+		</div>
+		<div class="lightbox-cap">
+			<p class="text-sm font-medium text-slate-100">{caption}</p>
+			<p class="mt-0.5 text-xs text-slate-400">
+				{modality}
+				{subtitle && <span> · {subtitle}</span>}
+			</p>
+		</div>
+		<div class="lightbox-tools">
+			<button type="button" class="lightbox-btn" data-zoom-out aria-label="Zoom out">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+			</button>
+			<span class="text-xs tabular-nums text-slate-400" data-zoom-label>100%</span>
+			<button type="button" class="lightbox-btn" data-zoom-in aria-label="Zoom in">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+			</button>
+			<button type="button" class="lightbox-btn" data-reset aria-label="Reset view">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+			</button>
+			<button type="button" class="lightbox-btn" data-close aria-label="Close viewer">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+	.lightbox[hidden] { display: none; }
+	.lightbox-backdrop { position: absolute; inset: 0; background: rgb(2 6 23 / 0.85); backdrop-filter: blur(6px); }
+	.lightbox-panel { position: relative; width: min(92vw, 64rem); max-height: 92vh; display: flex; flex-direction: column; border-radius: 1rem; overflow: hidden; background: #0f172a; border: 1px solid #1e293b; box-shadow: 0 25px 80px -20px rgb(0 0 0 / 0.7); }
+	.lightbox-stage { position: relative; flex: 1 1 auto; overflow: hidden; background: #020617; min-height: 0; }
+	.lightbox-img { width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 50%; user-select: none; touch-action: none; will-change: transform; max-height: 74vh; }
+	.lightbox-cap { padding: 0.875rem 1rem; border-bottom: 1px solid #1e293b; }
+	.lightbox-tools { display: flex; align-items: center; justify-content: flex-end; gap: 0.4rem; padding: 0.6rem 0.75rem; border-top: 1px solid #1e293b; }
+	.lightbox-btn { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; width: 2.25rem; border-radius: 0.5rem; color: #e2e8f0; background: transparent; border: 1px solid #334155; transition: all 0.15s ease; }
+	.lightbox-btn:hover { background: #1e293b; color: #22d3ee; border-color: #0e7490; }
+</style>
+
+<script define:vars={{ baseUid: uid }}>
+	const root = document.querySelector(`[data-viewer][data-uid="${baseUid}"]`) as HTMLElement | null;
+	if (!root) throw new Error(`Missing viewer root for ${baseUid}`);
+	const openBtn = root.querySelector(".viewer-open") as HTMLButtonElement;
+	const lightbox = document.getElementById(`lb-${baseUid}`) as HTMLElement;
+	const img = lightbox.querySelector("[data-lightbox-img]") as HTMLImageElement;
+	const zoomLabel = lightbox.querySelector("[data-zoom-label]") as HTMLElement;
+	let scale = 1;
+	let tx = 0;
+	let ty = 0;
+	let dragging = false;
+	let startX = 0;
+	let startY = 0;
+	const MIN = 1;
+	const MAX = 5;
+
+	function apply() {
+		img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+		if (zoomLabel) zoomLabel.textContent = `${Math.round(scale * 100)}%`;
+	}
+	function open() {
+		lightbox.hidden = false;
+		document.body.style.overflow = "hidden";
+		lightbox.focus();
+		reset();
+	}
+	function close() {
+		lightbox.hidden = true;
+		document.body.style.overflow = "";
+	}
+	function reset() {
+		scale = 1;
+		tx = 0;
+		ty = 0;
+		apply();
+	}
+	function zoom(delta) {
+		scale = Math.min(MAX, Math.max(MIN, scale + delta));
+		apply();
+	}
+
+	openBtn.addEventListener("click", open);
+	lightbox.querySelectorAll("[data-close]").forEach((el) =>
+		el.addEventListener("click", (e) => {
+			e.stopPropagation();
+			close();
+		}),
+	);
+	lightbox.addEventListener("click", (e) => {
+		if (e.target === lightbox) close();
+	});
+	lightbox.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") close();
+	});
+
+	(lightbox.querySelector("[data-zoom-in]") as HTMLButtonElement).addEventListener("click", () => zoom(0.5));
+	(lightbox.querySelector("[data-zoom-out]") as HTMLButtonElement).addEventListener("click", () => zoom(-0.5));
+	(lightbox.querySelector("[data-reset]") as HTMLButtonElement).addEventListener("click", reset);
+
+	img.addEventListener("wheel", (e) => {
+		e.preventDefault();
+		zoom(e.deltaY < 0 ? 0.25 : -0.25);
+	}, { passive: false });
+
+	img.addEventListener("pointerdown", (e) => {
+		dragging = true;
+		startX = e.clientX - tx;
+		startY = e.clientY - ty;
+		img.style.cursor = "grabbing";
+		img.setPointerCapture(e.pointerId);
+	});
+	img.addEventListener("pointermove", (e) => {
+		if (!dragging) return;
+		tx = e.clientX - startX;
+		ty = e.clientY - startY;
+		apply();
+	});
+	img.addEventListener("pointerup", () => {
+		dragging = false;
+		img.style.cursor = "";
+	});
+</script>

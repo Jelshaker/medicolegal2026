@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { getCollection } from 'astro:content';
+import { SITE_TITLE, BLOG_CATEGORIES } from '../../consts';
+import { formatDateShort } from '../../lib/utils';
+
+const allPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
+
+export const prerender = true;
+---
+
+<BaseLayout title={`Legal Radiology | ${SITE_TITLE}`} description="Medico-legal radiology blog — anonymised case discussions across negligence, quantum, practice & procedure, MSK, gastrointestinal and neuroradiology.">
+	<PageHero
+		eyebrow="Legal radiology blog"
+		title="Case Discussions & Analysis"
+		description="Anonymised insight into the intersection of radiology and the law — from delayed diagnosis and causation to expert-report practice."
+	/>
+
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page">
+			<!-- Filter chips -->
+			<div id="blog-filters" class="flex flex-wrap gap-2">
+				{BLOG_CATEGORIES.map((c) => (
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-teal-500" data-category={c.id}>
+						{c.label}
+					</button>
+				))}
+			</div>
+
+			<!-- Posts -->
+			<div id="blog-grid" class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{allPosts.map((post) => (
+					<article class="blog-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft transition-all hover:shadow-lift dark:border-navy-700 dark:bg-navy-900" data-categories={post.data.category}>
+						<div class="h-44 overflow-hidden">
+							<img src={post.data.figures?.[0] ?? '/images/placeholders/anonymised-mri-spine-sagittal.svg'} alt="" loading="lazy" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+						</div>
+						<div class="flex flex-1 flex-col p-5">
+							<div class="flex items-center justify-between gap-2">
+								<span class="chip">{categoryLabel(post.data.category)}</span>
+								<span class="text-xs text-slate-500 dark:text-slate-400">{formatDateShort(post.data.pubDate)}</span>
+							</div>
+							<h2 class="mt-3 text-lg font-bold leading-snug text-navy-900 dark:text-slate-100">
+								<a href={`/legal-blog/${post.slug}`} class="hover:text-teal-600">{post.data.title}</a>
+							</h2>
+							<p class="mt-2 line-clamp-3 flex-1 text-sm leading-snug text-slate-600 dark:text-slate-300">{post.data.description}</p>
+							<a href={`/legal-blog/${post.slug}`} class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">Read the analysis
+								<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	const filters = document.getElementById("blog-filters");
+	const grid = document.getElementById("blog-grid");
+	const cards = Array.from(grid?.querySelectorAll(".blog-card") ?? []);
+	filters?.addEventListener("click", (e) => {
+		const btn = (e.target as HTMLElement).closest("[data-category]") as HTMLElement | null;
+		if (!btn) return;
+		const cat = btn.dataset.category;
+		filters.querySelectorAll("[data-category]").forEach((b) => b.classList.remove("bg-teal-600", "text-white"));
+		if (cat !== "all") btn.classList.add("bg-teal-600", "text-white");
+		cards.forEach((card) => {
+			const match = cat === "all" || card.dataset.categories === cat;
+			(card as HTMLElement).style.display = match ? "" : "none";
+		});
+	});
+</script>

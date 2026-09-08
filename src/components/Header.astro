@@ -8,7 +8,7 @@ const isActive = (href: string) =>
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-md dark:border-navy-800 dark:bg-navy-950/85">
 	<div class="container-page flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
-		<a href="/" class="group flex items-center gap-2.5" aria-label="Dr Eleanor Voss — home">
+		<a href="/" class="group flex items-center gap-2.5" aria-label={`${PRACTITIONER.shortName} — home`}>
 			<span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-navy-800 to-navy-950 text-white shadow-sm ring-1 ring-white/10">
 				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
 					<path d="M2.5 12h3.2l2.2-5.5 3.6 11 2.6-6.5h1.9" />
@@ -59,12 +59,12 @@ const isActive = (href: string) =>
 				</svg>
 			</button>
 
-			<a href="/portal" class="btn btn-navy hidden !px-4 !py-2.5 text-sm sm:inline-flex">
+			<a href="/login" class="btn btn-navy hidden !px-4 !py-2.5 text-sm sm:inline-flex">
 				<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<rect x="3" y="11" width="18" height="11" rx="2" />
 					<path d="M7 11V7a5 5 0 0 1 10 0v4" />
 				</svg>
-				Secure Portal
+				Secure Login
 			</a>
 
 			<button
@@ -109,12 +109,12 @@ const isActive = (href: string) =>
 				))
 			}
 			<li class="mt-2 border-t border-slate-100 pt-3 dark:border-navy-800">
-				<a href="/portal" class="btn btn-navy w-full">
+				<a href="/login" class="btn btn-navy w-full">
 					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<rect x="3" y="11" width="18" height="11" rx="2" />
 						<path d="M7 11V7a5 5 0 0 1 10 0v4" />
 					</svg>
-					Secure Client Portal
+					Secure Client Login
 				</a>
 			</li>
 		</ul>

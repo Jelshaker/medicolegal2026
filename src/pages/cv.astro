@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { PRACTITIONER, SITE_TITLE, MEMBERSHIPS } from '../consts';
+
+const career = [
+	{ period: '2021 — Present', role: 'Consultant Radiologist', org: 'NHS Foundation Trust', detail: 'Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.' },
+	{ period: '2019 — 2021', role: 'Consultant Radiologist', org: 'Independent sector | The Harley Street Medico-Legal Imaging Unit', detail: 'Independent expert workload: CPR Part 35 compliant reporting for solicitors, barristers and insurers.' },
+	{ period: '2017 — 2019', role: 'Sub-specialty Fellowship', org: 'MSK, GI & Interventional Radiology', detail: 'Advanced fellowship training including CT-guided and fluoroscopic interventional procedures.' },
+	{ period: '2013 — 2017', role: 'Clinical Radiology Training (ST1–ST5)', org: 'Royal College of Radiologists (FRCR)', detail: 'Completed full radiology training programme; passed all FRCR examinations.' },
+	{ period: '2009 — 2013', role: 'Core Surgical Training', org: 'Royal College of Surgeons of England (MRCS)', detail: 'Surgical foundation and core training, providing the basis for an interventional practice.' },
+	{ period: '2003 — 2009', role: 'MBChB (Hons)', org: 'University of Leeds School of Medicine', detail: 'Graduated with honours; distinctions in anatomy and clinical skills.' },
+];
+
+const memberships = MEMBERSHIPS.slice(0, 5);
+---
+
+<BaseLayout title={`Curriculum Vitae | ${SITE_TITLE}`} description="Career timeline, qualifications, sub-specialty interests and memberships of Dr Joseph El-Sheikha FRCR — Consultant Radiologist and medicolegal expert witness.">
+	<PageHero
+		eyebrow="Professional record"
+		title="Curriculum Vitae"
+		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
+	/>
+
+	<!-- Overview -->
+	<section class="bg-white py-14 dark:bg-navy-900">
+		<div class="container-page">
+			<div class="grid gap-8 md:grid-cols-3">
+				<div class="card p-6">
+					<div class="text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">GMC</div>
+					<div class="mt-2 text-2xl font-bold text-navy-900 dark:text-slate-100">{PRACTITIONER.gmcNumber.replace("GMC ", "")}</div>
+					<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Full registration with a licence to practise</p>
+				</div>
+				<div class="card p-6">
+					<div class="text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">Sub-specialty</div>
+					<div class="mt-2 text-2xl font-bold text-navy-900 dark:text-slate-100">MSK · GI · IR</div>
+					<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{PRACTITIONER.subspecialty}</p>
+				</div>
+				<div class="card p-6">
+					<div class="text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">Indemnity</div>
+					<div class="mt-2 text-lg font-bold leading-snug text-navy-900 dark:text-slate-100">{PRACTITIONER.indemnity}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Timeline -->
+	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+		<div class="container-page">
+			<span class="eyebrow block">Career & training</span>
+			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Appointments & qualifications</h2>
+			<ol class="relative mt-10 space-y-8 border-l border-slate-300 pl-6 dark:border-navy-600">
+				{career.map((item) => (
+					<li>
+						<span class="absolute -left-[1.35rem] top-0 h-3.5 w-3.5 rounded-full border-2 border-teal-500 bg-white dark:bg-navy-900" aria-hidden="true" />
+						<div class="flex flex-wrap items-baseline gap-2">
+							<span class="text-sm font-bold text-teal-700 dark:text-teal-400">{item.period}</span>
+						</div>
+						<h3 class="mt-1 text-xl font-bold text-navy-900 dark:text-slate-100">{item.role}</h3>
+						<p class="text-sm font-semibold text-slate-600 dark:text-slate-300">{item.org}</p>
+						<p class="mt-2 leading-relaxed text-slate-600 dark:text-slate-300">{item.detail}</p>
+					</li>
+				))}
+			</ol>
+		</div>
+	</section>
+
+	<!-- Memberships -->
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page max-w-3xl">
+			<span class="eyebrow block">Professional bodies</span>
+			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Memberships</h2>
+			<ul class="mt-8 space-y-3">
+				{MEMBERSHIPS.map((m) => (
+					<li class="flex items-center gap-3">
+						<span class="flex h-5 w-5 items-center justify-center rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-400">
+							<svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5h14M12 5.5v14"/></svg>
+						</span>
+						<span class="text-slate-700 dark:text-slate-200">{m}</span>
+					</li>
+				))}
+			</ul>
+			<div class="mt-10 rounded-2xl border border-teal-500/30 bg-teal-50 p-5 dark:bg-teal-950/20">
+				<p class="text-sm leading-relaxed text-navy-800 dark:text-slate-200">
+					<strong>Publications & research:</strong> peer-reviewed and invited contributions on
+					delayed-diagnosis radiology, measurement reproducibility and expert-report writing.
+					A full publication list, appraisal portfolio and appraisal date are available on request.
+				</p>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

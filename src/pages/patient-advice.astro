@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import MedicalImageViewer from '../components/MedicalImageViewer.astro';
+import { SITE_TITLE } from '../consts';
+
+const faqs = [
+	{
+		q: 'Are the scans used in case discussions real?',
+		a: 'All images shown are either anonymised, licence-free illustrative material or fully anonymised source series with all identifiers removed. Nothing personally identifying is ever reproduced.',
+	},
+	{
+		q: 'Is radiation exposure safe?',
+		a: 'Every modern imaging examination is justified and optimised to keep dose as low as reasonably achievable (ALARA). The benefits of a correctly indicated scan almost always far outweigh the small radiation risk.',
+	},
+	{
+		q: 'Do I need to do anything to prepare?',
+		a: 'Preparation depends on the examination. Your referring clinician and the imaging department will give modality-specific instructions — for example, fasting before certain CT scans, or removing metal before MRI.',
+	},
+	{
+		q: 'Which modality is best for my condition?',
+		a: 'There is no single "best" modality — CT, MRI, ultrasound and X-ray each answer different questions. Your clinician will select the most appropriate test based on your symptoms and the clinical question.',
+	},
+];
+---
+
+<BaseLayout title={`Patient Advice | ${SITE_TITLE}`} description="Accessible, plain-language information about MRI, CT, ultrasound and X-ray, radiation safety, preparation guidelines and frequently asked questions.">
+	<PageHero
+		eyebrow="For patients"
+		title="Patient Advice"
+		description="Clear, accessible information about the imaging examinations you may be asked to undergo — from how each modality works to preparation and safety."
+	/>
+
+	<!-- Modalities -->
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page">
+			<span class="eyebrow block">Understanding your scan</span>
+			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Imaging modalities explained</h2>
+			<div class="mt-10 grid gap-6 md:grid-cols-2">
+				<MedicalImageViewer
+					src="/images/open_mr_scanner.jpg"
+					alt="Open MRI scanner"
+					caption="MRI uses a strong magnetic field to produce detailed images of soft tissues, joints and the nervous system — with no ionising radiation."
+					modality="MRI"
+				/>
+				<MedicalImageViewer
+					src="/images/ct_scanner.jpg"
+					alt="CT scanner"
+					caption="CT (computed tomography) uses X-rays to build cross-sectional images quickly — ideal in trauma and for abdominal and chest imaging."
+					modality="CT"
+				/>
+				<MedicalImageViewer
+					src="/images/knee_xray_pen_pointing.jpg"
+					alt="Knee X-ray"
+					caption="Plain X-ray is the first-line test for bones, joints and the chest — fast, inexpensive and low-dose."
+					modality="X-ray"
+				/>
+				<MedicalImageViewer
+					src="/images/head_ct_images.jpg"
+					alt="Head CT images"
+					caption="Ultrasound (and specialist neuroradiology) exams are guided in real time — safe, radiation-free and well suited to many soft-tissue and vascular questions."
+					modality="US / CT"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Safety -->
+	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+		<div class="container-page grid gap-10 lg:grid-cols-2">
+			<div>
+				<span class="eyebrow block">Radiation safety</span>
+				<h2 class="mt-3 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Justification & optimisation</h2>
+				<div class="mt-6 space-y-4 text-slate-600 dark:text-slate-300">
+					<p>Every examination that uses ionising radiation is justified by a clinician — meaning the potential benefit must outweigh the small risk. Imaging is then optimised so the lowest possible dose is used to answer the clinical question (the ALARA principle).</p>
+					<p>MRI and ultrasound use <strong>no ionising radiation</strong> at all. For CT and X-ray, modern systems auto-adjust dose to patient size while preserving diagnostic quality.</p>
+					<p>If you are pregnant or may be pregnant, always tell the imaging department so that the examination can be reconsidered or adjusted accordingly.</p>
+				</div>
+			</div>
+			<div class="card p-6">
+				<h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Preparation summary</h3>
+				<ul class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+					<li class="flex gap-2"><span class="text-teal-600 dark:text-teal-400">•</span><span><strong>MRI:</strong> remove all metal (jewellery, piercings, cards). Empty pockets. Inform staff of any implants or medical devices.</span></li>
+					<li class="flex gap-2"><span class="text-teal-600 dark:text-teal-400">•</span><span><strong>CT with contrast:</strong> may require fasting and a kidney-function check; tell staff about allergies or diabetes.</span></li>
+					<li class="flex gap-2"><span class="text-teal-600 dark:text-teal-400">•</span><span><strong>Ultrasound:</strong> some exams (e.g. bladder or pelvis) require a full bladder or fasting. Follow the department's instruction.</span></li>
+					<li class="flex gap-2"><span class="text-teal-600 dark:text-teal-400">•</span><span><strong>X-ray:</strong> usually no preparation needed — just remove the relevant clothing or jewellery.</span></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQs -->
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page max-w-3xl">
+			<span class="eyebrow block">Frequently asked questions</span>
+			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Common questions</h2>
+			<div class="mt-8 space-y-4">
+				{faqs.map((f) => (
+					<details class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 open:border-teal-500/40 dark:border-navy-700 dark:bg-navy-900">
+						<summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-navy-900 dark:text-slate-100">
+							{f.q}
+							<svg class="h-5 w-5 shrink-0 transition-transform group-open:rotate-45 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+						</summary>
+						<p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">{f.a}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

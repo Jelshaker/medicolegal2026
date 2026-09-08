@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE, PRACTITIONER } from "../consts";
 
 interface Props {
 	title?: string;
@@ -10,6 +10,35 @@ interface Props {
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props as Props;
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://imagingmedico.legal");
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "MedicalBusiness",
+			name: SITE_TITLE,
+			description: SITE_DESCRIPTION,
+			url: Astro.site?.toString() ?? "https://medicolegal2026.pages.dev",
+			sameAs: [Astro.site?.toString() ?? "https://medicolegal2026.pages.dev"],
+			address: {
+				"@type": "PostalAddress",
+				streetAddress: PRACTITIONER.address,
+				addressLocality: "London",
+				addressCountry: "GB",
+			},
+			telephone: PRACTITIONER.phone,
+			email: PRACTITIONER.email,
+			priceRange: "$$",
+			medicalSpecialty: "Radiology",
+		},
+		{
+			"@type": "Person",
+			name: PRACTITIONER.name,
+			jobTitle: "Consultant Radiologist",
+			worksFor: { "@type": "MedicalBusiness", name: SITE_TITLE },
+			url: Astro.site?.toString() ?? "https://medicolegal2026.pages.dev",
+		},
+	],
+};
 ---
 
 <meta charset="utf-8" />
@@ -28,6 +57,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://imagingmedi
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
+
+<!-- Google Search Console verification (replace "XXXXX" with your site's token) -->
+<meta name="google-site-verification" content="XXXXX" />
+
+<!-- Structured data: MedicalBusiness + Person (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
 <!-- Inter + Source Serif 4 (system fallbacks if offline) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />

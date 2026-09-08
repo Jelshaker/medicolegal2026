@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, DEMO_PORTAL_ACCOUNT } from '../consts';
+---
+
+<BaseLayout title={`Secure Login | ${SITE_TITLE}`} description="Professional portal login for solicitors, barristers and referrers to access secure correspondence and case imaging correspondence.">
+	<section class="flex min-h-[70vh] items-center bg-slate-50 py-16 dark:bg-navy-950">
+		<div class="container-page max-w-md">
+			<div class="card rounded-2xl p-8 shadow-lift">
+				<div class="flex items-center gap-3">
+					<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-navy-800 to-navy-950 text-white">
+						<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+					</span>
+					<div>
+						<h1 class="text-xl font-bold text-navy-900 dark:text-slate-100">Secure Login</h1>
+						<p class="text-sm text-slate-500 dark:text-slate-400">Case correspondence & imaging portal</p>
+					</div>
+				</div>
+
+				<p class="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					Professional referrers and instructing parties can sign in to access secure
+					correspondence and case updates. Access is issued by the secretariat.
+				</p>
+
+				<form id="login-form" class="mt-6 grid gap-4">
+					<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+						Email
+						<input name="email" type="email" required autocomplete="username" class="input-field mt-1.5" placeholder="you@firm.co.uk" />
+					</label>
+					<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+						Password
+						<input name="password" type="password" required autocomplete="current-password" class="input-field mt-1.5" placeholder="••••••••" />
+					</label>
+					<button type="submit" class="btn btn-navy w-full" data-submit>Sign in</button>
+				</form>
+
+				<div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-500 dark:border-navy-700 dark:bg-navy-900 dark:text-slate-400">
+					<p class="font-semibold">Demo access (replace with a real provider in production)</p>
+					<p class="mt-1">Email: <code>{DEMO_PORTAL_ACCOUNT.email}</code><br />Password: <code>{DEMO_PORTAL_ACCOUNT.password}</code></p>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	const form = document.getElementById("login-form") as HTMLFormElement | null;
+	if (form) {
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+			const btn = form.querySelector("[data-submit]") as HTMLButtonElement | null;
+			if (btn) { btn.disabled = true; btn.textContent = "Signing in…"; }
+			try {
+				const res = await fetch("/api/login", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(data),
+				});
+				const json = await res.json();
+				if (!res.ok) throw new Error(json.error || "Login failed");
+				alert("Signed in successfully.");
+			} catch (err) {
+				alert("Invalid credentials. Please try again or contact the secretariat.");
+			} finally {
+				if (btn) { btn.disabled = false; btn.textContent = "Sign in"; }
+			}
+		});
+	}
+</script>

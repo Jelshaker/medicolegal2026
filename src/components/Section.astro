@@ -1,0 +1,20 @@
+---
+// Reusable content section wrapper with optional eyebrow + title.
+interface Props {
+	eyebrow?: string;
+	title?: string;
+	lead?: string;
+	span?: 1 | 2;
+	children?: string;
+}
+const { eyebrow, title, lead = "" } = Astro.props as Props;
+---
+
+<section class="space-y-10">
+	<div>
+		{eyebrow && <span class="eyebrow mb-2 block">{eyebrow}</span>}
+		{title && <h2 class="text-2xl font-bold tracking-tight text-navy-900 dark:text-white sm:text-3xl">{title}</h2>}
+		{lead && <p class="mt-3 max-w-2xl leading-relaxed text-slate-600 dark:text-slate-300">{lead}</p>}
+	</div>
+	<slot />
+</section>

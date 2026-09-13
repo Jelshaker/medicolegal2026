@@ -1,0 +1,524 @@
+---
+// LocalDicomViewer.astro — 100 % client-side DICOM image viewer.
+// All parsing, rendering and interaction happens in the browser.
+// No files or pixels are ever transmitted to a server.
+---
+
+{/* Load dicom-parser from CDN at runtime (pure JS, no build step needed) */}
+<script
+  src="https://cdn.jsdelivr.net/npm/dicom-parser@1.8.26/dist/dicomParser.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<!-- Privacy notice banner -->
+<div class="rounded-xl border border-emerald-300/40 bg-emerald-50/90 px-5 py-3.5 text-sm text-emerald-900 shadow-sm dark:border-emerald-600/30 dark:bg-emerald-950/40 dark:text-emerald-200">
+  <div class="flex items-start gap-3">
+    <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+    <div>
+      <strong class="font-semibold">Privacy Assured:</strong> Your images remain entirely on your device and are never uploaded to any server. All DICOM parsing and rendering is 100% client-side in your browser.
+    </div>
+  </div>
+</div>
+
+<!-- Drop zone (shown when no files loaded) -->
+<div id="dv-dropzone" class="relative hidden overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/50 transition-colors dark:border-navy-700 dark:bg-navy-900/50">
+  <div class="flex flex-col items-center justify-center gap-4 py-20 px-6 text-center">
+    <svg class="h-14 w-14 text-slate-400 dark:text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
+    </svg>
+    <div>
+      <p class="text-lg font-semibold text-navy-900 dark:text-slate-100">Drop DICOM files here</p>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+        or <button id="dv-browse" class="cursor-pointer font-semibold text-teal-700 underline decoration-teal-400/40 underline-offset-2 hover:text-teal-600 dark:text-teal-400">browse</button> to select files
+      </p>
+      <p class="mt-2 text-xs text-slate-400 dark:text-slate-500">Supports .dcm, .DCM and any DICOM file (single or multiple)</p>
+    </div>
+  </div>
+  <input id="dv-file-input" type="file" multiple accept=".dcm,application/dicom" class="absolute inset-0 opacity-0 cursor-pointer" />
+</div>
+
+<!-- Viewer workspace (hidden until files loaded) -->
+<div id="dv-workspace" class="hidden grid-cols-1 gap-0 rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden dark:border-navy-800 dark:bg-navy-950" style="grid-template-columns: 280px 1fr;">
+  <!-- Sidebar – metadata + controls -->
+  <div class="flex flex-col border-r border-slate-200 dark:border-navy-800">
+    <!-- Metadata panel -->
+    <div id="dv-meta" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">DICOM Metadata (Anonymised)</h3>
+      <div id="dv-meta-body" class="text-xs space-y-2">
+        <!-- Dynamic rows inserted here -->
+        <p class="text-slate-400 dark:text-slate-500">Load a file to see metadata…</p>
+      </div>
+    </div>
+
+    <!-- Controls panel -->
+    <div class="border-t border-slate-200 p-4 space-y-4 dark:border-navy-800">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Controls</h3>
+
+      <!-- Window / Level -->
+      <div>
+        <label class="flex justify-between text-xs font-medium text-slate-600 dark:text-slate-300">
+          <span>Width (Window)</span>
+          <span id="dv-width-val" class="tabular-nums text-slate-400 dark:text-slate-500">400</span>
+        </label>
+        <input id="dv-width" type="range" min="1" max="4000" value="400" step="1" class="mt-1 w-full accent-teal-600" />
+      </div>
+      <div>
+        <label class="flex justify-between text-xs font-medium text-slate-600 dark:text-slate-300">
+          <span>Level (Center)</span>
+          <span id="dv-level-val" class="tabular-nums text-slate-400 dark:text-slate-500">40</span>
+        </label>
+        <input id="dv-level" type="range" min="-1024" max="3072" value="40" step="1" class="mt-1 w-full accent-teal-600" />
+      </div>
+
+      <!-- Zoom -->
+      <div>
+        <label class="flex justify-between text-xs font-medium text-slate-600 dark:text-slate-300">
+          <span>Zoom</span>
+          <span id="dv-zoom-val" class="tabular-nums text-slate-400 dark:text-slate-500">100%</span>
+        </label>
+        <input id="dv-zoom" type="range" min="10" max="500" value="100" step="5" class="mt-1 w-full accent-teal-600" />
+      </div>
+
+      <!-- Slice navigation (for multi-frame / MPR) -->
+      <div>
+        <label class="flex justify-between text-xs font-medium text-slate-600 dark:text-slate-300">
+          <span>Slice</span>
+          <span id="dv-slice-val" class="tabular-nums text-slate-400 dark:text-slate-500">1 / 1</span>
+        </label>
+        <div class="mt-1 flex items-center gap-2">
+          <button id="dv-slice-prev" class="btn btn-ghost !px-2 !py-1.5 !text-xs flex-shrink-0" aria-label="Previous slice">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <input id="dv-slice" type="range" min="1" max="1" value="1" class="flex-1 accent-teal-600" />
+          <button id="dv-slice-next" class="btn btn-ghost !px-2 !py-1.5 !text-xs flex-shrink-0" aria-label="Next slice">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reset button -->
+      <button id="dv-reset" class="btn btn-ghost w-full !text-xs">Reset all</button>
+
+      <!-- Invert toggle -->
+      <button id="dv-invert" class="btn btn-ghost w-full !text-xs">Invert Colours</button>
+    </div>
+
+    <!-- Actions bar -->
+    <div class="border-t border-slate-200 p-3 flex gap-2 dark:border-navy-800">
+      <button id="dv-add" class="btn btn-ghost flex-1 !text-xs">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+        Add Files
+      </button>
+      <button id="dv-clear" class="btn btn-ghost !text-xs !px-3 !text-rose-600 hover:bg-rose-50 dark:!text-rose-400 dark:hover:bg-rose-950/40">
+        Clear
+      </button>
+    </div>
+  </div>
+
+  <!-- Canvas area -->
+  <div class="relative bg-slate-950 flex items-center justify-center overflow-hidden" id="dv-canvas-area">
+    <canvas id="dv-canvas" class="block" style="image-rendering: pixelated; max-width: 100%; max-height: 100%;"></canvas>
+
+    <!-- Overlay info badge -->
+    <div class="absolute top-3 left-3 flex gap-1.5">
+      <span id="dv-modality-badge" class="rounded-md bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-cyan-400 backdrop-blur-sm">CT</span>
+    </div>
+
+    <!-- Pixel dimensions overlay -->
+    <div class="absolute bottom-3 right-3 rounded-md bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-mono tabular-nums text-slate-400 backdrop-blur-sm" id="dv-dims">
+      —
+    </div>
+
+    <!-- Window/Level display overlay -->
+    <div class="absolute top-3 right-3 rounded-md bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-mono tabular-nums text-slate-300 backdrop-blur-sm" id="dv-wl-display">
+      W: 400 C: 40
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── refs ─────────────────────────────────────────────────── */
+  const dropzone   = document.getElementById("dv-dropzone");
+  const fileInput  = document.getElementById("dv-file-input") as HTMLInputElement | null;
+  const browseBtn  = document.getElementById("dv-browse") as HTMLButtonElement | null;
+  const workspace  = document.getElementById("dv-workspace");
+  const canvasEl   = document.getElementById("dv-canvas") as HTMLCanvasElement | null;
+  const metaBody   = document.getElementById("dv-meta-body");
+  const wlWidth    = document.getElementById("dv-width") as HTMLInputElement | null;
+  const wlLevel    = document.getElementById("dv-level") as HTMLInputElement | null;
+  const wlWVal     = document.getElementById("dv-width-val");
+  const wlLVal     = document.getElementById("dv-level-val");
+  const zoomSlider = document.getElementById("dv-zoom") as HTMLInputElement | null;
+  const zoomVal    = document.getElementById("dv-zoom-val");
+  const sliceSlider= document.getElementById("dv-slice") as HTMLInputElement | null;
+  const sliceVal   = document.getElementById("dv-slice-val");
+  const dimsBadge  = document.getElementById("dv-dims");
+  const wlDisplay  = document.getElementById("dv-wl-display");
+  const modBadge   = document.getElementById("dv-modality-badge");
+
+  /* ── state ────────────────────────────────────────────────── */
+  let frames: Uint8Array[] = [];       // pixel data per slice
+  let width = 0, height = 0, bits = 16;
+  let minPixel = 0, maxPixel = 65535;  // rescale
+  let currentSlice = 0;
+  let windowW = 400, windowL = 40;
+  let zoom = 100, inverted = false;
+  let panX = 0, panY = 0, dragging = false, dragStartX = 0, dragStartY = 0;
+
+  /* ── helpers ──────────────────────────────────────────────── */
+  // Read DICOM from a File or ArrayBuffer
+  function readDICOM(data: ArrayBuffer): { parsed: dicomParser.DataSet, pixelData: Uint8Array } | null {
+    if (typeof (dicomParser as any).readPreamble !== "function") return null;
+    try {
+      // Attempt to parse as a DICOM file
+      const parsed = dicomParser.readDicomData(data, 0, data.byteLength);
+      if (parsed.tag !== "DICM") return null; // no DICOM magic
+
+      // Build a simple dataset
+      const dataSet = dicomParser.parseDicom(data);
+
+      // Extract pixel data
+      let pixelData: Uint8Array;
+      try {
+        pixelData = dicomParser.squeeze(dicomParser.getPixelData(dataSet));
+      } catch {
+        // Try 16-bit (may need to swap endianness)
+        try {
+          const raw = dicomParser.getPixelData(dataSet, 0, 0, 0, 65535);
+          pixelData = raw as Uint8Array;
+        } catch {
+          return null;
+        }
+      }
+
+      return { parsed, pixelData };
+    } catch {
+      return null;
+    }
+  }
+
+  // Get a DICOM tag value (returns string or null)
+  function tag(meta: dicomParser.DataSet, tag: string): string | null {
+    try {
+      const entry = meta.element(tag);
+      if (!entry || !entry.text) return null;
+      return entry.text;
+    } catch {
+      return null;
+    }
+  }
+
+  function num(meta: dicomParser.DataSet, tag: string): number | null {
+    try {
+      const entry = meta.element(tag);
+      if (!entry || entry.text === undefined) return null;
+      const n = parseInt(entry.text, 10);
+      return isNaN(n) ? null : n;
+    } catch {
+      return null;
+    }
+  }
+
+  /* ── render ───────────────────────────────────────────────── */
+  function renderSlice(idx: number) {
+    if (!canvasEl || frames.length === 0) return;
+    const ctx = canvasEl.getContext("2d");
+    if (!ctx) return;
+
+    const imgData = ctx.createImageData(width, height);
+    const data = imgData.data;
+    const slice = frames[idx] || frames[0];
+
+    // Window/Level & Rescale
+    const w = windowW;
+    const l = windowL;
+    const intercept = 0; // we store raw rescaled already
+    const slope = 1;
+
+    for (let i = 0; i < slice.length && i < data.length / 4; i++) {
+      let v = slice[i] * slope + intercept;
+      // Window / Level → 0–255
+      if (w <= 0) {
+        v = 0;
+      } else {
+        v = ((v - (l - w / 2)) / w) * 255;
+      }
+      v = Math.max(0, Math.min(255, Math.round(v)));
+      if (inverted) v = 255 - v;
+
+      const pi = i * 4;
+      data[pi]     = v; // R
+      data[pi + 1] = v; // G
+      data[pi + 2] = v; // B
+      data[pi + 3] = 255; // A
+    }
+
+    canvasEl.width = width;
+    canvasEl.height = height;
+    canvasEl.style.width = `${Math.round(width * zoom / 100)}px`;
+    canvasEl.style.height = `${Math.round(height * zoom / 100)}px`;
+    canvasEl.style.transform = `translate(${panX}px, ${panY}px)`;
+    ctx.putImageData(imgData, 0, 0);
+  }
+
+  function render() {
+    if (frames.length === 0) return;
+    const idx = Math.min(currentSlice, frames.length - 1);
+    currentSlice = idx;
+    renderSlice(idx);
+    updateSliceSlider();
+  }
+
+  function updateSliceSlider() {
+    if (sliceSlider) {
+      sliceSlider.max = String(frames.length);
+      sliceSlider.value = String(currentSlice + 1);
+    }
+    if (sliceVal) sliceVal.textContent = `${currentSlice + 1} / ${frames.length}`;
+  }
+
+  /* ── load files ───────────────────────────────────────────── */
+  function loadFiles(fileList: FileList | File[]) {
+    const fileArr = Array.from(fileList);
+    if (fileArr.length === 0) return;
+
+    let loaded = 0;
+    const total = fileArr.length;
+
+    fileArr.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const ab = ev.target?.result as ArrayBuffer;
+        if (!ab) return;
+        const result = readDICOM(ab);
+        if (result) {
+          // Extract width, height, bits from metadata on first file
+          if (width === 0 && result.parsed) {
+            const w = num(result.parsed, "x00280010");
+            const h = num(result.parsed, "x00280011");
+            const bp = num(result.parsed, "x00280100");
+            if (w && h) { width = w; height = h; }
+            if (bp) bits = bp;
+          }
+          frames.push(result.pixelData);
+        }
+        loaded++;
+        if (loaded === total) {
+          if (frames.length === 0) {
+            alert("No valid DICOM files found in the selected files.");
+            return;
+          }
+          currentSlice = 0;
+          // Default window/level for body CT
+          windowW = 400; windowL = 40;
+          if (wlWidth) wlWidth.value = String(windowW);
+          if (wlLevel) wlLevel.value = String(windowL);
+          if (wlWVal) wlWVal.textContent = "400";
+          if (wlLVal) wlLVal.textContent = "40";
+          // Metadata
+          updateMetadata(fileArr[0]);
+          // Show workspace, hide dropzone
+          if (dropzone) dropzone.classList.add("hidden");
+          if (workspace) {
+            workspace.classList.remove("hidden");
+            (workspace as HTMLElement).style.display = "";
+          }
+          render();
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    });
+  }
+
+  function updateMetadata(file: File) {
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const ab = ev.target?.result as ArrayBuffer;
+      if (!ab) return;
+      const result = readDICOM(ab);
+      if (!result) return;
+      const p = result.parsed;
+
+      const fields: { label: string; value: string }[] = [
+        { label: "Patient ID", value: tag(p, "x00100020") || "—" },
+        { label: "Patient Name", value: tag(p, "x00100010") || "—" },
+        { label: "Study Date", value: tag(p, "x00080020") || "—" },
+        { label: "Modality", value: tag(p, "x00080060") || "—" },
+        { label: "Study Description", value: tag(p, "x00081030") || "—" },
+        { label: "Institution", value: tag(p, "x00080080") || "—" },
+        { label: "Manufacturer", value: tag(p, "x00080070") || "—" },
+        { label: "Slice Thickness", value: `${tag(p, "x00180050") || "?"} mm` },
+        { label: "Image Position", value: tag(p, "x00200032") || "—" },
+        { label: "Image Orientation", value: tag(p, "x00200037") || "—" },
+        { label: "Pixels", value: `${width} × ${height}` },
+        { label: "Bits Allocated", value: String(bits) },
+        { label: "Frames", value: String(frames.length) },
+      ];
+
+      modBadge!.textContent = fields.find(f => f.label === "Modality")?.value || "CT";
+      dimsBadge!.textContent = `${width} × ${height}`;
+
+      metaBody!.innerHTML = fields.map(f =>
+        `<div class="flex justify-between border-b border-slate-100 dark:border-navy-800 pb-1"><span class="text-slate-500 dark:text-slate-400">${f.label}:</span><span class="text-navy-900 dark:text-slate-200 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
+      ).join("");
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
+  /* ── events ───────────────────────────────────────────────── */
+  // Drop zone
+  function onDragEnter(e: DragEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dropzone) dropzone.classList.add("border-teal-500", "bg-teal-50/80", "dark:bg-teal-950/30");
+  }
+  function onDragLeave(e: DragEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dropzone) dropzone.classList.remove("border-teal-500", "bg-teal-50/80", "dark:bg-teal-950/30");
+  }
+  function onDragOver(e: DragEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  function onDrop(e: DragEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dropzone) dropzone.classList.remove("border-teal-500", "bg-teal-50/80", "dark:bg-teal-950/30");
+    if (e.dataTransfer?.files) loadFiles(e.dataTransfer.files);
+  }
+
+  dropzone?.addEventListener("dragenter", onDragEnter);
+  dropzone?.addEventListener("dragleave", onDragLeave);
+  dropzone?.addEventListener("dragover", onDragOver);
+  dropzone?.addEventListener("drop", onDrop);
+
+  browseBtn?.addEventListener("click", () => fileInput?.click());
+  fileInput?.addEventListener("change", () => {
+    if (fileInput.files) loadFiles(fileInput.files);
+  });
+
+  // Window/Level sliders
+  wlWidth?.addEventListener("input", () => {
+    windowW = parseInt(wlWidth.value, 10) || 1;
+    if (wlWVal) wlWVal.textContent = String(windowW);
+    if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
+    render();
+  });
+  wlLevel?.addEventListener("input", () => {
+    windowL = parseInt(wlLevel.value, 10);
+    if (wlLVal) wlLVal.textContent = String(windowL);
+    if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
+    render();
+  });
+
+  // Zoom
+  zoomSlider?.addEventListener("input", () => {
+    zoom = parseInt(zoomSlider.value, 10);
+    if (zoomVal) zoomVal.textContent = `${zoom}%`;
+    render();
+  });
+
+  // Slice navigation
+  sliceSlider?.addEventListener("input", () => {
+    currentSlice = parseInt(sliceSlider.value, 10) - 1;
+    render();
+  });
+  document.getElementById("dv-slice-prev")?.addEventListener("click", () => {
+    if (currentSlice > 0) { currentSlice--; render(); }
+  });
+  document.getElementById("dv-slice-next")?.addEventListener("click", () => {
+    if (currentSlice < frames.length - 1) { currentSlice++; render(); }
+  });
+
+  // Reset
+  document.getElementById("dv-reset")?.addEventListener("click", () => {
+    windowW = 400; windowL = 40; zoom = 100; panX = 0; panY = 0; inverted = false;
+    currentSlice = 0;
+    if (wlWidth) wlWidth.value = "400";
+    if (wlLevel) wlLevel.value = "40";
+    if (wlWVal) wlWVal.textContent = "400";
+    if (wlLVal) wlLVal.textContent = "40";
+    if (zoomSlider) zoomSlider.value = "100";
+    if (zoomVal) zoomVal.textContent = "100%";
+    if (wlDisplay) wlDisplay.textContent = "W: 400 C: 40";
+    if (canvasEl) canvasEl.style.transform = "";
+    if (document.getElementById("dv-invert")) {
+      (document.getElementById("dv-invert") as HTMLButtonElement).textContent = "Invert Colours";
+    }
+    render();
+  });
+
+  // Invert
+  document.getElementById("dv-invert")?.addEventListener("click", () => {
+    inverted = !inverted;
+    const btn = document.getElementById("dv-invert") as HTMLButtonElement;
+    btn.textContent = inverted ? "Normal Colours" : "Invert Colours";
+    render();
+  });
+
+  // Add / Clear
+  document.getElementById("dv-add")?.addEventListener("click", () => fileInput?.click());
+  document.getElementById("dv-clear")?.addEventListener("click", () => {
+    frames = []; width = height = 0; currentSlice = 0;
+    if (dropzone) dropzone.classList.remove("hidden");
+    if (workspace) { workspace.classList.add("hidden"); (workspace as HTMLElement).style.display = "none"; }
+    if (fileInput) fileInput.value = "";
+  });
+
+  /* ── Canvas pan & zoom ────────────────────────────────────── */
+  if (canvasEl) {
+    canvasEl.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      dragging = true;
+      dragStartX = e.clientX - panX;
+      dragStartY = e.clientY - panY;
+      canvasEl.setPointerCapture(e.pointerId);
+      canvasEl.style.cursor = "grabbing";
+    });
+    canvasEl.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      panX = e.clientX - dragStartX;
+      panY = e.clientY - dragStartY;
+      if (canvasEl) canvasEl.style.transform = `translate(${panX}px, ${panY}px)`;
+    });
+    canvasEl.addEventListener("pointerup", () => {
+      dragging = false;
+      if (canvasEl) canvasEl.style.cursor = "";
+    });
+
+    // Wheel: zoom or slice
+    canvasEl.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      if (e.ctrlKey) {
+        // Ctrl + scroll → slice navigation
+        currentSlice += e.deltaY < 0 ? -1 : 1;
+        currentSlice = Math.max(0, Math.min(frames.length - 1, currentSlice));
+        render();
+      } else {
+        // Scroll → zoom
+        const delta = e.deltaY < 0 ? 10 : -10;
+        zoom = Math.max(10, Math.min(500, zoom + delta));
+        if (zoomSlider) zoomSlider.value = String(zoom);
+        if (zoomVal) zoomVal.textContent = `${zoom}%`;
+        render();
+      }
+    }, { passive: false });
+  }
+
+})();
+</script>
+
+<style>
+  /* Ensure the component is self-contained */
+  #dv-dropzone, #dv-workspace { transition: opacity 0.2s ease; }
+</style>

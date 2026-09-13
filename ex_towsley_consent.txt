@@ -1,0 +1,1311 @@
+
+===== pdf p91 =====
+72
+ 4   ␣       PATIENT AUTONOMY AND INFORMED CONSENT 
+  The last of the human freedoms [is] to choose one’s attitude in 
+any given set of circumstances, to choose one’s own way.  
+ VIKTOR FRANKL 
+Chapter Outline
+     Ethical Issues 
+   Deﬁ nition of Autonomy 
+  Patient Care Partnership 
+  Information Delivery 
+  Complications of Autonomy, Informed Consent, 
+and Right of Refusal 
+  Veriﬁ cation of Informed Consent 
+  Competence and Incompetence Surrogacy 
+  Obstacles to Autonomy and Informed Consent 
+  Respect for Autonomy 
+  Therapeutic Privilege 
+  Emergency Situations 
+  Competence and Advance Directives 
+  Application of Ethical Theories to Autonomy     
+   Legal Issues 
+   Tort Law 
+  Simple Consent 
+  Intentional Torts 
+  Unintentional Torts 
+  Informed Consent      
+Learning Objectives
+     •   Describe the relationship between autonomy, the 
+respect for autonomy, and informed consent. 
+     •   Identify the stresses involved in granting informed 
+consent and autonomy. 
+     •   List methods of verifying informed consent. 
+     •   Deﬁ ne surrogacy. 
+     •   Compare and contrast competence and incompe-
+tence. 
+     •   Correlate coercion, paternalism, and therapeutic 
+privilege. 
+     •   Explain why emergency situations and certain 
+facilities may alter informed consent processes. 
+     •   Identify ethical theories that may be implemented 
+to facilitate problem solving. 
+     •   Give examples of the difference between inten-
+tional and unintentional torts and ways the 
+ perception of intent rather than the actual intent 
+may be the basis for allegations. 
+     •   Provide examples of simple consent as it relates to 
+assault, battery, and false imprisonment. 
+     •   Deﬁ  ne informed consent. 
+     •   Differentiate standards of care with regard to the 
+duty of informed consent. 
+     •   Deﬁ ne and contrast the roles of the physician and 
+the imaging professional in informed consent. 
+     •   Identify the important but limited role of the 
+consent form. 
+ After completing this chapter, the reader will be able to perform the following:  
+Key Terms
+   advance directives 
+ assault 
+autonomy
+ battery 
+competence
+ consent forms 
+false imprisonment 
+ informed consent 
+intentional torts 
+simple consent 
+unintentional torts 
+
+===== pdf p92 =====
+ Professional Profi  le 
+       A client with cancer comes to the radiotherapy clinic 
+at a most challenging time in his or her life. For many, 
+it is a time ﬁ  lled with emotional anxiety, social disrup-
+tion, physical strain, and uncertainty. My primary role 
+as a radiation therapist is to deliver a precise amount 
+of radiation to the cancer, and in doing so try to bring 
+about a positive change and a return to normalcy 
+for the client. How my goal is achieved depends on 
+many ethical and legal issues that provide the frame-
+work for all of my professional responsibilities. 
+Within my scope of practice I need to be intimately 
+familiar with the protocols, codes, guidelines, and leg-
+islation that outline the speciﬁ c techniques I perform 
+as a radiation therapist but also what I ought to do 
+as a health care provider. There are many scenarios 
+in radiation therapy where there are ethical and legal 
+concerns. These issues may be very clear but at times 
+may be elusive and complex. Here are some situations 
+from my experience that demonstrate these concerns:
+      •   Signing my initials in a logbook for a daily 
+quality assurance procedure that was performed 
+on a treatment unit 
+     •   Ensuring that I have the correct client when 
+retrieving him or her from the waiting room 
+     •   Asking a client for permission for a student to 
+participate in his or her simulator planning pro-
+cedure and then balancing the needs for student 
+learning, client comfort, and efﬁ ciency 
+     •   Reporting unusual or unexpected variances in 
+the treatment process 
+     •  Counseling a client at his or her level within my 
+scope of practice, such as educating a client on the 
+anticipated side effects, offering emotional sup-
+port, and providing referrals to other departments 
+     •   Covering up all patient lists and hospital 
+records when the family of a client watches the 
+client on a CCTV monitor in the control area 
+during treatment 
+     •   Deciding during portal imaging if a ﬁ eld 
+border deviating 3 mm away from the expected 
+position is acceptable and whether or not to 
+proceed with irradiation 
+     •   Communicating with the family members of 
+a client from a non-Western culture who does 
+not speak English and is unaware that he or she 
+is being treated for cancer 
+     •  Treating a comatose client for an oncologic 
+emergency without having prior written consent 
+for treatment from either the client or a  substitute 
+decision maker (in radiotherapy it is rare not to 
+have written consent at the time of treatment)    
+These situations are related to concepts of informed 
+consent, client conﬁ dentiality, or professional practice, 
+all of which have ethical and legal considerations. As 
+an instructor, I emphasize to students that poorly made 
+decisions can potentially have serious implications. To 
+the client, these consequences could be disastrous: 
+breach of conﬁ  dentiality, physical harm, severe and de-
+bilitating radiation side effects, and radiation-induced 
+death. To the hospital, damage to its reputation could 
+be irreparable. To the therapist, it could mean the end 
+of a professional career, loss of income, and criminal 
+convictions. Health care workers are fully accountable 
+for their actions (or inactions) and must always exer-
+cise diligence and vigilance in the care of the client. 
+The perspectives of care can vary, and I have 
+learned that what is important to me as a radiation 
+therapist may be much less important to the cli-
+ent. For example, I value the client’s compliance in 
+attending daily treatments because daily fractions 
+help to increase  tumor cell kill. However, for some 
+clients, visiting the clinic every day for treatment 
+may not be a priority because of other competing 
+interests such as work obligations, family schedules, 
+and transportation  issues. Having cancer is only 
+another part of the client’s life. The  ethical and 
+legal considerations become more a pparent when 
+the standard policies and procedures do not ﬁ t the 
+needs or expectations of the client. I have a moral 
+obligation to ensure not only that the client is being 
+cared for, but also that the client feels cared for. 
+While I work within a multidisciplinary team 
+of highly trained health care workers and support 
+staff, the clients are the leaders of the team. They 
+rightfully demand superb health care while expect-
+ing good outcomes and positive experiences. For 
+the health professional, this comes about through 
+exercising good judgment, employing the appropri-
+ate skills, and carefully reﬂ  ecting upon one’s own 
+limitations and strengths.   
+   Martin J. .      Chai  ,   MRT(T), BSc, MTS  
+  Faculty, 
+Medical Radiation Sciences, 
+Department of Radiation Oncology 
+Faculty of Medicine,  
+  The Michener Institute for Applied Health Sciences and 
+The University of T oronto, T oronto, Ontario   
+
+===== pdf p93 =====
+74 Ethical and Legal Issues for Imaging Professionals
+                            ETHICAL ISSUES 
+  Informed consent is a common concern in all the imaging modalities. Imaging profes-
+sionals must be proﬁ cient in the recitation of facts and ﬁ  gures required to inform the 
+patient. Health care providers, however, should also be able to provide patients with a 
+process that renders them truly knowledgeable about procedures and their alternatives.    
+During the early stages of development within the medical community, the patient’s 
+autonomy was not a serious consideration. Physicians were expected to be omniscient 
+and were rarely questioned. They acted as the “fathers” of their clientele. This paternal-
+ism and the invocation of therapeutic privilege were standard professional philosophies. 
+As years passed and patients became more aware of their rights and privileges, however, 
+the medical community developed new methods of informing patients. The emphasis 
+on patient autonomy and informed consent has come from many areas (     Box 4-1 ).    
+Some physicians still ﬁ  nd the model of patient education difﬁ  cult because they 
+believe that the informational process complicates health care and brings their expertise 
+into question. Fortunately, however, most physicians and institutions understand the 
+relevance of informed consent and patients’ rights. 
+Maintaining patient autonomy and obtaining valid informed consent are vital in the 
+vascular imaging laboratory. Imaging professionals routinely visit patients before pro-
+cedures and explain the processes, contrast media involved, and physical sensations to 
+which the patient will be subjected. They may also discuss imaging procedures with 
+patients during transportation and preparation. These are important parts of the infor-
+mational process and are vital to the maintenance of patient autonomy. Occasionally 
+the imaging professional may be required to witness the signing of a written informed 
+consent form. Other imaging procedures, including ﬂ uoroscopic studies, vascular stud-
+ies, and a variety of other noninvasive and invasive examinations, often require the tech-
+nologist to facilitate the informed consent process. Imaging professionals must decide 
+on the basis of personal and professional parameters whether this is appropriate, and 
+they must remember that the physician is ultimately responsible for the informed con-
+sent process. 
+      INFORMED CONSENT 
+ Informed consent is the 
+written assent of a patient 
+to r
+eceive a proposed 
+treatment; adequate 
+information is essential for 
+the patient to give truly 
+informed consent.    
+      AUTONOMY 
+ Autonomy is the concept 
+that patients are to be 
+treat
+ed as individuals and 
+informed about procedures 
+to facilitate appropriate 
+decisions.    
+           Maintenance of patients’ rights 
+  Provision of education to facilitate consent 
+  Promotion of human dignity 
+  Determination of incompetence 
+  Advocacy of surrogates 
+  Elimination of attitudes of paternalism 
+  Clariﬁ cation of unclear communication involving therapeutic privilege 
+  Strategies for dealing with emergency situations 
+  Use of compatible parameters for consent in speciﬁ c health care facilities 
+  Education regarding the ethical theories involved in patient autonomy 
+and informed consent      
+BOX 4-1  CRUCIAL ELEMENTS IN PATIENT AUTONOMY 
+AND INFORMED CONSENT
+ 
+
+===== pdf p94 =====
+75CHAPTER   4     Patient Autonomy and Informed Consent
+     DEFINITION OF AUTONOMY 
+  Autonomy means that “one human person, precisely as a human person, dares not have 
+the authority and should not have power over another human person. In a medical 
+sense, a patient will not be treated without informed consent of his or her lawful sur-
+rogates, except in narrowly deﬁ ned emergencies.” 1    
+     PATIENT CARE PARTNERSHIP 
+The patient’s right to information is important in considerations of autonomy. The 
+American Hospital Association has established a patient care partnership document 
+(see p. 255), 2   which is to be given to hospitalized patients to help them understand the 
+expectations, rights, and responsibilities regarding their health care. 
+Expectations should include high-quality hospital care delivered with skill, compas-
+sion, and respect. Patients have the right to know the identity of physicians, nurses, and 
+other health care providers. They also have the right to know if they are being treated 
+by students, residents, or other trainees. Patients should expect a clean and safe environ-
+ment, including special policies and procedures to avoid mistakes in care and ensure 
+freedom from abuse or neglect. 
+Patients should expect to be involved in decision making regarding care. This includes dis-
+cussing medical conditions and information about medically appropriate treatment choices. 
+Patients should be informed of the beneﬁ  ts and risks of each treatment, whether that treat-
+ment is experimental or part of a research study, what can reasonably be expected from the 
+treatment, and any long-term effects it might have. The ﬁ nancial consequences of using 
+noncovered services or out-of-network providers should be explained. Patients should expect 
+to be informed of what they and their families will need to do upon leaving the hospital. 
+When entering the hospital, the patient signs a general consent-for-treatment form. 
+Speciﬁ c treatments such as surgery, invasive procedures, or experimental treatments 
+may require speciﬁ c consent, called  informed consent, which conﬁ rms in writing what 
+is planned and the patient is agreeing to as part of that plan. This process protects the 
+patient’s right to consent to or refuse a treatment. The physician must also explain the 
+consequences of refusing recommended treatment. 
+To make good decisions regarding care, caregivers need complete and correct infor-
+mation from patients about their health and coverage. The patient is responsible for 
+delivering this information, which includes past medical history, past allergic reac-
+tions, medicines and dietary supplements, and speciﬁ c health plan information, as well 
+as health care goals, values, or spiritual beliefs important to the patient’s well-being. 
+Patients should make available to the physician and the hospital any documents such as 
+a living will or advance directive regarding health care decisions. 
+Patients’ privacy is protected by state and federal laws, as well as hospital operating 
+policies. Patients receive a notice of privacy practice document that outlines the way 
+information is used, disclosed, and safeguarded. This also explains how a patient can 
+obtain a copy of the information regarding care. 
+Patients can expect assistance with treatment plans when leaving the hospital, includ-
+ing arrangement of follow-up care and disclosure of any ﬁ  nancial interest in any such 
+referrals. They can also expect hospitals to ﬁ  le claims with health insurers, Medicare, 
+and Medicaid, as well as provide help with needed documentation, explanation of hos-
+pital bills, and insurance coverage. 
+
+===== pdf p95 =====
+76 Ethical and Legal Issues for Imaging Professionals
+     INFORMATION DELIVERY 
+The way in which information is given depends on the criteria used to inform the patient. 
+The following four potentially conﬂ icting rules may guide the physician or other health 
+care provider in explaining information to patients 1  :
+       1.   Patient preference rule 
+   2.   Professional custom rule 
+   3.   Prudent person rule 
+   4.   Subjective substantial disclosure rule       
+Institutional rules must also be taken into account. 
+     Patient Preference Rule 
+The patient preference rule requires health care professionals to tell patients what they 
+want to know. For example, the patient may prefer to know how the procedure may aid 
+in the diagnostic process or may ask a radiation therapy professional how the treatment 
+will affect the patient’s quality of life. The health professional will then do his or her best 
+to communicate this information in the patient education process. 
+     Professional Custom Rule 
+The professional custom rule states that the health care professional should give the 
+patient the information normally given to patients in similar situations. For example, 
+a patient may have no speciﬁ c requests for information concerning scheduled ultraso-
+nography. This does not necessarily indicate the patient’s lack of concern. He or she 
+may just not know what to ask. The ultrasonographer would then provide the patient 
+with the typical information concerning the examination. Patient education that enables 
+the patient to comply with the requests of the imaging professional will also make the 
+examination more understandable to the patient. 
+     Prudent Person Rule 
+The prudent person rule, or reasonable patient standard, measures the physician’s disclo-
+sure to the patient based on the patient’s need for information to make decisions regard-
+ing treatment. 1   The imaging professional must consider the information the patient 
+needs to make informed decisions concerning a procedure. In the previous examples, the 
+imaging professional or physician would have to decide how much the patient needs to 
+know before he or she can make an adequate informed consent decision. 
+     Subjective Substantial Disclosure Rule 
+The subjective substantial disclosure rule encourages the physician to disseminate all 
+information important to the individual patient. In responding to the previous exam-
+ples, the physician would feel obliged to explain  all the possible ramiﬁ cations of the 
+examinations to the patient. 
+The prudent person rule addresses many of the important elements of informed 
+consent. A combination of the prudent person rule and the subjective disclosure rule, 
+which requires the physician to communicate meaningfully with the patient, provides 
+the information the patient needs to make an informed decision. Such a combination 
+ensures that the physician has adequate knowledge about the patient and the patient has 
+adequate knowledge about the procedure (     Box 4-2 ). 
+
+===== pdf p96 =====
+77CHAPTER   4     Patient Autonomy and Informed Consent
+     Institutional Rules Regarding Informed Consent 
+Imaging professionals must consider institutional rules concerning a variety of ethical 
+issues, including informed consent. During the interview process before employment, 
+they should investigate issues of institutional ethics and values before making choices 
+concerning their abilities to function and provide patient care within the parameters 
+provided by the institution.   
+     COMPLICATIONS OF AUTONOMY , INFORMED CONSENT, 
+AND RIGHT OF REFUSAL 
+After examining the issues included in deﬁ ning patient autonomy and protecting patient 
+rights, imaging professionals should be able to recognize the dilemmas involved in ensur-
+ing informed consent. Whether a patient may ever give truly informed consent is open 
+to question. To be totally informed, the patient would need to be educated in many areas 
+from anatomy to imaging procedures. Imaging professionals may consider whether this is 
+possible or whether informed consent is simply an idealistic (although necessary) ritual. 
+They must also recognize their responsibility in the process of obtaining informed con-
+sent. Even if the procedure is complicated to explain, imaging professionals should make 
+every effort to help patients become more knowledgeable. Until patients become respon-
+sible for providing and obtaining information concerning their medical procedures, a truly 
+informed, educated consent that ensures autonomy may never be realized. 
+The Patient Self-Determination Act of 1991 helps ensure patient autonomy 3  :
+Heeding the principle of autonomy  … means that imaging professionals should respect a 
+patient’s choice to refuse treatments. The basic human right of all patients to refuse treatment 
+was formally legislated by the Omnibus Budget Reconciliation Act (1990). The Patient Self-
+Determination Act became effective December 1, 1991, and requires all health care institu-
+tions receiving Medicare or Medicaid funds to inform patients that they have the right to 
+refuse medical and surgical care and the right to initiate a written advance directive (i.e., 
+a written or oral statement by which a competent person makes known his or her treatment 
+preferences and/or designates a surrogate decision maker in the event he or she should become 
+unable to make medical decisions on his or her own behalf [     Box 4-3 ]). Hospitals, home health 
+care agencies, and managed care organizations are required to make this information available, 
+in writing, at the time the patient comes under an agency’s care. 
+     VERIFICATION OF INFORMED CONSENT 
+One ethical challenge inherent in many imaging procedures is the appropriateness of 
+the veriﬁ cation of informed consent. Imaging professionals should always be available to 
+answer patients’ questions concerning their procedures. However, questions concerning 
+           Patient preference rule — provides information patients want to know 
+  Professional custom rule —provides the information normally given to patients 
+  Prudent person rule —provides the information patients need to know to consent 
+to or refuse treatment 
+  Subjective substantial disclosure rule —provides patients with all information 
+  Combination of rules —provides information without overburdening the patient      
+BOX 4-2  RULES FOR EXPLAINING PROCEDURES 
+
+===== pdf p97 =====
+78 Ethical and Legal Issues for Imaging Professionals
+speciﬁ cs of informed consent such as alternative therapies, failure rate, risks, or other 
+subjects should always be directed to the patient’s physician. 
+The physician has a crucial role in the process of obtaining informed consent. Because 
+of their knowledge and expertise, physicians bear the responsibility for informing 
+patients concerning procedures. To facilitate the informed consent process, the imaging 
+professional should refer the patient to the physician if the professional feels questions 
+about the procedure are out of his or her ﬁ  eld of expertise. 
+An important ethical consideration is whether imaging professionals should allow 
+themselves to be placed in the position of witnessing the patient’s signature on the 
+informed consent form. Imaging professionals are commonly given the responsibility of 
+getting the patient to sign the imaging procedure consent form. If they are not present 
+when the patient’s physician presumably gives the necessary instructions and explana-
+tions to the patient, they are qualiﬁ ed only to witness the fact that the patient has signed 
+the form. 
+Many imaging professionals involved in carrying out informed consent procedures ﬁ nd 
+themselves in the difﬁ cult situation of determining how much of the responsibility for 
+informed consent is theirs. Nevertheless, probably few have ever questioned this process. 
+Many student imaging professionals are required to explain the injection of contrast media 
+and possible reactions to patients as part of their clinical objectives. Although students 
+must learn this skill, imaging professionals may need to consider whether this important 
+patient education duty should be left to students and whether this is conducive to the 
+patient’s truly informed consent and the imaging professional’s protection from liability. 
+An example of the difﬁ  culties inherent in ensuring patient autonomy and eliciting 
+truly informed consent may be observed in a ﬂ  uoroscopic imaging suite in which gas-
+trointestinal procedures are performed. The patient may have been informed, but can 
+anyone ever be ready for an air contrast colon examination? Patients subjected to this 
+procedure are already afraid, sick, and in pain and may feel as though they have no 
+control over their care. Imaging professionals need to consider ways of facing this chal-
+lenge and informing patients as fully as possible about an often dehumanizing procedure 
+without completely discouraging them from an examination that may have enormous 
+           Provision of written information to adult patients about their rights to make 
+medical decisions, including the right to accept or refuse treatment and the 
+right to formulate advance directives 
+  Documentation in each patient’s record regarding whether the patient has 
+executed an advance directive 
+  Implementation of written policies regarding the various types of advance directives 
+  Ensuring of compliance with state laws regarding medical treatment decisions 
+and advance directives 
+  Elimination of discrimination against individuals regarding their treatment deci-
+sions made through an advance directive 
+  Provision of education for staff members and the community on ethical and 
+legal issues concerning advance directives        
+a  From the Omnibus Budget Reconciliation Act of 1990, Sections 4206 and 4751, Public Law 101-508, 
+November 5, 1990. 
+BOX 4-3  REQUIREMENTS OF THE PATIENT SELF-DETERMINATION ACT 
+
+===== pdf p98 =====
+79CHAPTER   4     Patient Autonomy and Informed Consent
+diagnostic beneﬁ ts. Throughout all of this, the dignity and autonomy of the patient 
+must be preserved. 
+An imaging professional may overhear a co-worker speaking disrespectfully about 
+an unconscious or deaf patient. Because respect for freedom and privacy is ultimately 
+rooted in the dignity of each person, the maintenance of autonomy requires health care 
+providers to respect all individuals, even those who are not currently capable of free 
+choice.1   In short, people do not lose their dignity because they are unconscious, in a 
+coma, or out of contact with reality. Such patients present special difﬁ culties, but they 
+must nevertheless be respected. Dignity and autonomy do not stem from a person’s abil-
+ity to function in an imaging suite; instead, the clinical area should accommodate itself 
+to the individual’s limitations. 
+     COMPETENCE AND INCOMPETENCE SURROGACY 
+  Competence is a necessary element in informed consent. In the medical setting, com-
+petence entails the ability to make appropriate choices and consider their consequences. 
+A patient’s competence may be temporarily compromised by prescription or over-the-
+counter drugs. In this condition of short-term incompetence, the patient may require a 
+surrogate or postponement of the procedure until the patient is competent. Incompe-
+tence is difﬁ cult to prove. An evaluation of the patient’s ability to make decisions is an 
+important component in determining competence.    
+Imaging professionals should consider methods of dealing with patients who are 
+temporarily incompetent or rendered permanently incompetent by brain damage, devel-
+opmental disabilities, dementia, or Alzheimer’s disease. Such patients do not have less 
+dignity or less right to be informed. Even the most incompetent person has basic human 
+dignity, and imaging professionals must keep this in mind. 
+Questions regarding methods for determining competence and adequately informing 
+patients who are incompetent often lead to a consideration of surrogacy, or the appoint-
+ment of a person or persons to make decisions regarding care in the name of the patient. 
+A surrogate may be a parent, an individual named by the patient while competent, or a 
+person or persons appointed by the courts. Surrogates may be involved in the determi-
+nation of competence and in the informed consent process. As such, they may pose an 
+obstacle to autonomy, especially if the patient did not give advance directives regarding 
+personal wishes. No person can ever truly know the wishes of another; nevertheless, sur-
+rogates must do their best to surmise the patient’s wishes. 
+     OBSTACLES TO AUTONOMY AND INFORMED CONSENT 
+Undue inﬂ  uences that may restrict the patient’s choices are a hindrance to autonomy. Ill 
+patients may feel pushed into decisions out of concern for their health, future, and family 
+members. A patient’s family members or physician may pressure the patient because of 
+personal or professional feelings concerning the patient’s welfare. Imaging professionals 
+must be careful not to add inﬂ  uences that may render patients, who have already expe-
+rienced a loss of personal freedom, unable to make decisions concerning their care. The 
+imaging suite environment itself may negatively inﬂ uence the patient; its intimidating 
+atmosphere may frighten the patient past the point of sound decision making. Imaging 
+professionals must therefore make every effort to calm and reassure the patient. At the 
+same time, they should recognize that no person is ever completely free from outside inﬂ u-
+ences and that truly informed, educated consent and autonomy may be impossible. 
+      COMPETENCE 
+ Competence is the ability to 
+make choices.    
+
+===== pdf p99 =====
+80 Ethical and Legal Issues for Imaging Professionals
+Given the increased diversity of the patient population, language and culture are 
+often barriers to autonomy and informed consent. These issues are discussed thoroughly 
+in Chapter 9 .
+A lack of time can inﬂ  uence the completeness of the informed consent process. 
+Imaging professionals often face this problem, but they cannot sacriﬁ ce proper patient 
+communication because of time constraints. 
+Lack of communication on the part of the patient or professional may interfere with 
+the informed consent process. In this situation the professional should elicit feedback 
+from the patient to verify that the information was understood. 
+Serious obstacles to autonomy and informed consent may spring from health care 
+providers, including physicians, nurses, and allied health professionals. Because of their 
+education and experience, they often believe they know what is best for patients. They 
+become confused and sometimes angry when patients refuse treatment or question their 
+explanations. An attitude of paternalism is unhealthy for autonomy. Patients who per-
+ceive such an attitude on the part of the health care provider may come to distrust the 
+provider. An irritated, know-it-all imaging professional may frighten or annoy a patient 
+out of the examination room and past the point of diagnosis. Clear communication 
+between the provider and patient is crucial, and the imaging professional has an obliga-
+tion to communicate properly and not merely spout facts. If the patient does not under-
+stand, informed consent is not possible. Imaging professionals should remember to talk 
+to  patients, not  at  them. 
+Imaging professionals may become so accustomed to the repetition of information 
+that they do not truly listen to patients. Students especially may be so involved in cover-
+ing all the information that they sound like waiters explaining the catch of the day, not 
+professionals describing the possible complications of a medical procedure. Patients are 
+usually frightened, and when asked if they understand, they may nod yes with heads 
+empty of actual understanding. 
+     RESPECT FOR AUTONOMY 
+Autonomy, surrogacy, informed consent, and the obstacles to each should continually 
+remind imaging professionals that they must have an ongoing respect for the self of 
+the patient. Jonsen, Siegler, and Winslade 4   provide seven points to enable the health 
+care professional to maintain respect for autonomy. They have been modiﬁ ed below for 
+imaging professionals:
+       1.   Is the patient mentally capable and legally competent? Is there any evidence of 
+incapacity that would affect the imaging procedure? 
+   2.   If competent, has the imaging patient expressed any preferences for the imaging 
+procedure? 
+   3.   Does the imaging patient understand the beneﬁ  ts and the risks, and has he or 
+she given consent? 
+   4.   If the patient is in need of a surrogate, is the surrogate using the appropriate 
+standards for decision making? 
+   5.   Has the imaging patient expressed prior preferences (e.g., advance directives)? 
+   6.   If the imaging patient is unable or unwilling to cooperate with the imaging 
+procedure, is there a speciﬁ c reason? 
+   7.   After a consideration of the ﬁ rst six points, is the patient’s right to choose being 
+respected to the extent possible both ethically and legally?       
+
+===== pdf p100 =====
+81CHAPTER   4     Patient Autonomy and Informed Consent
+The use of these points of respect for autonomy is a valuable tool in ethical and legal 
+problem solving. 
+     THERAPEUTIC PRIVILEGE 
+Physicians and imaging professionals must decide what the patient needs to know. These 
+difﬁ cult decisions may raise the issue of therapeutic privilege, a narrowly construed preroga-
+tive invoked when health care providers withhold information from patients because they 
+believe the information would have adverse effects on the patients’ conditions or health. The 
+physician must have reason to believe that the patient would become unusually emotionally 
+distraught if the information was disclosed. 5 Physicians and other health care providers may 
+believe they are knowledgeable about what the patient can tolerate. They may use this belief 
+as a reason to omit information if they think it may have an adverse effect on the patient. 
+Imaging professionals who believe they know the way the patient feels better than the patient 
+does should reevaluate their omission of information. Therapeutic privilege is used less often 
+by caregivers who realize that patients are becoming much more aware of their rights. When 
+their autonomy is denied, their ability to give informed consent is impaired. Most patients 
+want to be told the truth about their condition. When imaging professionals omit necessary 
+information, the result may be deceit, mistrust, and very possibly harm to the patient. 
+     EMERGENCY SITUATIONS 
+In emergency situations the informed consent process may have to be abandoned to save 
+the patient’s life. Imaging professionals may ﬁ  nd themselves in such situations in the 
+emergency department. According to the laws of many states, three conditions must be 
+present for the omission of informed consent to be justiﬁ ed:
+       1.   The patient is incapable of giving consent, and no lawful surrogate is available. 
+   2.   Danger to life or risk of a serious impairment to health is apparent. 
+   3.   Immediate treatment is necessary to avert these dangers.       
+Providing treatment without the patient’s consent may be considered a denial of auton-
+omy; however, autonomy is not relevant if the patient dies. In this case autonomy becomes 
+a consideration of the patient’s family or surrogate. If the family feels the patient’s rights 
+have been denied, they may take legal action. Many emergency room physicians are faced 
+with this difﬁ cult situation and the quick but vital decisions it requires. Informed consent 
+and autonomy are not always possible in emergency situations. 
+     COMPETENCE AND ADVANCE DIRECTIVES 
+Certain facilities and situations may pose serious threats to autonomy and informed 
+consent. Mental health facilities and nursing homes may compromise the autonomy 
+processes. Many patients in these institutions are considered incompetent as a result of 
+mental illness or age, although neither of these factors necessarily renders the patient 
+incompetent. Many mental health and nursing facilities are now asking competent 
+patients to give written  advance directives or assign a surrogate to provide protection 
+for the patient and provider if the patient becomes incompetent at a later date.     
+     APPLICATION OF ETHICAL THEORIES TO AUTONOMY 
+The imaging professional may experience further difﬁ culty in choosing a theory of eth-
+ics to apply when considering patient autonomy. The theory of consequentialism (utili-
+tarianism) requires the greatest good to be done for the greatest number. Deontology 
+      ADVANCE DIRECTIVES 
+ An advance directive is a 
+predetermined (usually 
+wr
+itten) choice made 
+to inform others of the 
+ways in which the patient 
+wishes to be treated while 
+incompetent.    
+
+===== pdf p101 =====
+82 Ethical and Legal Issues for Imaging Professionals
+holds that the motives for an action are the most important considerations. Virtue ethics 
+invokes practical wisdom and right reason. (See Chapter 1 for a more detailed review of 
+ethical theories.) 
+Utilitarianism is not very relevant in considerations of autonomy and consent because 
+it is generally applied to large numbers of persons. Although the informed consent pro-
+cess may affect other persons, the patient has a more immediate interest in understand-
+ing the process. The deontologic viewpoint, with its emphasis on motives instead of 
+consequences, is difﬁ cult to apply in considerations of the maintenance of a patient’s 
+autonomy because in this situation the consequences are crucial. Both utilitarianism and 
+deontology assume that people use ethical constructs to address the difﬁ culties involved 
+in encouraging the individual’s autonomy while obtaining genuinely informed consent. 
+Because moral signiﬁ cance and other factors vary with each individual, however, even 
+those using similar constructs may come to differing conclusions. 
+Virtue ethics relies on virtues, practical wisdom, and an appreciation of the conse-
+quences of actions. This theory is the most adaptable for dealing with the difﬁ  culties 
+of patient autonomy because it promotes the dignity of patients and their freedom of 
+choice.     
+     LEGAL ISSUES 
+Patient autonomy is crucial to many legal theories applicable to imaging profession-
+als. Consent and informed consent are the two legal issues in which patient autonomy 
+is most obvious and necessary. Failure to obtain consent may result in allegations of 
+torts such as assault, battery, false imprisonment, and negligence with regard to lack of 
+informed consent. These torts and the legal issues regarding consent, informed consent, 
+and the imaging professional’s role in both are discussed at length in this chapter. 
+       A 90-year-old patient with terminal cancer who is mentally limited, hard of hear-
+ing, and visually impaired is scheduled for a double contrast barium enema. Even 
+a healthy 20-year-old patient may have difﬁ  culty with this procedure, which is 
+embarrassing and often uncomfortable. The imaging professional wonders why 
+this terminally ill, feeble, geriatric patient should be forced to endure the pro-
+cedure. The professional is not sure that the patient truly understands what it 
+entails. The patient may have been inﬂ  uenced by a physician concerned with 
+doing everything possible to avoid legal repercussions, and informed consent may 
+have been given by a family member who wants to hang on to this elderly relative 
+no matter what. If the patient had made himself clearer concerning his wishes 
+before the illness became invasive, all the involved parties would not be struggling 
+with the implications and consequences of the procedure. 
+    Discussion question 
+       •   In what way do the three ethical theories address the difﬁ cult decisions 
+involved in this scenario?       
+ IMAGING SCENARIO   
+
+===== pdf p102 =====
+83CHAPTER   4     Patient Autonomy and Informed Consent
+     T O R T  L A W  
+A tort is a civil wrong for which the law provides a remedy. 5   A tort action is ﬁ  led to 
+recover damages for personal injury or property damage occurring from negligent con-
+duct or intentional misconduct. Tort law may be divided into two categories — inten-
+tional torts and unintentional torts. Intentional torts result when an act is done with 
+the intention of causing harm to another. 6   The intentional torts that are most likely to 
+have an impact on the provision of medical imaging services are assault, battery, false 
+imprisonment, and defamation. Assault, battery, and false imprisonment are discussed 
+in this chapter. Defamation is discussed in Chapter 5, which covers truthfulness and 
+conﬁ dentiality. 
+     SIMPLE CONSENT 
+Justice Cardozo stated in the 1914 case  Schloendorff v Society of N.Y. Hospitals that “every 
+human being of adult years and sound mind has a right to determine what shall be 
+done with his own body; and a surgeon who performs an operation without his consent 
+commits an assault for which he is liable in damages.” 7   This court decision provided the 
+basis for the concept of consent and established that violation of consent constitutes 
+assault and battery. 
+A patient must consent to any procedure. This  simple consent does not require 
+knowledge of the procedure. It simply means that a patient’s permission must be 
+obtained before the procedure can be performed. Consent may be given simply by the 
+patient’s getting on the table or stepping up to the chest board. If a patient is in an 
+emergency situation, consent need not be asked for or given. Instead, the situation is 
+evaluated legally by assessing what a reasonable person would do in a similar situation. 
+Again, the applicable standard of care prevails.    
+Most problems with simple consent arise when consent is withdrawn by a patient 
+or when the boundaries to which the patient has consented are exceeded. This may 
+be a difﬁ cult situation to address, because although an imaging professional cannot 
+continue a procedure without the patient’s consent, the patient often may be reassured 
+by a more thorough explanation of the procedure, and consent can and must again be 
+obtained.  
+     INTENTIONAL TORTS 
+Although the concept that a provider of medical imaging services would intend to harm 
+a patient is bizarre, if the patient feels the tort was intended, the determination of intent 
+may well be left to a jury. Communication with patients to ensure their understanding is 
+the best tool to lessen or decrease the risk of allegations of  intentional torts.   
+     Assault and Battery 
+An assault is a deliberate act wherein one person threatens to harm another person 
+without consent and the victim perceives that the other has the ability to carry out the 
+threat. 5  Battery is touching to which the victim has not consented, even if the touching 
+may beneﬁ t the patient. 8   For example, assault may be alleged if an imaging professional 
+threatens to perform a portable chest x-ray examination on a competent person against 
+his or her will. Battery occurs if the x-ray examination is actually performed on the 
+competent, unwilling patient.    
+      SIMPLE CONSENT 
+ Simple consent is the assent 
+required of a patient for an
+y 
+procedure.    
+      INTENTIONAL TORTS 
+ Intentional torts are wrongs 
+resulting from acts done 
+with the int
+ention of 
+causing harm to another.    
+      ASSAULT 
+ Assault is a deliberate 
+act wherein one person 
+threat
+ens to harm another 
+without consent and the 
+victim feels the attacker has 
+the ability to carry out the 
+threat.    
+      B A T T E R Y  
+ Battery is touching to which 
+the victim has not consented.
+    
+
+===== pdf p103 =====
+84 Ethical and Legal Issues for Imaging Professionals
+In situations involving patients who are incompetent or those requiring restraint, the 
+law allows providers to touch patients without consent. In these situations consideration 
+must be given to four important conditions, as listed in      Box 4-4 .   
+Medical immobilization is often needed in the imaging department. This immo-
+bilization includes mechanisms usually and customarily applied during diagnostic and 
+therapeutic procedures and is considered a regular and usual part of such procedures and 
+based on standard practice. Such immobilization to perform effective treatment is not 
+considered restraint. 
+Restraints are rarely used in the medical imaging department. If the need arises, 
+however, imaging professionals must keep in mind that they should be able to justify use 
+of restraints according to the four criteria in  Box 4-4 .
+When dealing with children, which often necessitates immobilization, imaging 
+technologists must communicate clearly with parents. This communication not only 
+increases parental conﬁ dence in the imaging professionals but also minimizes the risk 
+of litigation. Adequate communication should include an explanation of the necessity 
+for immobilization to decrease radiation exposure and obtain optimal studies, reassur-
+ance that the immobilization equipment used is the least intrusive, and a guarantee that 
+immobilization will be used only when necessary and discontinued as soon as possible. 
+     False Imprisonment 
+Although false imprisonment seems to be a ridiculous allegation to make against an 
+imaging professional, certain circumstances in the medical imaging setting may give rise to 
+such allegations. False imprisonment occurs when a person is unlawfully conﬁ  ned within a 
+ﬁ xed area. 7   The conﬁ ned person must be aware of the conﬁ nement or must be harmed by 
+the conﬁ nement. Even if the health care provider does not intend harm, these allegations 
+can be made if the patient perceives the acts to be done with the intent of harm.    
+For false imprisonment to be found, plaintiffs must prove that they were restrained 
+either physically or by threat or intimidation and that they did not consent to the restraint. 
+Because restraints are often important and necessary tools in obtaining successful medi-
+cal images or therapeutic treatment, a successful false imprisonment suit would require 
+the jury to ﬁ nd that an imaging professional acted in an unreasonable, unjustiﬁ ed, and 
+unprivileged manner. Again, the applicable standard of care would be used.   
+     UNINTENTIONAL TORTS 
+  Unintentional torts  result from actions that were not intended to cause harm. The 
+unintentional tort most commonly encountered in medical imaging is medical malprac-
+tice, a broad term that in most jurisdictions encompasses negligence, failure to obtain 
+BOX 4-4  LEGAL CRITERIA FOR THE USE OF RESTRAINT 
+      FALSE IMPRISONMENT 
+ False imprisonment is the 
+unlawful confi  nement of a 
+person within a fi
+ xed area.    
+      UNINTENTIONAL TORTS 
+ Unintentional torts are 
+wrongs resulting from 
+ac
+tions that were not 
+intended to do harm.    
+
+
+===== pdf p104 =====
+85CHAPTER   4     Patient Autonomy and Informed Consent
+informed consent, and breach of patient conﬁ  dentiality. All these causes of action are 
+alleged based on the fact that a duty is owed, the duty is breached, and harm results from 
+the breach.    
+In the health care setting, duties are owed to patients by physicians, hospitals or other 
+health care facilities, and all health care providers, including imaging professionals. If a 
+duty is not performed adequately, in violation of a statute or as judged by the appropri-
+ate standard of care, and harm results from the failure to perform the duty adequately, 
+liability may be found. 
+Medical negligence is discussed in Chapter 2 and breach of conﬁ  dentiality in  Chapter 5. 
+Medical malpractice cases alleging failure to obtain informed consent are discussed here 
+because patient autonomy is the ethical principle underpinning informed consent. 
+     INFORMED CONSENT 
+Case law concerning informed consent was established in the 1957 case of  Salgo v Leland 
+Stanford Jr. University Board of Trustees   9   and the 1972 case of  Canterbury v Spence.   5   All 
+50 states have now recognized a legal duty for physicians to obtain informed consent. 10   
+While the basis of this duty may differ by jurisdiction, generally physicians are required 
+to give patients enough information to enable them to make informed decisions. 11   This 
+information includes risks, beneﬁ ts, alternative treatment options, and expected out-
+comes if they choose not to undergo the proposed diagnostic testing or treatment. 
+According to the  Canterbury case, informed consent is necessary to allow the patient 
+to determine the direction of treatment. 5   The amount of information needed for this 
+determination varies depending on the patient, the procedure, and the applicable stan-
+dard of care in the particular jurisdiction. Basically two standards of care are applied 
+throughout the states. One standard is the professional standard, in which a physician is 
+required to disclose those risks that a reasonable and prudent medical practitioner would 
+disclose under the same or similar circumstances. 10   In contrast, under the lay standard 
+the physician’s disclosure duty is measured by the patient’s need for information rather 
+than by the standards of the medical professional. 11   Generally under the lay standard 
+the physician is required to describe the beneﬁ  ts of the procedure and the accompanying 
+risks, including the risk of death or paralysis. 11   
+Two basic exceptions exist in which informed consent need not be obtained — emer-
+gency situations and cases in which therapeutic privilege is invoked. The emergency 
+exception occurs only if the patient is unconscious or otherwise unable to give consent 
+and harm from failure to treat is imminent and outweighs any harm inherent in the 
+proposed treatment. Therapeutic privilege applies only if risk of disclosure poses such a 
+threat to the patient that it will lead to further harm. The physician must have reason to 
+believe that the patient would become unusually emotionally distraught if the informa-
+tion was disclosed. 5   
+To prove lack of informed consent, a plaintiff must prove that a material risk existed 
+that was unknown to the patient, the risk was not disclosed, disclosure of the risk would 
+have led a reasonable patient to reject the medical procedure or choose a different course 
+of treatment, and the patient was injured as a result of the lack of disclosure. 12   
+As discussed previously, the basis of informed consent can vary in different jurisdic-
+tions. One source of the standard of care with regard to informed consent is statutes 
+that regulate informed consent. In many states statutes have established panels that 
+determine which procedures require written informed consent and deﬁ ne exactly what 
+
+===== pdf p105 =====
+86 Ethical and Legal Issues for Imaging Professionals
+must be disclosed, including the wording to be used. Facilities and physicians are free to 
+establish more stringent requirements of disclosure for patients. 
+In many cases the jury does not ﬁ nd liability because it cannot determine that a rea-
+sonable patient who had been informed would have rejected the procedure. Whether or 
+not liability is imposed on this basis, a great deal of time (on the part of lawyers, employ-
+ees, and physicians), money, and emotional distress is expended in litigation. Therefore 
+consistently obtaining informed consent is a valuable risk management tool. 
+     State of Informed Consent Law 
+The following cases demonstrate the legal issues inherent in informed consent and the 
+state of the law at publication of this book. Virtually all jurisdictions impose the duty 
+of informed consent only on physicians. However, some jurisdictions, with limited suc-
+cess, have attempted to impose such a duty on the hospital. It is important for imaging 
+professionals to ﬁ nd out the law in their state, as well as department and facility policies 
+regarding this issue. 
+The 1987 Iowa Supreme Court decision in  Pauscher v Iowa Methodist Medical Center  
+clariﬁ ed the elements necessary to prove lack of informed consent. 12   Six days after deliver-
+ing her ﬁ rst child, Becky Pauscher was scheduled for an intravenous pyelogram because of 
+fever, pain in her right side, and blood in her urine. No physician told Mrs. Pauscher that 
+severe reactions to the procedure included the possibility of death, nor did anyone ask if 
+Mrs. Pauscher consented to the procedure. The requisition could not be found after the 
+procedure, but the technologist stated that Mrs. Pauscher had denied having allergies. Her 
+chart, however, noted an allergy to bee stings and a history of asthma as a child. 
+After the injection of some of the contrast medium, Mrs. Pauscher began to scratch 
+her face. The technologist stopped the injection but continued after seeing no further 
+distress signs. When Mrs. Pauscher complained of chest pain, the technologist again 
+stopped the injection and called the radiologist. Mrs. Pauscher died of anaphylactic 
+shock despite resuscitation attempts. 
+Mrs. Pauscher’s husband sued the urologist and radiologist for failing to disclose the risk 
+of death, stating that his wife could not make an informed choice without that knowledge. 
+He charged the hospital with failing to have an established policy for informed consent. 
+The Iowa Supreme Court found that the physicians were responsible for informing 
+the patient of the risks but determined that Mrs. Pauscher would not have refused the 
+test based on the “extremely remote” risk of death. 
+The Pauscher case did not ﬁ nd the hospital to have a duty to inform the patient of risks or 
+to obtain informed consent. This is still generally the state of the law regarding hospitals and 
+informed consent. However, such a duty has been recognized in at least one jurisdiction. 
+The 1992 Kentucky Supreme Court case of  Keel v St. Elizabeth Medical Center found 
+the hospital liable for failure to obtain informed consent. 13   In this case, Leslie Keel came 
+to the St. Elizabeth Medical Center for a computed tomography (CT) scan with contrast 
+injection. Before the test, Mr. Keel was given no information concerning risks. Whether 
+Mr. Keel responded to questions regarding allergies and previous history of reactions to 
+contrast injections is uncertain. A thrombophlebitis later developed at the injection site. 
+The Kentucky Supreme Court separated the issue of informed consent from the issue 
+of negligence. Although the issue of whether the injection was negligently performed 
+was not explored, the court found that the hospital had a statutory duty to disclose the 
+risks of the procedure and failed to perform that duty. 
+
+===== pdf p106 =====
+87CHAPTER   4     Patient Autonomy and Informed Consent
+More recent case law in numerous jurisdictions indicates a refusal to impose a duty on 
+hospitals to inform patients of the material risks of a procedure prescribed by the patient’s 
+physician or to obtain informed consent. Some of these courts refused to ﬁ  nd such a 
+duty for a hospital based on statutes that impose this duty only on the physician. 14   Other 
+courts refused to extend the duty of informed consent to hospitals even when the statute 
+deﬁ ning informed consent used the term “health care providers,” which can include both 
+hospitals and physicians. 15-17   These courts held that to impose a duty of informed consent 
+on all entities meeting the statutory deﬁ nition of “health care providers” would result in 
+an unwarranted imposition on the physician-patient relationship and would be far more 
+disruptive than beneﬁ cial to the patient. 15   Other courts followed previous authority in 
+refusing to ﬁ nd such a duty for hospitals. 16  Goss v Oklahoma Blood Institute cited authority 
+from Washington, Iowa, Florida, Texas, North Carolina, New Mexico, North Dakota, 
+Colorado, Michigan, West Virginia, and Illinois for support in its refusal to recognize a 
+duty for the hospital to disclose risks and obtain informed consent. 18   Other courts have 
+held that even when the hospital provides the consent form and encourages physicians to 
+obtain informed consent, the responsibility of obtaining informed consent lies with physi-
+cians because of the skill and experience they possess. 19  
+While the overwhelming state of the law is that physicians are responsible for obtain-
+ing informed consent, imaging professionals should be aware of the state of the law in 
+their jurisdiction and the policies and procedures of their facility. 
+     Obtaining Valid Informed Consent 
+The patient’s capacity to consent to or refuse the procedure must be evaluated. The 
+primary issue to be considered is whether the patient is capable of understanding the 
+medical condition and the risks, beneﬁ  ts, alternative treatment options, and expected 
+outcomes if treatment is not commenced (     Box 4-5 ). 
+Although the physician bears the ultimate responsibility for obtaining valid informed 
+consent, imaging professionals must often make subjective judgments of patients’ capac-
+ities to make decisions. This is particularly true if the patient is in severe pain. 
+BOX 4-5
+           The consent must be given voluntarily by a mentally competent adult. The 
+patient should not be coerced into giving consent. 
+  Patients must understand exactly to what they are consenting. If a patient 
+speaks a foreign language or is deaf, an interpreter must explain the procedure 
+requiring consent. 
+  The request for consent should include a description of the risks and beneﬁ ts 
+of the procedure, alternative treatment options, and expected outcomes if 
+treatment is not commenced. 
+  The consent should be written, signed by the patient or representative, 
+ witnessed, and dated. 
+  Consent to treat a minor patient is usually given by a parent or guardian, but 
+if the minor patient is at least 7 years old, he or she should be included in the 
+decision-making process.        
+ ELEMENTS IN INFORMED CONSENT 
+c  Modiﬁ  ed from Deloughery GL: Key elements for informed consent. In Deloughery GL (Ed):  Issues and trends 
+in nursing,  St Louis, 1995, Mosby. 
+
+===== pdf p107 =====
+88 Ethical and Legal Issues for Imaging Professionals
+If imaging professionals, after consulting with radiologists, do not feel that patients 
+have the capacity to give valid informed consent, surrogate consent should be sought. If 
+such consent is impossible to obtain, the involved parties should consider invoking the 
+emergency exception to the informed consent doctrine. If that exception does not apply, 
+the procedure should not be performed. 
+Patients who are minors are another problematic population for informed consent. 
+Historically, consent was obtained on behalf of a minor by a parent or guardian (most 
+states deﬁ ne  minor as a person less than 18 years of age). Because important limitations 
+and problems in the application of informed consent with regard to pediatric patients 
+have been identiﬁ ed, however, the American Academy of Pediatrics (AAP) has revisited 
+this issue. The AAP recognizes two concepts, parental permission and patient assent. 20   
+The AAP believes that in most cases physicians have an ethical and legal obligation to 
+obtain parental permission before undertaking recommended medical intervention. In 
+many circumstances the physician should also solicit a patient assent when the patient 
+is of an appropriate age and developmental level. In cases of emancipated or mature 
+minors with adequate decision-making capacity, or when otherwise permitted by law, 
+informed consent should be obtained directly from the patient. 20   
+Because laws vary, imaging professionals should know the state of the law in their own 
+jurisdiction. Inclusion of the minor in the decision-making process is advisable, however, 
+both because it nurtures a cooperative relationship and because it allows the minor to indi-
+cate a difference of opinion from the parents. If a conﬂ ict develops between the wishes of 
+the two parties, the imaging professional should seek help from the hospital’s risk manage-
+ment department or legal counsel to determine the correct action to take. 
+     Role of Imaging Professionals in Informed Consent 
+As has been discussed, informed consent is absolutely necessary for many procedures 
+in the imaging department, including any contrast injection. The facility must estab-
+lish and follow policies and procedures identifying when informed consent is needed. 
+Although legal responsibility for obtaining consent lies with the physician, most facili-
+ties have also adopted policies and procedures requiring imaging professionals to ensure 
+that informed consent is obtained. Imaging professionals should recognize this respon-
+sibility as part of any procedure they perform that requires written consent. Because the 
+imaging professionals perform the study, they have a duty to ensure that procedures are 
+explained and consent is obtained before beginning the procedure. 
+Imaging professionals have excellent opportunities to explain procedures to patients. 
+They spend much more time with patients than do physicians, and their communication 
+with patients helps build a good imaging professional –patient relationship that not only 
+makes the patient more comfortable about asking questions concerning the procedure, 
+but also is likely to result in a better outcome. 
+     Consent Forms 
+Forms are useful tools to help inform patients about procedures and document consent. 
+A general form adapted to include speciﬁ cs of the particular procedure requiring con-
+sent or individual forms speciﬁ  cally designed for each procedure may be used. Because 
+laws and rules differ among states and facilities, these forms should be carefully written 
+with input from physicians, the technologists performing the studies, the risk manage-
+ment department, and legal counsel. 
+
+===== pdf p108 =====
+89CHAPTER   4     Patient Autonomy and Informed Consent
+The forms should be written clearly in terms understandable by laypersons and must 
+be used in conjunction with a thorough explanation to the patient that includes a discus-
+sion of risks, beneﬁ ts, alternative diagnostic or treatment plans, and expected outcomes 
+if the patient decides not to undergo the procedure. A  consent form must never be used 
+in place of an oral explanation.    
+       The imaging department is swamped, and you ﬁ  nd yourself relieving an imaging 
+professional in the intravenous pyelography (IVP) room. He tells you everything is 
+ready for you to inject the patient. You speak to the radiologist between other proce-
+dures, and she hurriedly comes in and injects the contrast medium without inquiring 
+about informed consent or looking at the form. Just as you ﬁ  nish the IVP ﬁ lms, the 
+patient begins to exhibit signs of anaphylactic shock. The appropriate emergency care 
+is administered. As the activity in the IVP room slows down, you notice that the 
+informed consent form is neither ﬁ  lled out nor signed. The patient ends up in inten-
+sive care and eventually dies, leaving behind a husband and a 3-month-old child. 
+    Discussion questions 
+       •   Have you created liability for yourself? 
+     •   Have you created liability for the hospital? 
+     •   Have you created liability for the radiologist? 
+     •   What must the family prove to be successful in a lawsuit?       
+ IMAGING SCENARIO   
+       A man and his wife arrive at the emergency room (ER), the man complaining of severe 
+pain in his left ﬂ ank area. Upon their arrival they explain that they do not have insurance 
+coverage. They are both fairly certain the problem is a kidney stone because the man has 
+had three previous bouts with kidney stones. He is in signiﬁ  cant pain, but quite capable of 
+the informed consent process. The ER physician sends the man for a computed tomog-
+raphy (CT) scan and numerous other exams. The stone is located and removed, and the 
+man and his wife return home. A few weeks later they receive a “hefty” hospital bill that 
+includes the many exams. They contact the hospital billing department and explain that 
+they have no insurance and did not give permission for the many exams. The hospital 
+employee with whom they speak explains to them that the ER physician does not need 
+permission to do these exams, but they continue to argue their case. Finally they contact 
+the ﬁ nance ofﬁ cer and question the hospital’s informed consent process. The hospital 
+drops the CT charges after the couple continues to state their case. 
+    Discussion questions 
+       •   Was the informed consent process necessary in this case? 
+     •   Did the physician respect the autonomy of the patient? 
+     •   If the man had questioned the CT technologist about the exam, what should 
+the technologist have done? 
+     •   Could this have been handled differently?       
+ IMAGING SCENARIO   
+      CONSENT FORMS 
+ Consent forms are useful 
+tools to help infor
+m 
+patients about procedures 
+and document consent.    
+
+===== pdf p109 =====
+90 Ethical and Legal Issues for Imaging Professionals
+A consent form generally includes the name of the procedure; a brief explanation of 
+the procedure, including beneﬁ ts and risks; spaces for the patient’s name and the name 
+of the person performing the procedure; and signature lines for the patient or surrogate, 
+the person explaining the procedure and obtaining consent, and at least one witness. 
+The form must also be dated with the time recorded. Laws and facility regulations vary, 
+but in general consent should be obtained within 24 hours before the procedure.      
+Policies and procedures should be developed regarding when written consent must be 
+obtained. They should ensure that consent is obtained in writing whenever an invasive 
+procedure is to be performed or when a procedure has associated risks and disclosure of 
+these risks may be helpful to a patient in deciding whether to undergo the procedure. If 
+informed consent forms are computerized, these forms and their accompanying patient 
+signatures should become part of the permanent patient record.     
+     SUMMARY 
+       •  The informed consent process seeks to provide the patient with enough information 
+to make informed decisions about whether to undergo certain medical procedures. 
+This consent process enables the patient to maintain dignity, independence, and 
+autonomy. 
+     •   Physicians and other professionals attempting to obtain informed consent should 
+provide patients with information concerning diagnosis, treatment, prognosis, risks, 
+duration of incapacitation, alternatives, billing costs, hospital rules, and the names 
+of persons performing the procedure. If a procedure requires informed consent, the 
+physician if responsible for obtaining this consent. 
+     •  Four rules for providing the patient with information to make an informed decision 
+are the patient preference rule, prudent person rule, subjective substantial disclosure 
+rule, and professional custom rule. The prudent person rule and the subjective sub-
+stantial disclosure rule are a good combination to use in the informed consent process. 
+     •   The patient’s competence is a key concept in giving informed consent. If the patient 
+is incompetent, an advance directive or surrogate may aid the process. 
+     •   Obstacles to autonomy and informed consent include undue inﬂ uence on patients, 
+paternalism, therapeutic privilege, and inept communication. Respect for the 
+autonomy of the patient requires the imaging professional to evaluate patient 
+competence, the informed consent process, surrogacy, patient preferences, and the 
+patient’s ability to make choices and cooperate. 
+     •   Emergency situations may necessitate dispensing with informed consent processes 
+to save the patient’s life. In rare circumstances, informed consent may also be super-
+seded by therapeutic privilege if the physician believes the disclosure would cause 
+the patient to become unusually emotionally distraught. 
+     •   Among the ethical theories that might be applied when issues of patient autonomy 
+are considered, virtue ethics, involving practical wisdom and reason, may be the 
+most adaptable. 
+     •   As education regarding health care becomes more prominent and individuals 
+become more involved in all aspects of their health care, the maintenance of patient 
+autonomy may become more achievable; however, the achievement of absolute 
+patient autonomy and informed consent may be impossible. 
+
+===== pdf p110 =====
+91CHAPTER   4     Patient Autonomy and Informed Consent
+     •   Patient autonomy is the ethical concept behind issues of consent and informed con-
+sent. Simple consent from the patient must be obtained before any procedure, but 
+such consent does not require knowledge of the procedure. It may be given simply 
+by the patient’s getting on the table or stepping up to the chest board. Failure to 
+obtain consent can result in allegations of assault, battery, or false imprisonment. 
+     •   Assault, battery, and false imprisonment are intentional torts, meaning that the acts 
+are done with the intent of harming another. Even if the health care provider does 
+not intend harm, these allegations can be made if the patient perceives the acts to 
+be done with the intent of harm. 
+     •   Medical immobilization is considered a regular part of medical diagnostic or thera-
+peutic procedures based on standard practice. The use of immobilizing devices to 
+reduce radiation exposure and obtain optimal images or treatment is not considered 
+restraint. When restraints are necessary, the imaging professional must be able to 
+justify the restraint using speciﬁ c criteria. 
+     •   Communication is the best tool imaging professionals have to prevent allegations of 
+intentional torts. Obtaining consent and explaining necessary restraints to patients 
+and parents limit the risk of these allegations. 
+     •   Unintentional torts, which result from acts not intended to cause harm, include 
+negligence, lack of informed consent, and breach of patient conﬁ dentiality. 
+     •   Informed consent is required for invasive procedures and those for which disclosure 
+of associated risks would help the patient determine whether to proceed with the 
+procedure or treatment. Facilities must establish and follow policies and procedures 
+for informed consent. 
+     •   The physician has the legal duty to obtain informed consent. Many facilities require 
+the imaging professional to ensure that informed consent is obtained and the 
+proper documentation is made in the patient’s medical record. During preparation 
+for the procedure, the imaging professional should talk with the patient to encour-
+age communication and gauge understanding. 
+     •   Consent forms are helpful to inform patients about procedures and document 
+consent. These forms, however, cannot substitute for the required explanation of the 
+procedure and full disclosure of associated risks. 
+     •   The goal of informed consent is to allow patients to make determinations regard-
+ing the direction of their treatment. Two standards of care, the professional and the 
+lay standard, are recognized by various U.S. jurisdictions in determining how much 
+information a physician must give the patient to make this determination. 
+     •   Imaging professionals should be aware of statutes and procedures for written 
+informed consent in their jurisdiction and facility. They should consistently ensure 
+that informed consent is obtained when needed and is documented in the patient’s 
+medical record.       
+ REFERENCES  
+           1 .      Garrett  T .  M .    ,   Baillie  H . W .   ,   Garrett  R . M .     :      Healthcare ethics, principles and problems   , ed 2 ,  Englewood Cliffs, 
+NJ , 1993 , Prentice Hall       .
+           2 .      American Hospital Association   :      A patient’s bill of rights   ,  Chicago , 1992 , Author       .
+           3 .      Mezey  M .   ,   Evans  L .  K .    ,   Golub  Z .D, .       et al:     The patient self-determination act: sources of concern for nurses   ,
+       Nurs Outlook      42   (  1  )   :   30     , 1994   .
+           4 .      Jonsen  A . R .   ,   Siegler  M .    ,   Winslade  W . J .    :      Clinical ethics: a practical approach to ethical decisions in clinical medi-
+cine  , ed 5 ,  New York , 2002 , McGraw-Hill      .
+
+===== pdf p111 =====
+92 Ethical and Legal Issues for Imaging Professionals
+           5 .    Canterbury v Spence , 464 F.2d 772 (1972).   
+ 
+          6 .      Schwartz  V .   ,   Kelly  K .   ,   Partlett  D .    :      Prosser, Wade, and Schwartz: cases and materials on torts   , ed 10 ,  Westbury, 
+NY , 2000 , Foundation Press       .
+           7 .    Schloendorff v Society of NY Hospitals , 105 N.E.92 (NY 1914).   
+           8 .      Aiken  T .     :      Legal and ethical issues in health occupations   ,  Philadelphia , 2002 , Saunders       .
+           9 .    Salgo v Leland Stanford Jr. University Board of Trustees  (Cal. 1957).   
+        10 .    Ketchup v Howard, 543 S.E.2d 371 (Ga. App. 2000).   
+        11 .    Truman v Thomas , 611 P .2d 902 (Cal. 1980).   
+        12 .    Pauscher v Iowa Methodist Medical Center, Jeff Watters, and John Bardole , 408 N.W.2d 355 (Iowa, 1987).   
+        13 .    Keel v St. Elizabeth Medical Center , 842 S.W.2d 860 (Ky. 1992).   
+        14 .    Boney v Mother Frances Hospital, 880 S.W.2d 140 (Tex. App. —Tyler 1994);  Kelley v Kitahama, 675 So.2d 
+1181 (La. App. 5 Cir. 1996).   
+        15 .    Giese v Stice, and Bishop Clarkson Memorial Hospital , 567 N.W.2d 156 (Neb. 1997).   
+        16 .    Alexander v. Gonser , 711 P .2d 347 (Wash. 1985)   
+        17 .    Howell v Spokane & Inland Empire Blood Bank , 785 P .2d 815 (Wash. 1990).   
+        18 .    Goss v Oklahoma Blood Institute, 856 P .2d 998 (Okl. App. 1990), Cert. Denied (1993).   
+        19 .    Bynum v Magno, Dang, Callan, and the Queen’s Medical Center , 125 F. Supp 2d 1249 (Haw, 2000).   
+        20 .      American Academy of Pediatrics Committee on Bioethics   :   Informed consent, parental permission, and 
+assent in pediatric practice   ,      Pediatrics      95   (  2  )   :   314     , 1995   .    
+      1    Autonomy involves which of the following?
+    a.   
+Informed consent 
+  b.   The self 
+   c.   Patient rights 
+   d.   All of the above     
+  2    Informed consent should include the following:
+    a.
+   __________ 
+  b.   __________ 
+   c.   __________  
+   d.   __________     
+  3    Why is two-way communication between patients and imaging professionals 
+important in imaging services? 
+ 
+ 4    Should the imaging professional be responsible for the informed consent process? 
+Explain. 
+  5
+    Deﬁ ne the following terms:
+    a.
+   Competence
+  b.   Surrogacy     
+  6    Paternalism is deﬁ  ned as which of the following?
+    a.   
+Motherlike caretaking 
+  b.   Fatherlike (God-like) caretaking 
+   c.   Necessary 
+   d.   None of the above     
+  7    Deﬁ ne therapeutic privilege. 
+  8
+    Describe three conditions in which emergency situations may alter the informed 
+consent process:
+    a.
+   __________ 
+  b.   __________ 
+   c.   __________     
+REVIEW QUESTIONS
+
+===== pdf p112 =====
+93CHAPTER   4     Patient Autonomy and Informed Consent
+  9     True or False Combining the prudent person rule and the subjective substantial 
+disclosur
+e rule in most cases provides the information the patient needs to make 
+informed decisions. 
+     10     True or False Respect for the autonomy of the patient includes the ability of the 
+patient to make choices. 
+ 
+    11     True or False Surrogacy is not an issue in respecting the patient’s autonomy. 
+  
+   12     True or False Truly informed consent may not be possible. 
+  
+   13     True or False Intentional torts can occur only if the perpetrator of the tort 
+intends to do harm. 
+ 
+    14     True or False  Assault occurs when the victim is touched without giving consent. 
+  
+   15     True or False Battery cannot be found if the touching to which the patient has 
+not consented is for the good of the patient. 
+ 
+    16     True or False Immobilization devices used in the imaging department are 
+considered r
+estraints. 
+     17     True or False  Use of restraints of patients by imaging professionals is always an 
+exception to the torts of assault and batter
+y. 
+     18     True or False Communication is the imaging professional’s best tool to decrease 
+risk of litigation for assault,
+ battery, and false imprisonment. 
+     19     True or False  The legal duty to obtain informed consent lies with the imaging 
+professional.
+ 
+     20     True or False Informed consent need not be given if an imaging professional 
+does not feel the patient wants to know about the pr
+ocedure. 
+     21     True or False The duty of informed consent lies with physicians, so imaging 
+professionals do not need to concern themsel
+ves. 
+     22     True or False Consent forms may be used to obtain consent instead of an 
+explanation of the procedur
+e and its risks. 
+     23    List three reasons the seven points of respect for the autonomy of the patient are 
+valuable tools in ethical and legal problem sol
+ving.
+    a.   __________ 
+  b.   __________ 
+   c.   __________     
+     24     True or False For informed consent to be legally recognized, a patient’s signature 
+on the form is sufﬁ cient. 
+ 
+    25     True or False The professional standard of informed consent requires a physician 
+to disclose the r
+isks that a reasonable and prudent medical practitioner would 
+disclose under the same or similar circumstances. 
+     26     True or False The lay standard of informed consent measures the physician’s 
+disclosur
+e duty by the patient’s need for information rather than by the standards 
+of the medical professional. 
+     27     True or False An imaging professional does not need to be concerned with the 
+law regarding informed consent in his or her jur
+isdiction, as long as the form is 
+signed.     
+
+===== pdf p113 =====
+94 Ethical and Legal Issues for Imaging Professionals
+      1    Is everyone in every situation entitled to autonomy in an imaging procedure? 
+Why or wh
+y not? 
+  2    What would you do in a critical situation if the patient was unresponsive and 
+a surrogate was not available? 
+  3
+    What would you do if you made the best decision you could in question 2 and 
+were still involved in a lawsuit? 
+ 
+ 4    In what ways can imaging professionals pr omote the autonomy of patients in 
+the imaging department? 
+  5    Does the imaging professional’s autonomy enhance or inter fere with patient 
+autonomy? In what way does this occur? 
+  6    A 79-year-old woman arrives in the emergency department with se vere chest 
+pain and breathlessness. She has been treated previously for a minor stroke and 
+had a breast removed 4 years ago. She is a nervous individual and does not want 
+to deal with decision making; she would much rather have the physician make the 
+decision concerning a cardiac catheterization. Her family wants her to proceed 
+with the catheterization and consider surgery. She continues to fear the process 
+and refuses to make a decision. Role play the various processes that may occur 
+in this particular informed consent process and indicate ways of encouraging 
+autonomy for the fearful patient (by one or more groups of players). As the 
+situation is played, the observers should record the appropriate and inappropriate 
+methods employed. These could include any of the following:
+    a.   Positive and negative methods for obtaining informed consent and 
+delivering information 
+  b.   Attempts to ensure autonomy 
+   c.   Paternalism 
+   d.   Invocation of therapeutic privilege 
+   e.   Surrogacy 
+  f.   Responses to emergency situations   
+    Include these elements in your evaluation. 
+  7    Discuss whether a person who commits an intentional tort must have the intent 
+to cause harm to be liable.
+ 
+  8    Discuss situations that may result in allegations of assault or battery.  
+  9    Discuss whether a patient can feel imprisoned without consent in the imaging 
+department.
+ 
+     10    Discuss the ways in which restraints may be used and justiﬁ  ed by the criteria 
+presented in this chapter.
+ 
+     11    Discuss situations in which the imaging professional is in a difﬁ cult situation 
+because the radiologist or inter
+preting physician does not want to take the time 
+to inform the patient adequately about risks, alternative procedures, and expected 
+outcomes if the procedure is not performed.     
+CRITICAL THINKING        Questions & Activities
+
+===== pdf p114 =====
+95
+ 5   ␣       TRUTHFULNESS AND CONFIDENTIALITY 
+  Never esteem anything as of advantage to you that will make 
+you break your word or lose your self-respect.  
+ MARCUS AURELIUS ANTONINUS 
+Chapter Outline
+     Ethical Issues
+   Truthfulness and Veracity 
+  Right to the Truth 
+  Conﬁ dentiality 
+  Obligatory Secrets 
+  Exceptions to Conﬁ dentiality 
+  Conﬁ dentiality and AIDS     
+   Legal Issues
+   HIPAA 
+  Patient Authorization 
+  Statutory Disclosure 
+  Duty to Warn Third Parties 
+  AIDS and HIV 
+  Patient Access to Medical Records 
+  Torts Regarding Conﬁ dentiality      
+Learning Objectives
+     •   Deﬁ ne truthfulness, veracity, and conﬁ dentiality. 
+     •   Identify the three variables involved in expecta-
+tions of truth. 
+     •   Cite circumstances in which a person has a right 
+to the truth. 
+     •   List and deﬁ  ne three types of obligatory secrets. 
+     •   Explain the importance of the professional secret. 
+     •   Cite exceptions to conﬁ dentiality. 
+     •   Identify and discuss the elements of defamation, 
+including slander and libel per se. 
+     •   Specify situations that may trigger the duty to 
+warn third parties. 
+     •   Identify the conﬂ ict between conﬁ dentiality and 
+disclosure of HIV and AIDS. 
+     •   List the statutory obligations regarding AIDS and 
+HIV. 
+     •   Deﬁ  ne the patient’s right of access to medical 
+records. 
+     •   Identify ways that the patient’s right of access 
+may come into conﬂ ict with the ethical and legal 
+principles by which the imaging professional must 
+practice. 
+ After completing the chapter, the reader will be able to perform the following:  
+Key Terms
+   conﬁ dentiality 
+defamation
+duty to warn third parties 
+ HIPAA 
+ lie 
+place of communication 
+role of communication 
+ secret 
+ statutory duty to report 
+ truthfulness 
+veracity 

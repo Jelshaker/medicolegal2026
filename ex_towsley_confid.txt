@@ -1,0 +1,1184 @@
+
+===== pdf p114 =====
+95
+ 5   ␣       TRUTHFULNESS AND CONFIDENTIALITY 
+  Never esteem anything as of advantage to you that will make 
+you break your word or lose your self-respect.  
+ MARCUS AURELIUS ANTONINUS 
+Chapter Outline
+     Ethical Issues
+   Truthfulness and Veracity 
+  Right to the Truth 
+  Conﬁ dentiality 
+  Obligatory Secrets 
+  Exceptions to Conﬁ dentiality 
+  Conﬁ dentiality and AIDS     
+   Legal Issues
+   HIPAA 
+  Patient Authorization 
+  Statutory Disclosure 
+  Duty to Warn Third Parties 
+  AIDS and HIV 
+  Patient Access to Medical Records 
+  Torts Regarding Conﬁ dentiality      
+Learning Objectives
+     •   Deﬁ ne truthfulness, veracity, and conﬁ dentiality. 
+     •   Identify the three variables involved in expecta-
+tions of truth. 
+     •   Cite circumstances in which a person has a right 
+to the truth. 
+     •   List and deﬁ  ne three types of obligatory secrets. 
+     •   Explain the importance of the professional secret. 
+     •   Cite exceptions to conﬁ dentiality. 
+     •   Identify and discuss the elements of defamation, 
+including slander and libel per se. 
+     •   Specify situations that may trigger the duty to 
+warn third parties. 
+     •   Identify the conﬂ ict between conﬁ dentiality and 
+disclosure of HIV and AIDS. 
+     •   List the statutory obligations regarding AIDS and 
+HIV. 
+     •   Deﬁ  ne the patient’s right of access to medical 
+records. 
+     •   Identify ways that the patient’s right of access 
+may come into conﬂ ict with the ethical and legal 
+principles by which the imaging professional must 
+practice. 
+ After completing the chapter, the reader will be able to perform the following:  
+Key Terms
+   conﬁ dentiality 
+defamation
+duty to warn third parties 
+ HIPAA 
+ lie 
+place of communication 
+role of communication 
+ secret 
+ statutory duty to report 
+ truthfulness 
+veracity 
+
+===== pdf p115 =====
+96 Ethical and Legal Issues for Imaging Professionals
+                              ETHICAL ISSUES 
+The struggle between conﬁ dentiality and truthfulness is a common one in medical imag-
+ing, as in all of medicine. Imaging professionals have to consider when they must tell the 
+whole truth and in what situations the whole truth may compromise the patient’s outcome. 
+On the other hand, some truths must be kept conﬁ dential. The difﬁ culty for the imaging 
+professional is in knowing what may be ethically concealed and what must be revealed. 
+The information required during the informed consent process is discussed in Chapter 
+4. This chapter discusses issues regarding truthfulness and conﬁ dentiality in imaging profes-
+sionals’ dealings with patients, surrogates, and other health care professionals. For example, if 
+an imaging professional overhears a physician telling a patient not to worry, the chest x-ray 
+ﬁ lm looks ﬁ ne, but she should have another x-ray ﬁ lm in 6 months, should the imaging pro-
+fessional indicate to the patient that she has a spot on her lung and may have a problem?    
+The chapter also discusses the principles covering situations in which the truth should 
+be kept conﬁ dential. For example, must an ultrasonographer conceal from a mother that 
+her 13-year-old daughter is pregnant and desires an abortion? 
+     TRUTHFULNESS AND VERACITY 
+     D e fi nitions 
+  Truthfulness is deﬁ ned as conformance with fact or reality. However, the perception 
+of fact and reality may change, so truthfulness is a somewhat ﬂ uid concept.  Veracity is 
+deﬁ ned as the obligation to tell the truth and not to lie or deceive others. Veracity and 
+      TRUTHFULNESS 
+ Truthfulness is conformity 
+with fact or reality
+.    
+      V E R A C I T Y  
+ Veracity is the obligation to 
+tell the truth and not to lie 
+or deceiv
+e others.    
+ Professional Profi  le 
+       Ethical codes and the Health Insurance Portability 
+and Accountability Act (HIPAA) are an important 
+part of all health care professions. The Society of 
+Diagnostic Medical Sonographers (SDMS) has 
+adopted ethical codes and examination protocols 
+speciﬁ c for diagnostic ultrasound. These issues de-
+ﬁ ne how I as a sonographer interact with patients, 
+family members, and colleagues. Consistent pro-
+tocol guidelines help to maximize patient beneﬁ  ts 
+while minimizing potential harm. 
+My approach to each patient is similar, whether 
+it is an obstetrical or an arterial duplex examination. 
+Patient privacy and dignity are forefront. Interpret-
+ers are requested when there is a language barrier. 
+Questions regarding the patient’s medical history 
+are discussed in private. Explaining the procedure, 
+answering questions, and alleviating fears prior to 
+and during the examination are routine. 
+Diagnostic ultrasound is dependent on the edu-
+cation, knowledge, and clinical skills of the operator. 
+When pathology is encountered, I must broaden 
+the minimum standard guidelines to achieve ad-
+ditional pertinent diagnostic information. Con-
+tinuing to update my knowledge and skills is an 
+important part of my ethical responsibility to both 
+patients and colleagues. 
+The approach of health care professionals to 
+medical care is deﬁ  ned by legal regulations and 
+codes of conduct. These protections have been ad-
+opted in the interest of the patient to ensure fair 
+and consistent medical care. As sonographers, we 
+are responsible for continuing to update our knowl-
+edge and skills and treating every patient equally 
+while respecting his or her individual rights and 
+beliefs.   
+   Sue     Ovel  ,   RT , RDMS, RVT   
+  Staff Sonographer/Clinical Instructor  
+  Radiological Associates of Sacramento 
+Sacramento, California   
+
+===== pdf p116 =====
+97
+truthfulness have long been regarded as fundamental to the establishment of trust among 
+individuals, and they have a special signiﬁ  cance in medical imaging and other health 
+care relationships. Imaging professionals and patients may have differing perceptions of 
+veracity and truthfulness. Imaging professionals may believe in telling the whole truth, no 
+matter how painful, but the patient’s need to know the truth may be entirely different.        
+     Circumstances for Expectations of the Truth 
+Truthfulness is summed up in two commands: “Do not lie, and you must communicate 
+with those who have a right to the truth.” 1   The ﬁ rst command leaves the imaging pro-
+fessional free to not communicate to avoid telling a  lie, and the second constrains the 
+professional to share information only with those who have a right to the truth.    
+A lie is a falsehood told to a person who has a reasonable expectation of the truth. 1   
+The ethics of lying is judged in terms of consequences for the individual and society. 
+The expectation of truth varies with the following conditions:
+      •    Place of communication   
+     •    Role of communication   
+     •   Nature of the truth involved       
+All three of these conditions are related to the obligation of conﬁ dentiality and the right 
+to privacy (     Figure 5-1 ).    
+If an imaging student, within earshot of a patient, asks a clinical instructor about 
+pathologic changes on an image, he or she does not have a reasonable expectation of 
+truth. The question asked in this place of communication may force the instructor to 
+avoid telling the truth about the examination results if the patient might overhear the 
+       Several accident victims arrive at the emergency department, and the trauma 
+imaging specialist assigned to perform portable x-ray examinations becomes 
+involved in a family’s ﬁ ght for life. The mother is critically injured, and a strong 
+possibility exists that she will not survive. Her husband is making good progress. 
+The physician tells him his wife is dying. The man then insists that his wife and 
+children be told, but the physician decides not to tell them because it would only 
+cause them more pain. The wife dies the next day. 
+The trauma imaging specialist is aware of this interaction because he is busy with 
+chest imaging when the husband requests that his wife be told about her condition. 
+The imaging professional knows this physician has a history of determining patients’ 
+needs, often contrary to their wishes. During one of the imaging procedures, the 
+man asks the imaging professional what he thinks about the physician, but the 
+trauma imaging specialist declines to share any information with the husband. 
+    Discussion questions 
+       •   Should the imaging specialist have explained the physician’s previous style of 
+paternalism to the patient? 
+     •   Did the physician have an obligation to tell the patient that she was dying? 
+     •   Did the physician have a right to tell the husband about the wife’s condition 
+even when she was competent and had no need for a surrogate? 
+     •   Did the children have the right to know that their mother was dying?       
+ IMAGING SCENARIO   
+      L I E  
+ A lie is a falsehood told 
+to another who has a 
+reasonable expectation of 
+the 
+truth.    
+      PLACE OF 
+COMMUNICATION 
+ 
+The place of communication 
+is the environment of the 
+expec
+tation of truth.    
+      R O L E  O F  
+COMMUNICATION 
+ 
+The role of communication 
+is the relationship between 
+the communicat
+ors, which 
+may have an impact on the 
+expectation of truth.    
+CHAPTER   5     Truthfulness and Confi  dentiality
+
+===== pdf p117 =====
+98 Ethical and Legal Issues for Imaging Professionals
+conversation and become distressed. Students do have an expectation of truth, however, 
+if they ask the same question in the classroom during a ﬁ  lm analysis class. This is an 
+example of expectations varying with the place of  communication. 
+If an imaging student asks the clinical coordinator for information about another 
+student’s performance on a clinical competency examination, the inquiring student has 
+no reasonable expectation of truth because of the roles of the two communicators. The 
+score of another student is not the student’s concern, and the clinical coordinator has an 
+obligation of conﬁ dentiality to all the students. 
+The nature of the truth involved alters the expectation of truth in questions concern-
+ing private matters. If an imaging professional asks a student or any other person about 
+ﬁ nances, sex life, or anything of a personal or private nature, the imaging professional 
+should not expect a truthful answer. 
+Overly curious imaging professionals may be found in many imaging departments, 
+just as overly curious people are found in every profession. Such people have unreason-
+able expectations of the truth. The temptation is to tell these people to mind their own 
+business, but this is not always the wisest course in the hospital setting, where teamwork 
+is imperative. “Snoopy” imaging professionals have no reasonable expectation of the 
+truth and should be counseled about their unprofessional behavior. 
+Concealment of the truth is not necessarily a lie, and in certain situations the imaging 
+professional does not have to tell the whole truth. Thus the question arises concerning 
+the circumstances in which people have a right to the truth.   
+     RIGHT TO THE TRUTH 
+A person has the right to truthful communication during the informed consent process, 
+when making decisions about treatment, and when making important nonmedical deci-
+sions. If a patient’s computed tomography (CT) scan reveals that lung cancer has spread 
+to the liver and other vital organs, the patient needs to be informed of this terminal 
+Place
+of communication
+Role
+of communicators
+Nature
+of the truth
+Reasonable expectations
+of the truth
+FIGURE 5-1       Components of a reasonable expectation of truth.     
+
+===== pdf p118 =====
+99
+condition to make necessary plans. If the information is not provided, the patient may 
+not make necessary arrangements or deal with family, psychological, and spiritual issues. 
+In cases of terminal illness, such practical needs are often more important than medical 
+needs to the patient. 
+In the previous section the patient’s expectation of the truth was mentioned. This is an 
+important consideration for the imaging professional because the patient may ask about 
+the outcome of an imaging examination, fully expecting the truth. The truth about the 
+examination, however, may entail information only a radiologist or the patient’s physi-
+cian can provide. Therefore the imaging professional in this situation cannot provide 
+the whole truth to the patient. For example, if the patient expects a truthful answer to 
+the question, “Has my cancer spread?”, the imaging professional must deal with the 
+patient’s expectation of truth by being considerate and understanding but must explain 
+to the patient that the radiologist or the patient’s physician will provide this informa-
+tion. Imaging professionals do not have the authority to discuss pathologic ﬁ ndings with 
+patients. In this type of dilemma they have to avoid the whole truth even if they are 
+certain that the cancer has spread. Image interpretation for the patient is the purview of 
+the physician, who is also qualiﬁ ed to answer follow-up questions. 
+     CONFIDENTIALITY 
+Considerations of conﬁ dentiality are as important as truthfulness in the discussion of 
+patients’ rights and the imaging professional’s obligations. Conﬁ dentiality concerns the 
+keeping of secrets: “A secret is knowledge a person has a right or obligation to conceal. 
+Obligatory secrets are secrets that arise from the fact that harm will follow if a particular 
+knowledge is revealed. …These are the natural secret, the promised secret, and the pro-
+fessional secret” 1   (     Box 5-1 ).        
+     OBLIGATORY SECRETS 
+     Natural Secrets 
+Information shared in a natural secret is by its nature harmful if revealed. An imag-
+ing professional may know that a patient has acquired immunodeﬁ  ciency syndrome 
+(AIDS) but has the obligation to keep the knowledge conﬁ dential. If the information is 
+made public, the person positive for human immunodeﬁ ciency virus (HIV) could have 
+difﬁ culty gaining employment and might be persecuted socially. Some situations are 
+more complex. For example, a cardiovascular technologist is involved in a procedure that 
+indicates a patient needs immediate cardiac surgery, but the patient decides not to have 
+the surgery. Within a few days the technologist boards an airplane and realizes the pilot 
+is the patient who chose not to have cardiac surgery. Should the technologist tell the 
+        An obligatory secret is a conﬁ dence that will result in harm if it is revealed. Oblig-
+atory secrets are of three types:
+       1.   Natural —a secret that by its nature would be harmful if revealed 
+   2.   Promised — a secret the receiver has promised to conceal 
+   3.   Professional — a secret maintained to protect the patient, society, and 
+ profession         
+BOX 5-1  OBLIGATORY SECRETS 
+      CONFIDENTIALITY 
+ Confi  dentiality is the 
+duty owed by health 
+care pr
+oviders to protect 
+the privacy of patient 
+information.    
+      SECRET 
+ A secret is knowledge 
+a person has a right or 
+obligation to 
+conceal.    
+CHAPTER   5     Truthfulness and Confi  dentiality
+
+===== pdf p119 =====
+100 Ethical and Legal Issues for Imaging Professionals
+airline or some other authority of the pilot’s medical condition? Does the harm that may 
+come from concealing the natural secret outweigh the harm to the former patient? 
+     Promised Secrets 
+Knowledge a person has promised to conceal is a promised secret. The harmful effects of 
+breaking a promise complicate professional relationships and discourage the sharing of privi-
+leged information that may be vital to patient care. Imaging professionals who cannot be 
+trusted to keep secrets about patients or co-workers not only breach conﬁ  dentiality, but also 
+lose trust as employees or friends. Proportionality must govern the imaging professional’s 
+decisions about divulging promised secrets. If the risk of keeping the secret outweighs the 
+harm to the patient or friend, the imaging professional must make a decision. For example, if 
+a student technologist knows another student has hepatitis (and has sworn not to tell because 
+graduation is in a month and the student with hepatitis has already used the maximum sick 
+time) and they are both scheduled to scrub for an invasive vascular procedure, the student may 
+choose to conﬁ de in an instructor if concerned about the spread of infection, regardless of the 
+degree of risk to the patient. The student’s peace of mind is important when it may inﬂ uence 
+the successful completion of the procedure. The student who promises a classmate to keep 
+such a secret may need to reevaluate the ethical implications of this kind of promise. 
+     Professional Secrets 
+The most binding of the obligatory secrets is the professional secret. When professional 
+secrets are revealed, both the patient and the imaging profession are harmed. This dam-
+age to the reputation of the imaging profession harms the community, which depends 
+on a limited number of professionals for imaging services. If people lack faith in imaging 
+professionals, they may choose not to have necessary imaging procedures performed. 
+This in turn complicates the diagnostic process and endangers the health of patients. 
+The importance of professional secrecy has been recognized by society. A body of 
+laws encourages privileged communication and the maintenance of conﬁ  dentiality 
+between health care providers and patients. The Patient’s Bill of Rights of the American 
+Hospital Association (AHA) describes the importance of professional secrecy in the 
+hospital setting based on the nature of the knowledge, the implied promise of secrecy, 
+and the good of society and the profession (see p. 255).   
+     EXCEPTIONS TO CONFIDENTIALITY 
+Some exceptions to conﬁ dentiality are mandated by state law. They include mechanisms 
+for the reporting of certain types of wounds, communicable diseases, automobile acci-
+dents, abuse, birth defects, drug addiction, and industrial accidents. State requirements 
+may vary. 
+The AHA’s Committee on Biomedical Ethics notes the following conditions in 
+which conﬁ  dentiality may be breached 2  :
+Also subject to state law, conﬁ  dentiality may be overridden when the life or safety of the 
+patient is endangered such as when knowledgeable intervention can prevent threatened suicide 
+or self-injury. In addition, the moral obligation to prevent substantial and foreseeable harm to 
+an innocent third party usually is greater than the moral obligation to protect conﬁ dentiality. 
+In many jurisdictions, imaging professionals are required to report suspected cases of 
+child and adult abuse. Such situations may involve families with whom they are familiar. 
+
+===== pdf p120 =====
+101CHAPTER   5     Truthfulness and Confi  dentiality
+The family may urge them not to intercede because the abuser is in treatment and the 
+reporting mechanism might deter continued treatment. Although this may be a difﬁ cult 
+situation for the technologist, employers expect loyalty to the institution, which includes 
+the reporting of abuse. 
+Exceptions to conﬁ dentiality may be debated in discussions of the family’s need to 
+know (as in the case at the beginning of this chapter), exceptions concerning children 
+and adolescents (e.g., abortive processes, treatment for sexually transmitted diseases), 
+medical condition of public ﬁ  gures (e.g., whether Americans have the right to know 
+if the President is in critical condition), use of hospital records for research and billing 
+purposes, and third-party payers (e.g., need for payment balanced against patient conﬁ -
+dentiality). Exceptions to conﬁ dentiality are discussed further in the legal section of this 
+chapter and are listed in      Box 5-2 .
+     CONFIDENTIALITY AND AIDS 
+Imaging professionals are not usually placed in situations in which they must inform a 
+patient that they have HIV. Occasionally, however, patients ask imaging professionals 
+if they are HIV positive. Imaging professionals must decide based on institutional rules 
+and professional experience whether this information is necessary for the patient to give 
+informed consent. Other situations may be just as difﬁ  cult. An imaging professional 
+may need to report a fellow technologist who has AIDS and does not take necessary 
+protective measures with patients. Although the revelation may cause grief and loss of 
+social contacts or even employment, the technologist must consider the good of patients 
+and the profession. 
+Some professionals are deontologists and believe that stricter rules of right and wrong 
+should be used in keeping information conﬁ dential. They believe that the act of keeping 
+information conﬁ dential is more morally important than the consequences this act may 
+cause. 
+Because of these differing and often conﬂ  icting viewpoints, questions concerning 
+AIDS will continue to fuel public debate. The hope, however, is that a cure or vaccine 
+will be discovered and the problem will no longer haunt the public and health care 
+professionals.   
+     LEGAL ISSUES 
+Ethical dilemmas often arise regarding conﬂ  ict between truth, conﬁ  dentiality, and 
+secrecy. The law provides some deﬁ  nite parameters regarding patient conﬁ  dentiality. 
+One of the most important obligations a health care provider owes a patient is the 
+           Wounds 
+  Abuse 
+  Communicable diseases 
+  Accidents 
+  Birth defects 
+  Addictions 
+  Family’s need to know 
+  Public’s need to know 
+  Third-party payers      
+BOX 5-2  EXCEPTIONS TO CONFIDENTIALITY 
+
+===== pdf p121 =====
+102 Ethical and Legal Issues for Imaging Professionals
+protection of conﬁ dences revealed by the patient. Situations do exist in which this duty 
+is not absolute, and at times the law actually imposes a duty to disclose conﬁ  dential 
+information. The law regarding the duty of conﬁ dentiality and the exceptions to these 
+rules are discussed here. 
+     H I P A A  
+Concerns about the privacy of patient medical information have intensiﬁ  ed with the 
+growth of electronic recordkeeping and the Internet. In response to these concerns 
+Congress enacted the Health Insurance Portability and Accountability Act of 1996 
+(HIPAA). The major purposes of this regulation are (1) to protect and enhance the 
+rights of consumers by providing them access to their health information and control-
+ling the inappropriate use of that information; (2) to improve the quality of health care 
+in the United States by restoring trust in the health care system among consumers, 
+health care professionals, and the multiple organizations and individuals committed to 
+the delivery of care; and (3) to improve the efﬁ  ciency and effectiveness of health care 
+delivery by creating a national framework for health privacy protection that builds on 
+efforts by states, health systems, and individual organizations and individuals (     Box 5- 3 ).3   
+A sample privacy notice appears in Appendix C. 
+HIPAA regulations have added some clarity and conformity to issues regarding elec-
+tronic personal health care information and have mandated that patients receive a notice 
+of the facility’s privacy practices. HIPAA has also created a requirement that only the 
+minimum necessary information for the purpose of disclosure be released, rather than 
+the entire record as was assumed in the past. Disclosures allowed without permission 
+from the patient include disclosures to the patient; to other health care providers for 
+            1.   Patients gain more control over their own health information. Providers 
+must inform patients how their information will be used and to whom it can 
+be disclosed. The release of information is limited by patient authorization 
+under many circumstances. Patients may access their own information and 
+request correction of potentially harmful errors. 
+   2.   Boundaries are set on medical record use and release. The amount of infor-
+mation to be released is the “minimum necessary” for the purpose as opposed 
+to release of the entire medical record, which was the standard in the past. 
+   3.   The security of personal health information is ensured by speciﬁ c mandates 
+on providers and others who may access health care information. Privacy-
+conscious business practices, with internal procedures including a compliance 
+ofﬁ cer, must be in place to protect the privacy of medical records. 
+   4.   The rules create accountability for medical record use and release, with new 
+criminal and civil penalties for improper use or disclosure. 
+   5.   The rules attempt to balance public responsibility with privacy protections, 
+requiring the disclosure of information for only limited public purposes such 
+as public health and research.        
+BOX 5-3  HOW HIPAA WORKS 
+   a      From Furrow BR, Greaney TL, Johnson SH, et al:  Health law: cases, materials and problems,  ed 5, St Paul, Minn, 
+2004, West. 
+      H I P A A  
+ Health Insurance Portability 
+and Accountability Ac
+t, 
+enacted by the federal 
+government to enhance 
+the rights of consumers 
+regarding access to their 
+records, limit access of 
+others to those records, and 
+improve quality, effi  ciency, 
+and eff  ectiveness of health 
+care delivery through a 
+national framework.    
+
+===== pdf p122 =====
+103CHAPTER   5     Truthfulness and Confi  dentiality
+treatment purposes; for payment of services; for health care operations, including quality 
+assurance information; for appointment reminders, treatment alternatives, and health-
+related beneﬁ ts; in the facility directory; for clergy; for individuals involved in payment 
+of care; and for approved research projects. Under HIPAA, special circumstances also 
+allow the disclosure of health information without patient permission. The most com-
+mon of these are when required by law, including subpoenas or other court-ordered 
+disclosures and law enforcement requests under certain conditions; to other entities for 
+billing purposes; organ and tissue donors; and public health risks. See the sample privacy 
+notice in Appendix C for more detailed information. 
+HIPAA also creates patient rights or in many jurisdictions reinforces existing patient 
+rights. These rights include the right to inspect and copy their records; the right to ask 
+for the information to be amended if the patient believes it to be inaccurate; the right 
+to ask what disclosures have been made; the right to request restriction of information 
+disclosure; the right to request the method of communication; and the right to a paper 
+copy of the privacy notice of the institution. 
+HIPAA clariﬁ es to some extent what may or may not be disclosed. Some of the 
+exceptions are discussed further in the following sections. These include situations when 
+patient authorization is required; statutory duties to disclose information; the duty to 
+warn third parties of danger; and AIDS and HIV conﬁ dentiality and reporting. 
+HIPAA codiﬁ es and gives conformity to privacy regulations throughout the coun-
+try. HIPAA does not provide a right to sue but instead provides a requirement to ﬁ  le a 
+written complaint with the Secretary of Health and Human Services (HHS) through 
+the Ofﬁ ce of Civil Rights. The Secretary has discretion of investigation, and civil and 
+criminal penalties may be imposed. However, according to the interim ﬁ  nal rule by 
+which HHS established procedures for imposing monetary penalties, the department 
+“intends to seek and promote voluntary compliance.” 3   This will probably mean that the 
+HIPAA privacy rules will become a new standard of care for handling conﬁ  dential 
+patient information in negligence suits. 
+     PATIENT AUTHORIZATION 
+Patients may explicitly consent to the release of medical information in their records. 
+Presumed consent has always existed for access to treating providers, when a patient is 
+transferred from one provider to another, and when emergency treatment requires access 
+to records. 3   This has now been codiﬁ  ed in HIPAA for electronic record disclosure. 
+Under HIPAA, reasons for disclosure without consent include treatment, payment, 
+health care operations, appointment reminders, treatment alternatives, and health-related 
+beneﬁ ts; fundraising activities; facility directory; clergy; disclosure to those involved in 
+payment of care; and research. If permission is given for reasons other than these listed, 
+that permission may be revoked in writing at any time. Special circumstances exist that 
+do not require authorization for release of information, as discussed previously. 
+Much of the law regarding disclosure of health care information has not changed but 
+has been codiﬁ ed by a federal statute. For example, patients have been found to have 
+waived their rights to conﬁ  dentiality when they put their mental or physical state at 
+issue in a lawsuit. In the case of a lawsuit, a subpoena (a request signed by a judicial ofﬁ -
+cer requesting records when a lawsuit is in progress) may be issued. The subpoena must 
+specify the records to be disclosed. In addition, while most of this is now codiﬁ  ed by 
+HIPAA for electronic information, case law has found that patient consent for in-house 
+
+===== pdf p123 =====
+104 Ethical and Legal Issues for Imaging Professionals
+use of medical information (e.g., in-house quality assurance committees, Joint Commis-
+sion on Accreditation of Healthcare Organizations [ JCAHO] inspections, state institu-
+tional licensure reviewers) is implied by the patient’s agreement to treatment, although 
+some states have statutes expressly authorizing access. 3   
+Release of patient information to outside reviewers is governed by state law as well 
+as HIPAA, which supersedes state law in most respects and covers Veterans Adminis-
+tration (VA) hospitals and other federal facilities. Some statutes allow state boards to 
+review patient records for evaluation of provider misconduct, and the Medicare pro-
+gram requires providers to allow peer review organizations access to records of Medicare 
+patients. HIPAA regulations generally govern the release of electronic records for these 
+purposes. Imaging professionals should consult the risk management department in 
+their facility, however, since in the absence of statutory or judicial support for release 
+of information to outside reviewers, the sharing of information from patient medical 
+records poses liability risks. 
+Third-party payers are the most common outside requesters of medical information. 
+Although patient consent has previously been necessary for this release, the HIPAA regu-
+lations now encompass this aspect for electronic information and do not require patient 
+authorization. Regardless, most insurers require patients to authorize release of informa-
+tion when they ﬁ le claims for payment. 3   Some states have also enacted statutes for dis-
+closure to insurers without authorization to determine responsibility for payment. These 
+regulations may seem confusing. The facility’s risk management and privacy personnel 
+should always be the imaging professional’s guide for the procedures in the facility. 
+     STATUTORY DISCLOSURE 
+HIPAA reinforces the obligation to follow state public health laws that require medical 
+professionals and institutions to report a variety of medical conditions and incidents, 
+including venereal disease; contagious diseases such as tuberculosis; wounds inﬂ icted by 
+violence; poisonings; industrial accidents; abortions; drug abuse; and abuse of children, 
+elderly people, and people with disabilities. The justiﬁ cation for overriding patient con-
+ﬁ  dentiality is the state’s interest in protecting public health. 3   
+The statutory duty to report certain medical conditions or incidents may extend to 
+the imaging professional. Because laws vary from state to state, imaging professionals 
+should seek advice from legal counsel at their institution regarding conditions or inci-
+dents that must be statutorily reported.     
+     DUTY TO WARN THIRD PARTIES 
+The duty to maintain conﬁ dentiality may come into conﬂ ict with the duty to disclose 
+information to third parties in order to warn them of a risk such as violence or conta-
+gious disease. Generally, the  duty to warn third parties  is based on statute (such as the 
+venereal disease or child abuse reporting statute) and the duty established through case 
+law to warn identiﬁ able third parties threatened by patients. HIPAA also reinforces 
+this duty. In recent years the most difﬁ cult conﬂ ict between conﬁ dentiality and duty to 
+warn has arisen in cases in which AIDS or HIV information is involved; this dilemma 
+is discussed in a separate section.    
+Case law imposes a duty to warn third parties regarding psychiatric dangerous-
+ness. The precedent-setting case was  Tarasoff v Regents of the University of California    4   
+(    Box 5-4 ). The duty to warn in  Tarasoff involved a speciﬁ  c, identiﬁ able third party. 
+      STATUTORY DUTY 
+TO REPORT 
+ The statutory duty to report 
+is the legal obligation to 
+report a var
+iety of medical 
+conditions and incidents, 
+including venereal disease; 
+contagious diseases such 
+as tuberculosis; wounds 
+infl  icted by violence; 
+poisonings; industrial 
+accidents; abortions; 
+drug abuse; and abuse of 
+children, elderly people, 
+and people with disabilities.    
+      DUTY TO WARN THIRD 
+PARTIES 
+ 
+The duty to warn third 
+parties is the obligation 
+to disclose infor
+mation to 
+warn third parties of a risk 
+of violence or contagious 
+disease or some other risk.    
+
+===== pdf p124 =====
+105CHAPTER   5     Truthfulness and Confi  dentiality
+         Tarasoff v Regents of the University of California involved an outpatient (Prosenjit 
+Poddar) who was under the care of a psychologist (Dr. Moore) at the Cowell 
+Memorial Hospital of the University of California. During the course of treat-
+ment, Dr. Moore learned from Poddar that he intended to kill Tatiana Tarasoff 
+because she had spurned Poddar’s romantic advances. 
+On the basis of this information, Dr. Moore had the campus police detain 
+Poddar, apparently at the hospital. Poddar was released shortly afterward. Despite 
+disagreement among the psychiatrists, the ﬁ  nal decision was that no further 
+action should be taken to conﬁ ne Poddar. This judgment proved to be a mistake; 
+2 months later Poddar shot and then repeatedly stabbed Tarasoff. 
+The plaintiffs, Tarasoff ’s parents, brought a wrongful death claim against the 
+four psychiatrists. The plaintiffs claimed that the defendants should be liable 
+because they failed to conﬁ ne Poddar and because they failed to warn Tarasoff 
+or her parents about Poddar’s threat. Liability was not found for failure to con-
+ﬁ ne Poddar, but it was found for failure to warn the identiﬁ  able third person in 
+danger.   
+BOX 5-4  CASE STUDY IN THE DUTY TO WARN THIRD PARTIES 
+       A nuclear medicine technologist is performing a bone scan on a patient from the 
+inpatient mental health center. Extra images are needed, and consequently the 
+patient is in the imaging room for almost an hour, alone with the technologist 
+for most of that time. The patient obviously wants to talk and starts telling the 
+technologist about his brother-in-law, who the patient feels is responsible for his 
+involuntary committal into the facility. The patient becomes increasingly upset 
+and eventually tells the technologist about a plan to get even with the brother-
+in-law when he is released. The plan involves tampering with the brakes on the 
+brother-in-law’s car, which the patient assures the technologist he can do because 
+he was formerly a mechanic. 
+    Discussion questions 
+       •   Does the technologist have a duty to ensure that the brother-in-law is warned? 
+     •   Is the fact that disclosing this information will probably have an effect on 
+the patient’s continued hospitalization and treatment a consideration in this 
+situation?
+     •   Does a duty to disclose outweigh the basic duty to keep patient conﬁ dences? 
+     •   What should the technologist do if a statute mandates strict conﬁ dentiality 
+regarding mental health treatment?       
+ IMAGING SCENARIO   
+
+===== pdf p125 =====
+106 Ethical and Legal Issues for Imaging Professionals
+This duty imposed by  Tarasoff,  to warn when an endangered third party is readily 
+identiﬁ able, has been accepted by most states. Only Texas and Virginia reject the 
+Tarasoff duty. 5,6   Some jurisdictions have expanded the duty to include readily identi-
+ﬁ able individuals who would be at risk of the patient’s violence or even whole classes 
+foreseeably at risk. Some cases attempt to identify third parties who must be warned, 
+typically in situations of psychiatric dangerousness. 3
+Situations involving the duty to warn of psychiatric dangerousness are not routine to 
+the imaging profession. Because this duty extends to all medical professions, however, 
+imaging professionals may want to seek clariﬁ cation on the extent of the duty imposed 
+in their jurisdiction, particularly if their facility has a psychiatric or mental health com-
+ponent. Patients sometimes feel very comfortable with imaging professionals and vol-
+unteer information they have not shared with their physician, psychiatrist, or therapist. 
+This situation is more likely to arise when the imaging procedure is lengthy and the 
+imaging professional and patient are alone in the room throughout the procedure, as 
+could occur during a nuclear medicine study. 
+Duties to disclose conﬁ dential information regarding contagious diseases have been 
+imposed on physicians. Foreseeable third parties and parties at risk who must be warned 
+in these situations have been held to include family members, neighbors, and anyone 
+who is physically intimate with the patient. Generally, the standard for the imposition 
+of liability is whether reasonable care was used. 3   This means that if a court was to ﬁ nd 
+that a reasonable person would have found a duty to warn a particular third person, 
+but the physician failed to warn, liability could be found. This duty extends to other 
+health care professionals. However, situations in which an imaging professional would 
+be required to disclose such information are rare. In reality, this issue would probably 
+arise only if an imaging professional was also working in a clinic or physician’s ofﬁ ce as 
+a medical assistant. In such a situation the imaging professional should become aware of 
+the policies and procedures of the ofﬁ ce or clinic regarding disclosure, ensuring that the 
+duty to warn third parties is addressed. Generally, if accurate disclosure of information 
+is made in good faith for a legitimate purpose, courts are reluctant to impose liability 
+for that disclosure. 7    
+     AIDS AND HIV 
+Because of the special characteristics of AIDS and the AIDS epidemic, AIDS conﬁ  -
+dentiality and reporting present unique challenges to health care workers. A conﬂ  ict 
+often arises between the general duty to keep conﬁ  dences and the speciﬁ c obligation 
+to disclose medical information as part of the duty to warn others. This is complicated 
+by the fear of AIDS, the ignorance about the ways in which it is spread, and the his-
+tory of prejudice and discrimination against gay men (among whom AIDS is most 
+common). 
+Unlike many contagious diseases, the HIV virus cannot be spread by casual con-
+tact, which may limit the need for disclosure of information. 3   In addition, the rate of 
+infection through heterosexual genital contact is very low (about 0.001 per exposure). 
+The argument in favor of warning is that longer-term partners may not yet have been 
+infected and so should be warned. Another argument for disclosure of HIV status is 
+the transmission of the disease to unborn children. While mandatory testing of preg-
+nant women is not required, the possibility of transmission to unborn children has 
+justiﬁ ed implementation of U.S. Public Health Guidelines for universal counseling and 
+
+===== pdf p126 =====
+107CHAPTER   5     Truthfulness and Confi  dentiality
+voluntary HIV testing for pregnant women. As a result of testing and the use of medi-
+cation to prevent perinatal transmission of HIV, the number of pediatric HIV cases 
+diagnosed each year has signiﬁ cantly decreased since 1993. 8   Despite recent strides in 
+treatment techniques, the strongest argument for warning is that at present AIDS is 
+incurable and therefore prevention is essential. 3   
+The conﬂ ict is evident. Strict conﬁ dentiality may encourage persons who could be 
+infected to come forward to be tested and voluntarily modify their behavior to avoid 
+infecting others, but limited disclosure may better protect persons who could be exposed 
+to possible infection (     Box 5-5 ). 
+The states have adopted a variety of legislative and administrative approaches to conﬁ -
+dentiality and disclosure of information regarding HIV positivity, AIDS-related  complex 
+(ARC), and AIDS status. 3   All states now require physicians to report both HIV and 
+AIDS to the state health department. Several states have mandated strict conﬁ dentiality 
+by statute, and others have adopted statutes to permit disclosure, including some states that 
+allow disclosure only after counseling and physician’s warning of intent to disclose. In these 
+states physicians are protected from liability whether they choose to disclose or not. 3  
+Consider the AMA position on the subject: 
+Where there is no statute that mandates or prohibits reporting of seropositive (AIDS or ARC 
+infected) to public health authorities and it is clear that the seropositive individual is endan-
+gering an identiﬁ ed third party, the physician should (1) attempt to persuade the infected 
+individual to cease endangering the third party; (2) if persuasion fails, notify authorities; and 
+(3) if authorities take no action, notify and counsel the endangered third party. 9   
+Because of the differences in statutes among jurisdictions, imaging professionals may 
+want to consult the risk management department or legal counsel at their facility to 
+determine the law in their jurisdiction. 
+       Mary Smith, a local dentist, is having a radionuclide ventriculogram this morn-
+ing. The nuclear medicine technologist performing the examination has access 
+to her chart and notices that she is HIV positive. The technologist uses universal 
+precautions, and the examination is performed without event. At lunch in the 
+cafeteria, the technologist tells a nurse friend who works in the emergency depart-
+ment that Mary Smith is HIV positive. This is not only overheard in the cafeteria 
+but also spread in the emergency department as the friend tells several of her co-
+workers. When Mary Smith returns to her practice, she ﬁ  nds that many of her 
+scheduled patients have canceled their appointments. She tracks down the cause 
+of some of the cancellations to information regarding her HIV status, which her 
+patients learned from various hospital employees. 
+    Discussion questions 
+       •   Did the technologist breach patient conﬁ  dentiality by telling a friend about 
+Mary Smith’s HIV status? 
+     •   Did the technologist also expose the facility to liability? 
+     •   What are possible origins of the duty to maintain this conﬁ dence?       
+ IMAGING SCENARIO   
+
+===== pdf p127 =====
+108 Ethical and Legal Issues for Imaging Professionals
+     PATIENT ACCESS TO MEDICAL RECORDS 
+An area of concern in patient conﬁ dentiality is patients’ access to medical records. Over the 
+past decade, many jurisdictions have enacted statutes allowing patients access to their medical 
+records. Now HIPAA also mandates a speciﬁ c patients’ right of access to their own records. 
+Some exceptions to this right exist, including psychotherapy notes, information compiled in 
+anticipation of lawsuits, and other speciﬁ  c statutory exceptions. Patients also have the right to 
+request a review of refusal to provide access with some exceptions including those mentioned 
+above, records created in connection with correctional facilities, criminal proceedings, and 
+research projects. Generally, parents have the right of access to their children’s records. Facili-
+ties are required to have policies in place outlining the speciﬁ c regulations, and imaging pro-
+fessionals should become familiar with the policies in their facility. In addition, the imaging 
+department should have a policy in place that implements HIPAA with regard to patients’ 
+requests to view their radiographs. Imaging professionals should be familiar with that policy. 
+     TORTS REGARDING CONFIDENTIALITY 
+     Breach of Confi dentiality 
+Conﬁ dentiality is the duty owed by health care providers to protect the privacy of 
+patient information. This duty stems largely from the right to privacy, but courts have 
+imposed liability based on statutes deﬁ  ning expected conduct, ethical duties owed to the 
+        These recent news reports may support the argument for disclosure. Most states now 
+have statutes criminalizing the intentional exposure of others to the HIV virus.
+      •   Angela Harris, St. Charles, Missouri, facing three counts of recklessly risk-
+ing another person with HIV infection. Four additional people have come 
+forward, including the mother of a 17-year-old boy with whom Harris had 
+unprotected sex. Harris, 26, has known her status since she was 14 years old.   
+Susan Weich, St. Louis Post-Dispatch, April 13, 2006   
+     •   Unidentiﬁ  ed mother, Hamilton, Ontario, Canada, charged with criminal 
+negligence causing bodily harm after refusing prenatal and postnatal care and 
+ignoring advice that would have prevented her baby from acquiring HIV. 
+At the time of the article, this was the only known case of someone being 
+prosecuted for vertical transmission of the HIV virus.   
+The Toronto Sun, May 28, 2005   
+     •   Anthony Whitﬁ eld, Olympia, Washington, convicted on 17 counts of crimi-
+nal assault for having unprotected sex with 17 different women while know-
+ing that he was HIV positive. Whitﬁ  eld has been HIV positive since 1992.   
+Mark Fefer, The Seattle Weekly, December 1, 2004   
+     •   Amazingly, although a majority of states now have laws criminalizing HIV 
+exposure,  The Seattle Weekly found only a dozen prosecutions throughout the 
+United States through 2004.   
+Mark Fefer, The Seattle Weekly, December 1, 2004     
+Do these current events change your attitude toward disclosure of medical 
+information? Why or why not? In what way do they affect your attitudes about 
+truthfulness and conﬁ dentiality?   
+BOX 5-5  CURRENT EVENTS IN AIDS CONFIDENTIALITY AND REPORTING 
+
+===== pdf p128 =====
+109CHAPTER   5     Truthfulness and Confi  dentiality
+patient,10   breach of the ﬁ duciary duty to maintain conﬁ dentiality, and breach of contract 
+or implied contract between patient and physician or health care facility. 11   
+Regardless of the origin of the duty of conﬁ  dentiality, imaging professionals 
+clearly have an obligation to keep medical and personal information about patients in 
+conﬁ dence. As health care providers, imaging professionals have access to a vast amount 
+of information on patients. This duty of conﬁ  dentiality extends to oral, written, and 
+computer communication, as well as reproduction of records and employee conduct 
+(    Box 5-6 ). Breach of the duty to hold information in conﬁ dence may cause liability for 
+the individual and the facility. 
+In certain circumstances, remedies are available through state and federal statutes to 
+compensate patients for breach of conﬁ dentiality. Case law has conﬁ rmed that courts do 
+award compensation for these breaches of conﬁ dence. 12   
+The Code of Federal Regulation and many state laws provide a high level of conﬁ den-
+tiality for patients receiving treatment for drug or alcohol abuse. 13   These requirements 
+have generally caused providers to refuse to disclose even whether a certain individual 
+is a patient. Many states have enacted legislation protecting conﬁ  dential information 
+regarding HIV or AIDS status, and courts have been willing to allow claims based on 
+these statutes. Unless disclosure is mandated by patient consent, statute, a duty to warn 
+third parties, or the special circumstances surrounding HIV and AIDS, imaging profes-
+sionals have a clear duty to maintain conﬁ dentiality of medical and related information 
+regarding patients.     
+     Defamation 
+The tort of  defamation is based on the right to maintain a good reputation. 13   As stated 
+earlier, the opportunity for defamation may arise in the delivery of patient care and is 
+therefore worthy of discussion.    
+Defamation is the utterance or publication of an unprivileged false statement that 
+hurts another’s reputation. If the publication is oral, the defamation is slander; if written, 
+       An imaging professional has a family member in the hospital and is staying on a cot 
+in the patient’s room. Early one morning she hears the nurses in the hallway giving 
+report, which includes patients’ conditions and treatment. She mentions this to the 
+next nurse who comes into her family member’s room. The nurse makes excuses 
+about why the reports were given in a hallway rather than a private room. These 
+include issues of safety for the patients and stafﬁ ng shortages. In fact the nurse is 
+quite put out that the imaging professional would bring this up, let alone question 
+issues of stafﬁ ng shortages. After this encounter the level of care for the imaging 
+professional’s family member seems to decline. The situation is exacerbated by the 
+administration of the wrong IV medicine to the patient. At this point the imaging 
+professional becomes very concerned about the care of all the patients on the ﬂ oor. 
+    Discussion questions 
+       •   What ethical and legal dilemmas has the imaging professional encountered? 
+     •  In what manner most meaningful to patient care should she handle this situation?       
+ IMAGING SCENARIO   
+      DEFAMATION 
+ Defamation is the making 
+of a false statement to a 
+third par
+ty that is harmful to 
+another’s reputation. In the 
+medical imaging setting, 
+defamation may occur 
+if something false that is 
+harmful to the reputation 
+is said to another person 
+about a patient, a patient’s 
+family member, a visitor, 
+another employee, or a 
+physician.    
+
+===== pdf p129 =====
+110 Ethical and Legal Issues for Imaging Professionals
+           Verbal communication 
+    Patient information should not be discussed where others can overhear the 
+conversation, such as in hallways, elevators, the cafeteria, the shuttle bus, or 
+restaurants. Discussion of clinical information in public areas is unacceptable 
+even if the patient’s name is not used. Doing so can raise doubts with patients 
+and visitors about our respect for their privacy.     
+    Written information 
+    Conﬁ dential papers, reports, and computer printouts should be kept in a secure place. 
+  Conﬁ dential papers should be picked up as soon as possible from copiers, mail 
+boxes, conference room tables, and other publicly accessible locations. 
+  Conﬁ dential papers should be appropriately disposed of, for example, torn or 
+shredded.     
+    Computer information 
+    Passwords should not be shared with anyone else. 
+  Passwords should not be written down and left where others can ﬁ nd and use them. 
+  Once a user is logged on, no one else should be allowed to use the computer under 
+that user’s password. 
+  Users should log off when leaving a workstation.     
+    Reproduction and faxing of patient information 
+    Before faxing a document, employees should make sure of the following:
+   Sender information is correct. 
+  The receiving fax is in a secure location. 
+  A patient release of information form allows faxing of the information. 
+  The fax cover sheet contains a conﬁ dentiality disclosure, including notice that 
+the information is not to be disclosed to another party and, if received in 
+error, should be destroyed and the sender notiﬁ ed.        
+    Receipt of faxed information 
+    Fax transmissions should be removed immediately and delivered to the correct 
+recipient. 
+  Faxed information should be treated as conﬁ dential. 
+  Information received in error should be destroyed and the sender notiﬁ ed.     
+    Sensitive information 
+    The following information should be released only through the health informa-
+tion department of the facility:
+   Communication between patient and psychotherapist or social worker 
+  Sexually transmitted disease test results or visit notes 
+  HIV test results and related information 
+  Substance abuse rehabilitation treatment records 
+  Sexual assault treatment records        
+    Employee conduct 
+    Only the information needed for job performance should be accessed. 
+  Data must not be accessed simply to satisfy a curiosity. Looking up a friend’s 
+birthday, address, or phone number is unacceptable.         
+BOX 5-6  PATIENT CONFIDENTIALITY GUIDELINES 
+   b      Modiﬁ ed from Massachusetts General Hospital, Department of Radiology:  Patient conﬁ dentiality guide,  Boston, 
+2006, Author. 
+
+===== pdf p130 =====
+111CHAPTER   5     Truthfulness and Confi  dentiality
+it is libel. The publisher must be at fault at least to the degree of negligence. Harm must 
+have resulted from the publication of the false and defamatory statement. Because the 
+statement must be false, the truth is a total defense to a charge of defamation. However, 
+a jury trial may be necessary to determine the truth. 
+If the false statement concerns criminal activity; a loathsome disease such as AIDS 
+or venereal disease; business, trade, or professional misdeeds; or unchastity, no speciﬁ c 
+injury need be proved. These situations are termed  slander per se or libel per se. Because 
+no injury must be proven in libel or slander per se, the only facts to be proved are that a 
+false and defamatory statement or writing was made to another person and the teller or 
+writer was at least negligent in telling it. 13            
+     SUMMARY 
+       •   Imaging professionals are expected to tell the truth in situations in which others 
+have a reasonable expectation of the truth. The location of the communication, 
+the roles the communicators have in relationship to one another, and the nature 
+of the material to be communicated are determining factors in the expectation of 
+truth. Contract relationships and special needs are factors that determine whether 
+a person has a right to information. 
+     •   Of all the types of obligatory secrets —natural, promised, and professional —  
+ professional secrecy is the most important because of the damages incurred as 
+a result of its violation. In certain instances, professional secrets may be shared. 
+This occurs most often when the good to be gained by sharing the  information
+ outweighs the evil of violating conﬁ  dentiality, when the law indicates that it 
+must be shared, or when special relationships indicate a need for an 
+exception. 
+     •   The imaging professional has a clear duty to maintain patient conﬁ dentiality. 
+However, a small number of exceptions to this duty exist and require the profes-
+sional to disclose conﬁ dential information. Unless a situation meets one of the 
+exceptions to the duty of conﬁ dentiality, disclosure may create liability for the 
+individual and the facility. 
+     •   HIPAA (Health Insurance Portability and Accountability Act of 1996) has 
+established conformity across the United States as to disclosure of health care 
+information and clariﬁ es situations for disclosure without patient permission. 
+HIPAA has also created or reinforced patient rights to access their own records. 
+     •   Guidelines as to when conﬁ dentiality can be breached include the following:
+    •   Requirement for patient authorization 
+   •   Existence of a statutory duty to disclose 
+   •   Duty to warn third parties 
+   •   AIDS conﬁ dentiality and reporting     
+     •   Although HIPAA has clariﬁ ed the law to some extent regarding disclosure, the 
+law concerning AIDS conﬁ dentiality and reporting is not as clear cut as the other 
+exceptions to conﬁ dentiality. All states mandate physician reporting to public 
+health, but jurisdictions vary as to the duty to inform third parties who may be 
+infected. While imaging professionals generally are not involved, the imaging 
+professional who also acts as a medical assistant may become involved in dilemmas 
+
+===== pdf p131 =====
+112 Ethical and Legal Issues for Imaging Professionals
+regarding the duty to disclose and should discover the status of the law in his or her 
+jurisdiction. 
+     •   HIPAA mandates a speciﬁ c right of patients to access their medical records. 
+Some exceptions exist, including psychotherapy notes, information compiled in 
+anticipation of litigation, and other statutory exceptions. Imaging professionals 
+should know the policy in their facility and department with regard to patients’ 
+requests to see their ﬁ lms. 
+     •   The torts involved in conﬁ dentiality include defamation and breach of conﬁ dential-
+ity. Breach of conﬁ dentiality is a violation of the strict duty of conﬁ dentiality, and 
+defamation occurs when a false statement is made to another that harms a person’s 
+reputation. 
+     •   Oral defamatory statements constitute slander, and written defamatory statements 
+constitute libel. Defamatory statements regarding criminal activity; loathsome 
+diseases; business, trade, or professional misdeeds; and unchastity constitute slander 
+or libel per se; in these situations no speciﬁ c injury need be proved.     
+   REFERENCES  
+           1 .      Garrett  T .  M .    ,   Baillie  H . W .   ,   Garrett  R . M .     :      Healthcare ethics, principles and problems   , ed 2 ,  Englewood Cliffs, 
+NJ , 1993 , Prentice Hall       .
+           2 .      American Hospital Association   :      V alues in conﬂ ict: resolving ethical issues in hospital care. Report of the Special 
+Committee on Biomedical Ethics   ,  Chicago , 1985 , Author       .
+           3 .      Furrow  B . R .    ,   Greaney  T . L .     ,  Johnson  S . H .    ,     et al:       Health law: cases, materials and problems   , ed 5 ,  St Paul, Minn ,
+  2004 , West       .
+           4 .    Tarasoff v Regents of the University of California , 551 P .2d 334 (Cal. 1976).   
+           5 .    Thapar v Zezulka , 994 S.W. 2d 635 (Tex. 1999).   
+           6 .    Nasser v Parker , 249 Va. 172, 455 S.E.2d 502 (1995).   
+           7 .      White  J . G .    :   Physicians’ liability for breach of conﬁ dentiality: beyond the limitations of the privacy tort   ,      SC 
+Law Rev   49   (  5  )   :   1271     , 1998   .
+           8 .   American Medical Association Council on Scientiﬁ  c Affairs:  Universal screening of pregnant women for 
+HIV infection, Report 1-01, Chicago, 2001, Author.   
+           9 .      Rinaldi  R . C .     :      HIV blood test counseling: AMA physician guidelines   ,  Chicago , 1988 , American Medical Asso-
+ciation      .
+        10 .    Humphers v First Interstate Bank of Oregon , 696 P .2d 527, 1985.   
+        11 .    Doe v Roe , 400 N.Y. Supp. 2d 668, 1977.   
+        12 .    Doe v Roe, No. 0369 N.Y. App. Div. 4th Jud. Dept., May 28, 1993.   
+        13 .   Code of Federal Regulation, Title 42, Part 2 (1985).   
+        14 .      Schwartz  V .   ,   Kelly  K .   ,   Partlett  D .    :      Prosser, Wade, and Schwartz: cases and materials on torts   , ed 10 ,  Westbury, 
+NY , 2000 , Foundation Press       .       
+      1    Deﬁ ne truthfulness. 
+  2
+    Expectations of truth vary with which three conditions?
+ 
+   a.   __________ 
+  b.   __________ 
+   c.   __________     
+  3    The right to the truth is determined by the __________ __________. 
+of the patient in many nonmedical situations (such as in pr
+eparing for death). 
+  4    Informed consent and the need to make treatment decisions are examples of 
+conditions for the __________ __________ __________ __________. 
+REVIEW QUESTIONS
+
+===== pdf p132 =====
+113CHAPTER   5     Truthfulness and Confi  dentiality
+  5    __________ is concerned with the keeping of secr ets. 
+  6    List the three types of obligatory secrets:
+    a.   __________
+ 
+  b.   __________ 
+   c.   __________     
+  7    The most binding obligatory secret is the __________. 
+  8    Descr
+ibe the most common exceptions to conﬁ dentiality.  
+  9    According to the AHA Committee on Biomedical Ethics, duties to disclose 
+patient information exist in which situations? 
+   
+  10    Which of the following are origins of the duty of conﬁ dentiality?
+    a.
+   Right to privacy 
+  b.   Statutes 
+   c.   Ethical obligations 
+   d.   Breach of contract issues 
+   e.   All of the above     
+     11     True or False  The imaging professional must always tell the whole truth. 
+  
+   12     True or False The imaging professional has an obligation to the patient, 
+profession,
+ and society to maintain conﬁ dentiality. 
+     13     True or False An imaging professional who ﬁ  nds himself or herself in the r ole of 
+the patient should not expect the same degree of conﬁ dentiality. 
+     14     True or False If the risk of keeping a secret outweighs the harm to the patient, 
+no ethical decision making is necessar
+y. 
+     15     True or False A deontologist believes that stricter rules of right and wrong 
+should be used in keeping information conﬁ dential. 
+ 
+    16     True or False The duty of patient conﬁ  dentialit y is clear, and courts allow 
+compensation for breach of conﬁ dentiality. 
+     17     True or False  Imaging professionals owe an absolute duty of patient 
+conﬁ dentiality
+. 
+     18     True or False Truth is a total defense against allegations of 
+defamation. 
+ 
+    19     True or False Defamatory comments regarding a person’s AIDS status are 
+slander per se,
+ and damages would not have to be proved. 
+     20     True or False Conﬁ  dentialit y of drug and alcohol abuse treatment information is 
+mandated by the federal government. 
+     21     True or False Virtually all requests by third parties for records come from new 
+health car
+e providers. 
+     22     True or False Imaging professionals do not have to worry about statutory 
+repor
+ting because this duty lies only with physicians. 
+     23     True or False  The duty to warn third parties extends to the imaging 
+professional.
+ 
+     24     True or False  Imaging professionals when working in clinics and fulﬁ  lling 
+the role of medic
+al assistant may have to deal with warning people at risk for 
+contagious diseases in accordance with the privacy policies surrounding this 
+information. 
+     25     True or False The existence of legislation mandating strict conﬁ  dentiality 
+r
+egarding information about patients’ AIDS, HIV, and ARC status means that 
+disclosure is never appropriate. 
+
+===== pdf p133 =====
+114 Ethical and Legal Issues for Imaging Professionals
+      1    What is the difference between not telling the whole truth and telling a lie? Why 
+might one of these be admissible? 
+  2    Cite a situation in which the place of comm
+unication is inappropr iate for an 
+expectation of truth in medical imaging. 
+  3    Discuss the differences and similarities between natural and promised secr ets. 
+  4    If you were HIV positive, do you think your patients or employer would have the 
+right to know? 
+Why or why not? 
+  5    Should a parent have the right to know a child’s physical condition if it involves 
+treatment? W
+hy or why not? 
+  6    Deﬁ ne conﬁ dentiality . 
+  7    Identify exceptions to the duty to conﬁ dentiality.  
+  8    Consider the following situation: With the health care system changing and 
+third-party payers becoming str
+icter about coverage, imaging professionals (like 
+other people) are concerned with their own health care services. Do you think 
+your third-party payer has a right to know your health history and present 
+conditions if they involve a communicable disease or drug history? Should you 
+be able to expect privileged communication between you and your physician? 
+Justify your answers. A group discussion may follow in which each person lists the 
+consequences of the decision and possible alternatives. 
+CRITICAL THINKING        Questions & Activities
+     26    HIPAA stands for:
+    a.   
+Health Insurance Private Account Association 
+  b.   Health Insurance Proﬁ t Accountability Act 
+   c.   Health Information Portability and Accountability Act 
+   d.   Helping Inform Physicians About Alcohol Abuse     
+     27     True or False State law overrides HIPAA regulations. 
+  
+   28     True or False Patients always have an absolute right to their records. 
+  
+   29     True or False VA hospitals are exempt from HIPAA regulations. 
+  
+   30     True or False Imaging professionals should feel free to show patients their ﬁ  lms 
+and answer questions about them. 
+ 
+    31     True or False Under HIPAA, patients have the right to sue. 
+  
+   32    HIPAA’s purposes include the following:
+    a.   
+To give patients a right of access to their records 
+  b.   To create a national framework for privacy regulations 
+   c.   To attempt to restore trust in health care delivery of information 
+   d.   All of the above     
+     33     True or False Under HIPAA, when records are requested, all medical records of 
+that patient are pr
+ovided. 
+     34     True or False Under HIPAA, all requests for information require patient 
+authoriz
+ation. 
+     35     True or False Under HIPAA, patients have the right to see their psychotherapy 
+notes. 
+ 
+    36     True or False  Health care plans may decide if they want to participate in the 
+HIP
+AA regulations.     
+
+===== pdf p134 =====
+115CHAPTER   5     Truthfulness and Confi  dentiality
+  9    Discuss situations that may potentially involve defamatory statements about 
+fello
+w employees or patients. 
+     10    Discuss the devastation a negligent breach of conﬁ dence may c ause, such as in the 
+scenario involving the dentist, Mary Smith. 
+     11    Does the facility you are afﬁ liated with have a policy r egarding HIV-infected 
+workers? If it does not, should it? Is protection of the patient more important 
+than the rights of HIV-infected staff members? 
+     12    Discuss the situation of an HIV-infected imaging professional who intends 
+to put a student at risk through unpr
+otected sexual intercourse. Does another 
+imaging professional’s duty to warn fall under the law or is it only an ethical 
+obligation?
+     13    Play out a scenario in which a patient wants to see her x-ray ﬁ  lms, an imaging 
+professional who believes patients should have a r
+ight to access shows her the 
+ﬁ  lms, and the patient starts demanding that the imaging professional answer 
+questions regarding the outcome of the study, what it means, and possible 
+treatments. Discuss a better way to handle the situation and play the scenario 
+again.     
+CRITICAL THINKING Questions & Activities —cont’d
+
+===== pdf p135 =====
+116
+ 6   ␣      DEATH AND DYING 
+  Death is a friend of ours; and he that is not ready to entertain him 
+is not at home.  
+ FRANCIS BACON 
+Chapter Outline
+     Ethical Issues
+   Value of Life 
+  Deﬁ nitions of Death 
+  The Patient 
+  Sanctity of Human Life 
+  Suicide 
+  Imaging Professionals and Suicide 
+  Euthanasia 
+  Patients’ Rights Regarding Euthanasia 
+  Advance Directives and Surrogates 
+  Quality of Life 
+  Ethics Committees and Services for Patients with 
+Terminal Illnesses 
+  Family in Death and Dying     
+   Legal Issues
+   Deﬁ nitions of Death 
+  Determination of Death 
+  Directives 
+  Physician-Assisted Suicide 
+  Competence and Life-Sustaining Treatment 
+  No-Code Orders 
+  Living Wills 
+  Durable Powers of Attorney for Health Care 
+  Family Consent Laws 
+  Uniform Health Care Decisions Act 
+  Absence of Advance Directives 
+  Patients in a Persistent Vegetative State 
+  Patients Who Have Never Been Competent      
+Learning Objectives
+     •   Provide deﬁ  nitions of life and death. 
+     •   Differentiate between the patient’s and the 
+ imaging professional’s role in death and dying. 
+     •   Identify the physical and ethical differences 
+between active and passive suicide. 
+     •   State a perceived need for euthanasia. 
+     •   Develop arguments for and against the right 
+to die. 
+     •   Deﬁ ne the meaning of quality of life and explain 
+what affects it. 
+     •   List reasons for ethics committees. 
+     •   Cite the basis for the patient’s right to forgo 
+life-sustaining treatment. 
+     •   Deﬁ ne and understand differences between 
+a persistent vegetative state and a minimally 
+conscious state. 
+     •   Deﬁ ne how death is determined. 
+     •   Deﬁ ne life-sustaining treatment and its exclusions. 
+     •   Explain the difference between living wills and 
+durable powers of attorney. 
+     •   Identify the limitations of living wills. 
+     •   Deﬁ ne the advantages of durable powers of attorney. 
+     •   Compare the ways in which powers of attorney 
+inﬂ  uence the decision-making process of ancillary 
+people such as physicians, ministers, and speciﬁ ed 
+family members and friends. 
+     •   Identify the differences between persons in a per-
+sistent vegetative state and those in a minimally 
+conscious state. 
+     •   Explain the difference between competency and 
+decisional capacity. 
+     •   Contrast the treatment of persons who have never 
+been competent and competent persons who have 
+become incompetent. 
+ After completing the chapter, the reader will be able to perform the following:  

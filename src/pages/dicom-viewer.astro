@@ -1,0 +1,6 @@
+---
+// Legacy route. The browser-only DICOM viewer now lives at /image-review, which is
+// linked from the primary navigation as "Free Online Image Review". This shim keeps
+// any inbound or bookmarked /dicom-viewer links working.
+return Astro.redirect("/image-review", 301);
+---

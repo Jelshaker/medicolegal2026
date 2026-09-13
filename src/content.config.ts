@@ -10,6 +10,7 @@ const blog = defineCollection({
 		category: z.enum([
 			"musculoskeletal",
 			"gastrointestinal",
+			"peritoneal-malignancy",
 			"neuroradiology",
 			"interventional",
 			"negligence",

@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE, FEES } from "../consts";
+
+const scope = [
+	{
+		t: "Delayed diagnosis",
+		d: "Whether a finding was demonstrable on the images as acquired, and whether any delay materially altered the treatment pathway or outcome.",
+	},
+	{
+		t: "Staging & incidental findings",
+		d: "Tumour staging errors, peritoneal disease, and pathology that was incidental to the clinical question actually asked of the reporter.",
+	},
+	{
+		t: "Consent & interventional practice",
+		d: "Whether material risks were explained and documented, and whether complications were disclosed promptly and candidly.",
+	},
+	{
+		t: "Measurement & quantum",
+		d: "Reproducibility of size, angle and index measurements where damages turn on a numerical threshold.",
+	},
+	{
+		t: "Teleradiology & systemic risk",
+		d: "The reporting chain as a whole — the individual reporter, the reporting provider, escalation protocols and contract safeguards.",
+	},
+	{
+		t: "Protocol adequacy",
+		d: "Whether the study performed was capable of answering the clinical question, and whose decision that protocol was.",
+	},
+];
+
+const standards = [
+	{ n: "Bolam v Friern Hospital Management Committee [1957] 1 WLR 582", d: "The standard of care — a responsible body of skilled professional opinion." },
+	{ n: "Bolitho v City and Hackney HA [1997] UKHL 46", d: "A body of opinion must have a logical basis before it can defeat a claim." },
+	{ n: "Montgomery v Lanarkshire Health Board [2015] UKSC 11", d: "Consent judged by the materiality of risk to a reasonable patient in that patient's position." },
+	{ n: "CPR Part 35 and PD 35", d: "The overriding duty to the court, the required form of the report, and the limits of expert advocacy." },
+	{ n: "Ikarian Reefer [1993] 2 Lloyd's Rep 68", d: "The classic statement of an expert's independent duties, including the duty to state the basis of opinion." },
+	{ n: "GMC Good Medical Practice & Confidentiality guidance", d: "Professional obligations on record-keeping, candour and the handling of patient information." },
+	{ n: "RCR Standards for interpretation and reporting (2025)", d: "The professional benchmark for report content, escalation, remote reporting and AI-assisted reporting." },
+	{ n: "EMA / Expert Witness Institute Code of Practice", d: "Duties of competence, impartiality, confidentiality and the maintenance of a complaints procedure." },
+];
+---
+
+<BaseLayout
+	title={`About | ${SITE_TITLE}`}
+	description="Dr Joseph El-Sheikha, Consultant Radiologist and medicolegal expert witness — independent CPR Part 35 opinions on delayed diagnosis, staging error, consent and teleradiology, instructed by claimants and defendants alike."
+>
+	<PageHero
+		eyebrow="About the practice"
+		title={PRACTITIONER.shortName}
+		description="Consultant Radiologist and independent medicolegal expert witness. I provide radiological opinion that is written for the court rather than for the party instructing me."
+	/>
+
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page grid gap-12 lg:grid-cols-3">
+			<div class="space-y-12 lg:col-span-2">
+				<Section eyebrow="Independent expert evidence" title="Opinion written for the court, not for the party instructing me">
+					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+						My practice is a radiological one with a legal method. The images answer technical questions —
+						what was acquired, what was demonstrable, what a competent reporter would have seen at the
+						time — and the law then asks separate questions about breach, causation and loss. Keeping those
+						analyses apart is the discipline that makes an expert report useful, and it is the reason a
+						report stands up in cross-examination.
+					</p>
+					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+						I accept instructions from claimants and defendants alike. Under CPR 35.3 an expert's
+						overriding duty is to the court, so the analysis is the same whichever side has instructed me:
+						re-derive from the source DICOM, reconstruct the contemporaneous conditions, state clearly what
+						is fact and what is opinion, and set out what would change my view. Where the radiological
+						evidence does not support the case being advanced, the report says so.
+					</p>
+					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+						I do not express opinions outside my competence. Questions of surgical technique, oncology
+						management or life expectancy fall to surgeons and oncologists; my role is to define precisely
+						what imaging did and did not show, and to identify where a radiological conclusion ends and
+						another discipline's begins.
+					</p>
+				</Section>
+
+				<Section eyebrow="Scope of practice" title="Where radiological opinion decides the issue">
+					<div class="grid gap-6 sm:grid-cols-2">
+						{scope.map((s) => (
+							<div class="card p-6">
+								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{s.t}</h3>
+								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+							</div>
+						))}
+					</div>
+				</Section>
+
+				<Section eyebrow="The framework" title="Standards and authorities I work to">
+					<div class="mt-6 space-y-3">
+						{standards.map((s) => (
+							<div class="card p-5">
+								<p class="text-sm font-bold text-navy-900 dark:text-slate-100">{s.n}</p>
+								<p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+							</div>
+						))}
+					</div>
+				</Section>
+			</div>
+
+			<!-- Sidebar -->
+			<aside class="space-y-6">
+				<div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-navy-700">
+					<img src={PRACTITIONER.photo} alt={PRACTITIONER.shortName} class="aspect-[4/5] w-full object-cover" loading="lazy" />
+				</div>
+
+				<div class="card p-6">
+					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">At a glance</h2>
+					<dl class="mt-4 space-y-3 text-sm">
+						<div>
+							<dt class="font-semibold text-slate-500 dark:text-slate-400">Qualifications</dt>
+							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.qualifications}</dd>
+						</div>
+						<div>
+							<dt class="font-semibold text-slate-500 dark:text-slate-400">Sub-specialty</dt>
+							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.subspecialty}</dd>
+						</div>
+						<div>
+							<dt class="font-semibold text-slate-500 dark:text-slate-400">Registration</dt>
+							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.gmcNumber}</dd>
+						</div>
+						<div>
+							<dt class="font-semibold text-slate-500 dark:text-slate-400">Indemnity</dt>
+							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.indemnity}</dd>
+						</div>
+						<div>
+							<dt class="font-semibold text-slate-500 dark:text-slate-400">Turnaround</dt>
+							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">
+								{FEES.standardTurnaround} standard · {FEES.urgentTurnaround} urgent
+							</dd>
+						</div>
+					</dl>
+				</div>
+
+				<div class="card p-6">
+					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Memberships</h2>
+					<ul class="mt-4 space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+						{MEMBERSHIPS.map((m) => <li>{m}</li>)}
+					</ul>
+				</div>
+
+				<div class="card p-6">
+					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Next steps</h2>
+					<ul class="mt-4 space-y-2.5 text-sm">
+						<li><a href="/cv" class="font-semibold text-teal-700 dark:text-teal-400">Full curriculum vitae</a></li>
+						<li><a href="/expert-witness" class="font-semibold text-teal-700 dark:text-teal-400">Expert witness services</a></li>
+						<li><a href="/legal-fundamentals" class="font-semibold text-teal-700 dark:text-teal-400">Legal fundamentals</a></li>
+						<li><a href="/contact" class="font-semibold text-teal-700 dark:text-teal-400">Contact the secretariat</a></li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+	</section>
+</BaseLayout>

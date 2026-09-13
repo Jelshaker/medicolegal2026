@@ -1,0 +1,830 @@
+
+===== pdf p78 =====
+59
+Chapter 5
+Risk Management 
+and Liability
+Upon completion of Chapter 5, the reader will be able to:
+ 1. Define liability.
+ 2. Apply the doctrine of corporate negligence to the legal case of Darling v. 
+Charleston Community Hospital.
+ 3. Recognize the responsibility of the professional staff.
+ 4. Discuss the Good Samaritan Laws.
+ 5. Explain hospital liability and malpractice.
+ 6. Assess the importance of patient injury reporting and recording.
+Liability
+Excerpted from the weekly newsmagazine R.T. Image, Facing the Risk, August 
+10, 1992:
+The physician opens the lead-lined door and steps onto the brightly 
+lit hallway. The act and its required effort were harder this time — it 
+always is when one must face the family.
+In the waiting room, she sees that the hospital chaplain has arrived. 
+A quick glance before turning to the parents. Their faces are ashen, 
+yet it’s their eyes she hates the most. For without saying a word, the 
+86634.indb   59 8/4/08   8:42:37 AM
+
+===== pdf p79 =====
+60  n  Medicolegal Issues for Diagnostic Imaging Professionals
+dire nonverbal messages had been conveyed. “No, your daughter is not 
+dead,” the doctor says.
+“During the examination, however, she experienced complications 
+and she is now in a coma.”
+What? How? Why? These are questions that demand answers. 
+Questions that will be answered with compassion. Both the questions 
+and the answers will never end.
+“She had a seizure and went into cardiac arrest,” the physician 
+explains. “We got her back, and now hope that she’ll respond further. 
+You may see her for a few minutes. She is on a machine that assists her 
+breathing. We’re doing everything we can.”
+The kidney exam was necessary. Her right lower quadrant pain and 
+work-up tests confirmed it. The IV was established. The questionnaire 
+was completed. The patient’s history of hay fever and asthma, as well as 
+the evening hour, called for nonionic contrast. The risks were known. 
+Radiology personnel were ready for everything — except the physi -
+cian’s response time.
+The injection went smoothly. Following the initial film, the young 
+female patient and the radiographer were talking about the previous 
+night’s awards show. Then the grand mal hit. Its intensity peaked so 
+rapidly that the radiographer had to grab the girl to keep her from 
+vibrating off the table. The reaction tray was nearby, but the telephone 
+was 10 feet away.
+“The emergency room is just down the hall,” thought the radiographer. 
+“And the ordering emergency room physician knows where we are.”
+The patient’s strength was immense. Her gurgled sounds were worse 
+in the radiographer’s ear. The enclosed room smothers the radiographer 
+calls for help.
+Then the tremors ceased as quickly as they had begun, being 
+replaced by stillness and quiet. The radiographer raced to the telephone, 
+calling the code.
+Was time frozen or in slow motion, the radiographer wondered. 
+How much time had elapsed? Where were they?
+Finally the sounds of the team approached. Were they called 
+soon enough?
+This story, although fictional, is a concern for many radiographers who are per-
+forming radiographic procedures without direct or immediate supervision from a 
+physician. Hospital policy should dictate that the ordering physician or radiologist 
+be present during the injection of contrast media and remain to monitor the patient 
+for 10 minutes. The physician would then return if complications arose.
+86634.indb   60 8/4/08   8:42:37 AM
+
+===== pdf p80 =====
+Risk Management and Liability  n  61
+An acute care hospital/medical center is under the duty to exercise such rea -
+sonable care in looking after and protecting the patient. The legal responsibility 
+of any health practitioner is to be a practitioner of safe care. The following legal 
+doctrine will provide insight into the ways in which the law fixes liability for acts 
+of malpractice. Radiographers may be subjected to a greater exposure of liability 
+based on various factors or principles of law, or the legal status of the employer or 
+the employee.
+Risk management is the process of avoiding or controlling risk of financial 
+loss to the radiographers and the hospital or medical center. Risk management is a 
+matter of patient safety. Poor quality care will create a risk of injury to patients and 
+will lead to increased financial liability. Risk management is engaged in the protec-
+tion of financial assets by managing insurance for potential liability by reducing 
+liability through surveillance. Risk management will identify actual and potential 
+causes of patient accidents and will implement programs to eliminate or reduce 
+these occurrences.
+Doctrine of Corporate Negligence
+The doctrine of corporate negligence means that the hospital/medical center or 
+healthcare agency as an entity is negligent. It is the failure of the corporation to fol-
+low an established standard of conduct to which all healthcare corporations should 
+conform in a given situation. The doctrine of corporate negligence or liability is 
+relatively new. The determination of negligence is based on violations or breach of 
+duty owed to the patient by the hospital/medical center or health center.
+The famous landmark decision regarding corporate negligence was Darling v. 
+Charleston Community Hospital,  211 N.E. Second 53 (Illinois), 1965. Darling, the 
+plaintiff, was an 18-year-old college student who played on the football team. Dar-
+ling was injured while playing football and was taken to the emergency room of 
+Charleston Community Hospital. The doctor on emergency call on that particular 
+day was a general practitioner. The physician took x-rays and diagnosed fractures 
+of both bones below the knee in the right leg. The doctor reduced the fractures and 
+applied a cast to the leg.
+Darling complained of pain continuously. Three days after applying the cast, 
+the general practitioner split the cast. Darling continued to complain of pain. There 
+was evidence that circulation was impaired, and there was a foul odor at the area of 
+the fracture. There were no orthopedic specialists consulted at any time. Approxi -
+mately two weeks later, Darling was transferred to another hospital and given the 
+care of an orthopedic doctor, but it was too late. The leg was amputated.
+The most important issue decided in the case was the standard of care for deter-
+mining hospital liability. The court found the hospital failed to meet the standard 
+of care due to Darling, because neither consultation nor examination by skilled 
+orthopedic surgeons were utilized, and there were insufficiently trained nurses 
+86634.indb   61 8/4/08   8:42:37 AM
+
+===== pdf p81 =====
+62  n  Medicolegal Issues for Diagnostic Imaging Professionals
+capable of recognizing the progressive gangrenous condition which resulted in the 
+leg amputation. The court allowed the rules and regulations of the Illinois State 
+Department of Health, the hospital licensing act, and the standards of the Joint 
+Commission on the Accreditation of Hospitals to be introduced as evidence. The 
+verdict against the hospital was $100,000. The physician settled prior to the trial for 
+$40,000. The hospital was found liable under the doctrine of corporate negligence. 
+The court stated, “The governing body of each hospital shall be responsible for the 
+operation of the hospital, for the selection of medical staff, and for the quality of 
+care rendered in the hospital.”
+Responsibility of the Professional Staff
+A physician is an independent contractor who alone is responsible for the exercise 
+of professional skill and judgment. The staff physician is not subject to the control 
+of the hospital/medical center. However, the hospital/medical center will assume 
+all of the responsibility for the actions of the staff physician. The governing body of 
+the hospital/medical center or healthcare center is the board of trustees. The board 
+is charged with the right and the duty to monitor the quality of healthcare being 
+provided by the professional staff. The board members must carefully scrutinize the 
+reports submitted by the professional staff and must assure themselves that there is 
+continuous review, analysis, and evaluation of patient care.
+In California in 1974, Dr. Nork, an orthopedist, was found negligent in his care 
+of at least 30 patients (Gonzales v. Nork, California Supreme Court, November 19, 
+1973). The verdict was $3,710,447 of which $2,000,000 constituted punitive dam-
+ages because Dr. Nork’s wanton, reckless disregard of the patients in his care.
+The evidence in the case showed that the hospital, the medical staff, and the 
+staff licensing board never took any action against Dr. Nork although they knew, 
+or “should have known,” he was causing injury to his patients.
+The suit was brought by Albert Gonzales. The facts briefly were that Gonzales 
+was examined by Dr. Nork in November, 1967, for back pain. Dr. Nork diagnosed 
+a herniated disc. A lumbar myelogram was done and was interpreted as normal. 
+In spite of this and without consultation, Dr. Nork performed a laminectomy and 
+spinal fusion on Gonzales. He complained of pain in his back, legs, and right thigh 
+immediately after surgery. There were conflicting reports on Gonzales’ medical 
+records. A November 30 report by Dr. Nork stated, “Patient had done extremely 
+well, no complaints” (Hemelt and Mackert, 1982, p. 33). The nurses’ notes of the 
+same date stated, “Ambulated with help for 10 minutes, had to be helped to the 
+bathroom, complains of pain continuously, left leg felt paralyzed” (Hemelt and 
+Mackert, 1982, p. 33). Gonzales became progressively worse and three years later 
+became permanently disabled.
+Mercy Hospital where Gonzales was a patient was also found liable for negli -
+gence under the doctrine of corporate negligence. The court held that the hospital 
+86634.indb   62 8/4/08   8:42:38 AM
+
+===== pdf p82 =====
+Risk Management and Liability  n  63
+owed the patient a duty of care that included protecting the patient from acts of 
+medical negligence by the hospital’s staff physicians. The words used were, “If the 
+hospital knows, or has reason to know, or should have known such acts were likely 
+to occur” (Hemelt and Mackert, 1982, p. 34). The court held that the hospital was 
+corporately responsible for the conduct of the medical staff. The courts expect the 
+hospitals to have policies and procedures to reasonably assure proper patient care 
+and to take appropriate action against those who do not comply.
+Doctor-Owned Hospital/Clinic Liability
+There has been a recent surge of clinics and emergency care centers in operation. 
+Under California State statutes, operation of a clinic owned by a physician will 
+make him liable not only for his own acts, but also for the conduct of his employ -
+ees (i.e., nurses, radiologic technologists, etc.). The law is very explicit about para -
+medical personnel performing various acts above the legal jurisdiction. A radiologic 
+technologist is not licensed to draw blood unless the individual has the appropriate 
+phlebotomist certification on file with the State Department of Health Services. 
+Nurses and/or medical assistants who have been ordered to perform radiographic 
+procedures without the appropriate state licensure consider this a legal act. Many 
+radiographers working in doctor-owned clinics and/or offices have indicated that 
+as long as the physician gives his permission to perform duties that are beyond the 
+scope and practice, it is permissible. Not so! Any duty out of the scope and practice 
+of licensure is illegal since licensure is an authorization by a government agency 
+to engage in a given occupation (refer to Chapter 10, p. 127). No job is worth 
+doing something that could be a detriment to the patient, or to make an individual 
+an accessory to a criminal act. It is imperative to make sure that you know the 
+extent of malpractice for yourself when employed in a physician’s clinic/office. Most 
+doctors may not have malpractice insurance for their employees due to the high 
+insurance premiums. It would be advisable to have your own personal malpractice 
+insurance, which can be purchased through the American Society of Radiologic 
+Technologists.
+Good Samaritan Laws
+The main purpose of the Good Samaritan Laws was to encourage citizens to assist 
+their fellow man by rendering emergency medical aid to injured persons. These laws 
+were passed to protect the same citizens from civil or criminal liability for any acts 
+or omissions resulting from attempts to give such emergency medical aid. These 
+laws vary in the particular coverage from state to state. Some states limit coverage 
+to healthcare professionals, while other states cover every citizen who gives emer -
+gency aid.
+86634.indb   63 8/4/08   8:42:38 AM
+
+===== pdf p83 =====
+64  n  Medicolegal Issues for Diagnostic Imaging Professionals
+In spite of rumors or statements to the contrary, there are no reported cases of 
+successful lawsuits against any physicians stopping to give emergency aid. There is 
+still concern among healthcare professionals (i.e., radiographers) regarding poten -
+tial liability in emergency situations. However, it is evident from the legislation 
+passed that state legislators, in general, regard persons who give emergency care as 
+a protected class. The individual who in good faith renders emergency care at the 
+scene of an accident shall not be liable for any civil damages as a result of any acts or 
+omissions in rendering emergency care. The first Good Samaritan Law was passed 
+in California in 1959. Since that time, other states have followed California’s lead to 
+include various categories of healthcare professionals such as radiographers.
+Anyone may render aid in an emergency situation, but under English and 
+American law, no one is forced to do so where there is no duty. If there is no rela -
+tionship between parties involved, then no duty arises. On the other hand, if one 
+elects to render assistance in an emergency, then one must meet certain standards 
+of skill and competency. The essential element or test of malpractice is the “reason-
+able man test.” What would a reasonable, prudent radiographer do in the particular 
+circumstance? If the radiographer responded appropriately as a reasonable person 
+and the standard of care has been met, there would be no negligence. It is the act of 
+giving aid that creates a relationship between the victim and the Good Samaritan 
+and, consequently, a duty arises to render due care.
+It is also necessary to understand that the statutes do not immunize one from 
+being sued. But if, and when, a person is sued, the defense of the Good Samaritan 
+immunity would be raised to show that the individual being sued qualifies under 
+the state Good Samaritan statute and is entitled to immunity (Hemelt and Mack -
+ert, 1982, p. 51).
+Hospital Liability and Malpractice
+Hospital liability and malpractice insurance, also known as “patient liability insur -
+ance,” is intended to cover all claims against the hospital arising out of alleged 
+negligence of any member of the physician staff and/or employees. The usual kinds 
+of insurance carried by a hospital include:
+ 1. Public liability
+ 2. Products and druggists liability
+ 3. Elevator liability
+ 4. Workers’ compensation
+ 5. Steam boiler insurance
+ 6. Sprinkler leakage
+86634.indb   64 8/4/08   8:42:38 AM
+
+===== pdf p84 =====
+Risk Management and Liability  n  65
+ 7. Safe burglary protection
+ 8. Hospital liability
+ 9. Automobile personal injury
+ 10. Fidelity and surety bonds
+ 11. Fire insurance
+ 12. Electrical machinery
+ 13. Radium hazards
+One hospital may have 10 different malpractice attorneys in adjusting claims 
+and incidents, which may occur on a daily basis.
+Injury Reporting and Recording
+Hospital employees are instructed to report any injury to a patient to administra -
+tion via the department manager and/or nursing supervisor, who, in turn, should 
+report it immediately to the insurance carrier. Failure to give notice to the insur -
+ance carrier, in the case of an injury, may be a good reason to disclaim the policy 
+and may make it easier to award damages to the injured party in a legal case. Even 
+when the hospital makes an investigation, and in good faith, relying on the inves -
+tigation, concludes that there is no liability, or that the accident was too trivial to 
+report, and makes no report, the hospital then acts at its own risk. The insurance 
+carrier may cancel the policy and the hospital then is responsible for legal counsel 
+and damages.
+One Scenario
+A patient was lying on the x-ray table and had her left hand underneath the table. 
+She did not speak English, so communication was a bit difficult. The student tech -
+nologist pushed the fluoroscopic tower up and out of the way and the patient’s 
+middle finger was crushed under the roller wheels of the fluoroscopic tower. There 
+was no visible injury, and she never mentioned that she was injured. The patient left 
+the radiology department without reporting the injury to anyone. One week later, 
+the radiology manager received a letter from the patient’s attorney with a copy of a 
+letter from the orthopedic surgeon who had treated her broken finger. A negligence 
+action suit was filed against the hospital, the student technologist, and the x-ray 
+manufacturing company. Because there was no mention of an injury or incident 
+report from the hospital, the doctrine of res ipsa loquitur applied in this case. The 
+hospital paid damages to the patient of $3,750.18. Note: Make sure that you check 
+the condition of the patient at all times, even at discharge.
+86634.indb   65 8/4/08   8:42:38 AM
+
+===== pdf p85 =====
+66  n  Medicolegal Issues for Diagnostic Imaging Professionals
+Vignette 11
+Poor Patient Care Causes Back Injury
+Frank Filter, a patient at Coulomb Memorial Medical 
+Center, is scheduled for abdominal surgery. In a weak 
+and frail state due to a long-term illness, Filter needed 
+a special radiographic examination. When he arrived in 
+the radiology department, he questioned the radiog -
+rapher, Amy Afterglow, R.T., about the pending proce -
+dure. She told him, rather abruptly, that his doctor had 
+ordered the study and that, if he had any questions, he 
+should ask his doctor. In a curt manner, Afterglow ques-
+tioned Filter as to whether he wanted the study com -
+pleted or not because there was no time to waste. Filter 
+agreed to the procedure.
+Filter was quickly and roughly pulled onto a cold, 
+hard x-ray table. The jerky movement hurt his back. 
+During the procedure, he was very uncomfortable due 
+to the severe back pain. Filter had asked for a cushion 
+to be placed under his buttocks to ease the pain. After-
+glow had told him to just hold still and cooperate or 
+else he would be sent back to his room and the proce -
+dure would be canceled. Filter cooperated.
+When the radiographic procedure was completed, 
+Filter was once again pulled roughly onto the stretcher. 
+Again, he experienced severe back pain. He was rolled 
+into a cold, drafty hallway to await patient transport.
+Time passed and Filter’s back pain became more 
+severe. He was experiencing numbness and tingling in 
+his right foot and leg. Other staff radiographers passed 
+him in the hallway and ignored his complaint of back 
+pain.
+ When the patient transporter finally arrived, Filter 
+was in tears due to the severe pain. When he reached 
+his bed, he told the nurse, Greta Grid, R.N., that he had 
+severe back pain from being pulled onto the x-ray table. 
+Greta Grid was quite huffy and made it clear that the 
+pain was due to lying on the hard table and not from 
+being pulled or pushed onto it.
+That evening Filter told his physician that he had 
+received a back injury when he was pulled onto the 
+86634.indb   66 8/4/08   8:42:38 AM
+
+===== pdf p86 =====
+Risk Management and Liability  n  67
+x-ray table. Filter’s physician ordered a lumbar spine 
+series that evening and Filter was diagnosed as having 
+a subluxation of the fifth lumbar vertebrae. Who would 
+be liable for Filter’s injuries? What, if any, legal implica-
+tions or legal risks are involved?
+Answer
+Because Frank Filter did not have an existing back prob-
+lem on admittance into Coulomb Memorial Medical 
+Center, there is a legal risk for Amy Afterglow, Greta 
+Grid, and the medical center. Everyone working in 
+Coulomb Memorial Medical Center has the obligation 
+to provide proper care to patients. This includes pro -
+tecting the patient from any harm or injury. Meeting 
+the standard of care due a patient protects Coulomb 
+Memorial Medical Center. Amy Afterglow was careless 
+in her rough handling of Filter. She should have asked 
+other staff to assist her in moving him onto the x-ray 
+table. Greta Grid was negligent in not reporting Filter’s 
+back complaint to his physician and documenting the 
+occurrence of his injury by the radiographer. Coulomb 
+Memorial Medical Center should be held liable, under 
+the doctrine of corporate negligence, for Filter’s back 
+injury caused by its employees.
+Vignette 12
+Improper Communication Situation
+Helga Bremsstrahlung, who spoke and understood 
+very little English, was an outpatient at Compton Clinic. 
+Bremsstrahlung was scheduled for radiographs of both 
+feet. After a brief introduction, the radiographer, Paul 
+Penumbra, R.T., directed the patient to the x-ray suite 
+and told Bremsstrahlung to remove both shoes and get 
+up on the table.
+86634.indb   67 8/4/08   8:42:38 AM
+
+===== pdf p87 =====
+68  n  Medicolegal Issues for Diagnostic Imaging Professionals
+Penumbra immediately left the room to get the 
+proper detailed cassettes for the procedure. A few min-
+utes later, he arrived in the x-ray suite to find Brems -
+strahlung standing on top of the x-ray table. He began 
+to laugh and told her that he did not want her to stand 
+on the table, but, to lie on her back.
+In a frenzy of embarrassment, Bremsstrahlung hit 
+her head on the x-ray tube housing causing a laceration 
+across her forehead. What, if any, legal implications or 
+legal risks are involved?
+Answer
+Patients are very cooperative and responsive to ques -
+tions and directions, given they understand what is 
+being asked or stated. Therefore, reinforcing the impor-
+tance of clear and accurate communication between 
+patient and radiographer is necessary. Patients will do 
+exactly what we ask them to do. However, by monitor -
+ing a patient more closely, a radiographer will reduce 
+injuries resulting from miscommunication.
+Paul Penumbra should have stayed in the x-ray suite 
+to assist Helga Bremsstrahlung onto the x-ray table. 
+More importantly, he was careless in not making certain 
+that she understood the instructions. Paul Penumbra 
+and Compton Clinic should be held liable for Helga 
+Bremsstrahlung’s injuries.
+Review Questions
+ 1. Regarding the doctrine of corporate negligence, the Darling v. Charleston 
+Community Hospital  … case found the hospital failed to meet the standard 
+of    due to Darling.
+ a. Reasonableness
+ b. Injury
+ c. Care
+ d. Duty
+86634.indb   68 8/4/08   8:42:38 AM
+
+===== pdf p88 =====
+Risk Management and Liability  n  69
+ 2. The medical staff physicians are subjected to the control of the    in the 
+execution of their services.
+ a. Hospital administrator
+ b. Medical staff secretary
+ c. Governing body
+ d. None of the above
+ 3. In the Gonzales v. Nork … case, the court held that the hospital was    for 
+the conduct of the medical staff.
+ a. Not liable
+ b. Corporately responsible
+ c. Negligent
+ d. Careless
+ 4. Any duty out of the scope and practice of licensure would be   .
+ a. Lawful
+ b. Careless
+ c. Negligent
+ d. Illegal
+ 5. Reporting of patient injuries is documented in the   .
+ a. Patient progress notes form
+ b. Physician’s notes form
+ c. Nursing notes form
+ d. Incident report form
+86634.indb   69 8/4/08   8:42:39 AM
+
+===== pdf p89 =====
+86634.indb   70 8/4/08   8:42:39 AM
+
+===== pdf p90 =====
+71
+Chapter 6
+Doctrine of Informed 
+Consent
+Upon completion of Chapter 6, the reader will be able to:
+ 1. Define the doctrine of informed consent.
+ 2. Discuss the preparation of an informed consent.
+ 3. Assess the level of understanding of an informed consent.
+ 4. Recognize the legality of an informed consent.
+ 5. Discuss the concepts of: (1) who may sign a consent, (2) spouses’ consent, and 
+(3) rescinding a consent.
+ 6. Differentiate radiologic procedures that are involved in informed consent 
+lawsuits.
+The Patient’s Right to Know
+Doctrine of Informed Consent
+The doctrine of informed consent could more appropriately be called the patient’s 
+right to know and participate in his own healthcare. Informed consent is a doctrine 
+that has evolved sociologically with the changing times. The courts have mandated 
+that every patient is entitled to an informed consent before any procedure can be 
+performed. Judge Benjamin Cordozo, while serving on the court of appeals of New 
+York in a 1914 case, established that every adult has the right to determine what 
+is to be done to his body (Schloendorf v. Soc. of New York Hosp., 211 N.Y. 125, 105 
+N.E. 92, 1914). Judge Cordozo indicated that a surgeon who performs an operation 
+86634.indb   71 8/4/08   8:42:39 AM
+
+===== pdf p91 =====
+72  n  Medicolegal Issues for Diagnostic Imaging Professionals
+without the patient’s consent may be liable for assault and battery. An assault is the 
+threat to do bodily harm to an individual. The act of doing the physical harm is 
+the battery. It is, therefore, necessary for patients to consent to surgery or medical 
+procedures in order for a charge of assault and battery to be avoided. Consent is 
+the affirmation by the patient to have his/her body touched by certain designated 
+individuals, such as the doctor, nurse, radiographer, and others.
+In Cobb v. Grant, supra, the California Supreme Court held that a patient must 
+be given the opportunity to provide an “informed consent” prior to the performance 
+of certain medical procedures and treatment. The court stated that in order to give 
+an “informed consent,” the patient had to be informed of:
+ 1. The nature of the treatment
+ 2. Any risk, complications, and expected benefits or effects of such treatment
+ 3. Any alternatives to the procedure and their risks and benefits
+The patient’s informed consent as distinguished from consent is not required 
+for all medical procedures and treatment. In identifying circumstances where an 
+informed consent is required, the Court distinguished between those procedures, 
+which it labeled “complex,” and those, which it labeled “simple” and “common.”
+Radiologic Procedures Involved in Informed Consent Lawsuits
+Excretory urography was the radiologic procedure most commonly involved in 
+informed consent litigation. In comparison with angiographic and myelographic 
+procedures, the relative risk of serious injuries from excretory urography is so low 
+that even though the total number of excretory urograms is greater than that for 
+the other procedures, fewer injuries might be expected. The lower frequency of risk 
+disclosure to patients for urography compared with angiography and myelogra -
+phy may well explain why it is involved in a greater number of informed consent 
+lawsuits.
+Spring et al. (1988) have reported that informed consent lawsuits involved excre-
+tory urography about six times as often as contrast material-enhanced computed 
+tomography (CT). The study suggests that an increase in the number of newer con-
+trast studies (e.g., CT or digital subtraction angiography) may result in an increase 
+in informed consent lawsuits.
+Informed consent was considered by the defendant radiologist to be a significant 
+factor in most of the reported lawsuits involving angiographic procedures. In 10 
+(91 percent) of 11 lawsuits, the defendant radiologist made a documented effort to 
+obtain an informed consent. All but one of these lawsuits resulted in favorable out-
+comes for the defense. Angiography is ordinarily perceived as having a higher risk of 
+injury than other radiological procedures and, therefore, more frequently involves 
+a documented effort to obtain informed consent. This may explain both the lower 
+86634.indb   72 8/4/08   8:42:39 AM
+
+===== pdf p92 =====
+Doctrine of Informed Consent  n  73
+incidence of lawsuits instigated and of favorable outcomes for the plaintiff (Spring, 
+et al, 1988, p. 248).
+Preparation of an Informed Consent
+A physician who instigates an informed consent form should prepare the form by 
+setting forth medical information with respect to the nature of the procedure or 
+treatment, its expected benefits or effects, its possible risks and complications, and 
+the alternatives to the proposed treatment or procedure, and their possible risks and 
+complications. The form must either be supplemented through verbal discussions 
+with the patient and/or through written additions that set forth such information. 
+These forms are helpful only if they can be understood by the patient. Therefore, 
+it is extremely important for the medical information set forth in such forms to be 
+written in clear, simple, and easily understood terms. In addition, it is absolutely 
+essential for such forms to clearly state that the patient should ask any and all 
+questions he/she may have about the proposed procedure. A copy of the informed 
+consent should be placed in the patient’s medical records.
+Verification of Informed Consent
+The physician (radiologist), not the hospital, has the fiduciary duty to disclose all 
+information relevant to the patient’s decision and to obtain the patient’s informed 
+consent. Further, the obtaining of informed consent involves the practice of medi -
+cine in which the hospital and its employees should not intervene. Hospital employ-
+ees are not licensed or qualified to adequately explain the various types of medical 
+procedures to the patient and to respond to the patient’s potential questions. Only 
+the physician has both the technical knowledge and the background knowledge of 
+the particular patient’s condition necessary to assure that an adequate disclosure of 
+information, including that pertaining to the risks of treatment, has been given for 
+that patient, and that proper responses have been given to the patient’s questions.
+Hospital personnel (radiographers) cannot and should not be responsible for 
+securing the patient’s informed consent (and concomitantly, giving the patient the 
+information that is required in order to secure the patient’s informed consent). It 
+can be expected that patients will ask hospital staff who are performing a proce -
+dure pursuant to the doctor’s (radiologists) orders questions about what they will 
+be or are doing. Radiographers generally may answer such questions; however, if it 
+appears that the patient has significant questions about the nature of the procedure 
+(and its benefits or risks), this may indicate that he/she may not have been given 
+sufficient information about the procedure or may not understand the information 
+he/she was given. The radiographer should contact the patient’s physician and/or 
+radiologist in order to allow him/her to answer the questions and, thereby, help to 
+assure that the patient has truly given an informed consent to the procedure.
+86634.indb   73 8/4/08   8:42:39 AM
+
+===== pdf p93 =====
+74  n  Medicolegal Issues for Diagnostic Imaging Professionals
+It must be understood that the radiographer is not the one performing the fluo-
+roscopic procedure the patient is about to undergo. The radiographer does not have 
+the necessary information, nor does he/she know what alternative radiographic pro-
+cedures are available for the patient. Radiographers should not allow themselves 
+to be placed in the ridiculous position of “witnessing the patient’s signature.” It is 
+common practice for the radiographer to have the function of getting the patient to 
+sign the radiological procedure consent form. The radiographer, generally, may not 
+be present when the patient’s physician or radiologist presumably gave the neces -
+sary instructions and explanations to the patient. The radiographer could be held 
+personally liable if he/she knew, or should have known, the patient was uninformed 
+and did not take remedial measures. The hospital could also be held liable under 
+the doctrine of corporate negligence or respondeat superior if, through its person -
+nel, the hospital knew, or had reason to know, that physicians (radiologists) or staff 
+personnel performed procedures without a bona fide consent. The radiographer has 
+a professional obligation to protect his/her employer’s interests. Because the hospi -
+tal has an obligation to see that the patient is informed, the radiographer would be 
+decreasing the legal risk to the hospital by informing the physician (radiologist) of 
+the patient’s needs.
+Legality of Informed Consents
+It is basic that the intentional touching of another without his/her consent could 
+be construed as a legal wrong constituting assault, battery, or both. Consent is the 
+affirmation by the patient to have his/her body touched by certain designated indi-
+viduals, such as a doctor, nurse, radiographer, or others. There are different classi -
+fications of consents. There is the implied consent. When a patient rolls up his/her 
+sleeve to receive an injection, this action can be construed as giving consent to the 
+procedure. An expressed consent, as the term applies, is an affirmative action or 
+statement to signify one’s intention. There are also verbal and written consents. An 
+oral or verbal consent is binding. The problem arises when it comes to a question 
+of evidentiary matter. It might be difficult to prove the patient gave an oral consent. 
+Even where witnesses are present and hear the consent given, their testimony might 
+not be consistent on details and could weaken their credibility. A written consent 
+obviously offers some tangible proof that the patient voluntarily signed a form. It is 
+subject to scrutiny and disbelief if other facts relevant to the situation indicate that 
+the patient did not fully and intelligently understand what the affixing of his/her 
+signature meant in relation to his/her medical care.
+A proper consent form is an important evidentiary document in the event of 
+a dispute regarding the claim that an informed consent was not given. The signed 
+consent would generally be considered presumptive evidence that information to 
+perform a particular act was given. The individual giving consent must be men -
+tally competent and able to appreciate the material facts. The patient must have 
+86634.indb   74 8/4/08   8:42:39 AM
+
+===== pdf p94 =====
+Doctrine of Informed Consent  n  75
+consented voluntarily, based on sufficient knowledge and information to make an 
+intelligent decision.
+Rescinding Consent
+The patient may rescind the consent given either verbally or in writing at any time. A 
+written consent may be rescinded verbally. Any time a patient withdraws his/her con-
+sent, it is as though he/she had never given a consent. This means that any procedure 
+done on a patient who has rescinded his/her consent would be considered battery.
+Who May Consent?
+The patient on whom the procedure is to be performed is the only one who has 
+authority over his/her body as long as he/she is conscious and competent. The con-
+sent is invalid if the patient is intoxicated, under the influence of narcotics, delirious, 
+and/or irrational. It is essential to respect the individual’s right to make his/her own 
+decisions. If the patient is mentally incompetent, consent must be obtained from a 
+person legally authorized to give consent for the patient. For example, an elderly or 
+infirm person may have had the foresight to authorize a power of attorney designat-
+ing a child or relative to act on his/her behalf.
+Spouse’s Consent
+Can a husband consent to his wife’s operation or radiology procedure in a nonemer-
+gency situation? The answer is clearly no. And the reverse is true. The wife has no 
+authority to consent for the husband.
+Minor’s Consent
+A minor is considered to be under the jurisdiction of his/her parents until the age of 
+majority. In most states, the age of majority is 18 years. The minor may consent for 
+his/her own care if (1) married, (2) emancipated, (3) pregnant, (4) suffering from 
+venereal disease, or (5) in need of psychological or psychiatric care. The term eman-
+cipated means the individual is no longer under the control of another. Generally, 
+this occurs where a minor is working and is responsible for his/her own support 
+and necessities.
+The common law holds that the natural parents or legal guardians of a child 
+have the authority to consent to medical care for the minor. The parent is presumed 
+to act in the best interest of the child and, therefore, there is a presumption that the 
+child will be protected. There are times when parents, because of religious beliefs, 
+will not permit the child to receive medical care that society believes is in the best 
+86634.indb   75 8/4/08   8:42:39 AM
+
+===== pdf p95 =====
+76  n  Medicolegal Issues for Diagnostic Imaging Professionals
+interest of the child. In these circumstances, the state must exercise its right under 
+the parens patriae doctrine and intervene to protect the health of the child. The 
+law may not interfere with religious convictions, but it may interfere with religious 
+practice. Religious belief is not a lawful excuse for breach of duty to provide medi -
+cal care for a child. The rights of religion and parenthood are not beyond the limita-
+tions of the 14th Amendment of the U.S. Constitution.
+According to the Committee of Pediatric Emergency Medicine, state and fed -
+eral laws and medical ethics recommendations support the emergency treatment 
+of minors with an identified emergency medical condition, regardless of consent 
+issues. Appropriate medical care for the minor patient, during school hours, with 
+an urgent or emergent condition should never be withheld or delayed because of 
+problems with obtaining a parental or guardian consent.
+Patient Can Sue for Failure to Obtain Informed Consent
+A North Carolina appellate court ruled that a patient’s voluntary dismissal of a 
+claim of negligent treatment did not result in dismissal of her claim for failure to 
+obtain informed consent. The patient brought an action against radiologists alleg -
+ing that they failed to adequately inform her of the known hazards of radiation 
+therapy and, therefore, did not obtain her informed consent for treatment. She also 
+alleged negligence in administering the radiation. The treatment resulted in severe 
+radiation damage to her intestines.
+The patient voluntarily dismissed her claim based on negligence in rendering 
+medical services. The radiologists alleged that her claim of lack of informed con -
+sent was barred by the statute of limitations. The trial court granted their motion 
+to dismiss.
+On appeal, the radiologists contended that the patient took a voluntary dismissal 
+on the question of their failure to obtain informed consent, arguing that “render -
+ing medical services” included obtaining the informed consent to the treatment 
+as well as the actual treatment. The court found that the work rendered applied to 
+performance of the medical procedure, and that the informed consent claim was 
+not voluntarily dismissed.
+The radiologists also contended that uninformed or invalid consent was the 
+same as no consent at all and, therefore, the subsequent treatment constituted 
+unauthorized touching or battery. Thus, the action would be controlled by the one-
+year statute of limitations for battery.
+The court found that the claim was for malpractice based on failure to dis -
+close the various choices with regard to the proposed treatment and the dangers 
+involved, and that the three-year statute of limitations applied. Holding that the 
+patient’s claim was not barred, the court reversed the trial court’s judgment (Nelson 
+v. Patrick, 293 S.E. Second 829 North Carolina Court of Appeals, August 3, 1982, 
+also in The Citation, 46(8): 89–90).
+86634.indb   76 8/4/08   8:42:40 AM
+
+===== pdf p96 =====
+Doctrine of Informed Consent  n  77
+Vignette 13
+Informed Consent
+Ula Umbra is a 60-year-old female admitted to Reso -
+lution Hospital for a coronary angiogram. Umbra has 
+signed the routine consent form as required by the hos-
+pital. This was done in admitting and witnessed by the 
+admission clerk.
+During the course of preparing Umbra for the coro-
+nary angiogram, Gerry Generator, R.T., talks to Umbra 
+about her healthcare in general. Umbra states to Gener-
+ator, “My doctor has not discussed this procedure with 
+me, but I guess he will before it begins, won’t he?” Gen-
+erator asks Umbra if she read and signed the consent 
+form. She states, “I read the consent form, but I really 
+don’t understand what is going to be done.”
+What, if any, obligation does the radiographer have 
+toward Umbra? Would he be liable if Umbra had the 
+coronary angiogram under the above circumstances?
+Answer
+Gerry Generator, R.T., has several obligations. There 
+is an obligation to the patient, the physician, and to 
+Resolution Hospital. When it becomes evident that the 
+patient has either not been fully informed regarding the 
+coronary angiogram, or does not understand the impli-
+cations of the procedure, the physician performing the 
+procedure should be notified immediately.
+The radiographer should document the situa -
+tion and the fact that the physician was notified. The 
+radiographer has an obligation to inform the patient’s 
+physician of the patient’s statement so that the doctor 
+may take corrective measures.
+Resolution Hospital has no direct obligation to 
+inform the patient regarding the coronary angiogram 
+to be done. In fact, it cannot do so because only the 
+physician knows what techniques and specific proce -
+dures will be utilized for the specific patient. However, 
+Resolution Hospital could be held as a party-defen -
+dant by the patient alleging no consent was given; the 
+86634.indb   77 8/4/08   8:42:40 AM
+
+===== pdf p97 =====
+78  n  Medicolegal Issues for Diagnostic Imaging Professionals
+radiographer should take all reasonable measures to 
+protect the hospital.
+The radiographer should protect himself, also, 
+because the patient could include the radiographer as 
+a party-defendant. The patient has put the radiographer 
+on notice that she is uninformed regarding her imminent 
+coronary angiogram. The radiographer should notify the 
+physician, the supervising radiographer, and any other 
+appropriate parties of the situation. Otherwise, the 
+radiographer could be held liable if the coronary angio-
+gram were performed without the patient’s consent.
+Vignette 14
+Informed Consent Situation
+Vicky Volt, R.T., is a staff radiographer at Incandescent 
+General Hospital. Molly Milliampere, a 72-year-old 
+woman, is scheduled for a lumbar myelogram. Volt is 
+responsible for getting a consent signed by Milliampere 
+consenting to the procedure. As Volt begins to explain 
+the procedure to the patient, Milliampere asks that her 
+daughter be contacted to give permission before the 
+procedure begins. The radiographer has tried several 
+times to contact Milliampere’s daughter, but is unable 
+to reach her. The radiologist, Dr. Ohm, states that he 
+has to go ahead with the procedure because the patient 
+is scheduled for surgery immediately after the lumbar 
+myelogram.
+What, if anything, should Volt do?
+Can Dr. Ohm proceed with the lumbar myelogram? 
+If so, under what circumstances? What, if any, legal lia -
+bilities would be involved?
+Answer
+There is nothing in the situation to indicate Molly Mil -
+liampere is not competent and capable of consenting 
+86634.indb   78 8/4/08   8:42:40 AM
+
+===== pdf p98 =====
+Doctrine of Informed Consent  n  79
+to the procedure herself. The patient may consent or 
+withhold consent for medical treatment or proce -
+dure. The fact that she wants her daughter contacted 
+should be respected. The daughter should be notified 
+as requested. Milliampere may wish to consult with her 
+daughter before submitting to the lumbar myelogram. 
+However, the daughter’s consent cannot be substituted 
+for her mother’s consent. The fact that Milliampere is 72 
+years old has no bearing on her right to make decisions 
+regarding her own body. Unless there is some evidence 
+of incompetence or inability, only Milliampere can give 
+an informed consent for the procedure.
+Dr. Ohm can only proceed with the lumbar myelo -
+gram if Milliampere has given an informed consent. It 
+would be wise and good business for the daughter to 
+be incorporated into the consent procedure because 
+the patient specifically requested this, but the daugh -
+ter cannot authorize the procedure where the patient 
+is capable of consenting. It is not an emergency at this 
+point, and Dr. Ohm could not proceed under the Emer-
+gency Rule. He must have the patient’s valid consent.
+If the above was not done in accordance with general 
+practice in procuring consents, and the patient could 
+establish she did not give a valid consent, the physician, 
+radiographer, and hospital might be sued and found 
+liable for assault and battery.
+Postscripts to Vignette 13 and Vignette 14
+The First Amendment guarantees the integrity of one’s body. Any touching of an 
+individual’s body without appropriate authority or the individual’s consent could 
+be construed as an assault and battery. The courts recognize assault and battery 
+as giving rise to a criminal action for which the law gives a remedy in monetary 
+damages.
+The hospital and its employees, as well as the doctors, can be held liable for 
+performing treatment or procedures without the patient’s consent. The courts apply 
+the doctrine of corporate liability, respondeat superior, or other appropriate law 
+and, where it can be ascertained that the hospital, as in these cases, knew or should 
+have known there was no bona fide informed consent by the patient and did not 
+86634.indb   79 8/4/08   8:42:40 AM
+
+===== pdf p99 =====
+80  n  Medicolegal Issues for Diagnostic Imaging Professionals
+correct the situation but permitted uninformed procedures, the radiographer, phy -
+sician, and hospital are at legal risk.
+There must be some criteria that the radiographer follows to ensure that proper 
+consent is obtained. The patient must be conscious and able to comprehend the 
+document that is being signed. There should be a reasonable belief on the part of 
+the radiographer that the patient has been informed regarding the nature and pur -
+pose of the procedure and the possible risks related to it. The patient should be able 
+to read, write, and understand the language being used for communication. The 
+patient should be consenting to the procedure freely, voluntarily, and without any 
+coercion “of his own will.”
+Review Questions
+ 1. The California State Supreme Court indicated that, written into an informed 
+consent, the patient must be informed of all the following except:
+ a. Nature of the treatment
+ b. Reasonable response to requests
+ c. Risks, complications, and benefits
+ d. Alternatives to the procedures
+ 2. The ___ has the fiduciary duty to obtain the patient’s informed consent.
+ a. Radiographer
+ b. Physician
+ c. Hospital
+ d. Nurse
+ 3. A written consent may be rescinded verbally or ___ at any time.
+ a. In writing
+ b. By statute
+ c. Mandated
+ d. By physician order
+ 4. A consent is invalid under the following patient conditions except:
+ a. Intoxication
+ b. Sanity
+ c. Delirium
+ d. Drugged
+ 5. Which of the following will allow a minor to consent for care?
+ a. Emancipated
+ b. Pregnant
+ c. In need of psychological care
+ d. All of the above
+86634.indb   80 8/4/08   8:42:40 AM
+
+===== pdf p100 =====
+Doctrine of Informed Consent  n  81
+ 6. California law permits medical treatment without parental consent during 
+___.
+ a. A sporting event
+ b. School hours
+ c. Babysitting hours
+ d. The morning hours
+86634.indb   81 8/4/08   8:42:40 AM
+
+===== pdf p101 =====
+86634.indb   82 8/4/08   8:42:40 AM

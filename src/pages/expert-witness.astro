@@ -1,0 +1,421 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<BaseLayout title={`Expert Witness — GI & Peritoneal Malignancy | ${SITE_TITLE}`} description="GI and peritoneal malignancy expert witness services by Dr Joseph El-Sheikha FRCR — CT/MRI staging error analysis, peritoneal carcinomatosis assessment, and CPR Part 35 compliant reports.">
+  <PageHero
+    eyebrow="Gastrointestinal & Peritoneal Malignancy"
+    title="Expert Witness — GI & Peritoneal Malignancy"
+    description="Specialist medicolegal radiology services for solicitors, barristers, and insurers. Expert review of CT and MRI in cases involving gastrointestinal malignancy, peritoneal carcinomatosis, staging errors, and breach of duty in oncological reporting."
+  />
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Specialist Focus                                  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-16 dark:bg-navy-900">
+    <div class="container-page space-y-12">
+      <Section eyebrow="Specialist focus" title="Where radiological accuracy meets medicolegal scrutiny">
+        <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
+          Gastrointestinal and peritoneal malignancy represent some of the most complex and high-stakes areas of
+          medicolegal radiology. Subtle changes in bowel wall, peritoneal nodularity, and early metastatic disease
+          are frequently at the centre of delay-in-diagnosis claims — yet also the most contested.
+        </p>
+      </Section>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="card p-6">
+          <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Peritoneal Carcinomatosis</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Detection and staging of peritoneal seeding on CT and MRI remains an area of significant disagreement
+            between parties. I assess whether subtle peritoneal nodularity, omental caking, or ascites were
+            reportable at the time of imaging — and whether the reported stage was consistent with the visual data.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Peritoneal Carcinomatosis Index (PCI) verification
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Sensitivity of CT vs MRI for peritoneal deposits
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Delay to HIPEC / cytoreduction assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Peritoneal enhancement patterns and differential
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card p-6">
+          <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">GI Malignancy Staging</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Colorectal, gastric, oesophageal and pancreatic malignancies require precise TNM staging. I review
+            whether the initial staging was adequate per BSGE/ESMO guidelines, whether lymph node assessment met
+            NCCN criteria, and whether a delay altered the patient's management pathway or prognosis.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              CT colonography / triple-phase abdominal CT review
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Liver metastasis detection (Li-RADS equivalents)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Peritoneal spread on limited-phase studies
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Neo-adjuvant treatment response assessment
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card p-6">
+          <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Staging Errors & Reporting Gaps</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Staging errors — whether by omission or by mischaracterisation — are central to many claims. I
+            distinguish between lesions that were genuinely occult at the time of imaging and those that were
+            visible but not recognised, applying the Bolam test and current peer-reviewed literature.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Retrospective vs contemporaneous assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Appropriate use of contrast phases & reconstructions
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Comparison with prior and subsequent studies
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
+              Impact of protocol deviation on staging accuracy
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Report Types & Services                             -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="bg-slate-50 py-16 dark:bg-navy-950">
+    <div class="container-page space-y-10">
+      <Section
+        eyebrow="Services"
+        title="Report types & expert services offered"
+        lead="Every opinion is prepared in full compliance with CPR Part 35, the Expert Witness Institute Guidelines and the GMC's Duty of Candour principles."
+      >
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <!-- Service 1 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">CPR Part 35 / Form 35 Compliant Reports</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Full expert witness reports suitable for filing in the High Court or County Court. Structured to meet
+              the Expert Witness Institute template — covering background, instructions, findings, opinion, and
+              summary. Includes annotated DICOM images where appropriate.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Breach of Duty vs Causation Analysis</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Separate analysis of whether the radiological interpretation fell below the Bolam-standard of a
+              competent body of radiologists (breach), and whether any identified breach caused or materially
+              contributed to the adverse outcome (causation). Applied with reference to <em>Rogers v Whittaker</em>
+              and <em>Bolitho</em> principles as relevant to diagnostic imaging.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Pre-litigation Screening Opinions</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Rapid screening reports to help solicitors assess the merit of a potential claim before a full
+              Part 35 report is instructed. Includes an honest assessment of the strengths and weaknesses of the
+              case from a radiological perspective, and identification of any further imaging or information
+              required.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">High Court Oral Evidence</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Availability to give oral evidence at settlement conferences, mediation sessions or trial in the
+              High Court and County Courts. Experienced in cross-examination as a CPR Part 35 joint expert or
+              party-appointed expert. Prepared to use the local DICOM viewer for real-time image demonstration.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Imaging Re-derivation</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Re-processing of source DICOM data using the expert's PACS workstation to verify whether findings
+              were demonstrable using alternative window settings, multi-planar reconstructions (MPR), maximum
+              intensity projections (MIP), or other standard radiological post-processing techniques.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="card p-6 border-l-4 border-l-teal-500">
+            <h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Letter of Instruction Response</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Direct responses to specific questions posed by instructing solicitors or barristers in relation
+              to the quality, completeness or adequacy of an existing radiology report — without requiring a
+              full Part 35 opinion where a focused answer is sufficient.
+            </p>
+          </div>
+        </div>
+      </Section>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Medicolegal Framework                               -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-16 dark:bg-navy-900">
+    <div class="container-page space-y-10">
+      <Section
+        eyebrow="Legal framework"
+        title="Key medicolegal principles in GI radiology claims"
+      >
+        <div class="mt-8 space-y-8">
+          <!-- Bolam vs Pure Diagnosis -->
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">The Bolam Test vs "Pure Diagnosis"</h3>
+            <div class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <p>
+                Radiological interpretation is judged against the standard of a competent body of
+                <strong>general radiologists</strong> — the <em>Bolam</em> test (<em>Bolam v Friern Hospital
+                Management Committee</em> [1957]). This means that a failure to detect a lesion is not automatically
+                negligent if a responsible body of radiologists would have reached the same conclusion on the same
+                images.
+              </p>
+              <p>
+                Claimants' counsel frequently advance the argument of <strong>"pure diagnosis"</strong> — the
+                assumption that if a lesion is visible in retrospect (e.g., on a subsequent, optimally-phased scan
+                or at surgery), missing it on the original study is automatically negligent. This is a legal
+                fallacy that the expert is uniquely positioned to address.
+              </p>
+              <p>
+                The key distinction is whether the lesion was <em>demonstrable</em> on the images as acquired and
+                reviewed, or whether the retrospective finding benefits from hindsight bias. The expert must
+                reconstruct the contemporaneous clinical context — including the imaging protocol, patient
+                preparation, contrast phase, and the clinical question asked by the referrer.
+              </p>
+            </div>
+          </div>
+
+          <!-- Incidental Pathologies & RCR Standards -->
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Incidental Pathologies & RCR Standards</h3>
+            <div class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <p>
+                Analysis of claims handled by Medical Protection and published data indicates that approximately
+                <strong>37% of abdominal radiology allegations</strong> relate to incidental findings — such as
+                subtle colonic lesions, small renal masses, or early liver metastases — identified on CT studies
+                that were <strong>not dedicated</strong> to those organs.
+              </p>
+              <p>
+                The <strong>Royal College of Radiologists (RCR) Standards (2018)</strong> set out the expectation
+                that reporting radiologists should consider all visible anatomy within the scanned field — but
+                this duty is bounded by what is clinically reasonable given the study indication and technique.
+              </p>
+              <p>
+                The <strong>updated RCR Standards (October 2025)</strong> further emphasise:
+              </p>
+              <ul class="list-disc pl-6 space-y-1.5">
+                <li>Referral forms must include adequate clinical detail to guide the reporting radiologist's approach to non-target areas.</li>
+                <li>When clinical information is insufficient, the report should reflect this uncertainty and suggest appropriate further imaging if warranted.</li>
+                <li>Escalation pathways for unexpected significant findings must be documented and practicable for remote reporting.</li>
+              </ul>
+              <p>
+                In a medicolegal context, the expert must evaluate whether the radiologist's handling of incidental
+                findings fell below the Bolam standard — and whether the failure to detect an incidental lesion
+                caused or materially contributed to the adverse outcome.
+              </p>
+            </div>
+          </div>
+
+          <!-- Teleradiology Risks -->
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Teleradiology & Outsourced Reporting Risks</h3>
+            <div class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <p>
+                Outsourced remote radiology reporting has increased significantly in the UK, particularly following
+                the pandemic. While pragmatically useful, this model introduces systemic risks that are frequently
+                at the heart of medicolegal claims.
+              </p>
+              <p>
+                <strong>Key systemic issues identified by GIRFT (2020) and the Parliamentary and Health Service
+                Ombudsman (2021), and reinforced by claims data from Medical Protection:</strong>
+              </p>
+              <ul class="list-disc pl-6 space-y-1.5">
+                <li><strong>Lack of prior imaging access:</strong> Many remote reporting systems cannot share previous studies between hospital trusts, leaving the reporting radiologist without critical comparative information.</li>
+                <li><strong>Uninformative request forms:</strong> Remote referrers frequently provide insufficient clinical detail, and face-to-face communication is not available to clarify the clinical question.</li>
+                <li><strong>Communication breakdowns:</strong> Receiving clinicians may be unable to contact the remote reporting radiologist, particularly for out-of-hours reporting. Ambiguous reports or unexpected findings may be interpreted incorrectly.</li>
+                <li><strong>Increased error rates:</strong> Studies show offsite reporting error rates between 8.7% and 12.7% — nearly double the 3–5% rate for co-located radiologists (<em>Howlett et al., Clinical Radiology 2017</em>).</li>
+                <li><strong>Duty of Candour obligations:</strong> Remote radiologists have the same duty of candour as their NHS colleagues when significant unexpected findings are identified.</li>
+              </ul>
+              <p>
+                The expert witness is often asked to assess whether the outsourcing arrangement itself, or the
+                specific actions of the remote radiologist, contributed to a diagnostic error and its consequences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Referral Form                                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="bg-slate-50 py-16 dark:bg-navy-950" id="expert-referral-form">
+    <div class="container-page grid gap-12 lg:grid-cols-5">
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <span class="eyebrow block">GI & Peritoneal Malignancy Expert Referral</span>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Request an expert opinion</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">
+          Complete the form below to request a GI / peritoneal malignancy expert opinion. All referrals are
+          handled in accordance with CPR Part 35 and GDPR. Fields marked * are required.
+        </p>
+
+        <form id="expert-referral-form" class="mt-8 grid gap-5 sm:grid-cols-2">
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Referrer type *
+            <select name="referrerType" required class="input-field mt-1.5">
+              <option value="">Select…</option>
+              <option>GP / General Practice</option>
+              <option>Solicitor / Barrister</option>
+              <option>Insurer</option>
+              <option>Hospital / NHS Trust</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Referrer name *
+            <input name="referrerName" type="text" required class="input-field mt-1.5" placeholder="Full name" />
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Firm / organisation
+            <input name="organisation" type="text" class="input-field mt-1.5" placeholder="Firm or trust" />
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Email *
+            <input name="referrerEmail" type="email" required class="input-field mt-1.5" placeholder="you@firm.co.uk" />
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100 sm:col-span-2">
+            Case brief / clinical summary *
+            <textarea name="summary" rows="5" required class="input-field mt-1.5" placeholder="Brief, anonymised summary of the case, imaging performed, and the specific radiological question"></textarea>
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Urgency
+            <select name="urgency" class="input-field mt-1.5">
+              <option value="standard">Standard (14 working days)</option>
+              <option value="urgent">Urgent (48–72 hours)</option>
+            </select>
+          </label>
+          <label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+            Report type *
+            <select name="reportType" required class="input-field mt-1.5">
+              <option value="">Select…</option>
+              <option>CPR Part 35 Full Report</option>
+              <option>Pre-litigation Screening</option>
+              <option>Breach & Causation Analysis</option>
+              <option>High Court Oral Evidence</option>
+              <option>Imaging Re-derivation</option>
+              <option>Letter Response</option>
+            </select>
+          </label>
+          <div class="sm:col-span-2 flex items-center gap-3">
+            <button type="submit" class="btn btn-primary" data-submit>Submit referral</button>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Stored securely in KV; never including patient-identifying details on this page.</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-2 space-y-6">
+        <div class="card p-6 border-teal-500/30">
+          <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Turnaround & Fees</h3>
+          <ul class="mt-4 space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+            <li>Standard report: <strong class="text-navy-900 dark:text-slate-100">£1,450 + VAT</strong></li>
+            <li>Urgent supplement: <strong class="text-navy-900 dark:text-slate-100">+60%</strong></li>
+            <li>Standard turnaround: <strong>14 working days</strong></li>
+            <li>Urgent turnaround: <strong>48–72 hours</strong></li>
+            <li>Oral evidence fees quoted per occasion.</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Imaging Transfer</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            Source DICOM images must be provided for forensic review. Submit via secure DICOM link or encrypted
+            transfer. Please include all relevant phases and prior comparative studies.
+          </p>
+          <a href="/referrals#imaging" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+            Imaging transfer guide
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
+          </a>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Professional Indemnity</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            Certificate of Professional Indemnity held through Medical Protection Society (MPS), £10 million
+            limit per claim. Full indemnity coverage confirmed and available on request.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("expert-referral-form") as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+      const btn = form.querySelector("[data-submit]") as HTMLButtonElement | null;
+      if (btn) { btn.disabled = true; btn.textContent = "Submitting…"; }
+      try {
+        const res = await fetch("/api/referrals", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || "Submission failed");
+        form.reset();
+        alert("Thank you. Your GI & Peritoneal Malignancy expert referral has been received (reference " + json.reference.slice(0, 8).toUpperCase() + "). The secretariat will acknowledge within one working day.");
+      } catch (err) {
+        alert("There was a problem submitting the referral. Please email the secretariat directly at secretary@elsheikha-imaging.legal");
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = "Submit referral"; }
+      }
+    });
+  }
+</script>

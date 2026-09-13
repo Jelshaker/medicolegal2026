@@ -1,0 +1,935 @@
+
+===== pdf p150 =====
+131
+Chapter 11
+Medicolegal Concerns 
+for Teleradiology
+Upon completion of Chapter 11, the reader will be able to:
+ 1. Define the American College of Radiology standards for teleradiology.
+ 2. Understand the ACR goals for teleradiology.
+ 3. Identify the qualifications of personnel and equipment specifications for 
+teleradiology.
+ 4. Describe licensing, credentialing, and liability, to include quality control, 
+improvement safety, infection control, and patient education concerns.
+ 5. Define the legal issues regarding liability, responsibility, accountability, and 
+duty of care.
+ 6. Understand the security and confidentiality of teleradiologic images.
+Introduction to Teleradiology Advances
+Technological advances in teleradiology cannot be considered independently of the 
+revolutionary developments that have occurred in the past 20 years in the field 
+of medical imaging, paving the way for the increasingly important role of infor -
+mation technology and telecommunications in healthcare. The diagnostic imag -
+ing department of the future will make extensive use of computer networks, mass 
+storage devices, and sophisticated workstations at which humans and machines 
+will interact, assisted by advanced information processing tools and techniques of 
+86634.indb   131 8/4/08   8:42:47 AM
+
+===== pdf p151 =====
+132  n  Medicolegal Issues for Diagnostic Imaging Professionals
+knowledge engineering, to achieve integration of multimodality imaging data and 
+expert medical knowledge.
+Picture archiving and communications systems (PACS) form the core of such 
+an environment, and include the acquisition, storage, communication, display, 
+and manipulation of diagnostic images and related patient data. Teleradiology 
+services build upon and extend this environment to interhospital or hospital-to- 
+point-of-need communications on a regional, national, or global scale. Therefore, 
+teleradiology can be considered as an extended virtual radiology department that 
+encompasses available physical and human resources over a wide region in order to 
+support remote diagnostic procedures and patient management. Possible teleradiol-
+ogy scenarios at various geographical scales include:
+ 1. Local area services that are within the same building or adjacent buildings of the 
+same hospital — Radiologist reviews images and provides primary reporting 
+and real-time remote consultation for critical cases, such as patients in the 
+intensive care unit, the emergency department, or the operating room. This 
+effectively corresponds to teleradiology services offered using the resources of 
+a local PACS.
+ 2. Metropolitan area services that are within the same metropolitan area  — Imag-
+ing specialists in a major hospital offer consultation and provide support for 
+specific diagnostic procedures to other hospitals and private physicians in the 
+same metropolitan area.
+ 3. Wide area or global services that cover an extended geographical region and may 
+cross country borders  — Diagnostic imaging examinations are performed 
+by primary care or rural physicians and can be monitored by specialists at 
+a major referral medical center, who can also provide consultation on the 
+diagnostic interpretation of acquired images. Radiologists in a hospital can 
+consult with colleagues or subspecialists located in other hospitals. Medical 
+imaging specialists in a hospital may also provide support to mobile diagnos -
+tic imaging units or units at remote and isolated sites, which may or may not 
+have a radiologist on site.
+Teleradiology Services Involve Multimedia Communications
+In teleradiology, the basic component of the communication object is the diagnostic 
+image. Additional medical and demographic patient data, the referring physician’s 
+comments, and the radiologists’ report are of a textual type. Teleconsultation may 
+also involve the real-time transmission of voice and video data. Video frames, from 
+image sequences of dynamic diagnostic imaging procedures and patient monitor -
+ing sessions, may also be included as part of the communication object. Current 
+advances in the indexing and management of multimedia data are likely to impact 
+future developments in teleradiology services and applications.
+86634.indb   132 8/4/08   8:42:47 AM
+
+===== pdf p152 =====
+Medicolegal Concerns for Teleradiology  n  133
+Teleradiology services involve the use of heterogeneous hardware and soft -
+ware systems. The degree to which such systems can be fully integrated will have 
+a significant effect on the efficiency with which such services are provided and, 
+consequently, on their effectiveness and acceptance by the healthcare community. 
+Therefore, integration mechanisms based on a unified user interface, a unified com-
+puterized patient record, which may consist of geographically distributed segments, 
+and intelligent distributed hierarchical storage management are absolutely impor -
+tant in any attempt at providing efficient teleradiology services in an integrated 
+healthcare environment (Excerpts from Orphanoudakis et al., 1996. Technological 
+advances in teleradiology, European Journal of Radiology , 22: 205–217).
+American College of Radiology (ACR) 
+Standard for Teleradiology
+The standards of the American College of Radiology (ACR) are not rules, but are 
+guidelines that attempt to define principles of practice that should generally pro -
+duce high quality radiologic care. The physician and medical physicist may mod -
+ify an existing standard as determined for the individual patient and by available 
+sources. Adherence to ACR standards will not assure a successful outcome in every 
+situation. The standards should not be deemed inclusive of all proper methods of 
+care, or exclusive of other methods of care reasonably directed to obtaining the 
+same results. The standards are not intended to establish a legal standard of care 
+or conduct, and deviation from a standard does not, in and of itself, indicate or 
+imply that such medical practice is below an acceptable level of care. The ultimate 
+judgment regarding the propriety of any specific procedure or course of conduct 
+must be made by the physician and medical physicist in light of all circumstances 
+presented by the individual situation.
+Definition
+Teleradiology is the electronic transmission of radiologic images from one location 
+to another for the purpose of interpretation and/or consultation. Teleradiology may 
+allow more timely interpretation of radiologic images and give greater access to sec-
+ondary consultations and improved continuing education. Users in different loca -
+tions may simultaneously view images. Appropriately utilized, teleradiology may 
+improve access to radiologic interpretations and, thus, improve patient care.
+Teleradiology is not appropriate if the available teleradiology system does not 
+provide images of sufficient quality to perform the indicated task. When a telera -
+diology system is used to render the official interpretation, there should not be a 
+clinically significant loss of data from image acquisition through transmission to 
+final image display. For transmission of images for display use only, the image qual-
+ity should be sufficient to satisfy the needs of the clinical circumstance. While not 
+86634.indb   133 8/4/08   8:42:47 AM
+
+===== pdf p153 =====
+134  n  Medicolegal Issues for Diagnostic Imaging Professionals
+all inclusive, the standard should serve as a model for all physicians and healthcare 
+workers who utilize teleradiology.
+Goals
+Teleradiology is an evolving technology. New goals will continue to emerge. The 
+current goals of teleradiology include:
+Providing consultative and interpretive radiologic services
+Making radiologic consultations available to medical facilities without onsite 
+radiologic support
+Providing timely availability of radiologic images and image interpretation in 
+emergent and nonemergent clinical care areas
+Facilitating radiologic interpretations in on-call situations
+Providing subspecialty radiologic support as needed
+Enhancing educational opportunities for practicing radiologists
+Promoting efficiency and quality improvements
+Providing interpreted images to referring providers
+Supporting telemedicine
+Providing supervision of offsite imaging studies
+Qualifications of Personnel
+The radiologic examination at the transmitting site must be performed by qualified 
+personnel trained in the examination to be performed. In all cases, this means a 
+licensed and/or registered radiologic technologist, radiation therapist, nuclear med-
+icine technologist, or sonographer. This technologist must be under the supervision 
+of a qualified licensed physician.
+It is desirable to have a qualified medical physicist and/or image management 
+specialist on site or serving as consultants. The following will identify the qualifica -
+tions of all the personnel involved in teleradiologic services:
+ 1. Physician — The official interpretation of images must be done by a physician 
+who has:
+ 1. An understanding of the basic technology of teleradiology, its strengths 
+and weaknesses, as well as limitations, and who is knowledgeable in the 
+use of teleradiology equipment.
+ 2. Demonstrated qualifications as delineated in the appropriate ACR stan -
+dard for the particular diagnostic modality being transmitted through 
+teleradiology.
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+86634.indb   134 8/4/08   8:42:47 AM
+
+===== pdf p154 =====
+Medicolegal Concerns for Teleradiology  n  135
+ 2. Radiologic technologist, radiation therapist, nuclear medicine technologist, 
+or sonographer should be:
+ 1. Certified by the appropriate registry and/or possess unrestricted state 
+licensure.
+ 2. Trained to properly operate and supervise the teleradiology system.
+ 3. Qualified Medical Physicist — An individual who is competent to practice 
+independently in one or more of the subfields in medical physics. The ACR 
+considers that certification and continuing education in the appropriate 
+subfield(s) demonstrates that an individual is competent to practice one or 
+more of the subfields in medical physics and to be a qualified medical physi -
+cist. The ACR recommends that the individual be certified in the appropriate 
+subfield(s) by the American Board of Radiology (ABR).
+  The appropriate subfields of medical physics include therapeutic radiologic 
+physics, diagnostic radiologic physics, medical nuclear physics, and radiologic 
+physics.
+  Continuing education of a qualified medical physicist should be in accor -
+dance with the ACR Standard for Continuing Medical Education (Res. 17, 
+1996).
+ 4. Image Management Specialist:
+ 1. The image management specialist is an individual who is qualified to 
+assess and provide problem-solving input, initiate repair, and coordinate 
+system-wide maintenance programs to assure sustainable high-image 
+quality and system function. This individual would also be directly 
+involved with any system expansion programs.
+ 2. This specialist should be available in a timely manner in case of malfunc -
+tion to facilitate the return to optimal system functionality.
+Equipment Specifications
+Specifications for equipment used in teleradiology will vary depending on the indi-
+vidual facility’s needs, but in all cases should provide image quality and availability 
+appropriate to the clinical need. Compliance with the ACR/NEMA (National Elec-
+trical Manufacturers Association) Digital Imaging and Communication in Medicine 
+(DICOM) Standard is strongly recommended for all new equipment acquisitions, 
+and consideration of periodic upgrades incorporating the expanding features of that 
+standard should be part of the continuing quality-improvement program.
+Equipment guidelines cover two basic categories of teleradiology when used for 
+rendering the official interpretation:
+ 1. Small matrix size, such as CT, MRI, sonography, nuclear medicine, digital 
+fluoroscopy, and digital angiography
+ 2. Large matrix size, such as digital radiography and digitized radiographic films
+86634.indb   135 8/4/08   8:42:48 AM
+
+===== pdf p155 =====
+136  n  Medicolegal Issues for Diagnostic Imaging Professionals
+When using small matrix size, the dataset should provide a minimum of a 512 × 
+512 matrix size at a minimum of an 8-bit pixel depth for processing or manipula -
+tion, with no loss of matrix size or bit depth at display. With the large matrix size, 
+the data should allow for a minimum of 2.5 line pair/millimeter (lp/mm) spatial 
+resolution at a minimum of 10-bit pixel depth.
+Acquisition or Digitization
+Initial image acquisition should be performed in accordance with the appropriate 
+ACR modality or examination standard.
+. 1. Direct Image Capture
+  The entire image data set produced by the digital modality both in terms of 
+image matrix size and pixel bit depth should be transferred to the teleradiol -
+ogy system. It is recommended that the DICOM standard be used.
+ 2. Secondary Image Capture
+ 1. Small matrix images  — Each individual image should be digitized to a 
+matrix size as large as or larger than that of the original image by the 
+imaging modality. The images should be digitized to a minimum of 8 bits 
+pixel depth. Film digitization or video frame grab systems conforming to 
+the above specifications are acceptable.
+ 2. Large matrix images — These images should be digitized to a matrix size 
+corresponding to 2.5 lp/mm or greater, measured in the original detec -
+tor plane. The images should be digitized to a minimum of 10 bits pixel 
+depth.
+ 3. General Provisions
+  At the time of acquisition, small or large matrix, the system must include 
+annotating capabilities including patient name, identification number, date 
+and time of examination, name of facility or institution of acquisition, 
+type of examination, patient or anatomic part orientation, and amount and 
+method of data compression. The capability to record a brief patient history 
+is desirable.
+Compression
+Data compression may be used to increase transmission speed and reduce stor -
+age requirements. Several methods, including both reversible and irreversible tech -
+niques, may be used under the direction of a qualified physician, with no reduction 
+in clinically significant diagnostic image quality. The types and ratios of compres -
+sion used for different imaging studies transmitted and stored by the system should 
+be selected and periodically reviewed by the responsible physician to ensure appro -
+priate clinical image quality.
+86634.indb   136 8/4/08   8:42:48 AM
+
+===== pdf p156 =====
+Medicolegal Concerns for Teleradiology  n  137
+Transmission
+The type and specifications of the transmission devices used will be dictated by the 
+environment of the studies to be transmitted. In all cases, for official interpretation, 
+the digital data received at the receiving end of any transmission must have no loss 
+of clinically significant information. The transmission system shall have adequate 
+error-checking capability.
+Display Capabilities
+Display workstations used for official interpretation and employed for small and 
+large matrix systems should provide the following characteristics:
+ 1. Luminance of the gray-scale monitors should be at least 50-foot lamberts
+ 2. Lighting in the reading room should be controlled to eliminate reflections in 
+the monitor and to lower the ambient lighting level as much as is possible
+ 3. Capability for selecting image sequence
+ 4. Capability for accurately associating the patient and study demographics 
+characterizations with the study images
+ 5. Capability of window and level adjustments, if those data are available
+ 6. Capability of pan and zoom functions
+ 7. Capability of rotating or flipping the images provided correct labeling of 
+patient orientation is preserved
+ 8. Capability of calculating and displaying accurate linear measurements 
+and pixel value determinations in appropriate values for modality, such as 
+Houndsfield units for CT images, if those data are available
+ 9. Capability of displaying prior image compression ratio, processing, or cropping
+ 10. The following elements of display should be available:
+ 1. Matrix size
+ 2. Bit depth
+ 3. Total number of images acquired in the study
+ 4. Clinically relevant technical parameters
+When display systems are not used for the official interpretation, they need not 
+meet all the characteristics listed above.
+Archiving and Retrieval
+If electronic archiving is to be employed, the guidelines listed below should be 
+followed.
+86634.indb   137 8/4/08   8:42:48 AM
+
+===== pdf p157 =====
+138  n  Medicolegal Issues for Diagnostic Imaging Professionals
+ 1. Teleradiology systems should provide storage capacity sufficient to comply 
+with all facility, state, and federal regulations regarding medical record reten-
+tion. Images stored at either site should meet the jurisdictional requirements 
+of the transmitting site. Images interpreted offsite need not be stored at the 
+receiving facility, provided they are stored at the transmitted site. However, 
+if the images are retained at the receiving site, the retention period of that 
+jurisdiction must be met as well. The policy on record retention must be in 
+writing.
+ 2. Each examination data file must have an accurate corresponding patient and 
+examination database record, which includes patient name, identification, 
+and facility at which the examination was performed. It is desirable that space 
+be available for a brief clinical history.
+ 3. Prior examinations should be retrievable from archives in a time frame appro-
+priate to the clinical needs of the facility and medical staff.
+ 4. Each facility should have policies and procedures for archiving and storage of 
+digital image data equivalent to the policies for protection of hard-copy stor -
+age media to preserve imaging records.
+Security
+Teleradiology systems should provide network and software security protocols to 
+protect the confidentiality of patients’ identification and image data consistent with 
+federal and state legal requirements. There should be measures to safeguard the data 
+and to ensure integrity against intentional or unintentional corruption of the data.
+Reliability and Redundancy
+Quality patient care may depend on timely availability of the image interpreta -
+tion. Written policies and procedures should be in place to ensure continuity of 
+teleradiology services at a level consistent with those for hard-copy imaging studies 
+and medical records within a facility or institution. This should include internal 
+redundancy systems, backup communication links, and a disaster plan.
+Licensing and Credentialing
+Physicians who provide the official interpretation of images transmitted by telera -
+diology should maintain licensure as may be required for provisions of radiologic 
+service at both the transmitting and receiving sites. When providing the official 
+interpretation of images from a hospital, the physician should be credentialed and 
+obtain appropriate privileges at the institution. These physicians should consult 
+86634.indb   138 8/4/08   8:42:48 AM
+
+===== pdf p158 =====
+Medicolegal Concerns for Teleradiology  n  139
+with their professional liability carrier to ensure coverage at both the sending and 
+receiving sites, to include the state or jurisdiction.
+The physician performing the official interpretation is responsible for the qual -
+ity of the images being reviewed. The ACR Rules of Ethics state: “It is proper for a 
+diagnostic radiologist to provide a consultative opinion on radiographs and other 
+images regardless of their origin. A diagnostic radiologist should regularly interpret 
+radiographs and other images only when the radiologist reasonably participates in 
+the quality of medical imaging, utilization review, and matters of policy that affect 
+the quality of patient care.”
+Images stored at either site (transmitting or receiving) should meet the juris -
+dictional requirements of the transmitting site. Jurisdictional requirements refer 
+to federal, state, and local statutes. Images interpreted offsite need not be stored at 
+the receiving facility, provided they are stored at the transmitting site. However, if 
+images are retained at the receiving site, the retention period for that jurisdiction 
+must be met as well. The policy on record retention should be in writing. The phy-
+sicians who are involved in practicing teleradiology will conduct their practice in 
+a manner consistent with the bylaws, rules, and regulations for patient care at the 
+transmitting site.
+Documentation
+Communication is a critical component of teleradiology. Physicians interpreting 
+teleradiology examinations should render reports in accordance with the ACR 
+Standard for Communication: Diagnostic Radiology.
+Quality Control and Improvement, Safety, Infection 
+Control, and Patient Education Concerns
+Policies and procedures related to quality, patient education, infection control, and 
+safety should be developed and implemented in accordance with the ACR policies 
+on Quality Control and Improvement, Safety, Infection Control, and Patient Edu-
+cation Concerns appearing in the ACR Standards Book.
+Any facility using a teleradiology system must have documented policies and pro-
+cedures for monitoring and evaluating the effective management, safety, and proper 
+performance of acquisition, digitization, compression, transmission, archiving, and 
+retrieval functions of the system. The quality control program should be designed 
+to maximize the quality and accessibility of diagnostic information.
+A test image, such as the SMPTE (Society of Motion Picture and Television 
+Engineers) test pattern (SMPTE test pattern RP 133-1991, from Grey, J.F., Lisk, 
+K.G., Haddick, D.H., et al., 1985. Test pattern for video displays and hard copy 
+cameras. Radiolog y 154: 519–527), should be captured, transmitted, archived, 
+86634.indb   139 8/4/08   8:42:48 AM
+
+===== pdf p159 =====
+140  n  Medicolegal Issues for Diagnostic Imaging Professionals
+retrieved, and displayed at appropriate intervals, but at least monthly, to test the 
+overall operation of the system under conditions that simulate the normal opera -
+tion of the system. As a spatial resolution test, at least 512 × 512 resolution should 
+be confirmed for small matrix official interpretation, and 2.5 lp/mm resolutions for 
+large matrix official interpretation.
+As a test of the display, SMPTE pattern data files sized to occupy the full area 
+used to display images on the monitor should be displayed. The overall SMPTE 
+image appearance should be inspected to assure the absence of gross artifacts, such 
+as blurring or bleeding of bright display areas into dark areas, or aliasing of spatial 
+resolution patterns. Display monitors used for primary interpretation should be 
+tested at least monthly. As a dynamic range test, both the 5 and the 95 percent areas 
+should be seen as distinct from the respective adjacent 0 and 100 percent areas. The 
+use of teleradiology does not reduce the responsibilities for the management and 
+supervision of radiologic medicine.
+(Reprinted pp. 135–142 with permission of the American College of Radiol -
+ogy. ACR Standard for Teleradiology  listed in the Web site: http://med.mc.ntw.edu.
+tw/~somed/teletea/document/teleradiology_standard.html)
+Legal Issues in Teleradiology
+According to P. White in the article titled, “Legal Issues in Teleradiology-Distance 
+Thoughts,” BJR, 75: 202, 2002, legal issues may evolve with regards to liability, 
+responsibility, accountability, and duty of care. The doctor–patient relationship 
+is different in cases of teleradiology than with face-to-face consultations. In civil 
+cases, a duty of care is usually owed if a patient has been accepted by the defendant 
+and if issues of proximity and foreseeability can be established. When a patient 
+requests medical services and a doctor undertakes to provide these services, then 
+the legal relationship of doctor and patient will ensue. In teleradiology, it could be 
+argued that the physician merely acts as a consultant and, therefore, has minimal 
+contact with the patient. How the legal process would differentiate between such 
+relationships is yet to be tested; however, what is clear is that the physician–patient 
+relationship, with respect to proximity and responsibility, will need careful consid -
+eration. It will be important to clarify who maintains overall responsibility for the 
+patient under these circumstances and, if, for example, clinical negligence is estab -
+lished, how liability would be apportioned according to the roles of the concerned 
+parties.
+Case law in Diana L. Webb v. T.D. & C.H.A.,  No. 97-255, 951 P.2d, 1008; 
+1997, the Supreme Court of Montana, has already considered whether a physician 
+who performs a medical examination of an individual at the request of a third 
+party has a duty of care to the examinee and, if so, what the scope of that duty is. 
+The defendant, in this case, claimed that he owed no duty of care, as he had no 
+physician–patient relationship with the claimant. The Supreme Court judges held 
+86634.indb   140 8/4/08   8:42:48 AM
+
+===== pdf p160 =====
+Medicolegal Concerns for Teleradiology  n  141
+that the healthcare provider has a duty to exercise ordinary care to assure that when 
+he/she advises an examinee about their condition following an independent exami-
+nation, the advice comports with the standard of care for the healthcare provider’s 
+profession. It has also been suggested that if the radiologist’s report becomes an 
+official part of the patient’s record, then it would be very unlikely that the court 
+would find that no doctor–patient relationship had been established.
+In Bienz v. Central Suffolk Hospital , 557 N.Y.S.2d, 139 (App. 1993), the court 
+observed that if a doctor offers advice, treatment, or diagnosis over the telephone, 
+a doctor–patient relationship is established. Therefore, the courts have developed a 
+set of five questions to determine if a doctor–patient relationship exists:
+ 1. Was there a meeting between the doctor and patient?
+ 2. Did the doctor examine the patient?
+ 3. Did the doctor review the patient’s records?
+ 4. Did the doctor know the patient’s name?
+ 5. Did the patient pay the doctor for services?
+Only some of these questions must be answered in the affirmative in order to 
+establish a doctor–patient relationship (Sivaswamy, R., et al. 2002. Doctors on the 
+Internet—Legal and practical implications Eubios Journal of Asian and Interna -
+tional Bioethics 12, 185–188).
+In Lopez v. Aziz , 852, S.W.2d, 303 (Texas App. 1993), a doctor–patient rela -
+tionship was not found when a consulting obstetrician talked to the patient’s 
+regular physician by phone. The court noted that because Aziz did not contact 
+or examine Mrs. Lopez directly, and only spoke with her doctor, no relationship 
+existed. Conversely, a relationship was found in Wheeler v. Yettie Kersting Memo -
+rial Hospital, 866, S.W.2d, 32 (Texas, APP. 1993), where an on-call physician used 
+information obtained by phone regarding the status of a woman in labor to send 
+the woman to a hospital. Because the doctor evaluated the patient’s condition and 
+recommended treatment over the telephone, the court found that a doctor–patient 
+relationship existed. Even though a patient may not be in the same room with a 
+doctor, a relationship may still be formed by the use of telemedicine to diagnose or 
+treat a patient. A related problem is in determining where malpractice liability lies 
+in a telemedicine scenario. There is a problem in determining joint or independent 
+liability for all the physicians involved, the referring physician who is at the same 
+location as the patient, and the physician consulting via telemedicine (Sivaswamy 
+et al. 2002).
+Case laws will suggest that a doctor’s participation in telemedicine consultations, 
+whether or not his or her advice is followed, establishes a doctor–patient relationship. 
+In Greenberg v. Perkins, 845, P.2d, 530 (Colorado, 1993), the court held that even if 
+a traditional doctor–patient relationship is not present, a physician who examines a 
+nonpatient still has a duty not to cause harm to the person being examined.
+Another issue related to teleradiology malpractice involves the applicable juris -
+diction in which the lawsuit should be filed. In a situation where there exists a 
+86634.indb   141 8/4/08   8:42:48 AM
+
+===== pdf p161 =====
+142  n  Medicolegal Issues for Diagnostic Imaging Professionals
+transboundary consultation, the question of jurisdiction becomes important. 
+Therefore, to determine jurisdiction, courts must first determine where the practice 
+of medicine was committed. Exercising personal jurisdiction is contingent on two 
+requirements. First, in International Shoe Co. v. Washington , 326, U.S. 310 (1945),.
+a nonresident defendant must have purposefully availed himself of the benefits and 
+protections of the state by establishing minimum contracts with the state. Second, 
+in Asahi Metal Indus. Co. v. Superior Court,  480, U.S. 102 (1987), exercising such 
+jurisdiction must not offend traditional notions of fair play and substantial justice.
+In Wright v. Yackley,  459, F. 2d, 287 (9th Cir. 1972), a malpractice action 
+involving an Idaho patient and a South Dakota doctor resulted in a ruling that 
+proper jurisdiction lay in South Dakota because all diagnoses and prescriptions 
+were made in that state. The patient, a former South Dakota resident, could not 
+claim Idaho jurisdiction because the malpractice action arose from the confirma -
+tion of an old prescription. However, the court noted that had the treatment been a 
+new one rather than the continuance of a prior visit, the jurisdiction of the patient’s 
+state might also be controlling. The court ultimately ruled that the focus must be 
+on the place where services are rendered. Based on such rulings, a doctor practicing 
+telemedicine may need to be aware of laws and regulations in other states that may 
+have jurisdiction over his activities, particularly in the area of physician licensing 
+(Sivaswamy et al. 2002).
+Clinical negligence comes under the auspices of tort law, whereby private or 
+personal injury to a person or property may result in damages being claimed in 
+a court of law. The civil law provides for compensation to a person injured by 
+another’s negligence, and this is the usual avenue of redress for patient’s taking legal 
+action within the healthcare system. The patient will claim that the doctor was neg-
+ligent because of breach of duty to exercise reasonable care and skill in diagnosing, 
+advising, or treating the patient.
+In conventional radiology, the radiologist must examine the patient, if neces -
+sary; however, in teleradiology, the radiologist may also have a duty to warn the 
+patient that the lack of opportunity to physically examine the patient may increase 
+the risk of misdiagnosis. Fundamentally, there are four models in teleradiology, 
+which are
+ 1. Telediagnosis: Typically, this service involves asynchronous point-to-point 
+communication and requires relatively simple applications and a minimum 
+of infrastructure. In response to a request by a remote site, which transmits all 
+or selected images of a diagnostic examination, specialists at a major medical 
+center review these images and return a diagnostic report to the requesting 
+site. Telediagnosis is particularly useful for rural and other areas that are not 
+well served by specialized medical personnel.
+ 2. Telemonitoring: In most modern diagnostic imaging procedures, patient 
+positioning and the process of image acquisition are important factors deter -
+mining diagnostic image quality. Telemonitoring serves the need for expert 
+86634.indb   142 8/4/08   8:42:49 AM
+
+===== pdf p162 =====
+Medicolegal Concerns for Teleradiology  n  143
+supervision of image acquisition by a specific imaging modality. Further -
+more, an expert can manipulate and view image data during the examination, 
+therefore, being able to request additional images after issuing instructions 
+on how to reposition the patient or adjust the imaging parameters. Tele -
+monitoring does not impose heavy demands on the application layer, as the 
+transactions between different sites are of a simple nature. Specifically, video 
+sequences of the examination room and the patient are transmitted to the 
+expert who monitors the procedure and interacts with the examination site 
+through an image and voice data link. However, the requirement for real-
+time multimedia communication imposes additional technological demands 
+on the available infrastructure.
+ 3. Teleconsultation: In recent years, the number and complexity of biologi -
+cal signals, which can be recorded and also presented in the form of recon -
+structed images, has increased substantially. This has given rise to the need 
+for subspecialization, which has resulted in an increased demand for consul -
+tation among different medical experts. Providing a shared workplace among 
+medical experts at remote and distant locations is one of the main func -
+tions of the teleconsultation service. This service requires the synchronous 
+viewing and manipulation of the same set of radiological images and other 
+patient data, as well as the real-time exchange of comments among all parties 
+involved in the session. It is evident that the synchronization of the media 
+and procedures involved in a teleconsultation session requires various types 
+of complex transactions and resource management mechanisms, therefore, 
+imposing serious demands on the underlying applications. Furthermore, the 
+real-time nature of the service and the volume of multimedia data exchange 
+require a technologically advanced infrastructure.
+ 4. Telemanagement: The combination of advanced telemonitoring and telecon-
+sultation services, with remote resource sharing, offers the possibility for the 
+telematic management of diagnostic and therapeutic procedures. This telera -
+diology service will gain momentum in the future with parallel developments 
+in the areas of virtual reality, 3D video communications, and telepresence. It 
+may then become possible for teleradiology to also support remote diagnostic 
+imaging examinations, as well as image-guided radiation therapy and surgery 
+(Excerpts from Orphanoudakis et al. 1996).
+Data acquisition and manipulation issues are key factors for consideration in 
+terms of image quality and diagnosis. The development of digital imaging has 
+required radiologists to adopt new skills to overcome the potential for image deg -
+radation during the process of digitization and transmission of nondigital images. 
+However, there is a responsibility to ensure that the equipment is fit for the purpose 
+for which it is used. From a legal standpoint, it would be negligent to produce and 
+examine images of substandard quality by reason of inferior equipment or result -
+ing from variable operator dependency, such as lack of experience in interpreting 
+86634.indb   143 8/4/08   8:42:49 AM
+
+===== pdf p163 =====
+144  n  Medicolegal Issues for Diagnostic Imaging Professionals
+images by these methods. Consequently, any errors in diagnosis arising from such 
+practice may be entitled to compensation. Therefore, the advantages of teleradiol -
+ogy are only relevant if images are of sufficient quality without significant loss of 
+spatial or contrast resolution from image acquisition through transmission to final 
+image display.
+There have always been questions regarding the accuracy of diagnosis with 
+digital imaging and how this may impact on the malpractice issues of teleradiol -
+ogy. There have been major advancements in film digitization; however, it must 
+be decided in a court of law whether there has been any degradation of the image 
+during image transmission, and whether this has impacted on the accuracy of the 
+diagnosis. There may be further concerns that the operators of the digital process 
+may also lack the experience to achieve the optimal viewing conditions and, in this 
+case, the defendants would have to establish their competence to use the equip -
+ment. It has been consistently held in case law that inexperience is no defense for 
+clinical negligence or malpractice.
+If the patient were to establish, on a balance of probabilities, that the defendant’s 
+failure to promptly provide treatment would have accentuated the harm suffered 
+and represented breach of duty, then the patient would be entitled to compensation 
+for the harm that occurred. It would not be too unrealistic to argue that digital 
+radiology should speed up the reporting process in situations where the images 
+need to be sent to a radiologist or specialist at a distant site.
+To reduce exposure to malpractice liability, the participants in the teleradiology 
+network should consider creating written policies that address the following:
+ 1. Have adequate and appropriate documentation. The local and consulting 
+providers document and record the patients’ histories, examination, diagno -
+sis, treatments, and recommendations.
+ 2. Providers should clarify and document the equipment to be used, the parties 
+responsible for equipment maintenance, the format of transmitting medical 
+information, the studies to be interpreted, the hours of coverage, the fre -
+quency and format of reports, quality assurance mechanisms, and important 
+staffing issues. The duties and responsibilities of each party involved, in a 
+teleradiology arrangement, should be clearly defined in a written contract. 
+Indemnification provisions also should be included.
+ 3. Practitioners providing medical services through teleradiology must meet 
+the standard of care (the national standard of care) associated with the 
+type of service provided and the standard of care for providing those ser -
+vices via telecommunications.
+ 4. Transmission verification procedures should be established at both the local 
+and remote sites.
+ 5. Create contingency plans. Every provider should have a written policy or 
+guidelines establishing a course of action for emergencies, including when 
+86634.indb   144 8/4/08   8:42:49 AM
+
+===== pdf p164 =====
+Medicolegal Concerns for Teleradiology  n  145
+there is a power outage, equipment malfunction, or other unforeseen incident 
+that interferes with the teleradiology network.
+ 6. The network should promulgate clinical guidelines and protocols. These 
+guidelines and protocols should be realistic. If the practitioner or entity fails 
+to meet these guidelines or protocols, such failure may support a finding by 
+the court that there was a deviation from the proper standard of care.
+ 7. Regarding record storage, retention, and maintenance, the teleradiology busi-
+ness must comply with the federal and state law requirements.
+ 8. Each party involved in the teleradiology network should be required to carry 
+insurance in the event of an error or malfunction. Teleradiology consultants 
+should confirm whether their professional liability insurance policies cover 
+liability in the patients’ states for services provided from outside these states 
+via teleradiology.
+ 9. Teleradiology entities should ensure that their employees and independent 
+contractors are properly credentialed, privileged, and accredited with respect 
+to their abilities to provide medical care and to use telemedical equipment.
+ 10. The providers should thoroughly investigate the vendors providing the hard -
+ware and software products and services to determine if they are sound and 
+experienced, and whether they honor their support and maintenance con -
+tracts and provide appropriate training. Because the practitioners will most 
+likely be held liable for patient harm resulting from failing to use the telera -
+diology equipment reasonably, the practitioner should routinely inspect the 
+equipment to make sure it functions properly, confirm that the vendor will 
+service and maintain the equipment on an ongoing basis, and ensure that the 
+system will permit the patients’ records to be reasonably protected and allow 
+the practitioner to obtain patient information during a system failure.
+ 11. The vendor’s responsibility should be identified in writing and include what 
+services are to be provided, upgrades, costs, training, maintenance, support, 
+and indemnification.
+(Excerpts from Cepelwicz, B.B. June 2003. Telelegalities. Journal of Imaging 
+Technologies Management. Web site: http://www.imagingeconomics.com/library/
+tools/printengine.asp?printArticleID=200306-13)
+Security and Confidentiality
+The management of medical records, including radiographic film and other hard -
+copy images, may be an additional problem with teleradiology and computerized 
+patient records. Security issues relating to increased risk of improper disclosure of 
+records, breach of confidentiality, access to records, alteration or elimination of 
+records from a remote site, vulnerability of computer-stored data to accidental era -
+sure, and methods of ensuring verification are the concerns that must be addressed. 
+There are three issues relating to data security. They include:
+86634.indb   145 8/4/08   8:42:49 AM
+
+===== pdf p165 =====
+146  n  Medicolegal Issues for Diagnostic Imaging Professionals
+ 1. Privacy, which determines who can access the data security
+ 2. Authenticity, which determines who sends the data
+ 3. Integrity, which determines whether the data has been altered during its 
+transmission through public networks
+It has been suggested that the first two issues are the responsibility of the data 
+centers or technology services of the sender and the receiver. Privacy and authentic-
+ity can be resolved using various levels of passwords, based on a balance between 
+convenience and cost. Integrity is the responsibility of the site where the image is 
+generated and this may not be so easy to protect. Encryption of data is one method 
+to protect the data. However, there is a concern about the security of data held on 
+a computer and transmitted between sites. To protect individuals, it is essential to 
+remove personal identifiers or to encrypt transmitted information.
+The law has not been able to keep pace with teleradiology and is a testing ground 
+for many legal and practical issues. Nevertheless, some states have formulated laws 
+governing these issues. California requires licensed providers who use electronic 
+systems to comply with certain regulations, including offsite backup data storage 
+systems, safeguards for confidentiality and unauthorized access, authentication by 
+electronic signature keys, and guidelines for system maintenance (Excerpts from 
+White, P. 2002).
+Political Considerations and Turf Issues
+Teleradiology is mired with turf battles and intermedicine conflicts. Some radiolo -
+gists fear that managed care plans will use teleradiology to establish networks that 
+would shut out local radiologists, or that hospitals may replace local radiologists 
+with out-of-state teleradiology groups. These fears are fueled by the emergence of 
+teleradiology companies that have been formed to offer their services, often in com-
+petition with local radiologists, in both rural and metropolitan areas throughout 
+the United States. Such fears are reinforced by a recent Wall Street Journal  article 
+that reported the creation of a joint venture between a Texas-based university and 
+a communications company that will take advantage of a diverging trend in medi -
+cine, including the rise of managed care and the development of technology that 
+will enable the delivery of high quality, digitized x-ray images (Excerpts from Ber -
+lin, L. 1998. Malpractice issues in radiology, American Journal of Radiology , 170: 
+1417–1422).
+In an article titled, Teleradiology by Lee, C.D., from Radiology, 1996, 201: 15, 
+a California radiologist reported that a few powerful and greedy individuals and 
+groups are destroying practices of local community or rural radiologists under the 
+guise of being able to offer a better and, in some cases, more economical service. 
+They are not able to interact with clinicians, attend medical staff and commu -
+nity meetings, or perform other hospital functions. W. J. Casarella, established 
+in Benefits of Teleradiology (1996) from Radiology, 201: 16–17, that teleradiology 
+86634.indb   146 8/4/08   8:42:49 AM
+
+===== pdf p166 =====
+Medicolegal Concerns for Teleradiology  n  147
+allows the transmission of images in difficult cases to those members of a group best 
+trained to interpret them. He indicated that teleradiology is here, it works, and it 
+will only get easier, better, and cheaper (Excerpts from Berlin, L. 1998).
+Suspicion that teleradiologic groups will place the livelihood of local radiolo -
+gists in jeopardy cannot be denied among segments of the radiologic community. 
+Mistrust and animosity are natural consequences of such suspicions. However, the 
+continued growth of teleradiology is likely to generate increasing ferocity of turf 
+battles among radiologists.
+Teleradiology is an offspring of the computer age. Technologic innovations in 
+acquiring and transmitting radiologic images have propelled teleradiology from an 
+uncertain infancy to a proven approach. The increasing use and expanding appli -
+cations of teleradiology are likely to continue in an unabated fashion; however, at 
+the same time, they are likely to be accompanied by a corresponding growth of 
+malpractice litigations, such as medical licensure, physician–patient relationships, 
+accuracy, jurisdiction, standards, and turf battles.
+Review Questions
+ 1. What are the goals of teleradiology?
+ 1. Provide consultive service.
+ 2. Facilitate radiology interpretations in on-call situations.
+ 3. Provide subspecialty support.
+ 4. Provide supervision of onsite imaging studies.
+ a. 1 and 2
+ b. 3 and 4
+ c. 1, 2, and 3
+ d. 1, 2, 3, and 4
+ 2. When using a small matrix size, what is the minimum pixel depth required 
+for processing the teleradiographic image at the display monitor?
+ a. 2-bit
+ b. 8-bit
+ c. 10-bit
+ d. 12-bit
+ 3. What individual must be qualified to assess and provide problem-solving 
+input to assure sustainable high image quality and system function?
+ a. Radiologic technologist
+ b. Medical physicist
+ c. Physician
+ d. Image management specialist
+86634.indb   147 8/4/08   8:42:49 AM
+
+===== pdf p167 =====
+148  n  Medicolegal Issues for Diagnostic Imaging Professionals
+ 4. The quality control program should be designed to maximize the quality and 
+accessibility of diagnostic information.
+ a. True
+ b. False
+86634.indb   148 8/4/08   8:42:49 AM
+
+===== pdf p168 =====
+149
+Chapter 12
+Forensic Radiology
+Upon completion of Chapter 12, the reader will be able to:
+ 1. Apply radiographic technique to determine cause of death.
+ 2. Define battered child syndrome.
+ 3. Identify signs of child abuse.
+ 4. Discuss the legal implications toward child abuse.
+Forensic Radiology
+The first forensic use of radiology in locating metallic objects in criminal cases was 
+done in January, 1896, four months after Wilhelm Roentgen discovered the x-ray.
+A Mrs. Hartley of Nelson, England, was shot in the head by her hus -
+band who then drowned himself in the Liverpool canal. He fired four 
+shots into the head of his wife. Doctor William Little, general practi -
+tioner, and Arthur Schuster, physics professors at Owens College in 
+Manchester, tried to locate the bullets utilizing the newly discovered 
+roentgen ray (x-ray).
+The first exposure was noted as taking one hour in duration and the 
+second exposure, 70 minutes. Dr. Schuster developed the bariumplatano-
+cide plates and located three bullets inside the cranium of Mrs. Hartley.
+The procedure that Dr. Schuster performed was using the Crooks’ 
+tube. He brought three tubes to the house; he had two tubes as spares. 
+He had a DC generator and glass photographic plates. There was no 
+86634.indb   149 8/4/08   8:42:49 AM
+
+===== pdf p169 =====
+150  n  Medicolegal Issues for Diagnostic Imaging Professionals
+main electricity. The local company provided storage batteries to pro -
+vide power.
+According to documentation, one of the assistants to Dr. Schus -
+ter suffered a nervous breakdown attributed to the radiograph of the 
+mutilated and dying woman. It took a total of 10 days to set up the 
+apparatus and radiograph Mrs. Hartley. She died on May 9, 1896, 15 
+days after receiving the gunshot wounds.
+This is documented in the Nelson and Colne Express, which was the 
+local newspaper (Knight and Evans, 1981).
+Forensic radiology is used to:
+ 1. Determine whether bones are actually present, whether they are human, and 
+to determine basic features, such as age, sex, and stature.
+ 2. Compare two sets of radiographs, antemortem versus postmortem views. A 
+person’s fingerprints are not the only parts of the anatomy that can be used 
+for investigative purposes. Both dental and skeletal films are useful because 
+no two person’s teeth or skeletons are exactly alike. Forensic dentistry is com-
+paring antemortem and postmortem dental films. This is the best known and 
+widely used technique in forensic medicine. Almost everyone has had dental 
+x-rays taken within the past five years, and the teeth are among the best pre -
+served of the body parts, even in a fire. Apart from the teeth and jaws, the 
+most helpful part of the body for comparison radiography is the skull. The 
+skull has many characteristic features, especially the paranasal sinuses. Other 
+useful features are peculiarities of bony architecture and unique trabecular 
+patterns. The cervical spine, vascular grooves, clavicle, lumbar spine, skeletal 
+deformities, angulations, callus formation, congenital abnormalities, unique 
+abnormalities, such as a dorsal defect of the patella, and the ossification pat -
+terns in the costal cartilage of the first rib are good areas for comparison.
+ 3. Identify bodies with previous antemortem injuries. An old chest film may 
+be the only antemortem x-ray available on a John or Jane Doe. However, 
+in the upper corner of that film might be an old fracture of the clavicle that 
+can be compared to the body in question. Foreign bodies, such as old bul -
+lets or shrapnel, are also helpful. Besides anatomical differences, prosthetics, 
+synthetic joints, hip replacement, pacemakers, surgical implants, and disease 
+processes make for easy identification.
+Determining Cause of Death
+Radiographic imaging techniques are also helpful in determining cause of death. 
+Death caused by a penetrating wound, strangulation, drowning, electrical shock, 
+metallic poison, and/or blast injuries can be easily determined radiographically. In 
+86634.indb   150 8/4/08   8:42:50 AM
+
+===== pdf p170 =====
+Forensic Radiology  n  151
+multiple-injury cases, radiographs will enable the radiologists to discover which 
+wound was fatal. If a large caliber shotgun wound is made to the head, the skull 
+will fracture and there is massive brain trauma.
+Imaging Techniques
+Plain film radiography is the imaging technique most commonly employed by 
+forensic radiologists for identification and/or discovering the cause of death. Other 
+imaging modalities are used in special circumstances.
+A fluoroscopic unit can be employed by the medical examiner to recover for -
+eign objects, such as needles and bullets, from bodies. Angiography is used to 
+study vessel injuries. This is especially useful when investigating “surgical mis -
+adventures” and other iatrogenic problems. It is a law in San Francisco that all 
+patients who die unexpectedly in hospitals must be examined by the coroner. All 
+tubes and other equipment must be left in place. The bodies are studied for tube 
+ruptures, catheter perforations, and other possible causes of death, often with the 
+aid of angiography.
+Forensic angiographic techniques must be modified slightly when working 
+on corpses because of the absence of blood circulation and washout, which is the 
+elimination of the contrast agent. Positional and scout films are taken to define the 
+region of interest. Because there is no washout, only one injection of media contrast 
+is possible, making it vital that the procedure be done properly.
+A large load of contrast is delivered via pressure injector in one end of the vessels 
+under examination and pumped out at the other end. Utilizing large amounts of 
+contrast media will produce very clear and useful images. Most medical examiners 
+and forensic radiologists use imaging equipment at county hospitals or employ the 
+services of portable x-ray companies. If hospital facilities are used for forensic stud -
+ies, the areas are disinfected after use.
+Battered Child Syndrome
+Radiology can play a vital role in the confirmation of the diagnosis of child abuse. 
+Clinical examinations may reveal evidence of neglect, but a carefully conducted 
+radiological exam can disclose not only the etiology of bone lesions, but may give 
+information on the approximate ages, number, and sites of bone abnormalities.
+Battered child syndrome is defined as the radiologic appearance of bizarre 
+and unusual injuries of the bones in affected children. These presumably result 
+from repetitive trauma due to unawareness or deliberate denial on the part of 
+those responsible. Radiographic evidence of the battered child syndrome, such 
+as fractures of different ages in the same child, is accepted proof of abuse by the 
+courts.
+86634.indb   151 8/4/08   8:42:50 AM
+
+===== pdf p171 =====
+152  n  Medicolegal Issues for Diagnostic Imaging Professionals
+Perhaps the most telling sign of abuse is multiple skeletal injuries at different 
+stages of healing. Classical radiographic findings indicating nonaccidental injuries 
+are epiphyseal and metaphyseal fractures. Injuries to the metaphysis, and spiral and 
+transverse fractures of the long bones may result from swinging the baby or child 
+and forcefully wrenching or twisting the limbs.
+Uncommon fracture sites, such as the lateral end of the clavicle, are usually 
+encountered only following perinatal trauma or child abuse. Shaking or twisting 
+probably produces such an injury. Sternal and scapular fractures are also suspect, 
+as is thickening of the cortex and of periosteal elevation. Rib fractures are also 
+uncommon in childhood. Such fractures are frequently bilateral due to side-to-side 
+pressure from adult hands grasping the child around the thorax and squeezing dur-
+ing shaking.
+Brain trauma, subdural hematoma, and cerebral edema are the most com -
+mon serious and urgent complications of nonaccidental skull injuries. This is often 
+caused by whiplash from shaking the child. Radiography can provide supportive 
+evidence for subdural hematoma by demonstrating separated cranial bones and 
+widened sutures, other signs of increased intracranial pressure, or obvious fractures 
+of the cranial bones.
+Other suspicious head injuries include absence of hair or hemorrhaging beneath 
+the scalp due to vigorous hair pulling, retinal hemorrhages, and jaw and nasal frac -
+tures. Abdominal injuries compose about 25 percent of the total injuries in child 
+abuse. Injuries include duodenal and jejunal hematomas, rupture of the inferior 
+vena cava, splenic rupture, renal rupture, gastric rupture, perforation of both intra- 
+and extraperitoneal organs, peritonitis, soft tissue edema, intramural hematomas 
+of the alimentary tract, pancreatic injury, pancreatitis, and general bruising, all of 
+which can be documented by radiography.
+Plain films of the abdomen reveal free gas or fluid in the peritoneal cavity or 
+signs of peritonitis. Other radiographic evidence of visceral trauma includes pneu -
+moperitoneum and/or ileus.
+It must be remembered that suspicious injuries can be caused by other condi -
+tions. Some diseases also mimic abuse, such as scurvy, osteogenesis imperfecta, 
+congenital syphilis, and infantile cortical hyperostosis.
+The radiographer can gain useful information for the doctor by producing good 
+quality radiographs for diagnostic interpretation. More importantly, the radiogra -
+pher can gain the confidence of the child by being caring, honest, and friendly. In a 
+friendly environment, the child may state the truth in how he/she was injured. The 
+child may respond to questions better if he/she is not frightened when he/she enters 
+the radiology department.
+State laws require healthcare providers to report abuse to a child protection 
+agency, such as the police or sheriff’s department, county probation, or county wel-
+fare department. The Child Abuse Reporting Law specifically provides that neither 
+the physician–patient privilege nor the psychotherapist–patient privilege applies 
+86634.indb   152 8/4/08   8:42:50 AM
+
+===== pdf p172 =====
+Forensic Radiology  n  153
+to any information reported pursuant to this law. Not only is failure to report a 
+criminal offense, but it is also a grave breach of professional responsibility to both 
+the child and parent.
+Hospital staff, including radiographers, should be familiar with the indicators 
+of child abuse. Medical personnel should also be alert to “hospital shoppers.” These 
+are people who, for no apparent reason, have brought an injured child to a hos -
+pital outside of their community when their own community has fully equipped 
+facilities. Often, this is done to cover up a pattern of abuse because medical records 
+sometimes reveal a history of hospital and doctor “shopping” that may, in conjunc-
+tion with other indicators, be indicative of suspected abuse.
+According to the law, specified medical personnel or their agents may take skel-
+etal x-rays of a child for purposes of diagnosing and determining the extent of 
+possible child abuse without the consent of the parent or guardian. Medical profes-
+sionals and other mandated reporters may be subject to civil damage suits if they 
+fail to report suspected child abuse.
+In the case of Landeros v. Flood (1976) Cal. 3d 399, an infant, Gina, was brought 
+into a hospital with injuries, treated and released back to her mother. Subsequently, 
+she was treated for new and more serious injuries by a second doctor, who reported 
+the injuries as suspected child abuse. The child was made a dependent of the court 
+and a guardian ad litem was appointed. The guardian ad litem then instituted a suit 
+on behalf of the child against the first doctor for failure to report as required by law. 
+The California Supreme Court reversed a lower court decision, which dismissed the 
+complaint, and held that the complaint stated a cause of action based on a failure 
+to report as required by statute. The case held that failure to perform the statuto -
+rily imposed duty to report raises a presumption that a defendant doctor failed to 
+exercise due care. The Supreme Court sent the case back to the lower court for trial. 
+The plaintiffs in this case sued the doctor for $2 million, plus costs. A decision for 
+the plaintiffs would obviously have been serious for the doctor involved. In spite of 
+the ultimate outcome of this case (the charges could not be substantiated), it is clear 
+that health practitioners and other healthcare providers who have a statutory duty 
+to report may be held civilly as well as criminally liable when they fail to report 
+suspected cases as required by law.
+The importance of law enforcement’s role in child abuse cases centers on the fact 
+that child abuse is a crime, and that the primary consideration is for the protection 
+of the child. Reports of suspected child abuse must be made to the police or sheriff’s 
+departments, or other designated child protective agencies. Law enforcement per -
+sonnel are also best trained to ensure protection of constitutional rights and due 
+process procedures during the course of the investigation.
+The responding officer will decide whether to take the child into temporary 
+custody, to arrest the parents/caretakers, to seek the filing of criminal charges, or to 
+refer the case to child welfare services or another appropriate agency. Final disposi -
+tion should be made after consultation with representatives of other disciplines.
+86634.indb   153 8/4/08   8:42:50 AM
+
+===== pdf p173 =====
+154  n  Medicolegal Issues for Diagnostic Imaging Professionals
+As in all other areas of criminal law, all searches, seizures, and arrests made in 
+the course of child abuse investigations must comply with the requirements of the 
+Fourth Amendment.
+According to the U.S. Department of Human Services, Administration for 
+Children and Families reported in 2005 that 803,000 children were victims of 
+child abuse. These figures make it necessary that healthcare professionals, including 
+radiographers, become more aware of abnormalities that may point toward child 
+abuse.
+86634.indb   154 8/4/08   8:42:50 AM

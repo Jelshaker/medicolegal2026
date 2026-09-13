@@ -2,17 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import { getCollection } from 'astro:content';
-import { KEY_STATS, PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, BLOG_CATEGORIES } from '../consts';
+import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, BLOG_CATEGORIES } from '../consts';
 
 const allPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
 const recent = allPosts.slice(0, 3);
 const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 const stats = [
-	{ value: `${KEY_STATS.reportsDelivered}+`, label: 'Expert reports delivered' },
-	{ value: `${KEY_STATS.standardTurnaroundDays} days`, label: 'Standard turnaround' },
-	{ value: `${KEY_STATS.urgentTurnaroundHours}h`, label: 'Urgent turnaround' },
-	{ value: `${KEY_STATS.clientSatisfaction}%`, label: 'Client satisfaction' },
+	{ value: '1957', label: 'Bolam — the standard of care' },
+	{ value: '~37%', label: 'Abdominal claims turning on incidental findings' },
+	{ value: '8.7–12.7%', label: 'Offsite reporting error rate (Howlett et al.)' },
+	{ value: '2025', label: 'RCR reporting standards edition' },
 ];
 ---
 
@@ -21,23 +21,23 @@ const stats = [
 	<section class="relative overflow-hidden bg-navy-950 text-white">
 		<div class="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
 			<div>
-				<span class="eyebrow mb-4 text-teal-400">Consultant Radiologist · Medicolegal Expert Witness</span>
+				<span class="eyebrow mb-4 text-teal-400">Radiology · Law · The standard of care</span>
 				<h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-					Independent imaging opinions, prepared for the courtroom.
+					How English law judges a radiological opinion.
 				</h1>
 				<p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-					{PRACTITIONER.shortName} provides CPR Part 35 / EMA compliant radiological
-					expert opinions across MSK, gastrointestinal and interventional radiology — including
-					re-derivation from source DICOM, anonymised case analysis and plain-language insight
-					for solicitors, barristers and insurers.
+					A working reference on the legal architecture of diagnostic imaging — the Bolam and
+					Montgomery standards, breach and causation, incidental findings, consent, and the systemic
+					risks of teleradiology. Anonymised case discussion and primary-source analysis for
+					solicitors, barristers, insurers and radiologists.
 				</p>
 				<div class="mt-7 flex flex-wrap gap-3">
-					<a href="/referrals" class="btn btn-primary">
+					<a href="/legal-fundamentals" class="btn btn-primary">
 						<svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M12 5v13"/></svg>
-						Make a referral
+						Legal fundamentals
 					</a>
-					<a href="/contact" class="btn btn-ghost">Contact the secretariat</a>
-					<a href="/patient-advice" class="btn btn-ghost">Patient advice</a>
+					<a href="/legal-blog" class="btn btn-ghost">Case discussions</a>
+					<a href="/recent-developments" class="btn btn-ghost">Recent developments</a>
 				</div>
 				<div class="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
 					{stats.map((s) => (
@@ -65,30 +65,39 @@ const stats = [
 		</div>
 	</section>
 
-	<!-- Practice areas -->
+	<!-- Legal framework -->
 	<section class="bg-white py-16 dark:bg-navy-900">
 		<div class="container-page">
 			<div class="max-w-2xl">
-				<span class="eyebrow block">Practice areas</span>
-				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Where I can assist the court</h2>
+				<span class="eyebrow block">Legal fundamentals</span>
+				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">The framework, in four questions</h2>
+				<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+					Every radiological claim resolves into a small number of legal questions. Each is examined in
+					detail, with the authorities and the professional standards that govern the answer.
+				</p>
 			</div>
 			<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 				{[
-					{ t: 'Musculoskeletal', d: 'Orthopaedic injury, delayed fracture diagnosis and measurement-based quantum disputes.', img: '/images/knee_xray_pen_pointing.jpg' },
-					{ t: 'Gastrointestinal', d: 'CT abdomen, missed GI pathology and ischaemic bowel claims.', img: '/images/ct_scanner.jpg' },
-					{ t: 'Neuroradiology', d: 'Cauda equina, spine and brain imaging where timing decides liability.', img: '/images/spine_CT.jpg' },
-					{ t: 'Interventional', d: 'Consent, dose documentation and complication disclosure.', img: '/images/xr_spine_radiograph_2.jpg' },
+					{ t: 'What standard of care applies?', d: 'Bolam, Bolitho and the line between a defensible difference of opinion and a breach.', href: '/legal-fundamentals', tag: 'Bolam · Bolitho' },
+					{ t: 'Was the finding demonstrable?', d: 'The "pure diagnosis" argument, incidentalomas, and what the images actually showed on the day.', href: '/medicolegal-radiology', tag: 'Breach & causation' },
+					{ t: 'What did the patient know?', d: 'Consent, the materiality of risk, and the duty of candour where a complication occurs.', href: '/legal-fundamentals', tag: 'Montgomery · Candour' },
+					{ t: 'Who else is liable?', d: 'Remote reporting, provider-level duties, escalation failure and dual liability in teleradiology.', href: '/recent-developments', tag: 'Teleradiology' },
 				].map((p) => (
-					<a href="/legal-blog" class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft transition-all hover:border-teal-500/40 hover:shadow-lift dark:border-navy-700 dark:bg-navy-900">
-						<div class="h-40 overflow-hidden">
-							<img src={p.img} alt="" loading="lazy" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-						</div>
-						<div class="p-4">
-							<h3 class="font-bold text-navy-900 dark:text-slate-100">{p.t}</h3>
-							<p class="mt-2 text-sm leading-snug text-slate-600 dark:text-slate-300">{p.d}</p>
-						</div>
+					<a href={p.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-soft transition-all hover:border-teal-500/40 hover:shadow-lift dark:border-navy-700 dark:bg-navy-900">
+						<span class="chip mb-3 self-start">{p.tag}</span>
+						<h3 class="font-bold leading-snug text-navy-900 dark:text-slate-100">{p.t}</h3>
+						<p class="mt-2 flex-1 text-sm leading-snug text-slate-600 dark:text-slate-300">{p.d}</p>
+						<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+							Read the analysis
+							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
+						</span>
 					</a>
 				))}
+			</div>
+			<div class="mt-8 flex flex-wrap gap-3">
+				<a href="/image-review" class="btn btn-ghost">Free online image review</a>
+				<a href="/about" class="btn btn-ghost">About the practice</a>
+				<a href="/patient-advice" class="btn btn-ghost">Patient advice</a>
 			</div>
 		</div>
 	</section>
@@ -155,14 +164,17 @@ const stats = [
 		</div>
 	</section>
 
-	<!-- CTA -->
+	<!-- Instructing -->
 	<section class="bg-gradient-to-br from-navy-900 to-navy-800 py-14 text-center dark:bg-navy-950">
 		<div class="container-page max-w-3xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-white">Ready to instruct?</h2>
-			<p class="mt-3 text-lg text-slate-300">Terms of instruction, imaging transfer guidance and fee structure are all in one place.</p>
+			<h2 class="text-3xl font-extrabold tracking-tight text-white">Instructing an expert</h2>
+			<p class="mt-3 text-lg text-slate-300">
+				Where the legal analysis needs a radiological opinion, terms of instruction, imaging transfer
+				guidance and the fee structure are set out on the expert witness page.
+			</p>
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
-				<a href="/referrals" class="btn btn-primary">Referrals & terms</a>
-				<a href="/contact" class="btn btn-white">Contact</a>
+				<a href="/expert-witness" class="btn btn-primary">Expert witness services</a>
+				<a href="/contact" class="btn btn-white">Contact the secretariat</a>
 			</div>
 		</div>
 	</section>

@@ -6,17 +6,19 @@ export const SITE_DESCRIPTION =
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/referrals", label: "Referrals" },
-	{ href: "/legal-blog", label: "Legal Radiology" },
-	{ href: "/patient-advice", label: "Patient Advice" },
-	{ href: "/cv", label: "Curriculum Vitae" },
-	{ href: "/contact", label: "Contact" },
+	{ href: "/legal-fundamentals", label: "Legal Fundamentals" },
+	{ href: "/medicolegal-radiology", label: "Medicolegal Radiology" },
+	{ href: "/recent-developments", label: "Recent Developments" },
+	{ href: "/image-review", label: "DICOM Viewer" },
+	{ href: "/expert-witness", label: "Expert Witness" },
+	{ href: "/about", label: "About" },
 ] as const;
 
 export const BLOG_CATEGORIES = [
 	{ id: "all", label: "All cases" },
 	{ id: "musculoskeletal", label: "Musculoskeletal" },
 	{ id: "gastrointestinal", label: "Gastrointestinal" },
+	{ id: "peritoneal-malignancy", label: "Peritoneal Malignancy" },
 	{ id: "neuroradiology", label: "Neuroradiology" },
 	{ id: "interventional", label: "Interventional" },
 	{ id: "negligence", label: "Negligence / Delay in Diagnosis" },

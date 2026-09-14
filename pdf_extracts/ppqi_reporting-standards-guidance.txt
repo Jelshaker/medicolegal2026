@@ -1,0 +1,467 @@
+Standards for interpretation 
+and reporting of imaging 
+investigations 
+Third edition
+October 2025
+---PAGE 1---
+The Royal College of Radiologists
+Clinical Radiology
+Standards for interpretation and reporting of imaging investigations
+22
+Contents
+01 Introduction �����������������������������������������������������������������3
+02 Service organisation �������������������������������������������������� 4
+03 Reporting author���������������������������������������������������������5
+04 Infrastructure �������������������������������������������������������������6
+Technology support  �����������������������������������������������������������6
+Voice recognition ����������������������������������������������������������������6
+Artificial intelligence assisted reporting  ��������������������������� 6
+Remote reporting (including teleradiology) �����������������������7
+05 Report �������������������������������������������������������������������������8
+General considerations ������������������������������������������������������ 8
+Scan protocol and technical detail ������������������������������������ 8
+Observations and findings ������������������������������������������������� 8
+Standardised and structured reporting ����������������������������� 8
+Report conclusion ���������������������������������������������������������������9 
+Interventional radiology reporting and procedural 
+description ��������������������������������������������������������������������������9 
+References ����������������������������������������������������������������������11
+Acknowledgements ������������������������������������������������������� 12
+---PAGE 2---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+3
+Radiological investigations must be interpreted and reported on to a high standard�  
+Clear communication of these results to the referrer ensures that patient care is delivered  
+safely, effectively and efficiently� 
+This document has been written by and for radiologists, who are experts in interpreting 
+medical imaging, with contributions from other professional groups� In keeping with the 
+role of The Royal College of Radiologists (RCR) as defined in its royal charter, it defines the 
+expected standard of care for reporting radiological investigations� It underpins radiologists’ 
+role as leaders and experts in medical imaging but should apply to all who interpret and  
+report imaging, regardless of their professional background�
+Modern radiology services are under pressure due to increasing diagnostic demand in the 
+face of chronic workforce shortages�1 Consequently, imaging reporting services need to 
+remain led by consultant radiologists but will not be entirely radiologist delivered�
+Some imaging reporting is performed by non-radiology doctors and clinical referrers�  
+Where a formal written report is to be provided by doctors with a narrower scope of imaging 
+practice (eg from cardiologists interpreting cardiac cross-sectional imaging) these same 
+standards will apply; where there are areas of imaged anatomy beyond the expertise of the 
+interpreter, an agreement for review by a radiologist should be arranged� Where the imaging 
+interpretation is delegated to the referrer (eg orthopaedic surgeons, where a formal radiology 
+report is not required), written documentation of the interpretation should be recorded in the 
+patient’s notes by the referrer to satisfy the requirements of the Ionising Radiation (Medical 
+Exposure) Regulations (IR(ME)R)�2, 3, 4 
+Some imaging reporting is delegated to non-medical practitioners with a narrow scope of 
+practice (eg sonographers and radiographers)� These colleagues should undertake this work 
+within consultant radiologist-led teams with clear lines of supervision and support and should 
+also aim to achieve the standards in this document within this team structure�
+High-quality image interpretation starts with high-quality referrals� The responsibilities of the 
+referrer are enshrined in law under IR(ME)R; there is a duty placed on all referrers to provide 
+adequate and accurate patient histories and to clearly articulate the clinical question(s) that 
+they wish the radiological imaging investigation to answer� In order to support safe care, there 
+is a similar requirement for high-quality referrals for all imaging modalities�
+This document provides a detailed focus on the post-acquisition phase of the diagnostic 
+radiology life cycle, the stage during which reporting takes place� For guidance on the 
+broader imaging workflow, including standardised terminology and performance metrics 
+such as time to imaging acquisition and time to report, please refer to the Diagnostic 
+radiology life cycle guidance�5 
+01 
+Introduction
+3
+---PAGE 3---
+The Royal College of Radiologists
+Clinical Radiology
+Standards for interpretation and reporting of imaging investigations
+4
+ • Providers should create standard operating procedures that comply with national 
+guidelines for the following, and review them on a regular basis:6, 7, 8 
+ – Turnaround times�5, 9, 10
+ – Communication of unexpected or time-critical findings�11 
+ – Imaging classification (eg critical, urgent, routine, research trial etc) for reporting priority�
+ – Communication of addenda, including subsequent or multidisciplinary team reviews�
+ – Report acknowledgement�
+ • Patient safety and optimal outcomes require timely, accurate, actionable reporting of 
+radiology investigations� These principles apply to anyone providing the report and to all 
+providers of reporting services�
+4
+02 
+Service organisation
+---PAGE 4---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+5
+ • The report should:
+ – Clearly state the name of the author, their job title or professional status, registration 
+body and registration number� The prefix title ‘Doctor’ or ‘Dr’ should only be used to 
+indicate a medically qualified practitioner; non-medical practitioners with a PhD can  
+use this as a postnominal but should not use the prefix title ‘Dr’ on imaging reports�
+ – Not include personal contact details�
+ – Include the names of all authors that have contributed to the report� For radiological  
+and interventional procedures, the author should be either the operator or the assistant� 
+The primary operator should be clearly indicated�
+ • Employers have a duty of care to patients and should ensure no employee is permitted 
+or required to work beyond their level of knowledge and competence or to work without 
+adequate rest�12 
+ • The reporting author should be registered with the relevant regulatory body in the UK  
+(eg General Medical Council, Health and Care Professions Council) and in good standing� 
+They should be trained in accordance with their professional body’s standards and work 
+within a defined scope of practice�
+ • Reporting authors should comply with all ongoing continued professional development, 
+audit and, where applicable, revalidation processes�
+ • The individual reporting the examination must be able to evaluate the quality of the images 
+and their suitability for diagnosis as per the RCR Clinical radiology specialty training 
+curriculum�13 Suboptimal image quality should be recognised if this affects the diagnostic 
+accuracy of the examination and the need for a repeat examination or for caveats to be 
+included in the report�
+5
+03 
+Reporting author
+---PAGE 5---
+The Royal College of Radiologists
+Clinical Radiology
+Standards for interpretation and reporting of imaging investigations
+6
+Technology support
+Quality of equipment for reporting, standards for integrating artificial intelligence (AI) and 
+reformatting capabilities are covered in Picture archiving and communication systems (PACS) 
+and guidelines on diagnostic display devices and Integrating artificial intelligence with the 
+radiology reporting workflows (RIS and PACS)�14, 15 
+ • The patient’s imaging history and reports should be available� It is recommended that 
+relevant clinical information, including patient medical records and laboratory results, 
+should be accessible�14
+ • Organisations with the technological capability are encouraged to implement a brief, 
+controlled delay (eg up to 2 minutes) before a report is made accessible to other users� 
+This short window is intended solely to allow the reporting clinician to make immediate 
+corrections of typographical errors� Once a report has been accessed by another party, 
+any subsequent changes should be subject to formal version control procedures, including 
+clear documentation of the amendment and appropriate notification to all relevant users�
+ • Providers should ensure that reports can be automatically communicated to other 
+information technology systems accessed by clinicians�16 
+Voice recognition
+ • Voice recognition software can be an integral part of reporting and is encouraged to 
+enhance workflow� The employer should ensure software and associated hardware are 
+available, perform and are maintained to current best standards�
+ • Typing or alternative methods for recording report text may be used, provided they are  
+no less effective or efficient than high-quality voice recognition�
+Artificial intelligence assisted reporting
+AI has the potential to make a significant difference in healthcare settings through its ability 
+to analyse large quantities of complex information�17 It can aid in optimising the patient 
+journey throughout the pathway including radiology requesting, scheduling, vetting, planning, 
+scanning, report sharing and treatment pathway planning�18 In 2024, the RCR published  
+AI deployment fundamentals for medical imaging and is actively developing new guidance  
+to keep pace with the evolving role of AI in radiology�19 
+ • Validated AI tools should be integrated appropriately into the reporting workflow, so that  
+it makes reporting more efficient and enables safer and actionable reporting�
+ • AI-generated content should be clearly identified as such within the report� All AI-derived 
+contributions should be reviewed, verified and approved by a named human author,  
+who is responsible for the final report�
+ • It is incumbent on the employer to provide adequate training on the use of any AI  
+deployed locally�
+6
+04 
+Infrastructure
+---PAGE 6---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+7
+Remote reporting (including teleradiology)
+The term remote reporting refers to the reporting of imaging examinations at a distance 
+from where these examinations were performed� Arrangements should be developed in 
+conjunction with wider service planning frameworks� For considerations related to staff 
+availability, scheduling and safe working patterns, providers should refer to the RCR’s  
+Clinical radiology job planning guidance for consultant and SAS doctors�20 
+ • Arrangements for remote reporting, including home reporting should not compromise the 
+quality of reporting delivered from comparable in-hospital settings�21 
+ • Local or regional network reporting arrangements must comply with the same technical 
+specifications and governance as provider-based reporting� Workflow and handling of 
+report communications should be documented�
+ • Those reporting remotely should have access to clinical documentation and imaging 
+records to ensure accurate interpretation within the correct clinical context� Where 
+the reporter may not be familiar with local care pathways, providers should implement 
+mechanisms to support contextual understanding (eg liaison with clinical teams or 
+multidisciplinary team participation)�
+ • Local operating policies should include business continuity plans to maintain service 
+delivery in the event of technical or other operational failures�22 
+ • Teleradiologists working for private providers may be unfamiliar with local patient care 
+pathways� Organisations using such services must ensure that adequate safeguards are  
+in place to mitigate this�
+04
+Infrastructure
+7
+---PAGE 7---
+The Royal College of Radiologists
+Clinical Radiology
+Standards for interpretation and reporting of imaging investigations
+8
+General considerations
+ • Clinical details should form part of the report� Interpretation may be incorrect if referral 
+details are deficient, absent or misleading; inclusion of the referrer’s text is recommended 
+as it may be a consideration for future review�
+ • Many radiology information systems generate clinical details from the referrer’s text�  
+More detail or context should be added where this impacts scan interpretation�
+ • Where past treatment has an impact on image interpretation, treatment history should  
+be recorded�
+ • Reporters should maintain professional standards if commenting on referrers, patients, 
+hospital environment or equipment� If scan performance has been compromised then 
+relevant, factual, non-judgemental statements may be included�
+ • Careful proofreading is vital� As well as improving readability, this can prevent common  
+and potentially serious grammatical errors such as missed negatives, word substitution  
+and wrong side attribution�
+Scan protocol and technical detail
+ • Including scan protocol and technical detail in the report may be appropriate if it aids 
+understanding, justifies technical parameters, adds value to the report or details potential 
+deficiencies in scan performance or acquisition�
+Observations and findings
+ • An observations section should state the relevant and pertinent findings and allow 
+incidental findings to be mentioned and explained�
+ • Guidelines and experience should be used to ensure reports do not contain irrelevant 
+incidental findings or lists of irrelevant negative observations� These can detract from the 
+impact of the report and generate unnecessary additional tests�
+ • All images acquired, including planning (eg scout) images and non-target areas, should be 
+reviewed to ensure patient safety� Complex studies such as cross-sectional imaging may be 
+reported predominantly for a single clinical purpose, where reporting focuses on specific 
+target areas; however, there should be provision to ensure competent and holistic review of 
+all relevant findings by a radiologist� Responsibility for reviewing non-target areas lies with 
+both the reporter and the employer� Where reporting is limited, employers should consider 
+the resource implications of any required secondary review�
+ • Where prior imaging is a modality or covers an anatomical area beyond the scope of 
+practice of the reporting author, they should seek additional review by a radiologist to avoid 
+incorrect conclusions or suggestions for unnecessary investigations� If such imaging is 
+unavailable and its absence may impact interpretation, this should be documented�
+ • Technical terms and imaging terminology have utility for specialist readership, to explain 
+why conclusions might have been reached or justify conclusions�
+Standardised and structured reporting
+ • Reporting style may vary based on clinical context and referrers’ needs but should 
+prioritise clarity and clinical relevance�
+ • The use of structured templates is encouraged where suitable�23 Templates are helpful for 
+8
+05 
+The report
+---PAGE 8---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+99
+adequacy of data collection� Specific examples include supporting research using RECIST 
+criteria, for National Cancer Registry data, for audit and quality assurance purposes (eg 
+World Health Organization checklist) and trauma reporting�
+ • Structured or AI-generated report formats should not be used to imply a degree of scrutiny 
+that has not taken place�
+ • Templates may be adapted to omit fields that are not relevant to the specific case�
+Report conclusion
+The conclusion section (sometimes termed comments, impressions or opinion) is a key 
+component of a report and should be short and actionable� While its style and content may 
+be subject to differing opinions, the following provides good practice guidance� Short reports 
+such as those for radiographs, procedures or ultrasound may not require a conclusion�
+ • The report conclusion section should:
+ – Directly answer the clinical question and, where relevant, show interpretation to address 
+implied questions�
+ – Be tailored to the named referrer as the target readership (eg primary, secondary or 
+tertiary care) explaining technical radiological terms as necessary�
+ – Avoid unnecessary repetition of content already stated in the body of the report unless  
+it is required�
+ – Convey the sensitivity of the test for the clinical question if needed�
+ – Document any limitations in the likely sensitivity or specificity of the study using clear, 
+factual and non-judgemental language�
+ – Explain areas of uncertainty within the radiology diagnosis or provide a ranked  
+differential diagnosis�
+ – Aim to provide a single or differential diagnosis and advise how any differential  
+diagnoses can be refined�
+ – Clarify if the scan did not address something that it needed to, and if so recommend 
+further tests or actions�
+ – Highlight where non-imaging results will potentially alter interpretation and how this 
+might occur�
+ – Make clear, specific recommendations� Avoid blanket phrases such as ‘clinical correlation 
+advised’� Further imaging recommendations are useful but should be used judiciously� 
+Further tests should add value to the overall patient’s care, and the referrers should be 
+involved in deciding their need�
+ – Follow guidelines where these are accepted and useful for incidental findings�  
+Reference them where helpful or explain when further action is not needed�
+ – Ensure clinically important incidental findings are communicated appropriately�
+Interventional radiology reporting and procedural description
+ • Interventional radiology reports should:
+ – Be written and communicated promptly following completion of the procedure�  
+If there are subsequent diagnostic conclusions, these should be captured separately  
+or be included as an addendum�
+ – Comply with clinical radiology subspecialties and special interest group guidance�24  
+If local practice is not to obtain written consent for a procedure, verbal consent  
+and complications discussed should form part of the report�
+ – Include instructions on aftercare or need for follow up procedures or imaging�
+ – Document relevant narrative of the intervention, and where possible its consequences 
+including drug administration, efficacy and complications, or how efficacy should  
+be assessed�
+---PAGE 9---
+The Royal College of Radiologists
+Clinical Radiology
+Standards for interpretation and reporting of imaging investigations
+10
+05
+The report
+10
+ • There may be a significant variation in the report layout depending on the type of 
+procedure� The use of pro formas should be considered as they can assist data 
+completeness for later review, or further intervention�
+Patient access
+Improved access to health information enables patients to become partners in managing  
+their health� For further guidance on patient notification of diagnostic imaging results,  
+refer to NHS England’s recommendations�25 This document indicates that the referrer who 
+requests the test is responsible for reviewing, acting on and communicating the result� 
+The timelines for patient access are discussed and should be short, while making sufficient 
+provision for adequate arrangements to communicate the findings in an appropriate and 
+supportive environment�
+When accessed by a patient, reports should be viewed with a standard phrase ‘This report  
+has been sent to the referring clinician (doctor or other healthcare professional) who referred 
+you for this investigation� If you have any questions, please discuss with your referring 
+clinician�’ Depending on local process this might be added to the text of a report or be  
+added by the viewing platform�
+Conclusion
+The standards in this document provide a baseline that all radiology reports should  
+achieve, so that the quality and consistency of imaging interpretation can be assured� 
+Adherence to these standards will ensure that image interpretation continues to add  
+value to patient diagnostic and treatment pathways�
+---PAGE 10---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+11
+1� The Royal College of Radiologists� Clinical radiology census report� London: The Royal 
+College of Radiologists, 2024� www�rcr�ac�uk/news-policy/policy-reports-initiatives/
+clinical-radiology-census-reports
+2� UK Government� The Ionising Radiation (Medical Exposure) Regulations 2017� SI 
+2017/1322� www�legislation�gov�uk/uksi/2017/1322/contents/made
+3� Department of Health (Northern Ireland)� The Ionising Radiation (Medical Exposure) 
+Regulations (Northern Ireland) 2018� SR 2018 No� 17� www�legislation�gov�uk/
+nisr/2018/17/contents/made
+4� UK Government� The Ionising Radiation (Medical Exposure) (Amendment) Regulations 
+2024� SI 2024 No� 896� www�legislation�gov�uk/uksi/2024/896/made
+5� The Royal College of Radiologists� The diagnostic radiology life cycle� London: The Royal 
+College of Radiologists, 2024� www�rcr�ac�uk/our-services/all-our-publications/clinical-
+radiology-publications/the-diagnostic-radiology-life-cycle-guidance
+6� The Royal College of Radiologists� Major adult trauma radiology guidance� London: The 
+Royal College of Radiologists, 2024� www�rcr�ac�uk/our-services/all-our-publications/
+clinical-radiology-publications/major-adult-trauma-radiology-guidance
+7� The Royal College of Radiologists� Standards for the education and training of reporting 
+practitioners in musculoskeletal plain radiographs� London: The Royal College of 
+Radiologists, 2022� www�rcr�ac�uk/our-services/all-our-publications/clinical-radiology-
+publications/standards-for-the-education-and-training-of-reporting-practitioners-in-
+musculoskeletal-plain-radiographs
+8� The Royal College of Radiologists� Standards for the education, training and 
+preceptorship of reporting practitioners in adult chest X-ray� London: The Royal College 
+of Radiologists, 2022� www�rcr�ac�uk/our-services/all-our-publications/clinical-radiology-
+publications/standards-for-the-education-training-and-preceptorship-of-reporting-
+practitioners-in-adult-chest-x-ray
+9� NHS England� Diagnostic imaging reporting turnaround times� 2023� www�england�nhs�
+uk/long-read/diagnostic-imaging-reporting-turnaround-times
+10� The Royal College of Radiologists� Turnaround times – what are we seeing? www�rcr�
+ac�uk/news-policy/policy-reports-initiatives/turnaround-times-what-are-we-seeing
+11� Academy of Medical Royal Colleges� Recommendations on alerts and notification of 
+imaging reports� Academy of Medical Royal Colleges, 2022� www�rcr�ac�uk/our-services/
+all-our-publications/clinical-radiology-publications/recommendations-on-alerts-and-
+notification-of-imaging-reports
+12� British Medical Association� Doctors and the European Working Time Directive, 2024� 
+www�bma�org�uk/pay-and-contracts/working-hours/european-working-time-directive-
+ewtd/doctors-and-the-european-working-time-directive
+13� The Royal College of Radiologists� Clinical radiology specialty training curriculum� 
+London: The Royal College of Radiologists, 2023� www�rcr�ac�uk/media/cupfjubc/rcr-
+curriculum_clinical_radiology_curriculum_update_15_may_2023�pdf
+14� The Royal College of Radiologists� Picture archiving and communication systems (PACS) 
+and guidelines on diagnostic display devices� Third edition� London: The Royal College 
+of Radiologists, 2019� www�rcr�ac�uk/our-services/all-our-publications/clinical-radiology-
+publications/picture-archiving-and-communication-systems-pacs-and-guidelines-on-
+diagnostic-display-devices-third-edition
+15� The Royal College of Radiologists� Integrating artificial intelligence with the radiology 
+reporting workflows (RIS and PACS)� London: The Royal College of Radiologists, 2021� 
+www�rcr�ac�uk/our-services/all-our-publications/clinical-radiology-publications/
+integrating-artificial-intelligence-with-the-radiology-reporting-workflows-ris-and-pacs
+16� NHS� Patient access� https://support�patientaccess�com
+17� NHS Artificial Intelligence Lab� The NHS AI Lab – NHS Transformation Directorate� NHS 
+England� https://digital�nhs�uk/services/ai-knowledge-repository
+References
+11
+---PAGE 11---
+Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
+Clinical Radiology
+12
+18� The Royal College of Radiologists� Integrating artificial intelligence with the radiology 
+reporting workflows� London: The Royal College of Radiologists, 2021�
+19� The Royal College of Radiologists� AI deployment fundamentals for medical imaging� 
+London: The Royal College of Radiologists, 2024� www�rcr�ac�uk/our-services/all-our-
+publications/clinical-radiology-publications/ai-deployment-fundamentals-for-medical-
+imaging
+20� The Royal College of Radiologists� Clinical radiology job planning guidance for consultant 
+and SAS doctors� London: The Royal College of Radiologists, 2022� www�rcr�ac�uk/
+our-services/all-our-publications/clinical-radiology-publications/clinical-radiology-job-
+planning-guidance-for-consultant-and-sas-doctors-2022
+21� The Royal College of Radiologists� Homeworking for radiologists� London: The Royal 
+College of Radiologists, 2023� www�rcr�ac�uk/our-services/all-our-publications/clinical-
+radiology-publications/homeworking-for-radiologists
+22� NHS England� NHS England business continuity management toolkit� 2023� https://www�
+england�nhs�uk/long-read/nhs-england-business-continuity-management-toolkit
+23� NHS England� Bowel cancer screening: guidelines for CTC imaging� 2024� www�gov�
+uk/government/publications/bowel-cancer-screening-imaging-use/bowel-cancer-
+screening-guidelines-for-ctc-imaging
+24� The Royal College of Radiologists� Sub-specialties and Special Interest Groups (SIGs)� 
+www�rcr�ac�uk/career-development/professional-networks/sub-specialties-special-
+interest-groups-sigs
+25� NHS England� Guidance on patient digital notification of diagnostic imaging reports� 
+2025� www�england�nhs�uk/long-read/guidance-on-patient-digital-notification-of-
+diagnostic-imaging-reports
+Acknowledgements
+Guideline development group 
+Dr Dominic Blunt, Consultant Radiologist, Charing Cross Hospital, Imperial College  
+Healthcare NHS Trust 
+Simon Ainsworth, Director, SA Healthcare Consulting Ltd; Lay Member, Royal College  
+of Radiologists 
+Dr Chee Gan, Consultant Interventional Neuroradiologist, Royal Victoria infirmary,  
+Newcastle Hospitals NHS Foundation Trust
+Preliminary reviewer 
+Dr Subhadip Ghosh-Ray, Consultant Radiologist, Paul Strickland Scanner Centre
+Teleradiology representative 
+Dr Robert Lavis, Independent consultant radiologist� Former Chief Medical Officer of  
+Medica and representative of the Teleradiology Professional Advisory Group (at the time  
+of document review) 
+Editorial and project support 
+Dr Stephen Harden, Vice-President, The Royal College of Radiologists  
+Ms Stephanie James, Professional Standards Manager, The Royal College of Radiologists 
+Dr Robin Proctor, Medical Director for Professional Practice, The Royal College of Radiologists
+---PAGE 12---
+The Royal College of Radiologists� Reporting 
+Standards Standards for interpretation  
+and reporting of imaging investigations� London:
+The Royal College of Radiologists, 2025� 
+The Royal College of Radiologists is a Charity 
+registered with the Charity Commission No, 
+211540
+© The Royal College of Radiologists, September 
+2025�
+This material has been produced by The Royal 
+College of Radiologists (RCR) for use internally 
+within the specialties of clinical oncology and 
+clinical radiology in the United Kingdom� It is 
+provided for use by appropriately qualified 
+professionals, and the making of any decision 
+regarding the applicability and suitability of the 
+material in any particular circumstance is subject 
+to the user’s professional judgement�
+While every reasonable care has been taken to 
+ensure the accuracy of the material, RCR cannot 
+accept any responsibility for any action taken, 
+or not taken, on the basis of it� As publisher, RCR 
+shall not be liable to any person for any loss or 
+damage, which may arise from the use of any 
+of the material� The RCR does not exclude or 
+limit liability for death or personal injury to the 
+extent only that the same arises as a result of 
+the negligence of RCR, its employees, Officers, 
+members and Fellows, or any other person 
+contributing to the formulation of the material�
+The Royal College of Radiologists  
+63 Lincoln’s Inn Fields 
+London, WC2A 3JW, UK
+The Royal College of Radiologists 
+ is a Charity registered with the  
+Charity Commission No 211540�
++44  020 7405 1282  
+enquiries@rcr�ac�uk  
+rcr�ac�uk
+  @RCRadiologists
+---PAGE 13---

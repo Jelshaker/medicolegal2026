@@ -1,49 +1,74 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
 import { SITE_TITLE } from '../consts';
 ---
 <BaseLayout title={`Radiology Legal Cases | ${SITE_TITLE}`} description="Landmark decisions where radiology was central. Issue, facts and principle for each case. Includes incidental findings, teleradiology risk and AI-assisted reporting.">
 <PageHero eyebrow="Radiology Legal Cases" title="Radiology Legal Cases" description="Decisions where imaging defined breach, standard of care or consent. Issue, facts and principle." />
+
+<PageIntro
+	eyebrow="Case law"
+	paragraphs={[
+		'A digest of the decisions in which imaging evidence determined the outcome. Each entry follows the same three-line structure: the issue, the facts, and the principle that comes out of it.',
+		'These are not summaries of whole judgments. They are the propositions a radiologist or an instructing solicitor needs, plus a note of where the point is still being argued. Cases are anonymised where they concern imaging described in the commentary.',
+	]}
+	contents={[
+		{ href: '#interpretation', label: 'Interpretation' },
+		{ href: '#screening', label: 'Screening' },
+		{ href: '#task-standard', label: 'Task standard' },
+		{ href: '#communication', label: 'Communication' },
+		{ href: '#consent', label: 'Consent' },
+		{ href: '#incidental-findings', label: 'Incidental findings' },
+		{ href: '#ai-reporting', label: 'AI-assisted reporting' },
+		{ href: '#claim-patterns', label: 'Patterns in claims' },
+	]}
+	audience="Written for solicitors, barristers, insurers and expert witnesses."
+	reviewed="September 2026"
+/>
 <section class="bg-white py-16 dark:bg-navy-900"><div class="container-page space-y-12">
-<Section eyebrow="Interpretation" title="Muller v King's College Hospital [2017] EWHC 128 (QB)">
+<Section id="interpretation" index="01" eyebrow="Interpretation" title="Muller v King's College Hospital [2017] EWHC 128 (QB)">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: perceptual error in image interpretation.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: missed malignant melanoma on foot imaging with later expert review showing a visible lesion.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: Bolam applies to judgment. It does not protect failure to see what is plainly visible to a competent radiologist. Peer evidence that others might also have missed it does not cure a perceptual miss of a demonstrable abnormality.</p></div>
 </Section>
-<Section eyebrow="Screening" title="Penney, Palmer and Canon v East Kent HA [2000]">
+<Section id="screening" index="02" eyebrow="Screening" title="Penney, Palmer and Canon v East Kent HA [2000]">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: standard of care in screening imaging and cytology.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: three false negative cervical screening reports.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: first question is factual. Did the slide show abnormalities. If present, failure to report or refer fell below standard. Evidence that others might have missed it was not determinative.</p></div>
 </Section>
-<Section eyebrow="Task standard" title="FB v Princess Alexandra Hospital [2017] EWCA Civ 334">
+<Section id="task-standard" index="03" eyebrow="Task standard" title="FB v Princess Alexandra Hospital [2017] EWCA Civ 334">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: standard for junior staff interpreting radiographs.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: ED junior missed subtle signs with delayed treatment.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: standard is set by post and task, not by seniority. A junior interpreting an X-ray is judged against a reasonably competent practitioner doing that task.</p></div>
 </Section>
-<Section eyebrow="Communication" title="Gwyn v South Tyneside and Sunderland [2021]">
+<Section id="communication" index="04" eyebrow="Communication" title="Gwyn v South Tyneside and Sunderland [2021]">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: fail-safe reporting of critical findings.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: incidental nodule suspicious for malignancy reported but not directly communicated. No alert reached the treating team.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: duty extends beyond interpretation to effective communication. A report filed silently on an electronic system does not discharge duty where urgent action is required. Closed loop notification is required.</p></div>
 </Section>
-<Section eyebrow="Consent" title="Montgomery v Lanarkshire [2015] UKSC 11">
+<Section id="consent" index="05" eyebrow="Consent" title="Montgomery v Lanarkshire [2015] UKSC 11">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: informed consent for imaging and interventional procedures.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: material delivery risks not disclosed.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: disclosure judged by reasonable patient standard. For embolisation, biopsy and angioplasty, discuss material risks, complications and alternatives specific to that patient. Record the discussion.</p></div>
 </Section>
-<Section eyebrow="Incidental findings" title="Halligan et al. — Incidental Pathology in Abdominal Radiology Claims (2025–2026)">
+<Section id="incidental-findings" index="06" eyebrow="Incidental findings" title="Halligan et al. — Incidental Pathology in Abdominal Radiology Claims (2025–2026)">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: what standard applies when the allegation concerns pathology incidental to the primary clinical question?</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: a retrospective review of 112 medicolegal cases by five expert abdominal radiologists (Halligan, Blunt, Boone, Higginson, Plumb) published in <em>Clinical Radiology</em> 92 (2026) 107162. Of 176 imaging examinations reviewed (56% CT, 20% MRI), 41 (37%) involved allegations citing failure to report incidental pathology. In 29 of these 41 cases (71%), the experts judged the interpretation as reasonable — not substandard. In the remaining 12 cases (29%), the interpretation was judged substandard. Across the entire cohort, the most common allegation was "primary tumour unreported" (40 cases, 36%), followed by "perforation unreported" (12 cases, 11%).</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: claimants routinely cite the RCR Standards for Interpretation and Reporting to support allegations that incidental pathology should have been detected. However, the authors — all acting as expert witnesses for both claimant and defendant — found that the Bolam test remains the proper framework. Where clinical details direct attention to a specific question (e.g. "abdominal pain ? cause" on an unprepared abdominal CT), failure to report a small incidental colonic tumour was often judged reasonable. The RCR 2025 Standards' recognition that "interpretation may be incorrect if referral details are deficient, absent or misleading" provides some protective recognition of this reality. The case is cited both as evidence of claimant strategy and as expert consensus that the incidentaloma question requires nuanced Bolam application rather than a "pure diagnosis" approach.</p></div>
 </Section>
-<Section eyebrow="AI-assisted reporting" title="AI-Assisted Reporting: Emerging Medicolegal Risk">
+<Section id="ai-reporting" index="07" eyebrow="AI-assisted reporting" title="AI-Assisted Reporting: Emerging Medicolegal Risk">
 <p class="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Issue: who is liable when an AI-assisted report misses or fabricates a finding?</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Facts: AI tools are being deployed across NHS radiology services for triage, structured reporting and decision support. The RCR's 3rd edition Standards (October 2025) require that AI-generated content be clearly identified, that a named human author reviews and approves all AI-derived contributions, and that AI report formats must not imply a degree of scrutiny that has not taken place. No published case law directly addresses AI-assisted reporting error at the time of writing.</p>
 <div class="card mt-4 p-6"><p class="text-sm text-slate-600 dark:text-slate-300">Principle: where an AI tool contributes to a report, the named human author bears full responsibility under Bolam. A radiologist who signs an AI-generated report containing a hallucinated finding without independent verification would fall below standard. An AI tool that silently suppresses a finding through training bias creates a different problem: the report may appear complete but omits a material finding. The employer's duty to provide adequate training (per RCR 2025) and to maintain quality assurance extends to AI-assisted workflows. Precautionary principle: document that an AI tool was used, what it generated, and that you independently verified every clinical finding before release.</p></div>
 </Section>
-<Section eyebrow="Categories" title="Patterns in radiology claims">
+<Section id="claim-patterns" index="08" eyebrow="Categories" title="Patterns in radiology claims">
 <div class="grid gap-6 lg:grid-cols-3"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">System safety</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Delayed lung cancer on chest radiograph. Breach of fail-safe notification. See Gwyn. The duty extends beyond interpretation to effective communication of critical findings.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Fracture and spine</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Missed fracture. Cauda equina delay. ED misinterpretation. See FB. Standard set by post and task.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Interventional error</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Vascular injury. Inadequate consent. Risk disclosure failure. See Montgomery and Chester.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Abdominal catastrophe</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Missed aortic dissection or bowel ischaemia on CT. Protocol adequacy and demonstrability decide breach. Causation requires Gregg analysis.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Incidental findings</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">37% of abdominal radiology claims cite incidental pathology. Small colonic tumours on unprepared CT. Renal tumours on spine MRI. See Halligan. The Bolam test, not pure diagnosis, applies.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">AI-assisted error</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">AI hallucination, template bias, silent suppression. The named human author bears full responsibility. Document AI use, verify independently.</p></div></div>
 </Section>
+<Callout tone="caution" title="Not legal advice">
+<p>Case digests here are a reference aid, not advice, and not a substitute for reading the judgment. Citations are given so the primary source can be checked; where a matter turns on the application of a decision to particular facts, take advice from a lawyer instructed on those facts.</p>
+</Callout>
 </div></section>
 </BaseLayout>

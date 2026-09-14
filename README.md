@@ -7,7 +7,9 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 
 ## ✨ Features
 
-- **Home** — resource hero, the two reference libraries (radiology and medicolegal law), the legal framework in four questions, featured case discussion and the latest posts.
+- **Home** — resource hero, a "what this resource is / is not" framing block, the two reference libraries, the legal framework in four questions, featured case discussion and the latest posts.
+- **Page introductions** — every content page opens with a `PageIntro` block: what the page is for, who it is written for, and an "On this page" table of contents that jumps to the numbered, anchored sections below.
+- **Site map** (`/sitemap`) — every page in the resource on one page, grouped by library, generated from `SITEMAP` in `src/consts.ts`; `public/robots.txt` points crawlers at the XML sitemap index.
 - **Radiology Reference** (`/radiology-resources`) — the clinical library: what each modality answers and where it is limited, the RCR interpretation and reporting standards, dose and safety duties, quality assurance, image handling, and a primary-source shelf that links each source to the section applying it.
 - **Curriculum Vitae** — structured timeline of appointments, qualifications and memberships.
 - **Recent Developments** (`/recent-developments`, `/recent-developments/[slug]`) — anonymised, category-filterable case discussions with a **Cloudflare KV-backed comment system**.
@@ -24,7 +26,8 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 
 ```
 src/
-  components/   BaseHead, Header, Footer, MedicalImageViewer, LocalDicomViewer, PageHero, Section
+  components/   BaseHead, Header, Footer, MedicalImageViewer, LocalDicomViewer,
+                PageHero, PageIntro, Section, Callout
   content/      recent-developments posts (markdown, typed by src/content.config.ts)
   layouts/      BaseLayout (shared shell), BlogPost
   lib/          utils (dates, reading time) + client toast system
@@ -33,9 +36,9 @@ src/
                 recent-developments/index + [slug]
                 dicom-viewer (local-only viewer), medicolegal-fundamentals,
                 radiology-resources (clinical library), radiology-legislation,
-                radiology-legal-cases
+                radiology-legal-cases, sitemap
                 api/ (comments, referrals, contact, login — Astro endpoints backed by KV)
-public/         _headers (security), vendor/dicomParser.min.js, images, placeholders
+public/         _headers (security), robots.txt, vendor/dicomParser.min.js, images, placeholders
 wrangler.json   Cloudflare Worker + KV namespace bindings
 ```
 
@@ -54,6 +57,7 @@ framing they express is driven by `SITE_TITLE`, `SITE_TAGLINE`,
 | Case Law                     | `/radiology-legal-cases`    |
 | Developments                 | `/recent-developments`      |
 | DICOM Viewer                 | `/dicom-viewer`             |
+| Site map                     | `/sitemap`                  |
 | Contact                      | `/contact`                  |
 
 Legacy routes redirect permanently (see `redirects` in `astro.config.mjs`):
@@ -78,6 +82,26 @@ Three deliberate content policies:
   `RESOURCE_LIBRARIES` (`src/consts.ts`) and is consumed by the home page,
   header, footer, `PageHero` and the `WebSite` JSON-LD — update it there rather
   than editing the strings in page templates.
+
+## 🧩 Page introductions, anchors and the site map
+
+Every content page renders `PageIntro` directly beneath `PageHero`, giving each
+page the same shape: a short introduction, an optional audience line, and an "On
+this page" list. That `contents` array **doubles as the on-page table of
+contents**, so every entry must point at an `id` rendered by a `Section` or
+`section` element on the same page — adding an entry without adding the anchor
+creates a dead link.
+
+Section numbering, the hairline rule and the larger lead paragraph come from the
+optional `id`, `index` and `lead` props on `Section.astro`. All three are
+optional, so older call sites render unchanged. Anchored blocks use `scroll-mt-24`
+to clear the sticky header.
+
+The human-readable site map at `/sitemap` is generated from `SITEMAP` in
+`src/consts.ts`. Add new public pages there (and to `NAVIGATION_LINKS` or the
+footer) so they are neither orphaned nor missing from the map. `/login` is
+deliberately excluded from both `SITEMAP` and the XML sitemap, and is disallowed
+in `public/robots.txt`.
 
 ## 🔑 Cloudflare KV bindings
 
@@ -115,4 +139,6 @@ and optional `COURTLISTENER_TOKEN` / `PUBLIC_DICOM_UPLOAD_URL`.
 - Replace the `google-site-verification` placeholder in `BaseHead.astro`.
 - Provide real KV namespace IDs and point the site `astro.config.mjs` `site` at
   your production domain.
+- If the production domain changes, update `site` in `astro.config.mjs` **and** the
+  `Sitemap:` line in `public/robots.txt` together — the two are coupled.
 - All blog figures are anonymised. Nothing on the site constitutes legal advice.

@@ -1,37 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
 import { SITE_TITLE } from '../consts';
 ---
 <BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Bolam, Bolitho, Montgomery, causation and breach of duty. Famous landmark cases: Nettleship, Roe, Wilsher, Sidaway, Paris, Watt, Chester, Gregg, Little. RCR Standards, duty of candour, and AI-assisted reporting.">
 <PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="Core UK medical law. Test, authority and radiology application for each principle." />
+
+<PageIntro
+	eyebrow="Medicolegal law library"
+	paragraphs={[
+		'The legal half of the resource, kept deliberately short and selective. Each entry states the principle, names the authority, and then says what it means for a radiologist reading a study or writing a report.',
+		'It is arranged in three parts: the working principles (standard of care, consent, causation, interpretation, reporting standards, candour and AI-assisted reporting); the landmark decisions that formed them; and the claim statistics that show where radiology disputes actually arise.',
+	]}
+	contents={[
+		{ href: '#standard-of-care', label: 'Standard of care' },
+		{ href: '#scrutiny', label: 'Scrutiny of expert opinion' },
+		{ href: '#consent', label: 'Consent' },
+		{ href: '#causation', label: 'Causation' },
+		{ href: '#interpretation', label: 'Interpretation and breach' },
+		{ href: '#reporting-standards', label: 'Reporting standards' },
+		{ href: '#candour', label: 'Duty of candour' },
+		{ href: '#ai-reporting', label: 'AI-assisted reporting' },
+		{ href: '#landmark-cases', label: 'Landmark cases' },
+		{ href: '#claim-statistics', label: 'Claim statistics' },
+	]}
+	audience="Written for radiologists, trust legal teams, solicitors, barristers and expert witnesses."
+	reviewed="September 2026"
+/>
 <section class="bg-white py-16 dark:bg-navy-900"><div class="container-page space-y-12">
-<Section eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
+<Section id="standard-of-care" index="01" eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: practice accepted as proper by a responsible body of skilled practitioners is not negligent.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Report judged against accepted practice at report date.</li><li>Range of acceptable opinions permitted.</li><li>Subtle findings below detection threshold protected.</li><li>Demonstrable findings not protected.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Expert method</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Re-derive from source DICOM.</li><li>Record protocol and image quality.</li><li>Separate breach from causation.</li></ul></div></div>
 </Section>
-<Section eyebrow="Scrutiny" title="Bolitho Qualification: Bolitho v City and Hackney HA [1997]">
+<Section id="scrutiny" index="02" eyebrow="Scrutiny" title="Bolitho Qualification: Bolitho v City and Hackney HA [1997]">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: expert opinion must have a logical basis. Illogical opinion can be rejected.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Bolitho v City and Hackney HA [1998] AC 232, HL.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Where a visible lesion is missed, defence opinion requires logical justification. Assertion without analysis can be rejected.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Limit</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Genuine disagreement on subtle findings remains within Bolam. Bolitho applies to indefensible opinion only.</p></div></div>
 </Section>
-<Section eyebrow="Consent" title="Montgomery v Lanarkshire [2015]">
+<Section id="consent" index="03" eyebrow="Consent" title="Montgomery v Lanarkshire [2015]">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: disclose risks a reasonable patient in this position would consider material.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Montgomery v Lanarkshire Health Board [2015] UKSC 11.</p>
 <div class="card mt-6 p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Imaging procedures</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Applies to embolisation, biopsy, angioplasty, drainage, contrast studies with material risk.</li><li>Requires discussion of indication, alternatives, procedural risks, dose and sedation.</li><li>Requires documented discussion. Signature alone is insufficient.</li></ul></div>
 </Section>
-<Section eyebrow="Causation" title="Chester v Afshar [2004] and Gregg v Scott [2005]">
+<Section id="causation" index="04" eyebrow="Causation" title="Chester v Afshar [2004] and Gregg v Scott [2005]">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Standard: but for breach, would outcome have differed on balance of probabilities.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authorities: Chester v Afshar [2004] UKHL 41. Gregg v Scott [2005] UKHL 2.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Chester</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Non-disclosure of a material risk that materialised gave liability. Relevant to interventional consent.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Gregg</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Loss of chance below 50 percent is not recoverable. Delayed diagnosis requires proof that earlier action would probably have changed outcome.</p></div></div>
 </Section>
-<Section eyebrow="Breach" title="Breach of Duty in Image Interpretation">
+<Section id="interpretation" index="05" eyebrow="Breach" title="Breach of Duty in Image Interpretation">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Breach turns on demonstrability on the acquired study under standard viewing conditions.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-3"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Error types</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Perceptual: visible finding not detected.</li><li>Cognitive: finding detected, incorrectly characterised.</li><li>Published miss rates do not define breach.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Double reading</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Required in defined screening programmes only. Not a general diagnostic standard.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Consensus</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Assessed on protocol, quality, clinical question and contemporaneous context. Retrospective certainty is not the test.</p></div></div>
 </Section>
-<Section eyebrow="Regulatory framework" title="RCR Standards for Interpretation and Reporting (3rd Edition, October 2025)">
+<Section id="reporting-standards" index="06" eyebrow="Regulatory framework" title="RCR Standards for Interpretation and Reporting (3rd Edition, October 2025)">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">The Royal College of Radiologists publishes the definitive standards governing how imaging investigations must be interpreted and reported across the NHS and private sector. The 3rd edition (October 2025) supersedes the 2018 edition and carries particular medicolegal weight because claimants routinely cite the standards to establish the expected standard of reporting practice.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Reference: Royal College of Radiologists. Standards for interpretation and reporting of imaging investigations. 3rd ed. London: RCR, October 2025. <a href="https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications" class="text-blue-600 hover:underline" target="_blank" rel="noopener">rcr.ac.uk</a></p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2">
@@ -55,11 +79,11 @@ import { SITE_TITLE } from '../consts';
 </div>
 </div>
 </Section>
-<Section eyebrow="Communication" title="Duty of Candour and Escalation Protocols">
+<Section id="candour" index="07" eyebrow="Communication" title="Duty of Candour and Escalation Protocols">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">The General Medical Council's guidance on the duty of candour (updated 2023) applies equally to all doctors, including radiologists. When something that has happened in connection with the care provided is or may have caused patient harm, the doctor must personally and officially report it. This extends to imaging errors — a missed malignancy, an incorrect laterality annotation, or a contrast reaction identified after report release.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Practical obligations</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Timely acknowledgment of the error to the patient or referrer.</li><li>Apology — an apology is not an admission of liability but is a professional obligation.</li><li>Written record of the apology and the circumstances.</li><li>Review and learning — the organisation must investigate and share lessons.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Addenda and corrections</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Controlled delay (up to 2 minutes) before report accessibility, per RCR guidance, allows typographical corrections.</li><li>Once accessed by another party, changes require formal version control with clear documentation of the amendment and notification to all relevant users.</li><li>Addenda should supplement — not replace — the original report.</li></ul></div></div>
 </Section>
-<Section eyebrow="Technology" title="AI-Assisted Reporting: Liability and Medicolegal Implications">
+<Section id="ai-reporting" index="08" eyebrow="Technology" title="AI-Assisted Reporting: Liability and Medicolegal Implications">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Artificial intelligence tools are now being deployed across UK radiology services — from triage algorithms prioritising critical findings to AI-generated structured report templates. The RCR's October 2025 standards set clear boundaries: validated AI tools must be integrated appropriately, AI-generated content must be clearly identified, and a named human author is responsible for the final report. All AI-derived contributions must be reviewed and approved before release.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2">
 <div class="card p-6">
@@ -82,7 +106,7 @@ import { SITE_TITLE } from '../consts';
 </div>
 </div>
 </Section>
-<Section eyebrow="Famous cases" title="Nettleship v Weston [1971] — The Learner Driver Principle">
+<Section id="landmark-cases" eyebrow="Famous cases" title="Nettleship v Weston [1971] — The Learner Driver Principle">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">A case that, while not a radiology case, has shaped the entire landscape of clinical negligence law. Mrs Weston, a learner driver, lost control and injured her passenger, Nettleship. The Court of Appeal held that a learner driver must be judged against the standard of the competent experienced driver — ignorance of the skills required does not excuse failure.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Nettleship v Weston [1971] 2 QB 691, CA.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Legal significance</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">This case was the first to establish that the standard of care in negligence is an <strong>objective</strong> one. A professional (or learner professional) cannot argue they were below average — they must be judged against the competent practitioner standard. This directly underpins Bolam.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">A newly qualified registrar interpreting their first CT brain is judged against the competent consultant standard. A trainee radiographer positioning a trauma series is judged against the competent level. The objective standard applies regardless of experience.</p></div></div>
@@ -147,10 +171,13 @@ import { SITE_TITLE } from '../consts';
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Ghaidan v Godin-Mendoza [2004] UKHL 30.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Legal significance</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">The House of Lords held that the statutory term "spouse" should be read to include a same-sex partner in a stable long-term relationship, under the Human Rights Act 1998. This was a landmark ruling on equality, statutory interpretation, and the evolving meaning of legal relationships.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">While not a medical case itself, Ghaidan is cited in imaging law when discussing the legal framework within which healthcare law now operates. The Human Rights Act 1998, Article 2 (right to life) and Article 8 (right to respect for private life), have increasingly influenced medical negligence law — particularly in cases where imaging has direct bearing on patient autonomy and reproductive rights.</p></div></div>
 </Section>
-<Section eyebrow="Famous cases" title="NHS Resolution — Annual Claims Statistics 2024">
+<Section id="claim-statistics" eyebrow="Famous cases" title="NHS Resolution — Annual Claims Statistics 2024">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">NHS Resolution publishes annual statistics on clinical negligence claims. The 2024 report shows that radiology remains one of the most frequently cited specialties in claims, with 4.6% of all claims being radiological — matching general medicine as the second-largest specialty after obstetrics.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Source: NHS Resolution, Annual Report and Accounts 2023–24.</p>
 <div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Key data</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Total NHS litigation cost: £3.6 billion (2018/19 data, referenced by Halligan et al.).</li><li>Radiology claims have increased in volume and value over the past decade.</li><li>Missed diagnosis is the most common allegation across all radiology claims.</li><li>Abdominal radiology claims have a high rate of incidental pathology allegations (37%, per Halligan).</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Implications</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">The rising volume of radiology claims reflects both the increasing centrality of imaging in clinical decision-making and the growing sophistication of claimants' legal teams in identifying radiological errors. Expert radiological review is now a standard feature of clinical negligence claims involving any imaging modality.</p></div></div>
 </Section>
+<Callout tone="caution" title="Not legal advice">
+<p>This library summarises principles and authorities for reference. It is not legal advice, and it is not a substitute for the primary sources or for advice on a particular case. Where a matter turns on the application of a principle to specific facts, take advice from a lawyer instructed on those facts.</p>
+</Callout>
 </div></section>
 </BaseLayout>

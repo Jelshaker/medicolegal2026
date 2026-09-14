@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import { SITE_TITLE } from '../consts';
 
@@ -102,10 +103,31 @@ const lawLinks = [
 		description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
 	/>
 
+	<PageIntro
+		eyebrow="Radiology library"
+		paragraphs={[
+			"This is the clinical half of a deliberately small reference resource. It sets out what each imaging modality can reasonably answer, what the professional standards require of an interpretation and a report, and what the law demands of dose, quality and image handling.",
+			"It assumes you already know radiology, or already know law. The purpose is to show where the two meet, and to name the source behind each proposition. Every section links to the statute, standard or decision it applies.",
+		]}
+		contents={[
+			{ href: '#modalities', label: 'Modalities' },
+			{ href: '#reporting-standards', label: 'Reporting standards' },
+			{ href: '#legal-questions', label: 'Legal questions' },
+			{ href: '#dose-safety', label: 'Dose and safety' },
+			{ href: '#quality-assurance', label: 'Quality assurance' },
+			{ href: '#handling-images', label: 'Handling images' },
+			{ href: '#primary-sources', label: 'Primary sources' },
+		]}
+		audience="Written for reporting radiologists, referrers, and the solicitors and experts who test their work."
+		reviewed="September 2026"
+	/>
+
 	<!-- Modalities -->
 	<section class="bg-white py-16 dark:bg-navy-900">
 		<div class="container-page space-y-12">
 			<Section
+				id="modalities"
+				index="01"
 				eyebrow="Modalities"
 				title="Each investigation, and the question it answers"
 				lead="A modality is chosen for the question it can answer and the risk it carries, not for the detail it produces. These summaries set out what each method is for and where it stops being useful."
@@ -135,6 +157,8 @@ const lawLinks = [
 			</Section>
 			<!-- Reporting standards -->
 			<Section
+				id="reporting-standards"
+				index="02"
 				eyebrow="Standards"
 				title="Interpretation and reporting: the professional benchmark"
 				lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
@@ -153,6 +177,8 @@ const lawLinks = [
 
 			<!-- Where standards become legal questions -->
 			<Section
+				id="legal-questions"
+				index="03"
 				eyebrow="Radiology and the law"
 				title="Where a reporting standard becomes a legal question"
 				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
@@ -179,6 +205,8 @@ const lawLinks = [
 			</Section>
 			<!-- Dose and safety -->
 			<Section
+				id="dose-safety"
+				index="04"
 				eyebrow="Dose &amp; safety"
 				title="Dose, justification and the statutory duty"
 				lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
@@ -211,6 +239,8 @@ const lawLinks = [
 
 			<!-- Quality assurance -->
 			<Section
+				id="quality-assurance"
+				index="05"
 				eyebrow="Assurance"
 				title="Quality assurance and learning"
 				lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
@@ -245,6 +275,8 @@ const lawLinks = [
 			</Section>
 			<!-- Handling and transferring images -->
 			<Section
+				id="handling-images"
+				index="06"
 				eyebrow="Handling images"
 				title="Storage, transfer and viewing"
 				lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the record."
@@ -292,6 +324,8 @@ const lawLinks = [
 	<section class="bg-slate-50 py-16 dark:bg-navy-950">
 		<div class="container-page space-y-12">
 			<Section
+				id="primary-sources"
+				index="07"
 				eyebrow="Primary sources"
 				title="The shelf behind this resource"
 				lead="The site summarises and applies the following sources. Each is linked to the section where it is used, so a proposition can be traced back to the document that supports it."

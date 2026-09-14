@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import PageIntro from '../../components/PageIntro.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, BLOG_CATEGORIES } from '../../consts';
 import { formatDateShort } from '../../lib/utils';
@@ -18,19 +19,57 @@ export const prerender = true;
 		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
 	/>
 
+	<PageIntro
+		eyebrow="Commentary on recent cases"
+		paragraphs={[
+			'This is the part of the resource worth returning to: short, anonymised commentary on recent cases and developments that raise an interesting radiological or legal point.',
+			'Each piece says what happened, what the imaging showed, what the court or tribunal was asked to decide, and what a radiologist should take from it. The selection is deliberately small — a few cases at a time, chosen because they change how a question should be answered.',
+		]}
+		contents={[
+			{ href: '#latest-commentary', label: 'Latest commentary' },
+			{ href: '#browse-by-subject', label: 'Browse by subject' },
+		]}
+		audience="Written for radiologists, solicitors, barristers and insurers. All material is anonymised in accordance with GMC guidance and CPR Part 35."
+		reviewed="September 2026"
+	/>
+
 	<section class="bg-white py-16 dark:bg-navy-900">
 		<div class="container-page">
-			<!-- Filter chips -->
-			<div id="blog-filters" class="flex flex-wrap gap-2">
-				{BLOG_CATEGORIES.map((c) => (
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-teal-500" data-category={c.id}>
-						{c.label}
-					</button>
-				))}
+			<!-- Browse by subject -->
+			<div id="browse-by-subject" class="scroll-mt-24">
+				<div class="flex flex-wrap items-end justify-between gap-4">
+					<div>
+						<span class="eyebrow block">Filter</span>
+						<h2 class="mt-2 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100 sm:text-3xl">
+							Browse by subject
+						</h2>
+					</div>
+					<p id="blog-count" class="text-sm font-medium text-slate-500 dark:text-slate-400" aria-live="polite">
+						Showing all {allPosts.length} pieces
+					</p>
+				</div>
+				<div id="blog-filters" class="mt-6 flex flex-wrap gap-2">
+					{BLOG_CATEGORIES.map((c) => (
+						<button type="button" class="chip cursor-pointer transition-colors hover:border-teal-500" data-category={c.id}>
+							{c.label}
+						</button>
+					))}
+				</div>
 			</div>
 
 			<!-- Posts -->
-			<div id="blog-grid" class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			<div id="latest-commentary" class="mt-14 scroll-mt-24">
+				<div class="border-t border-slate-200 pt-8 dark:border-navy-700">
+					<span class="eyebrow block">Latest</span>
+					<h2 class="mt-2 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100 sm:text-3xl">
+						Latest commentary
+					</h2>
+					<p class="mt-3 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+						Newest first. Each piece is a short analysis rather than a full case report, and all
+						clinical detail is anonymised.
+					</p>
+				</div>
+				<div id="blog-grid" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{allPosts.map((post) => (
 					<article class="blog-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft transition-all hover:shadow-lift dark:border-navy-700 dark:bg-navy-900" data-categories={post.data.category}>
 						<div class="h-44 overflow-hidden">
@@ -51,6 +90,7 @@ export const prerender = true;
 						</div>
 					</article>
 				))}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -59,16 +99,30 @@ export const prerender = true;
 <script>
 	const filters = document.getElementById("blog-filters");
 	const grid = document.getElementById("blog-grid");
+	const count = document.getElementById("blog-count");
 	const cards = Array.from(grid?.querySelectorAll(".blog-card") ?? []);
-	filters?.addEventListener("click", (e) => {
-		const btn = (e.target as HTMLElement).closest("[data-category]") as HTMLElement | null;
-		if (!btn) return;
-		const cat = btn.dataset.category;
-		filters.querySelectorAll("[data-category]").forEach((b) => b.classList.remove("bg-teal-600", "text-white"));
-		if (cat !== "all") btn.classList.add("bg-teal-600", "text-white");
+
+	function apply(cat: string) {
+		filters?.querySelectorAll("[data-category]").forEach((node) => {
+			const btn = node as HTMLElement;
+			const active = btn.dataset.category === cat;
+			btn.classList.toggle("bg-teal-600", active);
+			btn.classList.toggle("text-white", active);
+		});
+		let shown = 0;
 		cards.forEach((card) => {
 			const match = cat === "all" || card.dataset.categories === cat;
 			(card as HTMLElement).style.display = match ? "" : "none";
+			if (match) shown++;
 		});
+		if (count) count.textContent = `Showing ${shown} of ${cards.length} pieces`;
+	}
+
+	filters?.addEventListener("click", (e) => {
+		const btn = (e.target as HTMLElement).closest("[data-category]") as HTMLElement | null;
+		if (!btn) return;
+		apply(btn.dataset.category ?? "all");
 	});
+
+	apply("all");
 </script>

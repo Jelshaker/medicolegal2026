@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import { PRACTITIONER, SITE_TITLE, MEMBERSHIPS } from '../consts';
 
 const career = [
@@ -22,8 +23,22 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
 	/>
 
+	<PageIntro
+		eyebrow="Professional record"
+		paragraphs={[
+			'A structured record of the qualifications, appointments and memberships behind the resource, provided so that the basis of the commentary can be checked.',
+			'The resource is written from an NHS consultant practice with an independent medicolegal workload. This page sets out the training and subspecialty interests that sit behind it.',
+		]}
+		contents={[
+			{ href: '#overview', label: 'Overview' },
+			{ href: '#appointments', label: 'Appointments and qualifications' },
+			{ href: '#memberships', label: 'Memberships' },
+		]}
+		reviewed="September 2026"
+	/>
+
 	<!-- Overview -->
-	<section class="bg-white py-14 dark:bg-navy-900">
+	<section id="overview" class="scroll-mt-24 bg-white py-14 dark:bg-navy-900">
 		<div class="container-page">
 			<div class="grid gap-8 md:grid-cols-3">
 				<div class="card p-6">
@@ -45,7 +60,7 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 	</section>
 
 	<!-- Timeline -->
-	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+	<section id="appointments" class="scroll-mt-24 bg-slate-50 py-16 dark:bg-navy-950">
 		<div class="container-page">
 			<span class="eyebrow block">Career & training</span>
 			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Appointments & qualifications</h2>
@@ -66,7 +81,7 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 	</section>
 
 	<!-- Memberships -->
-	<section class="bg-white py-16 dark:bg-navy-900">
+	<section id="memberships" class="scroll-mt-24 bg-white py-16 dark:bg-navy-900">
 		<div class="container-page max-w-3xl">
 			<span class="eyebrow block">Professional bodies</span>
 			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Memberships</h2>

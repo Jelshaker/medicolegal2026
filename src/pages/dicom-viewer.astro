@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
 import { SITE_TITLE } from "../consts";
@@ -16,8 +17,24 @@ import { SITE_TITLE } from "../consts";
 		description="Drop a DICOM study and review it in your own browser — window/level, pan, zoom, slice navigation and anonymised tag inspection. Every pixel stays on your device."
 	/>
 
+	<PageIntro
+		eyebrow="Local viewer"
+		paragraphs={[
+			'A free viewer that opens a DICOM study in your own browser. Nothing is uploaded, nothing is stored, and no copy of patient data is created — which is why it can be used to get a first look at a study without creating a data protection problem.',
+			'It is a triage and orientation tool. It is not a calibrated diagnostic workstation, and no opinion should be based on it.',
+		]}
+		contents={[
+			{ href: '#privacy-by-design', label: 'Privacy by design' },
+			{ href: '#open-a-study', label: 'Open a study' },
+			{ href: '#legal-workflow', label: 'Legal workflow' },
+			{ href: '#limits', label: 'Limits' },
+		]}
+		audience="Written for solicitors, barristers, insurers, expert witnesses and clinicians."
+		reviewed="September 2026"
+	/>
+
 	<!-- Privacy by design -->
-	<section class="bg-slate-50 py-14 dark:bg-navy-900">
+	<section id="privacy-by-design" class="scroll-mt-24 bg-slate-50 py-14 dark:bg-navy-900">
 		<div class="container-page">
 			<div class="grid gap-6 lg:grid-cols-3">
 				<div class="card p-6 border-l-4 border-l-teal-500">
@@ -50,7 +67,7 @@ import { SITE_TITLE } from "../consts";
 	</section>
 
 	<!-- The viewer -->
-	<section class="bg-white py-14 dark:bg-navy-950">
+	<section id="open-a-study" class="scroll-mt-24 bg-white py-14 dark:bg-navy-950">
 		<div class="container-page space-y-8">
 			<div>
 				<h2 class="text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Open a study</h2>
@@ -64,7 +81,7 @@ import { SITE_TITLE } from "../consts";
 	</section>
 
 	<!-- Legal framing -->
-	<section class="bg-slate-50 py-16 dark:bg-navy-900">
+	<section id="legal-workflow" class="scroll-mt-24 bg-slate-50 py-16 dark:bg-navy-900">
 		<div class="container-page space-y-12">
 			<Section
 				eyebrow="How it fits the legal workflow"
@@ -98,7 +115,7 @@ import { SITE_TITLE } from "../consts";
 				</div>
 			</Section>
 
-			<Section eyebrow="Medicolegal limits" title="What this free viewer can and cannot do">
+			<Section id="limits" eyebrow="Medicolegal limits" title="What this free viewer can and cannot do">
 				<div class="grid gap-6 lg:grid-cols-2">
 					<div class="card p-6 border-l-4 border-l-teal-500">
 						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Appropriate uses</h3>

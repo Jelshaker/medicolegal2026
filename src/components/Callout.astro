@@ -1,0 +1,25 @@
+---
+// Tone-coded aside used to break up long reference sections: a key proposition,
+// a limit or caveat, a caution, or a named authority. Keeps the visual language
+// already used by the case pages and the DICOM viewer limits block.
+interface Props {
+	tone?: "key" | "limit" | "caution" | "authority";
+	title?: string;
+}
+
+const { tone = "key", title } = Astro.props as Props;
+
+const tones: Record<NonNullable<Props["tone"]>, string> = {
+	key: "border-teal-500 bg-teal-50/70 dark:border-teal-400 dark:bg-teal-950/25",
+	limit: "border-slate-400 bg-slate-50 dark:border-navy-600 dark:bg-navy-900",
+	caution: "border-amber-400 bg-amber-50/70 dark:border-amber-500/60 dark:bg-amber-950/20",
+	authority: "border-navy-400 bg-navy-50 dark:border-teal-500/40 dark:bg-navy-900",
+};
+---
+
+<aside class={`rounded-r-xl border-l-4 p-5 ${tones[tone]}`}>
+	{title && <p class="text-sm font-bold text-navy-900 dark:text-slate-100">{title}</p>}
+	<div class={`space-y-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300 ${title ? "mt-2" : ""}`}>
+		<slot />
+	</div>
+</aside>

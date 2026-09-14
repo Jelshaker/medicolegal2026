@@ -1,0 +1,62 @@
+---
+// Introduction block rendered directly beneath PageHero on content pages.
+// Gives every page the same shape: what this page is for, what it covers,
+// who it is written for, and when it was last reviewed. The optional
+// `contents` list doubles as the on-page table of contents, so every entry
+// must point at an `id` rendered by a Section or section element on the page.
+interface Props {
+	/** Short standfirst shown above the first paragraph. */
+	eyebrow?: string;
+	/** Two to three paragraphs of plain-English introduction. */
+	paragraphs: string[];
+	/** Optional "what you will find here" list, each with an in-page anchor. */
+	contents?: { href: string; label: string }[];
+	/** Optional audience line, e.g. "Written for radiologists, solicitors and insurers." */
+	audience?: string;
+	/** Optional human-readable review date. */
+	reviewed?: string;
+}
+
+const {
+	eyebrow = "About this page",
+	paragraphs,
+	contents = [],
+	audience,
+	reviewed,
+} = Astro.props as Props;
+---
+
+<section class="border-b border-slate-200 bg-slate-50 py-10 dark:border-navy-800 dark:bg-navy-950">
+	<div class="container-page grid gap-8 lg:grid-cols-3">
+		<div class="lg:col-span-2">
+			{eyebrow && <span class="eyebrow block">{eyebrow}</span>}
+			<div class="mt-4 space-y-4 leading-relaxed text-slate-600 dark:text-slate-300">
+				{paragraphs.map((p) => <p>{p}</p>)}
+			</div>
+			{audience && <p class="mt-5 text-sm font-medium text-slate-500 dark:text-slate-400">{audience}</p>}
+			{reviewed && <p class="mt-2 text-xs text-slate-400 dark:text-slate-500">Last reviewed {reviewed}</p>}
+		</div>
+
+		{
+			contents.length > 0 && (
+				<nav aria-label="On this page" class="card h-fit p-5">
+					<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+						On this page
+					</h2>
+					<ul class="mt-3 space-y-2 text-sm">
+						{contents.map((c) => (
+							<li>
+								<a
+									href={c.href}
+									class="font-medium text-teal-700 hover:underline dark:text-teal-400"
+								>
+									{c.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			)
+		}
+	</div>
+</section>

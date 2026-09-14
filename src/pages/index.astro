@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
+import Callout from '../components/Callout.astro';
 import { getCollection } from 'astro:content';
 import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE, BLOG_CATEGORIES, RESOURCE_LIBRARIES } from '../consts';
 
@@ -63,6 +64,35 @@ const stats = [
 				</div>
 			</div>
 		</div>
+	<!-- What this resource is — and what it is not -->
+	<section class="border-b border-slate-200 bg-slate-50 py-12 dark:border-navy-800 dark:bg-navy-950">
+		<div class="container-page grid gap-6 lg:grid-cols-3">
+			<div class="card border-l-4 border-l-teal-500 p-6">
+				<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Small, and kept current</h2>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					This is a deliberately small resource. It holds a selective set of entries on radiology and
+					medicolegal law, each one sourced to the statute, standard or decision behind it, rather than
+					attempting to be a complete text.
+				</p>
+			</div>
+			<div class="card border-l-4 border-l-teal-500 p-6">
+				<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Recent case commentary</h2>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					Its distinguishing feature is short, anonymised commentary on recent cases that raise an
+					interesting radiological or legal point. Every piece says what the imaging showed, what the
+					court was asked to decide, and what a radiologist should take from it.
+				</p>
+			</div>
+			<Callout tone="caution" title="What it is not">
+				<p>
+					It is not a substitute for the primary sources, not a comprehensive case database, and not
+					legal or clinical advice. Where a matter needs a radiological opinion, instruction is handled
+					through the practice behind the resource.
+				</p>
+			</Callout>
+		</div>
+	</section>
+
 	</section>
 
 	<!-- The two libraries -->
@@ -212,6 +242,7 @@ const stats = [
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
 				<a href="/expert-witness" class="btn btn-primary">Expert witness services</a>
 				<a href="/about" class="btn btn-white">About the curator</a>
+				<a href="/sitemap" class="btn btn-outline-white">Site map</a>
 				<a href="/contact" class="btn btn-outline-white">Contact the secretariat</a>
 			</div>
 		</div>

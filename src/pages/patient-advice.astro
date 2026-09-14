@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
+import Callout from '../components/Callout.astro';
 import { SITE_TITLE } from '../consts';
 
 const faqs = [
@@ -31,8 +33,23 @@ const faqs = [
 		description="Part of the radiology library, written for patients: clear information about the imaging examinations you may be asked to undergo — from how each modality works to preparation and safety."
 	/>
 
+	<PageIntro
+		eyebrow="Radiology library · For patients"
+		paragraphs={[
+			'The patient-facing part of the radiology library. It explains, without jargon, what happens during X-ray, CT, MRI and ultrasound, why a particular test may be chosen, and what you can do to prepare.',
+			'It is written for patients and carers, and for referrers who want something plain to hand to a patient. It is general information only and does not replace advice from your own clinician.',
+		]}
+		contents={[
+			{ href: '#modalities-explained', label: 'Modalities explained' },
+			{ href: '#radiation-safety', label: 'Radiation safety' },
+			{ href: '#preparation', label: 'Preparation' },
+			{ href: '#common-questions', label: 'Common questions' },
+		]}
+		reviewed="September 2026"
+	/>
+
 	<!-- Modalities -->
-	<section class="bg-white py-16 dark:bg-navy-900">
+	<section id="modalities-explained" class="scroll-mt-24 bg-white py-16 dark:bg-navy-900">
 		<div class="container-page">
 			<span class="eyebrow block">Understanding your scan</span>
 			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Imaging modalities explained</h2>
@@ -66,7 +83,7 @@ const faqs = [
 	</section>
 
 	<!-- Safety -->
-	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+	<section id="radiation-safety" class="scroll-mt-24 bg-slate-50 py-16 dark:bg-navy-950">
 		<div class="container-page grid gap-10 lg:grid-cols-2">
 			<div>
 				<span class="eyebrow block">Radiation safety</span>
@@ -77,7 +94,7 @@ const faqs = [
 					<p>If you are pregnant or may be pregnant, always tell the imaging department so that the examination can be reconsidered or adjusted accordingly.</p>
 				</div>
 			</div>
-			<div class="card p-6">
+			<div id="preparation" class="card scroll-mt-24 p-6">
 				<h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Preparation summary</h3>
 				<ul class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
 					<li class="flex gap-2"><span class="text-teal-600 dark:text-teal-400">•</span><span><strong>MRI:</strong> remove all metal (jewellery, piercings, cards). Empty pockets. Inform staff of any implants or medical devices.</span></li>
@@ -90,7 +107,7 @@ const faqs = [
 	</section>
 
 	<!-- FAQs -->
-	<section class="bg-white py-16 dark:bg-navy-900">
+	<section id="common-questions" class="scroll-mt-24 bg-white py-16 dark:bg-navy-900">
 		<div class="container-page max-w-3xl">
 			<span class="eyebrow block">Frequently asked questions</span>
 			<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Common questions</h2>
@@ -105,6 +122,15 @@ const faqs = [
 					</details>
 				))}
 			</div>
+
+			<Callout tone="limit" title="When to ask your own clinician">
+				<p>
+					This page is general information, not advice about your individual case. If you are worried
+					about a symptom, a result, or whether an examination is right for you, speak to the clinician
+					who referred you or the department performing the examination. They have your history and can
+					answer for your circumstances.
+				</p>
+			</Callout>
 		</div>
 	</section>
 </BaseLayout>

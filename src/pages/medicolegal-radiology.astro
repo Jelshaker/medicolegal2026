@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import { SITE_TITLE } from '../consts';
@@ -13,10 +14,27 @@ import { SITE_TITLE } from '../consts';
 		description="How claimants advance the &quot;pure diagnosis&quot; argument, why ~37% of abdominal radiology claims involve incidental findings, and how teleradiology fatigue amplifies systemic risk."
 	/>
 
+	<PageIntro
+		eyebrow="The central argument"
+		paragraphs={[
+			'A longer piece on the argument that decides most radiological claims: whether a miss is judged by what a responsible body of radiologists would have seen, or simply by what was on the screen.',
+			'It then follows the same question into two places where it is hardest to answer — the incidental finding that was outside the clinical question asked, and the remote or overnight report where the reporter lacked the context the images alone cannot supply.',
+		]}
+		contents={[
+			{ href: '#pure-diagnosis', label: 'Pure diagnosis' },
+			{ href: '#incidentaloma', label: 'Incidental findings' },
+			{ href: '#systemic-risk', label: 'Systemic risk' },
+			{ href: '#teleradiology', label: 'Teleradiology standards' },
+			{ href: '#reporting-chain', label: 'The reporting chain' },
+		]}
+		audience="Written for radiologists, solicitors, barristers, insurers and expert witnesses."
+		reviewed="September 2026"
+	/>
+
 	<section class="bg-white py-16 dark:bg-navy-900">
 		<div class="container-page space-y-12">
 			<!-- Pure Diagnosis Debate -->
-			<Section eyebrow="Pure Diagnosis" title="The Claimant's Hindsight Liability Argument">
+			<Section id="pure-diagnosis" index="01" eyebrow="Pure Diagnosis" title="The Claimant's Hindsight Liability Argument">
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
 					The most contentious legal debate in modern radiological negligence law is the tension between the traditional <strong>Bolam standard</strong> and what claimants' counsel increasingly advance as the <strong>"pure diagnosis"</strong> argument.
 				</p>
@@ -91,7 +109,7 @@ import { SITE_TITLE } from '../consts';
 			</Section>
 
 			<!-- Incidentaloma -->
-			<Section eyebrow="Incidentaloma Liability" title="When Non-Target Findings Become the Subject of Claims">
+			<Section id="incidentaloma" index="02" eyebrow="Incidentaloma Liability" title="When Non-Target Findings Become the Subject of Claims">
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
 					Audit analysis of medical protection claims data indicates that approximately <strong>37% of abdominal radiology allegations</strong> relate to incidental findings — lesions detected in organs or regions that were not the primary target of the imaging study.
 				</p>
@@ -156,7 +174,7 @@ import { SITE_TITLE } from '../consts';
 			</Section>
 
 			<!-- Teleradiology Fatigue -->
-			<Section eyebrow="Systemic Risk" title="Overnight Reporting, Fatigue & the Compound Error Effect">
+			<Section id="systemic-risk" index="03" eyebrow="Systemic Risk" title="Overnight Reporting, Fatigue & the Compound Error Effect">
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
 					Teleradiology — particularly overnight and off-hours reporting — introduces a compound risk factor. Multiple studies demonstrate that fatigue, reduced cognitive resources, and the absence of local clinical context all contribute to increased error rates.
 				</p>
@@ -214,7 +232,7 @@ import { SITE_TITLE } from '../consts';
 			</Section>
 
 			<!-- Textbook foundations: teleradiology standards -->
-			<Section eyebrow="Textbook Foundations" title="Teleradiology: what the standards require, and what they do not">
+			<Section id="teleradiology" index="04" eyebrow="Textbook Foundations" title="Teleradiology: what the standards require, and what they do not">
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
 					<em>Medicolegal Issues for Diagnostic Imaging Professionals</em> devotes a chapter to teleradiology
 					and sets out the standards framework that governs it. The starting point is a definition that has
@@ -267,7 +285,7 @@ import { SITE_TITLE } from '../consts';
 			</Section>
 
 			<!-- Textbook foundations: the reporting chain -->
-			<Section eyebrow="Textbook Foundations" title="The reporting chain, and the duty to say what could not be seen">
+			<Section id="reporting-chain" index="05" eyebrow="Textbook Foundations" title="The reporting chain, and the duty to say what could not be seen">
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
 					The teleradiology chapter also classifies the ways in which remote work is actually performed. It
 					identifies four models; the two that dominate UK practice are described in its own terms:

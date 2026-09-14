@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE, FEES } from "../consts";
+import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE } from "../consts";
 
 const scope = [
 	{
@@ -127,12 +127,6 @@ const standards = [
 							<dt class="font-semibold text-slate-500 dark:text-slate-400">Indemnity</dt>
 							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.indemnity}</dd>
 						</div>
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Turnaround</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">
-								{FEES.standardTurnaround} standard · {FEES.urgentTurnaround} urgent
-							</dd>
-						</div>
 					</dl>
 				</div>
 
@@ -148,7 +142,7 @@ const standards = [
 					<ul class="mt-4 space-y-2.5 text-sm">
 						<li><a href="/cv" class="font-semibold text-teal-700 dark:text-teal-400">Full curriculum vitae</a></li>
 						<li><a href="/expert-witness" class="font-semibold text-teal-700 dark:text-teal-400">Expert witness services</a></li>
-						<li><a href="/legal-fundamentals" class="font-semibold text-teal-700 dark:text-teal-400">Legal fundamentals</a></li>
+						<li><a href="/medicolegal-fundamentals" class="font-semibold text-teal-700 dark:text-teal-400">Medicolegal fundamentals</a></li>
 						<li><a href="/contact" class="font-semibold text-teal-700 dark:text-teal-400">Contact the secretariat</a></li>
 					</ul>
 				</div>

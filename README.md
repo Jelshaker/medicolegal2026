@@ -8,12 +8,13 @@ medico-legal expert witness, built with **Astro (SSR on Cloudflare Workers)**,
 
 - **Home** — hero with credentials (FRCR), practice areas, featured case and dynamic image cards.
 - **Curriculum Vitae** — structured timeline of appointments, qualifications and memberships.
-- **Legal Radiology Blog** (`/legal-blog`, `/legal-blog/[slug]`) — anonymised, category-filterable case discussions with a **Cloudflare KV-backed comment system**.
+- **Recent Developments** (`/recent-developments`, `/recent-developments/[slug]`) — anonymised, category-filterable case discussions with a **Cloudflare KV-backed comment system**.
 - **Patient Advice** — plain-language guide to MRI / CT / ultrasound / X-ray, radiation safety, preparation and FAQs.
 - **Referrals** — secure referral form persisted to the `PATIENT_REFERRALS` KV namespace.
 - **Contact** — secretariat details and an encrypted contact form.
 - **Secure Login** — professional portal login (`/api/login`, demo account in `src/consts.ts`).
 - **Interactive Medical Image Viewer** (`MedicalImageViewer.astro`) — lightbox with wheel/button zoom, pan and captioning.
+- **Local DICOM Viewer** (`/dicom-viewer`) — 100% client-side viewer (`LocalDicomViewer.astro`) with window/level, pan, zoom and slice navigation. `dicom-parser` is **vendored at `public/vendor/dicomParser.min.js`** so no third-party CDN is contacted and the `script-src 'self'` CSP holds. Studies are parsed in-browser and never uploaded.
 - **SEO & Analytics** — GA4, Google Search Console placeholder, OpenGraph and `MedicalBusiness` + `Person` JSON-LD.
 - **Security headers** (`public/_headers`) — CSP, HSTS, X-Frame-Options and more.
 
@@ -21,16 +22,48 @@ medico-legal expert witness, built with **Astro (SSR on Cloudflare Workers)**,
 
 ```
 src/
-  components/   BaseHead, Header, Footer, MedicalImageViewer, PageHero, Section
-  content/      blog posts (markdown, typed by src/content.config.ts)
+  components/   BaseHead, Header, Footer, MedicalImageViewer, LocalDicomViewer, PageHero, Section
+  content/      recent-developments posts (markdown, typed by src/content.config.ts)
   layouts/      BaseLayout (shared shell), BlogPost
   lib/          utils (dates, reading time) + client toast system
-  pages/        index, cv, patient-advice, referrals, contact, login
-                legal-blog/index + [slug]
+  pages/        index, about, cv, patient-advice, referrals, contact, login,
+                expert-witness, medicolegal-radiology
+                recent-developments/index + [slug]
+                dicom-viewer (local-only viewer), medicolegal-fundamentals,
+                radiology-legislation, radiology-legal-cases
                 api/ (comments, referrals, contact, login — Astro endpoints backed by KV)
-public/         _headers (security), images, placeholders
+public/         _headers (security), vendor/dicomParser.min.js, images, placeholders
 wrangler.json   Cloudflare Worker + KV namespace bindings
 ```
+
+## 🧭 Site hierarchy
+
+Primary navigation is the six reference sections defined in
+`src/consts.ts` → `NAVIGATION_LINKS`:
+
+| Section                  | Route                       |
+| ------------------------ | --------------------------- |
+| Medicolegal Fundamentals | `/medicolegal-fundamentals` |
+| Radiology Legislation    | `/radiology-legislation`    |
+| Radiology Legal Cases    | `/radiology-legal-cases`    |
+| Recent Developments      | `/recent-developments`      |
+| DICOM Viewer             | `/dicom-viewer`             |
+| Contact                  | `/contact`                  |
+
+Legacy routes redirect permanently (see `redirects` in `astro.config.mjs`):
+`/legal-blog` → `/recent-developments`, `/legal-blog/[slug]` →
+`/recent-developments/[slug]`, and `/image-review` → `/dicom-viewer`.
+
+Two deliberate content policies:
+
+- **No pricing is published.** There is no `FEES` constant and no fee,
+  surcharge, turnaround-cost or `priceRange` data anywhere in the codebase.
+  Fee enquiries are routed to the secretariat via `/contact`. If you need to
+  reintroduce commercial terms, add a new constant rather than restoring
+  inline figures in page templates.
+- **No orphaned pages.** Every page under `src/pages` has at least one inbound
+  internal link. When adding a page, link it from navigation, a section index
+  or a related page, or the audit will flag it.
 
 ## 🔑 Cloudflare KV bindings
 
@@ -39,7 +72,7 @@ Create three KV namespaces in the Cloudflare dashboard and add the IDs to
 
 | Binding              | Purpose                                    |
 | -------------------- | ------------------------------------------ |
-| `LEGAL_BLOG_COMMENTS` | Blog post comments (key `comments:<postId>`) |
+| `LEGAL_BLOG_COMMENTS` | Recent Developments comments (key `comments:<slug>`; binding name retained for continuity) |
 | `PATIENT_REFERRALS`   | Referral + contact submissions              |
 | `SESSION`             | Astro/Cloudflare session storage            |
 

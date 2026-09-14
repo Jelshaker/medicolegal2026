@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { SITE_TITLE } from '../consts';
+---
+<BaseLayout title={`Radiology Legislation | ${SITE_TITLE}`} description="Statutory duties for radiology. IRMER, IRR17, communication duties and EPR16.">
+<PageHero eyebrow="Radiology Legislation" title="Radiology Legislation" description="Compliance duties and statutory obligations. Summary only. Refer to legislation and guidance for full text." />
+<section class="bg-white py-16 dark:bg-navy-900"><div class="container-page space-y-12">
+<Section eyebrow="IRMER" title="IR(ME)R 2017 and 2024 Updates">
+<p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">Ionising Radiation (Medical Exposure) Regulations 2017. Amended 2024. Governs medical exposures.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Duty holders</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Employer: provides framework, procedures, training, incident system.</li><li>Referrer: supplies clinical information. Must be entitled.</li><li>Practitioner: justifies each exposure. Takes clinical responsibility.</li><li>Operator: performs practical aspects. Must be entitled and trained.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Core duties</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Justification: benefit outweighs detriment for that patient.</li><li>Optimisation: ALARP. Dose constrained to diagnostic purpose.</li><li>DRLs: national diagnostic reference levels. Exceedance requires review.</li><li>Incidents: significant accidental exposures notified to CQC and investigated.</li></ul></div></div>
+</Section>
+<Section eyebrow="IRR17" title="Ionising Radiations Regulations 2017">
+<p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">Governs occupational exposure and equipment. Applies to employers with radiation work.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Controls</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Controlled and supervised areas designated and marked.</li><li>Dose limits enforced. Classified persons monitored.</li><li>RPA appointed and consulted on compliance, design and investigation.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Equipment</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>QA programme. Acceptance, commissioning and routine testing.</li><li>Faulty equipment removed from use. Records retained.</li><li>Maintenance by competent persons.</li></ul></div></div>
+</Section>
+<Section eyebrow="Communication" title="Duty to Communicate Critical Findings">
+<p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">RCR and national guidance require closed loop communication for urgent, unexpected and critical findings.</p>
+<div class="card mt-6 p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Requirements</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Direct notification to referrer or covering team for findings needing immediate action.</li><li>Documented acknowledgement. Escalation if no receipt.</li><li>Fail-safe systems for incidental nodules, suspected malignancy and vascular emergencies.</li><li>Silent filing on PACS or EPR without alert does not discharge duty for critical results.</li></ul></div>
+</Section>
+<Section eyebrow="EPR16" title="Environmental Permitting (England and Wales) Regulations 2016">
+<p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">Governs holding and disposal of radioactive material and waste. Relevant to nuclear medicine.</p>
+<div class="card mt-6 p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Duties</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Permit required to hold scheduled radioactive sources above thresholds.</li><li>Tracking from receipt to administration to waste.</li><li>Segregation, labelling and decay storage per permit conditions.</li><li>Consignment and disposal only via authorised routes. Records retained.</li></ul></div>
+</Section>
+</div></section>
+</BaseLayout>

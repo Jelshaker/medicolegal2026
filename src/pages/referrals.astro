@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { SITE_TITLE, FEES } from '../consts';
+import { SITE_TITLE } from '../consts';
 ---
 
-<BaseLayout title={`Referrals & Terms | ${SITE_TITLE}`} description="Secure referrals, terms of instruction, imaging transfer guidance (DICOM / PACS) and fee structure for instructing Dr Joseph El-Sheikha as a medico-legal radiology expert.">
+<BaseLayout title={`Referrals & Terms | ${SITE_TITLE}`} description="Secure referrals, terms of instruction and imaging transfer guidance (DICOM / PACS) for instructing Dr Joseph El-Sheikha as a medico-legal radiology expert.">
 	<PageHero
 		eyebrow="Instructing the expert"
 		title="Referrals & Terms"
-		description="A secure referral form for GP and solicitor referrers, alongside terms of instruction, imaging transfer guidance and fees."
+		description="A secure referral form for GP and solicitor referrers, alongside terms of instruction and imaging transfer guidance."
 	/>
 
 	<section class="bg-white py-16 dark:bg-navy-900">
@@ -58,8 +58,8 @@ import { SITE_TITLE, FEES } from '../consts';
 					<label class="block text-sm font-medium text-navy-900 dark:text-slate-100 sm:col-span-2">
 						Urgency
 						<select name="urgency" class="input-field mt-1.5">
-							<option value="standard">Standard ({FEES.standardTurnaround})</option>
-							<option value="urgent">Urgent ({FEES.urgentTurnaround})</option>
+							<option value="standard">Standard</option>
+							<option value="urgent">Urgent</option>
 						</select>
 					</label>
 					<div class="sm:col-span-2 flex items-center gap-3">
@@ -88,16 +88,6 @@ import { SITE_TITLE, FEES } from '../consts';
 					</a>
 				</div>
 
-				<div class="card p-6 border-teal-500/30">
-					<h3 class="text-lg font-bold text-navy-900 dark:text-slate-100">Fees & turnaround</h3>
-					<ul class="mt-4 space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
-						<li>Standard report: <strong class="text-navy-900 dark:text-slate-100">{FEES.standardFee}</strong></li>
-						<li>Urgent supplement: <strong class="text-navy-900 dark:text-slate-100">{FEES.urgentSurcharge}</strong></li>
-						<li>Standard turnaround: <strong class="text-navy-900 dark:text-slate-100">{FEES.standardTurnaround}</strong></li>
-						<li>Urgent turnaround: <strong class="text-navy-900 dark:text-slate-100">{FEES.urgentTurnaround}</strong></li>
-						<li>Attendance / conference fees quoted on request.</li>
-					</ul>
-				</div>
 			</aside>
 		</div>
 	</section>

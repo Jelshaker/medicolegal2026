@@ -18,21 +18,21 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 				</span>
 			</a>
 			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-				Independent CPR Part 35 / EMA compliant radiological expert opinions for solicitors,
-				barristers and insurers. Anonymised case discussions and plain-language insight into
-				the intersection of radiology and the law.
+				CPR Part 35 compliant radiological opinions for solicitors,
+				barristers and insurers. Anonymised case discussion and
+				primary source legal reference.
 			</p>
 			<div class="mt-5 flex flex-wrap gap-2">
 				{
 					MEMBERSHIPS.slice(0, 4).map((m) => (
-						<span class="rounded-full border border-navy-700 px-3 py-1 text-[0.7rem] font-medium text-slate-400">{m.split("— ").at(-1)}</span>
+						<span class="rounded-full border border-navy-700 px-3 py-1 text-[0.7rem] font-medium text-slate-400">{m}</span>
 					))
 				}
 			</div>
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Explore</h3>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Reference</h3>
 			<ul class="mt-4 space-y-2.5 text-sm">
 				{
 					NAVIGATION_LINKS.map((link) => (
@@ -45,27 +45,17 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Legal Radiology</h3>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Practice</h3>
 			<ul class="mt-4 space-y-2.5 text-sm">
-				<li><a href="/legal-fundamentals" class="transition-colors hover:text-teal-400">Legal Fundamentals</a></li>
-				<li><a href="/medicolegal-radiology" class="transition-colors hover:text-teal-400">Medicolegal Radiology</a></li>
-				<li><a href="/recent-developments" class="transition-colors hover:text-teal-400">Recent Developments</a></li>
+				<li><a href="/medicolegal-fundamentals" class="transition-colors hover:text-teal-400">Standard of care</a></li>
+				<li><a href="/radiology-legislation" class="transition-colors hover:text-teal-400">Statutory duties</a></li>
+				<li><a href="/radiology-legal-cases" class="transition-colors hover:text-teal-400">Landmark cases</a></li>
+				<li><a href="/dicom-viewer" class="transition-colors hover:text-teal-400">DICOM viewer</a></li>
 			</ul>
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Instructing Me</h3>
-			<ul class="mt-4 space-y-2.5 text-sm">
-				<li><a href="/referrals#terms" class="transition-colors hover:text-teal-400">Terms of engagement</a></li>
-				<li><a href="/referrals#imaging" class="transition-colors hover:text-teal-400">Imaging transfer (DICOM / PACS)</a></li>
-				<li><a href="/referrals#fees" class="transition-colors hover:text-teal-400">Fee structure & turnaround</a></li>
-				<li><a href="/peritoneal-malignancy" class="transition-colors hover:text-teal-400">Peritoneal Malignancy Hub</a></li>
-				<li><a href="/legal-blog" class="transition-colors hover:text-teal-400">Case discussions archive</a></li>
-			</ul>
-		</div>
-
-		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Contact</h3>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Secretariat</h3>
 			<ul class="mt-4 space-y-2.5 text-sm text-slate-400">
 				<li>
 					<span class="font-semibold text-slate-200">Email</span>
@@ -90,7 +80,7 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 	<div class="border-t border-navy-800">
 		<div class="container-page flex flex-col gap-3 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
 			<p>
-				© {new Date().getFullYear()} {PRACTITIONER.name} · {SITE_TITLE}. All rights reserved.
+				© {new Date().getFullYear()} {PRACTITIONER.name} - {SITE_TITLE}. All rights reserved.
 			</p>
 			<p class="max-w-xl leading-relaxed md:text-right">
 				All case discussions are fully anonymised in accordance with GMC guidance and CPR Part 35.

@@ -4,12 +4,14 @@
 // No files or pixels are ever transmitted to a server.
 ---
 
-{/* Load dicom-parser from CDN at runtime (pure JS, no build step needed) */}
-<script
-  src="https://cdn.jsdelivr.net/npm/dicom-parser@1.8.26/dist/dicomParser.min.js"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+{/*
+  dicom-parser is vendored locally at /vendor/dicomParser.min.js so the viewer
+  stays fully local: no third-party CDN is contacted at any point, and the file
+  is same-origin, which satisfies the `script-src 'self'` policy in
+  public/_headers without weakening it. `is:inline` keeps it a classic script so
+  the global `dicomParser` is defined before any interaction can occur.
+*/}
+<script is:inline src="/vendor/dicomParser.min.js" defer></script>
 
 <!-- Privacy notice banner -->
 <div class="rounded-xl border border-emerald-300/40 bg-emerald-50/90 px-5 py-3.5 text-sm text-emerald-900 shadow-sm dark:border-emerald-600/30 dark:bg-emerald-950/40 dark:text-emerald-200">

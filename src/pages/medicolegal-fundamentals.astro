@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { SITE_TITLE } from '../consts';
+---
+<BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Bolam, Bolitho, Montgomery, causation and breach of duty.">
+<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="Core UK medical law. Test, authority and radiology application for each principle." />
+<section class="bg-white py-16 dark:bg-navy-900"><div class="container-page space-y-12">
+<Section eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: practice accepted as proper by a responsible body of skilled practitioners is not negligent.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Report judged against accepted practice at report date.</li><li>Range of acceptable opinions permitted.</li><li>Subtle findings below detection threshold protected.</li><li>Demonstrable findings not protected.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Expert method</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Re-derive from source DICOM.</li><li>Record protocol and image quality.</li><li>Separate breach from causation.</li></ul></div></div>
+</Section>
+<Section eyebrow="Scrutiny" title="Bolitho Qualification: Bolitho v City and Hackney HA [1997]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: expert opinion must have a logical basis. Illogical opinion can be rejected.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Bolitho v City and Hackney HA [1998] AC 232, HL.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Radiology application</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Where a visible lesion is missed, defence opinion requires logical justification. Assertion without analysis can be rejected.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Limit</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Genuine disagreement on subtle findings remains within Bolam. Bolitho applies to indefensible opinion only.</p></div></div>
+</Section>
+<Section eyebrow="Consent" title="Montgomery v Lanarkshire [2015]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Test: disclose risks a reasonable patient in this position would consider material.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authority: Montgomery v Lanarkshire Health Board [2015] UKSC 11.</p>
+<div class="card mt-6 p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Imaging procedures</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Applies to embolisation, biopsy, angioplasty, drainage, contrast studies with material risk.</li><li>Requires discussion of indication, alternatives, procedural risks, dose and sedation.</li><li>Requires documented discussion. Signature alone is insufficient.</li></ul></div>
+</Section>
+<Section eyebrow="Causation" title="Chester v Afshar [2004] and Gregg v Scott [2005]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Standard: but for breach, would outcome have differed on balance of probabilities.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">Authorities: Chester v Afshar [2004] UKHL 41. Gregg v Scott [2005] UKHL 2.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Chester</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Non-disclosure of a material risk that materialised gave liability. Relevant to interventional consent.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Gregg</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Loss of chance below 50 percent is not recoverable. Delayed diagnosis requires proof that earlier action would probably have changed outcome.</p></div></div>
+</Section>
+<Section eyebrow="Breach" title="Breach of Duty in Image Interpretation">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">Breach turns on demonstrability on the acquired study under standard viewing conditions.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-3"><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Error types</h3><ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300"><li>Perceptual: visible finding not detected.</li><li>Cognitive: finding detected, incorrectly characterised.</li><li>Published miss rates do not define breach.</li></ul></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Double reading</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Required in defined screening programmes only. Not a general diagnostic standard.</p></div><div class="card p-6"><h3 class="font-bold text-navy-900 dark:text-slate-100">Consensus</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Assessed on protocol, quality, clinical question and contemporaneous context. Retrospective certainty is not the test.</p></div></div>
+</Section>
+</div></section>
+</BaseLayout>

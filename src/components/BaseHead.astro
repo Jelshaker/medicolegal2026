@@ -10,15 +10,32 @@ interface Props {
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props as Props;
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://imagingmedico.legal");
+const siteUrl = Astro.site?.toString() ?? "https://medicolegal2026.pages.dev";
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@graph": [
 		{
-			"@type": "MedicalBusiness",
+			// The site itself is the resource; the practice sits behind it.
+			"@type": "WebSite",
 			name: SITE_TITLE,
 			description: SITE_DESCRIPTION,
-			url: Astro.site?.toString() ?? "https://medicolegal2026.pages.dev",
-			sameAs: [Astro.site?.toString() ?? "https://medicolegal2026.pages.dev"],
+			url: siteUrl,
+			inLanguage: "en-GB",
+			about: [
+				{ "@type": "Thing", name: "Radiology" },
+				{ "@type": "Thing", name: "Medical imaging" },
+				{ "@type": "Thing", name: "Medicolegal law" },
+				{ "@type": "Thing", name: "Expert evidence" },
+			],
+			author: { "@type": "Person", name: PRACTITIONER.name },
+		},
+		{
+			"@type": "MedicalBusiness",
+			name: `${SITE_TITLE} — practice`,
+			description:
+				"Independent radiological opinions for solicitors, barristers and insurers, provided by the curator of this resource.",
+			url: siteUrl,
+			sameAs: [siteUrl],
 			address: {
 				"@type": "PostalAddress",
 				streetAddress: PRACTITIONER.address,
@@ -33,8 +50,8 @@ const jsonLd = {
 			"@type": "Person",
 			name: PRACTITIONER.name,
 			jobTitle: "Consultant Radiologist",
-			worksFor: { "@type": "MedicalBusiness", name: SITE_TITLE },
-			url: Astro.site?.toString() ?? "https://medicolegal2026.pages.dev",
+			worksFor: { "@type": "MedicalBusiness", name: `${SITE_TITLE} — practice` },
+			url: siteUrl,
 		},
 	],
 };

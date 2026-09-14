@@ -1,17 +1,46 @@
 // Global site configuration — update once and it propagates site-wide.
 
-export const SITE_TITLE = "Dr Joseph El-Sheikha FRCR";
+// The site is framed as a reference resource, not a service brochure: the
+// library is the product, and the expert-witness practice sits behind it.
+export const SITE_TITLE = "Radiology & Medicolegal Law";
+export const SITE_TAGLINE = "A working resource for imaging practice and the law";
 export const SITE_DESCRIPTION =
-	"Independent Consultant Radiologist and medico-legal expert witness: CPR Part 35 / EMA compliant radiological opinions for solicitors, barristers, and insurers across the UK.";
+	"A reference resource on radiology and medicolegal law: how imaging investigations are performed, interpreted and reported, the standards and statutory duties that govern them, and the case law that decides what happens when they fail.";
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
-	{ href: "/radiology-legislation", label: "Radiology Legislation" },
-	{ href: "/radiology-legal-cases", label: "Radiology Legal Cases" },
-	{ href: "/recent-developments", label: "Recent Developments" },
+	{ href: "/radiology-resources", label: "Radiology" },
+	{ href: "/medicolegal-fundamentals", label: "Medicolegal Law" },
+	{ href: "/radiology-legislation", label: "Legislation" },
+	{ href: "/radiology-legal-cases", label: "Case Law" },
+	{ href: "/recent-developments", label: "Developments" },
 	{ href: "/dicom-viewer", label: "DICOM Viewer" },
 	{ href: "/contact", label: "Contact" },
+] as const;
+
+// The two reference libraries the resource is organised around. Referenced by the
+// home page, the footer and the radiology hub so the framing cannot drift.
+export const RESOURCE_LIBRARIES = [
+	{
+		id: "radiology",
+		eyebrow: "Radiology library",
+		title: "Clinical imaging reference",
+		description:
+			"What each modality does and what it can reasonably answer, the professional standards governing interpretation and reporting, dose and safety, quality assurance, and the storage, transfer and viewing of images.",
+		href: "/radiology-resources",
+		cta: "Open the radiology library",
+		topics: ["Modalities and protocols", "Reporting standards", "Dose and safety", "Image handling"],
+	},
+	{
+		id: "medicolegal-law",
+		eyebrow: "Medicolegal law library",
+		title: "Law and the radiological opinion",
+		description:
+			"The standard of care, breach and causation, consent to investigation and intervention, the statutory duties attached to ionising radiation, and the decisions in which imaging evidence determined the outcome.",
+		href: "/medicolegal-fundamentals",
+		cta: "Open the law library",
+		topics: ["Bolam and Bolitho", "Montgomery consent", "IRMER and IRR17", "Case law"],
+	},
 ] as const;
 
 export const BLOG_CATEGORIES = [

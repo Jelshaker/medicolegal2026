@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import { getCollection } from 'astro:content';
-import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, BLOG_CATEGORIES } from '../consts';
+import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE, BLOG_CATEGORIES, RESOURCE_LIBRARIES } from '../consts';
 
 const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
@@ -11,32 +11,32 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 const stats = [
 	{ value: '1957', label: 'Bolam — the standard of care' },
 	{ value: '~37%', label: 'Abdominal claims turning on incidental findings' },
-	{ value: '8.7–12.7%', label: 'Offsite reporting error rate (Howlett et al.)' },
-	{ value: '2025', label: 'RCR reporting standards edition' },
+	{ value: '2025', label: 'RCR interpretation and reporting standards' },
+	{ value: '100%', label: 'DICOM viewing that never leaves your device' },
 ];
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout title={`${SITE_TITLE} — ${SITE_TAGLINE}`} description={SITE_DESCRIPTION}>
 	<!-- Hero -->
 	<section class="relative overflow-hidden bg-navy-950 text-white">
 		<div class="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
 			<div>
-				<span class="eyebrow mb-4 text-teal-400">Radiology · Law · The standard of care</span>
+				<span class="eyebrow mb-4 text-teal-400">Radiology · Law · Reference resource</span>
 				<h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-					How English law judges a radiological opinion.
+					A working resource for radiology and medicolegal law.
 				</h1>
 				<p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-					A working reference on the legal architecture of diagnostic imaging — the Bolam and
-					Montgomery standards, breach and causation, incidental findings, consent, and the systemic
-					risks of teleradiology. Anonymised case discussion and primary-source analysis for
-					solicitors, barristers, insurers and radiologists.
+					Reference material for anyone who has to reason about imaging and the law: how investigations
+					are performed, interpreted and reported, the standards and statutory duties that govern them,
+					and how a court, a regulator or an insurer will test the result. Written for radiologists,
+					referrers, solicitors, barristers, insurers and expert witnesses.
 				</p>
 				<div class="mt-7 flex flex-wrap gap-3">
-					<a href="/medicolegal-fundamentals" class="btn btn-primary">
+					<a href="/radiology-resources" class="btn btn-primary">
 						<svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M12 5v13"/></svg>
-						Medicolegal fundamentals
+						Radiology reference
 					</a>
-					<a href="/recent-developments" class="btn btn-ghost">Case discussions</a>
+					<a href="/medicolegal-fundamentals" class="btn btn-ghost">Medicolegal law library</a>
 					<a href="/dicom-viewer" class="btn btn-ghost">DICOM viewer</a>
 				</div>
 				<div class="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
@@ -52,15 +52,50 @@ const stats = [
 				<div class="overflow-hidden rounded-2xl border border-navy-700 shadow-2xl">
 					<img src={PRACTITIONER.photo} alt="Dr Joseph El-Sheikha" class="aspect-[4/5] w-full object-cover" loading="lazy" />
 				</div>
-				<div class="absolute -bottom-5 -left-6 hidden rounded-2xl border border-teal-500/40 bg-navy-900 p-4 shadow-xl lg:block">
+				<div class="absolute -bottom-5 -left-6 hidden max-w-[15rem] rounded-2xl border border-teal-500/40 bg-navy-900 p-4 shadow-xl lg:block">
 					<div class="flex items-center gap-3">
-						<div class="flex h-11 w-11 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">FRCR</div>
+						<div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">FRCR</div>
 						<div class="text-xs leading-snug text-slate-200">
-							<span class="block font-semibold text-slate-100">Royal College of Radiologists</span>
-							<span>Fellow · Specialist register</span>
+							<span class="block font-semibold text-slate-100">Curated by {PRACTITIONER.shortName}</span>
+							<span>Consultant Radiologist · Royal College of Radiologists</span>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- The two libraries -->
+	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+		<div class="container-page">
+			<div class="max-w-2xl">
+				<span class="eyebrow block">Two reference libraries</span>
+				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Radiology, and the law that governs it</h2>
+				<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+					The material is organised in two halves that read across to one another: what imaging can and
+					cannot do, and how the law treats it when it goes wrong.
+				</p>
+			</div>
+			<div class="mt-10 grid gap-6 lg:grid-cols-2">
+				{
+					RESOURCE_LIBRARIES.map((lib) => (
+						<a
+							href={lib.href}
+							class="card group flex flex-col p-7 transition-all hover:border-teal-500/40 hover:shadow-lift"
+						>
+							<span class="eyebrow">{lib.eyebrow}</span>
+							<h3 class="mt-3 text-xl font-bold tracking-tight text-navy-900 dark:text-slate-100">{lib.title}</h3>
+							<p class="mt-3 flex-1 leading-relaxed text-slate-600 dark:text-slate-300">{lib.description}</p>
+							<div class="mt-5 flex flex-wrap gap-2">
+								{lib.topics.map((t) => <span class="chip">{t}</span>)}
+							</div>
+							<span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+								{lib.cta}
+								<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
+							</span>
+						</a>
+					))
+				}
 			</div>
 		</div>
 	</section>
@@ -69,11 +104,11 @@ const stats = [
 	<section class="bg-white py-16 dark:bg-navy-900">
 		<div class="container-page">
 			<div class="max-w-2xl">
-				<span class="eyebrow block">Legal fundamentals</span>
+				<span class="eyebrow block">Medicolegal law library</span>
 				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">The framework, in four questions</h2>
 				<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
 					Every radiological claim resolves into a small number of legal questions. Each is examined in
-					detail, with the authorities and the professional standards that govern the answer.
+					the law library, with the authorities and the professional standards that govern the answer.
 				</p>
 			</div>
 			<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -96,8 +131,8 @@ const stats = [
 			</div>
 			<div class="mt-8 flex flex-wrap gap-3">
 				<a href="/dicom-viewer" class="btn btn-ghost">Free local DICOM viewer</a>
-				<a href="/about" class="btn btn-ghost">About the practice</a>
 				<a href="/patient-advice" class="btn btn-ghost">Patient advice</a>
+				<a href="/about" class="btn btn-ghost">About the curator</a>
 			</div>
 		</div>
 	</section>
@@ -143,7 +178,7 @@ const stats = [
 		<div class="container-page">
 			<div class="flex items-end justify-between gap-4">
 				<div>
-					<span class="eyebrow block">Legal radiology</span>
+					<span class="eyebrow block">Recent developments</span>
 					<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Latest case discussions</h2>
 				</div>
 				<a href="/recent-developments" class="btn btn-ghost">All discussions</a>
@@ -164,17 +199,20 @@ const stats = [
 		</div>
 	</section>
 
-	<!-- Instructing -->
+	<!-- About the resource -->
 	<section class="bg-gradient-to-br from-navy-900 to-navy-800 py-14 text-center dark:bg-navy-950">
 		<div class="container-page max-w-3xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-white">Instructing an expert</h2>
+			<h2 class="text-3xl font-extrabold tracking-tight text-white">Who maintains this resource</h2>
 			<p class="mt-3 text-lg text-slate-300">
-				Where the legal analysis needs a radiological opinion, terms of instruction and imaging
-				transfer guidance are set out on the expert witness page.
+				The material is curated by {PRACTITIONER.name}, a consultant radiologist in NHS practice with an
+				independent medicolegal workload, and is reviewed against the primary sources cited throughout.
+				Where a matter needs a radiological opinion rather than background, terms of instruction and
+				imaging transfer guidance are set out on the expert witness page.
 			</p>
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
 				<a href="/expert-witness" class="btn btn-primary">Expert witness services</a>
-				<a href="/contact" class="btn btn-white">Contact the secretariat</a>
+				<a href="/about" class="btn btn-white">About the curator</a>
+				<a href="/contact" class="btn btn-outline-white">Contact the secretariat</a>
 			</div>
 		</div>
 	</section>

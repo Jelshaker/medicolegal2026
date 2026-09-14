@@ -14,13 +14,13 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 				</span>
 				<span>
 					<span class="block font-bold text-white">{PRACTITIONER.shortName}</span>
-					<span class="block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-teal-400">Medico-legal Imaging</span>
+					<span class="block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-teal-400">Radiology &amp; medicolegal law</span>
 				</span>
 			</a>
 			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-				CPR Part 35 compliant radiological opinions for solicitors,
-				barristers and insurers. Anonymised case discussion and
-				primary source legal reference.
+				A reference resource on radiology and the law: modality and
+				reporting standards, statutory duties, landmark case law and
+				anonymised case discussion, with the primary sources cited.
 			</p>
 			<div class="mt-5 flex flex-wrap gap-2">
 				{
@@ -45,12 +45,15 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Practice</h3>
+			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Also in the library</h3>
 			<ul class="mt-4 space-y-2.5 text-sm">
-				<li><a href="/medicolegal-fundamentals" class="transition-colors hover:text-teal-400">Standard of care</a></li>
-				<li><a href="/radiology-legislation" class="transition-colors hover:text-teal-400">Statutory duties</a></li>
-				<li><a href="/radiology-legal-cases" class="transition-colors hover:text-teal-400">Landmark cases</a></li>
-				<li><a href="/dicom-viewer" class="transition-colors hover:text-teal-400">DICOM viewer</a></li>
+				<li><a href="/radiology-resources" class="transition-colors hover:text-teal-400">Radiology reference</a></li>
+				<li><a href="/patient-advice" class="transition-colors hover:text-teal-400">Patient advice</a></li>
+				<li><a href="/medicolegal-radiology" class="transition-colors hover:text-teal-400">Disputed interpretation</a></li>
+				<li><a href="/referrals" class="transition-colors hover:text-teal-400">Referrals and transfer</a></li>
+				<li><a href="/expert-witness" class="transition-colors hover:text-teal-400">Expert witness services</a></li>
+				<li><a href="/about" class="transition-colors hover:text-teal-400">About the curator</a></li>
+				<li><a href="/cv" class="transition-colors hover:text-teal-400">Curriculum vitae</a></li>
 			</ul>
 		</div>
 
@@ -80,7 +83,7 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 	<div class="border-t border-navy-800">
 		<div class="container-page flex flex-col gap-3 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
 			<p>
-				© {new Date().getFullYear()} {PRACTITIONER.name} - {SITE_TITLE}. All rights reserved.
+				© {new Date().getFullYear()} {SITE_TITLE}. Curated and maintained by {PRACTITIONER.name}.
 			</p>
 			<p class="max-w-xl leading-relaxed md:text-right">
 				All case discussions are fully anonymised in accordance with GMC guidance and CPR Part 35.

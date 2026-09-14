@@ -1,6 +1,6 @@
 {
 	"name": "medicolegal2026",
-	"description": "Full-stack medicolegal reporting website - Astro SSR on Cloudflare Pages, Clerk authentication, GA4 analytics, Tailwind CSS.",
+	"description": "Radiology and medicolegal law reference resource - Astro SSR on Cloudflare Pages, Clerk authentication, GA4 analytics, Tailwind CSS.",
 	"type": "module",
 	"engines": {
 		"node": ">=22"

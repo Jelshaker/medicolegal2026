@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { SITE_TITLE } from '../consts';
+
+// The clinical half of the resource. Each modality is described in terms of the
+// question it answers, so the page reads as a reference rather than a service list.
+const modalities = [
+	{
+		n: 'Radiography (X-ray)',
+		q: 'Fracture, consolidation, obstruction or free gas?',
+		d: 'Projection imaging of the skeleton and chest. Fast, widely available and, for the questions it answers, the lowest reasonable dose. Limited by superimposition and by the collapse of three-dimensional anatomy into two.',
+		limits: [
+			'Superimposed structures can mask or mimic pathology',
+			'Low soft-tissue contrast compared with CT or MRI',
+			'Projection geometry can conceal a fracture line',
+		],
+	},
+	{
+		n: 'Computed tomography (CT)',
+		q: 'Acute abnormality, vascular complication or staging question?',
+		d: 'Cross-sectional imaging with high spatial resolution and short acquisition times. First line for acute presentations, trauma, suspected malignancy and vascular disease. Uses ionising radiation, so every request carries a justification duty.',
+		limits: [
+			'Ionising radiation dose — justification and optimisation apply',
+			'Iodinated contrast risks (allergy, renal function, thyroid)',
+			'Beam-hardening and metal artefact can obscure detail',
+		],
+	},
+	{
+		n: 'Magnetic resonance imaging (MRI)',
+		q: 'Soft-tissue, marrow, joint or neurological question?',
+		d: 'High soft-tissue contrast without ionising radiation. Central to musculoskeletal, neurological, hepatobiliary and pelvic imaging. Subject to a strong static magnetic field, so implant and device screening is mandatory before scanning.',
+		limits: [
+			'Implant, device and foreign-body safety screening is mandatory',
+			'Long acquisition times, so motion degrades the study',
+			'Gadolinium contrast requires renal function assessment',
+		],
+	},
+	{
+		n: 'Ultrasound',
+		q: 'Dynamic, superficial or flow-related question?',
+		d: 'Real-time imaging without ionising radiation, including Doppler assessment of flow. Widely used in abdominal, obstetric, musculoskeletal and soft-tissue work, and as the guidance method for many interventional procedures.',
+		limits: [
+			'Operator-dependent and the least reproducible modality',
+			'Limited penetration; bowel gas obscures deeper structures',
+			'No whole-body overview compared with CT or MRI',
+		],
+	},
+];
+
+// Report content requirements — RCR Standards for interpretation and reporting
+// of imaging investigations, third edition, October 2025.
+const reportingStandards = [
+	{
+		n: 'Report content',
+		d: 'A report must answer the clinical question asked, describe the findings, state the limitations of the study and give a clear conclusion. A structured format is expected where one has been agreed for that investigation.',
+	},
+	{
+		n: 'Named author and accountability',
+		d: 'Every report must be attributable to a named reporting author, including where reporting is remote or assisted by software. The content must not imply a level of scrutiny that has not in fact been applied.',
+	},
+	{
+		n: 'Remote and offsite reporting',
+		d: 'Remote reporting is acceptable only where the reporter has the images, the prior studies, the clinical information and the means to communicate an urgent finding. The same expectations of quality, turnaround and escalation apply as for onsite work.',
+	},
+	{
+		n: 'AI-assisted and speech-recognition output',
+		d: 'Where software generates or transcribes content, the named human author remains responsible for its accuracy. Every automated contribution must be reviewed and approved before the report is released.',
+	},
+];
+
+// Where a radiological standard becomes a legal question.
+const lawLinks = [
+	{
+		n: 'Disputed interpretation',
+		d: 'How the courts separate a defensible difference of opinion from a breach, and how the "pure diagnosis" argument is met.',
+		href: '/medicolegal-radiology',
+		cta: 'Read the analysis',
+	},
+	{
+		n: 'Reporting standards and candour',
+		d: 'Standard of care, addenda and corrections, and the professional duty of candour where a report is found to be wrong.',
+		href: '/medicolegal-fundamentals',
+		cta: 'Open the law library',
+	},
+	{
+		n: 'Statutory duties',
+		d: 'IR(ME)R justification and optimisation, IRR17 controls, the duty to communicate critical findings, and permitting for radioactive material.',
+		href: '/radiology-legislation',
+		cta: 'Review the legislation',
+	},
+];
+---
+<BaseLayout
+	title={`Radiology Resources | ${SITE_TITLE}`}
+	description="A working radiology reference: what each modality answers and where it is limited, the RCR standards for interpretation and reporting, radiation dose and safety duties, quality assurance, and how imaging should be stored, transferred and viewed."
+>
+	<PageHero
+		eyebrow="Radiology library"
+		title="Radiology Reference"
+		description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
+	/>
+
+	<!-- Modalities -->
+	<section class="bg-white py-16 dark:bg-navy-900">
+		<div class="container-page space-y-12">
+			<Section
+				eyebrow="Modalities"
+				title="Each investigation, and the question it answers"
+				lead="A modality is chosen for the question it can answer and the risk it carries, not for the detail it produces. These summaries set out what each method is for and where it stops being useful."
+			>
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						modalities.map((m) => (
+							<div class="card p-6">
+								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{m.n}</h3>
+								<p class="mt-2 text-sm font-semibold text-teal-700 dark:text-teal-400">{m.q}</p>
+								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{m.d}</p>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+									Where it is limited
+								</h4>
+								<ul class="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+									{m.limits.map((l) => (
+										<li class="flex items-start gap-2">
+											<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
+											<span>{l}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						))
+					}
+				</div>
+			</Section>
+			<!-- Reporting standards -->
+			<Section
+				eyebrow="Standards"
+				title="Interpretation and reporting: the professional benchmark"
+				lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
+			>
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						reportingStandards.map((s) => (
+							<div class="card p-6">
+								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{s.n}</h3>
+								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+							</div>
+						))
+					}
+				</div>
+			</Section>
+
+			<!-- Where standards become legal questions -->
+			<Section
+				eyebrow="Radiology and the law"
+				title="Where a reporting standard becomes a legal question"
+				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
+			>
+				<div class="grid gap-6 lg:grid-cols-3">
+					{
+						lawLinks.map((l) => (
+							<a
+								href={l.href}
+								class="card group flex flex-col p-6 transition-all hover:border-teal-500/40 hover:shadow-lift"
+							>
+								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{l.n}</h3>
+								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{l.d}</p>
+								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+									{l.cta}
+									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M5 12h14M12 5v14" />
+									</svg>
+								</span>
+							</a>
+						))
+					}
+				</div>
+			</Section>
+			<!-- Dose and safety -->
+			<Section
+				eyebrow="Dose &amp; safety"
+				title="Dose, justification and the statutory duty"
+				lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
+			>
+				<div class="grid gap-6 lg:grid-cols-2">
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Justification and optimisation</h3>
+						<ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+							<li>Justification: for that patient, the benefit of the exposure must outweigh its detriment.</li>
+							<li>Optimisation: the exposure is kept as low as reasonably practicable for the diagnostic purpose.</li>
+							<li>Diagnostic reference levels: national values for common examinations. Exceedance requires review.</li>
+							<li>Protocol choice: whether the study performed was capable of answering the clinical question asked.</li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Recording and reporting</h3>
+						<ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+							<li>Significant accidental or unintended exposures are reportable incidents and must be investigated.</li>
+							<li>Occupational exposure is managed through controlled areas, monitoring and dose limits.</li>
+							<li>Equipment must be commissioned, tested and withdrawn from use when faulty.</li>
+							<li>Equipment QA and dose records are evidence, and are frequently sought years later.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mt-6 flex flex-wrap gap-3">
+					<a href="/radiology-legislation" class="btn btn-ghost">IR(ME)R and IRR17 in full</a>
+					<a href="/patient-advice" class="btn btn-ghost">Plain-language dose information for patients</a>
+				</div>
+			</Section>
+
+			<!-- Quality assurance -->
+			<Section
+				eyebrow="Assurance"
+				title="Quality assurance and learning"
+				lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
+			>
+				<div class="grid gap-6 lg:grid-cols-3">
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Peer review and discrepancy audit</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							A documented sample of reports is re-read by another competent reporter, discrepancies are
+							classified and discussed, and the learning is written down. Performed properly, this is
+							also the evidence that the service was monitoring its own accuracy.
+						</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Candour and correction</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							Where a report is wrong or a study is misread, the professional duty of candour runs in
+							parallel with the incident process: acknowledge the error, explain it, apologise, record
+							what happened and share the learning. An addendum supplements the original report; it does
+							not replace it.
+						</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Keep the record, not just the report</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							Protocol details, the clinical information supplied, viewing conditions and the route by
+							which an urgent finding was communicated are often the decisive material later. A
+							contemporaneous note of an escalation attempt is worth more than a recollection.
+						</p>
+					</div>
+				</div>
+			</Section>
+			<!-- Handling and transferring images -->
+			<Section
+				eyebrow="Handling images"
+				title="Storage, transfer and viewing"
+				lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the record."
+			>
+				<div class="grid gap-6 lg:grid-cols-3">
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">What a study actually contains</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							A DICOM study is the pixel data plus a header of tags: patient and study identifiers,
+							acquisition parameters, exposure indices, window presets and slice geometry. The header is
+							what makes a study searchable, transferable and anonymisable — and it is what allows a
+							later review to separate a viewing choice from a missed finding.
+						</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Transfer and anonymisation</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							Where a study leaves the treating relationship — for a second opinion or a medicolegal
+							review — it should be anonymised at source, transferred by an encrypted route and logged.
+							Transfer and anonymisation guidance is set out alongside the referral terms.
+						</p>
+						<a href="/referrals" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+							Imaging transfer guidance
+							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
+						</a>
+					</div>
+					<div class="card p-6">
+						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Local-only viewing</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+							Reviewing a study in a browser that never uploads it creates no further copy of personal
+							data, which satisfies data minimisation by design. That is a triage aid — it is not a
+							calibrated diagnostic workstation and cannot replace official interpretation.
+						</p>
+						<a href="/dicom-viewer" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+							Open the local DICOM viewer
+							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
+						</a>
+					</div>
+				</div>
+			</Section>
+		</div>
+	</section>
+
+	<!-- Primary sources -->
+	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+		<div class="container-page space-y-12">
+			<Section
+				eyebrow="Primary sources"
+				title="The shelf behind this resource"
+				lead="The site summarises and applies the following sources. Each is linked to the section where it is used, so a proposition can be traced back to the document that supports it."
+			>
+				<ul class="grid gap-4">
+					{
+						[
+							{
+								n: 'RCR Standards for interpretation and reporting of imaging investigations (3rd ed., October 2025)',
+								d: 'The professional benchmark for report content, named authorship, remote reporting and AI-assisted output.',
+								href: '/medicolegal-fundamentals',
+								tag: 'Applied in Medicolegal Law',
+							},
+							{
+								n: 'IR(ME)R 2017, as amended 2024',
+								d: 'Justification, optimisation, the duty holders, diagnostic reference levels and reportable incidents.',
+								href: '/radiology-legislation',
+								tag: 'Summarised in Legislation',
+							},
+							{
+								n: 'Ionising Radiations Regulations 2017',
+								d: 'Occupational dose limits, controlled and supervised areas, equipment QA and the roles of the radiation protection adviser and supervisor.',
+								href: '/radiology-legislation',
+								tag: 'Summarised in Legislation',
+							},
+							{
+								n: 'Environmental Permitting (England and Wales) Regulations 2016',
+								d: 'Holding, tracking and disposal of radioactive material, relevant to nuclear medicine.',
+								href: '/radiology-legislation',
+								tag: 'Summarised in Legislation',
+							},
+							{
+								n: 'GMC Good Medical Practice and the professional duty of candour',
+								d: 'Record-keeping, candour after harm and the handling of patient information.',
+								href: '/medicolegal-fundamentals',
+								tag: 'Applied in Medicolegal Law',
+							},
+							{
+								n: 'CPR Part 35, Practice Direction 35 and the Ikarian Reefer duties',
+								d: 'The overriding duty to the court, and the required form and content of expert evidence.',
+								href: '/medicolegal-fundamentals',
+								tag: 'Applied in Medicolegal Law',
+							},
+							{
+								n: 'Decisions on interpretation, communication and consent',
+								d: 'Muller, Penney Palmer and Canon, FB v Princess Alexandra, Gwyn, and Montgomery v Lanarkshire.',
+								href: '/radiology-legal-cases',
+								tag: 'Digested in Case Law',
+							},
+							{
+								n: 'Teleradiology governance and the confidentiality of transmitted images',
+								d: 'Licensing, credentialing, security and confidentiality where images are transmitted for remote reporting.',
+								href: '/recent-developments',
+								tag: 'Discussed in Developments',
+							},
+						].map((s) => (
+							<li class="card flex flex-col gap-3 p-5 sm:flex-row sm:items-start sm:justify-between">
+								<div class="max-w-2xl">
+									<h3 class="text-base font-bold leading-snug text-navy-900 dark:text-slate-100">{s.n}</h3>
+									<p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+								</div>
+								<a
+									href={s.href}
+									class="chip shrink-0 self-start transition-colors hover:border-teal-500 hover:text-teal-700 dark:hover:text-teal-300"
+								>
+									{s.tag}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Section>
+
+			<div class="rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 p-8 text-center sm:p-10">
+				<h2 class="text-2xl font-extrabold tracking-tight text-white">Continue into the law</h2>
+				<p class="mx-auto mt-3 max-w-2xl text-slate-300">
+					The other half of this resource takes the same material and asks how a court, a coroner or a
+					regulator would test it.
+				</p>
+				<div class="mt-6 flex flex-wrap justify-center gap-3">
+					<a href="/medicolegal-fundamentals" class="btn btn-primary">Medicolegal law library</a>
+					<a href="/radiology-legal-cases" class="btn btn-outline-white">Landmark cases</a>
+					<a href="/recent-developments" class="btn btn-outline-white">Recent developments</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,171 +1,166 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import PageIntro from "../components/PageIntro.astro";
+import Callout from "../components/Callout.astro";
 import Section from "../components/Section.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
-import Figure from "../components/Figure.astro";
-import Diagram from "../components/Diagram.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
 <BaseLayout
-	title={`DICOM Viewer | ${SITE_TITLE}`}
-	description="A free, privacy-first, local-only DICOM viewer for solicitors, barristers, insurers and clinicians. Review CT, MRI and plain-film series in your browser — no upload, no server, no transfer of patient data."
+	title={`Free DICOM Viewer — Open Your Scan in Your Browser | ${SITE_TITLE}`}
+	description="Open your CT, MRI, X-ray or ultrasound images free in your browser. Drop your files in and view them instantly — nothing is uploaded, nothing is stored, and nothing is shared."
 >
 	<PageHero
-		eyebrow="Local DICOM viewer"
-		title="Local DICOM Viewer"
-		description="Drop a DICOM study and review it in your own browser — window/level, pan, zoom, slice navigation and anonymised tag inspection. Every pixel stays on your device."
-	/>
+		eyebrow="Free tools · No sign-up, no upload"
+		title="Free DICOM Viewer"
+		description="Your scan is on a disc or a download and you can't open it. Drop it in below and view it in your browser — nothing is uploaded, nothing is stored, and nothing is shared."
+	>
+		<p class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400">
+			Works with CT · MRI · X-ray · Ultrasound · PET
+		</p>
+	</PageHero>
 
-	<PageIntro
-		eyebrow="Local viewer"
-		paragraphs={[
-			'A free viewer that opens a DICOM study in your own browser. Nothing is uploaded, nothing is stored, and no copy of patient data is created — which is why it can be used to get a first look at a study without creating a data protection problem.',
-			'It is a triage and orientation tool. It is not a calibrated diagnostic workstation, and no opinion should be based on it.',
-		]}
-		contents={[
-			{ href: '#privacy-by-design', label: 'Privacy by design' },
-			{ href: '#open-a-study', label: 'Open a study' },
-			{ href: '#legal-workflow', label: 'Legal workflow' },
-			{ href: '#limits', label: 'Limits' },
-		]}
-		audience="Written for solicitors, barristers, insurers, expert witnesses and clinicians."
-		reviewed="September 2026"
-	/>
-
-	<!-- Privacy by design -->
-	<section id="privacy-by-design" class="scroll-mt-24 bg-paper py-14">
-		<div class="container-page">
-			<div class="doc">
-				<Figure
-					label="Figure 01"
-					caption="How a local-only viewer works"
-					subtitle="The file is parsed and rendered inside the browser session. No upload, no server and no retained copy is created, so the data-minimisation duty is met by design."
-				>
-					<Diagram name="local-only" />
-				</Figure>
-			</div>
-			<div class="divide-y divide-slate-200">
-				<div class="py-5">
-					<h2 class="text-base font-bold text-navy-900">No upload, no server</h2>
-					<p class="mt-3 text-sm leading-relaxed text-slate-600">
-						Files are parsed and rendered entirely by JavaScript running in your own browser. Nothing is
-						transmitted, stored or logged, so no further copy of personal data is created. The
-						data-minimisation and security principles of the UK GDPR and the Data Protection Act 2018
-						are satisfied by design rather than by contract.
-					</p>
-				</div>
-				<div class="py-5">
-					<h2 class="text-base font-bold text-navy-900">Works with a full series</h2>
-					<p class="mt-3 text-sm leading-relaxed text-slate-600">
-						Drop multiple <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.dcm</code>
-						files to load a series as a slice stack and scroll through it with the slider, the on-screen
-						controls or Ctrl+scroll. Single images and whole stacks are both supported.
-					</p>
-				</div>
-				<div class="py-5">
-					<h2 class="text-base font-bold text-navy-900">Triage only — not for reporting</h2>
-					<p class="mt-3 text-sm leading-relaxed text-slate-600">
-						This is an uncalibrated consumer display. It must never be used to make or exclude a
-						diagnosis, and it cannot substitute for official interpretation on a compliant diagnostic
-						workstation (see the limits below).
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- The viewer -->
+	<!-- The viewer itself -->
 	<section id="open-a-study" class="scroll-mt-24 bg-white py-14">
-		<div class="container-page space-y-8">
-			<div>
-				<h2 class="text-2xl font-bold tracking-tight text-navy-900">Open a study</h2>
-				<p class="mt-3 max-w-3xl leading-relaxed text-slate-600">
-					No account, no installation and no network connection is required once the page has loaded.
-					Anonymise source imaging before review wherever the study still carries patient-identifying tags.
+		<div class="container-page">
+			<div class="mx-auto max-w-5xl">
+				<LocalDicomViewer />
+
+				<Callout tone="limit" title="Important — not a diagnosis">
+					<p>
+						This viewer is for looking at your own images and understanding them, not for
+						reaching a conclusion about what they show. Only a radiologist reading the full
+						study on a calibrated clinical display can provide that. If anything worries you,
+						take it back to the doctor who referred you for the scan — they have your history
+						and can answer for your circumstances.
+					</p>
+				</Callout>
+
+				<p class="mt-8 text-center font-serif text-[0.95rem] text-slate-500">
+					New here? The <a href="/dicom-viewer-guide" class="font-semibold text-teal-700 underline decoration-teal-400/50 underline-offset-4 hover:text-teal-600">step-by-step guide</a> walks you through finding your files on a disc or download and using every tool.
 				</p>
 			</div>
-			<LocalDicomViewer />
 		</div>
 	</section>
 
-	<!-- Legal framing -->
-	<section id="legal-workflow" class="scroll-mt-24 bg-slate-50 py-16">
-		<div class="container-page space-y-12">
-			<Section
-				eyebrow="How it fits the legal workflow"
-				title="A proportionate first look — not a substitute for instructed evidence"
-			>
-				<div class="divide-y divide-slate-200">
-					<div class="py-5">
-						<h3 class="text-base font-bold text-navy-900">Preliminary triage</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600">
-							Before incurring the cost of a full expert instruction, a solicitor can establish whether
-							a study is broadly normal or contains something worth investigating — and therefore
-							whether the claim has a radiological foundation at all.
-						</p>
-					</div>
-					<div class="py-5">
-						<h3 class="text-base font-bold text-navy-900">Proportionality and costs</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600">
-							The overriding objective in CPR Part 1 requires cases to be dealt with justly and at
-							proportionate cost. A free local review helps frame the radiological issue before an
-							expert is instructed, so that the questions put to the expert are properly targeted.
-						</p>
-					</div>
-					<div class="py-5">
-						<h3 class="text-base font-bold text-navy-900">Handling and custody</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600">
-							Because nothing is copied, this tool does not disturb the integrity of the original media.
-							Where an expert opinion is required, the images must still be provided to the expert as
-							the full study — never as screenshots.
-						</p>
-					</div>
-				</div>
-			</Section>
-
-			<Section id="limits" eyebrow="Medicolegal limits" title="What this free viewer can and cannot do">
-				<div class="divide-y divide-slate-200">
-					<div class="py-5">
-						<h3 class="text-base font-bold text-navy-900">Appropriate uses</h3>
-						<ul class="mt-4 space-y-2.5 text-sm text-slate-600">
-							<li>Orientation — getting to know the series before instructing an expert.</li>
-							<li>Confirming that a study has been produced and transferred in full.</li>
-							<li>Reviewing anonymised teaching or conference material locally.</li>
-							<li>Preparing questions for a CPR Part 35 letter of instruction.</li>
-						</ul>
-					</div>
-					<div class="py-5">
-						<h3 class="text-base font-bold text-navy-900">Not appropriate for</h3>
-						<ul class="mt-4 space-y-2.5 text-sm text-slate-600">
-							<li>Official interpretation or any diagnostic conclusion about a patient.</li>
-							<li>Measuring lesions for staging, quantum or causation purposes.</li>
-							<li>Substituting for a report that complies with CPR Part 35.</li>
-							<li>Reviewing identifiable patient data without a lawful basis.</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="mt-8 rounded-xl border border-amber-300 bg-amber-50/60 p-6">
-					<h3 class="text-base font-bold text-amber-900">Why the technical limits matter legally</h3>
-					<p class="mt-2 text-sm leading-relaxed text-slate-700">
-						Published standards for teleradiology require that an official interpretation is made on a
-						display system with controlled luminance and ambient lighting, accurate association of
-						patient demographics with study images, and reliable window/level, pan, zoom and measurement
-						tools. A browser canvas provides none of that calibration. The RCR's 2025 <em>Standards for
-						interpretation and reporting of imaging investigations</em> likewise require remote reporting
-						arrangements to comply with the same technical specifications and governance as
-						provider-based reporting. A preliminary look here must therefore always be followed by
-						proper re-derivation on a diagnostic workstation before any formal opinion is expressed.
-					</p>
-				</div>
-			</Section>
-
-			<div class="text-center">
-				<a href="/expert-witness" class="btn btn-primary">Instruct a formal expert review</a>
+	<!-- Why it's safe -->
+	<Section id="privacy" index="01" title="Your images never leave your device">
+		<p class="lead">
+			The viewer runs entirely inside your browser. There is no upload step, no account, and
+			no copy made anywhere — which is also why there is nothing to sign up for.
+		</p>
+		<div class="mt-8 grid gap-5 sm:grid-cols-2">
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Nothing is uploaded</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					The files are opened by code running on your own device. At no point do your images
+					travel over the internet to this site or to anyone else.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Nothing is kept</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Close the tab or press Clear and everything is gone — no server copy, no storage,
+					no record of what you looked at.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">No account or details needed</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					There is no sign-up, no email address and no payment. The viewer is free, and it
+					stays that way.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Names are not shown</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					The details panel deliberately shows only technical information — scan type, date,
+					image size — and never patient names or identifiers.
+				</p>
 			</div>
 		</div>
-	</section>
+	</Section>
+
+	<!-- What it opens -->
+	<Section id="compatibility" index="02" title="What you can open">
+		<p class="lead">
+			Any imaging given to you in the DICOM format — the standard format in which hospitals
+			supply scans on disc and through patient portals.
+		</p>
+		<div class="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+			<div>
+				<h3 class="font-sans text-sm font-bold text-navy-900">Works with</h3>
+				<ul class="mt-3 space-y-2 font-serif text-sm leading-relaxed text-slate-600">
+					<li>CT, MRI, X-ray, ultrasound and PET scans</li>
+					<li>Files ending in <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.dcm</code> — and files with no extension at all, as hospital discs often supply</li>
+					<li>Single images or a whole folder of slices, which are sorted into order for you</li>
+					<li>Windows, Mac and Linux, in any modern browser</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="font-sans text-sm font-bold text-navy-900">Doesn't work with</h3>
+				<ul class="mt-3 space-y-2 font-serif text-sm leading-relaxed text-slate-600">
+					<li>Zip archives — unzip the folder first, then drop the folder in</li>
+					<li>Photographs, PDFs or JPGs from a portal — those are not DICOM files</li>
+					<li>A small number of scans stored in heavily compressed formats</li>
+				</ul>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Tools summary -->
+	<Section id="tools" index="03" title="The tools on screen">
+		<p class="lead">
+			The same basic controls a radiologist uses to look at a scan, minus the diagnostic
+			measurement tools.
+		</p>
+		<div class="mt-8 divide-y divide-slate-200">
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Scroll through the scan</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Use the slice slider, the arrow buttons, or your mouse wheel over the image to move
+					through a stack of slices — like flicking through the pages of the scan.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Brightness and contrast</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					The Width and Level sliders adjust how the image is displayed. Scans contain far more
+					shades of grey than a screen can show at once, so this is how you bring different
+					tissues into view.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Zoom and pan</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Zoom with the slider or Ctrl/Cmd + mouse wheel, then drag the image to look around.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Invert and reset</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Invert Colours reverses black and white, which can make some structures easier to see.
+					Reset all returns the image to its natural display.
+				</p>
+			</div>
+		</div>
+
+		<Callout tone="key" title="Next step">
+			<p>
+				Not sure where your images are, or which file to pick? The
+				<a href="/dicom-viewer-guide" class="font-semibold text-teal-700 underline decoration-teal-400/50 underline-offset-4 hover:text-teal-600">guide to using the viewer</a>
+				takes you through it step by step, with a disc and a portal download as worked examples.
+			</p>
+		</Callout>
+	</Section>
+
+	<div class="bg-paper py-14">
+		<div class="container-page">
+			<div class="doc text-center">
+				<a href="/dicom-viewer-guide" class="btn btn-primary">How to use the viewer</a>
+				<a href="/patient-advice" class="btn btn-ghost ml-3">Patient advice library</a>
+			</div>
+		</div>
+	</div>
 </BaseLayout>

@@ -114,7 +114,8 @@ export const SITEMAP = [
 		pages: [
 			{ href: "/radiology-resources", label: "Radiology reference", description: "What each modality answers, and where it stops being useful." },
 			{ href: "/patient-advice", label: "Patient advice", description: "Plain-language guide to scans, safety and preparation." },
-			{ href: "/dicom-viewer", label: "Local DICOM viewer", description: "Open a study in your browser without uploading it." },
+			{ href: "/dicom-viewer", label: "Free DICOM viewer", description: "Open your scan in your browser — free, private, nothing uploaded." },
+			{ href: "/dicom-viewer-guide", label: "Using the DICOM viewer", description: "Step-by-step: loading a disc or download and using the tools." },
 		],
 	},
 	{

@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
+import Callout from "../components/Callout.astro";
+import Section from "../components/Section.astro";
+import { SITE_TITLE } from "../consts";
+
+const faqs = [
+	{
+		q: "Is my scan really not uploaded anywhere?",
+		a: "Correct. The viewer is a small program that runs inside your browser after the page loads. It opens the files that are already on your device and draws them on screen. No file is transmitted to this website or to any other server at any point.",
+	},
+	{
+		q: "Is it free?",
+		a: "Yes — there is no charge, no account and no time limit. You do not even have to give an email address.",
+	},
+	{
+		q: "Can I use it on a phone or tablet?",
+		a: "Yes. The viewer works in any modern browser on Windows, Mac, Linux, Android and iOS. On a phone, use the “Choose files” button rather than drag-and-drop, and the sliders instead of the mouse gestures.",
+	},
+	{
+		q: "What if the image looks all black, white or grey?",
+		a: "That is almost always the window setting, not a problem with the file. Reset all first. If it is still not right, try the Level slider — most CT and MRI slices look correct with a level somewhere between 20 and 80, and a width between 200 and 400.",
+	},
+	{
+		q: "Someone sent me a single file — why can't I scroll through the scan?",
+		a: "A CT or MRI study is made up of many separate slice files, usually dozens or hundreds. If you were sent just one file, you have one slice. Ask for the whole folder, or drop several files at once.",
+	},
+	{
+		q: "Can I get a second opinion using this viewer?",
+		a: "Not from this tool on its own. A formal second opinion needs a radiologist to read the full study on calibrated equipment, and it needs the images themselves — not screenshots. The viewer helps you understand what you have; the expert-witness service on this site is where a formal opinion begins.",
+	},
+];
+---
+
+<BaseLayout
+	title={`How to Use the DICOM Viewer — Step by Step | ${SITE_TITLE}`}
+	description="A plain-English walkthrough of the free DICOM viewer: finding your images on a hospital disc or download, loading them, and using the on-screen tools."
+>
+	<PageHero
+		eyebrow="Free tools · Guide"
+		title="How to Use the DICOM Viewer"
+		description="A short, plain-English walkthrough: where your images usually are, how to load them, and what each control does once they are on screen."
+	/>
+
+	<PageIntro
+		eyebrow="How this works"
+		paragraphs={[
+			'Hospitals give scans to patients in the DICOM format — usually on a CD or USB stick, sometimes as a download from a patient portal. The files are not photographs, so they will not open by double-clicking, and a special viewer is needed to see them.',
+			'The free viewer on this site opens those files in your browser. Nothing is uploaded and nothing is stored: the files are read by code running on your own device, and when you close the page they are gone. This guide takes you through it step by step.',
+		]}
+		contents={[
+			{ href: '#step-1', label: 'Find your images' },
+			{ href: '#step-2', label: 'Load them in' },
+			{ href: '#step-3', label: 'Look at the image' },
+			{ href: '#step-4', label: 'Adjust the display' },
+			{ href: '#details-panel', label: 'The details panel' },
+			{ href: '#troubleshooting', label: 'If something goes wrong' },
+			{ href: '#common-questions', label: 'Common questions' },
+		]}
+		reviewed="September 2026"
+	/>
+
+	<!-- Step 1 -->
+	<Section id="step-1" index="01" eyebrow="Step 1" title="Find your images">
+		<p class="lead">
+			Whatever you were given — a disc, a USB stick or a download — the images are inside a
+			folder, and any folder will do.
+		</p>
+		<div class="mt-8 space-y-6">
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">If you have a CD or USB stick</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Put it in your computer and open it in File Explorer (Windows) or Finder (Mac). You
+					will normally see a folder named <em>DICOM</em>, <em>IMAGES</em> or <em>STUDIES</em> —
+					inside it are the individual image files, often numbered. You may also see a viewer
+					program on the disc; you do not need to run it. The image files themselves may end in
+					<code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.dcm</code> or have no ending
+					at all — the viewer handles both.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">If you were sent a download or a zip file</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					If the file ends in <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.zip</code>,
+					unzip it first (on Windows: right-click → “Extract All”; on Mac: double-click). Inside
+					will be a folder of image files — that folder is what you will drop into the viewer.
+					A file ending in <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.jpg</code>,
+					<code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.png</code> or
+					<code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.pdf</code> is a picture or a
+					report, not the scan itself.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">What a scan actually looks like on disc</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					A CT or MRI study is not one file but a stack of them — one file per slice, often
+					hundreds. That is normal, and it is why the guide recommends dropping the whole
+					folder rather than picking files one by one.
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Step 2 -->
+	<Section id="step-2" index="02" eyebrow="Step 2" title="Load them into the viewer">
+		<p class="lead">
+			Open the <a href="/dicom-viewer" class="font-semibold text-teal-700 underline decoration-teal-400/50 underline-offset-4 hover:text-teal-600">viewer page</a> and drop the folder on the drop zone — or use the buttons, whichever is easier.
+		</p>
+		<div class="mt-8 space-y-6">
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Drag and drop</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Open File Explorer or Finder alongside your browser window, find the folder of scan
+					files, and drag the whole folder onto the drop zone marked
+					<span class="font-semibold">“Drop your imaging files here”</span>. Dropping the folder
+					loads every slice in one go.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Or use the buttons</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					<span class="font-semibold">Choose files</span> lets you pick individual files (hold
+					Ctrl or Cmd to pick several). <span class="font-semibold">Choose a folder</span> lets
+					you select the whole folder at once — the better option for a CT or MRI study. On a
+					phone or tablet, use these buttons; drag-and-drop is a desktop convenience.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">What happens next</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					A status line shows progress as each file is read
+					(<em>“Reading… 40 of 220 files (40 images found)”</em>). When it finishes, the viewer
+					sorts the slices into anatomical order automatically — you do not have to name or
+					number anything — and shows the middle of the stack. Files that are not DICOM images
+					are skipped and counted in the status line rather than stopping everything.
+				</p>
+			</div>
+		</div>
+		<Callout tone="key" title="Adding more later">
+			<p>
+				You are not limited to one drop. <span class="font-semibold">Add files</span> and
+				<span class="font-semibold">Add folder</span> in the viewer's side panel add more images
+				to the same stack, and <span class="font-semibold">Clear</span> empties the viewer
+				entirely when you are finished.
+			</p>
+		</Callout>
+	</Section>
+
+	<!-- Step 3 -->
+	<Section id="step-3" index="03" eyebrow="Step 3" title="Look at the image">
+		<p class="lead">
+			The large black area is your scan. If you loaded a stack, you can move through it the way
+			a radiologist would — slice by slice.
+		</p>
+		<div class="mt-8 divide-y divide-slate-200">
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Move through the slices</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Three ways: the <span class="font-semibold">slice slider</span> at the foot of the
+					image, the <span class="font-semibold">arrow buttons</span> beside it, or simply
+					<span class="font-semibold">rolling your mouse wheel</span> while the cursor is over
+					the image. Each notch of the wheel is one slice.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Where it starts, and why</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					The viewer opens in the middle of the stack rather than at the first slice — the
+					middle slices usually show the most, so it is a better place to start. Counter shows
+					your position, e.g. <em>110 / 220</em>.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">One file means one slice</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					If you were sent a single file, you will see a single image and the slider will not
+					move. That is expected — a CT or MRI study is hundreds of separate slice files. Ask
+					for the whole folder to scroll through the scan properly.
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<!-- STEP-4 -->
+</BaseLayout>

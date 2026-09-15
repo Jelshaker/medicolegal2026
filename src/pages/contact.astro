@@ -32,68 +32,65 @@ const details = [
 		reviewed="September 2026"
 	/>
 
-	<section class="bg-white py-16 dark:bg-navy-900">
-		<div class="container-page grid gap-12 lg:grid-cols-2">
-			<!-- Contact details -->
-			<div id="secretariat" class="scroll-mt-24">
-				<span class="eyebrow block">Secretariat</span>
-				<h2 class="mt-3 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Contact details</h2>
-				<dl class="mt-8 space-y-6">
-					{details.map((d) => (
-						<div class="flex gap-4">
-							<span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-500/10 text-teal-700 dark:text-teal-400">
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-							</span>
-							<div>
-								<dt class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">{d.label}</dt>
-								<dd class="mt-1 text-lg font-medium text-navy-900 dark:text-slate-100">
-									{d.href ? <a href={d.href} class="hover:text-teal-600">{d.value}</a> : d.value}
-								</dd>
-							</div>
-						</div>
-					))}
-				</dl>
+	<section class="bg-white py-16">
+		<div class="container-page">
+			<div class="doc space-y-14">
+				<!-- Contact details -->
+				<div id="secretariat" class="scroll-mt-24 border-t border-slate-300 pt-8">
+					<span class="eyebrow">Secretariat</span>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900">Contact details</h2>
+					<table class="mt-6 w-full border-collapse text-left">
+						<tbody>
+							{details.map((d) => (
+								<tr class="bg-white">
+									<th scope="row" class="w-32 border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">{d.label}</th>
+									<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] text-slate-800">
+										{d.href ? <a href={d.href} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{d.value}</a> : d.value}
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
 
-				<div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 dark:border-navy-700">
-					<div class="flex h-48 items-center justify-center bg-slate-100 text-sm text-slate-500 dark:bg-navy-900 dark:text-slate-400">
-						<p class="px-6 text-center">Location map embed —<br />{PRACTITIONER.address}</p>
+					<div class="mt-8 border border-slate-300">
+						<div class="flex h-40 items-center justify-center bg-paper font-sans text-xs text-slate-500">
+							<p class="px-6 text-center">Location map embed —<br />{PRACTITIONER.address}</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<!-- Contact form -->
-			<div id="enquiry-form" class="scroll-mt-24">
-				<span class="eyebrow block">Encrypted enquiry</span>
-				<h2 class="mt-3 text-2xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Send a message</h2>
-				<form id="contact-form" class="mt-8 grid gap-5">
-					<div class="grid gap-5 sm:grid-cols-2">
-						<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+				<!-- Contact form -->
+				<div id="enquiry-form" class="scroll-mt-24 border-t border-slate-300 pt-8">
+					<span class="eyebrow">Encrypted enquiry</span>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900">Send a message</h2>
+					<form id="contact-form" class="mt-6 grid gap-5">
+						<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
 							Name *
 							<input name="name" type="text" required class="input-field mt-1.5" placeholder="Full name" />
 						</label>
-						<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
+						<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
 							Email *
 							<input name="email" type="email" required class="input-field mt-1.5" placeholder="you@example.com" />
 						</label>
-					</div>
-					<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
-						Subject
-						<select name="subject" class="input-field mt-1.5">
-							<option>General enquiry</option>
-							<option>Referral / instruction</option>
-							<option>Imaging transfer</option>
-							<option>Case progress</option>
-						</select>
-					</label>
-					<label class="block text-sm font-medium text-navy-900 dark:text-slate-100">
-						Message *
-						<textarea name="message" rows="6" required class="input-field mt-1.5" placeholder="How can we help?"></textarea>
-					</label>
-					<div class="flex items-center gap-3">
-						<button type="submit" class="btn btn-primary" data-submit>Send message</button>
-						<span class="text-xs text-slate-500 dark:text-slate-400">Encrypted in transit and stored securely.</span>
-					</div>
-				</form>
+						<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
+							Subject
+							<select name="subject" class="input-field mt-1.5">
+								<option>General enquiry</option>
+								<option>Referral / instruction</option>
+								<option>Imaging transfer</option>
+								<option>Case progress</option>
+							</select>
+						</label>
+						<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
+							Message *
+							<textarea name="message" rows="6" required class="input-field mt-1.5" placeholder="How can we help?"></textarea>
+						</label>
+						<div class="flex items-center gap-3">
+							<button type="submit" class="btn btn-primary" data-submit>Send message</button>
+							<span class="font-sans text-xs text-slate-500">Encrypted in transit and stored securely.</span>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>

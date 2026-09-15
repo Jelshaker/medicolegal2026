@@ -80,25 +80,14 @@ const jsonLd = {
 <!-- Structured data: MedicalBusiness + Person (JSON-LD) -->
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
-<!-- Inter + Source Serif 4 (system fallbacks if offline) -->
+<!-- Inter (metadata sans) + Merriweather (document serif, Georgia fallback) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 	rel="stylesheet"
 />
 
-<!-- Apply saved theme before first paint to avoid a flash -->
-<script is:inline>
-	(() => {
-		try {
-			const saved = localStorage.getItem("ml-theme");
-			if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-				document.documentElement.classList.add("dark");
-			}
-		} catch {}
-	})();
-</script>
 
 {gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
 {

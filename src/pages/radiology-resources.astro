@@ -123,7 +123,7 @@ const lawLinks = [
 	/>
 
 	<!-- Modalities -->
-	<section class="bg-white py-16 dark:bg-navy-900">
+	<section class="bg-white py-16">
 		<div class="container-page space-y-12">
 			<Section
 				id="modalities"
@@ -132,17 +132,17 @@ const lawLinks = [
 				title="Each investigation, and the question it answers"
 				lead="A modality is chosen for the question it can answer and the risk it carries, not for the detail it produces. These summaries set out what each method is for and where it stops being useful."
 			>
-				<div class="grid gap-6 md:grid-cols-2">
+				<div class="divide-y divide-slate-200">
 					{
 						modalities.map((m) => (
-							<div class="card p-6">
-								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{m.n}</h3>
-								<p class="mt-2 text-sm font-semibold text-teal-700 dark:text-teal-400">{m.q}</p>
-								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{m.d}</p>
-								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+							<div class="py-5">
+								<h3 class="text-base font-bold text-navy-900">{m.n}</h3>
+								<p class="mt-2 text-sm font-semibold text-teal-700">{m.q}</p>
+								<p class="mt-3 text-sm leading-relaxed text-slate-600">{m.d}</p>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-slate-500">
 									Where it is limited
 								</h4>
-								<ul class="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+								<ul class="mt-2 space-y-2 text-sm text-slate-600">
 									{m.limits.map((l) => (
 										<li class="flex items-start gap-2">
 											<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
@@ -163,12 +163,12 @@ const lawLinks = [
 				title="Interpretation and reporting: the professional benchmark"
 				lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
 			>
-				<div class="grid gap-6 md:grid-cols-2">
+				<div class="divide-y divide-slate-200">
 					{
 						reportingStandards.map((s) => (
-							<div class="card p-6">
-								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{s.n}</h3>
-								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+							<div class="py-5">
+								<h3 class="text-base font-bold text-navy-900">{s.n}</h3>
+								<p class="mt-3 text-sm leading-relaxed text-slate-600">{s.d}</p>
 							</div>
 						))
 					}
@@ -183,16 +183,16 @@ const lawLinks = [
 				title="Where a reporting standard becomes a legal question"
 				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
 			>
-				<div class="grid gap-6 lg:grid-cols-3">
+				<div class="divide-y divide-slate-200">
 					{
 						lawLinks.map((l) => (
 							<a
 								href={l.href}
 								class="card group flex flex-col p-6 transition-all hover:border-teal-500/40 hover:shadow-lift"
 							>
-								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{l.n}</h3>
-								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{l.d}</p>
-								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+								<h3 class="text-base font-bold text-navy-900">{l.n}</h3>
+								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{l.d}</p>
+								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
 									{l.cta}
 									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 										<path d="M5 12h14M12 5v14" />
@@ -211,19 +211,19 @@ const lawLinks = [
 				title="Dose, justification and the statutory duty"
 				lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
 			>
-				<div class="grid gap-6 lg:grid-cols-2">
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Justification and optimisation</h3>
-						<ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+				<div class="divide-y divide-slate-200">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Justification and optimisation</h3>
+						<ul class="mt-3 space-y-2 text-sm text-slate-600">
 							<li>Justification: for that patient, the benefit of the exposure must outweigh its detriment.</li>
 							<li>Optimisation: the exposure is kept as low as reasonably practicable for the diagnostic purpose.</li>
 							<li>Diagnostic reference levels: national values for common examinations. Exceedance requires review.</li>
 							<li>Protocol choice: whether the study performed was capable of answering the clinical question asked.</li>
 						</ul>
 					</div>
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Recording and reporting</h3>
-						<ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Recording and reporting</h3>
+						<ul class="mt-3 space-y-2 text-sm text-slate-600">
 							<li>Significant accidental or unintended exposures are reportable incidents and must be investigated.</li>
 							<li>Occupational exposure is managed through controlled areas, monitoring and dose limits.</li>
 							<li>Equipment must be commissioned, tested and withdrawn from use when faulty.</li>
@@ -245,27 +245,27 @@ const lawLinks = [
 				title="Quality assurance and learning"
 				lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
 			>
-				<div class="grid gap-6 lg:grid-cols-3">
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Peer review and discrepancy audit</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+				<div class="divide-y divide-slate-200">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Peer review and discrepancy audit</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							A documented sample of reports is re-read by another competent reporter, discrepancies are
 							classified and discussed, and the learning is written down. Performed properly, this is
 							also the evidence that the service was monitoring its own accuracy.
 						</p>
 					</div>
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Candour and correction</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Candour and correction</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							Where a report is wrong or a study is misread, the professional duty of candour runs in
 							parallel with the incident process: acknowledge the error, explain it, apologise, record
 							what happened and share the learning. An addendum supplements the original report; it does
 							not replace it.
 						</p>
 					</div>
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Keep the record, not just the report</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Keep the record, not just the report</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							Protocol details, the clinical information supplied, viewing conditions and the route by
 							which an urgent finding was communicated are often the decisive material later. A
 							contemporaneous note of an escalation attempt is worth more than a recollection.
@@ -281,36 +281,36 @@ const lawLinks = [
 				title="Storage, transfer and viewing"
 				lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the record."
 			>
-				<div class="grid gap-6 lg:grid-cols-3">
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">What a study actually contains</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+				<div class="divide-y divide-slate-200">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">What a study actually contains</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							A DICOM study is the pixel data plus a header of tags: patient and study identifiers,
 							acquisition parameters, exposure indices, window presets and slice geometry. The header is
 							what makes a study searchable, transferable and anonymisable — and it is what allows a
 							later review to separate a viewing choice from a missed finding.
 						</p>
 					</div>
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Transfer and anonymisation</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Transfer and anonymisation</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							Where a study leaves the treating relationship — for a second opinion or a medicolegal
 							review — it should be anonymised at source, transferred by an encrypted route and logged.
 							Transfer and anonymisation guidance is set out alongside the referral terms.
 						</p>
-						<a href="/referrals" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+						<a href="/referrals" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
 							Imaging transfer guidance
 							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
 						</a>
 					</div>
-					<div class="card p-6">
-						<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">Local-only viewing</h3>
-						<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+					<div class="py-5">
+						<h3 class="text-base font-bold text-navy-900">Local-only viewing</h3>
+						<p class="mt-3 text-sm leading-relaxed text-slate-600">
 							Reviewing a study in a browser that never uploads it creates no further copy of personal
 							data, which satisfies data minimisation by design. That is a triage aid — it is not a
 							calibrated diagnostic workstation and cannot replace official interpretation.
 						</p>
-						<a href="/dicom-viewer" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+						<a href="/dicom-viewer" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
 							Open the local DICOM viewer
 							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
 						</a>
@@ -321,7 +321,7 @@ const lawLinks = [
 	</section>
 
 	<!-- Primary sources -->
-	<section class="bg-slate-50 py-16 dark:bg-navy-950">
+	<section class="bg-paper py-16">
 		<div class="container-page space-y-12">
 			<Section
 				id="primary-sources"
@@ -384,12 +384,12 @@ const lawLinks = [
 						].map((s) => (
 							<li class="card flex flex-col gap-3 p-5 sm:flex-row sm:items-start sm:justify-between">
 								<div class="max-w-2xl">
-									<h3 class="text-base font-bold leading-snug text-navy-900 dark:text-slate-100">{s.n}</h3>
-									<p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+									<h3 class="text-base font-bold leading-snug text-navy-900">{s.n}</h3>
+									<p class="mt-2 text-sm leading-relaxed text-slate-600">{s.d}</p>
 								</div>
 								<a
 									href={s.href}
-									class="chip shrink-0 self-start transition-colors hover:border-teal-500 hover:text-teal-700 dark:hover:text-teal-300"
+									class="chip shrink-0 self-start transition-colors hover:border-teal-500 hover:text-teal-700"
 								>
 									{s.tag}
 								</a>

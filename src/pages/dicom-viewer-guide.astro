@@ -183,5 +183,159 @@ const faqs = [
 		</div>
 	</Section>
 
-	<!-- STEP-4 -->
+	<!-- Step 4 -->
+	<Section id="step-4" index="04" eyebrow="Step 4" title="Adjust the display">
+		<p class="lead">
+			Scans hold far more shades of grey than a screen can show at once. The Width and Level
+			sliders choose which range of shades you are looking at — this is the single most useful
+			control on the page.
+		</p>
+		<div class="mt-8 divide-y divide-slate-200">
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Brightness and contrast (Width and Level)</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					<span class="font-semibold">Width</span> is the range of shades shown
+					(contrast); <span class="font-semibold">Level</span> is the centre of that range
+					(brightness). Narrowing the width makes tissues stand apart more; moving the level up
+					or down brings brighter or darker tissue into view. The readout on the image —
+					<em>W: 400 C: 40</em> — records the setting, exactly as on clinical viewers.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Zoom and pan</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Zoom with the slider, or hold <span class="font-semibold">Ctrl</span>
+					(<span class="font-semibold">Cmd</span> on a Mac) and roll the mouse wheel. To look
+					around a zoomed image, <span class="font-semibold">click and drag</span> it with the
+					mouse or your finger.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Invert colours</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					The <span class="font-semibold">Invert Colours</span> button reverses black and white.
+					It can make some structures easier to see, and it is how chest X-rays are sometimes
+					displayed.
+				</p>
+			</div>
+			<div class="py-5">
+				<h3 class="font-sans text-sm font-bold text-navy-900">Start again with Reset all</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					If the image looks all black, all white, or flat grey, the window setting is the
+					likeliest cause. <span class="font-semibold">Reset all</span> returns the image to its
+					natural display for the scan type — always try this first.
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Details panel -->
+	<Section id="details-panel" index="05" title="The details panel">
+		<p class="lead">
+			The side panel beside the image lists a few technical facts about the scan — the same
+			information a reporting radiologist works from, minus anything that identifies you.
+		</p>
+		<div class="mt-8 overflow-x-auto">
+			<table class="w-full border border-slate-200 text-left font-sans text-sm">
+				<thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
+					<tr>
+						<th class="border-b border-slate-200 px-4 py-2.5 font-semibold">Field</th>
+						<th class="border-b border-slate-200 px-4 py-2.5 font-semibold">What it means</th>
+					</tr>
+				</thead>
+				<tbody class="divide-y divide-slate-100 text-slate-600">
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Scan type</td><td class="px-4 py-2.5">The modality — CT, MR, CR (X-ray), US (ultrasound), PT (PET).</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Study date</td><td class="px-4 py-2.5">When the scan was performed.</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Description</td><td class="px-4 py-2.5">The scan's short title, e.g. “CT ABDOMEN/PELVIS WITH CONTRAST”.</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Slice thickness</td><td class="px-4 py-2.5">How thick each slice is, in millimetres — thinner slices show finer detail.</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Image size</td><td class="px-4 py-2.5">The pixel dimensions of each slice, e.g. 512 × 512.</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Bits per pixel</td><td class="px-4 py-2.5">How much detail each pixel carries (8 or 16 in practice).</td></tr>
+					<tr><td class="px-4 py-2.5 font-medium text-navy-900">Images</td><td class="px-4 py-2.5">How many slices the viewer loaded into the stack.</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<Callout tone="key" title="Deliberately anonymous">
+			<p>
+				Patient names, hospital numbers and dates of birth are read by the viewer only to keep
+				its workings honest — they are never displayed on screen, never logged, and never sent
+				anywhere. What you see in the panel is technical detail about the images and nothing
+				else.
+			</p>
+		</Callout>
+	</Section>
+
+	<!-- Troubleshooting -->
+	<Section id="troubleshooting" index="06" title="If something goes wrong">
+		<p class="lead">
+			When the viewer cannot use a file it says so in the status line above the drop zone
+			rather than failing silently. Here is what each message means.
+		</p>
+		<div class="mt-8 space-y-6">
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">“Couldn't open these files as DICOM images…”</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					What you dropped was not DICOM — most often a zip archive, a PDF report or JPG
+					screenshots. Unzip first if needed, then choose the folder containing the scan files
+					themselves. Files with no extension are fine.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">“…use a compressed format this free viewer can't open”</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					A minority of scans are stored heavily compressed. Ask whoever supplied the images
+					for them in standard (uncompressed) DICOM form — discs almost always are — or view
+					them with the viewer program that came on the disc.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">“…files from a different scan were skipped”</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					Two studies were dropped together — for example a scan and a report CD. The viewer
+					keeps the larger stack and tells you what it set aside. Load one folder at a time to
+					see everything.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">“The viewer library is still loading — please wait a moment and try again.”</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					On a slow connection the viewer's code may still be arriving. Give it a few seconds
+					and press the button again — nothing has been lost.
+				</p>
+			</div>
+			<div class="border border-slate-200 bg-white p-6">
+				<h3 class="font-sans text-sm font-bold text-navy-900">The image is there but looks wrong</h3>
+				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+					All black or all white: adjust Level. Flat grey soup: narrow the Width.
+					Upside-down-looking anatomy: some scanners store images differently — the views are
+					still faithful. When in doubt, <span class="font-semibold">Reset all</span>.
+				</p>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Common questions -->
+	<Section id="common-questions" index="07" title="Common questions">
+		<div class="mt-8 divide-y divide-slate-200">
+			{
+				faqs.map((f) => (
+					<div class="py-6">
+						<h3 class="font-sans text-sm font-bold text-navy-900">{f.q}</h3>
+						<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{f.a}</p>
+					</div>
+				))
+			}
+		</div>
+	</Section>
+
+	<div class="bg-paper py-14">
+		<div class="container-page">
+			<div class="doc text-center">
+				<p class="meta-label">Ready to look at your scan?</p>
+				<div class="mt-5">
+					<a href="/dicom-viewer" class="btn btn-primary">Open the DICOM viewer</a>
+					<a href="/patient-advice" class="btn btn-ghost ml-3">Patient advice library</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </BaseLayout>

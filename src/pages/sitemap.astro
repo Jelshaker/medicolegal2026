@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
+import Figure from "../components/Figure.astro";
+import Diagram from "../components/Diagram.astro";
 import { SITE_TITLE, SITEMAP } from "../consts";
 
 export const prerender = true;
@@ -31,6 +33,20 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		audience="Written for radiologists, referrers, solicitors, barristers, insurers and expert witnesses."
 		reviewed="September 2026"
 	/>
+
+	<section class="border-b border-slate-200 bg-paper py-14">
+		<div class="container-page">
+			<div class="doc">
+				<Figure
+					label="Figure 01"
+					caption="How the resource is organised"
+					subtitle="Two libraries, a commentary section, and the practice behind them. Every page is listed in full below."
+				>
+					<Diagram name="resource-map" />
+				</Figure>
+			</div>
+		</div>
+	</section>
 
 	<section class="bg-white py-16">
 		<div class="container-page">

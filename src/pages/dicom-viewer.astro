@@ -4,6 +4,8 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
+import Figure from "../components/Figure.astro";
+import Diagram from "../components/Diagram.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
@@ -36,6 +38,15 @@ import { SITE_TITLE } from "../consts";
 	<!-- Privacy by design -->
 	<section id="privacy-by-design" class="scroll-mt-24 bg-paper py-14">
 		<div class="container-page">
+			<div class="doc">
+				<Figure
+					label="Figure 01"
+					caption="How a local-only viewer works"
+					subtitle="The file is parsed and rendered inside the browser session. No upload, no server and no retained copy is created, so the data-minimisation duty is met by design."
+				>
+					<Diagram name="local-only" />
+				</Figure>
+			</div>
 			<div class="divide-y divide-slate-200">
 				<div class="py-5">
 					<h2 class="text-base font-bold text-navy-900">No upload, no server</h2>

@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 ---
 <BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Bolam, Bolitho, Montgomery, causation and breach of duty. Famous landmark cases: Nettleship, Roe, Wilsher, Sidaway, Paris, Watt, Chester, Gregg, Little. RCR Standards, duty of candour, and AI-assisted reporting.">
@@ -31,7 +33,14 @@ import { SITE_TITLE } from '../consts';
 	reviewed="September 2026"
 />
 <section class="bg-white py-16"><div class="container-page space-y-12">
-<Section id="standard-of-care" index="01" eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
+<Figure
+			label="Figure 01"
+			caption="The four questions a radiological claim resolves into"
+			subtitle="Standard of care, breach, causation and consent — each with the authority that governs the answer."
+		>
+			<Diagram name="legal-questions" />
+		</Figure>
+		<Section id="standard-of-care" index="01" eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Test: practice accepted as proper by a responsible body of skilled practitioners is not negligent.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582.</p>
 <div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Report judged against accepted practice at report date.</li><li>Range of acceptable opinions permitted.</li><li>Subtle findings below detection threshold protected.</li><li>Demonstrable findings not protected.</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Expert method</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Re-derive from source DICOM.</li><li>Record protocol and image quality.</li><li>Separate breach from causation.</li></ul></div></div>
@@ -106,7 +115,14 @@ import { SITE_TITLE } from '../consts';
 </div>
 </div>
 </Section>
-<Section id="landmark-cases" eyebrow="Famous cases" title="Nettleship v Weston [1971] — The Learner Driver Principle">
+<Figure
+		label="Figure 02"
+		caption="The authorities, in the order they arrived"
+		subtitle="From Bolam to the 2025 reporting standards — the line of cases and standards that a radiological opinion is measured against."
+	>
+		<Diagram name="case-timeline" />
+	</Figure>
+	<Section id="landmark-cases" eyebrow="Famous cases" title="Nettleship v Weston [1971] — The Learner Driver Principle">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600">A case that, while not a radiology case, has shaped the entire landscape of clinical negligence law. Mrs Weston, a learner driver, lost control and injured her passenger, Nettleship. The Court of Appeal held that a learner driver must be judged against the standard of the competent experienced driver — ignorance of the skills required does not excuse failure.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Nettleship v Weston [1971] 2 QB 691, CA.</p>
 <div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">This case was the first to establish that the standard of care in negligence is an <strong>objective</strong> one. A professional (or learner professional) cannot argue they were below average — they must be judged against the competent practitioner standard. This directly underpins Bolam.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">A newly qualified registrar interpreting their first CT brain is judged against the competent consultant standard. A trainee radiographer positioning a trauma series is judged against the competent level. The objective standard applies regardless of experience.</p></div></div>
@@ -174,6 +190,14 @@ import { SITE_TITLE } from '../consts';
 <Section id="claim-statistics" eyebrow="Famous cases" title="NHS Resolution — Annual Claims Statistics 2024">
 <p class="mt-4 max-w-3xl leading-relaxed text-slate-600">NHS Resolution publishes annual statistics on clinical negligence claims. The 2024 report shows that radiology remains one of the most frequently cited specialties in claims, with 4.6% of all claims being radiological — matching general medicine as the second-largest specialty after obstetrics.</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600">Source: NHS Resolution, Annual Report and Accounts 2023–24.</p>
+<Figure
+	label="Figure 03"
+	caption="Where an image can hold pathology the request never asked about"
+	subtitle="Around 37% of abdominal radiology claims cite a finding incidental to the clinical question — the point at which protocol adequacy decides responsibility."
+	credit="Illustrative"
+>
+	<Diagram name="incidental-regions" />
+</Figure>
 <div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Key data</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Total NHS litigation cost: £3.6 billion (2018/19 data, referenced by Halligan et al.).</li><li>Radiology claims have increased in volume and value over the past decade.</li><li>Missed diagnosis is the most common allegation across all radiology claims.</li><li>Abdominal radiology claims have a high rate of incidental pathology allegations (37%, per Halligan).</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Implications</h3><p class="mt-3 text-sm text-slate-600">The rising volume of radiology claims reflects both the increasing centrality of imaging in clinical decision-making and the growing sophistication of claimants' legal teams in identifying radiological errors. Expert radiological review is now a standard feature of clinical negligence claims involving any imaging modality.</p></div></div>
 </Section>
 <Callout tone="caution" title="Not legal advice">

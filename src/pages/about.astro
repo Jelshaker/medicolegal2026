@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
+import Figure from "../components/Figure.astro";
 import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE } from "../consts";
 
 const scope = [
@@ -101,9 +102,16 @@ const standards = [
 						what imaging did and did not show, and to identify where a radiological conclusion ends and
 						another discipline's begins.
 					</p>
-					<div class="mx-auto mt-10 max-w-sm border border-slate-300">
-						<img src={PRACTITIONER.photo} alt={PRACTITIONER.shortName} class="aspect-[4/5] w-full object-cover" loading="lazy" />
-						<p class="border-t border-slate-200 bg-paper px-4 py-2 text-center font-sans text-[0.7rem] uppercase tracking-[0.12em] text-slate-500">{PRACTITIONER.shortName}</p>
+					<div class="mx-auto mt-10 max-w-sm">
+						<Figure
+							src={PRACTITIONER.photo}
+							alt={PRACTITIONER.shortName}
+							label="Plate 01"
+							caption={PRACTITIONER.shortName}
+							subtitle="Consultant Radiologist and independent medicolegal expert witness."
+							ratio="portrait"
+							flush
+						/>
 					</div>
 					<table class="mt-10 w-full border-collapse text-left">
 						<thead>

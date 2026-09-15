@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 
 // Each statutory duty is summarised in the same four fields so the entries can be
@@ -169,6 +171,20 @@ const instruments = [
 		audience="Written for radiographers, medical physics, radiation protection advisers, trust governance leads and expert witnesses."
 		reviewed="September 2026"
 	/>
+
+	<section class="bg-paper py-14">
+		<div class="container-page">
+			<div class="doc">
+				<Figure
+					label="Figure 01"
+					caption="Who carries each statutory duty"
+					subtitle="IR(ME)R 2017 binds the employer, the referrer, the practitioner and the operator to different things. A failure is rarely attributable to one role alone."
+				>
+					<Diagram name="duty-holders" />
+				</Figure>
+			</div>
+		</div>
+	</section>
 
 	<section class="bg-white py-16">
 		<div class="container-page space-y-12">

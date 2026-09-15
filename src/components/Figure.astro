@@ -1,0 +1,73 @@
+---
+// Editorial figure plate — a framed, captioned space for an image or a drawn
+// graphic. Reference pages are long reads; a plate gives the eye somewhere to
+// rest and marks the material as a document rather than a wall of text.
+//
+// If `src` is supplied the plate renders the photograph. If it is omitted the
+// default slot is shown inside the reserved area, which is how the drawn
+// schematics in Diagram.astro are placed.
+interface Props {
+	/** Photograph to render. Omit to render the slotted graphic instead. */
+	src?: string;
+	alt?: string;
+	/** Plate number, e.g. "Plate 01" or "Figure 3". */
+	label?: string;
+	/** The line that says what the reader is looking at. */
+	caption?: string;
+	/** Optional second line — provenance, method or a radiological note. */
+	subtitle?: string;
+	/** Optional source line, set to the right of the caption. */
+	credit?: string;
+	ratio?: "video" | "photo" | "square" | "portrait" | "wide";
+	/** Dark ground for imaging on a black background. */
+	tone?: "light" | "dark";
+	/** Suppress the vertical margin — for figures set inside a grid. */
+	flush?: boolean;
+}
+
+const {
+	src,
+	alt = "",
+	label = "",
+	caption = "",
+	subtitle = "",
+	credit = "",
+	ratio = "video",
+	tone = "light",
+	flush = false,
+} = Astro.props as Props;
+
+const ratioClass: Record<NonNullable<Props["ratio"]>, string> = {
+	video: "aspect-[16/9]",
+	photo: "aspect-[4/3]",
+	square: "aspect-square",
+	portrait: "aspect-[3/4]",
+	wide: "aspect-[21/9]",
+};
+---
+
+<figure class={`figure${flush ? " figure-flush" : ""}`}>
+	<div class={`figure-frame ${tone === "dark" ? "bg-slate-950" : "bg-white"}`}>
+		<div class={`relative overflow-hidden ${ratioClass[ratio]}`}>
+			{
+				src ? (
+					<img src={src} alt={alt} loading="lazy" class="h-full w-full object-cover" />
+				) : (
+					<slot />
+				)
+			}
+		</div>
+	</div>
+	{
+		(label || caption || subtitle || credit) && (
+			<figcaption class="figure-cap">
+				{label && <span class="figure-index">{label}</span>}
+				<div class="min-w-0 flex-1">
+					{caption && <p class="figure-cap-line">{caption}</p>}
+					{subtitle && <p class="figure-cap-sub">{subtitle}</p>}
+				</div>
+				{credit && <span class="figure-credit">{credit}</span>}
+			</figcaption>
+		)
+	}
+</figure>

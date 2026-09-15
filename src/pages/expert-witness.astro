@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
@@ -28,6 +30,31 @@ import { SITE_TITLE } from '../consts';
     audience="Written for solicitors, barristers, insurers and instructing parties."
     reviewed="September 2026"
   />
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Figures: the shape of an instruction                -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="bg-paper py-14">
+    <div class="container-page">
+      <div class="doc">
+        <Figure
+          label="Figure 01"
+          caption="From letter of instruction to the report"
+          subtitle="The sequence does not change with the party instructing. Competence, independence and the source DICOM are dealt with before any opinion is expressed."
+        >
+          <Diagram name="instruction-cycle" />
+        </Figure>
+        <Figure
+          src="/images/reporting_radiographer.jpg"
+          alt="A radiologist reporting at a diagnostic workstation"
+          label="Plate 01"
+          caption="Re-derivation, not recollection"
+          subtitle="Findings are re-derived from the source DICOM on a diagnostic workstation, and the contemporaneous viewing conditions are reconstructed before breach is addressed."
+          ratio="wide"
+        />
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════════ -->
   <!-- Specialist Focus                                  -->
@@ -328,7 +355,7 @@ import { SITE_TITLE } from '../consts';
         handled in accordance with CPR Part 35 and GDPR. Fields marked * are required.
       </p>
 
-      <form id="expert-referral-form" class="mt-8 grid gap-5 sm:grid-cols-2">
+      <form id="expert-referral-form" class="mt-8"><div class="grid gap-5 sm:grid-cols-2">
         <label class="block text-sm font-medium text-slate-900">
           Referrer type *
           <select name="referrerType" required class="input-field mt-1.5">
@@ -376,8 +403,8 @@ import { SITE_TITLE } from '../consts';
           </select>
         </label>
         <div class="sm:col-span-2 flex items-center gap-3">
-          <button type="submit" class="btn btn-primary" data-submit>Submit referral</button>
-          <span class="text-xs text-slate-500">Stored securely in KV; never including patient-identifying details on this page.</span>
+          <button type="submit" class="btn btn-slate" data-submit>Submit referral</button>
+          <span class="text-xs text-slate-500 self-center">Stored securely in KV; never including patient-identifying details on this page.</span>
         </div>
       </form>
     </div>

@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 
 // The clinical half of the resource. Each modality is described in terms of the
@@ -154,6 +156,14 @@ const lawLinks = [
 						))
 					}
 				</div>
+				<Figure
+					src="/images/MR-image_sheet.jpg"
+					alt="A sheet of magnetic resonance images"
+					label="Figure 01"
+					caption="A series, not a picture"
+					subtitle="Each modality answers a different question within the limits of its own physics. A study is read as a series and in the context of the request that produced it."
+					ratio="wide"
+				/>
 			</Section>
 			<!-- Reporting standards -->
 			<Section
@@ -211,6 +221,13 @@ const lawLinks = [
 				title="Dose, justification and the statutory duty"
 				lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
 			>
+				<Figure
+					label="Figure 02"
+					caption="How the modalities compare on dose"
+					subtitle="Indicative adult effective doses. MRI and ultrasound involve no ionising radiation; for X-ray and CT the statutory duties of justification and optimisation attach."
+				>
+					<Diagram name="dose-scale" />
+				</Figure>
 				<div class="divide-y divide-slate-200">
 					<div class="py-5">
 						<h3 class="text-base font-bold text-navy-900">Justification and optimisation</h3>

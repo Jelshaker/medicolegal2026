@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 
 const faqs = [
@@ -111,6 +113,13 @@ const faqs = [
 					<p>MRI and ultrasound use <strong>no ionising radiation</strong> at all. For CT and X-ray, modern systems auto-adjust dose to patient size while preserving diagnostic quality.</p>
 					<p>If you are pregnant or may be pregnant, always tell the imaging department so that the examination can be reconsidered or adjusted accordingly.</p>
 				</div>
+				<Figure
+					label="Figure 01"
+					caption="How much radiation each type of scan involves"
+					subtitle="MRI and ultrasound use no ionising radiation at all. For X-ray and CT the dose is kept as low as reasonably practicable for the question being answered."
+				>
+					<Diagram name="dose-scale" />
+				</Figure>
 			</div>
 		</div>
 	</section>

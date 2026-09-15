@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
+import Figure from '../components/Figure.astro';
 import { SITE_TITLE, PRACTITIONER } from '../consts';
 
 const details = [
@@ -52,10 +53,30 @@ const details = [
 						</tbody>
 					</table>
 
-					<div class="mt-8 border border-slate-300">
-						<div class="flex h-40 items-center justify-center bg-paper font-sans text-xs text-slate-500">
-							<p class="px-6 text-center">Location map embed —<br />{PRACTITIONER.address}</p>
-						</div>
+					<div class="mt-8 grid gap-6 sm:grid-cols-2">
+						<Figure
+							src="/images/consult-room.jpg"
+							alt="A consultation room used for medicolegal appointments"
+							label="Plate 01"
+							caption="Consultation and reporting rooms"
+							subtitle="Appointments are held by arrangement; imaging is reviewed at the reporting workstation rather than in consultation."
+							ratio="photo"
+							flush
+						/>
+						<Figure
+							label="Plate 02"
+							caption="Location"
+							subtitle="A map or plan of the consulting address sits here; the full address is given in the table above."
+							ratio="photo"
+							flush
+						>
+							<div class="plate-reserved">
+								<div class="plate-reserved-inner">
+									<p class="plate-reserved-label">Location map</p>
+									<p class="plate-reserved-note">{PRACTITIONER.address}</p>
+								</div>
+							</div>
+						</Figure>
 					</div>
 				</div>
 

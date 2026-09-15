@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
 import { PRACTITIONER, SITE_TITLE, MEMBERSHIPS } from '../consts';
 
 const career = [
@@ -59,6 +60,17 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 						</tr>
 					</tbody>
 				</table>
+				<div class="mx-auto mt-10 max-w-xs">
+					<Figure
+						src={PRACTITIONER.photo}
+						alt={PRACTITIONER.shortName}
+						label="Plate 01"
+						caption={PRACTITIONER.shortName}
+						subtitle="Consultant Radiologist · MSK · GI · IR"
+						ratio="portrait"
+						flush
+					/>
+				</div>
 			</div>
 		</div>
 	</section>

@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 ---
 <BaseLayout title={`Radiology Legal Cases | ${SITE_TITLE}`} description="Landmark decisions where radiology was central. Issue, facts and principle for each case. Includes incidental findings, teleradiology risk and AI-assisted reporting.">
@@ -28,6 +30,25 @@ import { SITE_TITLE } from '../consts';
 	audience="Written for solicitors, barristers, insurers and expert witnesses."
 	reviewed="September 2026"
 />
+<Figure
+	label="Figure 01"
+	caption="The decisions that shaped the radiological standard of care"
+	subtitle="The chronology runs from Bolam to the RCR's third-edition reporting standards; the digests below follow the same order of ideas."
+>
+	<Diagram name="case-timeline" />
+</Figure>
+<section class="bg-paper py-14"><div class="container-page">
+	<div class="doc">
+		<Figure
+			src="/images/spine_CT.jpg"
+			alt="Cross-sectional imaging of the spine"
+			label="Plate 01"
+			caption="Imaging that decides a delay claim"
+			subtitle="In a cauda equina or cord-compression claim the question is what the study as acquired demonstrated, and whether the delay materially altered the outcome."
+			ratio="wide"
+		/>
+	</div>
+</section>
 <section class="bg-white py-16"><div class="container-page space-y-12">
 <Section id="interpretation" index="01" eyebrow="Interpretation" title="Muller v King's College Hospital [2017] EWHC 128 (QB)">
 <p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: perceptual error in image interpretation.</p>

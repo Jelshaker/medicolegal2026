@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
@@ -93,6 +95,14 @@ import { SITE_TITLE } from '../consts';
 					</div>
 				</div>
 
+				<Figure
+					src="/images/knee_xray_pen_pointing.jpg"
+					alt="A radiograph under review, with a pointer marking a subtle finding"
+					label="Plate 01"
+					caption="Pointing at it afterwards is not the test"
+					subtitle="Retrospective visibility is not the same as demonstrability on the study as acquired. Reconstructing the original viewing conditions is the core of the opinion."
+					ratio="wide"
+				/>
 				<div class="mt-8 rounded-xl bg-navy-900 p-6 text-white">
 					<h3 class="text-base font-bold text-white">How the Expert Rebuilds the Context</h3>
 					<p class="mt-3 text-sm leading-relaxed text-slate-200">
@@ -113,6 +123,14 @@ import { SITE_TITLE } from '../consts';
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">
 					Audit analysis of medical protection claims data indicates that approximately <strong>37% of abdominal radiology allegations</strong> relate to incidental findings — lesions detected in organs or regions that were not the primary target of the imaging study.
 				</p>
+
+				<Figure
+					label="Figure 01"
+					caption="Findings outside the question that was asked"
+					subtitle="Renal, colonic and hepatic lesions are the recurring subjects of the incidentaloma claim, and the RCR's tiered classification is the benchmark for how they should be handled."
+				>
+					<Diagram name="incidental-regions" />
+				</Figure>
 
 				<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					<div class="card p-5 text-center">
@@ -286,6 +304,13 @@ import { SITE_TITLE } from '../consts';
 
 			<!-- Textbook foundations: the reporting chain -->
 			<Section id="reporting-chain" index="05" eyebrow="Textbook Foundations" title="The reporting chain, and the duty to say what could not be seen">
+				<Figure
+					label="Figure 02"
+					caption="Where the claim attaches along the reporting chain"
+					subtitle="The reporter is one link. Justification, protocol, named authorship and the fail-safe communication of a critical result are each capable of founding a claim in their own right."
+				>
+					<Diagram name="reporting-chain" />
+				</Figure>
 				<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">
 					The teleradiology chapter also classifies the ways in which remote work is actually performed. It
 					identifies four models; the two that dominate UK practice are described in its own terms:

@@ -563,10 +563,13 @@
   }
 
   /* ── series management ──────────────────────────────────── */
+  let seriesExpanded = false;   // current expanded state
+  const VISIBLE_COUNT = 3;       // items shown when collapsed
+
   function getSeriesLabel(s: DvSeries): string {
     if (s.seriesDesc) {
       // Truncate long descriptions for the tab label
-      const maxLen = 36;
+      const maxLen = 32;
       return s.seriesDesc.length > maxLen ? s.seriesDesc.slice(0, maxLen - 1) + "\u2026" : s.seriesDesc;
     }
     // Fallback: use modality + series number
@@ -574,18 +577,24 @@
   }
 
   function buildSeriesTabs() {
-    if (!seriesListEl || seriesMap.size <= 1) {
+    if (!seriesListEl) return;
+
+    if (seriesMap.size <= 1) {
       if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
       return;
     }
     if (seriesTabsEl) seriesTabsEl.classList.remove("hidden");
-    // Clear existing tabs
-    seriesListEl.innerHTML = "";
 
-    // Sort series by seriesNumber for consistent ordering
+    // Count
+    if (seriesCountEl) seriesCountEl.textContent = `${seriesMap.size} series`;
+
     const sorted = Array.from(seriesMap.values()).sort((a, b) => a.seriesOrder - b.seriesOrder);
+    const visible = seriesExpanded
+      ? sorted
+      : sorted.slice(0, VISIBLE_COUNT);
 
-    sorted.forEach((s, idx) => {
+    seriesListEl.innerHTML = "";
+    visible.forEach((s) => {
       const btn = document.createElement("button");
       btn.className = `w-full text-left px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
         s.uid === activeSeriesUid
@@ -595,6 +604,24 @@
       btn.innerHTML = `<span class="truncate block">${getSeriesLabel(s)}</span><span class="text-[0.6rem] text-slate-400 dark:text-slate-500">${s.slices.length} images</span>`;
       btn.addEventListener("click", () => switchSeries(s.uid));
       seriesListEl.appendChild(btn);
+    });
+
+    // Toggle button — only show when there are more items than the visible count
+    if (seriesToggleBtn && sorted.length > VISIBLE_COUNT) {
+      seriesToggleBtn.classList.remove("hidden");
+      seriesToggleBtn.textContent = seriesExpanded
+        ? `Show less (${seriesMap.size - VISIBLE_COUNT} hidden)`
+        : `Show all ${sorted.length}`;
+    } else if (seriesToggleBtn) {
+      seriesToggleBtn.classList.add("hidden");
+    }
+  }
+
+  // Toggle "show more / show less"
+  if (seriesToggleBtn) {
+    seriesToggleBtn.addEventListener("click", () => {
+      seriesExpanded = !seriesExpanded;
+      buildSeriesTabs();
     });
   }
 
@@ -975,6 +1002,7 @@
     cachedCtx = null; cachedImageData = null;
     // Clear series
     seriesMap.clear();
+    seriesExpanded = false;
     activeSeriesUid = "";
     activeSeries = null;
     hideStatus();

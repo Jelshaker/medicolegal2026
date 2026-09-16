@@ -6,6 +6,8 @@
 // (including the extensionless files found on hospital discs), sorts slices
 // into a stack, applies rescale slope/intercept, and displays technical
 // image details only — never patient names or identifiers.
+// Series-aware: groups slices by SeriesInstanceUID so images from different
+// phases (pre-contrast, post-contrast, reconstructions, etc.) stay separate.
 ---
 
 {/*
@@ -68,6 +70,21 @@
         <!-- Dynamic rows inserted here -->
         <p class="text-slate-400 dark:text-slate-500">Choose a file to see its technical details…</p>
       </div>
+    </div>
+
+    <!-- Series tabs (shown when multiple series detected) -->
+    <div id="dv-series-tabs" class="border-t border-slate-200 dark:border-navy-800 hidden">
+      <div class="px-4 pt-3 pb-1 flex items-center justify-between">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Series</h3>
+        <span id="dv-series-count" class="text-[0.6rem] text-slate-400 dark:text-slate-500"></span>
+      </div>
+      <!-- Scrollable list; shows first 3 by default, expands on toggle -->
+      <div id="dv-series-list" class="px-3 pb-2 space-y-1 overflow-y-auto" style="max-height: 120px;">
+        <!-- Dynamic series tabs inserted here -->
+      </div>
+      <button id="dv-series-toggle" class="mx-3 mb-2 mt-0 w-full rounded px-2 py-1 text-[0.6rem] font-medium uppercase tracking-wider text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-navy-900 dark:text-slate-500 hidden">
+        Show all
+      </button>
     </div>
 
     <!-- Controls panel -->
@@ -189,18 +206,38 @@
   const slicePrev  = document.getElementById("dv-slice-prev") as HTMLButtonElement | null;
   const sliceNext  = document.getElementById("dv-slice-next") as HTMLButtonElement | null;
   const addFolderBtn = document.getElementById("dv-add-folder") as HTMLButtonElement | null;
+  const seriesTabsEl = document.getElementById("dv-series-tabs");
+  const seriesListEl = document.getElementById("dv-series-list");
+  const seriesCountEl = document.getElementById("dv-series-count");
+  const seriesToggleBtn = document.getElementById("dv-series-toggle");
 
-  /* ── state ────────────────────────────────────────────────── */
+  /* ── data structures ─────────────────────────────────────── */
   interface DvSlice {
     pixels: Uint8Array | Uint16Array | Int16Array | Int32Array;
     slope: number;
     intercept: number;
     sortKey: number;
     fileName: string;
+    seriesUid: string;       // SeriesInstanceUID 0020,0011
   }
-  let frames: DvSlice[] = [];           // one entry per slice (or per multi-frame image)
+
+  interface DvSeries {
+    uid: string;             // SeriesInstanceUID
+    desc: string;            // SeriesDescription
+    modality: string;        // Modality (CT, MR, etc.)
+    slices: DvSlice[];
+    minValue: number;
+    maxValue: number;
+    seriesOrder: number;     // SeriesNumber for sorting
+  }
+
+  // Flat array kept for backwards-compat rendering, but the real model is seriesMap.
+  let frames: DvSlice[] = [];
+  let seriesMap = new Map<string, DvSeries>();  // uid -> series
+  let activeSeriesUid = "";
+  let activeSeries: DvSeries | null = null;
+
   let width = 0, height = 0, bits = 16;
-  let minValue = 0, maxValue = 255;     // modality range of the current series
   let currentSlice = 0;
   let windowW = 400, windowL = 40;
   let zoom = 100, inverted = false;
@@ -208,6 +245,7 @@
   let seriesModality = "—";
   let seriesDesc = "";
   let seriesStudyDate = "";
+  let studyUidGlobal = "";
 
   /* ── status line ──────────────────────────────────────────── */
   function showStatus(message: string) {
@@ -268,6 +306,9 @@
     studyDate?: string;
     sliceThickness?: string;
     studyUid?: string;
+    seriesUid?: string;          // SeriesInstanceUID 0020,0011
+    seriesDesc?: string;         // SeriesDescription 0008,103E
+    seriesNumber?: number;       // SeriesNumber 0020,0013
     fileName: string;
   }
 
@@ -387,6 +428,11 @@
       return gray;
     };
 
+    // Read series-level metadata (SeriesInstanceUID, SeriesDescription, SeriesNumber)
+    const seriesUid = tagText(dataSet, "x00200011");  // 0020,0011
+    const seriesDescTxt = tagText(dataSet, "x0008103E");  // 0008,103E
+    const seriesNumber = tagNum(dataSet, "x00200013") ?? 0;  // 0020,0013
+
     const out: DvSlice[] = [];
     for (let f = 0; f < framesToRead; f++) {
       out.push({
@@ -395,6 +441,7 @@
         intercept,
         sortKey: sortKey + (framesToRead > 1 ? f * 1e-6 : 0),
         fileName,
+        seriesUid,
       });
     }
 
@@ -408,7 +455,10 @@
       studyDesc: tagText(dataSet, "x00081030"),
       studyDate: tagText(dataSet, "x00080020"),
       sliceThickness: tagText(dataSet, "x00180050"),
-      studyUid: tagText(dataSet, "x0020000d"),
+      studyUid: tagText(dataSet, "x0020000d"),  // 0020,000D
+      seriesUid,
+      seriesDesc: seriesDescTxt,
+      seriesNumber,
       fileName,
     };
   }
@@ -418,34 +468,35 @@
   let cachedCtx: CanvasRenderingContext2D | null = null;
   let cachedImageData: ImageData | null = null;
 
-  // Scan the whole series for its modality (post-rescale) range.
-  function measureRange(): void {
+  // Scan the active series for its modality (post-rescale) range.
+  function measureSeriesRange(s: DvSeries): { min: number; max: number } {
     let lo = Infinity, hi = -Infinity;
-    for (const s of frames) {
-      const px = s.pixels;
+    for (const sl of s.slices) {
+      const px = sl.pixels;
       const step = Math.max(1, Math.floor(px.length / 4096)); // sample large stacks
       for (let i = 0; i < px.length; i += step) {
-        const v = (px[i] as number) * s.slope + s.intercept;
+        const v = (px[i] as number) * sl.slope + sl.intercept;
         if (v < lo) lo = v;
         if (v > hi) hi = v;
       }
     }
     if (lo === Infinity) { lo = 0; hi = 255; }
     if (hi <= lo) hi = lo + 1;
-    minValue = lo;
-    maxValue = hi;
+    return { min: lo, max: hi };
   }
 
   function defaultWindow(): void {
-    const span = maxValue - minValue;
-    const mod = seriesModality.toUpperCase();
-    if (mod === "CT" && minValue <= -900 && maxValue >= 300) {
+    if (!activeSeries) return;
+    const { min: lo, max: hi } = { min: activeSeries.minValue, max: activeSeries.maxValue };
+    const span = hi - lo;
+    const mod = (activeSeries.modality || seriesModality).toUpperCase();
+    if (mod === "CT" && lo <= -900 && hi >= 300) {
       windowW = 400; windowL = 40; // soft tissue
     } else if (span > 3000) {
-      windowW = Math.round(span * 0.5); windowL = Math.round(minValue + span * 0.375);
+      windowW = Math.round(span * 0.5); windowL = Math.round(lo + span * 0.375);
     } else {
       windowW = Math.max(1, Math.round(span));
-      windowL = Math.round((minValue + maxValue) / 2);
+      windowL = Math.round((lo + hi) / 2);
     }
     if (wlWidth) wlWidth.value = String(windowW);
     if (wlLevel) wlLevel.value = String(windowL);
@@ -494,22 +545,110 @@
 
   function render() {
     if (frames.length === 0) return;
-    const idx = Math.min(currentSlice, frames.length - 1);
+    if (!activeSeries) return;
+    const idx = Math.min(currentSlice, activeSeries.slices.length - 1);
     currentSlice = idx;
     renderSlice(idx);
     updateSliceSlider();
   }
 
   function updateSliceSlider() {
+    if (!activeSeries) return;
     if (sliceSlider) {
-      sliceSlider.max = String(Math.max(1, frames.length));
+      sliceSlider.max = String(Math.max(1, activeSeries.slices.length));
       sliceSlider.value = String(currentSlice + 1);
-      sliceSlider.disabled = frames.length <= 1;
+      sliceSlider.disabled = activeSeries.slices.length <= 1;
     }
-    if (sliceVal) sliceVal.textContent = `${currentSlice + 1} / ${frames.length}`;
+    if (sliceVal) sliceVal.textContent = `${currentSlice + 1} / ${activeSeries.slices.length}`;
   }
 
-  /* ── load files ───────────────────────────────────────────── */
+  /* ── series management ──────────────────────────────────── */
+  function getSeriesLabel(s: DvSeries): string {
+    if (s.seriesDesc) {
+      // Truncate long descriptions for the tab label
+      const maxLen = 36;
+      return s.seriesDesc.length > maxLen ? s.seriesDesc.slice(0, maxLen - 1) + "\u2026" : s.seriesDesc;
+    }
+    // Fallback: use modality + series number
+    return `${s.modality} ${s.seriesNumber || "?"}`;
+  }
+
+  function buildSeriesTabs() {
+    if (!seriesListEl || seriesMap.size <= 1) {
+      if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+      return;
+    }
+    if (seriesTabsEl) seriesTabsEl.classList.remove("hidden");
+    // Clear existing tabs
+    seriesListEl.innerHTML = "";
+
+    // Sort series by seriesNumber for consistent ordering
+    const sorted = Array.from(seriesMap.values()).sort((a, b) => a.seriesOrder - b.seriesOrder);
+
+    sorted.forEach((s, idx) => {
+      const btn = document.createElement("button");
+      btn.className = `w-full text-left px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+        s.uid === activeSeriesUid
+          ? "bg-teal-50 text-teal-800 dark:bg-teal-950/50 dark:text-teal-300 border border-teal-200 dark:border-teal-800"
+          : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-navy-900 border border-transparent"
+      }`;
+      btn.innerHTML = `<span class="truncate block">${getSeriesLabel(s)}</span><span class="text-[0.6rem] text-slate-400 dark:text-slate-500">${s.slices.length} images</span>`;
+      btn.addEventListener("click", () => switchSeries(s.uid));
+      seriesListEl.appendChild(btn);
+    });
+  }
+
+  function switchSeries(uid: string) {
+    const next = seriesMap.get(uid);
+    if (!next) return;
+    activeSeriesUid = uid;
+    activeSeries = next;
+    frames = next.slices;
+    currentSlice = Math.floor(frames.length / 2);
+    measureRangeFor(activeSeries);
+    defaultWindow();
+    cachedCtx = null;
+    cachedImageData = null;
+    zoom = 100; panX = 0; panY = 0; inverted = false;
+    if (zoomSlider) zoomSlider.value = "100";
+    if (zoomVal) zoomVal.textContent = "100%";
+    if (invertBtn) {
+      invertBtn.classList.remove("!border-teal-500", "!text-teal-700", "dark:!text-teal-300");
+      invertBtn.setAttribute("aria-pressed", "false");
+    }
+    updateSeriesDetailsFor(activeSeries);
+    buildSeriesTabs();
+    if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
+    if (modBadge) modBadge.textContent = activeSeries.modality || "—";
+    if (dimsBadge) dimsBadge.textContent = `${width} × ${height}`;
+    render();
+  }
+
+  function measureRangeFor(s: DvSeries): void {
+    const { min, max } = measureSeriesRange(s);
+    s.minValue = min;
+    s.maxValue = max;
+  }
+
+  // Display technical details only — never patient names or identifiers.
+  function updateSeriesDetailsFor(s: DvSeries): void {
+    if (!metaBody) return;
+    const fields: { label: string; value: string }[] = [
+      { label: "Scan type", value: s.modality || "—" },
+      { label: "Study date", value: seriesStudyDate || "—" },
+      { label: "Study description", value: seriesDesc || "—" },
+      { label: "Series description", value: s.seriesDesc || "—" },
+      { label: "Series number", value: String(s.seriesNumber || "—") },
+      { label: "Image size", value: `${width} × ${height}` },
+      { label: "Images in series", value: String(s.slices.length) },
+    ];
+    // Get sliceThickness from first slice's original file data; use study-level if not available
+    // We don't have it per-slice currently, so show study-level from firstGood metadata
+    metaBody.innerHTML = fields.map((f) =>
+      `<div class="flex justify-between border-b border-slate-100 dark:border-navy-800 pb-1"><span class="text-slate-500 dark:text-slate-400">${f.label}:</span><span class="text-navy-900 dark:text-slate-200 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
+    ).join("");
+  }
+
   function studyKeyOf(list: DvSlice[]): string | null {
     if (list.length === 0) return null;
     const v = (list[0] as unknown as Record<string, unknown>).__study;
@@ -524,24 +663,6 @@
     }
   }
 
-  // Display technical details only — never patient names or identifiers.
-  function updateSeriesDetails(firstGood: ParsedFile): void {
-    if (modBadge) modBadge.textContent = firstGood.modality || "—";
-    if (dimsBadge) dimsBadge.textContent = `${width} × ${height}`;
-    if (!metaBody) return;
-    const fields: { label: string; value: string }[] = [
-      { label: "Scan type", value: firstGood.modality || "—" },
-      { label: "Study date", value: firstGood.studyDate || "—" },
-      { label: "Description", value: firstGood.studyDesc || "—" },
-      { label: "Slice thickness", value: firstGood.sliceThickness ? `${firstGood.sliceThickness} mm` : "—" },
-      { label: "Image size", value: `${width} × ${height}` },
-      { label: "Bits per pixel", value: String(firstGood.bitsAllocated ?? bits) },
-      { label: "Images", value: String(frames.length) },
-    ];
-    metaBody.innerHTML = fields.map((f) =>
-      `<div class="flex justify-between border-b border-slate-100 dark:border-navy-800 pb-1"><span class="text-slate-500 dark:text-slate-400">${f.label}:</span><span class="text-navy-900 dark:text-slate-200 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
-    ).join("");
-  }
   function loadFiles(fileList: FileList | File[]) {
     const fileArr = Array.from(fileList);
     if (fileArr.length === 0) return;
@@ -567,7 +688,7 @@
       });
 
     (async () => {
-      let ok = 0, rejected = 0, compressed = 0, mismatch = 0;
+      let ok = 0, rejected = 0, compressed = 0, mismatch = 0, multiSeries = 0;
       let firstGood: ParsedFile | null = null;
       for (let i = 0; i < fileArr.length; i++) {
         const parsed = await readOne(fileArr[i]);
@@ -577,6 +698,8 @@
           else rejected++;
           continue;
         }
+
+        // Establish baseline on first valid file
         if (frames.length === 0 && width === 0) {
           width = parsed.cols;
           height = parsed.rows;
@@ -584,20 +707,86 @@
           seriesModality = parsed.modality || "—";
           seriesDesc = parsed.studyDesc || "";
           seriesStudyDate = parsed.studyDate || "";
-
+          studyUidGlobal = parsed.studyUid || "";
           firstGood = firstGood ?? parsed;
         } else if (parsed.rows !== height || parsed.cols !== colsSafe()) {
           // Different image size: a separate scan mixed in — count and skip.
           mismatch++;
           continue;
-        } else if (firstGood && parsed.studyUid && studyKeyOf(frames) && parsed.studyUid !== studyKeyOf(frames)) {
+        } else if (parsed.studyUid && studyUidGlobal && parsed.studyUid !== studyUidGlobal) {
+          // Different study entirely — skip
           mismatch++;
           continue;
-        } else {
-          firstGood = firstGood ?? parsed;
-          if (parsed.modality && parsed.modality !== "—") seriesModality = parsed.modality;
         }
-        for (const s of parsed.slices) frames.push(s);
+
+        // --- series-aware insertion ---
+        const sUid = parsed.seriesUid || "";
+        if (!sUid) {
+          // No series UID: treat as belonging to current/first series or a generic one
+          if (seriesMap.size === 0) {
+            // Create a default series
+            const defaultSeries: DvSeries = {
+              uid: "\x00_generic",
+              desc: parsed.seriesDesc || "Unknown",
+              modality: parsed.modality || seriesModality,
+              slices: [],
+              minValue: 0,
+              maxValue: 255,
+              seriesOrder: parsed.seriesNumber ?? 0,
+            };
+            seriesMap.set(defaultSeries.uid, defaultSeries);
+            for (const sl of parsed.slices) {
+              (sl as DvSlice).seriesUid = defaultSeries.uid;
+              defaultSeries.slices.push(sl);
+            }
+            // If no series was active, activate this one
+            if (!activeSeriesUid) {
+              activeSeriesUid = defaultSeries.uid;
+              activeSeries = defaultSeries;
+              frames = defaultSeries.slices;
+            }
+          } else {
+            // Attach to the first series (generic files)
+            const first = seriesMap.values().next().value as DvSeries;
+            for (const sl of parsed.slices) {
+              (sl as DvSlice).seriesUid = first.uid;
+              first.slices.push(sl);
+            }
+          }
+        } else if (seriesMap.has(sUid)) {
+          // Already have this series — append slices
+          const existing = seriesMap.get(sUid)!;
+          for (const sl of parsed.slices) {
+            existing.slices.push(sl);
+          }
+        } else {
+          // New series — create it
+          multiSeries++;
+          const newSeries: DvSeries = {
+            uid: sUid,
+            desc: parsed.seriesDesc || "Unknown",
+            modality: parsed.modality || seriesModality,
+            slices: parsed.slices,
+            minValue: 0,
+            maxValue: 255,
+            seriesOrder: parsed.seriesNumber ?? 0,
+          };
+          for (const sl of parsed.slices) {
+            (sl as DvSlice).seriesUid = sUid;
+          }
+          seriesMap.set(sUid, newSeries);
+          // If no series is active yet (e.g., first file was generic), activate this one
+          if (!activeSeriesUid) {
+            activeSeriesUid = sUid;
+            activeSeries = newSeries;
+            frames = newSeries.slices;
+            width = parsed.cols;
+            height = parsed.rows;
+            bits = parsed.bitsAllocated ?? 16;
+            seriesModality = parsed.modality || seriesModality;
+          }
+        }
+
         ok += parsed.slices.length;
         showStatus(`Reading… ${i + 1} of ${fileArr.length} files (${ok} image${ok === 1 ? "" : "s"} found)`);
       }
@@ -615,14 +804,17 @@
         return;
       }
 
-      // Keep slices in anatomical order (Image Position / Location / Number).
-      frames.sort((a, b) => a.sortKey - b.sortKey);
-      if (firstGood) {
-        seriesModality = firstGood.modality || seriesModality;
-        seriesDesc = firstGood.studyDesc || seriesDesc;
-        seriesStudyDate = firstGood.studyDate || seriesStudyDate;
+      // Sort each series' slices in anatomical order
+      for (const s of seriesMap.values()) {
+        s.slices.sort((a, b) => a.sortKey - b.sortKey);
       }
-      measureRange();
+
+      // Rebuild the flat frames array from the active series
+      if (activeSeries) {
+        frames = activeSeries.slices;
+        measureRangeFor(activeSeries);
+      }
+
       currentSlice = Math.floor(frames.length / 2);
       defaultWindow();
       zoom = 100; panX = 0; panY = 0; inverted = false;
@@ -633,7 +825,11 @@
         invertBtn.setAttribute("aria-pressed", "false");
       }
 
-      if (firstGood) updateSeriesDetails(firstGood);
+      if (firstGood) updateSeriesDetailsFor(activeSeries);
+
+      // Build series tabs UI
+      buildSeriesTabs();
+
       if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
       if (dimsBadge) dimsBadge.textContent = `${width} × ${height}`;
       if (dropzone) dropzone.classList.add("hidden");
@@ -644,15 +840,18 @@
         workspace.classList.add("md:grid");
         (workspace as HTMLElement).style.gridTemplateColumns = "280px 1fr";
       }
-      if (mismatch > 0 || rejected > 0 || compressed > 0) {
-        const notes: string[] = [];
-        if (mismatch > 0) notes.push(`${mismatch} file${mismatch === 1 ? "" : "s"} from a different scan ${mismatch === 1 ? "was" : "were"} skipped`);
-        if (compressed > 0) notes.push(`${compressed} compressed image${compressed === 1 ? "" : "s"} couldn't be opened`);
-        if (rejected > 0) notes.push(`${rejected} non-DICOM file${rejected === 1 ? "" : "s"} skipped`);
-        showStatus(`Showing ${frames.length} image${frames.length === 1 ? "" : "s"}. ${notes.join("; ")}.`);
-      } else {
-        hideStatus();
+
+      // Status line
+      const statusParts: string[] = [];
+      statusParts.push(`Showing ${frames.length} image${frames.length === 1 ? "" : "s"}`);
+      if (seriesMap.size > 1) {
+        statusParts.push(`(${seriesMap.size} series detected)`);
       }
+      if (mismatch > 0) statusParts.push(`${mismatch} file${mismatch === 1 ? "" : "s"} from a different scan skipped`);
+      if (compressed > 0) statusParts.push(`${compressed} compressed image${compressed === 1 ? "" : "s"} couldn't be opened`);
+      if (rejected > 0) statusParts.push(`${rejected} non-DICOM file${rejected === 1 ? "" : "s"} skipped`);
+      showStatus(statusParts.join(". ") + ".");
+
       render();
     })();
   }
@@ -737,15 +936,15 @@
     if (currentSlice > 0) { currentSlice--; render(); }
   });
   sliceNext?.addEventListener("click", () => {
-    if (currentSlice < frames.length - 1) { currentSlice++; render(); }
+    if (activeSeries && currentSlice < activeSeries.slices.length - 1) { currentSlice++; render(); }
   });
 
   // Reset
   resetBtn?.addEventListener("click", () => {
-    measureRange();
+    if (activeSeries) measureRangeFor(activeSeries);
     defaultWindow();
     zoom = 100; panX = 0; panY = 0; inverted = false;
-    currentSlice = Math.floor(frames.length / 2);
+    if (activeSeries) currentSlice = Math.floor(activeSeries.slices.length / 2);
     if (zoomSlider) zoomSlider.value = "100";
     if (zoomVal) zoomVal.textContent = "100%";
     if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
@@ -770,15 +969,21 @@
   addFolderBtn?.addEventListener("click", () => openFolderPicker());
   clearBtn?.addEventListener("click", () => {
     frames = []; width = height = 0; bits = 16; currentSlice = 0;
-    minValue = 0; maxValue = 255;
     windowW = 400; windowL = 40; zoom = 100; panX = 0; panY = 0; inverted = false;
     seriesModality = "—"; seriesDesc = ""; seriesStudyDate = "";
+    studyUidGlobal = "";
     cachedCtx = null; cachedImageData = null;
+    // Clear series
+    seriesMap.clear();
+    activeSeriesUid = "";
+    activeSeries = null;
     hideStatus();
     if (metaBody) metaBody.innerHTML = `<p class="text-slate-400 dark:text-slate-500">Choose a file to see its technical details…</p>`;
     if (modBadge) modBadge.textContent = "—";
     if (dimsBadge) dimsBadge.textContent = "—";
     if (wlDisplay) wlDisplay.textContent = "W: 400 C: 40";
+    if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+    if (seriesListEl) seriesListEl.innerHTML = "";
     if (dropzone) dropzone.classList.remove("hidden");
     if (workspace) {
       workspace.classList.add("hidden");
@@ -821,10 +1026,10 @@
         if (zoomSlider) zoomSlider.value = String(zoom);
         if (zoomVal) zoomVal.textContent = `${zoom}%`;
         render();
-      } else if (frames.length > 1) {
+      } else if (activeSeries && activeSeries.slices.length > 1) {
         // Scroll → move through slices (only when there is a stack)
         currentSlice += e.deltaY < 0 ? -1 : 1;
-        currentSlice = Math.max(0, Math.min(frames.length - 1, currentSlice));
+        currentSlice = Math.max(0, Math.min(activeSeries.slices.length - 1, currentSlice));
         render();
       }
     }, { passive: false });

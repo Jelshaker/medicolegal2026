@@ -46,6 +46,10 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 				<li><a href="/expert-witness" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Expert witness services</a></li>
 				<li><a href="/about" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">About the curator</a></li>
 				<li><a href="/cv" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Curriculum vitae</a></li>
+				<li><a href="/disclaimer" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Disclaimer &amp; terms of use</a></li>
+				<li><a href="/privacy-notice" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Privacy notice</a></li>
+				<li><a href="/cookie-policy" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Cookie policy</a></li>
+				<li><button type="button" data-cookie-settings class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Cookie settings</button></li>
 				<li><a href="/sitemap" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Site map</a></li>
 			</ul>
 		</div>
@@ -85,3 +89,9 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 		</div>
 	</div>
 </footer>
+
+<script>
+  document.querySelectorAll("[data-cookie-settings]").forEach((b) => {
+    b.addEventListener("click", () => window.dispatchEvent(new CustomEvent("ml:open-cookie-settings")));
+  });
+</script>

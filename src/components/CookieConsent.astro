@@ -1,0 +1,138 @@
+---
+// Cookie banner for UK GDPR / PECR compliance.
+//
+// How the pieces fit together:
+//  1. BaseHead always emits the Google Consent Mode v2 defaults (everything
+//     denied) on every page and loads gtag.js in consent-aware mode only when
+//     a real GA4 ID is configured — so no analytics cookie is ever set before
+//     the visitor chooses.
+//  2. This banner is the only place the choice is made: Accept (analytics on)
+//     or Reject (analytics stays off). The choice is recorded as a single
+//     versioned entry in localStorage (src/lib/consent.ts) — deliberately not
+//     a cookie, so remembering "reject" does not itself set a cookie.
+//  3. The footer "Cookie settings" link re-opens this banner via the
+//     `ml:open-cookie-settings` window event, so consent can be withdrawn as
+//     easily as it was given (UK GDPR Art. 7(3)).
+import { CONSENT_KEY, CONSENT_VERSION } from "../lib/consent";
+---
+
+<div
+	id="cookie-banner"
+	class="fixed inset-x-0 bottom-0 z-[60] hidden border-t border-slate-300 bg-white shadow-[0_-8px_30px_rgba(15,23,42,0.12)]"
+	role="dialog"
+	aria-modal="false"
+	aria-labelledby="cookie-banner-title"
+	aria-describedby="cookie-banner-description"
+>
+	<div class="container-page py-5">
+		<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
+			<div class="max-w-2xl">
+				<h2 id="cookie-banner-title" class="font-sans text-sm font-bold text-slate-900">
+					Cookies on this site
+				</h2>
+				<p id="cookie-banner-description" class="mt-1.5 font-serif text-sm leading-relaxed text-slate-600">
+					This site uses a single optional analytics cookie (Google Analytics 4) to
+					understand which reference pages are read. It is only set if you accept.
+					Strictly necessary storage — remembering this choice and keeping you signed
+					in — is always on. See the <a href="/cookie-policy" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">cookie policy</a>
+					and <a href="/privacy-notice" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">privacy notice</a>.
+				</p>
+			</div>
+			<div class="flex shrink-0 flex-wrap items-center gap-2.5">
+				<button
+					type="button"
+					data-consent="reject"
+					class="btn btn-ghost !px-5 !py-2.5 !text-xs"
+				>
+					Reject analytics
+				</button>
+				<button
+					type="button"
+					data-consent="accept"
+					class="btn btn-primary !px-5 !py-2.5 !text-xs"
+				>
+					Accept analytics
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script define:vars={{ consentKey: CONSENT_KEY, consentVersion: CONSENT_VERSION }}>
+	// Runs in the browser on every page (rendered by BaseLayout). Shows the
+	// banner only when no choice is stored; applies a stored "accept" on load
+	// (a stored "reject" needs no action — denied is already the default).
+	const banner = document.getElementById("cookie-banner");
+
+	function readConsent() {
+		try {
+			const raw = localStorage.getItem(consentKey);
+			if (!raw) return null;
+			const parsed = JSON.parse(raw);
+			if (parsed && parsed.version === consentVersion && typeof parsed.analytics === "boolean") {
+				return parsed;
+			}
+			return null;
+		} catch {
+			return null;
+		}
+	}
+
+	function applyConsent(analytics) {
+		const gtag = window.gtag;
+		if (typeof gtag !== "function") return;
+		if (analytics) {
+			gtag("consent", "update", {
+				analytics_storage: "granted",
+				functionality_storage: "granted",
+				personalization_storage: "granted",
+			});
+		} else {
+			gtag("consent", "update", {
+				analytics_storage: "denied",
+				ad_storage: "denied",
+				ad_user_data: "denied",
+				ad_personalization: "denied",
+				functionality_storage: "denied",
+				personalization_storage: "denied",
+			});
+		}
+	}
+
+	function storeConsent(analytics) {
+		try {
+			localStorage.setItem(
+				consentKey,
+				JSON.stringify({ version: consentVersion, analytics, decidedAt: new Date().toISOString() }),
+			);
+		} catch {
+			// Storage unavailable (private mode quota etc.) — the choice still
+			// applies to this page view; the banner will simply ask again next visit.
+		}
+		applyConsent(analytics);
+		banner?.classList.add("hidden");
+	}
+
+	function showBanner() {
+		banner?.classList.remove("hidden");
+	}
+
+	// On load: stored accept → lift the defaults; stored reject → do nothing;
+	// no stored choice → ask.
+	const stored = readConsent();
+	if (stored) {
+		if (stored.analytics) applyConsent(true);
+	} else {
+		showBanner();
+	}
+
+	banner?.querySelectorAll("[data-consent]").forEach((button) => {
+		button.addEventListener("click", () => {
+			storeConsent(button.getAttribute("data-consent") === "accept");
+		});
+	});
+
+	// The footer "Cookie settings" link dispatches this to let the visitor
+	// change or withdraw consent at any time.
+	window.addEventListener("ml:open-cookie-settings", showBanner);
+</script>

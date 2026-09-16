@@ -160,6 +160,9 @@ export const SITEMAP = [
 			{ href: "/referrals", label: "Referrals and terms", description: "Secure referral, terms of instruction and imaging transfer." },
 			{ href: "/contact", label: "Contact", description: "Secretariat details and a secure enquiry form." },
 			{ href: "/cv", label: "Curriculum vitae", description: "Qualifications, appointments and memberships." },
+			{ href: "/disclaimer", label: "Disclaimer & terms of use", description: "General information only: not legal or medical advice, and the terms of use." },
+			{ href: "/privacy-notice", label: "Privacy notice", description: "What is collected, why it is lawful, retention, and your UK GDPR rights." },
+			{ href: "/cookie-policy", label: "Cookie policy", description: "Strictly necessary storage, optional analytics, and your cookie choice." },
 		],
 	},
 ] as const;

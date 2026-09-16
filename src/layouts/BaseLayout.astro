@@ -2,14 +2,17 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import type { ArticleMeta } from "../lib/seo";
 
 // Shared document shell for all pages. Pages supply their own <main> content
 // through the default slot and an optional `bones` slot rendered before </body>.
 // The remaining props pass straight through to BaseHead, which owns the
 // canonical URL, OpenGraph/Twitter tags, robots directives and JSON-LD — see it
-// for what each one does.
-export interface Props {
+// for what each one does. CookieConsent renders the UK GDPR/PECR cookie banner
+// on every page using this layout.
+
+interface Props {
 	title: string;
 	description?: string;
 	canonical?: string | URL;
@@ -39,6 +42,7 @@ const { title, description, canonical, image, noindex, article } = Astro.props a
 			<slot />
 		</main>
 		<Footer />
+		<CookieConsent />
 		<slot name="bones" />
 	</body>
 </html>

@@ -20,7 +20,7 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 - **Interactive Medical Image Viewer** (`MedicalImageViewer.astro`) — lightbox with wheel/button zoom, pan and captioning.
 - **Local DICOM Viewer** (`/dicom-viewer`) — 100% client-side viewer (`LocalDicomViewer.astro`) with window/level, pan, zoom and slice navigation. `dicom-parser` is **vendored at `public/vendor/dicomParser.min.js`** so no third-party CDN is contacted and the `script-src 'self'` CSP holds. Studies are parsed in-browser and never uploaded.
 - **SEO** — every public page is indexable. The XML sitemap and `robots.txt` both derive from the configured domain (no drift); canonical URLs use a trailing slash that matches the sitemap; `/login` is `noindex`, disallowed in `robots.txt` and excluded from the sitemap; each page carries OpenGraph/Twitter tags, a `robots` meta tag, Google Search Console verification (when configured) and `MedicalBusiness` + `Person` JSON-LD. Commentary posts additionally carry `article:` metadata and a `BlogPosting` node.
-- **Analytics** — GA4 via the standard `gtag.js` snippet, emitted only when `PUBLIC_GA_MEASUREMENT_ID` is set to a real ID (the `.env.example` placeholder is ignored, so analytics is simply absent until configured). `PUBLIC_GOOGLE_SITE_VERIFICATION` adds the Search Console meta tag when set.
+- **Analytics & consent** — GA4 via the standard `gtag.js` snippet behind Google Consent Mode v2 (`src/lib/consent.ts`, `src/components/CookieConsent.astro`): default-denied on every page, emitted only when `PUBLIC_GA_MEASUREMENT_ID` is a real ID, inert until the visitor clicks “Accept analytics”. Choice stored versioned in localStorage (`ml-consent-v1`), withdrawable via the footer “Cookie settings” link. `PUBLIC_GOOGLE_SITE_VERIFICATION` adds the Search Console meta tag when set.
 - **Security headers** — CSP, HSTS, `X-Frame-Options` and more, applied to server-rendered pages by `src/middleware.ts` and to static assets by `public/_headers`, both driven by a single policy in `src/lib/security-headers.ts`.
 
 ## 🚀 Project Structure
@@ -155,4 +155,7 @@ runtime, so you are not forced to rebuild to flip the tracking ID.
   `PUBLIC_GOOGLE_SITE_VERIFICATION` to your Search Console token (both in `.env`
   / the build env, or as runtime Worker vars). Analytics and verification stay
   absent until these are set, so a placeholder can never leak to production.
-- All blog figures are anonymised. Nothing on the site constitutes legal advice.
+- `/disclaimer` — terms of use: general information only (not legal/medical advice, not an expert opinion), anonymised case material, liability limits, acceptable use, England & Wales governing law.
+- `/privacy-notice` — UK GDPR / DPA 2018 notice: controller, data collected, Article 6/9 bases, processors (Cloudflare, GA4 with consent, Clerk), retention, rights, ICO complaints.
+- `/cookie-policy` — strictly necessary storage vs the single optional GA4 cookie; accept/reject/change-your-mind via the footer “Cookie settings” link.
+- All blog figures are anonymised. Case commentary disclaims individual advice; the DICOM viewer carries a “not a diagnosis” callout.

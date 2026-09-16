@@ -23,12 +23,13 @@ export const DEFAULT_SOCIAL_IMAGE = "/images/og-default.jpg";
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/radiology-resources", label: "Radiology" },
-	{ href: "/medicolegal-fundamentals", label: "Medicolegal Law" },
-	{ href: "/radiology-legislation", label: "Legislation" },
-	{ href: "/radiology-legal-cases", label: "Case Law" },
-	{ href: "/recent-developments", label: "Developments" },
-	{ href: "/dicom-viewer", label: "DICOM Viewer" },
+	{ href: "/radiology-resources", label: "Radiology Basics" },
+	{ href: "/medicolegal-fundamentals", label: "Medicolegal Background" },
+	{ href: "/radiology-legislation", label: "Radiology Legislation" },
+	{ href: "/radiology-legal-cases", label: "Important Radiology Case Law" },
+	{ href: "/recent-developments", label: "Recent Radiology Legal Developments" },
+	{ href: "/dicom-viewer", label: "Free DICOM viewer" },
+	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
 ] as const;
 

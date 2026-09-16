@@ -126,6 +126,8 @@
 
 	body {
 		background-color: #ffffff;
+		overflow-x: hidden;
+		overflow-x: clip;
 		color: var(--color-ink);
 		font-family: var(--font-serif);
 		-webkit-font-smoothing: antialiased;
@@ -187,6 +189,8 @@
 		margin-inline: auto;
 		width: 100%;
 		max-width: 48rem;
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	/* Sans-serif metadata label (the only sanctioned sans use). */
@@ -343,6 +347,20 @@
 	}
 }
 
+/* Long legal citations must wrap rather than force horizontal scrolling:
+   sections and grids can shrink, and very long words (neutral citations,
+   file names) may break anywhere rather than overflow the column. */
+@layer utilities {
+	.min-w-0 {
+		min-width: 0;
+	}
+	.case-body p,
+	.case-body li,
+	.case-body h3 {
+		overflow-wrap: anywhere;
+	}
+}
+
 /* ------------------------------------------------------------------ */
 /* Article reader — set like journal body copy                         */
 /* ------------------------------------------------------------------ */
@@ -428,6 +446,7 @@
 
 .figure-cap {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: baseline;
 	gap: 0.85rem;
 	border-bottom: 1px solid #e2e8f0;

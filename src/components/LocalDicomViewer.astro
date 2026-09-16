@@ -246,6 +246,22 @@
   let seriesDesc = "";
   let seriesStudyDate = "";
   let studyUidGlobal = "";
+  let nextAutoSeriesNum = 0;  // auto-assigned SeriesNumber fallback
+
+  // Return the next available SeriesNumber for auto-assigned series.
+  // Uses the highest existing series order + 1, starting from 10.
+  function nextSeriesNumber(): number {
+    let top = 0;
+    for (const s of seriesMap.values()) {
+      if (s.seriesOrder > top) top = s.seriesOrder;
+    }
+    return top === 0 ? 10 : top + 1;
+  }
+
+  // Assign a real SeriesNumber: use the DICOM value if present, otherwise auto-assign.
+  function resolveSeriesNumber(tagged: number): number {
+    return tagged > 0 ? tagged : nextSeriesNumber();
+  }
 
   /* ── status line ──────────────────────────────────────────── */
   function showStatus(message: string) {
@@ -573,7 +589,7 @@
       return s.seriesDesc.length > maxLen ? s.seriesDesc.slice(0, maxLen - 1) + "\u2026" : s.seriesDesc;
     }
     // Fallback: use modality + series number
-    return `${s.modality} ${s.seriesNumber || "?"}`;
+    return `${s.modality} ${s.seriesOrder}`;
   }
 
   function buildSeriesTabs() {
@@ -665,7 +681,7 @@
       { label: "Study date", value: seriesStudyDate || "—" },
       { label: "Study description", value: seriesDesc || "—" },
       { label: "Series description", value: s.seriesDesc || "—" },
-      { label: "Series number", value: String(s.seriesNumber || "—") },
+      { label: "Series number", value: String(s.seriesOrder) },
       { label: "Image size", value: `${width} × ${height}` },
       { label: "Images in series", value: String(s.slices.length) },
     ];
@@ -759,7 +775,7 @@
               slices: [],
               minValue: 0,
               maxValue: 255,
-              seriesOrder: parsed.seriesNumber ?? 0,
+              seriesOrder: resolveSeriesNumber(parsed.seriesNumber ?? 0),
             };
             seriesMap.set(defaultSeries.uid, defaultSeries);
             for (const sl of parsed.slices) {
@@ -796,7 +812,7 @@
             slices: parsed.slices,
             minValue: 0,
             maxValue: 255,
-            seriesOrder: parsed.seriesNumber ?? 0,
+            seriesOrder: resolveSeriesNumber(parsed.seriesNumber ?? 0),
           };
           for (const sl of parsed.slices) {
             (sl as DvSlice).seriesUid = sUid;

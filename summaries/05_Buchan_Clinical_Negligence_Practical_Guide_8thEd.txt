@@ -1,0 +1,350 @@
+================================================================================
+SUMMARY: Clinical Negligence - A Practical Guide (8th Edition)
+SOURCE: Andrew Buchan (General Editor), Barrister, Cloisters
+PUBLISHER: Oxford University Press (presumed)
+YEAR: 2024/2025 (8th Edition)
+================================================================================
+
+OVERVIEW
+--------
+This is THE leading UK practical guide to clinical negligence law. Edited by
+Andrew Buchan, a barrister at Cloisters Chambers, and contributed to by leading
+medical negligence practitioners from Cloisters, 39 Essex Chambers, Doughty Street
+Chambers, and Fieldfisher. The book covers the complete legal framework for
+clinical negligence claims in England and Wales, with detailed procedural guidance.
+
+KEY CONTRIBUTORS
+----------------
+- Andrew Buchan, LLB (Hons) - Barrister, Cloisters (General Editor)
+- Rachel Barrett - Barrister, Cloisters
+- Neil Block QC - 39 Essex Chambers
+- Dr Thomas Boyd - General Practitioner
+- Tamar Burton - Barrister, Cloisters
+- Dr Jonathan Cook - Barrister, Cloisters
+- Emma Corkill - 39 Essex Chambers
+- Romilly Cummerson - 39 Essex Chambers
+- Gemma Daly - Barrister, Doughty Street Chambers
+- Sarah Fraser Butlin - Barrister, Cloisters
+- Tom Gillie - Barrister, Cloisters
+- Caron Heyes - Solicitor, Fieldfisher
+- (and many more contributors)
+
+STRUCTURE OF THE BOOK
+---------------------
+PART 1: Introduction and NHS Structure
+  Chapter 1: Introduction
+  Chapter 2: Structure of the NHS
+  Chapter 3: Non-legal Remedies
+  Chapter 4: Legal Remedies
+
+PART 2: Substantive Law
+  Chapter 5: The Duty of Care
+  Chapter 6: Breach of Duty and Strict Liability
+  Chapter 7: Causation and Damage
+  Chapter 8: Foreseeability and Remoteness
+  Chapter 9: The Proof of Negligence
+  Chapter 10: Consent
+  Chapter 11: Adults Without Capacity
+  Chapter 12: Wrongful Birth
+  Chapter 13: The Congenital Disabilities Act 1976
+  Chapter 14: Psychiatric Injury
+  Chapter 15: Economic Loss
+  Chapter 16: Product Liability in a Medical Context
+
+PART 3: Procedure
+  Chapter 17: Procedure to Service of Proceedings
+  Chapter 18: Procedure from Service to Trial
+  Chapter 19: The Inquest – the Law, Procedure and Funding
+  Chapter 20: Limitation
+  Chapter 21: The Medical Records
+  Chapter 22: Experts
+  Chapter 23: Human Rights
+  Chapter 24: Court of Protection
+  Chapter 25: Wales
+  Chapter 26: Funding
+  Chapter 27: Costs
+
+RELEVANT CHAPTERS - DETAILED CONTENT SUMMARY
+--------------------------------------------
+
+CHAPTER 5: THE DUTY OF CARE
+----------------------------
+Covers:
+- Establishment of duty of care in clinical contexts
+- Relationship between clinician and patient
+- Scope of duty for healthcare professionals
+- Non-delegable duty of care
+- Hospitals' and healthcare providers' duties
+- Clinical commissioning groups' responsibilities
+- Duty of care in diagnostic imaging contexts
+
+KEY POINTS:
+- Duty of care is the foundational element of clinical negligence
+- All healthcare professionals owe a duty of care to their patients
+- The duty extends to diagnostic activities including radiology
+- Employers have non-delegable duties for patient safety
+
+CHAPTER 6: BREACH OF DUTY AND STRICT LIABILITY
+-----------------------------------------------
+Covers:
+- The standard of care expected
+- Bolam test and its application
+- Bolitho addition to Bolam (logical basis requirement)
+- Standard of care for specialists (including radiologists)
+- Strict liability in certain circumstances
+- Res ipsa loquitur in clinical contexts
+- Clinical guidelines and their evidential value
+- NICE guidelines and their role
+
+KEY POINTS:
+- Radiologists are held to the standard of a reasonably competent consultant radiologist
+- Clinical guidelines (including RCR Standards) are strong evidence of standard of care
+- Bolam test remains central but Bolitho requires logical basis
+- Following guidelines does not automatically preclude breach
+
+CHAPTER 7: CAUSED AND DAMAGE
+-----------------------------
+Covers:
+- Causation test: "but for" test
+- Material contribution to damage
+- "Taken into account" test for diagnostic delay
+- Loss of chance doctrine
+- Apportionment of damages
+- Multiple defendants
+- Contribution between defendants
+- Head of damages: special and general damages
+
+KEY POINTS:
+- Causation is often THE critical issue in radiology claims
+- "But for" test: would the outcome have been different had the abnormality been correctly diagnosed?
+- Loss of chance may apply when earlier diagnosis would have improved outcomes
+- The "material contribution" test may apply where multiple causes
+
+CHAPTER 9: THE PROOF OF NEGLIGENCE
+------------------------------------
+Covers:
+- Burden of proof (on claimant)
+- Standard of proof (balance of probabilities)
+- Evidence required to prove negligence
+- Expert evidence requirements
+- How courts assess expert evidence
+- The "battle of the experts"
+- Single joint expert reports
+- Duty of experts to the court
+
+KEY POINTS:
+- Claimant bears burden of proving all elements of negligence
+- Evidence must show breach AND causation
+- Expert evidence is central to clinical negligence cases
+- Experts must give independent, impartial evidence to the court
+- Courts are wary of partisan expert evidence
+
+CHAPTER 10: CONSENT
+-------------------
+Covers:
+- Legal basis for consent
+- Bolam test for disclosure of risks (pre-Montgomery)
+- Montgomery v Lanarkshire Health Board (2015) - GAME CHANGER
+- Montgomery test: material risks a reasonable person in the patient's position
+  would attach significance to, OR risks the particular patient would attach significance to
+- Doctor's own views about risks
+- Therapeutic exception
+- Consent for diagnostic procedures (including contrast administration)
+- Consent for interventional radiology
+- Documentation of consent
+- Minors and consent
+- Adults lacking capacity
+
+KEY MONTCGOMERY PRINCIPLES:
+- Doctor must inform patient of material risks
+- "Material risk" = risk that a reasonable person in patient's position would
+  consider significant, OR that THIS patient would consider significant
+- Doctor must discuss with patient any special concerns they express
+- Documented consent is essential
+- Montgomery fundamentally changed the law on consent disclosure
+
+CHAPTER 19: THE INQUEST
+-----------------------
+Covers:
+- Coroner's jurisdiction
+- Inquest procedures
+- Role of radiologists in inquests
+- Pre-inquest processes
+- Statements and evidence at inquest
+- Duty of candour implications
+- Relationship between inquest and civil proceedings
+- Funding for inquest participation
+
+KEY POINTS:
+- Radiologists may be called to provide evidence at coroners' inquests
+- Inquest findings can influence subsequent civil claims
+- Duty of candour applies during inquests
+- Early engagement with defence organisation is recommended
+
+CHAPTER 21: THE MEDICAL RECORDS
+--------------------------------
+Covers:
+- Legal requirements for medical records
+- What must be recorded
+- Timing of entries
+- Corrections and amendments
+- Electronic records
+- Disclosure obligations
+- Non-disclosure consequences
+- Radiology reports as part of medical record
+- PACS and electronic imaging records
+
+KEY POINTS:
+- Medical records are central evidence in negligence claims
+- Radiology reports must be accurate, complete, and timely
+- Poor record-keeping can damage defence
+- Late or altered entries attract suspicion
+- Electronic records must be maintained with version control
+
+CHAPTER 22: EXPERTS
+-------------------
+Covers:
+- Role of expert witnesses
+- Expert selection and instruction
+- Expert duties and obligations
+- Expert report format (CPR Part 35)
+- Experts' meetings
+- Concurrent expert evidence
+- Costs of expert evidence
+- Selecting appropriate experts
+- Radiology experts in medicolegal cases
+
+KEY POINTS:
+- Expert evidence is essential in clinical negligence cases
+- Experts owe duty to the court, not to instructing party
+- Expert reports must comply with CPR Part 35 and Practice Direction
+- "Battle of the experts" is costly and should be managed carefully
+- Single joint experts may be appropriate for some issues
+- Radiology experts must be suitably qualified consultant-level
+
+CHAPTER 23: HUMAN RIGHTS
+------------------------
+Covers:
+- Human Rights Act 1998
+- Article 2: Right to life
+- Article 3: Prohibition of inhuman/degrading treatment
+- Article 6: Right to fair trial
+- Article 8: Right to respect for private/family life
+- Article 14: Non-discrimination
+- Protocol 1, Article 1: Protection of property
+- Procedural obligations under ECHR articles
+- Relationship with domestic negligence law
+
+KEY POINTS:
+- Article 2 may be engaged where death results from alleged negligence
+- Article 6 relates to access to court and fair procedure
+- Article 8 may be relevant to confidentiality issues
+- Human rights claims may run parallel to negligence claims
+
+CHAPTER 20: LIMITATION
+----------------------
+Covers:
+- Primary limitation period: 3 years from date of act/omission
+- Date of knowledge test
+- Disability (lack of capacity)
+- Minor claimants
+- Discretionary exclusion under Section 33
+- How courts exercise discretion
+- Limitation in diagnostic delay cases
+- Date of knowledge in radiology cases
+
+KEY POINTS:
+- Limitation is frequently disputed in radiology claims
+- "Date of knowledge" = when patient knew of injury AND that it was attributable
+  to alleged negligence
+- In diagnostic delay cases, date of knowledge may be years after original scan
+- Section 33 discretion allows court to extend limitation period
+
+CHAPTER 26: FUNDING
+-------------------
+Covers:
+- Conditional fee agreements (CFAs)
+- Success fees
+- After the event (ATE) insurance
+- Legal costs
+- Costs protection
+- Public funding (Legal Aid)
+- Membership organisation cover
+
+CHAPTER 27: COSTS
+-----------------
+Covers:
+- Costs principles
+- Costs budgets
+- Assessing costs
+- Indemnity vs standard basis
+- Costs in relation to Part 36 offers
+- Costs capping
+
+================================================================================
+KEY MEDILEGAL PRINCIPLES FOR RADIOLOGY PRACTICE
+------------------------------------------------
+
+1. DUTY OF CARE
+   - Radiologists owe duty to patients they image
+   - This includes proper interpretation and reporting
+   - Duty extends to advising on further investigations
+
+2. BREACH OF DUTY
+   - Assessed by Bolam/Bolitho test
+   - Standard of competent consultant radiologist
+   - RCR Standards are evidence of expected standard
+   - Following guidelines does not guarantee no breach found
+
+3. CAUSATION
+   - Most contested element in radiology claims
+   - "But for" test: would outcome have been different?
+   - Loss of chance doctrine relevant in cancer screening/delay cases
+   - Material contribution test may apply
+
+4. CONSENT (Montgomery)
+   - Must disclose material risks
+   - Risks material to THIS patient must be discussed
+   - Documentation essential
+   - Even small risks (1:1,000) must be addressed if material
+   - Applies to contrast administration and interventional procedures
+
+5. MEDICAL RECORDS
+   - Radiology reports are critical evidence
+   - Must be contemporaneous, accurate, complete
+   - Amendments must be properly documented
+   - Version control for electronic reports
+
+6. EXPERT EVIDENCE
+   - Central to both sides of claim
+   - Must be independent and impartial
+   - Reports must follow prescribed format
+   - Radiology experts must be at consultant level
+
+7. HUMAN RIGHTS
+   - Article 2 may be engaged in death cases
+   - Article 8 relevant to patient confidentiality
+   - Article 6 for procedural fairness
+
+8. LIMITATION
+   - 3 years from act/omission or date of knowledge
+   - Date of knowledge often disputed
+   - Section 33 discretion may extend period
+
+================================================================================
+RELEVANCE FOR RADIOLOGICAL MEDILEGAL RESEARCH
+This book is THE authoritative UK reference work on clinical negligence law. For
+a medicolegal paper on radiology, it provides:
+1. Comprehensive coverage of all legal principles applicable to radiology practice
+2. Detailed procedural guidance for both claimant and defendant perspectives
+3. Expert-level analysis of consent law post-Montgomery
+4. Thorough treatment of causation issues (the most contested element in
+   radiology negligence claims)
+5. Guidance on expert evidence requirements and the role of radiology experts
+6. Coverage of human rights dimensions of radiology practice
+7. Detailed discussion of medical records requirements
+8. Practical advice on inquest participation
+The book's 27 chapters cover virtually every legal dimension of clinical negligence
+and can serve as the foundational legal framework for any medicolegal paper on
+radiology.
+================================================================================

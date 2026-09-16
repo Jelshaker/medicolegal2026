@@ -1,0 +1,296 @@
+================================================================================
+SUMMARY: Medical Law and Ethics (6th Edition)
+SOURCE: Bonnie F. Fremgen, Ph.D.
+PUBLISHER: Pearson Higher Education
+ISBN-13: 978-0-13-541452-1
+YEAR: 2020 (6th Edition, copyright 2020, 2016, 2012)
+================================================================================
+
+OVERVIEW
+--------
+This is a US-based textbook on medical law and ethics designed for allied health
+professionals (including radiology technicians and imaging professionals). Written
+by Bonnie F. Fremgen, Ph.D., it provides a comprehensive introduction to the legal
+and ethical issues facing healthcare professionals. The text is written in
+straightforward language aimed at non-lawyer health professionals.
+
+TARGET AUDIENCE
+---------------
+- Allied health professionals working in medical offices, hospitals, clinics,
+  laboratories, rehabilitation facilities, and skilled-nursing facilities
+- College/university students pursuing careers in allied health
+- Health professionals working with or for physicians
+- Radiology technicians and imaging professionals
+
+BOOK STRUCTURE
+--------------
+PART 1: The Legal Environment (Chapters 2-4)
+PART 2: The Health Care Environment (Chapters 5-10)
+PART 3: Medical Ethics (Chapters 11-14)
+APPENDICES: Codes of Ethics, Case Citations, Glossary, Index
+
+DETAILED CHAPTER CONTENT
+------------------------
+
+CHAPTER 1: INTRODUCTION TO MEDICAL LAW, ETHICS, AND BIOETHICS
+--------------------------------------------------------------
+Topics covered:
+- Why study law, ethics, and bioethics
+- Distinction between medical law and ethics
+- Ethics: principles and frameworks
+- Models for examining ethical dilemmas
+- What ethics is NOT (confusion with morality, religion, law)
+- Bioethics: ethical issues in medicine and biotechnology
+- Role of ethics committees
+- Quality assurance programs
+- Medical etiquette
+
+KEY CONCEPTS:
+- Ethics vs Law: ethical requirements may exceed legal requirements
+- Models for ethical examination: utilitarianism, deontology, virtue ethics
+- Ethics committees provide guidance on complex cases
+- Quality assurance is both ethical and legal obligation
+- Medical etiquette governs professional relationships
+
+PART 1: THE LEGAL ENVIRONMENT
+------------------------------
+
+CHAPTER 2: THE LEGAL SYSTEM
+---------------------------
+Topics:
+- Structure of US legal system (federal and state)
+- Common law vs statutory law
+- Constitutional law
+- Administrative law and regulations
+- Court systems and hierarchy
+- Civil vs criminal law
+- The trial process
+
+CHAPTER 3: ESSENTIALS OF THE LEGAL SYSTEM FOR HEALTH CARE PROFESSIONALS
+------------------------------------------------------------------------
+Topics:
+- Medical practice acts
+- Licensure of physicians and allied health
+- Standard of care
+- Confidentiality requirements
+- Statute of limitations
+- Good Samaritan laws
+- Respondeat superior (employer liability for employee actions)
+- Scope of practice
+- Risk management
+
+KEY CONCEPTS FOR RADIOLOGY:
+- Standard of care is central to negligence claims
+- Respondeat superior means employers can be liable for radiology staff errors
+- Scope of practice defines what imaging professionals may legally do
+- Statute of limitations varies by jurisdiction for medical claims
+
+CHAPTER 4: WORKING IN TODAY'S HEALTH CARE ENVIRONMENT
+-----------------------------------------------------
+Topics:
+- Types of medical practice settings
+- Fee splitting ethics
+- Medical specialty boards and certification
+- Health care professionals and allied health
+- Delegation of duties
+- Supervision responsibilities
+
+CHAPTER 5: THE PHYSICIAN-PATIENT RELATIONSHIP
+----------------------------------------------
+Topics:
+- Physician's rights and responsibilities
+- Professional practice responsibilities
+- Patient's rights:
+  * Right to information
+  * Right to refuse treatment
+  * Right to privacy
+  * Right to confidentiality
+- Advance directives
+- Rights of minors
+- Patient's responsibilities
+- Role of health care consumer
+
+CHAPTER 6: PROFESSIONAL LIABILITY AND MEDICAL MALPRACTICE (MAJOR CHAPTER)
+-------------------------------------------------------------------------
+Topics:
+- Professional negligence vs medical malpractice
+- The tort of negligence (elements):
+  * Duty
+  * Breach of duty
+  * Causation
+  * Damages
+- Fraud in healthcare
+- Office of the Inspector General (OIG)
+- Defenses to malpractice suits:
+  * Contributory negligence
+  * Comparative negligence
+  * Statute of limitations
+  * Assumption of risk
+- Professional liability insurance
+- Alternative dispute resolution
+- Liability of other health professionals
+- Tort reform
+- Malpractice prevention strategies
+
+KEY CONCEPTS FOR RADIOLOGY:
+- Four elements of negligence must ALL be proven
+- Duty exists when professional relationship established
+- Breach requires deviation from standard of care
+- Causation links breach to patient harm
+- Damages must be actual and provable
+- Defenses may reduce or eliminate liability
+- Professional liability insurance essential
+
+CHAPTER 7: PUBLIC DUTIES OF THE HEALTH CARE PROFESSIONAL
+--------------------------------------------------------
+Topics:
+- Public health records and vital statistics reporting
+- Controlled Substances Act and regulations
+- Protection for employees and the environment
+- Reporting requirements
+- Mandatory reporting obligations
+
+CHAPTER 8: WORKPLACE LAW AND ETHICS
+-----------------------------------
+Topics:
+- Professionalism in the workplace
+- Discrimination (sex, race, age, disability, religion)
+- Privacy in the workplace
+- Cultural and religious considerations
+- Hiring practices and legal/illegal interview questions
+- Equal Employment Opportunity
+- Employee health and safety (OSHA)
+- Compensation and benefits
+- Consumer protection and collection practices
+
+CHAPTER 9: THE MEDICAL RECORD (MAJOR CHAPTER FOR RADIOLOGY)
+-----------------------------------------------------------
+Topics:
+- Purpose of the medical record
+- Contents of the medical record
+- Ownership of the medical record
+- Confidentiality and the medical record
+- Retention and storage requirements
+- Electronic health records (EHR)
+- Reporting and disclosure requirements
+- Use of the medical record in court
+
+KEY CONCEPTS FOR RADIOLOGY:
+- Radiology reports are part of the medical record
+- PACS images and reports must be maintained per retention requirements
+- EHR systems must meet security and privacy standards
+- Medical records are central evidence in litigation
+- Retention periods vary by jurisdiction (typically 7+ years for adults,
+  longer for minors)
+
+CHAPTER 10: PATIENT CONFIDENTIALITY AND HIPAA (MAJOR CHAPTER)
+-------------------------------------------------------------
+Topics:
+- Confidentiality obligations
+- Privacy Act of 1974 (amended 1988)
+- Health Insurance Portability and Accountability Act of 1996 (updated 2013)
+  * Privacy Rule
+  * Security Rule
+  * Breach Notification Rule
+  * Enforcement Rule
+- Ethical concerns with health informatics
+
+KEY CONCEPTS FOR RADIOLOGY:
+- HIPAA applies to all healthcare providers including imaging departments
+- Protected Health Information (PHI) must be safeguarded
+- Patient consent requirements for disclosures
+- Breach notification obligations
+- Electronic PHI must meet Security Rule requirements
+- Radiology departments handle large volumes of PHI requiring robust controls
+
+PART 3: MEDICAL ETHICS
+----------------------
+
+CHAPTER 11: ETHICAL AND BIOETHICAL ISSUES IN MEDICINE
+-----------------------------------------------------
+Topics:
+- Early history of medical ethics
+- Ethical standards and behavior
+- Codes of ethics (AMA, various professional organisations)
+- Codes of ethics for other medical professionals
+- Bioethical issues
+- Ethical issues and personal choice
+- Ethics of biomedical research
+
+CHAPTER 12: ETHICAL ISSUES RELATING TO LIFE
+-------------------------------------------
+Topics:
+- Fetal development
+- Assisted/artificial conception
+- Contraception
+- Sterilization
+- Abortion
+- Genetic counseling and testing
+- Wrongful-life suits
+- "Do the Right Thing" (based on the Nuremberg Trial case)
+
+CHAPTER 13: DEATH AND DYING
+---------------------------
+Topics:
+- The dying process
+- Legal definition of death
+- Stages of dying (Kubler-Ross)
+- Quality-of-life issues
+- Use of medications at end of life
+- Hospice care
+- Palliative care
+- Viatical settlements
+- Advance directives
+- Choices in life and death
+
+CHAPTER 14: TRENDS IN HEALTH CARE
+---------------------------------
+Topics:
+- Problems in the current healthcare system
+- New advances and improvements
+- Healthcare trends and reform
+- The ethics of care
+- American Deaf Culture
+- Blindness and visual impairment
+- Life issues of the elderly
+- Allocation of scarce time and resources
+
+TEXTBOOK FEATURES
+-----------------
+- Learning objectives at start of each chapter
+- Key terms defined in bold on first reference
+- Critical Thinking Exercises at end of each chapter
+- Legal case citations with "scales of justice" icon
+- Med Tips: brief scenarios and hints
+- Glossary terms
+- End-of-chapter exercises
+- Actual practice cases
+- Sample codes of ethics in appendices
+- Case citations appendix
+
+================================================================================
+RELEVANCE FOR RADIOLOGICAL MEDILEGAL RESEARCH
+This textbook provides a solid FOUNDATIONAL framework for understanding:
+
+1. US legal system context (if comparing with UK frameworks)
+2. Core elements of medical negligence (duty, breach, causation, damages)
+3. Medical record requirements (including imaging records)
+4. HIPAA and patient confidentiality (with parallels to UK GDPR/DPA)
+5. Professional liability concepts
+6. Standard of care principles
+7. Risk management approaches
+8. The broader ethical landscape of healthcare
+
+While US-specific, the fundamental principles of medical law (negligence elements,
+consent requirements, confidentiality, medical records) are applicable across
+jurisdictions. The textbook provides:
+- Clear explanations of legal terminology
+- Real case examples
+- Practical risk management advice
+- Understanding of the allied health professional's legal position
+
+For a medicolegal paper on radiology, this provides complementary perspective
+to the UK-focused sources (MPS, RCR, Halligan et al.) and the comprehensive
+UK legal reference (Buchan). The US framework can be compared with UK approaches
+to highlight similarities and differences in medicolegal frameworks.
+================================================================================

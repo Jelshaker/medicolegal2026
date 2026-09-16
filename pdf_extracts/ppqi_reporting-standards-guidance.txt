@@ -1,9 +1,11 @@
+---PAGE 1---
 Standards for interpretation 
 and reporting of imaging 
 investigations 
 Third edition
 October 2025
----PAGE 1---
+
+---PAGE 2---
 The Royal College of Radiologists
 Clinical Radiology
 Standards for interpretation and reporting of imaging investigations
@@ -27,7 +29,8 @@ Interventional radiology reporting and procedural
 description ��������������������������������������������������������������������������9 
 References ����������������������������������������������������������������������11
 Acknowledgements ������������������������������������������������������� 12
----PAGE 2---
+
+---PAGE 3---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 3
@@ -69,7 +72,8 @@ radiology life cycle guidance�5
 01 
 Introduction
 3
----PAGE 3---
+
+---PAGE 4---
 The Royal College of Radiologists
 Clinical Radiology
 Standards for interpretation and reporting of imaging investigations
@@ -87,7 +91,8 @@ providers of reporting services�
 4
 02 
 Service organisation
----PAGE 4---
+
+---PAGE 5---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 5
@@ -117,7 +122,8 @@ included in the report�
 5
 03 
 Reporting author
----PAGE 5---
+
+---PAGE 6---
 The Royal College of Radiologists
 Clinical Radiology
 Standards for interpretation and reporting of imaging investigations
@@ -161,7 +167,8 @@ deployed locally�
 6
 04 
 Infrastructure
----PAGE 6---
+
+---PAGE 7---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 7
@@ -189,7 +196,8 @@ in place to mitigate this�
 04
 Infrastructure
 7
----PAGE 7---
+
+---PAGE 8---
 The Royal College of Radiologists
 Clinical Radiology
 Standards for interpretation and reporting of imaging investigations
@@ -238,7 +246,8 @@ prioritise clarity and clinical relevance�
 8
 05 
 The report
----PAGE 8---
+
+---PAGE 9---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 99
@@ -290,7 +299,8 @@ and complications discussed should form part of the report�
  – Document relevant narrative of the intervention, and where possible its consequences 
 including drug administration, efficacy and complications, or how efficacy should  
 be assessed�
----PAGE 9---
+
+---PAGE 10---
 The Royal College of Radiologists
 Clinical Radiology
 Standards for interpretation and reporting of imaging investigations
@@ -319,7 +329,8 @@ The standards in this document provide a baseline that all radiology reports sho
 achieve, so that the quality and consistency of imaging interpretation can be assured� 
 Adherence to these standards will ensure that image interpretation continues to add  
 value to patient diagnostic and treatment pathways�
----PAGE 10---
+
+---PAGE 11---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 11
@@ -377,7 +388,8 @@ integrating-artificial-intelligence-with-the-radiology-reporting-workflows-ris-a
 England� https://digital�nhs�uk/services/ai-knowledge-repository
 References
 11
----PAGE 11---
+
+---PAGE 12---
 Standards for interpretation and reporting of imaging investigationsThe Royal College of Radiologists 
 Clinical Radiology
 12
@@ -423,7 +435,8 @@ Editorial and project support
 Dr Stephen Harden, Vice-President, The Royal College of Radiologists  
 Ms Stephanie James, Professional Standards Manager, The Royal College of Radiologists 
 Dr Robin Proctor, Medical Director for Professional Practice, The Royal College of Radiologists
----PAGE 12---
+
+---PAGE 13---
 The Royal College of Radiologists� Reporting 
 Standards Standards for interpretation  
 and reporting of imaging investigations� London:
@@ -464,4 +477,3 @@ Charity Commission No 211540�
 enquiries@rcr�ac�uk  
 rcr�ac�uk
   @RCRadiologists
----PAGE 13---

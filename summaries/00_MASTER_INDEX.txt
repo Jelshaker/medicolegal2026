@@ -1,0 +1,208 @@
+================================================================================
+MASTER INDEX: Medicolegal Books & Resources on Radiology and Imaging
+================================================================================
+Generated for: Special paper on medicolegal law with special relevance to
+               radiology and imaging
+
+SUMMARY FILES PRODUCED
+======================
+
+All 6 source documents have been reviewed and converted to detailed summary
+text files in the summaries/ folder. Each summary includes:
+
+- Source identification
+- Overview of content
+- Key statistics and data
+- Detailed content breakdown
+- Legal principles discussed
+- Recommendations and advice
+- Specific relevance to radiological medicolegal research
+
+FILE INDEX
+==========
+
+00_MASTER_INDEX.txt                        (this file)
+01_MPS_Radiology_Medicolegal_Analysis.txt  Medical Protection Society analysis of radiology cases
+02_RCR_Standards_Interpretation_Reporting_2025.txt  RCR Standards for imaging reporting (3rd Ed, 2025)
+03_Halligan_et_al_Medicolegal_Claims_Abdominal_Radiology.txt  Halligan et al. paper on incidental finding claims
+04_MDU_Radiology_Claims_Analysis.txt       Medical Defence Union claims analysis
+05_Buchan_Clinical_Negligence_Practical_Guide_8thEd.txt  Clinical Negligence: A Practical Guide (8th Ed)
+06_Fremgen_Medical_Law_and_Ethics_6thEd.txt Medical Law and Ethics (6th Ed, US textbook)
+07_Inaccessible_PDFs_Report.txt            Technical report on 3 unreadable PDF files
+
+THESE SOURCES COVER THE FOLLOWING TOPICS:
+=========================================
+
+A. RADIOLOGY-SPECIFIC CLAIMS AND COMPLAINTS
+-------------------------------------------
+MPS Analysis (Summary 01):
+- ~800 UK radiology cases (2016-2023)
+- Claim types: negligence, complaints, inquests, GMC investigations
+- Common errors: missed diagnosis, reporting errors, consent failures
+- Remote/teleradiology risk factors
+- Top tips for risk minimisation
+
+MDU Analysis (Summary 04):
+- 200 claims against consultant radiologists in independent sector
+- 75% successfully defended
+- Compensation costs (£4,000 to £2 million)
+- Delayed diagnosis, medication issues, communication failures
+- Case study: Achilles tendon rupture consent failure
+
+Halligan et al. (Summary 03):
+- 112 abdominal radiology medicolegal cases
+- 37% cited incidental findings as the allegation
+- 29% judged substandard (incidental) vs 32% (non-incidental)
+- Challenges to Bolam test and "pure diagnosis" approach
+- "Fishing trip" instructions from solicitors
+- RCR standards critique and 2025 edition response
+
+B. REGULATORY STANDARDS
+-----------------------
+RCR Standards (Summary 02):
+- UK definitive standard for imaging interpretation and reporting (3rd Ed, 2025)
+- Service organisation requirements
+- Reporting author qualifications and duties
+- Infrastructure (PACS, AI, voice recognition)
+- Remote reporting requirements
+- Report structure and content requirements
+- Interventional radiology reporting
+- Patient access to reports
+- AI-assisted reporting (human responsibility required)
+
+C. COMPREHENSIVE CLINICAL NEGLIGENCE LAW
+-----------------------------------------
+Buchan Clinical Negligence (Summary 05):
+- Leading UK practical guide to clinical negligence (27 chapters)
+- Key radiology-relevant chapters:
+  * Duty of care (Ch. 5)
+  * Breach of duty and strict liability (Ch. 6)
+  * Causation and damage (Ch. 7)
+  * The proof of negligence (Ch. 9)
+  * Consent (Ch. 10) - post-Montgomery
+  * Adults without capacity (Ch. 11)
+  * The medical records (Ch. 21)
+  * Experts (Ch. 22)
+  * Human rights (Ch. 23)
+  * Limitation (Ch. 20)
+  * The inquest (Ch. 19)
+
+D. BROADER MEDICAL LAW AND ETHICS
+----------------------------------
+Fremgen Medical Law and Ethics (Summary 06):
+- US-based textbook for allied health professionals
+- Professional liability and malpractice
+- Medical record requirements
+- HIPAA and patient confidentiality
+- Workplace law and ethics
+- Medical ethics and bioethics
+- Useful for comparative legal framework analysis
+
+E. INACCESSIBLE SOURCES
+-----------------------
+The following sources could not be processed due to filename encoding corruption:
+- Ethical and Legal Issues for Imaging Professionals (Towsley-Cook, 2nd Ed)
+- Medicolegal Issues for Diagnostic Imaging Professionals (Parelli et al., 4th Ed)
+- The Cambridge Handbook of One Health and the Law (Woolaston & Kotzmann, 2025)
+
+See Summary 07 for details and recommendations.
+
+KEY THEMES ACROSS ALL SOURCES
+==============================
+
+1. MISSED/DELAYED DIAGNOSIS
+   - Consistently the #1 cause of radiology claims
+   - Tumours (primary and recurrent) most common missed findings
+   - Fractures, cauda equina, perforations, obstructions also common
+   - Incidental findings present special challenges
+
+2. REPORTING ERRORS
+   - Error rates: 3-5% (standard), 8.7-12.7% (remote)
+   - Misdiagnosis (benign/malignant confusion)
+   - Missed negatives, word substitution, wrong side
+   - Remote reporting increases error risk
+
+3. CONSENT ISSUES
+   - Montgomery decision transformed consent law
+   - Verbal consent must be documented
+   - Material risks must be disclosed (even 1:1,000)
+   - Contrast administration and interventional procedures need specific consent
+
+4. REMOTE/TELERADIOLOGY RISKS
+   - IT integration challenges between trusts
+   - Communication barriers with referring clinicians
+   - Lack of access to previous imaging and clinical context
+   - Increased error rates with off-hours and remote work
+   - Need for robust escalation/referral pathways
+
+5. MEDICAL RECORD REQUIREMENTS
+   - Reports must be accurate, complete, contemporaneous
+   - Version control for amendments
+   - Retention periods (varies by jurisdiction)
+   - Central evidence in any litigation
+
+6. INCIDENTAL FINDINGS
+   - 37% of claims in Halligan study cited incidental findings
+   - RCR Standards acknowledge shared responsibility for non-target review
+   - Tension between thoroughness and practicality
+   - Screening implications of universal incidentaloma detection
+
+7. FINANCIAL EXPOSURE
+   - Claims: £4,000 to £2+ million
+   - Legal costs often 5x damages
+   - Average settled case: >£50,000
+   - One GMC case: >£65,000 in solicitor costs alone
+
+8. PROFESSIONAL RESPONSIBILITIES
+   - Follow RCR standards
+   - Maintain competence and CPD
+   - Ensure proper indemnification
+   - Duty of candour when things go wrong
+   - Clear, unambiguous reporting
+
+9. REFERRAL QUALITY
+   - Poor clinical detail leads to misinterpretation
+   - Non-medical referrers increasingly common
+   - Vague referrals (e.g., "abdominal pain ? cause") problematic
+   - Clinical context inseparable from interpretation
+
+10. LEGAL FRAMEWORKS
+    - Bolam/Bolitho test (UK) for standard of care
+    - Montgomery test (UK) for consent
+    - "Pure diagnosis" trend threatening Bolam protection
+    - 3-year limitation period (with "date of knowledge" complications)
+    - Human rights considerations (Article 2, 6, 8)
+
+RECOMMENDED READING ORDER FOR RESEARCH PAPER
+=============================================
+
+1. Start with Halligan et al. (Summary 03) - provides empirical evidence
+   on medicolegal claims specific to radiology
+
+2. Review RCR Standards (Summary 02) - establishes the regulatory framework
+   that will be cited in any UK radiology negligence case
+
+3. Consult MPS/MCU analyses (Summaries 01 & 04) - provides UK-specific
+   claims data and practical risk management advice
+
+4. Reference Buchan Clinical Negligence (Summary 05) - for comprehensive
+   UK legal framework covering all elements of negligence claims
+
+5. Use Fremgen (Summary 06) - for comparative framework and US perspective
+
+6. Re-source the inaccessible PDFs (Summary 07) - particularly Parelli et al.
+   on medicolegal issues for diagnostic imaging professionals
+
+SUBJECT TAGS FOR FURTHER INVESTIGATION
+======================================
+
+#ClinicalNegligence #Radiology #MedicalLaw #Medicolegal #RadiologyClaims
+#ReportingStandards #RCR #BolamTest #MontgomeryTest #InformedConsent
+#MissedDiagnosis #IncidentalFindings #Teleradiology #MedicalRecords
+#HIPAA #PatientConfidentiality #ExpertEvidence #Inquest
+#DutyOfCare #BreachOfDuty #Causation #Damages #Limitation
+#RiskManagement #MedicalProtection #MDU #MedicalDefence
+#AIinRadiology #RemoteReporting #InterventionalRadiology
+#CaudaEquina #TumourDiagnosis #ContrastAllergy #SteroidInjection
+
+================================================================================

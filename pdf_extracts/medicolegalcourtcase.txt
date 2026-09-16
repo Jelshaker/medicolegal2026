@@ -1,3 +1,4 @@
+---PAGE 1---
 Medicolegal implications of the Royal College of 
 Radiologists standards for the interpretation 
 and reporting of imaging investigations: a 
@@ -46,7 +47,8 @@ https://doi.org/10.1016/j.crad.2025.107162
 0009-9260/� 2025 The Author(s). Published by Elsevier Ltd on behalf of The Royal College of Radiologists. This is an open access article under the CC BY license (http:// 
 creativecommons.org/licenses/by/4.0/).
 Clinical Radiology 92 (2026) 107162
----PAGE 1---
+
+---PAGE 2---
 � 2025 The Author(s). Published by Elsevier Ltd on behalf of The Royal College of Radiologists. 
 This is an open access article under the CC BY license (http://creativecommons.org/licenses/ 
 by/4.0/).
@@ -148,7 +150,8 @@ experience (years) was 3, 20, 10, 13, and 24 at the time of
 data collection (April 2024), respectively. They provided 10, 
 12, 30, 30, and 30 individual cases, respectively, totalling
 S. Halligan et al. / Clinical Radiology 92 (2026) 1071622
----PAGE 2---
+
+---PAGE 3---
 112 patient cases overall (median age: 53 years, range: 14-
 81 years; 37 male, 75 female). The claimant to defendant 
 split was 92 (82 %) to 20 (18 %).
@@ -272,7 +275,8 @@ unreported
 Stone unreported 1 2
 Miscellaneous 8 5
 S. Halligan et al. / Clinical Radiology 92 (2026) 107162 3
----PAGE 3---
+
+---PAGE 4---
 was considered incidental to the primary clinical question 
 being asked of the radiologist.
 While an expert witness will consider some incidenta-
@@ -356,7 +360,8 @@ unreported
 CT, computed tomography; MRI, magnetic resonance imaging; NHS, National Health Service; SMA, Superior mesenteric artery; MRCP, Magnetic resonance 
 cholangiopancreatography; US, Ultrasound; CXR, Chest x-ray.
 S. Halligan et al. / Clinical Radiology 92 (2026) 1071624 
----PAGE 4---
+
+---PAGE 5---
 Committee spends considerable resource deciding who 
 should be screened, what for, when, and with what test. 
 While organised screening programmes seek to diagnose 
@@ -472,7 +477,8 @@ SH contributed to statistical analysis.
 SH contributed to manuscript preparation.
 All authors contributed to manuscript editing.
 S. Halligan et al. / Clinical Radiology 92 (2026) 107162 5
----PAGE 5---
+
+---PAGE 6---
 Funding source
 SH was supported by the National Institute for Health 
 and Care Research, the University College London Hospitals 
@@ -526,4 +532,3 @@ imaging interpretation - a systematic review. Academic radiology
 third edition. London: The Royal College of Radiologists; October 2025. 
 p. 1—12.
 S. Halligan et al. / Clinical Radiology 92 (2026) 1071626
----PAGE 6---

@@ -24,6 +24,17 @@ import { SITE_TITLE } from '../consts';
 		{ href: '#communication', label: 'Communication' },
 		{ href: '#consent', label: 'Consent' },
 		{ href: '#incidental-findings', label: 'Incidental findings' },
+		{ href: '#missed-aneurysm', label: 'Missed aneurysm (EXP v Barker)' },
+		{ href: '#misinterpretation', label: 'Misinterpretation (Brady)' },
+		{ href: '#subjective-variance', label: 'Subjective variance (Spellman)' },
+		{ href: '#subtle-ct-signs', label: 'Subtle CT signs (White)' },
+		{ href: '#whole-image', label: 'Whole-image duty (KJY)' },
+		{ href: '#adequate-views', label: 'Adequate views (Grimes)' },
+		{ href: '#triage-delay', label: 'Triage delay (Darnley)' },
+		{ href: '#deferred-mri', label: 'Deferred MRI (Jarman)' },
+		{ href: '#unperformed-request', label: 'Unperformed request (Shaheen)' },
+		{ href: '#imaging-causation', label: 'Causation (C v North Cumbria)' },
+		{ href: '#catastrophic-quantum', label: 'Quantum (Sowden)' },
 		{ href: '#ai-reporting', label: 'AI-assisted reporting' },
 		{ href: '#claim-patterns', label: 'Patterns in claims' },
 	]}
@@ -80,13 +91,68 @@ import { SITE_TITLE } from '../consts';
 <p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: a retrospective review of 112 medicolegal cases by five expert abdominal radiologists (Halligan, Blunt, Boone, Higginson, Plumb) published in <em>Clinical Radiology</em> 92 (2026) 107162. Of 176 imaging examinations reviewed (56% CT, 20% MRI), 41 (37%) involved allegations citing failure to report incidental pathology. In 29 of these 41 cases (71%), the experts judged the interpretation as reasonable — not substandard. In the remaining 12 cases (29%), the interpretation was judged substandard. Across the entire cohort, the most common allegation was "primary tumour unreported" (40 cases, 36%), followed by "perforation unreported" (12 cases, 11%).</p>
 <div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: claimants routinely cite the RCR Standards for Interpretation and Reporting to support allegations that incidental pathology should have been detected. However, the authors — all acting as expert witnesses for both claimant and defendant — found that the Bolam test remains the proper framework. Where clinical details direct attention to a specific question (e.g. "abdominal pain ? cause" on an unprepared abdominal CT), failure to report a small incidental colonic tumour was often judged reasonable. The RCR 2025 Standards' recognition that "interpretation may be incorrect if referral details are deficient, absent or misleading" provides some protective recognition of this reality. The case is cited both as evidence of claimant strategy and as expert consensus that the incidentaloma question requires nuanced Bolam application rather than a "pure diagnosis" approach.</p></div>
 </Section>
-<Section id="ai-reporting" index="07" eyebrow="AI-assisted reporting" title="AI-Assisted Reporting: Emerging Medicolegal Risk">
+<Section id="missed-aneurysm" index="07" eyebrow="Missed aneurysm" title="EXP v Barker [2017] EWCA Civ 63">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: standard of care for diagnostic interpretation under the Bolam test and the weighting of expert witness testimony.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: a consultant neuroradiologist interpreted an MRI for severe headaches and missed a right middle cerebral artery aneurysm; twelve years later it ruptured, leaving permanent catastrophic brain damage.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: a radiologist is accountable where a reasonably competent specialist ought to have detected the abnormality, even if a defence expert argues the error was reasonable. The Court of Appeal upheld the High Court finding of negligence.</p></div>
+</Section>
+<Section id="misinterpretation" index="08" eyebrow="Misinterpretation" title="Brady v Southend University Hospital NHS Foundation Trust [2020] EWHC 289 (QB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: whether an incorrect diagnostic interpretation on imaging automatically constitutes negligence.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: radiologists reporting CT scans identified an abdominal mass as omental infarction rather than severe infection, delaying treatment.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: an incorrect opinion is not automatically negligent where the reasoning was supported by a responsible body of medical opinion (Bolam/Bolitho) and expressed with appropriate caution. Claim dismissed.</p></div>
+</Section>
+<Section id="subjective-variance" index="09" eyebrow="Subjective variance" title="Spellman v Portsmouth Hospitals University NHS Trust [2024] EWHC 2011 (KB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: standard of interpretation in a "pure diagnosis" radiology claim.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: after a fall with severe back pain, the emergency MRI was reported as mild spinal stenosis rather than acute cauda equina syndrome compression.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: subjective variance in reporting is acceptable where the evaluation is logically supported; here acute compression was factually absent from the scan. Claim dismissed.</p></div>
+</Section>
+<Section id="subtle-ct-signs" index="10" eyebrow="Subtle CT signs" title="White v Leeds Teaching Hospitals NHS Trust [2011] EWHC 3822 (QB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: diagnostic threshold for subtle visceral injury on CT imaging.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: an abdominal CT on a trauma patient was reported as normal, missing early signs of bowel perforation that led to peritonitis and severe sepsis.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: where subtle signs of extraluminal gas were present, a competent consultant radiologist should have identified them. Judgment for the claimant.</p></div>
+</Section>
+<Section id="whole-image" index="11" eyebrow="Whole-image duty" title="KJY v UCLH NHS Foundation Trust [2023] EWHC 2719 (KB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: duty to examine the "whole picture" on a plain radiograph.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: infant abdominal X-rays for suspected bowel rotation showed a non-pathological gastrointestinal tract but incidentally demonstrated hip malalignment, which went unreported; developmental dysplasia of the hips was diagnosed at 14 months.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: radiologists have a legal duty to review the entire image and report obvious incidental pathology even where it falls outside the referral question.</p></div>
+</Section>
+<Section id="adequate-views" index="12" eyebrow="Adequate views" title="Grimes v Hawkins & Frimley Park Hospital [2011] EWHC 2004 (QB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: failure to complete adequate radiological views before clearing a trauma patient.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: following spinal injury, initial cervical spine X-rays failed to image down to the C7/T1 junction, missing an unstable C7 fracture.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: the Trust was liable for failing to obtain adequate visualisation of the full cervical spine before discharging the patient from spinal immobilisation protocols.</p></div>
+</Section>
+<Section id="triage-delay" index="13" eyebrow="Triage delay" title="Darnley v Croydon Health Services NHS Trust [2018] UKSC 50">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: breach of duty regarding operational triage, communication of urgency, and delay in arranging critical imaging.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: after a head injury the patient received misleading triage advice about scan wait times, left before an urgent CT, and developed a massive extradural haematoma.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: hospitals owe a duty not to misinform patients in ways that deter them from waiting for urgent, life-saving diagnostic scans. The Supreme Court found breach of duty.</p></div>
+</Section>
+<Section id="deferred-mri" index="14" eyebrow="Deferred MRI" title="Jarman v Brighton and Sussex University Hospitals [2021] EWHC 323 (QB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: appropriateness of triage delay for emergency diagnostic imaging.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: a patient presenting to A&E with severe back pain was given an "urgent" MRI within two weeks rather than an immediate emergency scan.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: under Bolam, deferring immediate MRI was acceptable because the patient lacked overt, severe red-flag signs at initial examination. Claim dismissed.</p></div>
+</Section>
+<Section id="unperformed-request" index="15" eyebrow="Unperformed request" title="Shaheen v Daish [2025] EWHC 3288 (KB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: responsibility for follow-through on imaging requisitions and contributory negligence.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: a GP issued an electronic walk-in chest X-ray referral without clearly communicating its significance; the scan was never performed, delaying a lung cancer diagnosis.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: the court rejected contributory negligence — clinicians must clearly inform patients when an unperformed imaging request carries serious diagnostic risks.</p></div>
+</Section>
+<Section id="imaging-causation" index="16" eyebrow="Imaging causation" title="C v North Cumbria University Hospitals NHS Trust [2014] EWHC 61 (QB)">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: medical causation requirements where imaging delays are said to have caused deterioration.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: neurological damage followed a delayed diagnosis in which initial radiological imaging was deferred in favour of clinical observation.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: a claimant must prove on the balance of probabilities that earlier imaging would have altered the definitive outcome, not merely that delay increased the risk of harm.</p></div>
+</Section>
+<Section id="catastrophic-quantum" index="17" eyebrow="Catastrophic quantum" title="Sowden v Lodge [2004] EWCA Civ 1370">
+<p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: assessment of long-term care needs and quantum of damages after severe radiological diagnostic failure.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: severe brain injury resulted from delayed emergency radiological intervention and treatment following trauma.</p>
+<div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: leading authority on quantifying future care costs and accommodation needs where imaging errors cause catastrophic neurological injury.</p></div>
+</Section>
+<Section id="ai-reporting" index="18" eyebrow="AI-assisted reporting" title="AI-Assisted Reporting: Emerging Medicolegal Risk">
 <p class="mt-4 max-w-3xl text-sm text-slate-600">Issue: who is liable when an AI-assisted report misses or fabricates a finding?</p>
 <p class="mt-2 max-w-3xl text-sm text-slate-600">Facts: AI tools are being deployed across NHS radiology services for triage, structured reporting and decision support. The RCR's 3rd edition Standards (October 2025) require that AI-generated content be clearly identified, that a named human author reviews and approves all AI-derived contributions, and that AI report formats must not imply a degree of scrutiny that has not taken place. No published case law directly addresses AI-assisted reporting error at the time of writing.</p>
 <div class="mt-4 border-l-2 border-slate-400 py-0.5 pl-5 pr-2"><p class="text-sm text-slate-600">Principle: where an AI tool contributes to a report, the named human author bears full responsibility under Bolam. A radiologist who signs an AI-generated report containing a hallucinated finding without independent verification would fall below standard. An AI tool that silently suppresses a finding through training bias creates a different problem: the report may appear complete but omits a material finding. The employer's duty to provide adequate training (per RCR 2025) and to maintain quality assurance extends to AI-assisted workflows. Precautionary principle: document that an AI tool was used, what it generated, and that you independently verified every clinical finding before release.</p></div>
 </Section>
-<Section id="claim-patterns" index="08" eyebrow="Categories" title="Patterns in radiology claims">
-<div class="divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">System safety</h3><p class="mt-2 text-sm text-slate-600">Delayed lung cancer on chest radiograph. Breach of fail-safe notification. See Gwyn. The duty extends beyond interpretation to effective communication of critical findings.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Fracture and spine</h3><p class="mt-2 text-sm text-slate-600">Missed fracture. Cauda equina delay. ED misinterpretation. See FB. Standard set by post and task.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Interventional error</h3><p class="mt-2 text-sm text-slate-600">Vascular injury. Inadequate consent. Risk disclosure failure. See Montgomery and Chester.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Abdominal catastrophe</h3><p class="mt-2 text-sm text-slate-600">Missed aortic dissection or bowel ischaemia on CT. Protocol adequacy and demonstrability decide breach. Causation requires Gregg analysis.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Incidental findings</h3><p class="mt-2 text-sm text-slate-600">37% of abdominal radiology claims cite incidental pathology. Small colonic tumours on unprepared CT. Renal tumours on spine MRI. See Halligan. The Bolam test, not pure diagnosis, applies.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">AI-assisted error</h3><p class="mt-2 text-sm text-slate-600">AI hallucination, template bias, silent suppression. The named human author bears full responsibility. Document AI use, verify independently.</p></div></div>
+<Section id="claim-patterns" index="19" eyebrow="Categories" title="Patterns in radiology claims">
+<div class="divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">System safety</h3><p class="mt-2 text-sm text-slate-600">Delayed lung cancer on chest radiograph. Breach of fail-safe notification. See Gwyn. The duty extends beyond interpretation to effective communication of critical findings.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Fracture and spine</h3><p class="mt-2 text-sm text-slate-600">Missed fracture. Cauda equina delay. ED misinterpretation. See FB. Standard set by post and task.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Interventional error</h3><p class="mt-2 text-sm text-slate-600">Vascular injury. Inadequate consent. Risk disclosure failure. See Montgomery and Chester.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Abdominal catastrophe</h3><p class="mt-2 text-sm text-slate-600">Missed aortic dissection or bowel ischaemia on CT. Standard of care, causation and protocol adequacy decide breach and outcome. See Brady and White. Causation requires Gregg analysis.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Incidental findings</h3><p class="mt-2 text-sm text-slate-600">37% of abdominal radiology claims cite incidental pathology. Small colonic tumours on unprepared CT. Renal tumours on spine MRI. See Halligan and KJY. The Bolam test, not pure diagnosis, applies.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Operational delay</h3><p class="mt-2 text-sm text-slate-600">Misleading triage advice deterring patients from waiting for urgent imaging. Unperformed walk-in referrals. Inadequate views before clearing trauma. See Darnley, Shaheen and Grimes.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">AI-assisted error</h3><p class="mt-2 text-sm text-slate-600">AI hallucination, template bias, silent suppression. The named human author bears full responsibility. Document AI use, verify independently.</p></div></div>
 </Section>
 <Callout tone="caution" title="Not legal advice">
 <p>Case digests here are a reference aid, not advice, and not a substitute for reading the judgment. Citations are given so the primary source can be checked; where a matter turns on the application of a decision to particular facts, take advice from a lawyer instructed on those facts.</p>

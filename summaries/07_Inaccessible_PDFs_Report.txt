@@ -1,0 +1,171 @@
+================================================================================
+REPORT: Inaccessible PDF Files - Technical Issues Identified
+DATE: Generated during summary production session
+================================================================================
+
+FILES THAT COULD NOT BE EXTRACTED
+=================================
+
+Three PDF files from the pdf_extracts folder could NOT be processed due to
+corrupted filenames containing special Unicode characters that cannot be
+resolved by any application or system tool on this Windows environment.
+
+1. Ethical and Legal Issues for Imaging Professionals (2nd Edition)
+   Authors: Doreen M. Towsley-Cook, Terese A.
+   Publisher: St. Louis, Mo, ©2007
+   ISBN-13: 9780323045995
+   Filename: "Ethical and Legal Issues for Imaging Professionals -- Doreen M_
+   Towsley-Cook, Doreen M_ Towsley-Cook, Terese A_ -- 2nd edition, St_ Louis,
+   Mo, ©2007 -- isbn13 9780323045995 -- f241d1e0d1f7cf8be0e3a2f11161a38f --
+   Anna's Archiv.pdf"
+
+2. Medicolegal Issues for Diagnostic Imaging Professionals (4th Edition)
+   Authors: Robert J. Parelli, David K. Weissman, Colin M. Howles, Zeev
+   Publisher: Boca Raton Fla.
+   ISBN-13: 9780429250088
+   Filename: "Medicolegal Issues for Diagnostic Imaging Professionals, --
+   Robert J_ Parelli, David_ K_ Weissman, Colin M_ Howles, Zeev -- 4th ed,
+   Boca Raton Fla_ ; -- isbn13 9780429250088 -- 6a7d053a68f4bc74b97ba411b73dd01f
+   -- Anna's Archi.pdf"
+
+3. The Cambridge Handbook of One Health and the Law (2025)
+   Editors: Katie Woolaston, Jane Kotzmann
+   Publisher: Cambridge Law Handbooks, 2025
+   ISBN-13: 9781009653718
+   Filename: "The Cambridge Handbook of One Health and the Law_ Existing --
+   Woolaston, Katie (editor); Kotzmann, Jane (editor) -- Cambridge Law
+   Handbooks, 2025 -- isbn13 9781009653718 -- 2baf3bd2ece00e8ba4e450b7d20860e6
+   -- Anna's Archive.pdf"
+
+NATURE OF THE PROBLEM
+=====================
+
+These files exhibit a Windows Unicode filename encoding corruption:
+
+1. The files appear in directory listings (visible through the glob tool and
+   os.listdir in Python)
+2. However, the files CANNOT be opened by ANY application or system tool:
+   - Python (open, os.path functions)
+   - PowerShell (Get-ChildItem, Copy-Item, File.OpenRead)
+   - .NET Framework (FileInfo, FileStream)
+   - Windows API (FindFirstFileW, ReadFile)
+   - The DSH filesystem read tool
+
+3. The corruption is caused by special Unicode characters in the filenames:
+   - U+00A9 (©) COPYRIGHT SIGN (in file #1)
+   - U+2019 (') RIGHT SINGLE QUOTATION MARK (in files #1, #2, #3)
+
+4. The filenames appear to have been downloaded from Anna's Archive (a
+   shadow library) and the Unicode normalization form used (likely NFD -
+   decomposed form) is incompatible with Windows file operations.
+
+5. The files are "phantom" files: they exist in the directory entry table but
+   cannot be accessed through any normal file path operation.
+
+RECOMMENDED SOLUTIONS
+=====================
+
+1. RECOMMENDED: Re-download the PDFs with clean filenames
+   - Use a download method that produces ASCII-safe filenames
+   - Or manually rename the files after download using a tool that handles
+     Unicode normalization (e.g., a Linux system or a file renamer with
+     Unicode normalization support)
+
+2. ALTERNATIVE: Use a virtual filesystem or container with Linux support
+   - WSL (Windows Subsystem for Linux) may handle these filenames differently
+   - A Docker container with proper locale settings might access them
+
+3. WORKAROUND: Use the content from similar sources
+   - File #1 (Towsley-Cook): This is a radiology-specific ethics/legal text.
+     Similar content is covered in the RCR Standards and other sources.
+   - File #2 (Parelli et al.): This is THE most critical missing source as it
+     is specifically about medicolegal issues for diagnostic imaging
+     professionals. Content on imaging-specific medicolegal issues would need
+     to be sourced from alternative references.
+   - File #3 (Cambridge One Health): This covers One Health law, which is
+     tangentially relevant to radiology (zoonotic disease imaging, etc.).
+     May be of lesser priority for a radiology-focused paper.
+
+IMPORTANTLY, THE MOST CRITICALLY MISSED SOURCE IS:
+"Medicolegal Issues for Diagnostic Imaging Professionals" (Parelli et al., 4th Ed)
+This book appears to be specifically focused on medicolegal issues in
+diagnostic imaging and would have been extremely valuable for the research
+paper. It should be re-downloaded or sourced from an alternative method.
+
+SUMMARY FILES PRODUCED (7 files)
+=================================
+
+All successfully processed sources have been converted to detailed summary
+text documents in the "summaries/" folder:
+
+1. 01_MPS_Radiology_Medicolegal_Analysis.txt
+   Source: Medical Protection Society (MPS) radiology cases analysis
+   Content: Analysis of ~800 radiology cases (2016-2023), including negligence
+   claims, complaints, inquests, GMC investigations, remote reporting risks
+
+2. 02_RCR_Standards_Interpretation_Reporting_2025.txt
+   Source: Royal College of Radiologists, 3rd Edition (October 2025)
+   Content: UK standards for imaging interpretation and reporting, including
+   service organisation, reporting authors, infrastructure, remote reporting,
+   report structure, interventional radiology, patient access
+
+3. 03_Halligan_et_al_Medicolegal_Claims_Abdominal_Radiology.txt
+   Source: Halligan et al., Clinical Radiology 92 (2026) 107162
+   Content: Retrospective review of 112 medicolegal cases in abdominal
+   radiology, 37% citing incidental findings, analysis of substandard
+   interpretation rates, Bolam test challenges
+
+4. 04_MDU_Radiology_Claims_Analysis.txt
+   Source: MDU (Medical Defence Union) by Dr Shabbir Choudhury
+   Content: Analysis of 200 claims against consultant radiologists in
+   independent sector, claim outcomes, compensation costs, case study of
+   Achilles tendon rupture consent failure
+
+5. 05_Buchan_Clinical_Negligence_Practical_Guide_8thEd.txt
+   Source: Clinical Negligence: A Practical Guide, 8th Edition (Andrew Buchan)
+   Content: Comprehensive UK clinical negligence law reference, covering all
+   27 chapters with detailed summaries of those most relevant to radiology
+   (duty of care, breach, causation, consent, medical records, experts,
+   human rights, limitation)
+
+6. 06_Fremgen_Medical_Law_and_Ethics_6thEd.txt
+   Source: Medical Law and Ethics, 6th Edition (Bonnie F. Fremgen)
+   Content: US-based medical law and ethics textbook covering the legal
+   system, professional liability, medical records, HIPAA/confidentiality,
+   medical ethics, and bioethics
+
+FILES IN pdf_extracts FOLDER (full listing)
+===========================================
+
+Text files (extracted from PDFs):
+- MPS medicolegal.txt (source for summary #1)
+- ppqi_reporting-standards-guidance.txt (source for summary #2)
+- medicolegalcourtcase.txt (source for summary #3)
+- article-1789575458816.txt (source for summary #4)
+- annas-arch-d75c350e5b5f.txt (source for summary #5, 947 pages = Clinical Negligence book)
+- Medical Law and Ethics (Fremgen) .txt files (source for summary #6)
+
+PDF files (original):
+- All corresponding PDF originals present
+- 3 PDFs with corrupted filenames (see above)
+
+================================================================================
+NEXT STEPS RECOMMENDED
+======================
+
+1. Re-source the three inaccessible PDFs using alternative methods
+2. Particularly prioritize obtaining "Medicolegal Issues for Diagnostic
+   Imaging Professionals" (Parelli et al.) as it is specifically focused on
+   medicolegal issues in diagnostic imaging
+3. The 6 summary documents produced provide a strong foundation for a
+   medicolegal paper on radiology, covering:
+   - UK claims data and analysis (MPS, MDU, Halligan et al.)
+   - UK regulatory standards (RCR)
+   - UK clinical negligence law (Buchan)
+   - US medical law context (Fremgen)
+4. Consider additional sources on:
+   - Montgomery v Lanarkshire Health Board (consent law)
+   - Bolam/Bolitho test developments
+   - Specific radiology case law
+   - International perspectives on radiology medicolegal issues
+================================================================================

@@ -7,6 +7,20 @@ export const SITE_TAGLINE = "A small working resource on radiology and the law";
 export const SITE_DESCRIPTION =
 	"A small, curated reference resource on radiology and medicolegal law, with commentary on recent cases. It sets out how imaging investigations are performed, interpreted and reported, the standards and statutory duties that govern them, and the decisions that show what happens when they fail.";
 
+// Canonical origin, with no trailing slash. Read at build time from
+// PUBLIC_SITE_URL (see `.env` / `.env.example`) and kept in step with `site` in
+// `astro.config.mjs`. Astro supplies the same value as `Astro.site`, which is
+// what `<link rel="canonical">`, the XML sitemap and robots.txt are built from;
+// this fallback exists only so the site still renders a sane absolute URL when
+// the variable is missing.
+export const SITE_URL = (
+	import.meta.env.PUBLIC_SITE_URL?.trim() || "https://medicolegal2026.pages.dev"
+).replace(/\/+$/, "");
+
+// Default social preview image (1200×630), used when a page does not supply its
+// own. Served from `public/images`, so it is referenced by path on the site.
+export const DEFAULT_SOCIAL_IMAGE = "/images/og-default.jpg";
+
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
 	{ href: "/radiology-resources", label: "Radiology" },

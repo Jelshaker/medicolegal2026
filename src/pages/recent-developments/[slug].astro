@@ -4,6 +4,7 @@ import MedicalImageViewer from '../../components/MedicalImageViewer.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, BLOG_CATEGORIES } from '../../consts';
 import { formatDate, readingTime } from '../../lib/utils';
+import { isoDate } from '../../lib/seo';
 
 export const prerender = true;
 
@@ -21,7 +22,16 @@ const readMin = readingTime(post.body);
 const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 ---
 
-<BaseLayout title={`${post.data.title} | ${SITE_TITLE}`} description={post.data.description}>
+<BaseLayout
+	title={`${post.data.title} | ${SITE_TITLE}`}
+	description={post.data.description}
+	article={{
+		headline: post.data.title,
+		datePublished: isoDate(post.data.pubDate),
+		dateModified: post.data.updatedDate ? isoDate(post.data.updatedDate) : undefined,
+		section: categoryLabel(post.data.category),
+	}}
+>
 	<!-- Article header -->
 	<section class="border-b border-slate-300 bg-white py-14">
 		<div class="container-page">

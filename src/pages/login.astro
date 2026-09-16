@@ -3,7 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_TITLE, DEMO_PORTAL_ACCOUNT } from '../consts';
 ---
 
-<BaseLayout title={`Secure Login | ${SITE_TITLE}`} description="Professional portal login for solicitors, barristers and referrers to access secure correspondence and case imaging correspondence.">
+<BaseLayout
+	title={`Secure Login | ${SITE_TITLE}`}
+	description="Professional portal login for solicitors, barristers and referrers to access secure correspondence and case imaging correspondence."
+	noindex
+>
 	<section class="bg-paper py-20">
 		<div class="container-page max-w-md">
 			<div class="border border-slate-300 bg-white p-8">

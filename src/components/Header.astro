@@ -8,11 +8,22 @@ const isActive = (href: string) =>
 
 <header class="sticky top-0 z-50 border-b border-slate-300 bg-white px-4 md:px-8">
     <div class="container-page flex h-16 items-center justify-between gap-8 md:h-[4.75rem]">
-        <a href="/" class="group shrink-0" aria-label={`${SITE_TITLE} — home`}>
-            <span class="block font-serif text-[1.05rem] font-bold leading-tight text-slate-900">
-                {PRACTITIONER.shortName}
+        <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} — home`}>
+            <img
+                src="/logo.png"
+                alt={`${SITE_TITLE} logo`}
+                width="512"
+                height="512"
+                class="h-11 w-11 md:h-12 md:w-12"
+                loading="eager"
+                decoding="async"
+            />
+            <span>
+                <span class="block font-serif text-[1.05rem] font-bold leading-tight text-slate-900">
+                    {PRACTITIONER.shortName}
+                </span>
+                <span class="meta-label mt-0.5 block !text-[0.62rem]">Radiology &amp; medicolegal law</span>
             </span>
-            <span class="meta-label mt-0.5 block !text-[0.62rem]">Radiology &amp; medicolegal law</span>
         </a>
 
         <!-- Desktop Navigation -->

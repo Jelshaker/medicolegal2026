@@ -5,9 +5,12 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 <footer class="mt-auto border-t border-slate-300 bg-paper">
 	<div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
 		<div>
-			<a href="/" class="inline-block">
-				<span class="block font-serif text-[1.05rem] font-bold text-slate-900">{PRACTITIONER.shortName}</span>
-				<span class="meta-label mt-0.5 block !text-[0.62rem]">Radiology &amp; medicolegal law</span>
+			<a href="/" class="flex items-center gap-3">
+				<img src="/logo-256.png" alt={`${SITE_TITLE} logo`} width="256" height="256" class="h-11 w-11" loading="lazy" decoding="async" />
+				<span>
+					<span class="block font-serif text-[1.05rem] font-bold text-slate-900">{PRACTITIONER.shortName}</span>
+					<span class="meta-label mt-0.5 block !text-[0.62rem]">Radiology &amp; medicolegal law</span>
+				</span>
 			</a>
 			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
 				A reference resource on radiology and the law: modality and

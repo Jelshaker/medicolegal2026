@@ -1,0 +1,944 @@
+---
+// Drawn schematics for the reference pages. Every graphic is monochrome line
+// work on a white ground so it sits inside the document design rather than
+// competing with it: hairline strokes, sans-serif labels, no colour, no radius.
+//
+// Each diagram is drawn on a 960 × 540 (16:9) canvas, which matches the
+// default `ratio="video"` of Figure.astro.
+interface Props {
+	name:
+		| "legal-questions"
+		| "reporting-chain"
+		| "duty-holders"
+		| "case-timeline"
+		| "incidental-regions"
+		| "dose-scale"
+		| "local-only"
+		| "instruction-cycle"
+		| "resource-map";
+}
+
+const { name } = Astro.props as Props;
+
+const labels: Record<Props["name"], string> = {
+	"legal-questions": "Diagram: the four questions that decide a radiological claim",
+	"reporting-chain": "Diagram: the reporting chain from referrer to communication",
+	"duty-holders": "Diagram: the four duty holders under IR(ME)R 2017",
+	"case-timeline": "Diagram: timeline of the principal decisions and standards",
+	"incidental-regions": "Diagram: regions in which incidental findings arise",
+	"dose-scale": "Diagram: relative effective dose across imaging modalities",
+	"local-only": "Diagram: a browser-only workflow in which no data leaves the device",
+	"instruction-cycle": "Diagram: the stages of an expert instruction",
+	"resource-map": "Diagram: how the pages of the resource are organised",
+};
+---
+
+<svg
+	class="diagram"
+	viewBox="0 0 960 540"
+	role="img"
+	aria-label={labels[name]}
+	preserveAspectRatio="xMidYMid meet"
+>
+	{
+		name === "legal-questions" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Framework
+				</text>
+				<text class="d-title" x="40" y="80">
+					Four questions decide a radiological claim
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-box" x="40" y="170" width="190" height="180" />
+				<text class="d-num" x="58" y="204">
+					01
+				</text>
+				<text class="d-label" x="58" y="240">
+					Standard of care
+				</text>
+				<text class="d-sub" x="58" y="270">
+					Bolam v Friern [1957]
+				</text>
+				<text class="d-sub" x="58" y="292">
+					Bolitho [1997]
+				</text>
+
+				<line class="d-arrow" x1="232" y1="260" x2="264" y2="260" />
+				<path class="d-head" d="M270 260 L262 256 L262 264 Z" />
+
+				<rect class="d-box" x="270" y="170" width="190" height="180" />
+				<text class="d-num" x="288" y="204">
+					02
+				</text>
+				<text class="d-label" x="288" y="240">
+					Breach
+				</text>
+				<text class="d-sub" x="288" y="270">
+					Visible vs demonstrable
+				</text>
+				<text class="d-sub" x="288" y="292">
+					Muller [2017] · FB [2017]
+				</text>
+
+				<line class="d-arrow" x1="462" y1="260" x2="494" y2="260" />
+				<path class="d-head" d="M500 260 L492 256 L492 264 Z" />
+
+				<rect class="d-box" x="500" y="170" width="190" height="180" />
+				<text class="d-num" x="518" y="204">
+					03
+				</text>
+				<text class="d-label" x="518" y="240">
+					Causation
+				</text>
+				<text class="d-sub" x="518" y="270">
+					Gregg v Scott [2005]
+				</text>
+				<text class="d-sub" x="518" y="292">
+					Wilsher · Little
+				</text>
+
+				<line class="d-arrow" x1="692" y1="260" x2="724" y2="260" />
+				<path class="d-head" d="M730 260 L722 256 L722 264 Z" />
+
+				<rect class="d-box" x="730" y="170" width="190" height="180" />
+				<text class="d-num" x="748" y="204">
+					04
+				</text>
+				<text class="d-label" x="748" y="240">
+					Consent
+				</text>
+				<text class="d-sub" x="748" y="270">
+					Montgomery [2015]
+				</text>
+				<text class="d-sub" x="748" y="292">
+					Material risk to the patient
+				</text>
+
+				<line class="d-rule" x1="40" y1="420" x2="920" y2="420" />
+				<text class="d-note" x="40" y="452">
+					Each question is set out in the law library with the authority and the professional standard behind it.
+				</text>
+				<text class="d-note" x="40" y="478">
+					Breach asks what was demonstrable; causation asks what would have changed.
+				</text>
+			</g>
+		)
+	}
+	{
+		name === "reporting-chain" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					The chain
+				</text>
+				<text class="d-title" x="40" y="80">
+					A report is one link in a chain of duties
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-box" x="40" y="180" width="144" height="112" />
+				<text class="d-num" x="54" y="210">
+					01
+				</text>
+				<text class="d-label" x="54" y="242">
+					Referrer
+				</text>
+				<text class="d-sub" x="54" y="266">
+					Clinical question
+				</text>
+				<text class="d-sub" x="54" y="284">
+					Sufficient information
+				</text>
+
+				<line class="d-arrow" x1="188" y1="236" x2="212" y2="236" />
+				<path class="d-head" d="M218 236 L210 232 L210 240 Z" />
+
+				<rect class="d-box" x="224" y="180" width="144" height="112" />
+				<text class="d-num" x="238" y="210">
+					02
+				</text>
+				<text class="d-label" x="238" y="242">
+					Acquisition
+				</text>
+				<text class="d-sub" x="238" y="266">
+					Protocol and technique
+				</text>
+				<text class="d-sub" x="238" y="284">
+					Justification recorded
+				</text>
+
+				<line class="d-arrow" x1="372" y1="236" x2="396" y2="236" />
+				<path class="d-head" d="M402 236 L394 232 L394 240 Z" />
+
+				<rect class="d-box" x="408" y="180" width="144" height="112" />
+				<text class="d-num" x="422" y="210">
+					03
+				</text>
+				<text class="d-label" x="422" y="242">
+					Reporting
+				</text>
+				<text class="d-sub" x="422" y="266">
+					Demonstrable findings
+				</text>
+				<text class="d-sub" x="422" y="284">
+					Named author
+				</text>
+
+				<line class="d-arrow" x1="556" y1="236" x2="580" y2="236" />
+				<path class="d-head" d="M586 236 L578 232 L578 240 Z" />
+
+				<rect class="d-box" x="592" y="180" width="144" height="112" />
+				<text class="d-num" x="606" y="210">
+					04
+				</text>
+				<text class="d-label" x="606" y="242">
+					Report
+				</text>
+				<text class="d-sub" x="606" y="266">
+					Conclusion and limits
+				</text>
+				<text class="d-sub" x="606" y="284">
+					Structured format
+				</text>
+
+				<line class="d-arrow" x1="740" y1="236" x2="764" y2="236" />
+				<path class="d-head" d="M770 236 L762 232 L762 240 Z" />
+
+				<rect class="d-box" x="776" y="180" width="144" height="112" />
+				<text class="d-num" x="790" y="210">
+					05
+				</text>
+				<text class="d-label" x="790" y="242">
+					Communication
+				</text>
+				<text class="d-sub" x="790" y="266">
+					Critical results
+				</text>
+				<text class="d-sub" x="790" y="284">
+					Fail-safe escalation
+				</text>
+
+				<path class="d-arrow" d="M664 292 L664 340 L848 340 L848 292" />
+				<line class="d-arrow" x1="756" y1="340" x2="756" y2="374" />
+				<path class="d-head" d="M756 380 L752 372 L760 372 Z" />
+
+				<rect class="d-box" x="576" y="384" width="344" height="96" />
+				<text class="d-label" x="596" y="418">
+					Communication is part of the standard
+				</text>
+				<text class="d-sub" x="596" y="444">
+					The duty does not end with the report. Where a finding
+				</text>
+				<text class="d-sub" x="596" y="462">
+					needs action, it must reach someone who will act on it.
+				</text>
+
+				<text class="d-note" x="40" y="418">
+					A claim can attach at any link:
+				</text>
+				<text class="d-note" x="40" y="444">
+					the protocol that could not answer
+				</text>
+				<text class="d-note" x="40" y="462">
+					the question, the finding that was
+				</text>
+				<text class="d-note" x="40" y="480">
+					demonstrable, or the result that
+				</text>
+				<text class="d-note" x="40" y="498">
+					never reached the clinician.
+				</text>
+			</g>
+		)
+	}
+{
+		name === "duty-holders" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Duty holders
+				</text>
+				<text class="d-title" x="40" y="80">
+					Four roles, one exposure
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-box" x="60" y="150" width="380" height="160" />
+				<text class="d-num" x="80" y="182">
+					EMPLOYER
+				</text>
+				<text class="d-label" x="80" y="216">
+					Provides the framework
+				</text>
+				<text class="d-sub" x="80" y="246">
+					Written procedures, training and
+				</text>
+				<text class="d-sub" x="80" y="264">
+					the incident reporting system.
+				</text>
+
+				<rect class="d-box" x="520" y="150" width="380" height="160" />
+				<text class="d-num" x="540" y="182">
+					REFERRER
+				</text>
+				<text class="d-label" x="540" y="216">
+					Supplies the clinical question
+				</text>
+				<text class="d-sub" x="540" y="246">
+					Sufficient clinical information, and
+				</text>
+				<text class="d-sub" x="540" y="264">
+					entitlement to refer the patient.
+				</text>
+
+				<rect class="d-box" x="60" y="330" width="380" height="160" />
+				<text class="d-num" x="80" y="362">
+					PRACTITIONER
+				</text>
+				<text class="d-label" x="80" y="396">
+					Justifies each exposure
+				</text>
+				<text class="d-sub" x="80" y="426">
+					Takes clinical responsibility for the
+				</text>
+				<text class="d-sub" x="80" y="444">
+					justification and its basis.
+				</text>
+
+				<rect class="d-box" x="520" y="330" width="380" height="160" />
+				<text class="d-num" x="540" y="362">
+					OPERATOR
+				</text>
+				<text class="d-label" x="540" y="396">
+					Performs the practical aspects
+				</text>
+				<text class="d-sub" x="540" y="426">
+					Must be entitled and trained for
+				</text>
+				<text class="d-sub" x="540" y="444">
+					the task actually carried out.
+				</text>
+
+				<rect class="d-fill" x="450" y="288" width="60" height="64" />
+				<text class="d-cap" x="480" y="306" text-anchor="middle">
+					IR(ME)R
+				</text>
+				<text class="d-cap" x="480" y="324" text-anchor="middle">
+					2017
+				</text>
+				</g>
+		)
+	}
+	{
+		name === "case-timeline" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Chronology
+				</text>
+				<text class="d-title" x="40" y="80">
+					The authorities, in the order they arrived
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<line class="d-axis" x1="60" y1="290" x2="900" y2="290" />
+				<path class="d-head" d="M912 290 L900 285 L900 295 Z" />
+
+				<line class="d-axis" x1="90" y1="278" x2="90" y2="302" />
+				<text class="d-label" x="90" y="252" text-anchor="middle">
+					1957
+				</text>
+				<text class="d-sub" x="90" y="230" text-anchor="middle">
+					Bolam v Friern
+				</text>
+				<text class="d-sub" x="90" y="212" text-anchor="middle">
+					the standard of care
+				</text>
+
+				<line class="d-axis" x1="228" y1="278" x2="228" y2="302" />
+				<text class="d-label" x="228" y="328" text-anchor="middle">
+					1993
+				</text>
+				<text class="d-sub" x="228" y="352" text-anchor="middle">
+					Ikarian Reefer
+				</text>
+				<text class="d-sub" x="228" y="370" text-anchor="middle">
+					duties of the expert
+				</text>
+
+				<line class="d-axis" x1="366" y1="278" x2="366" y2="302" />
+				<text class="d-label" x="366" y="252" text-anchor="middle">
+					1997
+				</text>
+				<text class="d-sub" x="366" y="230" text-anchor="middle">
+					Bolitho
+				</text>
+				<text class="d-sub" x="366" y="212" text-anchor="middle">
+					opinion needs a logical basis
+				</text>
+
+				<line class="d-axis" x1="504" y1="278" x2="504" y2="302" />
+				<text class="d-label" x="504" y="328" text-anchor="middle">
+					2000
+				</text>
+				<text class="d-sub" x="504" y="352" text-anchor="middle">
+					Penney, Palmer &amp; Canon
+				</text>
+				<text class="d-sub" x="504" y="370" text-anchor="middle">
+					screening and perception
+				</text>
+
+				<line class="d-axis" x1="642" y1="278" x2="642" y2="302" />
+				<text class="d-label" x="642" y="252" text-anchor="middle">
+					2015
+				</text>
+				<text class="d-sub" x="642" y="230" text-anchor="middle">
+					Montgomery
+				</text>
+				<text class="d-sub" x="642" y="212" text-anchor="middle">
+					materiality of risk
+				</text>
+
+				<line class="d-axis" x1="780" y1="278" x2="780" y2="302" />
+				<text class="d-label" x="780" y="328" text-anchor="middle">
+					2017
+				</text>
+				<text class="d-sub" x="780" y="352" text-anchor="middle">
+					Muller · FB
+				</text>
+				<text class="d-sub" x="780" y="370" text-anchor="middle">
+					perception and task standard
+				</text>
+
+				<line class="d-axis" x1="900" y1="278" x2="900" y2="302" />
+				<text class="d-label" x="900" y="252" text-anchor="middle">
+					2025
+				</text>
+				<text class="d-sub" x="900" y="230" text-anchor="middle">
+					RCR Standards
+				</text>
+				<text class="d-sub" x="900" y="212" text-anchor="middle">
+					third edition
+				</text>
+
+				<line class="d-rule" x1="40" y1="410" x2="920" y2="410" />
+				<text class="d-note" x="40" y="442">
+					The trend is consistent: the standard of care remains a professional one, but the court now expects
+				</text>
+				<text class="d-note" x="40" y="464">
+					the expert to reconstruct what was demonstrable on the images as acquired, rather than what is
+				</text>
+				<text class="d-note" x="40" y="486">
+					visible with hindsight.
+				</text>
+			</g>
+		)
+	}
+{
+		name === "incidental-regions" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Incidental findings
+				</text>
+				<text class="d-title" x="40" y="80">
+					Pathology found outside the question that was asked
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<ellipse class="d-outline" cx="330" cy="300" rx="180" ry="130" />
+				<ellipse class="d-fill" cx="330" cy="300" rx="150" ry="104" />
+
+				<rect class="d-box" x="312" y="382" width="36" height="26" />
+				<ellipse class="d-box" cx="278" cy="346" rx="26" ry="18" />
+				<ellipse class="d-box" cx="382" cy="346" rx="26" ry="18" />
+				<ellipse class="d-box" cx="238" cy="252" rx="42" ry="30" />
+				<circle class="d-box" cx="392" cy="250" r="17" />
+				<circle class="d-box" cx="348" cy="286" r="13" />
+				<circle class="d-box" cx="424" cy="300" r="11" />
+
+				<line class="d-dash" x1="404" y1="346" x2="640" y2="196" />
+				<line class="d-dash" x1="238" y1="252" x2="640" y2="286" />
+				<line class="d-dash" x1="424" y1="300" x2="640" y2="376" />
+
+				<text class="d-label" x="652" y="186">
+					Renal
+				</text>
+				<text class="d-sub" x="652" y="208">
+					A small renal mass seen on a study
+				</text>
+				<text class="d-sub" x="652" y="226">
+					performed for a different indication.
+				</text>
+
+				<text class="d-label" x="652" y="276">
+					Colonic
+				</text>
+				<text class="d-sub" x="652" y="298">
+					Wall thickening without a dedicated
+				</text>
+				<text class="d-sub" x="652" y="316">
+					colonic protocol or preparation.
+				</text>
+
+				<text class="d-label" x="652" y="366">
+					Hepatic
+				</text>
+				<text class="d-sub" x="652" y="388">
+					A deposit on a single-phase study
+				</text>
+				<text class="d-sub" x="652" y="406">
+					not timed for the liver.
+				</text>
+
+				<line class="d-rule" x1="40" y1="448" x2="920" y2="448" />
+				<text class="d-note" x="40" y="480">
+					Around 37% of abdominal radiology claims cite incidental pathology. The question for the expert is
+				</text>
+				<text class="d-note" x="40" y="502">
+					whether the finding fell within the responsibility created by the study that was actually performed.
+				</text>
+			</g>
+		)
+	}
+{
+		name === "dose-scale" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Dose
+				</text>
+				<text class="d-title" x="40" y="80">
+					Effective dose, on a logarithmic scale
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<line class="d-axis" x1="60" y1="340" x2="900" y2="340" />
+				<line class="d-axis" x1="60" y1="332" x2="60" y2="348" />
+				<line class="d-axis" x1="270" y1="332" x2="270" y2="348" />
+				<line class="d-axis" x1="480" y1="332" x2="480" y2="348" />
+				<line class="d-axis" x1="690" y1="332" x2="690" y2="348" />
+				<line class="d-axis" x1="900" y1="332" x2="900" y2="348" />
+
+				<text class="d-sub" x="60" y="370" text-anchor="middle">
+					0.001
+				</text>
+				<text class="d-sub" x="270" y="370" text-anchor="middle">
+					0.01
+				</text>
+				<text class="d-sub" x="480" y="370" text-anchor="middle">
+					0.1
+				</text>
+				<text class="d-sub" x="690" y="370" text-anchor="middle">
+					1
+				</text>
+				<text class="d-sub" x="900" y="370" text-anchor="middle">
+					10
+				</text>
+				<text class="d-note" x="60" y="400">
+					Effective dose in millisieverts — indicative order of magnitude only.
+				</text>
+
+				<line class="d-axis" x1="333" y1="340" x2="333" y2="230" />
+				<line class="d-axis" x1="657" y1="340" x2="657" y2="290" />
+				<line class="d-axis" x1="753" y1="340" x2="753" y2="230" />
+				<line class="d-axis" x1="880" y1="340" x2="880" y2="290" />
+
+				<text class="d-label" x="333" y="222" text-anchor="middle">
+					Chest radiograph
+				</text>
+				<text class="d-sub" x="333" y="202" text-anchor="middle">
+					around 0.02 mSv
+				</text>
+
+				<text class="d-label" x="657" y="282" text-anchor="middle">
+					Lumbar spine
+				</text>
+				<text class="d-sub" x="657" y="262" text-anchor="middle">
+					around 0.7 mSv
+				</text>
+
+				<text class="d-label" x="753" y="222" text-anchor="middle">
+					CT head
+				</text>
+				<text class="d-sub" x="753" y="202" text-anchor="middle">
+					around 2 mSv
+				</text>
+
+				<text class="d-label" x="880" y="282" text-anchor="middle">
+					CT abdomen
+				</text>
+				<text class="d-sub" x="880" y="262" text-anchor="middle">
+					around 8 mSv
+				</text>
+
+				<line class="d-rule" x1="40" y1="430" x2="920" y2="430" />
+				<text class="d-note" x="40" y="462">
+					MRI and ultrasound use no ionising radiation. For X-ray and CT the duty is to justify the exposure
+				</text>
+				<text class="d-note" x="40" y="484">
+					and then to optimise it, keeping the dose as low as reasonably practicable for the diagnostic purpose.
+				</text>
+			</g>
+		)
+	}
+	{
+		name === "local-only" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Local only
+				</text>
+				<text class="d-title" x="40" y="80">
+					Nothing leaves the device
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-dash" x="60" y="140" width="560" height="330" />
+				<text class="d-cap" x="80" y="172">
+					Your device — browser session
+				</text>
+
+				<rect class="d-box" x="90" y="220" width="110" height="70" />
+				<text class="d-label" x="145" y="252" text-anchor="middle">
+					DICOM
+				</text>
+				<text class="d-sub" x="145" y="272" text-anchor="middle">
+					file dropped
+				</text>
+
+				<line class="d-arrow" x1="204" y1="255" x2="228" y2="255" />
+				<path class="d-head" d="M234 255 L226 251 L226 259 Z" />
+
+				<rect class="d-box" x="240" y="220" width="110" height="70" />
+				<text class="d-label" x="295" y="252" text-anchor="middle">
+					Parser
+				</text>
+				<text class="d-sub" x="295" y="272" text-anchor="middle">
+					in JavaScript
+				</text>
+
+				<line class="d-arrow" x1="354" y1="255" x2="378" y2="255" />
+				<path class="d-head" d="M384 255 L376 251 L376 259 Z" />
+
+				<rect class="d-box" x="390" y="220" width="110" height="70" />
+				<text class="d-label" x="445" y="252" text-anchor="middle">
+					Canvas
+				</text>
+				<text class="d-sub" x="445" y="272" text-anchor="middle">
+					rendered locally
+				</text>
+
+				<line class="d-arrow" x1="504" y1="255" x2="528" y2="255" />
+				<path class="d-head" d="M534 255 L526 251 L526 259 Z" />
+
+				<rect class="d-box" x="540" y="220" width="60" height="70" />
+				<text class="d-label" x="570" y="260" text-anchor="middle">
+					You
+				</text>
+
+				<line class="d-rule" x1="90" y1="340" x2="590" y2="340" />
+				<text class="d-sub" x="90" y="368">
+					Held in working memory for the session. Nothing written to
+				</text>
+				<text class="d-sub" x="90" y="388">
+					disk, nothing transmitted, nothing logged.
+				</text>
+				<text class="d-sub" x="90" y="420">
+					Data minimisation by design, not by contract.
+				</text>
+
+				<rect class="d-outline" x="660" y="196" width="160" height="120" />
+				<line class="d-rule" x1="680" y1="232" x2="800" y2="232" />
+				<line class="d-rule" x1="680" y1="266" x2="800" y2="266" />
+				<line class="d-axis" x1="660" y1="196" x2="820" y2="316" />
+				<line class="d-axis" x1="820" y1="196" x2="660" y2="316" />
+
+				<text class="d-label" x="740" y="360" text-anchor="middle">
+					No server
+				</text>
+				<text class="d-sub" x="740" y="384" text-anchor="middle">
+					No server, no copy retained,
+				</text>
+				<text class="d-sub" x="740" y="402" text-anchor="middle">
+					nothing to disclose or lose.
+				</text>
+				<text class="d-sub" x="740" y="430" text-anchor="middle">
+					UK GDPR · Data Protection Act 2018
+				</text>
+			</g>
+		)
+	}
+	{
+		name === "instruction-cycle" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					The instruction
+				</text>
+				<text class="d-title" x="40" y="80">
+					From letter of instruction to the report
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-box" x="40" y="180" width="148" height="120" />
+				<text class="d-num" x="56" y="212">
+					01
+				</text>
+				<text class="d-label" x="56" y="246">
+					Instruction
+				</text>
+				<text class="d-sub" x="56" y="272">
+					Letter of instruction and
+				</text>
+				<text class="d-sub" x="56" y="290">
+					the questions to be answered.
+				</text>
+
+				<line class="d-arrow" x1="192" y1="240" x2="207" y2="240" />
+				<path class="d-head" d="M213 240 L205 236 L205 244 Z" />
+
+				<rect class="d-box" x="223" y="180" width="148" height="120" />
+				<text class="d-num" x="239" y="212">
+					02
+				</text>
+				<text class="d-label" x="239" y="246">
+					Conflict check
+				</text>
+				<text class="d-sub" x="239" y="272">
+					Competence, availability
+				</text>
+				<text class="d-sub" x="239" y="290">
+					and independence confirmed.
+				</text>
+
+				<line class="d-arrow" x1="375" y1="240" x2="390" y2="240" />
+				<path class="d-head" d="M396 240 L388 236 L388 244 Z" />
+
+				<rect class="d-box" x="406" y="180" width="148" height="120" />
+				<text class="d-num" x="422" y="212">
+					03
+				</text>
+				<text class="d-label" x="422" y="246">
+					Re-derivation
+				</text>
+				<text class="d-sub" x="422" y="272">
+					Source DICOM reviewed on
+				</text>
+				<text class="d-sub" x="422" y="290">
+					a diagnostic workstation.
+				</text>
+
+				<line class="d-arrow" x1="558" y1="240" x2="573" y2="240" />
+				<path class="d-head" d="M579 240 L571 236 L571 244 Z" />
+
+				<rect class="d-box" x="589" y="180" width="148" height="120" />
+				<text class="d-num" x="605" y="212">
+					04
+				</text>
+				<text class="d-label" x="605" y="246">
+					Report
+				</text>
+				<text class="d-sub" x="605" y="272">
+					CPR Part 35 form; fact and
+				</text>
+				<text class="d-sub" x="605" y="290">
+					opinion kept separate.
+				</text>
+
+				<line class="d-arrow" x1="741" y1="240" x2="756" y2="240" />
+				<path class="d-head" d="M762 240 L754 236 L754 244 Z" />
+
+				<rect class="d-box" x="772" y="180" width="148" height="120" />
+				<text class="d-num" x="788" y="212">
+					05
+				</text>
+				<text class="d-label" x="788" y="246">
+					Evidence
+				</text>
+				<text class="d-sub" x="788" y="272">
+					Service on the parties and,
+				</text>
+				<text class="d-sub" x="788" y="290">
+					if required, oral evidence.
+				</text>
+
+				<line class="d-rule" x1="40" y1="368" x2="920" y2="368" />
+				<text class="d-note" x="40" y="400">
+					The expert's overriding duty is to the court, not to the party instructing (CPR 35.3). The same method
+				</text>
+				<text class="d-note" x="40" y="422">
+					is applied whether the instruction comes from a claimant or a defendant.
+				</text>
+				<text class="d-note" x="40" y="462">
+					Where the imaging does not support the case being advanced, the report says so.
+				</text>
+			</g>
+		)
+	}
+{
+		name === "resource-map" && (
+			<g>
+				<text class="d-cap" x="40" y="46">
+					Contents
+				</text>
+				<text class="d-title" x="40" y="80">
+					Two libraries, one commentary, one practice
+				</text>
+				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
+
+				<rect class="d-box" x="60" y="130" width="380" height="270" />
+				<text class="d-num" x="80" y="164">
+					RADIOLOGY LIBRARY
+				</text>
+				<text class="d-sub" x="80" y="200">
+					Clinical imaging reference
+				</text>
+				<text class="d-sub" x="80" y="232">
+					Patient advice
+				</text>
+				<text class="d-sub" x="80" y="264">
+					Local DICOM viewer
+				</text>
+				<text class="d-sub" x="80" y="296">
+					Modalities, reporting standards,
+				</text>
+				<text class="d-sub" x="80" y="314">
+					dose and safety, image handling.
+				</text>
+				<rect class="d-fill" x="72" y="188" width="6" height="6" />
+				<rect class="d-fill" x="72" y="220" width="6" height="6" />
+				<rect class="d-fill" x="72" y="252" width="6" height="6" />
+				<text class="d-sub" x="80" y="364">
+					Sourced to the RCR standards, IR(ME)R,
+				</text>
+				<text class="d-sub" x="80" y="382">
+					IRR17 and the data protection duties.
+				</text>
+
+				<rect class="d-box" x="520" y="130" width="380" height="270" />
+				<text class="d-num" x="540" y="164">
+					MEDICOLEGAL LAW LIBRARY
+				</text>
+				<text class="d-sub" x="540" y="200">
+					Medicolegal law
+				</text>
+				<text class="d-sub" x="540" y="232">
+					Legislation
+				</text>
+				<text class="d-sub" x="540" y="264">
+					Case law
+				</text>
+				<text class="d-sub" x="540" y="296">
+					Disputed interpretation
+				</text>
+				<rect class="d-fill" x="532" y="188" width="6" height="6" />
+				<rect class="d-fill" x="532" y="220" width="6" height="6" />
+				<rect class="d-fill" x="532" y="252" width="6" height="6" />
+				<rect class="d-fill" x="532" y="284" width="6" height="6" />
+				<text class="d-sub" x="540" y="340">
+					Standard of care, consent, causation,
+				</text>
+				<text class="d-sub" x="540" y="358">
+					candour, statutory duties and the
+				</text>
+				<text class="d-sub" x="540" y="376">
+					decisions that formed them.
+				</text>
+
+				<rect class="d-box" x="60" y="430" width="380" height="70" />
+				<text class="d-label" x="80" y="460">
+					Recent case commentary
+				</text>
+				<text class="d-sub" x="80" y="482">
+					Short analyses, filterable by subject.
+				</text>
+
+				<rect class="d-box" x="520" y="430" width="380" height="70" />
+				<text class="d-label" x="540" y="460">
+					The practice
+				</text>
+				<text class="d-sub" x="540" y="482">
+					Expert witness, referrals, contact and CV.
+				</text>
+			</g>
+		)
+	}
+</svg>
+
+<style>
+	.diagram {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: #ffffff;
+		color: #475569;
+	}
+	.diagram text {
+		font-family: var(--font-sans);
+	}
+	.d-cap {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		fill: #94a3b8;
+	}
+	.d-title {
+		font-size: 21px;
+		font-weight: 700;
+		fill: #0f172a;
+	}
+	.d-num {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		fill: #94a3b8;
+	}
+	.d-label {
+		font-size: 14px;
+		font-weight: 600;
+		fill: #1e293b;
+	}
+	.d-sub {
+		font-size: 11.5px;
+		fill: #64748b;
+	}
+	.d-note {
+		font-size: 12.5px;
+		fill: #475569;
+	}
+	.d-rule {
+		stroke: #e2e8f0;
+		stroke-width: 1;
+	}
+	.d-box {
+		fill: #ffffff;
+		stroke: #cbd5e1;
+		stroke-width: 1;
+	}
+	.d-fill {
+		fill: #f8fafc;
+		stroke: #cbd5e1;
+		stroke-width: 1;
+	}
+	.d-arrow {
+		fill: none;
+		stroke: #94a3b8;
+		stroke-width: 1.25;
+	}
+	.d-head {
+		fill: #94a3b8;
+		stroke: none;
+	}
+	.d-dash {
+		fill: none;
+		stroke: #cbd5e1;
+		stroke-width: 1.25;
+		stroke-dasharray: 5 4;
+	}
+	.d-outline {
+		fill: none;
+		stroke: #94a3b8;
+		stroke-width: 1.25;
+	}
+	.d-axis {
+		stroke: #94a3b8;
+		stroke-width: 1.25;
+	}
+</style>

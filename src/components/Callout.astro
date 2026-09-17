@@ -1,0 +1,28 @@
+---
+// Aside set as a traditional editorial footnote or legal disclaimer:
+// a hairline rule, a small-caps sans label, and small serif text.
+// The `tone` prop is retained for call-site compatibility; all tones now
+// receive the same restrained archival treatment.
+interface Props {
+	tone?: "key" | "limit" | "caution" | "authority";
+	title?: string;
+}
+
+const { tone = "key", title } = Astro.props as Props;
+
+const labels: Record<NonNullable<Props["tone"]>, string> = {
+	key: "Note",
+	limit: "Caveat",
+	caution: "Caveat",
+	authority: "Authority",
+};
+
+const label = title ?? labels[tone];
+---
+
+<aside class="my-8 border-t border-slate-300 pb-1 pt-3">
+	<p class="meta-label mb-2">{label}</p>
+	<div class="space-y-2 font-serif text-[0.925rem] leading-relaxed text-slate-600">
+		<slot />
+	</div>
+</aside>

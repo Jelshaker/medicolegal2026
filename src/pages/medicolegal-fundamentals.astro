@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
+import { SITE_TITLE } from '../consts';
+---
+<BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Bolam, Bolitho, Montgomery, causation and breach of duty. Famous landmark cases: Nettleship, Roe, Wilsher, Sidaway, Paris, Watt, Chester, Gregg, Little. RCR Standards, duty of candour, and AI-assisted reporting.">
+<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="Core UK medical law. Test, authority and radiology application for each principle." />
+
+<PageIntro
+	eyebrow="Medicolegal law library"
+	paragraphs={[
+		'The legal half of the resource, kept deliberately short and selective. Each entry states the principle, names the authority, and then says what it means for a radiologist reading a study or writing a report.',
+		'It is arranged in three parts: the working principles (standard of care, consent, causation, interpretation, reporting standards, candour and AI-assisted reporting); the landmark decisions that formed them; and the claim statistics that show where radiology disputes actually arise.',
+	]}
+	contents={[
+		{ href: '#standard-of-care', label: 'Standard of care' },
+		{ href: '#scrutiny', label: 'Scrutiny of expert opinion' },
+		{ href: '#consent', label: 'Consent' },
+		{ href: '#causation', label: 'Causation' },
+		{ href: '#interpretation', label: 'Interpretation and breach' },
+		{ href: '#reporting-standards', label: 'Reporting standards' },
+		{ href: '#candour', label: 'Duty of candour' },
+		{ href: '#ai-reporting', label: 'AI-assisted reporting' },
+		{ href: '#landmark-cases', label: 'Landmark cases' },
+		{ href: '#claim-statistics', label: 'Claim statistics' },
+	]}
+	audience="Written for radiologists, trust legal teams, solicitors, barristers and expert witnesses."
+	reviewed="September 2026"
+/>
+<section class="bg-white py-16"><div class="container-page space-y-12">
+<Figure
+			label="Figure 01"
+			caption="The four questions a radiological claim resolves into"
+			subtitle="Standard of care, breach, causation and consent — each with the authority that governs the answer."
+		>
+			<Diagram name="legal-questions" />
+		</Figure>
+		<Section id="standard-of-care" index="01" eyebrow="Standard of care" title="Bolam Test: Bolam v Friern HMC [1957]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Test: practice accepted as proper by a responsible body of skilled practitioners is not negligent.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Report judged against accepted practice at report date.</li><li>Range of acceptable opinions permitted.</li><li>Subtle findings below detection threshold protected.</li><li>Demonstrable findings not protected.</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Expert method</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Re-derive from source DICOM.</li><li>Record protocol and image quality.</li><li>Separate breach from causation.</li></ul></div></div>
+</Section>
+<Section id="scrutiny" index="02" eyebrow="Scrutiny" title="Bolitho Qualification: Bolitho v City and Hackney HA [1997]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Test: expert opinion must have a logical basis. Illogical opinion can be rejected.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Bolitho v City and Hackney HA [1998] AC 232, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Where a visible lesion is missed, defence opinion requires logical justification. Assertion without analysis can be rejected.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Limit</h3><p class="mt-3 text-sm text-slate-600">Genuine disagreement on subtle findings remains within Bolam. Bolitho applies to indefensible opinion only.</p></div></div>
+</Section>
+<Section id="consent" index="03" eyebrow="Consent" title="Montgomery v Lanarkshire [2015]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Test: disclose risks a reasonable patient in this position would consider material.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Montgomery v Lanarkshire Health Board [2015] UKSC 11.</p>
+<div class="mt-6 border-t border-slate-200 pt-5"><h3 class="font-bold text-navy-900">Imaging procedures</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Applies to embolisation, biopsy, angioplasty, drainage, contrast studies with material risk.</li><li>Requires discussion of indication, alternatives, procedural risks, dose and sedation.</li><li>Requires documented discussion. Signature alone is insufficient.</li></ul></div>
+</Section>
+<Section id="causation" index="04" eyebrow="Causation" title="Chester v Afshar [2004] and Gregg v Scott [2005]">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Standard: but for breach, would outcome have differed on balance of probabilities.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authorities: Chester v Afshar [2004] UKHL 41. Gregg v Scott [2005] UKHL 2.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Chester</h3><p class="mt-3 text-sm text-slate-600">Non-disclosure of a material risk that materialised gave liability. Relevant to interventional consent.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Gregg</h3><p class="mt-3 text-sm text-slate-600">Loss of chance below 50 percent is not recoverable. Delayed diagnosis requires proof that earlier action would probably have changed outcome.</p></div></div>
+</Section>
+<Section id="interpretation" index="05" eyebrow="Breach" title="Breach of Duty in Image Interpretation">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Breach turns on demonstrability on the acquired study under standard viewing conditions.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Error types</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Perceptual: visible finding not detected.</li><li>Cognitive: finding detected, incorrectly characterised.</li><li>Published miss rates do not define breach.</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Double reading</h3><p class="mt-3 text-sm text-slate-600">Required in defined screening programmes only. Not a general diagnostic standard.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Consensus</h3><p class="mt-3 text-sm text-slate-600">Assessed on protocol, quality, clinical question and contemporaneous context. Retrospective certainty is not the test.</p></div></div>
+</Section>
+<Section id="reporting-standards" index="06" eyebrow="Regulatory framework" title="RCR Standards for Interpretation and Reporting (3rd Edition, October 2025)">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">The Royal College of Radiologists publishes the definitive standards governing how imaging investigations must be interpreted and reported across the NHS and private sector. The 3rd edition (October 2025) supersedes the 2018 edition and carries particular medicolegal weight because claimants routinely cite the standards to establish the expected standard of reporting practice.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Reference: Royal College of Radiologists. Standards for interpretation and reporting of imaging investigations. 3rd ed. London: RCR, October 2025. <a href="https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications" class="text-blue-600 hover:underline" target="_blank" rel="noopener">rcr.ac.uk</a></p>
+<div class="mt-6 divide-y divide-slate-200">
+<div class="py-5">
+<h3 class="font-bold text-navy-900">Key requirements</h3>
+<ul class="mt-3 space-y-2 text-sm text-slate-600">
+<li>Clinical details must form part of the report. Interpretation may be incorrect if referral details are deficient, absent or misleading — inclusion of the referrer's text is recommended.</li>
+<li>All images acquired, including planning images and non-target areas, must be reviewed to ensure patient safety. Responsibility lies with both reporter and employer.</li>
+<li>Incidental findings should be mentioned and explained, but irrelevant incidental findings that detract from the report's impact should be avoided.</li>
+<li>The report conclusion must directly answer the clinical question, be tailored to the named referrer, and avoid blanket phrases such as "clinical correlation advised".</li>
+</ul>
+</div>
+<div class="py-5">
+<h3 class="font-bold text-navy-900">Medicolegal significance</h3>
+<ul class="mt-3 space-y-2 text-sm text-slate-600">
+<li>Standards are cited by claimants as evidence of the expected standard of care, even when the alleged pathology is incidental to the clinical question.</li>
+<li>The 2025 edition explicitly recognises that interpretation may be incorrect if referral details are deficient — a potential protection when clinical context is absent.</li>
+<li>The 2025 edition assigns responsibility for reviewing non-target areas to both reporter and employer, providing a shared-accountability defence.</li>
+<li>AI-assisted content must be clearly identified and verified by a named human author, who is responsible for the final report.</li>
+</ul>
+</div>
+</div>
+</Section>
+<Section id="candour" index="07" eyebrow="Communication" title="Duty of Candour and Escalation Protocols">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">The General Medical Council's guidance on the duty of candour (updated 2023) applies equally to all doctors, including radiologists. When something that has happened in connection with the care provided is or may have caused patient harm, the doctor must personally and officially report it. This extends to imaging errors — a missed malignancy, an incorrect laterality annotation, or a contrast reaction identified after report release.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Practical obligations</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Timely acknowledgment of the error to the patient or referrer.</li><li>Apology — an apology is not an admission of liability but is a professional obligation.</li><li>Written record of the apology and the circumstances.</li><li>Review and learning — the organisation must investigate and share lessons.</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Addenda and corrections</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Controlled delay (up to 2 minutes) before report accessibility, per RCR guidance, allows typographical corrections.</li><li>Once accessed by another party, changes require formal version control with clear documentation of the amendment and notification to all relevant users.</li><li>Addenda should supplement — not replace — the original report.</li></ul></div></div>
+</Section>
+<Section id="ai-reporting" index="08" eyebrow="Technology" title="AI-Assisted Reporting: Liability and Medicolegal Implications">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Artificial intelligence tools are now being deployed across UK radiology services — from triage algorithms prioritising critical findings to AI-generated structured report templates. The RCR's October 2025 standards set clear boundaries: validated AI tools must be integrated appropriately, AI-generated content must be clearly identified, and a named human author is responsible for the final report. All AI-derived contributions must be reviewed and approved before release.</p>
+<div class="mt-6 divide-y divide-slate-200">
+<div class="py-5">
+<h3 class="font-bold text-navy-900">Medicolegal risks</h3>
+<ul class="mt-3 space-y-2 text-sm text-slate-600">
+<li>AI-generated report formats must not imply a degree of scrutiny that has not taken place — this is a specific warning in the 2025 RCR Standards.</li>
+<li>Template-driven AI output may create an "expected line of sight" bias, increasing the risk of cognitive errors for findings outside the template structure.</li>
+<li>The named human author bears full responsibility — delegation of diagnostic judgment to an unvalidated or drift-affected algorithm may constitute breach.</li>
+<li>AI hallucination (fabricated findings) is a novel error type with no established precedent but would be assessed under standard Bolam/Bolitho principles.</li>
+</ul>
+</div>
+<div class="py-5">
+<h3 class="font-bold text-navy-900">Defensible practice</h3>
+<ul class="mt-3 space-y-2 text-sm text-slate-600">
+<li>Document that an AI tool was used and which sections it generated.</li>
+<li>Record the validation status of the local AI deployment (the employer's duty to provide adequate training, per RCR 2025).</li>
+<li>Ensure the AI does not replace clinical context integration — the report must still answer the specific clinical question.</li>
+<li>Maintain the same quality assurance protocols (REALMs, discrepancy audits) for AI-assisted reporting as for conventional reporting.</li>
+</ul>
+</div>
+</div>
+</Section>
+<Figure
+		label="Figure 02"
+		caption="The authorities, in the order they arrived"
+		subtitle="From Bolam to the 2025 reporting standards — the line of cases and standards that a radiological opinion is measured against."
+	>
+		<Diagram name="case-timeline" />
+	</Figure>
+	<Section id="landmark-cases" eyebrow="Famous cases" title="Nettleship v Weston [1971] — The Learner Driver Principle">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">A case that, while not a radiology case, has shaped the entire landscape of clinical negligence law. Mrs Weston, a learner driver, lost control and injured her passenger, Nettleship. The Court of Appeal held that a learner driver must be judged against the standard of the competent experienced driver — ignorance of the skills required does not excuse failure.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Nettleship v Weston [1971] 2 QB 691, CA.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">This case was the first to establish that the standard of care in negligence is an <strong>objective</strong> one. A professional (or learner professional) cannot argue they were below average — they must be judged against the competent practitioner standard. This directly underpins Bolam.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">A newly qualified registrar interpreting their first CT brain is judged against the competent consultant standard. A trainee radiographer positioning a trauma series is judged against the competent level. The objective standard applies regardless of experience.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Roe v Nijkin [1986] — The Ampoule Case">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Two patients undergoing lumbar puncture developed paraplegia. The cause was traced to carbolic acid contamination of nerve-block solution stored in glass ampoules. The glass had developed microscopic cracks through prolonged storage in carbolic solution, and carbolic had seeped in. At the time of the anaesthetics, this was an unknown phenomenon and the practice was widely accepted.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Roe v Nijkin [1986] 2 QB 813, CA.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">Lord Justice Quicke delivered the classic formulation: "the standard of care is to be judged at the time of the event, not by hindsight." The court recognised that what later appears negligent may have been acceptable practice at the time. Knowledge evolves, and the law does not punish doctors for failing to foresee the unforeseeable.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">This case is cited in imaging disputes when the question is whether a risk of contrast reaction, radiation injury, or device failure was known at the time. A radiologist in 2015 is not negligent for using a contrast agent that was later withdrawn in 2020, if it was still accepted practice in 2015.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Wilsher v Area AHA [1987] — The Multiple Potential Causes">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">A premature baby developed ROP (retrolental fibroplasia). Six different potential causes existed, including one negligent act (oxygen over-administration) and five non-negligent causes (maturational vulnerability, neonatal heart disease, arterial catheterisation, infection, and blood transfusion). The trial judge found that the negligent cause was more likely than not, reversing the burden.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Wilsher v Area AHA [1987] 1 AC 1074, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords reversed the trial judge, holding that the "but for" test cannot be satisfied by a defendant being only one of multiple potential causes, even if that cause increases the risk. The claimant must prove on balance of probabilities that the negligent act caused the harm. Lord Ackner: "It is not enough to show that the defendant's negligence materially contributed to a risk of injury."</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">In imaging disputes where the patient has multiple risk factors (e.g., an elderly patient with a missed pulmonary embolism who also has chronic lung disease, heart failure, and malignancy), the claimant must show that earlier detection would more likely than not have changed the outcome. Wilsher is the starting point for challenging causation in complex clinical scenarios.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Sidaway v Bethlem Royal Hospital [1985] — The Pre-Montgomery Consent Era">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mrs Sidaway underwent thyroidectomy. A known risk (5% chance of nerve damage causing pain in the arm) materialised. The surgeons had not disclosed this risk, arguing that a reasonable body of medical opinion would not do so. At the time, the law accepted that the doctor's judgment about what to disclose was determinative.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Sidaway v Bethlem Royal Hospital Management Committee [1985] AC 871, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">Lord Scarman dissented, arguing that the patient's right to choose required full disclosure of material risks. The majority upheld Bolam for consent. Sidaway was effectively overruled by Montgomery in 2015 but remains an important historical case showing the transition from medical paternalism to patient autonomy.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Sidaway remains the authority for historical consent claims pre-2015. For any interventional procedure performed before Montgomery, Bolam governed what was to be disclosed. For procedures after March 2015, Montgomery applies. This is critical in claims with long latency periods.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Paris v Stepney Borough Council [1951] — The One-Eyed Worker">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mr Paris, an employee who had only one eye, was injured when a metal fragment struck his remaining eye, rendering him completely blind. His employer had provided goggles for other workers but not for him, arguing that the risk to any single worker was the same as for everyone else.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Paris v Stepney Borough Council [1951] AC 367, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords held that an employer must take reasonable care in light of all circumstances, including the known vulnerability of a particular employee. The greater the potential harm, the greater the precautions required — even if the likelihood of the event occurring is no greater than for others.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">This principle is relevant to radiation protection. A pregnant radiographer who is known to be pregnant requires the same dose protection as anyone else, but the consequence of breach (potential fetal damage) is so much greater that the standard of care must be higher. Similarly, if a patient has known renal impairment, the radiologist's duty to assess renal function before administering contrast iodine is heightened.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Watt v Hertfordshire [1954] — The Emergency Defence">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">A fireman, Watt, was badly injured when he tried to lift a heavy jack to free a trapped colleague. His officer said "not to try it" but Watt persisted. The employer had only a small winch available and argued that the risks of sending for it outweighed the need for the heavier jack.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Watt v Hertfordshire [1954] 1 WLR 835, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords held that in an emergency, the magnitude of the risk must be weighed against the urgency of the situation. Lord Radcliffe: "the size of a risk which must be guarded against so that a defendant does not breach his duty of care to another will vary with the circumstances of the case."</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">In trauma imaging, the radiologist must balance the urgency of identifying a life-threatening finding against the completeness of the examination. An emergency CT head for a head-injured patient who cannot be moved to CT body may not be negligent if the clinical question was solely intracranial. But where the clinical scenario is broad, omitting the CT angiography for PE on a trauma patient may fail this balancing test.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Bolam v Friern HMC [1957] — The Original">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mr Bolam was an psychiatric patient who received electroconvulsive therapy without muscle relaxants. He suffered fractures. The court held that where a doctor acts in accordance with a practice accepted as proper by a responsible body of medical opinion, he is not negligent even if other doctors would have acted differently.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">This case established the single most important test in UK medical negligence law. It defined the standard of care as what a responsible body of medical practitioners would do. It protected medical professionals from the unreasonable expectations of lay judges and juries. The test stood unchallenged for nearly forty years.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Bolam remains the starting point for every radiology negligence claim. When a missed finding is alleged, the defence must show that a responsible body of radiologists would have made the same interpretation. The test protects genuine differences of opinion but does not protect errors that no reasonable radiologist would make.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Bolitho v City and Hackney HA [1997] — When Opinion Fails">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">A two-year-old boy died following respiratory arrest. His consultant had not visited him before the arrest, despite requests from nurses. He defended this by saying a responsible body of anaesthetists would not have attended. The trial judge accepted this defence.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Bolitho v City and Hackney HA [1998] AC 232, HL.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords introduced the "Bolitho qualification": the court can reject expert opinion if it is not logically supportable. Bolam did not give medical opinion a free pass. The defence must show that the opinion has a logical basis — that the experts considered the relevant risks and reached a defensible conclusion.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Bolitho is critical when a radiologist's defence rests on expert testimony that a missed finding was acceptable. If the expert's justification cannot account for the size, appearance, or clinical significance of the finding, the opinion may be rejected. A visible lung mass on a chest radiograph cannot be defended by saying "some radiologists would miss it" — the opinion must explain why.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Chester v Afshar [2004] — The Broken Promissory">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mrs Chester underwent lumbar discectomy. Dr Afshar told her the procedure carried a 1–2% risk of paralysis but did not schedule her for surgery on a Friday (when specialist neurosurgical cover would be reduced). She had explicitly requested not to have the operation on a Friday. The surgery went ahead as planned, the 1% risk materialised, and she was left paralysed.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Chester v Afshar [2004] UKHL 41.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords held that where a doctor fails to warn of a material risk that materialises, causation is presumed. Normally, the claimant would have to prove "but for the non-disclosure, I would not have had the operation" — which is very difficult. Chester created an exception: the breach itself caused the harm because the patient was deprived of the opportunity to make an informed choice.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Chester is relevant to any interventional procedure where the radiologist schedules the case. If a patient refuses to proceed on a Friday because they do not want to be anaesthetised over a weekend, and the radiologist insists on proceeding anyway, Chester provides a basis for the patient's claim. It directly anticipates the patient-autonomy principles later expanded in Montgomery.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Gregg v Scott [2005] — The Lost Chance">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mr Gregg believed he had lymphoma and asked Dr Scott to perform a biopsy. Dr Scott negligently misdiagnosed him as having benign gland enlargement. Nine months later, a correct diagnosis was made and treatment began, but Gregg's prognosis had deteriorated from a 42% five-year survival chance to a 25% chance.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Gregg v Scott [2005] UKHL 2.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords held (3–2) that loss of chance is not recoverable where the chance of a favourable outcome was below 50%. The majority held that this was a causation problem, not a quantum problem. Lady Hale and Lord Phillips dissented, arguing that the loss of a 17% chance of earlier treatment should itself be recoverable.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Gregg is the controlling authority for causation in delayed diagnosis claims. If a missed lung cancer had a 40% chance of five-year survival with early detection, the claimant has no claim even if the radiologist was clearly negligent in missing it. The claim only succeeds if the claimant can prove that earlier detection would have more likely than not changed the outcome.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Montgomery v Lanarkshire Health Board [2015] — The Modern Consent">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mrs Montgomery was diabetic and at risk of shoulder dystocia. She was told that the risk was 9–10%, but she expressed concern about it. Her baby was born with severe complications including cerebral palsy, due to shoulder dystocia. She claimed she had not been properly warned of the risk.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Montgomery v Lanarkshire Health Board [2015] UKSC 11.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The Supreme Court unanimously overruled Sidaway. Lord Kerr: "It is the patient who is the person entitled to make decisions about his or her own body. The doctor's duty is to provide information so that the patient can make an informed choice." The test is now: what would a reasonable patient in the patient's position consider material. Not what the doctor thinks should be disclosed.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Montgomery applies to all interventional procedures: embolisation, biopsy, angioplasty, drainage, contrast studies. The radiologist must discuss material risks — not using medical jargon but in terms the patient would understand. A 5% risk of stroke from a cerebral angiogram is material. A 0.1% risk of contrast nephropathy may be material if the patient is already on dialysis. The patient's own concerns are paramount — if the patient asks about a specific risk, it must be addressed.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Little v Blackpool [2016] — The Causation Turning Point">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Little involved a patient with suspected pulmonary embolism who had a CT angiogram reported as normal. She later suffered a fatal PE. The claim hinged not on whether the finding was missed (it was a small subsegmental PE), but on whether an earlier diagnosis would have changed the outcome — could anticoagulation have prevented the fatal event?</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Little v Southport HA (reported in Clinical Radiology and CLE guidelines).</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">This case demonstrates the shift from "perceptual error equals breach" to "perceptual error plus causation equals claim." Even if a small PE was missed on a CT angiogram, the claimant must prove that earlier treatment would have prevented the fatal outcome — which for subsegmental PEs in stable patients is often impossible.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">Every missed diagnosis claim ultimately reduces to causation. The radiologist's expert must be prepared to address not just whether the finding was visible, but what the appropriate treatment pathway would have been and whether it would probably have altered the outcome. Gregg, Wilsher, and Little are the causation trilogy.</p></div></div>
+</Section>
+<Section eyebrow="Famous cases" title="Ghaidan v Godin-Mendoza [2004] — The Non-Family Housemate">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">Mr Mendoza and Mr Ghaidan lived together as same-sex partners for 22 years. When Mr Ghaidan died, the landlord sought possession, arguing that Mr Mendoza was not a "spouse" under the Rent Act 1977 and therefore had no statutory succession rights.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Authority: Ghaidan v Godin-Mendoza [2004] UKHL 30.</p>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Legal significance</h3><p class="mt-3 text-sm text-slate-600">The House of Lords held that the statutory term "spouse" should be read to include a same-sex partner in a stable long-term relationship, under the Human Rights Act 1998. This was a landmark ruling on equality, statutory interpretation, and the evolving meaning of legal relationships.</p></div><div class="py-5"><h3 class="font-bold text-navy-900">Radiology application</h3><p class="mt-3 text-sm text-slate-600">While not a medical case itself, Ghaidan is cited in imaging law when discussing the legal framework within which healthcare law now operates. The Human Rights Act 1998, Article 2 (right to life) and Article 8 (right to respect for private life), have increasingly influenced medical negligence law — particularly in cases where imaging has direct bearing on patient autonomy and reproductive rights.</p></div></div>
+</Section>
+<Section id="claim-statistics" eyebrow="Famous cases" title="NHS Resolution — Annual Claims Statistics 2024">
+<p class="mt-4 max-w-3xl leading-relaxed text-slate-600">NHS Resolution publishes annual statistics on clinical negligence claims. The 2024 report shows that radiology remains one of the most frequently cited specialties in claims, with 4.6% of all claims being radiological — matching general medicine as the second-largest specialty after obstetrics.</p>
+<p class="mt-2 max-w-3xl text-sm text-slate-600">Source: NHS Resolution, Annual Report and Accounts 2023–24.</p>
+<Figure
+	label="Figure 03"
+	caption="Where an image can hold pathology the request never asked about"
+	subtitle="Around 37% of abdominal radiology claims cite a finding incidental to the clinical question — the point at which protocol adequacy decides responsibility."
+	credit="Illustrative"
+>
+	<Diagram name="incidental-regions" />
+</Figure>
+<div class="mt-6 divide-y divide-slate-200"><div class="py-5"><h3 class="font-bold text-navy-900">Key data</h3><ul class="mt-3 space-y-2 text-sm text-slate-600"><li>Total NHS litigation cost: £3.6 billion (2018/19 data, referenced by Halligan et al.).</li><li>Radiology claims have increased in volume and value over the past decade.</li><li>Missed diagnosis is the most common allegation across all radiology claims.</li><li>Abdominal radiology claims have a high rate of incidental pathology allegations (37%, per Halligan).</li></ul></div><div class="py-5"><h3 class="font-bold text-navy-900">Implications</h3><p class="mt-3 text-sm text-slate-600">The rising volume of radiology claims reflects both the increasing centrality of imaging in clinical decision-making and the growing sophistication of claimants' legal teams in identifying radiological errors. Expert radiological review is now a standard feature of clinical negligence claims involving any imaging modality.</p></div></div>
+</Section>
+<Callout tone="caution" title="Not legal advice">
+<p>This library summarises principles and authorities for reference. It is not legal advice, and it is not a substitute for the primary sources or for advice on a particular case. Where a matter turns on the application of a principle to specific facts, take advice from a lawyer instructed on those facts.</p>
+</Callout>
+</div></section>
+</BaseLayout>

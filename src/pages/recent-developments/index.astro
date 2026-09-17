@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { getCollection } from 'astro:content';
+import { SITE_TITLE, BLOG_CATEGORIES } from '../../consts';
+import { formatDateShort } from '../../lib/utils';
+
+const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
+
+export const prerender = true;
+---
+
+<BaseLayout title={`Recent Developments | ${SITE_TITLE}`} description="Recent developments across radiology and medicolegal law — anonymised case discussions on negligence, quantum, practice and procedure, MSK, gastrointestinal and peritoneal malignancy, and the reporting standards behind them.">
+	<PageHero
+		eyebrow="Recent developments"
+		title="Recent Developments"
+		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
+	/>
+
+	<PageIntro
+		eyebrow="Commentary on recent cases"
+		paragraphs={[
+			'This is the part of the resource worth returning to: short, anonymised commentary on recent cases and developments that raise an interesting radiological or legal point.',
+			'Each piece says what happened, what the imaging showed, what the court or tribunal was asked to decide, and what a radiologist should take from it. The selection is deliberately small — a few cases at a time, chosen because they change how a question should be answered.',
+		]}
+		contents={[
+			{ href: '#latest-commentary', label: 'Latest commentary' },
+			{ href: '#browse-by-subject', label: 'Browse by subject' },
+		]}
+		audience="Written for radiologists, solicitors, barristers and insurers. All material is anonymised in accordance with GMC guidance and CPR Part 35."
+		reviewed="September 2026"
+	/>
+
+	<section class="bg-white py-16">
+		<div class="container-page">
+			<!-- Browse by subject -->
+			<div id="browse-by-subject" class="doc scroll-mt-24">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Filter</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
+						Browse by subject
+					</h2>
+					<p id="blog-count" class="mt-3 font-sans text-xs uppercase tracking-[0.1em] text-slate-500" aria-live="polite">
+						Showing all {allPosts.length} pieces
+					</p>
+				</div>
+				<div id="blog-filters" class="mt-6 flex flex-wrap gap-2">
+					{BLOG_CATEGORIES.map((c) => (
+						<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category={c.id}>
+							{c.label}
+						</button>
+					))}
+				</div>
+			</div>
+
+			<!-- Posts -->
+			<div id="latest-commentary" class="doc mt-14 scroll-mt-24">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Latest</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
+						Latest commentary
+					</h2>
+					<p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
+						Newest first. Each piece is a short analysis rather than a full case report, and all
+						clinical detail is anonymised.
+					</p>
+				</div>
+				<div id="blog-grid" class="mt-8 divide-y divide-slate-200 border-t border-slate-200">
+				{allPosts.map((post, i) => (
+					<article class="blog-card py-7" data-categories={post.data.category}>
+						<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+							<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+								§ {String(i + 1).padStart(2, "0")}
+							</span>
+							<span class="font-sans text-xs uppercase tracking-[0.1em] text-slate-500">{categoryLabel(post.data.category)}</span>
+							<span class="font-sans text-xs text-slate-400">{formatDateShort(post.data.pubDate)}</span>
+						</div>
+						<h2 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
+							<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>
+						</h2>
+						<p class="mt-2 max-w-3xl font-serif text-[0.95rem] leading-relaxed text-slate-600">{post.data.description}</p>
+					</article>
+				))}
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	const filters = document.getElementById("blog-filters");
+	const grid = document.getElementById("blog-grid");
+	const count = document.getElementById("blog-count");
+	const cards = Array.from(grid?.querySelectorAll(".blog-card") ?? []);
+
+	function apply(cat: string) {
+		filters?.querySelectorAll("[data-category]").forEach((node) => {
+			const btn = node as HTMLElement;
+			const active = btn.dataset.category === cat;
+			btn.classList.toggle("bg-teal-600", active);
+			btn.classList.toggle("text-white", active);
+		});
+		let shown = 0;
+		cards.forEach((card) => {
+			const match = cat === "all" || card.dataset.categories === cat;
+			(card as HTMLElement).style.display = match ? "" : "none";
+			if (match) shown++;
+		});
+		if (count) count.textContent = `Showing ${shown} of ${cards.length} pieces`;
+	}
+
+	filters?.addEventListener("click", (e) => {
+		const btn = (e.target as HTMLElement).closest("[data-category]") as HTMLElement | null;
+		if (!btn) return;
+		apply(btn.dataset.category ?? "all");
+	});
+
+	apply("all");
+</script>

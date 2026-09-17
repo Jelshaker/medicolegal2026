@@ -2,14 +2,22 @@
 // LocalDicomViewer.astro — 100 % client-side DICOM image viewer.
 // All parsing, rendering and interaction happens in the browser.
 // No files or pixels are ever transmitted to a server.
+// Patient-oriented: accepts single files, multiple files and whole folders
+// (including the extensionless files found on hospital discs), sorts slices
+// into a stack, applies rescale slope/intercept, and displays technical
+// image details only — never patient names or identifiers.
+// Series-aware: groups slices by SeriesInstanceUID so images from different
+// phases (pre-contrast, post-contrast, reconstructions, etc.) stay separate.
 ---
 
-{/* Load dicom-parser from CDN at runtime (pure JS, no build step needed) */}
-<script
-  src="https://cdn.jsdelivr.net/npm/dicom-parser@1.8.26/dist/dicomParser.min.js"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+{/*
+  dicom-parser is vendored locally at /vendor/dicomParser.min.js so the viewer
+  stays fully local: no third-party CDN is contacted at any point, and the file
+  is same-origin, which satisfies the `script-src 'self'` policy in
+  public/_headers without weakening it. `is:inline` keeps it a classic script so
+  the global `dicomParser` is defined before any interaction can occur.
+*/}
+<script is:inline src="/vendor/dicomParser.min.js" defer></script>
 
 <!-- Privacy notice banner -->
 <div class="rounded-xl border border-emerald-300/40 bg-emerald-50/90 px-5 py-3.5 text-sm text-emerald-900 shadow-sm dark:border-emerald-600/30 dark:bg-emerald-950/40 dark:text-emerald-200">
@@ -19,41 +27,64 @@
       <path d="m9 12 2 2 4-4" />
     </svg>
     <div>
-      <strong class="font-semibold">Privacy Assured:</strong> Your images remain entirely on your device and are never uploaded to any server. All DICOM parsing and rendering is 100% client-side in your browser.
+      <strong class="font-semibold">Private by design:</strong> your images are opened and displayed on your own device only. Nothing is uploaded to a server, stored or shared — when you close or clear the page, every file is forgotten.
     </div>
   </div>
 </div>
 
+<!-- Inline status line (progress, errors, and guidance). Hidden until needed. -->
+<p id="dv-status" role="status" class="mt-4 hidden border border-slate-300 bg-white px-5 py-3.5 font-sans text-sm leading-relaxed text-slate-700"></p>
+
 <!-- Drop zone (shown when no files loaded) -->
-<div id="dv-dropzone" class="relative hidden overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/50 transition-colors dark:border-navy-700 dark:bg-navy-900/50">
-  <div class="flex flex-col items-center justify-center gap-4 py-20 px-6 text-center">
+<div id="dv-dropzone" class="relative mt-4 overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/50 transition-colors dark:border-navy-700 dark:bg-navy-900/50">
+  <div class="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center sm:py-20">
     <svg class="h-14 w-14 text-slate-400 dark:text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="17 8 12 3 7 8" />
       <line x1="12" y1="3" x2="12" y2="15" />
     </svg>
     <div>
-      <p class="text-lg font-semibold text-navy-900 dark:text-slate-100">Drop DICOM files here</p>
-      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        or <button id="dv-browse" class="cursor-pointer font-semibold text-teal-700 underline decoration-teal-400/40 underline-offset-2 hover:text-teal-600 dark:text-teal-400">browse</button> to select files
+      <p class="font-serif text-lg font-semibold text-navy-900 dark:text-slate-100">Drop your imaging files here</p>
+      <p class="mt-1 font-sans text-sm text-slate-500 dark:text-slate-400">
+        CT, MRI, X-ray, ultrasound or PET — a single file, several files, or a whole folder
       </p>
-      <p class="mt-2 text-xs text-slate-400 dark:text-slate-500">Supports .dcm, .DCM and any DICOM file (single or multiple)</p>
+      <div class="relative z-10 mt-5 flex flex-wrap items-center justify-center gap-3">
+        <button id="dv-choose-files" type="button" class="btn btn-primary !text-xs">Choose files</button>
+        <button id="dv-choose-folder" type="button" class="btn btn-ghost !text-xs">Choose a folder</button>
+      </div>
+      <p class="relative z-10 mt-3 font-sans text-xs text-slate-400 dark:text-slate-500">DICOM (.dcm) files — including files with no extension, as supplied on hospital discs</p>
     </div>
   </div>
-  <input id="dv-file-input" type="file" multiple accept=".dcm,application/dicom" class="absolute inset-0 opacity-0 cursor-pointer" />
+  <input id="dv-file-input" type="file" multiple class="absolute inset-0 z-0 cursor-pointer opacity-0" aria-label="Choose DICOM files" />
+  <input id="dv-folder-input" type="file" multiple webkitdirectory class="hidden" tabindex="-1" aria-hidden="true" />
 </div>
 
 <!-- Viewer workspace (hidden until files loaded) -->
-<div id="dv-workspace" class="hidden grid-cols-1 gap-0 rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden dark:border-navy-800 dark:bg-navy-950" style="grid-template-columns: 280px 1fr;">
+<div id="dv-workspace" class="mt-4 hidden gap-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-navy-800 dark:bg-navy-950 md:grid md:grid-cols-[280px_1fr]">
   <!-- Sidebar – metadata + controls -->
   <div class="flex flex-col border-r border-slate-200 dark:border-navy-800">
     <!-- Metadata panel -->
     <div id="dv-meta" class="flex-1 overflow-y-auto p-4 space-y-3">
-      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">DICOM Metadata (Anonymised)</h3>
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Image details (technical only)</h3>
       <div id="dv-meta-body" class="text-xs space-y-2">
         <!-- Dynamic rows inserted here -->
-        <p class="text-slate-400 dark:text-slate-500">Load a file to see metadata…</p>
+        <p class="text-slate-400 dark:text-slate-500">Choose a file to see its technical details…</p>
       </div>
+    </div>
+
+    <!-- Series tabs (shown when multiple series detected) -->
+    <div id="dv-series-tabs" class="border-t border-slate-200 dark:border-navy-800 hidden">
+      <div class="px-4 pt-3 pb-1 flex items-center justify-between">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Series</h3>
+        <span id="dv-series-count" class="text-[0.6rem] text-slate-400 dark:text-slate-500"></span>
+      </div>
+      <!-- Scrollable list; shows first 3 by default, expands on toggle -->
+      <div id="dv-series-list" class="px-3 pb-2 space-y-1 overflow-y-auto" style="max-height: 120px;">
+        <!-- Dynamic series tabs inserted here -->
+      </div>
+      <button id="dv-series-toggle" class="mx-3 mb-2 mt-0 w-full rounded px-2 py-1 text-[0.6rem] font-medium uppercase tracking-wider text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-navy-900 dark:text-slate-500 hidden">
+        Show all
+      </button>
     </div>
 
     <!-- Controls panel -->
@@ -111,11 +142,12 @@
 
     <!-- Actions bar -->
     <div class="border-t border-slate-200 p-3 flex gap-2 dark:border-navy-800">
-      <button id="dv-add" class="btn btn-ghost flex-1 !text-xs">
+      <button id="dv-add" type="button" class="btn btn-ghost flex-1 !text-xs">
         <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        Add Files
+        Add files
       </button>
-      <button id="dv-clear" class="btn btn-ghost !text-xs !px-3 !text-rose-600 hover:bg-rose-50 dark:!text-rose-400 dark:hover:bg-rose-950/40">
+      <button id="dv-add-folder" type="button" class="btn btn-ghost flex-1 !text-xs">Add folder</button>
+      <button id="dv-clear" type="button" class="btn btn-ghost !text-xs !px-3 !text-rose-600 hover:bg-rose-50 dark:!text-rose-400 dark:hover:bg-rose-950/40">
         Clear
       </button>
     </div>
@@ -149,7 +181,10 @@
   /* ── refs ─────────────────────────────────────────────────── */
   const dropzone   = document.getElementById("dv-dropzone");
   const fileInput  = document.getElementById("dv-file-input") as HTMLInputElement | null;
-  const browseBtn  = document.getElementById("dv-browse") as HTMLButtonElement | null;
+  const folderInput = document.getElementById("dv-folder-input") as HTMLInputElement | null;
+  const chooseFilesBtn = document.getElementById("dv-choose-files") as HTMLButtonElement | null;
+  const chooseFolderBtn = document.getElementById("dv-choose-folder") as HTMLButtonElement | null;
+  const statusEl = document.getElementById("dv-status");
   const workspace  = document.getElementById("dv-workspace");
   const canvasEl   = document.getElementById("dv-canvas") as HTMLCanvasElement | null;
   const metaBody   = document.getElementById("dv-meta-body");
@@ -164,214 +199,704 @@
   const dimsBadge  = document.getElementById("dv-dims");
   const wlDisplay  = document.getElementById("dv-wl-display");
   const modBadge   = document.getElementById("dv-modality-badge");
+  const invertBtn  = document.getElementById("dv-invert") as HTMLButtonElement | null;
+  const resetBtn   = document.getElementById("dv-reset") as HTMLButtonElement | null;
+  const addBtn     = document.getElementById("dv-add") as HTMLButtonElement | null;
+  const clearBtn   = document.getElementById("dv-clear") as HTMLButtonElement | null;
+  const slicePrev  = document.getElementById("dv-slice-prev") as HTMLButtonElement | null;
+  const sliceNext  = document.getElementById("dv-slice-next") as HTMLButtonElement | null;
+  const addFolderBtn = document.getElementById("dv-add-folder") as HTMLButtonElement | null;
+  const seriesTabsEl = document.getElementById("dv-series-tabs");
+  const seriesListEl = document.getElementById("dv-series-list");
+  const seriesCountEl = document.getElementById("dv-series-count");
+  const seriesToggleBtn = document.getElementById("dv-series-toggle");
 
-  /* ── state ────────────────────────────────────────────────── */
-  let frames: Uint8Array[] = [];       // pixel data per slice
+  /* ── data structures ─────────────────────────────────────── */
+  interface DvSlice {
+    pixels: Uint8Array | Uint16Array | Int16Array | Int32Array;
+    slope: number;
+    intercept: number;
+    sortKey: number;
+    fileName: string;
+    seriesUid: string;       // SeriesInstanceUID 0020,0011
+  }
+
+  interface DvSeries {
+    uid: string;             // SeriesInstanceUID
+    desc: string;            // SeriesDescription
+    modality: string;        // Modality (CT, MR, etc.)
+    slices: DvSlice[];
+    minValue: number;
+    maxValue: number;
+    seriesOrder: number;     // SeriesNumber for sorting
+  }
+
+  // Flat array kept for backwards-compat rendering, but the real model is seriesMap.
+  let frames: DvSlice[] = [];
+  let seriesMap = new Map<string, DvSeries>();  // uid -> series
+  let activeSeriesUid = "";
+  let activeSeries: DvSeries | null = null;
+
   let width = 0, height = 0, bits = 16;
-  let minPixel = 0, maxPixel = 65535;  // rescale
   let currentSlice = 0;
   let windowW = 400, windowL = 40;
   let zoom = 100, inverted = false;
   let panX = 0, panY = 0, dragging = false, dragStartX = 0, dragStartY = 0;
+  let seriesModality = "—";
+  let seriesDesc = "";
+  let seriesStudyDate = "";
+  let studyUidGlobal = "";
+  let nextAutoSeriesNum = 0;  // auto-assigned SeriesNumber fallback
 
-  /* ── helpers ──────────────────────────────────────────────── */
-  // Read DICOM from a File or ArrayBuffer
-  function readDICOM(data: ArrayBuffer): { parsed: dicomParser.DataSet, pixelData: Uint8Array } | null {
-    if (typeof (dicomParser as any).readPreamble !== "function") return null;
+  // Return the next available SeriesNumber for auto-assigned series.
+  // Uses the highest existing series order + 1, starting from 10.
+  function nextSeriesNumber(): number {
+    let top = 0;
+    for (const s of seriesMap.values()) {
+      if (s.seriesOrder > top) top = s.seriesOrder;
+    }
+    return top === 0 ? 10 : top + 1;
+  }
+
+  // Assign a real SeriesNumber: use the DICOM value if present, otherwise auto-assign.
+  function resolveSeriesNumber(tagged: number): number {
+    return tagged > 0 ? tagged : nextSeriesNumber();
+  }
+
+  /* ── status line ──────────────────────────────────────────── */
+  function showStatus(message: string) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.remove("hidden");
+  }
+  function hideStatus() {
+    if (!statusEl) return;
+    statusEl.textContent = "";
+    statusEl.classList.add("hidden");
+  }
+
+  /* ── DICOM parsing (dicom-parser 1.8.x, vendored) ────────── */
+  interface DicomParserNS {
+    parseDicom: (bytes: Uint8Array, options?: unknown) => any;
+    bigEndianByteArrayParser: unknown;
+  }
+  function dicomParserLib(): DicomParserNS | null {
+    const lib = (window as unknown as { dicomParser?: DicomParserNS }).dicomParser;
+    return typeof lib?.parseDicom === "function" ? lib : null;
+  }
+
+  // Read a DICOM tag as text; handles multi-valued (backslashed) strings.
+  function tagText(dataSet: any, tag: string): string {
     try {
-      // Attempt to parse as a DICOM file
-      const parsed = dicomParser.readDicomData(data, 0, data.byteLength);
-      if (parsed.tag !== "DICM") return null; // no DICOM magic
+      const s: unknown = dataSet.string ? dataSet.string(tag) : null;
+      if (typeof s !== "string" || s.length === 0) return "";
+      return s.split("\\")[0].trim();
+    } catch {
+      return "";
+    }
+  }
+  function tagNum(dataSet: any, tag: string): number | null {
+    const s = tagText(dataSet, tag);
+    if (!s) return null;
+    const n = parseFloat(s);
+    return isNaN(n) ? null : n;
+  }
+  function tagFloats(dataSet: any, tag: string): number[] {
+    try {
+      const s: unknown = dataSet.string ? dataSet.string(tag) : null;
+      if (typeof s !== "string") return [];
+      return s.split("\\").map((p) => parseFloat(p.trim())).filter((n) => !isNaN(n));
+    } catch {
+      return [];
+    }
+  }
 
-      // Build a simple dataset
-      const dataSet = dicomParser.parseDicom(data);
+  interface ParsedFile {
+    status: "ok" | "not-dicom" | "compressed" | "no-pixels" | "no-dims";
+    slices?: DvSlice[];
+    rows?: number;
+    cols?: number;
+    bitsAllocated?: number;
+    modality?: string;
+    studyDesc?: string;
+    studyDate?: string;
+    sliceThickness?: string;
+    studyUid?: string;
+    seriesUid?: string;          // SeriesInstanceUID 0020,0011
+    seriesDesc?: string;         // SeriesDescription 0008,103E
+    seriesNumber?: number;       // SeriesNumber 0020,0013
+    fileName: string;
+  }
 
-      // Extract pixel data
-      let pixelData: Uint8Array;
-      try {
-        pixelData = dicomParser.squeeze(dicomParser.getPixelData(dataSet));
-      } catch {
-        // Try 16-bit (may need to swap endianness)
+  // Parse one file. Returns a ParsedFile describing what was found.
+  function parseDicomFile(buffer: ArrayBuffer, fileName: string): ParsedFile {
+    const failed: ParsedFile = { status: "not-dicom", fileName };
+    const lib = dicomParserLib();
+    if (!lib) return failed;
+    const bytes = new Uint8Array(buffer);
+    if (bytes.length < 132) return failed;
+
+    let dataSet: any;
+    try {
+      dataSet = lib.parseDicom(bytes);
+    } catch {
+      return failed;
+    }
+    if (!dataSet || !dataSet.elements) return failed;
+
+    const rows = dataSet.uint16 ? (dataSet.uint16("x00280010") as number | undefined) : undefined;
+    const cols = dataSet.uint16 ? (dataSet.uint16("x00280011") as number | undefined) : undefined;
+    if (!rows || !cols || rows <= 0 || cols <= 0 || rows > 8192 || cols > 8192) {
+      return { ...failed, status: "no-dims" };
+    }
+
+    const pixelElement = dataSet.elements.x7fe00010;
+    if (!pixelElement) return { ...failed, status: "no-pixels" };
+    if (pixelElement.encapsulatedPixelData) return { ...failed, status: "compressed" };
+
+    const bitsAllocated = dataSet.uint16 ? ((dataSet.uint16("x00280100") as number) || 8) : 8;
+    if (![8, 12, 16, 24, 32].includes(bitsAllocated)) return { ...failed, status: "no-pixels" };
+    const bytesPerSample = bitsAllocated <= 8 ? 1 : bitsAllocated <= 16 ? 2 : 4;
+    const pixelRep = dataSet.uint16 ? ((dataSet.uint16("x00280103") as number) || 0) : 0;
+    const samples = dataSet.uint16 ? ((dataSet.uint16("x00280002") as number) || 1) : 1;
+
+    const frameLength = rows * cols;
+    const framesDeclared = Math.max(1, Math.floor(tagNum(dataSet, "x00280008") ?? 1));
+    const dataOffset = pixelElement.dataOffset as number;
+    if (typeof dataOffset !== "number" || dataOffset < 0 || dataOffset >= bytes.length) {
+      return { ...failed, status: "no-pixels" };
+    }
+    const start = bytes.byteOffset + dataOffset;
+    const samplesPerFrame = frameLength * samples;
+    const framesAvailable = Math.floor((bytes.buffer.byteLength - start) / (samplesPerFrame * bytesPerSample));
+    const framesToRead = Math.max(1, Math.min(framesDeclared, framesAvailable));
+    if (framesToRead < 1) return { ...failed, status: "no-pixels" };
+
+    const bigEndian = dataSet.byteArrayParser === lib.bigEndianByteArrayParser;
+    const reader = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+
+    // Zero-copy read where alignment and byte order allow it.
+    const sliceView = (
+      frameIndex: number,
+      elemBytes: number,
+    ): Uint8Array | Uint16Array | Int16Array | Int32Array | null => {
+      const offset = start + frameIndex * samplesPerFrame * elemBytes;
+      if (!bigEndian && offset % elemBytes === 0) {
         try {
-          const raw = dicomParser.getPixelData(dataSet, 0, 0, 0, 65535);
-          pixelData = raw as Uint8Array;
+          if (elemBytes === 1) return new Uint8Array(bytes.buffer, offset, samplesPerFrame);
+          if (elemBytes === 2) {
+            return pixelRep
+              ? new Int16Array(bytes.buffer, offset, samplesPerFrame)
+              : new Uint16Array(bytes.buffer, offset, samplesPerFrame);
+          }
+          return new Int32Array(bytes.buffer, offset, samplesPerFrame);
         } catch {
           return null;
         }
       }
-
-      return { parsed, pixelData };
-    } catch {
       return null;
-    }
-  }
+    };
+    const sliceCopy = (
+      frameIndex: number,
+      elemBytes: number,
+    ): Uint8Array | Uint16Array | Int16Array | Int32Array => {
+      const offset = start + frameIndex * samplesPerFrame * elemBytes;
+      const little = !bigEndian;
+      let out: Uint8Array | Uint16Array | Int16Array | Int32Array;
+      if (elemBytes === 1) out = new Uint8Array(samplesPerFrame);
+      else if (elemBytes === 2) out = pixelRep ? new Int16Array(samplesPerFrame) : new Uint16Array(samplesPerFrame);
+      else out = new Int32Array(samplesPerFrame);
+      for (let i = 0; i < samplesPerFrame; i++) {
+        const at = offset + i * elemBytes;
+        out[i] = elemBytes === 1 ? reader.getUint8(at)
+          : elemBytes === 2 ? (pixelRep ? reader.getInt16(at, little) : reader.getUint16(at, little))
+          : reader.getInt32(at, little);
+      }
+      return out;
+    };
+    const readSamples = (frameIndex: number): Uint8Array | Uint16Array | Int16Array | Int32Array => {
+      return sliceView(frameIndex, bytesPerSample) ?? sliceCopy(frameIndex, bytesPerSample);
+    };
 
-  // Get a DICOM tag value (returns string or null)
-  function tag(meta: dicomParser.DataSet, tag: string): string | null {
-    try {
-      const entry = meta.element(tag);
-      if (!entry || !entry.text) return null;
-      return entry.text;
-    } catch {
-      return null;
-    }
-  }
+    const slope = tagNum(dataSet, "x00281053") ?? 1;
+    const intercept = tagNum(dataSet, "x00281052") ?? 0;
+    const planar = dataSet.uint16 ? ((dataSet.uint16("x00280006") as number) || 0) : 0;
+    const pos = tagFloats(dataSet, "x00200032");
+    const loc = tagNum(dataSet, "x00201041");
+    const inst = tagNum(dataSet, "x00200013");
+    const sortKey = pos.length >= 3 ? pos[2] : (loc ?? inst ?? 0);
 
-  function num(meta: dicomParser.DataSet, tag: string): number | null {
-    try {
-      const entry = meta.element(tag);
-      if (!entry || entry.text === undefined) return null;
-      const n = parseInt(entry.text, 10);
-      return isNaN(n) ? null : n;
-    } catch {
-      return null;
+    const toGray = (raw: Uint8Array | Uint16Array | Int16Array | Int32Array): Uint8Array | Uint16Array | Int16Array | Int32Array => {
+      if (samples === 1) return raw;
+      // Colour (RGB/YBR): collapse to luminance so CT/MR windowing still works.
+      const gray = new Uint16Array(frameLength);
+      if (planar === 1) {
+        for (let i = 0; i < frameLength; i++) {
+          const r = raw[i] as number, g = raw[frameLength + i] as number, b = raw[2 * frameLength + i] as number;
+          gray[i] = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+        }
+      } else {
+        for (let i = 0; i < frameLength; i++) {
+          const r = raw[i * samples] as number, g = raw[i * samples + 1] as number, b = raw[i * samples + 2] as number;
+          gray[i] = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+        }
+      }
+      return gray;
+    };
+
+    // Read series-level metadata (SeriesInstanceUID, SeriesDescription, SeriesNumber)
+    const seriesUid = tagText(dataSet, "x00200011");  // 0020,0011
+    const seriesDescTxt = tagText(dataSet, "x0008103E");  // 0008,103E
+    const seriesNumber = tagNum(dataSet, "x00200013") ?? 0;  // 0020,0013
+
+    const out: DvSlice[] = [];
+    for (let f = 0; f < framesToRead; f++) {
+      out.push({
+        pixels: toGray(readSamples(f)),
+        slope,
+        intercept,
+        sortKey: sortKey + (framesToRead > 1 ? f * 1e-6 : 0),
+        fileName,
+        seriesUid,
+      });
     }
+
+    return {
+      status: "ok",
+      slices: out,
+      rows,
+      cols,
+      bitsAllocated,
+      modality: tagText(dataSet, "x00080060") || "—",
+      studyDesc: tagText(dataSet, "x00081030"),
+      studyDate: tagText(dataSet, "x00080020"),
+      sliceThickness: tagText(dataSet, "x00180050"),
+      studyUid: tagText(dataSet, "x0020000d"),  // 0020,000D
+      seriesUid,
+      seriesDesc: seriesDescTxt,
+      seriesNumber,
+      fileName,
+    };
   }
 
   /* ── render ───────────────────────────────────────────────── */
+  // Cache 2-D context and reuse a single ImageData buffer for speed.
+  let cachedCtx: CanvasRenderingContext2D | null = null;
+  let cachedImageData: ImageData | null = null;
+
+  // Scan the active series for its modality (post-rescale) range.
+  function measureSeriesRange(s: DvSeries): { min: number; max: number } {
+    let lo = Infinity, hi = -Infinity;
+    for (const sl of s.slices) {
+      const px = sl.pixels;
+      const step = Math.max(1, Math.floor(px.length / 4096)); // sample large stacks
+      for (let i = 0; i < px.length; i += step) {
+        const v = (px[i] as number) * sl.slope + sl.intercept;
+        if (v < lo) lo = v;
+        if (v > hi) hi = v;
+      }
+    }
+    if (lo === Infinity) { lo = 0; hi = 255; }
+    if (hi <= lo) hi = lo + 1;
+    return { min: lo, max: hi };
+  }
+
+  function defaultWindow(): void {
+    if (!activeSeries) return;
+    const { min: lo, max: hi } = { min: activeSeries.minValue, max: activeSeries.maxValue };
+    const span = hi - lo;
+    const mod = (activeSeries.modality || seriesModality).toUpperCase();
+    if (mod === "CT" && lo <= -900 && hi >= 300) {
+      windowW = 400; windowL = 40; // soft tissue
+    } else if (span > 3000) {
+      windowW = Math.round(span * 0.5); windowL = Math.round(lo + span * 0.375);
+    } else {
+      windowW = Math.max(1, Math.round(span));
+      windowL = Math.round((lo + hi) / 2);
+    }
+    if (wlWidth) wlWidth.value = String(windowW);
+    if (wlLevel) wlLevel.value = String(windowL);
+    if (wlWVal) wlWVal.textContent = String(windowW);
+    if (wlLVal) wlLVal.textContent = String(windowL);
+  }
+
   function renderSlice(idx: number) {
     if (!canvasEl || frames.length === 0) return;
-    const ctx = canvasEl.getContext("2d");
+    if (!cachedCtx) cachedCtx = canvasEl.getContext("2d");
+    const ctx = cachedCtx;
     if (!ctx) return;
 
-    const imgData = ctx.createImageData(width, height);
-    const data = imgData.data;
     const slice = frames[idx] || frames[0];
+    const px = slice.pixels;
+    if (canvasEl.width !== width || canvasEl.height !== height) {
+      canvasEl.width = width;
+      canvasEl.height = height;
+      cachedImageData = null;
+    }
+    if (!cachedImageData) cachedImageData = ctx.createImageData(width, height);
+    const data = cachedImageData.data;
 
-    // Window/Level & Rescale
     const w = windowW;
-    const l = windowL;
-    const intercept = 0; // we store raw rescaled already
-    const slope = 1;
+    const lo = windowL - w / 2;
+    const slope = slice.slope;
+    const intercept = slice.intercept;
 
-    for (let i = 0; i < slice.length && i < data.length / 4; i++) {
-      let v = slice[i] * slope + intercept;
-      // Window / Level → 0–255
-      if (w <= 0) {
-        v = 0;
-      } else {
-        v = ((v - (l - w / 2)) / w) * 255;
-      }
-      v = Math.max(0, Math.min(255, Math.round(v)));
+    for (let i = 0; i < px.length && i * 4 < data.length; i++) {
+      let v = (px[i] as number) * slope + intercept;
+      v = w <= 0 ? 0 : ((v - lo) / w) * 255;
+      v = v < 0 ? 0 : v > 255 ? 255 : Math.round(v);
       if (inverted) v = 255 - v;
-
       const pi = i * 4;
-      data[pi]     = v; // R
-      data[pi + 1] = v; // G
-      data[pi + 2] = v; // B
-      data[pi + 3] = 255; // A
+      data[pi] = v;
+      data[pi + 1] = v;
+      data[pi + 2] = v;
+      data[pi + 3] = 255;
     }
 
-    canvasEl.width = width;
-    canvasEl.height = height;
     canvasEl.style.width = `${Math.round(width * zoom / 100)}px`;
     canvasEl.style.height = `${Math.round(height * zoom / 100)}px`;
     canvasEl.style.transform = `translate(${panX}px, ${panY}px)`;
-    ctx.putImageData(imgData, 0, 0);
+    ctx.putImageData(cachedImageData, 0, 0);
   }
 
   function render() {
     if (frames.length === 0) return;
-    const idx = Math.min(currentSlice, frames.length - 1);
+    if (!activeSeries) return;
+    const idx = Math.min(currentSlice, activeSeries.slices.length - 1);
     currentSlice = idx;
     renderSlice(idx);
     updateSliceSlider();
   }
 
   function updateSliceSlider() {
+    if (!activeSeries) return;
     if (sliceSlider) {
-      sliceSlider.max = String(frames.length);
+      sliceSlider.max = String(Math.max(1, activeSeries.slices.length));
       sliceSlider.value = String(currentSlice + 1);
+      sliceSlider.disabled = activeSeries.slices.length <= 1;
     }
-    if (sliceVal) sliceVal.textContent = `${currentSlice + 1} / ${frames.length}`;
+    if (sliceVal) sliceVal.textContent = `${currentSlice + 1} / ${activeSeries.slices.length}`;
   }
 
-  /* ── load files ───────────────────────────────────────────── */
-  function loadFiles(fileList: FileList | File[]) {
-    const fileArr = Array.from(fileList);
-    if (fileArr.length === 0) return;
+  /* ── series management ──────────────────────────────────── */
+  let seriesExpanded = false;   // current expanded state
+  const VISIBLE_COUNT = 3;       // items shown when collapsed
 
-    let loaded = 0;
-    const total = fileArr.length;
+  function getSeriesLabel(s: DvSeries): string {
+    if (s.seriesDesc) {
+      // Truncate long descriptions for the tab label
+      const maxLen = 32;
+      return s.seriesDesc.length > maxLen ? s.seriesDesc.slice(0, maxLen - 1) + "\u2026" : s.seriesDesc;
+    }
+    // Fallback: use modality + series number
+    return `${s.modality} ${s.seriesOrder}`;
+  }
 
-    fileArr.forEach((file) => {
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        const ab = ev.target?.result as ArrayBuffer;
-        if (!ab) return;
-        const result = readDICOM(ab);
-        if (result) {
-          // Extract width, height, bits from metadata on first file
-          if (width === 0 && result.parsed) {
-            const w = num(result.parsed, "x00280010");
-            const h = num(result.parsed, "x00280011");
-            const bp = num(result.parsed, "x00280100");
-            if (w && h) { width = w; height = h; }
-            if (bp) bits = bp;
-          }
-          frames.push(result.pixelData);
-        }
-        loaded++;
-        if (loaded === total) {
-          if (frames.length === 0) {
-            alert("No valid DICOM files found in the selected files.");
-            return;
-          }
-          currentSlice = 0;
-          // Default window/level for body CT
-          windowW = 400; windowL = 40;
-          if (wlWidth) wlWidth.value = String(windowW);
-          if (wlLevel) wlLevel.value = String(windowL);
-          if (wlWVal) wlWVal.textContent = "400";
-          if (wlLVal) wlLVal.textContent = "40";
-          // Metadata
-          updateMetadata(fileArr[0]);
-          // Show workspace, hide dropzone
-          if (dropzone) dropzone.classList.add("hidden");
-          if (workspace) {
-            workspace.classList.remove("hidden");
-            (workspace as HTMLElement).style.display = "";
-          }
-          render();
-        }
-      };
-      reader.readAsArrayBuffer(file);
+  function buildSeriesTabs() {
+    if (!seriesListEl) return;
+
+    if (seriesMap.size <= 1) {
+      if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+      return;
+    }
+    if (seriesTabsEl) seriesTabsEl.classList.remove("hidden");
+
+    // Count
+    if (seriesCountEl) seriesCountEl.textContent = `${seriesMap.size} series`;
+
+    const sorted = Array.from(seriesMap.values()).sort((a, b) => a.seriesOrder - b.seriesOrder);
+    const visible = seriesExpanded
+      ? sorted
+      : sorted.slice(0, VISIBLE_COUNT);
+
+    seriesListEl.innerHTML = "";
+    visible.forEach((s) => {
+      const btn = document.createElement("button");
+      btn.className = `w-full text-left px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+        s.uid === activeSeriesUid
+          ? "bg-teal-50 text-teal-800 dark:bg-teal-950/50 dark:text-teal-300 border border-teal-200 dark:border-teal-800"
+          : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-navy-900 border border-transparent"
+      }`;
+      btn.innerHTML = `<span class="truncate block">${getSeriesLabel(s)}</span><span class="text-[0.6rem] text-slate-400 dark:text-slate-500">${s.slices.length} images</span>`;
+      btn.addEventListener("click", () => switchSeries(s.uid));
+      seriesListEl.appendChild(btn);
+    });
+
+    // Toggle button — only show when there are more items than the visible count
+    if (seriesToggleBtn && sorted.length > VISIBLE_COUNT) {
+      seriesToggleBtn.classList.remove("hidden");
+      seriesToggleBtn.textContent = seriesExpanded
+        ? `Show less (${seriesMap.size - VISIBLE_COUNT} hidden)`
+        : `Show all ${sorted.length}`;
+    } else if (seriesToggleBtn) {
+      seriesToggleBtn.classList.add("hidden");
+    }
+  }
+
+  // Toggle "show more / show less"
+  if (seriesToggleBtn) {
+    seriesToggleBtn.addEventListener("click", () => {
+      seriesExpanded = !seriesExpanded;
+      buildSeriesTabs();
     });
   }
 
-  function updateMetadata(file: File) {
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      const ab = ev.target?.result as ArrayBuffer;
-      if (!ab) return;
-      const result = readDICOM(ab);
-      if (!result) return;
-      const p = result.parsed;
+  function switchSeries(uid: string) {
+    const next = seriesMap.get(uid);
+    if (!next) return;
+    activeSeriesUid = uid;
+    activeSeries = next;
+    frames = next.slices;
+    currentSlice = Math.floor(frames.length / 2);
+    measureRangeFor(activeSeries);
+    defaultWindow();
+    cachedCtx = null;
+    cachedImageData = null;
+    zoom = 100; panX = 0; panY = 0; inverted = false;
+    if (zoomSlider) zoomSlider.value = "100";
+    if (zoomVal) zoomVal.textContent = "100%";
+    if (invertBtn) {
+      invertBtn.classList.remove("!border-teal-500", "!text-teal-700", "dark:!text-teal-300");
+      invertBtn.setAttribute("aria-pressed", "false");
+    }
+    updateSeriesDetailsFor(activeSeries);
+    buildSeriesTabs();
+    if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
+    if (modBadge) modBadge.textContent = activeSeries.modality || "—";
+    if (dimsBadge) dimsBadge.textContent = `${width} × ${height}`;
+    render();
+  }
 
-      const fields: { label: string; value: string }[] = [
-        { label: "Patient ID", value: tag(p, "x00100020") || "—" },
-        { label: "Patient Name", value: tag(p, "x00100010") || "—" },
-        { label: "Study Date", value: tag(p, "x00080020") || "—" },
-        { label: "Modality", value: tag(p, "x00080060") || "—" },
-        { label: "Study Description", value: tag(p, "x00081030") || "—" },
-        { label: "Institution", value: tag(p, "x00080080") || "—" },
-        { label: "Manufacturer", value: tag(p, "x00080070") || "—" },
-        { label: "Slice Thickness", value: `${tag(p, "x00180050") || "?"} mm` },
-        { label: "Image Position", value: tag(p, "x00200032") || "—" },
-        { label: "Image Orientation", value: tag(p, "x00200037") || "—" },
-        { label: "Pixels", value: `${width} × ${height}` },
-        { label: "Bits Allocated", value: String(bits) },
-        { label: "Frames", value: String(frames.length) },
-      ];
+  function measureRangeFor(s: DvSeries): void {
+    const { min, max } = measureSeriesRange(s);
+    s.minValue = min;
+    s.maxValue = max;
+  }
 
-      modBadge!.textContent = fields.find(f => f.label === "Modality")?.value || "CT";
-      dimsBadge!.textContent = `${width} × ${height}`;
+  // Display technical details only — never patient names or identifiers.
+  function updateSeriesDetailsFor(s: DvSeries): void {
+    if (!metaBody) return;
+    const fields: { label: string; value: string }[] = [
+      { label: "Scan type", value: s.modality || "—" },
+      { label: "Study date", value: seriesStudyDate || "—" },
+      { label: "Study description", value: seriesDesc || "—" },
+      { label: "Series description", value: s.seriesDesc || "—" },
+      { label: "Series number", value: String(s.seriesOrder) },
+      { label: "Image size", value: `${width} × ${height}` },
+      { label: "Images in series", value: String(s.slices.length) },
+    ];
+    // Get sliceThickness from first slice's original file data; use study-level if not available
+    // We don't have it per-slice currently, so show study-level from firstGood metadata
+    metaBody.innerHTML = fields.map((f) =>
+      `<div class="flex justify-between border-b border-slate-100 dark:border-navy-800 pb-1"><span class="text-slate-500 dark:text-slate-400">${f.label}:</span><span class="text-navy-900 dark:text-slate-200 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
+    ).join("");
+  }
 
-      metaBody!.innerHTML = fields.map(f =>
-        `<div class="flex justify-between border-b border-slate-100 dark:border-navy-800 pb-1"><span class="text-slate-500 dark:text-slate-400">${f.label}:</span><span class="text-navy-900 dark:text-slate-200 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
-      ).join("");
-    };
-    reader.readAsArrayBuffer(file);
+  function studyKeyOf(list: DvSlice[]): string | null {
+    if (list.length === 0) return null;
+    const v = (list[0] as unknown as Record<string, unknown>).__study;
+    return typeof v === "string" ? v : null;
+  }
+  function colsSafe(): number {
+    return width;
+  }
+  function markStudy(uid: string): void {
+    for (const s of frames) {
+      (s as unknown as Record<string, unknown>).__study = uid;
+    }
+  }
+
+  function loadFiles(fileList: FileList | File[]) {
+    const fileArr = Array.from(fileList);
+    if (fileArr.length === 0) return;
+    if (!dicomParserLib()) {
+      showStatus("The viewer library is still loading — please wait a moment and try again.");
+      return;
+    }
+    hideStatus();
+    showStatus(`Reading ${fileArr.length} file${fileArr.length === 1 ? "" : "s"}…`);
+
+    const readOne = (file: File): Promise<ParsedFile> =>
+      new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            resolve(parseDicomFile(reader.result as ArrayBuffer, file.name || "Unnamed file"));
+          } catch {
+            resolve({ status: "not-dicom", fileName: file.name || "Unnamed file" });
+          }
+        };
+        reader.onerror = () => resolve({ status: "not-dicom", fileName: file.name || "Unnamed file" });
+        reader.readAsArrayBuffer(file);
+      });
+
+    (async () => {
+      let ok = 0, rejected = 0, compressed = 0, mismatch = 0, multiSeries = 0;
+      let firstGood: ParsedFile | null = null;
+      for (let i = 0; i < fileArr.length; i++) {
+        const parsed = await readOne(fileArr[i]);
+        if (parsed.status !== "ok" || !parsed.slices || !parsed.rows || !parsed.cols) {
+          if (parsed.status === "compressed") compressed++;
+          else if (parsed.status === "no-dims" || parsed.status === "no-pixels") rejected++;
+          else rejected++;
+          continue;
+        }
+
+        // Establish baseline on first valid file
+        if (frames.length === 0 && width === 0) {
+          width = parsed.cols;
+          height = parsed.rows;
+          bits = parsed.bitsAllocated ?? 16;
+          seriesModality = parsed.modality || "—";
+          seriesDesc = parsed.studyDesc || "";
+          seriesStudyDate = parsed.studyDate || "";
+          studyUidGlobal = parsed.studyUid || "";
+          firstGood = firstGood ?? parsed;
+        } else if (parsed.rows !== height || parsed.cols !== colsSafe()) {
+          // Different image size: a separate scan mixed in — count and skip.
+          mismatch++;
+          continue;
+        } else if (parsed.studyUid && studyUidGlobal && parsed.studyUid !== studyUidGlobal) {
+          // Different study entirely — skip
+          mismatch++;
+          continue;
+        }
+
+        // --- series-aware insertion ---
+        const sUid = parsed.seriesUid || "";
+        if (!sUid) {
+          // No series UID: treat as belonging to current/first series or a generic one
+          if (seriesMap.size === 0) {
+            // Create a default series
+            const defaultSeries: DvSeries = {
+              uid: "\x00_generic",
+              desc: parsed.seriesDesc || "Unknown",
+              modality: parsed.modality || seriesModality,
+              slices: [],
+              minValue: 0,
+              maxValue: 255,
+              seriesOrder: resolveSeriesNumber(parsed.seriesNumber ?? 0),
+            };
+            seriesMap.set(defaultSeries.uid, defaultSeries);
+            for (const sl of parsed.slices) {
+              (sl as DvSlice).seriesUid = defaultSeries.uid;
+              defaultSeries.slices.push(sl);
+            }
+            // If no series was active, activate this one
+            if (!activeSeriesUid) {
+              activeSeriesUid = defaultSeries.uid;
+              activeSeries = defaultSeries;
+              frames = defaultSeries.slices;
+            }
+          } else {
+            // Attach to the first series (generic files)
+            const first = seriesMap.values().next().value as DvSeries;
+            for (const sl of parsed.slices) {
+              (sl as DvSlice).seriesUid = first.uid;
+              first.slices.push(sl);
+            }
+          }
+        } else if (seriesMap.has(sUid)) {
+          // Already have this series — append slices
+          const existing = seriesMap.get(sUid)!;
+          for (const sl of parsed.slices) {
+            existing.slices.push(sl);
+          }
+        } else {
+          // New series — create it
+          multiSeries++;
+          const newSeries: DvSeries = {
+            uid: sUid,
+            desc: parsed.seriesDesc || "Unknown",
+            modality: parsed.modality || seriesModality,
+            slices: parsed.slices,
+            minValue: 0,
+            maxValue: 255,
+            seriesOrder: resolveSeriesNumber(parsed.seriesNumber ?? 0),
+          };
+          for (const sl of parsed.slices) {
+            (sl as DvSlice).seriesUid = sUid;
+          }
+          seriesMap.set(sUid, newSeries);
+          // If no series is active yet (e.g., first file was generic), activate this one
+          if (!activeSeriesUid) {
+            activeSeriesUid = sUid;
+            activeSeries = newSeries;
+            frames = newSeries.slices;
+            width = parsed.cols;
+            height = parsed.rows;
+            bits = parsed.bitsAllocated ?? 16;
+            seriesModality = parsed.modality || seriesModality;
+          }
+        }
+
+        ok += parsed.slices.length;
+        showStatus(`Reading… ${i + 1} of ${fileArr.length} files (${ok} image${ok === 1 ? "" : "s"} found)`);
+      }
+
+      if (frames.length === 0) {
+        const parts: string[] = [];
+        if (compressed > 0) parts.push(`${compressed} use a compressed format this free viewer can't open`);
+        if (rejected > 0) parts.push(`${rejected} ${rejected === 1 ? "wasn't" : "weren't"} readable DICOM images`);
+        if (mismatch > 0) parts.push(`${mismatch} belonged to a different scan`);
+        const detail = parts.length > 0 ? ` (${parts.join("; ")})` : "";
+        showStatus(
+          `Couldn't open these files as DICOM images${detail}. ` +
+          `If they came from a hospital disc or download, please choose the folder containing the scan files — files with no extension are fine. Zip archives need to be unzipped first.`
+        );
+        return;
+      }
+
+      // Sort each series' slices in anatomical order
+      for (const s of seriesMap.values()) {
+        s.slices.sort((a, b) => a.sortKey - b.sortKey);
+      }
+
+      // Rebuild the flat frames array from the active series
+      if (activeSeries) {
+        frames = activeSeries.slices;
+        measureRangeFor(activeSeries);
+      }
+
+      currentSlice = Math.floor(frames.length / 2);
+      defaultWindow();
+      zoom = 100; panX = 0; panY = 0; inverted = false;
+      if (zoomSlider) zoomSlider.value = "100";
+      if (zoomVal) zoomVal.textContent = "100%";
+      if (invertBtn) {
+        invertBtn.classList.remove("!border-teal-500", "!text-teal-700", "dark:!text-teal-300");
+        invertBtn.setAttribute("aria-pressed", "false");
+      }
+
+      if (firstGood) updateSeriesDetailsFor(activeSeries);
+
+      // Build series tabs UI
+      buildSeriesTabs();
+
+      if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
+      if (dimsBadge) dimsBadge.textContent = `${width} × ${height}`;
+      if (dropzone) dropzone.classList.add("hidden");
+      if (workspace) {
+        workspace.classList.remove("hidden");
+        (workspace as HTMLElement).style.display = "";
+        void (workspace as HTMLElement).offsetWidth;
+        workspace.classList.add("md:grid");
+        (workspace as HTMLElement).style.gridTemplateColumns = "280px 1fr";
+      }
+
+      // Status line
+      const statusParts: string[] = [];
+      statusParts.push(`Showing ${frames.length} image${frames.length === 1 ? "" : "s"}`);
+      if (seriesMap.size > 1) {
+        statusParts.push(`(${seriesMap.size} series detected)`);
+      }
+      if (mismatch > 0) statusParts.push(`${mismatch} file${mismatch === 1 ? "" : "s"} from a different scan skipped`);
+      if (compressed > 0) statusParts.push(`${compressed} compressed image${compressed === 1 ? "" : "s"} couldn't be opened`);
+      if (rejected > 0) statusParts.push(`${rejected} non-DICOM file${rejected === 1 ? "" : "s"} skipped`);
+      showStatus(statusParts.join(". ") + ".");
+
+      render();
+    })();
   }
 
   /* ── events ───────────────────────────────────────────────── */
@@ -402,9 +927,26 @@
   dropzone?.addEventListener("dragover", onDragOver);
   dropzone?.addEventListener("drop", onDrop);
 
-  browseBtn?.addEventListener("click", () => fileInput?.click());
+  const openFilePicker = () => {
+    if (fileInput) {
+      fileInput.removeAttribute("webkitdirectory");
+      fileInput.click();
+    }
+  };
+  const openFolderPicker = () => {
+    if (!folderInput) { openFilePicker(); return; }
+    folderInput.value = "";
+    folderInput.click();
+  };
+  chooseFilesBtn?.addEventListener("click", (e) => { e.stopPropagation(); openFilePicker(); });
+  chooseFolderBtn?.addEventListener("click", (e) => { e.stopPropagation(); openFolderPicker(); });
   fileInput?.addEventListener("change", () => {
-    if (fileInput.files) loadFiles(fileInput.files);
+    if (fileInput.files && fileInput.files.length > 0) loadFiles(fileInput.files);
+    fileInput.value = "";
+  });
+  folderInput?.addEventListener("change", () => {
+    if (folderInput.files && folderInput.files.length > 0) loadFiles(folderInput.files);
+    folderInput.value = "";
   });
 
   // Window/Level sliders
@@ -433,46 +975,68 @@
     currentSlice = parseInt(sliceSlider.value, 10) - 1;
     render();
   });
-  document.getElementById("dv-slice-prev")?.addEventListener("click", () => {
+  slicePrev?.addEventListener("click", () => {
     if (currentSlice > 0) { currentSlice--; render(); }
   });
-  document.getElementById("dv-slice-next")?.addEventListener("click", () => {
-    if (currentSlice < frames.length - 1) { currentSlice++; render(); }
+  sliceNext?.addEventListener("click", () => {
+    if (activeSeries && currentSlice < activeSeries.slices.length - 1) { currentSlice++; render(); }
   });
 
   // Reset
-  document.getElementById("dv-reset")?.addEventListener("click", () => {
-    windowW = 400; windowL = 40; zoom = 100; panX = 0; panY = 0; inverted = false;
-    currentSlice = 0;
-    if (wlWidth) wlWidth.value = "400";
-    if (wlLevel) wlLevel.value = "40";
-    if (wlWVal) wlWVal.textContent = "400";
-    if (wlLVal) wlLVal.textContent = "40";
+  resetBtn?.addEventListener("click", () => {
+    if (activeSeries) measureRangeFor(activeSeries);
+    defaultWindow();
+    zoom = 100; panX = 0; panY = 0; inverted = false;
+    if (activeSeries) currentSlice = Math.floor(activeSeries.slices.length / 2);
     if (zoomSlider) zoomSlider.value = "100";
     if (zoomVal) zoomVal.textContent = "100%";
-    if (wlDisplay) wlDisplay.textContent = "W: 400 C: 40";
+    if (wlDisplay) wlDisplay.textContent = `W: ${windowW} C: ${windowL}`;
     if (canvasEl) canvasEl.style.transform = "";
-    if (document.getElementById("dv-invert")) {
-      (document.getElementById("dv-invert") as HTMLButtonElement).textContent = "Invert Colours";
+    if (invertBtn) {
+      invertBtn.textContent = "Invert Colours";
+      invertBtn.setAttribute("aria-pressed", "false");
     }
     render();
   });
 
   // Invert
-  document.getElementById("dv-invert")?.addEventListener("click", () => {
+  invertBtn?.addEventListener("click", () => {
     inverted = !inverted;
-    const btn = document.getElementById("dv-invert") as HTMLButtonElement;
-    btn.textContent = inverted ? "Normal Colours" : "Invert Colours";
+    invertBtn.textContent = inverted ? "Normal Colours" : "Invert Colours";
+    invertBtn.setAttribute("aria-pressed", String(inverted));
     render();
   });
 
   // Add / Clear
-  document.getElementById("dv-add")?.addEventListener("click", () => fileInput?.click());
-  document.getElementById("dv-clear")?.addEventListener("click", () => {
-    frames = []; width = height = 0; currentSlice = 0;
+  addBtn?.addEventListener("click", () => openFilePicker());
+  addFolderBtn?.addEventListener("click", () => openFolderPicker());
+  clearBtn?.addEventListener("click", () => {
+    frames = []; width = height = 0; bits = 16; currentSlice = 0;
+    windowW = 400; windowL = 40; zoom = 100; panX = 0; panY = 0; inverted = false;
+    seriesModality = "—"; seriesDesc = ""; seriesStudyDate = "";
+    studyUidGlobal = "";
+    cachedCtx = null; cachedImageData = null;
+    // Clear series
+    seriesMap.clear();
+    seriesExpanded = false;
+    activeSeriesUid = "";
+    activeSeries = null;
+    hideStatus();
+    if (metaBody) metaBody.innerHTML = `<p class="text-slate-400 dark:text-slate-500">Choose a file to see its technical details…</p>`;
+    if (modBadge) modBadge.textContent = "—";
+    if (dimsBadge) dimsBadge.textContent = "—";
+    if (wlDisplay) wlDisplay.textContent = "W: 400 C: 40";
+    if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+    if (seriesListEl) seriesListEl.innerHTML = "";
     if (dropzone) dropzone.classList.remove("hidden");
-    if (workspace) { workspace.classList.add("hidden"); (workspace as HTMLElement).style.display = "none"; }
+    if (workspace) {
+      workspace.classList.add("hidden");
+      workspace.classList.remove("md:grid");
+      (workspace as HTMLElement).style.display = "none";
+      (workspace as HTMLElement).style.gridTemplateColumns = "";
+    }
     if (fileInput) fileInput.value = "";
+    if (folderInput) folderInput.value = "";
   });
 
   /* ── Canvas pan & zoom ────────────────────────────────────── */
@@ -496,20 +1060,20 @@
       if (canvasEl) canvasEl.style.cursor = "";
     });
 
-    // Wheel: zoom or slice
+    // Wheel: scroll → slice, Ctrl/Cmd + scroll → zoom
     canvasEl.addEventListener("wheel", (e) => {
       e.preventDefault();
-      if (e.ctrlKey) {
-        // Ctrl + scroll → slice navigation
-        currentSlice += e.deltaY < 0 ? -1 : 1;
-        currentSlice = Math.max(0, Math.min(frames.length - 1, currentSlice));
-        render();
-      } else {
-        // Scroll → zoom
+      if (e.ctrlKey || e.metaKey) {
+        // Pinch / Ctrl + scroll → zoom
         const delta = e.deltaY < 0 ? 10 : -10;
         zoom = Math.max(10, Math.min(500, zoom + delta));
         if (zoomSlider) zoomSlider.value = String(zoom);
         if (zoomVal) zoomVal.textContent = `${zoom}%`;
+        render();
+      } else if (activeSeries && activeSeries.slices.length > 1) {
+        // Scroll → move through slices (only when there is a stack)
+        currentSlice += e.deltaY < 0 ? -1 : 1;
+        currentSlice = Math.max(0, Math.min(activeSeries.slices.length - 1, currentSlice));
         render();
       }
     }, { passive: false });

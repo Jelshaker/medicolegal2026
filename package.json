@@ -1,6 +1,6 @@
 {
 	"name": "medicolegal2026",
-	"description": "Full-stack medicolegal reporting website - Astro SSR on Cloudflare Workers, GA4 analytics, Tailwind CSS.",
+	"description": "Radiology and medicolegal law reference resource - Astro SSR on Cloudflare Pages, Clerk authentication, GA4 analytics, Tailwind CSS.",
 	"type": "module",
 	"engines": {
 		"node": ">=22"
@@ -18,6 +18,7 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "12.6.12",
 		"@astrojs/sitemap": "3.6.1",
+		"@clerk/astro": "^4.0.21",
 		"@tailwindcss/vite": "^4.1.11",
 		"astro": "5.16.9",
 		"tailwindcss": "^4.1.11",

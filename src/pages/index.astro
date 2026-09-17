@@ -1,180 +1,336 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
+import Callout from '../components/Callout.astro';
 import { getCollection } from 'astro:content';
-import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, BLOG_CATEGORIES } from '../consts';
+import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE, BLOG_CATEGORIES, RESOURCE_LIBRARIES } from '../consts';
 
-const allPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
 const recent = allPosts.slice(0, 3);
 const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 const stats = [
 	{ value: '1957', label: 'Bolam — the standard of care' },
 	{ value: '~37%', label: 'Abdominal claims turning on incidental findings' },
-	{ value: '8.7–12.7%', label: 'Offsite reporting error rate (Howlett et al.)' },
-	{ value: '2025', label: 'RCR reporting standards edition' },
+	{ value: '2025', label: 'RCR interpretation and reporting standards' },
+	{ value: '100%', label: 'DICOM viewing that never leaves your device' },
 ];
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<!-- Hero -->
-	<section class="relative overflow-hidden bg-navy-950 text-white">
-		<div class="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
-			<div>
-				<span class="eyebrow mb-4 text-teal-400">Radiology · Law · The standard of care</span>
-				<h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-					How English law judges a radiological opinion.
+<BaseLayout title={`${SITE_TITLE} — ${SITE_TAGLINE}`} description={SITE_DESCRIPTION}>
+	<!-- Masthead -->
+	<section class="border-b border-slate-300 bg-white">
+		<div class="container-page py-16 sm:py-20">
+			<div class="doc text-center">
+				<p class="meta-label">Radiology · Law · Reference resource</p>
+				<h1 class="mt-5 font-serif text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+					A working resource for radiology and medicolegal law.
 				</h1>
-				<p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-					A working reference on the legal architecture of diagnostic imaging — the Bolam and
-					Montgomery standards, breach and causation, incidental findings, consent, and the systemic
-					risks of teleradiology. Anonymised case discussion and primary-source analysis for
-					solicitors, barristers, insurers and radiologists.
+				<p class="mx-auto mt-6 max-w-2xl font-serif text-[1.1rem] leading-relaxed text-slate-600">
+					Reference material for anyone who has to reason about imaging and the law: how investigations
+					are performed, interpreted and reported, the standards and statutory duties that govern them,
+					and how a court, a regulator or an insurer will test the result. Written for radiologists,
+					referrers, solicitors, barristers, insurers and expert witnesses.
 				</p>
-				<div class="mt-7 flex flex-wrap gap-3">
-					<a href="/legal-fundamentals" class="btn btn-primary">
-						<svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M12 5v13"/></svg>
-						Legal fundamentals
-					</a>
-					<a href="/legal-blog" class="btn btn-ghost">Case discussions</a>
-					<a href="/recent-developments" class="btn btn-ghost">Recent developments</a>
+				<div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 border-t border-slate-200 pt-5">
+					<a href="/radiology-resources" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Radiology reference</a>
+					<a href="/medicolegal-fundamentals" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Medicolegal law library</a>
+					<a href="/dicom-viewer" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">DICOM viewer</a>
 				</div>
-				<div class="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
-					{stats.map((s) => (
-						<div>
-							<div class="text-2xl font-extrabold text-teal-400">{s.value}</div>
-							<div class="mt-1 text-xs text-slate-400">{s.label}</div>
-						</div>
-					))}
+
+	<!-- What this resource is — and what it is not -->
+	<section class="border-b border-slate-200 bg-paper">
+		<div class="container-page py-14">
+			<div class="doc divide-y divide-slate-200">
+				<div class="pb-8">
+					<div class="flex items-baseline gap-3">
+						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">§ 01</span>
+						<span class="eyebrow">Scope</span>
+					</div>
+					<h2 class="mt-2 font-serif text-xl font-bold text-slate-900">Small, and kept current</h2>
+					<p class="mt-3 font-serif leading-relaxed text-slate-600">
+						This is a deliberately small resource. It holds a selective set of entries on radiology and
+						medicolegal law, each one sourced to the statute, standard or decision behind it, rather than
+						attempting to be a complete text.
+					</p>
+				</div>
+				<div class="py-8">
+					<div class="flex items-baseline gap-3">
+						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">§ 02</span>
+						<span class="eyebrow">Commentary</span>
+					</div>
+					<h2 class="mt-2 font-serif text-xl font-bold text-slate-900">Recent case commentary</h2>
+					<p class="mt-3 font-serif leading-relaxed text-slate-600">
+						Its distinguishing feature is short, anonymised commentary on recent cases that raise an
+						interesting radiological or legal point. Every piece says what the imaging showed, what the
+						court was asked to decide, and what a radiologist should take from it.
+					</p>
+				</div>
+				<div class="pt-2">
+					<Callout tone="caution" title="What it is not">
+						<p>
+							It is not a substitute for the primary sources, not a comprehensive case database, and not
+							legal or clinical advice. Where a matter needs a radiological opinion, instruction is handled
+							through the practice behind the resource.
+						</p>
+					</Callout>
 				</div>
 			</div>
-			<div class="relative">
-				<div class="overflow-hidden rounded-2xl border border-navy-700 shadow-2xl">
-					<img src={PRACTITIONER.photo} alt="Dr Joseph El-Sheikha" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+		</div>
+	</section>
+
+	<!-- The two libraries -->
+	<section class="border-b border-slate-200 bg-white">
+		<div class="container-page py-16">
+			<div class="doc">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Two reference libraries</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Radiology, and the law that governs it</h2>
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+						The material is organised in two halves that read across to one another: what imaging can and
+						cannot do, and how the law treats it when it goes wrong.
+					</p>
 				</div>
-				<div class="absolute -bottom-5 -left-6 hidden rounded-2xl border border-teal-500/40 bg-navy-900 p-4 shadow-xl lg:block">
-					<div class="flex items-center gap-3">
-						<div class="flex h-11 w-11 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">FRCR</div>
-						<div class="text-xs leading-snug text-slate-200">
-							<span class="block font-semibold text-slate-100">Royal College of Radiologists</span>
-							<span>Fellow · Specialist register</span>
-						</div>
-					</div>
+				<div class="mt-10 divide-y divide-slate-200 border-t border-slate-200">
+					{
+						RESOURCE_LIBRARIES.map((lib, i) => (
+							<article class="py-8">
+								<div class="flex items-baseline gap-3">
+									<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+										§ {String(i + 1).padStart(2, "0")}
+									</span>
+									<span class="eyebrow">{lib.eyebrow}</span>
+								</div>
+								<h3 class="mt-2 font-serif text-xl font-bold text-slate-900">{lib.title}</h3>
+								<p class="mt-3 font-serif leading-relaxed text-slate-600">{lib.description}</p>
+								<p class="mt-4 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
+									{lib.topics.join(" · ")}
+								</p>
+								<a href={lib.href} class="mt-4 inline-block font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">
+									{lib.cta}
+								</a>
+							</article>
+						))
+					}
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Plates — a visual strip, with further space reserved for graphics -->
+	<section class="border-b border-slate-200 bg-paper py-14">
+		<div class="border-t border-slate-300 pt-8">
+			<p class="meta-label">Plates</p>
+			<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">The material, in pictures</h2>
+			<p class="mt-4 font-serif leading-relaxed text-slate-600">
+				Imaging, and the conditions in which an image is interpreted, are easier to follow with the
+				hardware and the viewing environment in front of you. These plates run alongside the reference
+				material; further figures are added to the libraries as the entries grow.
+			</p>
+		</div>
+
+		<Figure
+			src="/images/reporting_radiographer.jpg"
+			alt="A radiographer reporting at a diagnostic display"
+			label="Plate 01"
+			caption="Reporting at a diagnostic display"
+			subtitle="Interpretation, the professional reporting standards, and the conditions in which a finding is said to have been demonstrable."
+			ratio="wide"
+		/>
+
+		<div class="grid gap-6 sm:grid-cols-2">
+			<Figure
+				src="/images/ct_scanner.jpg"
+				alt="A CT scanner in a clinical imaging room"
+				label="Plate 02"
+				caption="Cross-sectional acquisition"
+				subtitle="Protocol, technique and the justification recorded for the exposure."
+				ratio="photo"
+				flush
+			/>
+			<Figure
+				src="/images/xr_spine_radiograph_2.jpg"
+				alt="A projection radiograph of the spine"
+				label="Plate 03"
+				caption="Projection radiography"
+				subtitle="Two dimensions, superimposed — and what that conceals."
+				ratio="photo"
+				flush
+			/>
+		</div>
+	</section>
+
 			</div>
 		</div>
 	</section>
 
 	<!-- Legal framework -->
-	<section class="bg-white py-16 dark:bg-navy-900">
-		<div class="container-page">
-			<div class="max-w-2xl">
-				<span class="eyebrow block">Legal fundamentals</span>
-				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">The framework, in four questions</h2>
-				<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-					Every radiological claim resolves into a small number of legal questions. Each is examined in
-					detail, with the authorities and the professional standards that govern the answer.
-				</p>
-			</div>
-			<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-				{[
-					{ t: 'What standard of care applies?', d: 'Bolam, Bolitho and the line between a defensible difference of opinion and a breach.', href: '/legal-fundamentals', tag: 'Bolam · Bolitho' },
-					{ t: 'Was the finding demonstrable?', d: 'The "pure diagnosis" argument, incidentalomas, and what the images actually showed on the day.', href: '/medicolegal-radiology', tag: 'Breach & causation' },
-					{ t: 'What did the patient know?', d: 'Consent, the materiality of risk, and the duty of candour where a complication occurs.', href: '/legal-fundamentals', tag: 'Montgomery · Candour' },
-					{ t: 'Who else is liable?', d: 'Remote reporting, provider-level duties, escalation failure and dual liability in teleradiology.', href: '/recent-developments', tag: 'Teleradiology' },
-				].map((p) => (
-					<a href={p.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-soft transition-all hover:border-teal-500/40 hover:shadow-lift dark:border-navy-700 dark:bg-navy-900">
-						<span class="chip mb-3 self-start">{p.tag}</span>
-						<h3 class="font-bold leading-snug text-navy-900 dark:text-slate-100">{p.t}</h3>
-						<p class="mt-2 flex-1 text-sm leading-snug text-slate-600 dark:text-slate-300">{p.d}</p>
-						<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
-							Read the analysis
-							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
-						</span>
-					</a>
-				))}
-			</div>
-			<div class="mt-8 flex flex-wrap gap-3">
-				<a href="/image-review" class="btn btn-ghost">Free online image review</a>
-				<a href="/about" class="btn btn-ghost">About the practice</a>
-				<a href="/patient-advice" class="btn btn-ghost">Patient advice</a>
+	<section class="border-b border-slate-200 bg-white">
+		<div class="container-page py-16">
+			<div class="doc">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Medicolegal law library</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">The framework, in four questions</h2>
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+						Every radiological claim resolves into a small number of legal questions. Each is examined in
+						the law library, with the authorities and the professional standards that govern the answer.
+					</p>
+				</div>
+				<Figure
+					label="Figure 01"
+					caption="The four questions a radiological claim resolves into"
+					subtitle="Each is examined in the law library, with the authority and the professional standard behind the answer."
+				>
+					<Diagram name="legal-questions" />
+				</Figure>
+				<div class="mt-10 divide-y divide-slate-200 border-t border-slate-200">
+					{[
+						{ t: 'What standard of care applies?', d: 'Bolam, Bolitho and the line between a defensible difference of opinion and a breach.', href: '/medicolegal-fundamentals', tag: 'Bolam · Bolitho' },
+						{ t: 'Was the finding demonstrable?', d: 'The "pure diagnosis" argument, incidentalomas, and what the images actually showed on the day.', href: '/medicolegal-radiology', tag: 'Breach & causation' },
+						{ t: 'What did the patient know?', d: 'Consent, the materiality of risk, and the duty of candour where a complication occurs.', href: '/medicolegal-fundamentals', tag: 'Montgomery · Candour' },
+						{ t: 'Who else is liable?', d: 'Remote reporting, provider-level duties, escalation failure and dual liability in teleradiology.', href: '/recent-developments', tag: 'Teleradiology' },
+					].map((p, i) => (
+						<article class="py-7">
+							<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+								<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+									§ {String(i + 1).padStart(2, "0")}
+								</span>
+								<h3 class="font-serif text-lg font-bold text-slate-900">
+									<a href={p.href} class="hover:underline hover:underline-offset-4 hover:decoration-slate-400">{p.t}</a>
+								</h3>
+							</div>
+							<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{p.d}</p>
+							<p class="mt-2 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">{p.tag}</p>
+						</article>
+					))}
+				</div>
+				<div class="mt-8 flex flex-wrap gap-x-8 gap-y-2">
+					<a href="/dicom-viewer" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Free local DICOM viewer</a>
+					<a href="/patient-advice" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Patient advice</a>
+					<a href="/about" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">About the curator</a>
+				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Key figures, set as a reference table -->
+	<section class="border-b border-slate-200 bg-paper">
+		<div class="container-page py-14">
+			<div class="doc">
+				<p class="meta-label">Reference figures</p>
+				<table class="mt-4 w-full border-collapse text-left">
+					<thead>
+						<tr>
+							<th scope="col" class="border-b border-slate-400 bg-white px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Figure</th>
+							<th scope="col" class="border-b border-slate-400 bg-white px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Bears upon</th>
+						</tr>
+					</thead>
+					<tbody>
+						{stats.map((s) => (
+							<tr class="bg-white">
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] font-bold text-slate-900">{s.value}</td>
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">{s.label}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
 
 	<!-- Featured case -->
-	<section class="bg-slate-50 py-16 dark:bg-navy-950">
-		<div class="container-page grid items-center gap-12 lg:grid-cols-2">
-			<div>
-				<span class="eyebrow block text-teal-600 dark:text-teal-400">Featured case discussion</span>
-				<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">{featured.data.title}</h2>
-				<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">{featured.data.description}</p>
-				<div class="mt-6 flex flex-wrap gap-2">
-					{featured.data.tags.slice(0, 3).map((t) => <span class="chip">{t}</span>)}
+	<section class="border-b border-slate-200 bg-white">
+		<div class="container-page py-16">
+			<div class="doc">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Featured case discussion</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold leading-snug text-slate-900">{featured.data.title}</h2>
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">{featured.data.description}</p>
+					<p class="mt-4 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
+						{featured.data.tags.slice(0, 3).join(" · ")}
+					</p>
+					<a href={`/recent-developments/${featured.slug}`} class="btn btn-ghost mt-6">Read the analysis</a>
 				</div>
-				<a href={`/legal-blog/${featured.slug}`} class="btn btn-primary mt-7">Read the analysis</a>
-			</div>
-			<div class="lg:ml-auto">
-				{
-					featured.data.figures?.[0]
-						? (
-							<MedicalImageViewer
-								src={featured.data.figures[0]}
-								alt="Anonymised case image"
-								caption="Anonymised source series referenced in the featured case"
-								modality="MRI / CT"
-							/>
-						)
-						: (
-							<MedicalImageViewer
-								src="/images/placeholders/anonymised-mri-knee-sagittal.svg"
-								alt="Anonymised imaging placeholder"
-								caption="Anonymised reference image"
-								modality="MRI"
-							/>
-						)
-				}
+				<div class="mx-auto mt-10 max-w-2xl">
+					{
+						featured.data.figures?.[0]
+							? (
+								<MedicalImageViewer
+									src={featured.data.figures[0]}
+									alt="Anonymised case image"
+									caption="Anonymised source series referenced in the featured case"
+									modality="MRI / CT"
+								/>
+								)
+							: (
+								<MedicalImageViewer
+									src="/images/placeholders/anonymised-mri-knee-sagittal.svg"
+									alt="Anonymised imaging placeholder"
+									caption="Anonymised reference image"
+									modality="MRI"
+								/>
+								)
+					}
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Recent posts -->
-	<section class="bg-white py-16 dark:bg-navy-900">
-		<div class="container-page">
-			<div class="flex items-end justify-between gap-4">
-				<div>
-					<span class="eyebrow block">Legal radiology</span>
-					<h2 class="mt-3 text-3xl font-bold tracking-tight text-navy-900 dark:text-slate-100">Latest case discussions</h2>
+	<!-- Recent posts — flat text index -->
+	<section class="border-b border-slate-200 bg-paper">
+		<div class="container-page py-16">
+			<div class="doc">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Recent developments</p>
+					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Latest case discussions</h2>
 				</div>
-				<a href="/legal-blog" class="btn btn-ghost">All discussions</a>
-			</div>
-			<div class="mt-10 grid gap-6 md:grid-cols-3">
-				{recent.map((post) => (
-					<a href={`/legal-blog/${post.slug}`} class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft transition-all hover:shadow-lift dark:border-navy-700 dark:bg-navy-900">
-						<div class="px-5 pt-5">
-							<span class="chip">{categoryLabel(post.data.category)}</span>
-						</div>
-						<div class="p-5">
-							<h3 class="font-bold leading-snug text-navy-900 dark:text-slate-100">{post.data.title}</h3>
-							<p class="mt-2 line-clamp-3 text-sm leading-snug text-slate-600 dark:text-slate-300">{post.data.description}</p>
-						</div>
-					</a>
-				))}
+				<div class="mt-8 divide-y divide-slate-200 border-t border-slate-200">
+					{recent.map((post, i) => (
+						<article class="py-7">
+							<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+								<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+									§ {String(i + 1).padStart(2, "0")}
+								</span>
+								<span class="font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
+									{categoryLabel(post.data.category)}
+								</span>
+							</div>
+							<h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
+								<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>
+							</h3>
+							<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{post.data.description}</p>
+						</article>
+					))}
+				</div>
+				<a href="/recent-developments" class="mt-8 inline-block font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">
+					All discussions
+				</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- Instructing -->
-	<section class="bg-gradient-to-br from-navy-900 to-navy-800 py-14 text-center dark:bg-navy-950">
-		<div class="container-page max-w-3xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-white">Instructing an expert</h2>
-			<p class="mt-3 text-lg text-slate-300">
-				Where the legal analysis needs a radiological opinion, terms of instruction, imaging transfer
-				guidance and the fee structure are set out on the expert witness page.
-			</p>
-			<div class="mt-6 flex flex-wrap justify-center gap-3">
-				<a href="/expert-witness" class="btn btn-primary">Expert witness services</a>
-				<a href="/contact" class="btn btn-white">Contact the secretariat</a>
+	<!-- Who maintains the resource -->
+	<section class="bg-white">
+		<div class="container-page py-16">
+			<div class="doc text-center">
+				<div class="border-t border-slate-300 pt-8">
+					<p class="meta-label">Who maintains this resource</p>
+					<p class="mx-auto mt-4 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
+						The material is curated by {PRACTITIONER.name}, a consultant radiologist in NHS practice with an
+						independent medicolegal workload, and is reviewed against the primary sources cited throughout.
+						Where a matter needs a radiological opinion rather than background, terms of instruction and
+						imaging transfer guidance are set out on the expert witness page.
+					</p>
+					<div class="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-2">
+						<a href="/expert-witness" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Expert witness services</a>
+						<a href="/about" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">About the curator</a>
+						<a href="/sitemap" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Site map</a>
+						<a href="/contact" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Contact the secretariat</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

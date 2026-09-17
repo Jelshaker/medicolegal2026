@@ -1,20 +1,53 @@
 ---
 // Reusable content section wrapper with optional eyebrow + title.
+// All new props are optional, so existing call sites render unchanged.
+// `id` gives the section a stable anchor (called from PageIntro `contents`),
+// `index` prints an understated section number, and `lead` states the point
+// of the section in one sentence before the detail. Content is held in a
+// centered single column between hairline rules.
 interface Props {
+	id?: string;
 	eyebrow?: string;
+	/** Section number, e.g. "01". */
+	index?: string;
+	/** Short display title, e.g. the case name without its citation. */
 	title?: string;
+	/** Full neutral citation (or source line) set small beneath the title. */
+	citation?: string;
 	lead?: string;
 	span?: 1 | 2;
 	children?: string;
 }
-const { eyebrow, title, lead = "" } = Astro.props as Props;
+
+const { id, eyebrow, index, title, citation, lead = "" } = Astro.props as Props;
+const headingId = id ? `${id}-heading` : undefined;
 ---
 
-<section class="space-y-10">
-	<div>
-		{eyebrow && <span class="eyebrow mb-2 block">{eyebrow}</span>}
-		{title && <h2 class="text-2xl font-bold tracking-tight text-navy-900 dark:text-white sm:text-3xl">{title}</h2>}
-		{lead && <p class="mt-3 max-w-2xl leading-relaxed text-slate-600 dark:text-slate-300">{lead}</p>}
+<section id={id} aria-labelledby={headingId} class="scroll-mt-24">
+	<div class="doc overflow-hidden">
+		<div class="border-t border-slate-300 pt-8">
+			{(index || eyebrow) && (
+				<div class="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
+					{index && (
+						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+							§ {index}
+						</span>
+					)}
+					{eyebrow && <span class="eyebrow">{eyebrow}</span>}
+				</div>
+			)}
+			{title && (
+				<h2 id={headingId} class="mt-3 font-serif text-2xl font-bold leading-snug text-slate-900 sm:text-[1.75rem] text-balance break-words">
+					{title}
+				</h2>
+			)}
+			{citation && (
+				<p class="mt-1.5 font-sans text-[0.8rem] leading-relaxed tracking-wide text-slate-500 break-words">
+					{citation}
+				</p>
+			)}
+			{lead && <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">{lead}</p>}
+		</div>
+		<slot />
 	</div>
-	<slot />
 </section>

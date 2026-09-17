@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
-import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE, FEES } from "../consts";
+import Figure from "../components/Figure.astro";
+import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE } from "../consts";
 
 const scope = [
 	{
@@ -45,114 +47,154 @@ const standards = [
 
 <BaseLayout
 	title={`About | ${SITE_TITLE}`}
-	description="Dr Joseph El-Sheikha, Consultant Radiologist and medicolegal expert witness — independent CPR Part 35 opinions on delayed diagnosis, staging error, consent and teleradiology, instructed by claimants and defendants alike."
+	description="The curator of this radiology and medicolegal law resource: Dr Joseph El-Sheikha, Consultant Radiologist and medicolegal expert witness — how the reference material is maintained, and the scope of his independent CPR Part 35 opinions on delayed diagnosis, staging error, consent and teleradiology."
 >
 	<PageHero
-		eyebrow="About the practice"
+		eyebrow="About this resource"
 		title={PRACTITIONER.shortName}
-		description="Consultant Radiologist and independent medicolegal expert witness. I provide radiological opinion that is written for the court rather than for the party instructing me."
+		description="Consultant Radiologist, independent medicolegal expert witness, and the curator of this reference resource. The opinion I provide is written for the court rather than for the party instructing me."
 	/>
 
-	<section class="bg-white py-16 dark:bg-navy-900">
-		<div class="container-page grid gap-12 lg:grid-cols-3">
-			<div class="space-y-12 lg:col-span-2">
-				<Section eyebrow="Independent expert evidence" title="Opinion written for the court, not for the party instructing me">
-					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+	<PageIntro
+		eyebrow="About this resource"
+		paragraphs={[
+			"The resource is curated by a single consultant radiologist in NHS practice with an independent medicolegal workload. That is deliberate: a small resource can be kept accurate and sourced, and does not accumulate the padding that larger collections do.",
+			"The commentary is written from practice rather than from a textbook, and is checked against the primary sources cited throughout.",
+		]}
+		contents={[
+			{ href: "#independence", label: "Independence" },
+			{ href: "#scope", label: "Scope of practice" },
+			{ href: "#standards", label: "Standards worked to" },
+			{ href: "#memberships", label: "Memberships" },
+			{ href: "#next-steps", label: "Next steps" },
+		]}
+		audience="Written for radiologists, trust legal teams, solicitors, barristers, insurers and expert witnesses."
+		reviewed="September 2026"
+	/>
+
+	<section class="bg-white py-16">
+		<div class="container-page">
+			<div class="doc space-y-12">
+				<Section
+					id="independence"
+					index="01"
+					eyebrow="Independent expert evidence"
+					title="Opinion written for the court, not for the party instructing me"
+					lead="An expert's overriding duty is to the court. The method does not change with the side that has instructed me."
+				>
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">
 						My practice is a radiological one with a legal method. The images answer technical questions —
 						what was acquired, what was demonstrable, what a competent reporter would have seen at the
 						time — and the law then asks separate questions about breach, causation and loss. Keeping those
 						analyses apart is the discipline that makes an expert report useful, and it is the reason a
 						report stands up in cross-examination.
 					</p>
-					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">
 						I accept instructions from claimants and defendants alike. Under CPR 35.3 an expert's
 						overriding duty is to the court, so the analysis is the same whichever side has instructed me:
 						re-derive from the source DICOM, reconstruct the contemporaneous conditions, state clearly what
 						is fact and what is opinion, and set out what would change my view. Where the radiological
 						evidence does not support the case being advanced, the report says so.
 					</p>
-					<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+					<p class="mt-4 font-serif leading-relaxed text-slate-600">
 						I do not express opinions outside my competence. Questions of surgical technique, oncology
 						management or life expectancy fall to surgeons and oncologists; my role is to define precisely
 						what imaging did and did not show, and to identify where a radiological conclusion ends and
 						another discipline's begins.
 					</p>
+					<div class="mx-auto mt-10 max-w-sm">
+						<Figure
+							src={PRACTITIONER.photo}
+							alt={PRACTITIONER.shortName}
+							label="Plate 01"
+							caption={PRACTITIONER.shortName}
+							subtitle="Consultant Radiologist and independent medicolegal expert witness."
+							ratio="portrait"
+							flush
+						/>
+					</div>
+					<table class="mt-10 w-full border-collapse text-left">
+						<thead>
+							<tr>
+								<th scope="col" class="border-b border-slate-400 bg-paper px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">At a glance</th>
+								<th scope="col" class="border-b border-slate-400 bg-paper px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Particulars</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-white">
+								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Qualifications</th>
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.qualifications}</td>
+							</tr>
+							<tr class="bg-white">
+								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Sub-specialty</th>
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.subspecialty}</td>
+							</tr>
+							<tr class="bg-white">
+								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Registration</th>
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.gmcNumber}</td>
+							</tr>
+							<tr class="bg-white">
+								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Indemnity</th>
+								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.indemnity}</td>
+							</tr>
+						</tbody>
+					</table>
 				</Section>
 
-				<Section eyebrow="Scope of practice" title="Where radiological opinion decides the issue">
-					<div class="grid gap-6 sm:grid-cols-2">
+				<Section
+					id="scope"
+					index="02"
+					eyebrow="Scope of practice"
+					title="Where radiological opinion decides the issue"
+					lead="These are the questions in which a radiological opinion is usually decisive rather than peripheral."
+				>
+					<div class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
 						{scope.map((s) => (
-							<div class="card p-6">
-								<h3 class="text-base font-bold text-navy-900 dark:text-slate-100">{s.t}</h3>
-								<p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+							<div class="py-5">
+								<h3 class="font-serif text-base font-bold text-slate-900">{s.t}</h3>
+								<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">{s.d}</p>
 							</div>
 						))}
 					</div>
 				</Section>
 
-				<Section eyebrow="The framework" title="Standards and authorities I work to">
-					<div class="mt-6 space-y-3">
-						{standards.map((s) => (
-							<div class="card p-5">
-								<p class="text-sm font-bold text-navy-900 dark:text-slate-100">{s.n}</p>
-								<p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{s.d}</p>
+				<Section
+					id="standards"
+					index="03"
+					eyebrow="The framework"
+					title="Standards and authorities I work to"
+					lead="The professional standards and legal authorities against which an imaging opinion is prepared and tested."
+				>
+					<div class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
+						{standards.map((s, i) => (
+							<div class="py-4">
+								<div class="flex items-baseline gap-3">
+									<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+									<p class="font-serif text-sm font-bold text-slate-900">{s.n}</p>
+								</div>
+								<p class="mt-1 font-serif text-sm leading-relaxed text-slate-600">{s.d}</p>
 							</div>
 						))}
 					</div>
 				</Section>
-			</div>
 
-			<!-- Sidebar -->
-			<aside class="space-y-6">
-				<div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-navy-700">
-					<img src={PRACTITIONER.photo} alt={PRACTITIONER.shortName} class="aspect-[4/5] w-full object-cover" loading="lazy" />
-				</div>
-
-				<div class="card p-6">
-					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">At a glance</h2>
-					<dl class="mt-4 space-y-3 text-sm">
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Qualifications</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.qualifications}</dd>
-						</div>
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Sub-specialty</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.subspecialty}</dd>
-						</div>
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Registration</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.gmcNumber}</dd>
-						</div>
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Indemnity</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">{PRACTITIONER.indemnity}</dd>
-						</div>
-						<div>
-							<dt class="font-semibold text-slate-500 dark:text-slate-400">Turnaround</dt>
-							<dd class="mt-0.5 text-slate-700 dark:text-slate-200">
-								{FEES.standardTurnaround} standard · {FEES.urgentTurnaround} urgent
-							</dd>
-						</div>
-					</dl>
-				</div>
-
-				<div class="card p-6">
-					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Memberships</h2>
-					<ul class="mt-4 space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+				<Section id="memberships" eyebrow="Professional bodies" title="Memberships">
+					<ul class="mt-6 space-y-2.5 border-t border-slate-200 pt-4 font-serif text-sm text-slate-600">
 						{MEMBERSHIPS.map((m) => <li>{m}</li>)}
 					</ul>
-				</div>
+				</Section>
 
-				<div class="card p-6">
-					<h2 class="text-base font-bold text-navy-900 dark:text-slate-100">Next steps</h2>
-					<ul class="mt-4 space-y-2.5 text-sm">
-						<li><a href="/cv" class="font-semibold text-teal-700 dark:text-teal-400">Full curriculum vitae</a></li>
-						<li><a href="/expert-witness" class="font-semibold text-teal-700 dark:text-teal-400">Expert witness services</a></li>
-						<li><a href="/legal-fundamentals" class="font-semibold text-teal-700 dark:text-teal-400">Legal fundamentals</a></li>
-						<li><a href="/contact" class="font-semibold text-teal-700 dark:text-teal-400">Contact the secretariat</a></li>
+				<Section id="next-steps" eyebrow="Elsewhere in the resource" title="Next steps">
+					<ul class="mt-6 space-y-2.5 border-t border-slate-200 pt-4">
+						<li><a href="/cv" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Full curriculum vitae</a></li>
+						<li><a href="/expert-witness" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Expert witness services</a></li>
+						<li><a href="/radiology-resources" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Radiology reference</a></li>
+						<li><a href="/medicolegal-fundamentals" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Medicolegal law library</a></li>
+						<li><a href="/sitemap" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Site map</a></li>
+						<li><a href="/contact" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Contact the secretariat</a></li>
 					</ul>
-				</div>
-			</aside>
+				</Section>
+			</div>
 		</div>
 	</section>
 </BaseLayout>

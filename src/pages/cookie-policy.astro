@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
+import Section from "../components/Section.astro";
+import Callout from "../components/Callout.astro";
+import { SITE_TITLE } from "../consts";
+
+export const prerender = true;
+---
+
+<BaseLayout
+  title={`Cookie policy | ${SITE_TITLE}`}
+  description="Which cookies this radiology and medicolegal law resource uses: strictly necessary storage, the single optional Google Analytics cookie, and how to accept, reject or change your choice."
+>
+  <PageHero
+    eyebrow="Cookies"
+    title="Cookie policy"
+    description="One optional analytics cookie — set only if you accept it — and the strictly necessary storage that keeps the site working. Nothing else."
+  />
+
+  <PageIntro
+    eyebrow="Cookies"
+    paragraphs={[
+      "UK law requires consent before storing anything on your device that is not strictly necessary. This site therefore asks first: the banner offers Accept analytics or Reject analytics, and nothing optional is set until you choose.",
+      "Your choice is remembered on your own device. You can change it at any time through the Cookie settings link in the footer, which re-opens the banner.",
+    ]}
+    contents={[
+      { href: "#necessary", label: "Strictly necessary" },
+      { href: "#analytics", label: "Optional analytics" },
+      { href: "#choice", label: "Your choice" },
+      { href: "#managing", label: "Managing cookies" },
+    ]}
+    reviewed="September 2026"
+  />
+
+  <section class="bg-white py-16">
+    <div class="container-page">
+      <div class="doc space-y-14">
+        <Section id="necessary" index="01" eyebrow="Always on" title="Strictly necessary storage" lead="What the site needs to function. No consent is required, and it cannot be switched off.">
+          <table class="mt-6 w-full border-collapse text-left">
+            <thead>
+              <tr class="bg-white">
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Name</th>
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Purpose</th>
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Expiry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-800"><code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">ml-consent-v1</code> (localStorage)</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Remembers your cookie choice so the banner does not ask again. Not a cookie; nothing leaves your device.</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Until cleared</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-800">Clerk session</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Keeps you signed in to the secure login area only. Casual readers never receive it.</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Session</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-800">Cloudflare security</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Bot protection and load management set by the hosting platform.</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Short-lived</td>
+              </tr>
+            </tbody>
+          </table>
+        </Section>
+        <Section id="analytics" index="02" eyebrow="Optional" title="Analytics — only with consent" lead="A single Google Analytics 4 cookie, set only after you click Accept analytics.">
+          <table class="mt-6 w-full border-collapse text-left">
+            <thead>
+              <tr class="bg-white">
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Name</th>
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Purpose</th>
+                <th scope="col" class="border-b border-slate-300 px-3 py-3 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Expiry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-800"><code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">_ga*</code></td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Google Analytics 4: aggregate page-read counts. IP anonymised; 14-month retention.</td>
+                <td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">Up to 2 years</td>
+              </tr>
+            </tbody>
+          </table>
+          <Callout tone="key" title="Before you choose">
+            <p>Until you accept, Google's tag loads in consent-denied mode: it cannot set cookies or send identifiers. Rejecting or ignoring the banner leaves it that way — the site works identically either way.</p>
+          </Callout>
+        </Section>
+        <Section id="choice" index="03" eyebrow="Consent" title="How your choice works" lead="Withdrawing consent is as easy as giving it.">
+          <ul class="mt-6 space-y-2.5 border-t border-slate-200 pt-4 font-serif text-[0.95rem] leading-relaxed text-slate-600">
+            <li><strong>Accept analytics</strong> — the _ga cookie may be set and page reads counted.</li>
+            <li><strong>Reject analytics</strong> — nothing optional is set, and nothing is recorded.</li>
+            <li><strong>Change your mind</strong> — the Cookie settings link in the footer re-opens the banner on any page.</li>
+          </ul>
+        </Section>
+        <Section id="managing" index="04" eyebrow="Your browser" title="Managing cookies yourself" lead="Every browser also lets you control cookies directly.">
+          <p class="mt-6 border-t border-slate-200 pt-4 font-serif text-[0.95rem] leading-relaxed text-slate-600">You can block or delete cookies in browser settings at any time; the ICO guidance at <a href="https://ico.org.uk/for-the-public/online/cookies" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">ico.org.uk</a> explains how. Blocking strictly necessary storage may stop sign-in working, but reading the reference material is unaffected. Questions: see the <a href="/privacy-notice" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">privacy notice</a>.</p>
+        </Section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

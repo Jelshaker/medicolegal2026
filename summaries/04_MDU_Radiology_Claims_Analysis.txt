@@ -1,0 +1,179 @@
+================================================================================
+SUMMARY: Medical Defence Union (MDU) - "Getting a Clear Picture of Radiology Claims"
+SOURCE: Dr Shabbir Choudhury, Senior Medical Claims Handler, MDU
+DATE: 19 November 2019
+================================================================================
+
+OVERVIEW
+--------
+This article by the Medical Defence Union (MDU) analyses clinical negligence
+claims notified by radiology members working in the independent/private sector.
+It provides insights into claim outcomes, common reasons for claims, and risk
+management advice for radiologists.
+
+KEY STATISTICS
+--------------
+- Analysis based on 200 recent claims against consultant radiologists in the
+  independent sector who are MDU members
+- Nearly 3/4 of claims successfully defended (compensation paid in ~1/4 of cases)
+- Settlement costs varied from £4,000 to almost £2 million
+- Majority of settled cases cost well in excess of £50,000
+- Legal costs can exceed the amount of damages paid (notably: one case with
+  damages >£100,000 but legal costs significantly exceeding this)
+
+COMPENSATION PRINCIPLES
+-----------------------
+- Compensation levels bear little/no relation to seriousness of clinical allegations
+- Instead, compensation reflects the cost of restoring the claimant to the position
+  they would have been in if the negligence had not occurred
+- Large payments for patients fund future care and compensate for loss of earnings
+- Even lower value claims can settle for damages and costs beyond most members'
+  means to pay
+
+OUTCOMES OF CASES (Non-settled claims)
+---------------------------------------
+Cases not settled were either:
+1. Discontinued by claimant - MDU successfully argued:
+   - Liability rested with treating clinicians rather than radiology member
+   - Radiologist's interpretation was reasonable given clinical information
+   - Interpretation would not have altered patient outcome
+2. Statute barred (out of time):
+   - Claimant must bring claim within 3 years from date of incident or date of
+     knowledge of alleged harm
+   - For children with capacity: limitation period begins at age 18 (16 in Scotland)
+   - No time limit for patients who lack capacity
+3. Some closed after MDU successfully argued member not sufficiently involved
+   in clinical sequence of events
+
+COMMON REASONS FOR CLAIMS
+--------------------------
+1. DELAYED DIAGNOSIS (most common)
+   - Cancer accounted for ~25% of delayed diagnosis cases
+   - Fractures commonly resulting in claims
+   - Cauda equina syndrome commonly resulting in claims
+   - Argument: if abnormality had been recognised/reported correctly, patient
+     would have received sooner treatment, reducing disability
+   - Allegations centre on:
+     * Abnormality NOT detected
+     * Abnormality picked up but MISINTERPRETED, leading to unnecessary/incorrect treatment
+
+2. MEDICATION ISSUES (small number but high cost)
+   - Allergic reactions
+   - Wrong medication provided
+   - Contrast-related claim in child settled for >£100,000 with substantial costs
+
+3. COMMUNICATION SKILLS
+   - Cases focused on doctor's communication skills
+   - Often related to obtaining appropriate consent for radiological procedures
+
+4. INTERVENTIONAL RADIOLOGY
+   - Substantial interventional element in some claims
+   - Some expensive to settle
+   - Carries more perceived risks
+   - Less commonly carried out than general radiology
+   - Members may be more aware of risks and justifiably cautious
+
+5. MODALITY BREAKDOWN
+   - ~25% of claims involved MRI scan allegations
+   - Similar proportion involved plain X-ray allegations
+   - ~10% of cases followed patient death
+
+RISK MANAGEMENT ADVICE
+----------------------
+1. Communication and Results:
+   - Ensure robust procedures for communicating results to relevant parties
+   - Ensure appropriate and prompt follow-up and treatment
+
+2. Consent:
+   - Be aware of GMC guidance on consent and other relevant guidelines (e.g., NICE)
+   - Consent should be obtained by appropriate team member, ideally by the
+     radiologist undertaking the procedure
+   - Patient must be aware of risks, benefits, complications, and therapeutic options
+   - Document these discussions carefully
+   - Patient leaflets and information sheets should be used and documented
+
+3. Medication and Contrast:
+   - Consider patient's past medical history, medication history, and allergies
+     before administering pre-procedural medication and contrast media
+
+4. Interventional Procedures:
+   - Ensure appropriate handover to recovery staff for interventional procedures
+     or those under sedation
+   - Have system to verify right site and patient; cross-check against referral
+
+5. Reporting Environment:
+   - Keep interruptions in reporting room to minimum
+
+6. Unexpected Findings:
+   - Consider contacting referring doctor if unexpected finding requiring urgent
+     investigation is found
+
+7. Examinations:
+   - Offer chaperone for intimate examinations (e.g., pelvic ultrasound)
+
+8. When Things Go Wrong:
+   - Be open and honest with patient
+   - Provide explanation of what happened and likely short/long term effects
+   - Say sorry
+   - Get advice from MDU regarding duty of candour requirements
+
+CASE STUDY: Ruptured Achilles Tendon
+------------------------------------
+Facts:
+- Patient developed pre-Achilles tendon bursitis, referred for steroid injection
+- Radiologist performed successful ultrasound-guided injection
+- Three months later, symptoms recurred; patient seen by rheumatologist
+- Patient returned to radiologist who found persistent left pre-Achilles bursitis
+- Second injection performed (deep to paratenon of Achilles tendon)
+- Patient suffered full thickness Achilles rupture shortly after procedure
+
+Allegations:
+- Rupture resulted from injecting local anaesthetic and steroid around tendon
+  on two occasions
+- Patient not warned about / not aware of risk of tendon rupture before either
+  procedure
+
+Expert Opinion (MDU-appointed):
+- Procedure was relatively safe
+- Member's treatment was reasonable and logical
+- Published evidence shows risk of rupture ~1:1,000
+- Patient referred by senior consultant rheumatologist who also advised this was
+  appropriate course
+- NO evidence in ultrasound reports that patient was consented for rupture risk
+- Radiologist claimed verbal warning given but NOT documented
+
+Outcome:
+- MDU denied liability on member's behalf
+- Patient's solicitors issued proceedings alleging no consent obtained
+- Radiologist agreed verbal warnings were given but not documented
+- Claim settled WITHOUT admission of liability
+- Damages: £12,500
+- Legal costs: almost 5x damages amount (~£62,500)
+
+KEY LESSONS FROM CASE STUDY
+-----------------------------
+1. Verbal consent discussions must be DOCUMENTED
+2. Even small risks (1:1,000) must be specifically addressed in consent
+3. Lack of documentation can lead to settlement even when liability is denied
+4. Legal costs can dramatically exceed damages (5x in this case)
+5. Even successfully defended claims can result in significant financial exposure
+
+CONTACT INFORMATION
+-------------------
+MDU Medico-legal Team: 0800 716 646
+Email: advisory@themdu.com
+
+================================================================================
+RELEVANCE FOR RADIOLOGICAL MEDILEGAL RESEARCH
+This MDU article provides valuable data on:
+1. Claim outcomes in the independent sector (75% successfully defended)
+2. The financial exposure radiologists face (even defended claims have high costs)
+3. The statute of limitations framework for medical negligence claims
+4. The specific conditions most commonly associated with radiology claims
+5. The critical importance of documented consent
+6. The disproportionate cost of legal proceedings relative to damages
+7. The case study illustrates the documentation gap that can undermine an
+   otherwise defensible clinical position
+The article complements the MPS data by providing an independent sector perspective
+and specific practical risk management advice.
+================================================================================

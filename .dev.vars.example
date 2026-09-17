@@ -1,4 +1,8 @@
 # Local `wrangler dev` secrets (used by the Cloudflare adapter at runtime).
-# Copy to `.dev.vars` for local wrangler preview.
+# Copy to `.dev.vars` for a local `npm run preview` / `wrangler dev` session.
+#
+# PUBLIC_* values (PUBLIC_SITE_URL, PUBLIC_GA_MEASUREMENT_ID, ...) are *not*
+# needed here: `astro build` inlines them from `.env` at build time, and the
+# Cloudflare platform proxy also surfaces `.env` values at runtime.
 CLERK_SECRET_KEY=sk_test_YOUR_SECRET_KEY
 COURTLISTENER_TOKEN=

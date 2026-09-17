@@ -1,0 +1,270 @@
+================================================================================
+SUMMARY: Royal College of Radiologists (RCR) - Standards for Interpretation
+         and Reporting of Imaging Investigations (3rd Edition, October 2025)
+SOURCE: The Royal College of Radiologists, Clinical Radiology
+================================================================================
+
+OVERVIEW
+--------
+This is the definitive UK standard document governing the interpretation and
+reporting of imaging investigations. Published in October 2025 (3rd Edition),
+it represents the current expected standard of care for radiological reporting.
+The document is written by and for radiologists but applies to ALL who interpret
+and report imaging, regardless of professional background.
+
+KEY PRINCIPLES
+--------------
+- Radiological investigations must be interpreted and reported to a high standard
+- Clear communication of results ensures safe, effective, efficient patient care
+- Modern radiology services are under pressure due to workforce shortages
+- Imaging reporting services must remain led by consultant radiologists but will
+  not be entirely radiologist-delivered
+- Non-radiology doctors interpreting imaging must have agreements for radiology
+  review when findings fall outside their expertise
+- Non-medical practitioners (sonographers, radiographers) must work within
+  consultant radiologist-led teams with clear supervision
+- Referrers have legal duties under IR(ME)R to provide adequate patient histories
+  and articulate clear clinical questions
+
+SECTION 1: INTRODUCTION
+-----------------------
+Defines the scope and purpose of the standards. Establishes that:
+- All who interpret and report imaging must adhere to these standards
+- Where formal reports are provided by non-radiology doctors (e.g., cardiologists),
+  the same standards apply
+- Where imaging interpretation is delegated to referrers (e.g., orthopaedic
+  surgeons), written documentation must satisfy IR(ME)R requirements
+- High-quality referrals are essential for safe care
+
+SECTION 2: SERVICE ORGANISATION
+-------------------------------
+Providers must create and regularly review standard operating procedures for:
+- Turnaround times
+- Communication of unexpected or time-critical findings
+- Imaging classification (critical, urgent, routine, research trial) for reporting priority
+- Communication of addenda and MDT reviews
+- Report acknowledgement
+
+Principles:
+- Patient safety requires timely, accurate, actionable reporting
+- Standards apply to anyone providing a report and all providers
+
+SECTION 3: REPORTING AUTHOR
+----------------------------
+The report must:
+- Clearly state the name, job title/professional status, registration body, and
+  registration number of the author
+- The prefix 'Doctor' or 'Dr' should only indicate medically qualified practitioners
+- Non-medical practitioners with PhD should use 'PhD' as postnominal, not 'Dr'
+- Not include personal contact details
+- Include names of ALL contributing authors
+- For interventional procedures, author should be operator or assistant; primary
+  operator must be clearly indicated
+
+Employer duties:
+- Duty of care to patients
+- No employee permitted/required to work beyond knowledge and competence
+- No employee required to work without adequate rest
+
+Reporting author requirements:
+- Registered with relevant UK regulatory body (GMC, HCPC) and in good standing
+- Trained per professional body's standards
+- Working within defined scope of practice
+- Comply with ongoing CPD, audit, and revalidation processes
+- Able to evaluate image quality and suitability for diagnosis
+- Must recognise suboptimal image quality and include caveats when needed
+
+SECTION 4: INFRASTRUCTURE
+-------------------------
+Technology Support:
+- Patient's imaging history and reports must be available
+- Clinical information, medical records, and laboratory results should be accessible
+- Brief controlled delay (up to 2 minutes) before report becomes accessible
+  (to allow typographical corrections)
+- Once report accessed by another party, changes require formal version control
+- Reports must be automatically communicable to other clinician IT systems
+
+Voice Recognition:
+- VR software is integral to reporting and encouraged
+- Employer must ensure VR software and hardware perform to current best standards
+- Typing or alternative methods may be used if no less effective than high-quality VR
+
+Artificial Intelligence Assisted Reporting:
+- AI has potential to significantly improve healthcare through analysis of complex
+  information at scale
+- AI can aid throughout the patient journey: requesting, scheduling, vetting,
+  planning, scanning, report sharing, treatment pathway planning
+- In 2024, RCR published "AI deployment fundamentals for medical imaging"
+- Validated AI tools must be integrated so reporting is more efficient and safer
+- AI-generated content must be clearly identified within the report
+- ALL AI-derived contributions must be reviewed, verified, and approved by a
+  named human author who is responsible for the final report
+- Employers must provide adequate AI training
+
+Remote Reporting (Including Teleradiology):
+- Remote reporting = reporting at distance from where examination was performed
+- Arrangements must be developed with wider service planning frameworks
+- Remote reporting must not compromise quality compared to in-hospital settings
+- Local/regional network reporting must comply with same technical specifications
+  and governance as provider-based reporting
+- Remote reporters must have access to clinical documentation and imaging records
+- Where reporter unfamiliar with local care pathways, mechanisms must support
+  contextual understanding (liaison with clinical teams, MDT participation)
+- Local operating policies must include business continuity plans
+- Teleradiologists working for private providers may be unfamiliar with local
+  patient care pathways - organisations must ensure adequate safeguards
+
+SECTION 5: THE REPORT
+---------------------
+General Considerations:
+- Clinical details should form part of the report
+- Interpretation may be incorrect if referral details are deficient, absent, or
+  misleading
+- Inclusion of referrer's text is recommended (may be relevant for future review)
+- Where past treatment impacts image interpretation, treatment history should be
+  recorded
+- Reporters should maintain professional standards when commenting on referrers,
+  patients, hospital environment, or equipment
+- If scan performance compromised, relevant/factual/non-judgmental statements
+  may be included
+- Careful proofreading is vital - prevents serious errors such as:
+  * Missed negatives
+  * Word substitution
+  * Wrong side attribution
+
+Scan Protocol and Technical Detail:
+- Including scan protocol/technical detail may be appropriate if it aids
+  understanding, justifies parameters, adds value, or details deficiencies
+
+Observations and Findings:
+- An observations section should state relevant and pertinent findings
+- Incidental findings may be mentioned and explained
+- Guidelines and experience should be used to avoid irrelevant incidental findings
+  or lists of irrelevant negative observations (these detract from report impact
+  and generate unnecessary additional tests)
+- ALL images acquired (including planning/scout images and non-target areas) must
+  be reviewed for patient safety
+- Complex studies (cross-sectional imaging) may focus on target areas but must
+  have provision for competent and holistic review of all relevant findings
+- Responsibility for reviewing non-target areas lies with BOTH reporter and employer
+- Where reporting is limited, employers should consider resource implications of
+  secondary review
+- If prior imaging is beyond reporter's scope, seek additional radiology review
+- If prior imaging unavailable and absence may impact interpretation, document this
+
+Standardised and Structured Reporting:
+- Reporting style may vary based on clinical context and referrer's needs
+- Should prioritise clarity and clinical relevance
+- Structured templates are encouraged where suitable (e.g., RECIST criteria,
+  National Cancer Registry data, WHO checklist, trauma reporting)
+- Structured or AI-generated formats should NOT be used to imply degree of
+  scrutiny that has not taken place
+- Templates may be adapted to omit irrelevant fields
+
+Report Conclusion (Impressions/Comments/Opinion):
+The conclusion is a KEY component and should be SHORT and ACTIONABLE. Short
+reports (radiographs, procedures, ultrasound) may not require a conclusion.
+
+The report conclusion should:
+- Directly answer the clinical question and address implied questions
+- Be tailored to the named referrer as target readership (primary, secondary, or
+  tertiary care), explaining technical terms as necessary
+- Avoid unnecessary repetition of report body content
+- Convey the sensitivity of the test for the clinical question if needed
+- Document limitations in likely sensitivity/specificity using clear, factual,
+  non-judgmental language
+- Explain areas of uncertainty within the radiology diagnosis or provide ranked
+  differential diagnosis
+- Aim to provide single or differential diagnosis and advise how differentials
+  can be refined
+- Clarify if the scan did not address something it needed to, recommend further
+  tests or actions
+- Highlight where non-imaging results will potentially alter interpretation
+- Make clear, specific recommendations
+- AVOID blanket phrases such as "clinical correlation advised"
+- Further imaging recommendations should be used judiciously
+- Further tests should add value to overall patient care; referrers should be
+  involved in deciding their need
+- Follow guidelines for incidental findings; reference or explain when further
+  action not needed
+- Clinically important incidental findings must be communicated appropriately
+
+Interventional Radiology Reporting and Procedural Description:
+- Reports written and communicated promptly following procedure completion
+- Subsequent diagnostic conclusions captured separately or as addendum
+- Comply with clinical radiology subspecialties and SIG guidance
+- If local practice does not obtain written consent, verbal consent and
+  complications discussed must form part of the report
+- Include instructions on aftercare or need for follow-up procedures/imaging
+- Document relevant narrative of intervention, including:
+  * Drug administration
+  * Efficacy and complications
+  * How efficacy should be assessed
+- Report layout may vary by procedure type
+- Pro formas should be considered for data completeness
+
+Patient Access:
+- Improved access to health information enables patient partnership in managing
+  their health
+- Referrer who requested the test is responsible for reviewing, acting on, and
+  communicating the result
+- Timelines for patient access should be short, with provision for appropriate
+  communication of findings
+- When accessed by patient, reports should include standard phrase indicating
+  the report has been sent to the referring clinician who referred the patient
+
+SECTION: CONCLUSION
+-------------------
+The standards provide a baseline that all radiology reports should achieve, so
+that quality and consistency of imaging interpretation can be assured. Adherence
+ensures image interpretation continues to add value to patient diagnostic and
+treatment pathways.
+
+KEY REFERENCES CITED
+--------------------
+1. RCR Clinical Radiology Census Report (2024)
+2. Ionising Radiation (Medical Exposure) Regulations 2017 (SI 2017/1322)
+3. IR(ME)R Northern Ireland 2018
+4. IR(ME)R (Amendment) Regulations 2024
+5. RCR Diagnostic Radiology Life Cycle Guidance (2024)
+6. RCR Major Adult Trauma Radiology Guidance (2024)
+7. RCR Standards for MSK plain radiographs reporting practitioners (2022)
+8. RCR Standards for adult chest X-ray reporting practitioners (2022)
+9. NHS England Diagnostic Imaging Reporting Turnaround Times (2023)
+10. RCR Turnaround Times Report
+11. Academy of Medical Royal Colleges: Recommendations on alerts/notification (2022)
+12. BMA: Doctors and the European Working Time Directive (2024)
+13. RCR Clinical Radiology Specialty Training Curriculum (2023)
+14. RCR PACS and Diagnostic Display Devices Guidelines (3rd ed, 2019)
+15. RCR: Integrating AI with Radiology Reporting Workflows (2021)
+16. NHS Patient Access
+17. NHS AI Lab
+18-19. RCR AI-related publications
+20. RCR Clinical Radiology Job Planning Guidance (2022)
+21. RCR Homeworking for Radiologists (2023)
+22. NHS England Business Continuity Management Toolkit (2023)
+23. NHS England Bowel Cancer Screening CTC Guidelines (2024)
+24. RCR Sub-specialties and SIGs
+25. NHS England: Guidance on Patient Digital Notification of Diagnostic Imaging Reports (2025)
+
+GUIDELINE DEVELOPMENT GROUP
+---------------------------
+- Dr Dominic Blunt, Consultant Radiologist, Charing Cross Hospital, Imperial
+- Dr Chee Gan, Consultant Interventional Neuroradiologist, Royal Victoria Infirmary
+- Simon Ainsworth, Director, SA Healthcare Consulting Ltd (Lay Member)
+- Dr Subhadip Ghosh-Ray, Consultant Radiologist, Paul Strickland Scanner Centre
+- Dr Robert Lavis, Independent Consultant Radiologist, Teleradiology representative
+
+================================================================================
+RELEVANCE FOR RADIOLOGICAL MEDILEGAL RESEARCH
+This is THE key UK regulatory document that will be cited in court proceedings
+involving radiology reporting standards. The 2025 edition specifically addresses:
+- Responsibility for reviewing non-target areas (shared between reporter and employer)
+- Impact of deficient/absent/misleading referral details on interpretation
+- AI-assisted reporting and human responsibility for AI-derived content
+- Remote reporting safeguards
+- Specific requirements for report conclusions (avoiding "clinical correlation
+  advised" as a blanket phrase)
+The document establishes the expected standard of care and provides clear
+frameworks for liability assignment in reporting-related negligence claims.
+================================================================================

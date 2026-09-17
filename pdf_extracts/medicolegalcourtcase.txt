@@ -1,0 +1,534 @@
+---PAGE 1---
+Medicolegal implications of the Royal College of 
+Radiologists standards for the interpretation 
+and reporting of imaging investigations: a 
+retrospective review of claims in abdominal 
+radiology
+S. Halligan a,b, * , D. Blunt c , D. Boone b , T. Higginson d , A.A. Plumb b
+a Centre for Medical Imaging, University College London UCL, 5 University Street, London, United Kingdom
+b Department of Radiology, University College Hospital, 235 Euston Road, London, United Kingdom
+c Imaging Department, Imperial NHS Trust, Charing Cross Hospital, Fulham Palace Road, London, United Kingdom 
+d Department of Radiology, Portsmouth Hospitals University NHS Trust, Queen Alexandra Hospital, Portsmouth, P06 
+3LY, United Kingdom
+art icle  informat ion
+Article history:
+Received 7 June 2025 
+Received in revised form
+2 November 2025 
+Accepted 3 November 2025
+AIM: United Kingdom medicolegal claims are rising. Many radiological allegations cite 
+failure to report incidental findings, but these are often inconspicuous and asymptomatic and 
+therefore difficult to detect. Nevertheless, claimants often support their allegations by citing 
+the Royal College of Radiologists standards for the interpretation and reporting of imaging 
+investigations. We examined our medicolegal practice to determine the proportion where 
+allegations cited incidental pathology.
+METHODS: Five medicolegal expert witnesses, working in abdominopelvic radiology, 
+reviewed their medicolegal practice and determined the proportion of recent cases in which 
+allegations of substandard reporting cited failure to diagnose incidental pathology. 
+RESULTS: We identified 112 individual cases, comprising 176 imaging examinations; 99 
+(56 %) were computed tomography and 36 (20 %) magnetic resonance imaging. One hundred 
+forty-four (82 %) were reported in the National Health Service, 14 (8 %) outsourced, and 18 
+(10 %) private practice. Medicolegal allegations cited failure to report incidental pathology in 
+41 (37 %) of the 112 patients. The commonest allegation in this group was failure to identify 
+tumour (23 of 41 patients, 56 %). Interpretation was judged as substandard in 12 (29 %) of 
+these patients compared with 23 (32 %) of the 71 patients in whom allegations did not cite 
+incidental findings.
+CONCLUSION: A substantial proportion of medicolegal allegations in abdominal radiology 
+cite failure to report incidental pathology. College standards should recognise that unantic-
+ipated pathology is sometimes difficult to detect, especially without a clear steer from the 
+referring clinician.
+* Guarantor and correspondent: S. Halligan, UCL Centre for Medical Imaging, Ground Floor, The Rayne Institute, 5 University St., London, WC1E 6JF, United 
+Kingdom.
+E-mail address: s.halligan@ucl.ac.uk (S. Halligan).
+Contents lists available at ScienceDirect
+Clinical Radiology
+journal  homepage:  www.clinicalradiologyon line.net
+https://doi.org/10.1016/j.crad.2025.107162
+0009-9260/� 2025 The Author(s). Published by Elsevier Ltd on behalf of The Royal College of Radiologists. This is an open access article under the CC BY license (http:// 
+creativecommons.org/licenses/by/4.0/).
+Clinical Radiology 92 (2026) 107162
+
+---PAGE 2---
+� 2025 The Author(s). Published by Elsevier Ltd on behalf of The Royal College of Radiologists. 
+This is an open access article under the CC BY license (http://creativecommons.org/licenses/ 
+by/4.0/).
+Introduction
+United Kingdom medicolegal claims continue to rise 
+steeply. A 2021 analysis found that the total annual cost of 
+National Health Service (NHS) litigation had reached £3.6 
+billion for 2018/2019. 1 Unfortunately, clinical radiology is 
+well represented: of 10,900 NHS clinical negligence claims 
+received for the year 2023/2024, 4.6 % were radiological, 
+exactly the same total as for general medicine. 2 Because 
+medical imaging is almost always archived, it is simple to 
+establish whether an abnormality was present or not at the 
+time of the original interpretation. Most radiological claims 
+allege “missed” pathology. 3 The Royal College of Radiolo-
+gists “standards for interpretation and reporting of imaging 
+investigations” (Second Edition, March 2018) state that, 
+“images should also be specifically and methodically 
+interrogated”, and that this may disclose, “abnormal find-
+ings both anticipated and unanticipated”. 4 Unanticipated 
+pathology is often described as an “incidentaloma”, defined 
+by a former college president as, “any finding not directly 
+related to the primary purpose for which the imaging ex-
+amination was undertaken”. 5 The authors all act as medi-
+colegal expert witnesses, providing reports on liability for 
+both claimant and defendant. We speculated that the 
+proportion of cases based on failure to identify unantici-
+pated incidentalomas was significant currently. Accord-
+ingly, we performed a retrospective review of our cases in 
+order to determine the proportion where allegations cited 
+failure to report unanticipated pathology.
+Materials and methods
+Ethical permission was not required because our study 
+was a retrospective case series review. No patients were 
+involved directly and there was neither intervention nor 
+change in patient management. Information was anony-
+mised before sharing so that no patient identifiable data 
+passed among study authors.
+We performed a retrospective review of our medicolegal 
+practice. All authors searched their personal medicolegal 
+records for cases where the primary radiological allegation 
+centred on substandard reporting of abdomino-pelvic 
+radiology (which is the primary subspeciality interest of 
+all authors). We searched retrospectively from April 2024 
+until each individual author had accrued 30 consecutive 
+cases or all available cases were exhausted, whichever 
+occurred soonest. The limit of 30 cases was imposed, after 
+discussion, to reduce individual burden since some experts 
+had hundreds of individual cases. To avoid “double-
+counting”, any mutual cases (ie, where one expert was 
+acting for the claimant and the other for the defendant, for
+the same case) were allocated to the expert called on behalf 
+of the claimant. Knowledge of mutual cases was identified 
+via prior case conference between the experts (occurring as 
+part of the claim) and not via data sharing.
+We then recorded the following data: claimants” age 
+and sex at the time of the alleged radiological malpractice 
+(at the time of index imaging since some claims involved 
+multiple, sequential examinations); the imaging modality 
+involved; the clinical indication for imaging stated on the 
+imaging request; the specific allegation(s) made by the 
+claimant; whether imaging was acquired in the NHS, out-
+sourced by the NHS, or private sector; whether the expert 
+was instructed by the defendant or claimant. The expert 
+then noted whether the primary allegation involved an 
+“unanticipated” finding or not and whether he considered 
+the allegation of substandard reporting could be upheld. 
+We defined an “unanticipated” finding as, “any finding not 
+directly related to the primary purpose for which the im-
+aging examination was undertaken”. 5 So, for example, 
+alleged failure to report recurrent tumour in a patient 
+imaged for colorectal cancer surveillance would not be 
+considered incidental, whereas alleged failure to report a 
+renal tumour in the same patient would. Similarly, if the 
+patient had a history of colorectal cancer but this was not 
+stated in the clinical details provided to the radiologist and 
+the patient was being imaged for an alternative indication, 
+then failure to report colorectal recurrence would count as 
+an “incidental” case. Where multiple imaging episodes 
+and/or modalities were performed in an individual patient, 
+we included all instances where the expert was required to 
+respond to a claimant’s allegation of substandard report-
+ing. We excluded any case where there was no allegation of 
+substandard reporting (eg, expert instructed to determine 
+tumour stage, extent of injury etc.).
+The first author assembled the data and categorised the 
+clinical indication for each individual imaging investigation 
+into broad groups, identified by thematic analysis.
+The first author also categorised the primary medico-
+legal allegation for each case into 11 individual categories, 
+again identified by thematic analysis. Data were analysed 
+using simple frequencies and proportions. Ninety-five 
+percent confidence intervals around percentages were 
+calculated using the binomial exact method (STATA 18.0, 
+StataCorp).
+Results
+Five experts contributed the data. Their medicolegal 
+experience (years) was 3, 20, 10, 13, and 24 at the time of 
+data collection (April 2024), respectively. They provided 10, 
+12, 30, 30, and 30 individual cases, respectively, totalling
+S. Halligan et al. / Clinical Radiology 92 (2026) 1071622
+
+---PAGE 3---
+112 patient cases overall (median age: 53 years, range: 14-
+81 years; 37 male, 75 female). The claimant to defendant 
+split was 92 (82 %) to 20 (18 %).
+The experts contributed data on 12, 17, 41, 47, and 59 
+individual imaging examinations respectively, totalling 176 
+examinations, acquired 2001 to 2023 inclusive. These 
+comprised 99 (56 %) computed tomography (CT; including 
+CT colonography), 36 (20 %) magnetic resonance imaging 
+(MRI; including small bowel and magnetic resonance 
+cholangiopancreatography (MRCP)), 16 ultrasound (9 %), 13 
+(7 %) plain film, and 12 (7 %) fluoroscopic examinations. The 
+individual number of examinations requiring a medico-
+legal opinion per case ranged from 1 to 12, median 1. Of the 
+176 imaging investigations, 144 (82 %) were reported in the 
+NHS, 14 (8 %) were outsourced by the NHS, and 18 (10 %, 
+from 9 patients) were reported in private practice. Broad 
+categories describing the clinical indication for each indi-
+vidual imaging investigation were as follows: the com-
+monest was “abdominal symptoms” (99 examinations, 
+56 %), followed by “postoperative complication” (21 ex-
+aminations, 12 %), “tumour recurrence/surveillance” (18 
+examinations, 10 %), “? Sepsis” (17 examinations, 10 %), and 
+“weight loss” (5 examinations, 3 %), followed by various 
+miscellaneous indications.
+Broad categories describing the primary medicolegal 
+allegation for each case were as follows: the commonest 
+was “primary tumour unreported” (n=40 cases, 36 %), 
+followed by “perforation unreported” (n=12, 11 %), and 
+“obstruction unreported” (n=9, 8 %); Table 1. In 41 (37 %, 
+95%CI: 28 %-46 %) of the 112 patients, the experts judged 
+the pathology relating to the allegation as incidental to the 
+clinical indication for imaging (Table 1). Of these 41 pa-
+tients (comprising 50 individual examinations), the orig-
+inal interpretation was judged to be substandard in 12 
+(29 %, 95%CI: 16 %-46 %) patients (12 examinations). In the 
+remaining 71 patients (63 %, 95%CI 54 %-72 %), the experts
+judged the pathology relating to the allegation as not 
+incidental. Of these 71 patients (126 examinations), the 
+original interpretation was judged to be substandard in 23 
+(32 %, 95%CI: 22 %-45 %) patients (37 examinations). There 
+was no significant difference between the proportion of 
+allegations judged substandard when patients with inci-
+dental and non-incidental findings were compared (29 % vs 
+32 %, chi-squared: 0.12, P=.73).
+Overall details of the 29 patients in whom interpretation 
+of an incidental finding was judged reasonable (ie, not 
+substandard) are given in Table 2. Examples of in-
+terpretations of incidental pathology judged reasonable 
+included failure to report a small pancreatic tumour in a 
+patient undergoing dedicated small bowel MRI to search 
+for Crohn’s disease; failure to report a small renal tumour 
+in a patient undergoing lumbar MRI to investigate back 
+pain; and several examples of failure to diagnose small 
+colonic tumours (including flat polyps) in patients under-
+going standard abdominopelvic CT, ie, where there had 
+been no bowel preparation or gas insufflation.
+Discussion
+Radiological “incidentalomas” may be clinically signifi-
+cant (eg, lung tumour) or insignificant (lung granuloma) 
+and judged easily perceptible (large tumour) or not (small 
+tumour), and have provoked medicolegal action for de-
+cades. 6 Of course, error is inevitable for all practicing ra-
+diologists, 7,8 so “missing” pathology does not automatically 
+imply substandard (ie, negligent) practice. In the UK, the 
+“Bolam test” is used to judge whether medical practice 
+(which, for clinical radiology, usually means interpretation) 
+is “reasonable” or “substandard”. Bolam considers whether 
+a hypothetical body of responsible professionals (ie, 
+“competent” and acting with “ordinary skill”) would act 
+similarly. 9 This means that if the radiologist’s report was in 
+accordance with the likely interpretation obtained from a 
+body of radiologists, then it will not be found negligent. “In 
+accordance” usually means majority opinion, although this 
+may not apply in some areas where medical opinion di-
+verges substantially. Expert medicolegal radiologists must 
+therefore imagine themselves to be a properly trained 
+“general” consultant radiologist faced with the clinical 
+scenario at the time of the original interpretation and then 
+come to a decision as to whether the issued report was 
+substandard or not.
+Hulson analysed 791 claims settled by the NHS Litiga-
+tion Authority between 1995 and 2014, where the primary 
+allegation focused on radiology. 10 Almost one-third of 
+claims related to missed or delayed tumour diagnosis but 
+data were not granular enough to determine whether these 
+were incidental to the primary clinical question posed to 
+the radiologist. We found that failure to report primary or 
+recurrent tumour was the primary allegation in nearly half 
+of our patients, with the tumour judged an incidental 
+finding in more than half of these. Overall, our review 
+found that nearly 40 % of allegations cited pathology that
+Table 1
+Primary medicolegal allegation in 112 patients, split by whether the alle-
+gation was judged incidental to the clinical indication for imaging (n=41) or 
+not (n=71).
+Medicolegal allegation Allegation not an 
+incidental finding 
+(n=71)
+Allegation an 
+incidental finding 
+(n=41)
+Primary tumour 
+unreported 
+17 23
+Perforation unreported 9 3
+Obstruction
+unreported 
+8 1
+Recurrent tumour 
+unreported 
+7 4
+Sepsis unreported 7 0
+Bariatric complication
+unreported
+6 1
+Cancer mis-staged 3 0
+Thrombus unreported 3 2
+Bowel ischaemia
+unreported 
+2 0
+Stone unreported 1 2
+Miscellaneous 8 5
+S. Halligan et al. / Clinical Radiology 92 (2026) 107162 3
+
+---PAGE 4---
+was considered incidental to the primary clinical question 
+being asked of the radiologist.
+While an expert witness will consider some incidenta-
+lomas “unmissable” by any competent radiologist when 
+applying the Bolam test, others will be judged missable by 
+the, “majority of a body of consultant radiologists acting 
+reasonably” (to use legal terminology), unless the radiol-
+ogist is given a specific steer (and perhaps not even then). 
+Perhaps unsurprisingly, two meta-analyses have concluded 
+that diagnostic accuracy increases when radiologists are 
+provided with relevant clinical details. 11,12 For example, we 
+found several examples where the allegation cited failure 
+to report tumours that were incidental to the clinical 
+question being asked, often imaged using an inappropriate 
+test (notably failure to report small colonic tumours from 
+conventional abdominopelvic CT), and frequently where a 
+prior history of malignancy was not supplied in the clinical 
+details.
+The 2018 Royal College standards make no distinction 
+between an “unanticipated” finding sufficiently apparent 
+that no reasonable radiologist should fail to report it, and 
+an unanticipated finding that is so subtle it requires a 
+dedicated and concerted search to unearth (such as that 
+precipitated by a steer from the requesting clinician). It 
+could be argued, therefore, that these college standards 
+oblige radiologists (and reporting radiographers, sonogra-
+phers, etc.) to detect and report all visible pathology, irre-
+spective of the clinical details provided, and irrespective of 
+conspicuity and clinical significance. This stance is one that 
+all authors have encountered in their personal medicolegal 
+practice, ie, the college guidelines are used by the claimant 
+to support allegations of substandard practice, even when 
+pathology is both incidental and inconspicuous.
+A requirement to identify any pathology incidental to 
+the clinical question and/or symptoms could be interpreted 
+as screening. We note that the UK National Screening
+Table 2
+Details of 29 patients in whom interpretation of an incidental finding was judged reasonable.
+Case Source Imaging modality Clinical circumstances Allegation
+1 NHS CT Renal cancer surveillance Colon cancer unreported (unprepared 
+study)
+2 Outsourced MRI small bowel & CT 
+colonography
+? Crohn’s? Colonic malignancy. Pancreatic cancer unreported
+3 NHS CT Anaemia Gastric varices unreported
+4 NHS CT Abdominal pain? Cause Volvulus unreported (not obstructed at the 
+time of scanning)
+5 NHS CT Pancreatic cancer suspected. Hepatic tumour unreported
+6 NHS CT Left iliac fossa pain? Diverticulitis Right-sided colon cancer unreported 
+(unprepared study)
+7 NHS Small bowel MRI & CT Assess Crohn’s disease activity Small bowel tumour unreported
+8 NHS CT ? Postoperative collection. SMA thrombus unreported
+9 NHS CT Prostate cancer surveillance Ureteric tumour unreported
+10 NHS MRI ? Anal fistula. Rectal cancer unreported
+11 NHS CT, MRI, fluoroscopy Anastomotic leak from bowel? Hydronephrosis unreported
+12 NHS Abdominal film ? Bowel obstruction Pelvic mass unreported
+13 NHS CT and US Renal stone assessment Colorectal cancer recurrence unreported 
+14 Outsourced US ? Gallstones Liver metastases unreported
+15 NHS CT Abdominal pain ? Cause Flat colonic polyp unreported (unprepared 
+study)
+16 NHS CT ? Lymphoma Deep vein thrombosis unreported 
+17 NHS CT ? Postoperative collection Peritoneal tumour recurrence unreported 
+18 NHS CT Pain following pancreatectomy Flat colonic polyp unreported (unprepared 
+study)
+19 NHS CT ? Appendicitis Coeliac axis stenosis unreported
+20 NHS MRI Back pain Renal cancer unreported (lumbar spine 
+MRI)
+21 NHS CT colonography Constipation Pancreatic cancer unreported (non-
+contrast scan)
+22 NHS MRI Constipation Suprapubic catheter in caecum unreported 
+(evacuating proctogram)
+23 NHS CXR Abdominal pain? Cause Diaphragmatic hernia unreported
+24 Outsourced CT Anaemia Gastric cancer unreported
+25 NHS MRCP Abdominal pain? Cause Displaced Filshie clips unreported 
+26 NHS CT Colonic cancer surveillance Terminal ileal Crohn’s disease unreported 
+27 NHS CT Change in bowel habit Synchronous colonic cancer unreported 
+(unprepared study).
+28 NHS CT and fluoroscopy ? Postoperative collection/leak Roux-en-O misconfiguration unreported 
+29 NHS CT and US ? Gallstones Synchronous gallbladder cancer 
+unreported
+CT, computed tomography; MRI, magnetic resonance imaging; NHS, National Health Service; SMA, Superior mesenteric artery; MRCP, Magnetic resonance 
+cholangiopancreatography; US, Ultrasound; CXR, Chest x-ray.
+S. Halligan et al. / Clinical Radiology 92 (2026) 1071624 
+
+---PAGE 5---
+Committee spends considerable resource deciding who 
+should be screened, what for, when, and with what test. 
+While organised screening programmes seek to diagnose 
+specific pathology in well-characterised groups of at-
+tendees, modern medical imaging generates a plethora of 
+data that encourages surreptitious screening for unantici-
+pated, wide-ranging, asymptomatic pathology. This ap-
+pears to burden radiologists specifically; for example, 
+breast surgeons are not generally expected to detect inci-
+dental colonic cancers.
+We believe it is unreasonable and unrealistic to expect 
+radiologists to unfailingly identify incidental, subtle pa-
+thologies when the clinical details direct attention else-
+where; we discovered that allegations related to incidental 
+pathology in 37 % of our cases. We are certainly not arguing 
+for lowered standards that excuse inadequate concentra-
+tion: radiologists, quite rightly, should be expected to di-
+agnose relevant pathology, both anticipated and 
+unanticipated. However, the issue is at which point does 
+unanticipated pathology become imperceptible without a 
+specific steer? This is especially the case in a healthcare 
+system under intolerable pressure and where radiologists 
+are increasingly presented with less-specific referrals. 
+Clear differential diagnosis is frequently replaced by 
+symptomatology alone; “abdominal pain ? Cause”. It is the 
+authors” experience that a large proportion of referrals 
+now originate from non-medically qualified personnel, 
+untrained in differential diagnosis.
+The issue is exacerbated by the move in some legal cir-
+cles to displace the Bolam test in favour of “pure diagnosis”, 
+which conjectures that if pathology is at all visible, then 
+failure to report it automatically represents substandard 
+practice. 9 We believe this reflects a lack of understanding 
+on the part of some legal professionals that radiological 
+diagnosis is subjective and therefore subject to individual 
+variation when the clinical importance of a potential 
+finding is considered. All authors of this article have 
+experienced “fishing trip” instructions from referring so-
+licitors, where they have been asked to interpret all avail-
+able imaging, with the hope of identifying any substandard 
+practice in the absence of a prior, firm allegation. All au-
+thors discourage this stance and take the position that 
+experts require specific direction because, as we have 
+outlined, clinical context and interpretation are 
+inseparable.
+Ultimately, we are not arguing for lower standards but 
+believe that the spirit of the 2018 standards as written is 
+being misinterpreted by some medicolegal experts (and/or 
+solicitors/barristers/claimants). Indeed, all authors wish to 
+emphasise the need for college standards and agree fully 
+that it is right and proper that radiologists are regulated 
+and held accountable. The general public also expect 
+medical professions to be regulated. While the college may 
+wish to avoid an explicit medicolegal stance, it is undeni-
+able that the standards will be cited in court and, presently, 
+they appear insufficiently granular regarding detection of 
+anticipated vs unanticipated pathology. Without 
+acknowledgement that incidentalomas pose specific
+issues, some radiologists may adopt overly defensive 
+reporting and/or devote undue amounts of time to inter-
+pretation where the clinical question is clear and precise. 
+Just as the Bolam test stipulates “reasonable” practice, 
+standards should state what constitutes reasonable inter-
+pretation in the light of the information and intent pro-
+vided by referring clinicians.
+Our review does have limitations. As a group of 
+abdominal radiologists, our data are restricted to cases in 
+this field. Accordingly, we cannot say if our findings 
+generalise to other areas of imaging, although we would 
+expect them to. The decision as to whether an allegation 
+related to an incidental finding or not was made subjec-
+tively, by the expert instructed originally to handle the 
+case; we wished to avoid transfer of patient identifiable 
+data, so authors only searched their own cases. Because 
+there is often a legal instruction to destroy case details on 
+settlement, we did not have data for some cases at the time 
+of our audit. When preparing this article, we were aware 
+that the 2018 college standards were being revised and 
+these were published 13 subsequent to our article submis-
+sion; one of our authors was a member of the guideline 
+development group. The October 2025 standards state that 
+the radiological report should, “allow incidental findings to 
+be mentioned”, going on to state that, “there should be 
+provision to ensure competent and holistic review of all 
+relevant findings”, noting that, “responsibility for review-
+ing nontarget areas lies with both the reporter and the 
+employer”. 13 The new guidelines also state that, “inter-
+pretation may be incorrect if referral details are deficient, 
+absent, or misleading”, 13 which appears to potentially 
+protect radiologists who miss subtle, incidental pathology 
+without a specific steer. However, from a legal perspective, 
+the standards to which radiologists are held are those in 
+place at the time of the alleged substandard practice and 
+not those most recently published.
+In summary, a large proportion of medicolegal allega-
+tions in abdominal radiology cite failure to report pathol-
+ogy that is both inconspicuous and incidental to the clinical 
+request, and many support their allegations by citing the 
+2018 Royal College of Radiologists Standards for the inter-
+pretation and reporting of imaging investigations. College 
+standards should reflect the fact that unanticipated pa-
+thology is sometimes difficult to detect, especially when 
+the clinical details provided direct radiological attention 
+elsewhere.
+Author contributions
+SH contributed as guarantor of integrity of the entire 
+study.
+SH contributed to study concepts and design.
+SH contributed to literature research.
+All authors contributed to clinical studies.
+SH contributed to experimental studies/data analysis. 
+SH contributed to statistical analysis.
+SH contributed to manuscript preparation.
+All authors contributed to manuscript editing.
+S. Halligan et al. / Clinical Radiology 92 (2026) 107162 5
+
+---PAGE 6---
+Funding source
+SH was supported by the National Institute for Health 
+and Care Research, the University College London Hospitals 
+Biomedical Research Centre.
+Conflict of interest
+The authors declare the following financial interests/ 
+personal relationships which may be considered as po-
+tential competing interests: Professor Steve Halligan re-
+ports financial support was provided by National Institute 
+for Health and Care Research University College Hospitals 
+Biomedical Research Centre. Dominic Blunt reports a 
+relationship with Royal College of Radiologists that in-
+cludes: board membership. All authors act as expert wit-
+nesses for both claimants and defendants. If there are other 
+authors, they declare that they have no known competing 
+financial interests or personal relationships that could have 
+appeared to influence the work reported in this paper.
+Acknowledgments
+The authors are grateful to Professor Sue Mallett for 
+statistical advice.
+References
+1. Lane J, Bhome R, Somani B. National trends and cost of litigation in UK 
+National Health Service (NHS): a specialty-specific analysis from the 
+past decade. Scott Med J 2021;66(4):168—74.
+2. Resolution N. Annual report and accounts 2023/4. 2024.
+3. Halpin SF. Medico-legal claims against English radiologists: 1995-2006. 
+The British journal of radiology 2009;82(984):982—8.
+4. RCR. Standards for interpretation and reporting of imaging investigations. 
+second edition. London: The Royal College of Radiologists; March 2018. 
+Ref No. BRCR(18)1.
+5. Maskell G. Incidental findings in medical imaging. The British journal of 
+radiology 2023;96(1142):20211352.
+6. Berlin L. The incidentaloma: a medicolegal dilemma. Radiol Clin North 
+Am 2011;49(2):245—55.
+7. Brady AP. Error and discrepancy in radiology: inevitable or avoidable? 
+Insights Imaging 2017;8(1):171—82.
+8. Robinson PJ. Radiology’s Achilles’ heel: error and variation in the 
+interpretation of the Rontgen image. The British journal of radiology 
+1997;70(839):1085—98.
+9. Halpin S. Recent changes in UK medical law: implications for radiolo-
+gists. Clinical radiology 2020;75(10):740—5.
+10. Hulson O. Litigation claims in relation to radiology: what can we learn? 
+Clinical radiology 2018;73(10):893—901.
+11. Loy CT, Irwig L. Accuracy of diagnostic tests read with and without 
+clinical information: a systematic review. JAMA : the journal of the 
+American Medical Association 2004;292(13):1602—9.
+12. Yapp KE, Brennan P, Ekpo E. The effect of clinical history on diagnostic 
+imaging interpretation - a systematic review. Academic radiology 
+2022;29(2):255—66.
+13. RCR. Standards for interpretation and reporting of imaging investigations. 
+third edition. London: The Royal College of Radiologists; October 2025. 
+p. 1—12.
+S. Halligan et al. / Clinical Radiology 92 (2026) 1071626

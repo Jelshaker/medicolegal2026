@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import Diagram from '../components/Diagram.astro';
+import { SITE_TITLE } from '../consts';
+
+// Each statutory duty is summarised in the same four fields so the entries can be
+// compared: who it binds, what it requires, what must be recorded, and what follows
+// from a failure. Summaries only — the primary text governs.
+const instruments = [
+	{
+		id: 'irmer',
+		index: '01',
+		eyebrow: 'IRMER',
+		title: 'IR(ME)R 2017, as amended 2024',
+		lead: 'The Ionising Radiation (Medical Exposure) Regulations govern the medical exposure of patients. Justification and optimisation are duties, not preferences.',
+		fields: [
+			{
+				n: 'Who it binds',
+				d: 'The employer provides the framework, written procedures, training and the incident system. The referrer supplies sufficient clinical information and must be entitled to refer. The practitioner justifies each exposure and takes clinical responsibility for it. The operator performs the practical aspects and must be entitled and trained for that task.',
+			},
+			{
+				n: 'What it requires',
+				d: 'Justification — for that patient, the benefit of the exposure must outweigh its detriment. Optimisation — the exposure is kept as low as reasonably practicable for the diagnostic purpose. Diagnostic reference levels provide the national benchmark; a consistent exceedance requires review.',
+			},
+			{
+				n: 'What must be recorded',
+				d: 'The justification decision and its clinical basis, the entitlement of those acting as referrer, practitioner and operator, exposure parameters and dose where required, and the local procedures themselves.',
+			},
+			{
+				n: 'If it fails',
+				d: 'Significant accidental or unintended exposures are reportable incidents: notified, investigated and learned from. A study performed without adequate justification, or one where the justification is not documented, is the point at which a dose question becomes a regulatory one.',
+			},
+		],
+		note: 'Primary source: Ionising Radiation (Medical Exposure) Regulations 2017 (SI 2017/1322), as amended 2024.',
+	},
+	{
+		id: 'irr17',
+		index: '02',
+		eyebrow: 'IRR17',
+		title: 'Ionising Radiations Regulations 2017',
+		lead: 'IRR17 governs occupational exposure and the equipment itself. It is the reason a radiology department has designated areas, dose monitoring and a testing schedule.',
+		fields: [
+			{
+				n: 'Who it binds',
+				d: 'The employer, for any work with ionising radiation. The radiation protection adviser is appointed and consulted on compliance, design and investigation; the radiation protection supervisor ensures the day-to-day local arrangements are followed.',
+			},
+			{
+				n: 'What it requires',
+				d: 'Controlled and supervised areas are designated, marked and monitored. Dose limits are applied and classified persons are monitored. Local rules, information, instruction and training are provided, and risk assessments are kept up to date.',
+			},
+			{
+				n: 'What must be recorded',
+				d: 'Dose records and monitoring outcomes, area designations and local rules, risk assessments, equipment acceptance, commissioning and routine test results, and the maintenance history.',
+			},
+			{
+				n: 'If it fails',
+				d: 'Equipment found faulty must be withdrawn from use and the failure recorded. Equipment QA and dose records are evidence, and are frequently sought years after an examination when an exposure or a poor-quality study is in issue.',
+			},
+		],
+		note: 'Primary source: Ionising Radiations Regulations 2017 (SI 2017/1075).',
+	},
+	{
+		id: 'communication',
+		index: '03',
+		eyebrow: 'Communication',
+		title: 'The duty to communicate critical findings',
+		lead: 'The duty does not end at interpretation. Where a finding requires action, the reporting radiologist must ensure it reaches someone who can act on it.',
+		fields: [
+			{
+				n: 'Who it binds',
+				d: 'The reporting radiologist or reporting provider, and the clinical team receiving the report.',
+			},
+			{
+				n: 'What it requires',
+				d: 'Direct notification to the referrer or the covering team for findings that need immediate action, with a documented acknowledgement and escalation if no receipt follows. Fail-safe systems are expected for incidental nodules, suspected malignancy and vascular emergencies.',
+			},
+			{
+				n: 'What must be recorded',
+				d: 'Who was contacted, when, by what route, and what they confirmed. A contemporaneous note of an escalation attempt is worth more than a recollection years later.',
+			},
+			{
+				n: 'If it fails',
+				d: 'Silent filing on a PACS or electronic patient record does not discharge the duty where urgent action is required. This is the ground on which a defensible interpretation can still produce a successful claim.',
+			},
+		],
+		note: 'Applied in case law: Gwyn v South Tyneside and Sunderland [2021]. See also the RCR reporting standards in the radiology library.',
+	},
+	{
+		id: 'epr16',
+		index: '04',
+		eyebrow: 'EPR16',
+		title: 'Environmental Permitting (England and Wales) Regulations 2016',
+		lead: 'EPR16 covers holding, using and disposing of radioactive material, which is the regulatory spine of nuclear medicine.',
+		fields: [
+			{
+				n: 'Who it binds',
+				d: 'The permit holder — in practice the trust or organisation holding scheduled radioactive sources above the relevant thresholds.',
+			},
+			{
+				n: 'What it requires',
+				d: 'A permit to hold and use the sources, tracking from receipt through administration to waste, and segregation, labelling and decay storage in accordance with the permit conditions.',
+			},
+			{
+				n: 'What must be recorded',
+				d: 'Receipt, movement and disposal records for each source and waste stream, and the consignment documentation for anything leaving the site.',
+			},
+			{
+				n: 'If it fails',
+				d: 'Consignment and disposal are lawful only through authorised routes; an untracked source is both a regulatory breach and, where a patient dose is in issue, a gap in the clinical record.',
+			},
+		],
+		note: 'Primary source: Environmental Permitting (England and Wales) Regulations 2016 (SI 2016/1154).',
+	},
+	{
+		id: 'data-protection',
+		index: '05',
+		eyebrow: 'Data protection',
+		title: 'UK GDPR and the Data Protection Act 2018',
+		lead: 'Imaging is personal data. The pixel data identifies a patient and the DICOM header carries further identifiers, so handling images is a data protection activity as well as a clinical one.',
+		fields: [
+			{
+				n: 'Who it binds',
+				d: 'The organisation as controller, and everyone who processes images — including a radiologist or expert who receives a study for review.',
+			},
+			{
+				n: 'What it requires',
+				d: 'A lawful basis for processing and, because imaging reveals health, an Article 9 condition. Data minimisation, storage limitation and security of processing apply to images and headers alike. Images transferred for a second opinion or a medicolegal review should be anonymised at source and moved by an encrypted route.',
+			},
+			{
+				n: 'What must be recorded',
+				d: 'The lawful basis, the transfer route, and the anonymisation applied. Subject access requests can extend to images and to the header, and an image may contain a third party whose identity must be considered before disclosure.',
+			},
+			{
+				n: 'If it fails',
+				d: 'An unanonymised study sent by an insecure route is a reportable personal data breach, and a study redacted so heavily that it can no longer answer the clinical question defeats the purpose. Both errors have to be avoided at once.',
+			},
+		],
+		note: 'See also handling images in the radiology library and the transfer guidance on the referrals page.',
+	},
+];
+---
+
+<BaseLayout
+	title={`Radiology Legislation | ${SITE_TITLE}`}
+	description="A short summary of the statutory framework for radiology: IR(ME)R 2017, IRR17, the duty to communicate critical findings, EPR16, and the data protection duties that apply to imaging."
+>
+	<PageHero
+		eyebrow="Radiology Legislation"
+		title="Radiology Legislation"
+		description="The statutory framework under radiological practice: who each duty binds, what it requires, what must be recorded, and what follows from a failure. Summary only — the primary text governs."
+	/>
+
+	<PageIntro
+		eyebrow="Statutory duties"
+		paragraphs={[
+			'A short summary of the statutory framework under radiological practice: the medical exposure regulations, the occupational and equipment regulations, the duty to communicate critical findings, the permitting regime for radioactive material, and the data protection duties that attach to images.',
+			'Each entry gives the duty holders, the core obligations, the records that must be kept, and the practical consequence of getting them wrong. These are summaries only — where a matter turns on the wording of an instrument, the primary text governs.',
+		]}
+		contents={[
+			{ href: '#irmer', label: 'IR(ME)R 2017' },
+			{ href: '#irr17', label: 'IRR17' },
+			{ href: '#communication', label: 'Critical findings' },
+			{ href: '#epr16', label: 'EPR16' },
+			{ href: '#data-protection', label: 'Data protection' },
+		]}
+		audience="Written for radiographers, medical physics, radiation protection advisers, trust governance leads and expert witnesses."
+		reviewed="September 2026"
+	/>
+
+	<section class="bg-paper py-14">
+		<div class="container-page">
+			<div class="doc">
+				<Figure
+					label="Figure 01"
+					caption="Who carries each statutory duty"
+					subtitle="IR(ME)R 2017 binds the employer, the referrer, the practitioner and the operator to different things. A failure is rarely attributable to one role alone."
+				>
+					<Diagram name="duty-holders" />
+				</Figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-white py-16">
+		<div class="container-page space-y-12">
+			{
+				instruments.map((s) => (
+					<Section id={s.id} index={s.index} eyebrow={s.eyebrow} title={s.title} lead={s.lead}>
+						<div class="divide-y divide-slate-200">
+							{s.fields.map((f) => (
+								<div class="py-5">
+									<h3 class="text-base font-bold text-navy-900">{f.n}</h3>
+									<p class="mt-3 text-[0.95rem] leading-relaxed text-slate-600">{f.d}</p>
+								</div>
+							))}
+						</div>
+						<Callout tone="authority">{s.note}</Callout>
+					</Section>
+				))
+			}
+
+			<Callout tone="caution" title="Summaries, not the law">
+				<p>
+					This page condenses a statutory framework into a few paragraphs per instrument. It is written
+					to explain how the duties work in practice, not to reproduce the text. Where the exact wording
+					of a regulation, a threshold or a time limit matters, go to the source.
+				</p>
+			</Callout>
+
+			<div class="rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 p-8 text-center sm:p-10">
+				<h2 class="text-2xl font-extrabold tracking-tight text-white">Where these duties meet the law</h2>
+				<p class="mx-auto mt-3 max-w-2xl text-slate-300">
+					A statutory breach is not the same question as a breach of the duty of care, but the two
+					frequently arise together. The case law page deals with the standard of care and the
+					communication cases that follow from these duties.
+				</p>
+				<div class="mt-6 flex flex-wrap justify-center gap-3">
+					<a href="/radiology-legal-cases" class="btn btn-primary">Case law</a>
+					<a href="/medicolegal-fundamentals" class="btn btn-outline-white">Medicolegal law library</a>
+					<a href="/radiology-resources" class="btn btn-outline-white">Radiology reference</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+	},

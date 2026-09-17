@@ -1,0 +1,185 @@
+================================================================================
+SUMMARY: Medical Protection Society (MPS) - Radiology Medicolegal Analysis
+SOURCE: medicalprotection.org - "Radiology cases in the UK"
+DATE OF SOURCE: Analysis covering 2016 to mid-2023
+================================================================================
+
+OVERVIEW
+--------
+This document presents an analysis by Medical Protection (MPS), a UK medical
+defence organisation with over 130 years of experience defending doctors and
+healthcare professionals. The analysis examined nearly 800 cases involving
+UK-based radiologists, covering clinical negligence claims, complaints, GMC
+investigations, inquests, and medicolegal advice requests. The majority of
+clinical negligence claims arise from private practice, while other case types
+typically arise from both NHS and private settings.
+
+KEY STATISTICS
+--------------
+- Nearly 800 total cases analysed (2016-mid 2023)
+- ~200 clinical negligence claims from private radiology practice
+- ~600+ other cases (complaints, GMC investigations, inquests, disciplinary)
+- ~200 report-writing cases (Trust SI investigations, statements for claims)
+- Highest radiology negligence claim (reporting error): >£400,000 total
+- One GMC/disciplinary case solicitor cost: >£65,000
+
+COMMON CLAIMS THEMES (Private Practice - ~200 cases)
+-----------------------------------------------------
+1. Complications arising from interventional radiology procedures
+2. Failure to obtain informed consent
+3. Failure to request additional views (e.g., slipped upper femoral epiphysis)
+4. Errors or discrepancies in reporting:
+   a. Misdiagnosis of an abnormality (benign lesion reported as malignant, or vice versa)
+   b. Missed abnormalities including:
+      - Primary tumours
+      - Metastases
+      - Fractures
+      - Anastomotic leak
+      - Stroke
+      - Subarachnoid haemorrhage
+      - Subdural haematoma
+      - Cauda equina syndrome
+      - Multiple myeloma
+      - Epidural abscess
+      - Bowel perforation
+
+COMMON COMPLAINTS THEMES (~100 complaints analysed)
+---------------------------------------------------
+1. Missed or delayed diagnosis from interpretation errors
+2. Inappropriate physical contact or examination
+3. Poor manner and attitude, including lack of empathy
+4. Inadequate consent for procedures
+5. Complications post-biopsy (e.g., bleeding)
+6. Incorrect biopsy sample obtained (e.g., kidney rather than liver)
+7. Nerve damage following insertion of lines
+
+INQUEST ISSUES (~90 inquests)
+-----------------------------
+1. Missed or delayed diagnosis from reporting errors:
+   - Missed subarachnoid and subdural haemorrhage
+   - Cases where anticoagulation was given after missed haemorrhage, causing further bleeding
+2. Death during or following interventional radiology procedures (biopsies):
+   - Haemorrhage
+   - Air embolus
+3. Missed leaking abdominal aortic aneurysm
+4. Missed pulmonary embolus
+
+CRIMINAL CASES
+--------------
+A small number of criminal cases, primarily relating to allegations of
+inappropriate examination of patients.
+
+REPORT WRITING CASES (~200 cases)
+---------------------------------
+1. Errors in reporting, including missed diagnosis (tumours, subarachnoid
+   haemorrhage, fractures)
+2. Performing a biopsy on the incorrect side
+3. Complications of intervention procedures (biopsy injury to other structures)
+4. Declining to perform imaging
+5. Inappropriate examination and alleged sexual assault of patients
+6. Delays in diagnosis (e.g., cauda equina)
+7. Requests for court reports on suspected non-accidental injury
+
+REGULATORY (GMC) AND DISCIPLINARY CASES
+---------------------------------------
+Clinical competence concerns:
+- Reporting of images and interventional procedures
+- Inadequate supervision of trainees
+- Competence to perform interventional radiology procedures
+
+Non-clinical concerns:
+- Inappropriate examination of patients
+- Allegations of domestic violence
+- Failure to obtain car tax/insurance
+- Writing prescriptions for self or family
+- Inappropriate touching or sexual assault allegations
+- Drink driving
+- Conducting private work while off sick from NHS
+- Claiming waiting list initiative payments when not entitled
+- Accessing medical records inappropriately
+- Failing to declare previous investigations/dismissal on applications
+
+REMOTE RADIOLOGY REPORTING - KEY FINDINGS
+-----------------------------------------
+An increasing number of claims and cases associated with outsourced remote
+radiology reporting. Key problems identified:
+
+1. IT Systems:
+   - Many systems don't allow image sharing between hospital trusts
+   - Previous imaging unavailable to reporting radiologist
+   - Exposes reporting radiologist to risk
+   - May result in unnecessary imaging
+
+2. Communication:
+   - Radiology request forms may lack important clinical detail
+   - Face-to-face communication unavailable for remote reporters
+   - Loss of communication with other healthcare professionals
+   - No traditional MDT for remote reporters
+   - Difficulty contacting referring clinician
+   - Reports may be interpreted incorrectly
+
+ERROR RATES IN REMOTE REPORTING:
+- Standard error rate: 3-5% for plain film radiographs
+- Higher for cross-sectional imaging
+- Offsite reporting error rate: 8.7% to 12.7% (2017 study)
+- Reporting during nighttime/above contracted hours increases error risk
+
+RECOMMENDATIONS FOR REMOTE RADIOLOGISTS
+---------------------------------------
+1. Ensure report wording is unambiguous
+2. Use plain English, avoid acronyms/abbreviations/colloquialisms
+3. Explain unusual medical terminology
+4. Review relevant previous radiology when available
+5. State when previous imaging is unavailable
+6. Consider whether knowledge of results would change the report
+7. Comply with local escalation/referral mechanisms for significant abnormalities
+8. Ensure robust reporting pathways exist before accepting remote work
+9. Consider increased risk when working above contracted hours or at night
+10. Ensure contracted remote reporting companies provide quality assurance
+11. Participate in radiology events and learning meetings (REALMs)
+12. Ensure CPD and discrepancy reporting per RCR standards
+
+TOP TIPS TO MINIMISE RISK (General)
+-----------------------------------
+1. Keep clinical management updated and aligned with current best practice
+2. Ensure accurate, clear, unambiguous documentation
+3. Include recommendations for referring clinicians
+4. Set out areas of uncertainty in interpretation
+5. Review and consider relevant previous radiology
+6. Comply with local escalation/referral policies for significant abnormalities
+7. Follow RCR standards and guidance
+8. Discuss benefits, risks, and no-treatment options with patients
+9. Listen to patients and explore their concerns
+10. Explain frequent and serious complications (even if rare)
+11. Treat colleagues with respect, maintain good communication
+12. Have all necessary information for remote consultations
+13. Give clear cost information for private patients
+14. Be open and honest when things go wrong
+15. Apologise and explain when errors occur
+16. Ensure full indemnification for all work conducted in the UK
+17. Contact MPS about reporting patients based in other countries
+
+REFERENCES (IN SOURCE)
+----------------------
+1. Getting It Right First Time (GIRFT). Radiology Programme National Speciality Report. NHS, 2020
+2. Parliamentary and Health Service Ombudsman. Unlocking solutions in imaging. 2021
+3. RCR. Standards for the reporting and interpretation of imaging investigations. 2nd ed. 2018
+4. Maskell G. Error in radiology—where are we now? BJR 2019;92:20180845
+5. Howlett DC, et al. Accuracy of emergency abdominal CT interpretation. Clinical Radiology 2017;72:41-51
+6. Patel AG, et al. Radiologists make more errors interpreting off-hours body CT. Radiology 2020;297:374-9
+
+AUTHORS OF SOURCE
+-----------------
+Dr Heidi Mounsey (anaesthesia/palliative medicine background)
+Dr Emma Green (emergency medicine background)
+Dr Sophie Haroon (paediatrics/public health medicine background)
+
+================================================================================
+RELEVANCE FOR RADIOLOGICAL MEDILEGAL RESEARCH
+This source provides extensive UK-specific data on radiology claims, complaints,
+and regulatory issues. It is particularly valuable for understanding the common
+types of errors that lead to litigation, the financial costs involved, and the
+specific risks associated with remote/teleradiology reporting. The data on missed
+diagnoses, reporting errors, and informed consent issues provides a strong
+empirical foundation for a medicolegal paper on radiology.
+================================================================================

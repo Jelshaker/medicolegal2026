@@ -2,42 +2,34 @@
 import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../consts";
 ---
 
-<footer class="mt-auto bg-navy-950 text-slate-300">
+<footer class="mt-auto border-t border-slate-300 bg-paper">
 	<div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
 		<div>
-			<a href="/" class="flex items-center gap-2.5">
-				<span class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-white">
-					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-						<path d="M2.5 12h3.2l2.2-5.5 3.6 11 2.6-6.5h1.9" />
-						<path d="M17.5 12h2.6v3.1" opacity=".6" />
-					</svg>
-				</span>
-				<span>
-					<span class="block font-bold text-white">{PRACTITIONER.shortName}</span>
-					<span class="block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-teal-400">Medico-legal Imaging</span>
-				</span>
+			<a href="/" class="inline-block">
+				<span class="block font-serif text-[1.05rem] font-bold text-slate-900">{PRACTITIONER.shortName}</span>
+				<span class="meta-label mt-0.5 block !text-[0.62rem]">Radiology &amp; medicolegal law</span>
 			</a>
-			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-				Independent CPR Part 35 / EMA compliant radiological expert opinions for solicitors,
-				barristers and insurers. Anonymised case discussions and plain-language insight into
-				the intersection of radiology and the law.
+			<p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
+				A reference resource on radiology and the law: modality and
+				reporting standards, statutory duties, landmark case law and
+				anonymised case discussion, with the primary sources cited.
 			</p>
-			<div class="mt-5 flex flex-wrap gap-2">
+			<ul class="mt-5 space-y-1.5 text-xs leading-snug text-slate-500">
 				{
 					MEMBERSHIPS.slice(0, 4).map((m) => (
-						<span class="rounded-full border border-navy-700 px-3 py-1 text-[0.7rem] font-medium text-slate-400">{m.split("— ").at(-1)}</span>
+						<li>{m}</li>
 					))
 				}
-			</div>
+			</ul>
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Explore</h3>
+			<h2 class="meta-label">Reference</h2>
 			<ul class="mt-4 space-y-2.5 text-sm">
 				{
 					NAVIGATION_LINKS.map((link) => (
 						<li>
-							<a href={link.href} class="transition-colors hover:text-teal-400">{link.label}</a>
+							<a href={link.href} class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">{link.label}</a>
 						</li>
 					))
 				}
@@ -45,57 +37,61 @@ import { MEMBERSHIPS, NAVIGATION_LINKS, PRACTITIONER, SITE_TITLE } from "../cons
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Legal Radiology</h3>
+			<h2 class="meta-label">Also in the library</h2>
 			<ul class="mt-4 space-y-2.5 text-sm">
-				<li><a href="/legal-fundamentals" class="transition-colors hover:text-teal-400">Legal Fundamentals</a></li>
-				<li><a href="/medicolegal-radiology" class="transition-colors hover:text-teal-400">Medicolegal Radiology</a></li>
-				<li><a href="/recent-developments" class="transition-colors hover:text-teal-400">Recent Developments</a></li>
+				<li><a href="/radiology-resources" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Radiology reference</a></li>
+				<li><a href="/patient-advice" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Patient advice</a></li>
+				<li><a href="/medicolegal-radiology" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Disputed interpretation</a></li>
+				<li><a href="/referrals" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Referrals and transfer</a></li>
+				<li><a href="/expert-witness" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Expert witness services</a></li>
+				<li><a href="/about" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">About the curator</a></li>
+				<li><a href="/cv" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Curriculum vitae</a></li>
+				<li><a href="/disclaimer" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Disclaimer &amp; terms of use</a></li>
+				<li><a href="/privacy-notice" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Privacy notice</a></li>
+				<li><a href="/cookie-policy" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Cookie policy</a></li>
+				<li><button type="button" data-cookie-settings class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Cookie settings</button></li>
+				<li><a href="/sitemap" class="font-sans text-slate-600 hover:text-slate-900 hover:underline hover:underline-offset-4">Site map</a></li>
 			</ul>
 		</div>
 
 		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Instructing Me</h3>
-			<ul class="mt-4 space-y-2.5 text-sm">
-				<li><a href="/referrals#terms" class="transition-colors hover:text-teal-400">Terms of engagement</a></li>
-				<li><a href="/referrals#imaging" class="transition-colors hover:text-teal-400">Imaging transfer (DICOM / PACS)</a></li>
-				<li><a href="/referrals#fees" class="transition-colors hover:text-teal-400">Fee structure & turnaround</a></li>
-				<li><a href="/peritoneal-malignancy" class="transition-colors hover:text-teal-400">Peritoneal Malignancy Hub</a></li>
-				<li><a href="/legal-blog" class="transition-colors hover:text-teal-400">Case discussions archive</a></li>
-			</ul>
-		</div>
-
-		<div>
-			<h3 class="text-sm font-bold uppercase tracking-wider text-white">Contact</h3>
-			<ul class="mt-4 space-y-2.5 text-sm text-slate-400">
-				<li>
-					<span class="font-semibold text-slate-200">Email</span>
-					<br />
-					<a href={`mailto:${PRACTITIONER.email}`} class="hover:text-teal-400">{PRACTITIONER.email}</a>
-				</li>
-				<li>
-					<span class="font-semibold text-slate-200">Phone</span>
-					<br />
-					{PRACTITIONER.phone}
-				</li>
-				<li>
-					<span class="font-semibold text-slate-200">GMC</span>
-					<br />
-					{PRACTITIONER.gmcNumber}
-				</li>
-				<li class="max-w-[16rem] leading-snug">{PRACTITIONER.address}</li>
-			</ul>
+			<h2 class="meta-label">Secretariat</h2>
+			<dl class="mt-4 space-y-3 text-sm text-slate-600">
+				<div>
+					<dt class="meta-label !text-[0.62rem]">Email</dt>
+					<dd class="mt-1 font-sans"><a href={`mailto:${PRACTITIONER.email}`} class="hover:text-slate-900 hover:underline hover:underline-offset-4">{PRACTITIONER.email}</a></dd>
+				</div>
+				<div>
+					<dt class="meta-label !text-[0.62rem]">Phone</dt>
+					<dd class="mt-1 font-sans">{PRACTITIONER.phone}</dd>
+				</div>
+				<div>
+					<dt class="meta-label !text-[0.62rem]">GMC</dt>
+					<dd class="mt-1 font-sans">{PRACTITIONER.gmcNumber}</dd>
+				</div>
+				<div>
+					<dt class="meta-label !text-[0.62rem]">Address</dt>
+					<dd class="mt-1 max-w-[16rem] font-sans leading-snug">{PRACTITIONER.address}</dd>
+				</div>
+			</dl>
 		</div>
 	</div>
 
-	<div class="border-t border-navy-800">
+	<div class="border-t border-slate-200">
 		<div class="container-page flex flex-col gap-3 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-			<p>
-				© {new Date().getFullYear()} {PRACTITIONER.name} · {SITE_TITLE}. All rights reserved.
+			<p class="font-sans">
+				© {new Date().getFullYear()} {SITE_TITLE}. Curated and maintained by {PRACTITIONER.name}.
 			</p>
-			<p class="max-w-xl leading-relaxed md:text-right">
+			<p class="max-w-xl italic leading-relaxed text-slate-500 md:text-right">
 				All case discussions are fully anonymised in accordance with GMC guidance and CPR Part 35.
 				Nothing on this site constitutes legal advice.
 			</p>
 		</div>
 	</div>
 </footer>
+
+<script>
+  document.querySelectorAll("[data-cookie-settings]").forEach((b) => {
+    b.addEventListener("click", () => window.dispatchEvent(new CustomEvent("ml:open-cookie-settings")));
+  });
+</script>

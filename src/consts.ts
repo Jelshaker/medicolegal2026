@@ -27,7 +27,7 @@ export const NAVIGATION_LINKS = [
 	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
 	{ href: "/radiology-legal-cases", label: "Important Radiology Case Law" },
-	{ href: "/recent-developments", label: "Recent Radiology Legal Developments" },
+	{ href: "/recent-developments", label: "Recent Legal Developments" },
 	{ href: "/dicom-viewer", label: "Free DICOM viewer" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },

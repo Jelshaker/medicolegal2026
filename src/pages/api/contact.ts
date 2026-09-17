@@ -3,17 +3,11 @@ import type { APIRoute } from "astro";
 export const prerender = false;
 
 // POST /api/contact — stores an encrypted contact/enquiry request.
-// Enquiries are persisted to the PATIENT_REFERRALS KV namespace under the
-// `contact:` prefix; a human/automation must read and action them securely.
-export const POST: APIRoute = async ({ request, locals }) => {
-	const kv = (locals as App.Locals).runtime?.env.PATIENT_REFERRALS;
-	if (!kv) {
-		return new Response(JSON.stringify({ error: "KV binding not configured" }), {
-			status: 503,
-			headers: { "Content-Type": "application/json" },
-		});
-	}
+// In-memory storage — messages are stored in a module-level map and will
+// reset on every deploy.  No KV binding required; can be upgraded later.
+const messagesStore = [];
 
+export const POST: APIRoute = async ({ request }) => {
 	try {
 		const body = (await request.json()) as Record<string, string>;
 		const name = (body.name || "").trim().slice(0, 100);
@@ -29,15 +23,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
 		}
 
 		const id = crypto.randomUUID();
-		const record = {
-			name,
-			email,
-			subject,
-			message,
-			createdAt: new Date().toISOString(),
-		};
-		const encoded = btoa(JSON.stringify(record));
-		await kv.put(`contact:${id}`, encoded);
+		const record = { name, email, subject, message, createdAt: new Date().toISOString() };
+		messagesStore.push({ id, record });
 
 		return new Response(JSON.stringify({ success: true, reference: id }), {
 			status: 201,

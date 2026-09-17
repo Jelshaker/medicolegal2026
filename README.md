@@ -2,7 +2,7 @@
 
 A responsive, mobile-first website for a Consultant Radiologist and
 medico-legal expert witness, built with **Astro (SSR on Cloudflare Workers)**,
-**Tailwind CSS v4**, **Clerk** authentication and **Cloudflare KV** storage.
+**Tailwind CSS v4**, and **Cloudflare KV** storage.
 
 ## ✨ Features
 

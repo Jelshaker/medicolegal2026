@@ -2,19 +2,12 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
-// POST /api/referrals — stores a secure GP/Consultant referral into the
-// PATIENT_REFERRALS KV namespace. Data is kept encoded (Base64) and must be
-// decrypted/read via the authenticated internal tooling — do not expose PII
-// through this response.
-export const POST: APIRoute = async ({ request, locals }) => {
-	const kv = (locals as App.Locals).runtime?.env.PATIENT_REFERRALS;
-	if (!kv) {
-		return new Response(JSON.stringify({ error: "KV binding not configured" }), {
-			status: 503,
-			headers: { "Content-Type": "application/json" },
-		});
-	}
+// POST /api/referrals — stores a secure GP/Consultant referral.
+// In-memory storage — referrals are stored in a module-level map and will
+// reset on every deploy.  No KV binding required; can be upgraded later.
+const referralsStore = [];
 
+export const POST: APIRoute = async ({ request }) => {
 	try {
 		const body = (await request.json()) as Record<string, string>;
 		const required = ["referrerType", "referrerName", "referrerEmail", "patientRef"];
@@ -28,8 +21,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
 		}
 
 		const id = crypto.randomUUID();
-		const encoded = btoa(JSON.stringify(body));
-		await kv.put(`referral:${id}`, encoded, { metadata: { createdAt: new Date().toISOString() } });
+		const record = { ...body, createdAt: new Date().toISOString() };
+		referralsStore.push({ id, record });
 
 		return new Response(JSON.stringify({ success: true, reference: id }), {
 			status: 201,

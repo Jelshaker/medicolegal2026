@@ -4,21 +4,15 @@ export const prerender = false;
 
 // GET /api/comments?postId=<slug>  ->  list comments for a post
 // POST /api/comments               ->  submit a comment for a post
-// Uses the LEGAL_BLOG_COMMENTS KV namespace bound in wrangler.json.
-export const GET: APIRoute = async ({ request, locals }) => {
+// In-memory storage — comments are stored in a module-level map and will
+// reset on every deploy.  No KV binding required; can be upgraded later.
+const commentsStore = new Map<string, Array<{ id: string; author: string; text: string; date: string }>>();
+
+export const GET: APIRoute = async ({ request }) => {
 	const url = new URL(request.url);
 	const postId = url.searchParams.get("postId") || "general";
 
-	const kv = (locals as App.Locals).runtime?.env.LEGAL_BLOG_COMMENTS;
-	if (!kv) {
-		return new Response(JSON.stringify({ error: "KV binding not configured" }), {
-			status: 503,
-			headers: { "Content-Type": "application/json" },
-		});
-	}
-
-	const raw = await kv.get(`comments:${postId}`);
-	const comments = raw ? JSON.parse(raw) : [];
+	const comments = commentsStore.get(postId) || [];
 
 	return new Response(JSON.stringify(comments), {
 		status: 200,
@@ -26,15 +20,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
 	});
 };
 
-export const POST: APIRoute = async ({ request, locals }) => {
-	const kv = (locals as App.Locals).runtime?.env.LEGAL_BLOG_COMMENTS;
-	if (!kv) {
-		return new Response(JSON.stringify({ error: "KV binding not configured" }), {
-			status: 503,
-			headers: { "Content-Type": "application/json" },
-		});
-	}
-
+export const POST: APIRoute = async ({ request }) => {
 	try {
 		const body = (await request.json()) as { postId?: string; author?: string; text?: string };
 		const postId = (body.postId || "general").slice(0, 120);
@@ -48,10 +34,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
 			});
 		}
 
-		const key = `comments:${postId}`;
-		const raw = await kv.get(key);
-		const comments = raw ? JSON.parse(raw) : [];
-
 		const newComment = {
 			id: crypto.randomUUID(),
 			author,
@@ -59,8 +41,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
 			date: new Date().toISOString(),
 		};
 
-		comments.unshift(newComment);
-		await kv.put(key, JSON.stringify(comments));
+		const list = commentsStore.get(postId) || [];
+		list.unshift(newComment);
+		commentsStore.set(postId, list);
 
 		return new Response(JSON.stringify({ success: true, comment: newComment }), {
 			status: 201,

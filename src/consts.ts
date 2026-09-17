@@ -23,8 +23,8 @@ export const DEFAULT_SOCIAL_IMAGE = "/images/og-default.jpg";
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/radiology-resources", label: "Radiology Basics" },
-	{ href: "/medicolegal-fundamentals", label: "Medicolegal Background" },
+	{ href: "/radiology-resources", label: "Radiology Fundamentals" },
+	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
 	{ href: "/radiology-legal-cases", label: "Important Radiology Case Law" },
 	{ href: "/recent-developments", label: "Recent Radiology Legal Developments" },
@@ -81,31 +81,26 @@ export const DEMO_PORTAL_ACCOUNT = {
 };
 
 export const PRACTITIONER = {
-	name: "Dr Joseph El-Sheikha, MBChB MRCS FRCR",
+	name: "Dr Joseph El-Sheikha, MBChB MD FRCR LLM (Master of Laws)",
 	shortName: "Dr Joseph El-Sheikha",
-	title: "Consultant Radiologist & Medicolegal Expert Witness",
-	qualifications: "MBChB (Hons), MRCS (Eng), FRCR, PGDip Medicolegal Practice (Cardiff)",
-	subspecialty: "MSK, Gastrointestinal & Interventional Radiology",
-	role: "Consultant Radiologist, NHS Foundation Trust | Independent Expert, The Harley Street Medico-Legal Imaging Unit",
-	gmcNumber: "GMC 7123456",
-	email: "secretary@elsheikha-imaging.legal",
+	title: "Consultant Radiologist",
+	qualifications: "MBChB, FRCR, Medical Doctorate (MD) PGDip (Research Training) PGDip (Clinical Education) PGCert (Diagnostic Imaging)",
+	subspecialty: "Gastrointestinal, Hepatobiliary, Peritoneal & Interventional Radiology",
+	role: "Consultant Radiologist, HHFT NHS Foundation Trust",
+	gmcNumber: "GMC 7017101",
+	email: "secretary@radiologylaw.com",
 	portalEmail: "Secure portal: encrypted in-file transfer",
-	phone: "+44 (0)20 7946 0412",
-	address: "The Harley Street Medico-Legal Imaging Unit, 33 New Cavendish Street, London W1G 9TW",
-	indemnity: "Certificate of Professional Indemnity — MPS / MDDUS",
+	phone: "On request",
+	address: "Oxford, Basingstoke & Winchester",
+	indemnity: "Certificate of Professional Indemnity — MPS",
 	photo: "/images/portrait-dr.jpg",
 } as const;
 
 export const MEMBERSHIPS = [
 	"Fellow - Royal College of Radiologists (FRCR)",
-	"Member - Royal College of Surgeons of England (MRCS Eng)",
-	"British Society of Skeletal Radiologists (BSSR)",
+	"Member - European Society of Radiology (ESR)",
 	"British Society of Gastroenterology and Abdominal Imaging (BSGAR)",
-	"British Society of Interventional Radiology (BSIR)",
-	"British Medical Association (BMA)",
-	"Expert Witness Institute (EWI)",
-	"Medico-Legal Society of England and Wales",
-	"Academy of Experts - Accredited Expert",
+	
 ] as const;
 
 // Every public page, grouped for the human-readable site map at /sitemap and for

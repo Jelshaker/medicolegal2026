@@ -323,6 +323,89 @@
 		border-color: var(--color-ink);
 	}
 
+	/* -------------------------------------------------------------- */
+	/* Consolidated document patterns — single home for the repeated  */
+	/* Tailwind combinations used across pages. Pages may now use     */
+	/* these short semantic classes instead of long utility strings.  */
+	/* -------------------------------------------------------------- */
+
+	/* Section bands (replaces `bg-white py-16`, `bg-paper py-14`, …) */
+	.band { padding-block: 4rem; }
+	.band-tight { padding-block: 3.5rem; }
+	.band-white { background: #fff; padding-block: 4rem; }
+	.band-paper { background: var(--color-paper); padding-block: 3.5rem; }
+
+	/* In-page section head (replaces `scroll-mt-24 border-t … pt-8`) */
+	.sec { scroll-margin-top: 6rem; border-top: 1px solid #cbd5e1; padding-top: 2rem; }
+	.sec-title {
+		margin-top: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem;
+		font-weight: 700; line-height: 1.25; color: var(--color-ink-strong);
+	}
+	.sec-num {
+		font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+		font-variant-numeric: tabular-nums; letter-spacing: 0.14em; color: #94a3b8;
+	}
+
+	/* Body copy (replaces max-w-3xl and text-slate-600 combos) */
+	.para-lead { margin-top: 1rem; max-width: 48rem; line-height: 1.625; color: #475569; }
+	.para-sm { margin-top: 0.5rem; max-width: 48rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
+	.para-sm-spaced { margin-top: 1rem; max-width: 48rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
+	.para-sm-relaxed { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
+	.lead { margin-top: 0.75rem; max-width: 42rem; font-family: var(--font-serif); line-height: 1.625; color: #475569; }
+
+	/* Case / entry blocks (replaces divide-y / py-5 / entry titles) */
+	.entry-list { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+	.entry-list-divide { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+	.entry-list-divide > * + * { border-top: 1px solid #e2e8f0; }
+	.entry { padding-block: 1.25rem; min-width: 0; }
+	.case-h { font-weight: 700; color: var(--color-navy-900); overflow-wrap: anywhere; }
+	.case-h-sans { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 700; color: var(--color-navy-900); }
+	.bullets { margin-top: 0.75rem; font-size: 0.875rem; color: #475569; }
+	.bullets > * + * { margin-top: 0.5rem; }
+	.bullets-spaced {
+		margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;
+		font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.625; color: #475569;
+	}
+	.bullets-spaced > * + * { margin-top: 0.625rem; }
+
+	/* Pull-quote / principle (replaces border-l-2 … pl-5 …) */
+	.rule-quote {
+		margin-top: 1rem; border-left: 2px solid #94a3b8;
+		padding: 0.125rem 0.5rem 0.125rem 1.25rem;
+		font-size: 0.875rem; color: #475569;
+	}
+
+	/* Grey insight box (replaces rounded-md bg-slate-50 p-4 …) */
+	.note-box {
+		margin-top: 1rem; border-radius: 0; background: #f8fafc; padding: 1rem;
+		font-size: 0.875rem; line-height: 1.625; color: #475569;
+	}
+
+	/* Inline links */
+	.link-inline { text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; }
+	.link-inline:hover { color: #0f172a; text-decoration-color: #475569; }
+	.link-nav-sm {
+		font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; color: #475569;
+		text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px;
+	}
+	.link-nav-sm:hover { color: #0f172a; text-decoration-color: #475569; }
+
+	/* Forms */
+	.form-label {
+		display: block; font-family: var(--font-sans); font-size: 0.75rem;
+		font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #475569;
+	}
+	.form-hint { font-family: var(--font-sans); font-size: 0.75rem; color: #64748b; }
+	.form-legal { font-family: var(--font-sans); font-size: 0.75rem; line-height: 1.625; color: #64748b; }
+
+	/* Tables */
+	.tbl { margin-top: 1.5rem; width: 100%; border-collapse: collapse; text-align: left; }
+	.tbl-th {
+		width: 8rem; border-bottom: 1px solid #e2e8f0; background: var(--color-paper);
+		padding: 0.75rem; vertical-align: top; font-family: var(--font-sans);
+		font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+		letter-spacing: 0.12em; color: #64748b;
+	}
 	.chip {
 		display: inline-flex;
 		align-items: center;
@@ -338,6 +421,133 @@
 		border: 1px solid #e2e8f0;
 		color: #475569;
 	}
+
+	.tbl-td {
+		border-bottom: 1px solid #e2e8f0;
+		padding: 0.75rem;
+		vertical-align: top;
+		font-family: var(--font-serif);
+		font-size: 0.95rem;
+		color: #1e293b;
+	}
+	.tbl-td-muted {
+		border-bottom: 1px solid #e2e8f0;
+		padding: 0.75rem;
+		vertical-align: top;
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		color: #475569;
+	}
+	.tbl-head {
+		border-bottom: 1px solid #94a3b8;
+		padding: 0.75rem;
+		font-family: var(--font-sans);
+		font-size: 0.7rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: #64748b;
+	}
+
+	/* Viewer / lightbox / diagram / TOC — moved here from scoped   */
+	/* <style> blocks so all CSS ships from global.css.              */
+	.viewer-card {
+		position: relative;
+		overflow: hidden;
+		border: 1px solid #cbd5e1;
+		background: #fff;
+	}
+	.viewer-open {
+		position: relative;
+		display: block;
+		height: 16rem;
+		width: 100%;
+		cursor: zoom-in;
+		overflow: hidden;
+		background: #020617;
+		text-align: left;
+		outline: none;
+	}
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.lightbox[hidden] { display: none; }
+	.lightbox-backdrop { position: absolute; inset: 0; background: rgb(2 6 23 / 0.92); }
+	.lightbox-panel {
+		position: relative; width: min(92vw, 64rem); max-height: 92vh;
+		display: flex; flex-direction: column; border-radius: 0; overflow: hidden;
+		background: #0f172a; border: 1px solid #334155;
+		box-shadow: 0 25px 80px -20px rgb(0 0 0 / 0.7);
+	}
+	.lightbox-header { display: flex; flex-shrink: 0; }
+	.lightbox-stage { position: relative; flex: 1 1 auto; overflow: hidden; background: #020617; min-height: 0; }
+	.lightbox-img {
+		width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 50%;
+		user-select: none; touch-action: none; will-change: transform; max-height: 70vh;
+	}
+	.lightbox-cap { border-top: 1px solid #1e293b; }
+	.lightbox-tools {
+		display: flex; align-items: center; justify-content: flex-end;
+		gap: 0.4rem; padding: 0.6rem 0.75rem; border-top: 1px solid #1e293b;
+	}
+	.lightbox-btn {
+		display: inline-flex; align-items: center; justify-content: center;
+		height: 2.25rem; width: 2.25rem; border-radius: 0; color: #e2e8f0;
+		background: transparent; border: 1px solid #334155; transition: all 0.15s ease;
+	}
+	.lightbox-btn:hover { background: #1e293b; color: #f1f5f9; border-color: #94a3b8; }
+
+	.toc-sidebar { display: none; }
+	.toc-card { border-left: 1px solid #e2e8f0; padding-left: 1rem; }
+	.toc-list {
+		margin-top: 0.75rem; display: flex; flex-direction: column;
+		gap: 0.15rem; list-style: none; padding: 0;
+	}
+	.toc-link {
+		display: block; font-family: var(--font-sans); font-size: 0.76rem;
+		line-height: 1.45; color: #64748b; text-decoration: none; padding: 0.3rem 0;
+	}
+	.toc-link:hover { color: #0f172a; }
+	.toc-link.is-active { color: #0f172a; font-weight: 600; }
+	.toc-top {
+		display: inline-block; margin-top: 0.9rem; font-family: var(--font-sans);
+		font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+		text-transform: uppercase; color: #94a3b8; text-decoration: none;
+	}
+	.toc-top:hover { color: #0f172a; }
+	@media (min-width: 80rem) {
+		.toc-sidebar.is-ready {
+			display: block; position: fixed; top: 50%; right: 1rem;
+			transform: translateY(-50%); z-index: 40; width: 13.5rem;
+			max-height: 70vh; overflow-y: auto;
+		}
+	}
+
+	.diagram { display: block; width: 100%; height: 100%; background: #fff; color: #475569; }
+	.diagram text { font-family: var(--font-sans); }
+	.d-cap { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; fill: #94a3b8; }
+	.d-title { font-size: 21px; font-weight: 700; fill: #0f172a; }
+	.d-num { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; fill: #94a3b8; }
+	.d-label { font-size: 14px; font-weight: 600; fill: #1e293b; }
+	.d-sub { font-size: 11.5px; fill: #64748b; }
+	.d-note { font-size: 12.5px; fill: #475569; }
+	.d-rule { stroke: #e2e8f0; stroke-width: 1; }
+	.d-box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+	.d-fill { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1; }
+	.d-arrow { fill: none; stroke: #94a3b8; stroke-width: 1.25; }
+	.d-head { fill: #94a3b8; stroke: none; }
+	.d-dash { fill: none; stroke: #cbd5e1; stroke-width: 1.25; stroke-dasharray: 5 4; }
+	.d-outline { fill: none; stroke: #94a3b8; stroke-width: 1.25; }
+	.d-axis { stroke: #94a3b8; stroke-width: 1.25; }
+
+	/* Local DICOM viewer chrome */
+	#dv-dropzone, #dv-workzone, #dv-workspace { transition: opacity 0.2s ease; }
 }
 
 /* Square off any residual pill shapes left in legacy markup. */

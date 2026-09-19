@@ -74,17 +74,3 @@ const title = "On this page";
     });
   }
 </script>
-
-<style>
-  .toc-sidebar { display: none; }
-  .toc-card { border-left: 1px solid #e2e8f0; padding-left: 1rem; }
-  .toc-list { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.15rem; list-style: none; padding: 0; }
-  .toc-link { display: block; font-family: var(--font-sans); font-size: 0.76rem; line-height: 1.45; color: #64748b; text-decoration: none; padding: 0.3rem 0; }
-  .toc-link:hover { color: #0f172a; }
-  .toc-link.is-active { color: #0f172a; font-weight: 600; }
-  .toc-top { display: inline-block; margin-top: 0.9rem; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; text-decoration: none; }
-  .toc-top:hover { color: #0f172a; }
-  @media (min-width: 80rem) {
-    .toc-sidebar.is-ready { display: block; position: fixed; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 40; width: 13.5rem; max-height: 70vh; overflow-y: auto; }
-  }
-</style>

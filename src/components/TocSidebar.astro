@@ -1,0 +1,90 @@
+---
+const title = "On this page";
+---
+<aside data-toc-sidebar class="toc-sidebar" aria-label="Page navigation">
+  <nav aria-label={title} class="toc-card">
+    <p class="meta-label" aria-hidden="true">{title}</p>
+    <ul class="toc-list" data-toc-list></ul>
+    <a href="#top" class="toc-top" data-toc-top hidden>Back to top</a>
+  </nav>
+</aside>
+<script>
+  const tocSidebar = document.querySelector("[data-toc-sidebar]");
+  if (tocSidebar) {
+    const list = tocSidebar.querySelector("[data-toc-list]");
+    const top = tocSidebar.querySelector("[data-toc-top]");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const seen = new Set();
+    const found = [];
+    document.querySelectorAll("main section[id]").forEach((sec) => {
+      const id = (sec.getAttribute("id") || "").trim();
+      if (!id || seen.has(id)) return;
+      seen.add(id);
+      const h = sec.querySelector("h1, h2, h3");
+      const raw = ((h ? h.textContent : id) || id).trim().slice(0, 60);
+      if (!raw) return;
+      found.push({ id, label: raw.replace(/\s+/g, " ") });
+    });
+    found.forEach((entry) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "#" + entry.id;
+      a.className = "toc-link";
+      a.setAttribute("data-toc-link", "");
+      a.textContent = entry.label;
+      li.appendChild(a);
+      if (list) list.appendChild(li);
+    });
+    const links = list ? Array.from(list.querySelectorAll("[data-toc-link]")) : [];
+    if (links.length < 2) {
+      tocSidebar.remove();
+    } else {
+      tocSidebar.classList.add("is-ready");
+      if (top) top.hidden = false;
+    }
+    links.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const href = a.getAttribute("href") || "";
+        if (href.charAt(0) !== "#") return;
+        const el = document.getElementById(href.slice(1));
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      });
+    });
+
+    const setActive = (id) => {
+      links.forEach((a) => {
+        const on = a.getAttribute("href") === "#" + id;
+        a.classList.toggle("is-active", on);
+        if (on) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    };
+    const targets = links.map((a) => document.getElementById((a.getAttribute("href") || "").slice(1))).filter(Boolean);
+    if ("IntersectionObserver" in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) setActive(en.target.id); });
+      }, { rootMargin: "-20% 0px -65% 0px" });
+      targets.forEach((t) => obs.observe(t));
+    }
+    if (top) top.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
+</script>
+
+<style>
+  .toc-sidebar { display: none; }
+  .toc-card { border-left: 1px solid #e2e8f0; padding-left: 1rem; }
+  .toc-list { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.15rem; list-style: none; padding: 0; }
+  .toc-link { display: block; font-family: var(--font-sans); font-size: 0.76rem; line-height: 1.45; color: #64748b; text-decoration: none; padding: 0.3rem 0; }
+  .toc-link:hover { color: #0f172a; }
+  .toc-link.is-active { color: #0f172a; font-weight: 600; }
+  .toc-top { display: inline-block; margin-top: 0.9rem; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; text-decoration: none; }
+  .toc-top:hover { color: #0f172a; }
+  @media (min-width: 80rem) {
+    .toc-sidebar.is-ready { display: block; position: fixed; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 40; width: 13.5rem; max-height: 70vh; overflow-y: auto; }
+  }
+</style>

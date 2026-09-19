@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieConsent from "../components/CookieConsent.astro";
+import TocSidebar from "../components/TocSidebar.astro";
 import type { ArticleMeta } from "../lib/seo";
 
 // Shared document shell for all pages. Pages supply their own <main> content
@@ -38,6 +39,7 @@ const { title, description, canonical, image, noindex, article } = Astro.props a
 	</head>
 	<body class="flex min-h-screen flex-col">
 		<Header />
+		<TocSidebar />
 		<main class="flex-1">
 			<slot />
 		</main>

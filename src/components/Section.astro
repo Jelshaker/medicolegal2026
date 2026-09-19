@@ -25,11 +25,11 @@ const headingId = id ? `${id}-heading` : undefined;
 
 <section id={id} aria-labelledby={headingId} class="scroll-mt-24">
 	<div class="doc overflow-hidden">
-		<div class="border-t border-slate-300 pt-8">
+		<div class="sec-flat">
 			{(index || eyebrow) && (
 				<div class="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
 					{index && (
-						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+						<span class="sec-no">
 							§ {index}
 						</span>
 					)}

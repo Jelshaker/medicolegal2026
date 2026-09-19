@@ -48,14 +48,14 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		</div>
 	</section>
 
-	<section class="bg-white py-16">
+	<section class="band-white">
 		<div class="container-page">
 			<div class="doc space-y-12">
 				{
 					SITEMAP.map((group, i) => (
-						<section id={group.id} class="scroll-mt-24 border-t border-slate-300 pt-8">
+						<section id={group.id} class="sec">
 							<div class="flex items-baseline gap-3">
-								<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+								<span class="sec-no">
 									§ {String(i + 1).padStart(2, "0")}
 								</span>
 								<span class="eyebrow">{group.title}</span>
@@ -66,9 +66,9 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 							<p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
 								{group.description}
 							</p>
-							<ul class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
+							<ul class="entry-list-divide">
 								{group.pages.map((page) => (
-									<li class="py-5">
+									<li class="entry">
 										<a
 											href={page.href}
 											class="font-serif text-base font-bold text-slate-900 hover:underline hover:decoration-slate-400 hover:underline-offset-4"
@@ -87,7 +87,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 
 				<Callout tone="limit" title="Access screen">
 					<p>
-						The secure login at <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs"
+						The secure login at <code class="code-chip"
 							>/login</code
 						> is deliberately not listed above. It is an access screen for instructing parties and referrers,
 						not part of the reference material.

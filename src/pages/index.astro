@@ -35,18 +35,18 @@ const stats = [
 					referrers, solicitors, barristers, insurers and expert witnesses.
 				</p>
 				<div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 border-t border-slate-200 pt-5">
-					<a href="/radiology-resources" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Radiology reference</a>
-					<a href="/medicolegal-fundamentals" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Medicolegal law library</a>
-					<a href="/dicom-viewer" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">DICOM viewer</a>
+					<a href="/radiology-resources" class="link-nav">Radiology reference</a>
+					<a href="/medicolegal-fundamentals" class="link-nav">Medicolegal law library</a>
+					<a href="/dicom-viewer" class="link-nav">DICOM viewer</a>
 				</div>
 
 	<!-- What this resource is — and what it is not -->
 	<section class="border-b border-slate-200 bg-paper">
 		<div class="container-page py-14">
-			<div class="doc divide-y divide-slate-200">
+			<div class="doc stack-divide-bare">
 				<div class="pb-8">
 					<div class="flex items-baseline gap-3">
-						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">§ 01</span>
+						<span class="sec-no">§ 01</span>
 						<span class="eyebrow">Scope</span>
 					</div>
 					<h2 class="mt-2 font-serif text-xl font-bold text-slate-900">Small, and kept current</h2>
@@ -58,7 +58,7 @@ const stats = [
 				</div>
 				<div class="py-8">
 					<div class="flex items-baseline gap-3">
-						<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">§ 02</span>
+						<span class="sec-no">§ 02</span>
 						<span class="eyebrow">Commentary</span>
 					</div>
 					<h2 class="mt-2 font-serif text-xl font-bold text-slate-900">Recent case commentary</h2>
@@ -85,20 +85,20 @@ const stats = [
 	<section class="border-b border-slate-200 bg-white">
 		<div class="container-page py-16">
 			<div class="doc">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Two reference libraries</p>
-					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Radiology, and the law that governs it</h2>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+					<h2 class="sec-h-lg">Radiology, and the law that governs it</h2>
+					<p class="para-lead">
 						The material is organised in two halves that read across to one another: what imaging can and
 						cannot do, and how the law treats it when it goes wrong.
 					</p>
 				</div>
-				<div class="mt-10 divide-y divide-slate-200 border-t border-slate-200">
+				<div class="stack-divide-top-lg">
 					{
 						RESOURCE_LIBRARIES.map((lib, i) => (
 							<article class="py-8">
 								<div class="flex items-baseline gap-3">
-									<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+									<span class="sec-no">
 										§ {String(i + 1).padStart(2, "0")}
 									</span>
 									<span class="eyebrow">{lib.eyebrow}</span>
@@ -108,7 +108,7 @@ const stats = [
 								<p class="mt-4 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
 									{lib.topics.join(" · ")}
 								</p>
-								<a href={lib.href} class="mt-4 inline-block font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">
+								<a href={lib.href} class="link-cta mt-4 inline-block">
 									{lib.cta}
 								</a>
 							</article>
@@ -121,10 +121,10 @@ const stats = [
 
 	<!-- Plates — a visual strip, with further space reserved for graphics -->
 	<section class="border-b border-slate-200 bg-paper py-14">
-		<div class="border-t border-slate-300 pt-8">
+		<div class="sec-flat">
 			<p class="meta-label">Plates</p>
-			<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">The material, in pictures</h2>
-			<p class="mt-4 font-serif leading-relaxed text-slate-600">
+			<h2 class="sec-h-lg">The material, in pictures</h2>
+			<p class="para-lead">
 				Imaging, and the conditions in which an image is interpreted, are easier to follow with the
 				hardware and the viewing environment in front of you. These plates run alongside the reference
 				material; further figures are added to the libraries as the entries grow.
@@ -170,10 +170,10 @@ const stats = [
 	<section class="border-b border-slate-200 bg-white">
 		<div class="container-page py-16">
 			<div class="doc">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Medicolegal law library</p>
-					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">The framework, in four questions</h2>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+					<h2 class="sec-h-lg">The framework, in four questions</h2>
+					<p class="para-lead">
 						Every radiological claim resolves into a small number of legal questions. Each is examined in
 						the law library, with the authorities and the professional standards that govern the answer.
 					</p>
@@ -185,7 +185,7 @@ const stats = [
 				>
 					<Diagram name="legal-questions" />
 				</Figure>
-				<div class="mt-10 divide-y divide-slate-200 border-t border-slate-200">
+				<div class="stack-divide-top-lg">
 					{[
 						{ t: 'What standard of care applies?', d: 'Bolam, Bolitho and the line between a defensible difference of opinion and a breach.', href: '/medicolegal-fundamentals', tag: 'Bolam · Bolitho' },
 						{ t: 'Was the finding demonstrable?', d: 'The "pure diagnosis" argument, incidentalomas, and what the images actually showed on the day.', href: '/medicolegal-radiology', tag: 'Breach & causation' },
@@ -194,22 +194,22 @@ const stats = [
 					].map((p, i) => (
 						<article class="py-7">
 							<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-								<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+								<span class="sec-no">
 									§ {String(i + 1).padStart(2, "0")}
 								</span>
 								<h3 class="font-serif text-lg font-bold text-slate-900">
 									<a href={p.href} class="hover:underline hover:underline-offset-4 hover:decoration-slate-400">{p.t}</a>
 								</h3>
 							</div>
-							<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{p.d}</p>
+							<p class="faq-a">{p.d}</p>
 							<p class="mt-2 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">{p.tag}</p>
 						</article>
 					))}
 				</div>
 				<div class="mt-8 flex flex-wrap gap-x-8 gap-y-2">
-					<a href="/dicom-viewer" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Free local DICOM viewer</a>
-					<a href="/patient-advice" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Patient advice</a>
-					<a href="/about" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">About the curator</a>
+					<a href="/dicom-viewer" class="link-nav">Free local DICOM viewer</a>
+					<a href="/patient-advice" class="link-nav">Patient advice</a>
+					<a href="/about" class="link-nav">About the curator</a>
 				</div>
 			</div>
 		</div>
@@ -229,9 +229,9 @@ const stats = [
 					</thead>
 					<tbody>
 						{stats.map((s) => (
-							<tr class="bg-white">
+							<tr class="row-white">
 								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] font-bold text-slate-900">{s.value}</td>
-								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-600">{s.label}</td>
+								<td class="cell-body">{s.label}</td>
 							</tr>
 						))}
 					</tbody>
@@ -245,10 +245,10 @@ const stats = [
 	<section class="border-b border-slate-200 bg-white">
 		<div class="container-page py-16">
 			<div class="doc">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Featured case discussion</p>
 					<h2 class="mt-3 font-serif text-2xl font-bold leading-snug text-slate-900">{featured.data.title}</h2>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">{featured.data.description}</p>
+					<p class="para-lead">{featured.data.description}</p>
 					<p class="mt-4 font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
 						{featured.data.tags.slice(0, 3).join(" · ")}
 					</p>
@@ -283,15 +283,15 @@ const stats = [
 	<section class="border-b border-slate-200 bg-paper">
 		<div class="container-page py-16">
 			<div class="doc">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Recent developments</p>
-					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Latest case discussions</h2>
+					<h2 class="sec-h-lg">Latest case discussions</h2>
 				</div>
-				<div class="mt-8 divide-y divide-slate-200 border-t border-slate-200">
+				<div class="stack-divide-top">
 					{recent.map((post, i) => (
 						<article class="py-7">
 							<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-								<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+								<span class="sec-no">
 									§ {String(i + 1).padStart(2, "0")}
 								</span>
 								<span class="font-sans text-xs uppercase tracking-[0.1em] text-slate-500">
@@ -301,7 +301,7 @@ const stats = [
 							<h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
 								<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>
 							</h3>
-							<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{post.data.description}</p>
+							<p class="faq-a">{post.data.description}</p>
 						</article>
 					))}
 				</div>
@@ -316,7 +316,7 @@ const stats = [
 	<section class="bg-white">
 		<div class="container-page py-16">
 			<div class="doc text-center">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Who maintains this resource</p>
 					<p class="mx-auto mt-4 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
 						The material is curated by {PRACTITIONER.name}, a consultant radiologist in NHS practice with an
@@ -325,10 +325,10 @@ const stats = [
 						imaging transfer guidance are set out on the expert witness page.
 					</p>
 					<div class="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-2">
-						<a href="/expert-witness" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Expert witness services</a>
-						<a href="/about" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">About the curator</a>
-						<a href="/sitemap" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Site map</a>
-						<a href="/contact" class="font-sans text-[0.8rem] font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Contact the secretariat</a>
+						<a href="/expert-witness" class="link-cta">Expert witness services</a>
+						<a href="/about" class="link-cta">About the curator</a>
+						<a href="/sitemap" class="link-cta">Site map</a>
+						<a href="/contact" class="link-cta">Contact the secretariat</a>
 					</div>
 				</div>
 			</div>

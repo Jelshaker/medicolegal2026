@@ -33,11 +33,11 @@ export const prerender = true;
 		reviewed="September 2026"
 	/>
 
-	<section class="bg-white py-16">
+	<section class="band-white">
 		<div class="container-page">
 			<!-- Browse by subject -->
 			<div id="browse-by-subject" class="doc scroll-mt-24">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Filter</p>
 					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
 						Browse by subject
@@ -57,7 +57,7 @@ export const prerender = true;
 
 			<!-- Posts -->
 			<div id="latest-commentary" class="doc mt-14 scroll-mt-24">
-				<div class="border-t border-slate-300 pt-8">
+				<div class="sec-flat">
 					<p class="meta-label">Latest</p>
 					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
 						Latest commentary
@@ -67,11 +67,11 @@ export const prerender = true;
 						clinical detail is anonymised.
 					</p>
 				</div>
-				<div id="blog-grid" class="mt-8 divide-y divide-slate-200 border-t border-slate-200">
+				<div id="blog-grid" class="stack-divide-top">
 				{allPosts.map((post, i) => (
 					<article class="blog-card py-7" data-categories={post.data.category}>
 						<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-							<span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.14em] text-slate-400">
+							<span class="sec-no">
 								§ {String(i + 1).padStart(2, "0")}
 							</span>
 							<span class="font-sans text-xs uppercase tracking-[0.1em] text-slate-500">{categoryLabel(post.data.category)}</span>

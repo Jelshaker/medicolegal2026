@@ -102,7 +102,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 				</div>
 
 				<div class="mt-8">
-					<a href="/recent-developments" class="font-sans text-[0.8rem] font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">&larr; All recent developments</a>
+					<a href="/recent-developments" class="link-nav">&larr; All recent developments</a>
 				</div>
 			</div>
 		</div>
@@ -113,15 +113,15 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 		<div class="container-page">
 			<div class="doc">
 				<p class="meta-label">Comments</p>
-				<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900">Join the discussion</h2>
+				<h2 class="sec-h">Join the discussion</h2>
 				<form id="comment-form" class="mt-6 grid gap-4 border border-slate-300 bg-white p-5">
-					<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
+					<label class="form-label">
 						Name *
-						<input name="author" type="text" required class="input-field mt-1.5" placeholder="Your name" />
+						<input name="author" type="text" required class="input-field" placeholder="Your name" />
 					</label>
-					<label class="block font-sans text-xs font-semibold uppercase tracking-[0.1em] text-slate-600">
+					<label class="form-label">
 						Comment *
-						<textarea name="text" rows="3" required class="input-field mt-1.5" placeholder="Your comment (moderated)"></textarea>
+						<textarea name="text" rows="3" required class="input-field" placeholder="Your comment (moderated)"></textarea>
 					</label>
 					<div class="flex items-center gap-3">
 						<button type="submit" class="btn btn-primary" data-submit>Post comment</button>

@@ -72,7 +72,7 @@ const standards = [
 		reviewed="September 2026"
 	/>
 
-	<section class="bg-white py-16">
+	<section class="band-white">
 		<div class="container-page">
 			<div class="doc space-y-12">
 				<Section
@@ -82,21 +82,21 @@ const standards = [
 					title="Opinion written for the court, not for the party instructing me"
 					lead="An expert's overriding duty is to the court. The method does not change with the side that has instructed me."
 				>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+					<p class="para-lead">
 						My practice is a radiological one with a legal method. The images answer technical questions —
 						what was acquired, what was demonstrable, what a competent reporter would have seen at the
 						time — and the law then asks separate questions about breach, causation and loss. Keeping those
 						analyses apart is the discipline that makes an expert report useful, and it is the reason a
 						report stands up in cross-examination.
 					</p>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+					<p class="para-lead">
 						I accept instructions from claimants and defendants alike. Under CPR 35.3 an expert's
 						overriding duty is to the court, so the analysis is the same whichever side has instructed me:
 						re-derive from the source DICOM, reconstruct the contemporaneous conditions, state clearly what
 						is fact and what is opinion, and set out what would change my view. Where the radiological
 						evidence does not support the case being advanced, the report says so.
 					</p>
-					<p class="mt-4 font-serif leading-relaxed text-slate-600">
+					<p class="para-lead">
 						I do not express opinions outside my competence. Questions of surgical technique, oncology
 						management or life expectancy fall to surgeons and oncologists; my role is to define precisely
 						what imaging did and did not show, and to identify where a radiological conclusion ends and
@@ -121,19 +121,19 @@ const standards = [
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="bg-white">
+							<tr class="row-white">
 								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Qualifications</th>
 								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.qualifications}</td>
 							</tr>
-							<tr class="bg-white">
+							<tr class="row-white">
 								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Sub-specialty</th>
 								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.subspecialty}</td>
 							</tr>
-							<tr class="bg-white">
+							<tr class="row-white">
 								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Registration</th>
 								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.gmcNumber}</td>
 							</tr>
-							<tr class="bg-white">
+							<tr class="row-white">
 								<th scope="row" class="border-b border-slate-200 px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Indemnity</th>
 								<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-sm text-slate-700">{PRACTITIONER.indemnity}</td>
 							</tr>
@@ -148,11 +148,11 @@ const standards = [
 					title="Where radiological opinion decides the issue"
 					lead="These are the questions in which a radiological opinion is usually decisive rather than peripheral."
 				>
-					<div class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
+					<div class="entry-list-divide">
 						{scope.map((s) => (
-							<div class="py-5">
-								<h3 class="font-serif text-base font-bold text-slate-900">{s.t}</h3>
-								<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">{s.d}</p>
+							<div class="entry">
+								<h3 class="sub-h">{s.t}</h3>
+								<p class="para-sm-relaxed">{s.d}</p>
 							</div>
 						))}
 					</div>
@@ -165,7 +165,7 @@ const standards = [
 					title="Standards and authorities I work to"
 					lead="The professional standards and legal authorities against which an imaging opinion is prepared and tested."
 				>
-					<div class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
+					<div class="entry-list-divide">
 						{standards.map((s, i) => (
 							<div class="py-4">
 								<div class="flex items-baseline gap-3">
@@ -179,19 +179,19 @@ const standards = [
 				</Section>
 
 				<Section id="memberships" eyebrow="Professional bodies" title="Memberships">
-					<ul class="mt-6 space-y-2.5 border-t border-slate-200 pt-4 font-serif text-sm text-slate-600">
+					<ul class="doc-list">
 						{MEMBERSHIPS.map((m) => <li>{m}</li>)}
 					</ul>
 				</Section>
 
 				<Section id="next-steps" eyebrow="Elsewhere in the resource" title="Next steps">
 					<ul class="mt-6 space-y-2.5 border-t border-slate-200 pt-4">
-						<li><a href="/cv" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Full curriculum vitae</a></li>
-						<li><a href="/expert-witness" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Expert witness services</a></li>
-						<li><a href="/radiology-resources" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Radiology reference</a></li>
-						<li><a href="/medicolegal-fundamentals" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Medicolegal law library</a></li>
-						<li><a href="/sitemap" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Site map</a></li>
-						<li><a href="/contact" class="font-sans text-[0.85rem] text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 hover:decoration-slate-600">Contact the secretariat</a></li>
+						<li><a href="/cv" class="link-nav-sm">Full curriculum vitae</a></li>
+						<li><a href="/expert-witness" class="link-nav-sm">Expert witness services</a></li>
+						<li><a href="/radiology-resources" class="link-nav-sm">Radiology reference</a></li>
+						<li><a href="/medicolegal-fundamentals" class="link-nav-sm">Medicolegal law library</a></li>
+						<li><a href="/sitemap" class="link-nav-sm">Site map</a></li>
+						<li><a href="/contact" class="link-nav-sm">Contact the secretariat</a></li>
 					</ul>
 				</Section>
 			</div>

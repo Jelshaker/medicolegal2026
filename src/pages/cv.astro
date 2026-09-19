@@ -46,17 +46,17 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 				<p class="meta-label">Registration & standing</p>
 				<table class="mt-4 w-full border-collapse text-left">
 					<tbody>
-						<tr class="bg-white">
+						<tr class="row-white">
 							<th scope="row" class="border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">GMC</th>
-							<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] text-slate-800">{PRACTITIONER.gmcNumber.replace("GMC ", "")} — full registration with a licence to practise</td>
+							<td class="cell-body-lg">{PRACTITIONER.gmcNumber.replace("GMC ", "")} — full registration with a licence to practise</td>
 						</tr>
-						<tr class="bg-white">
+						<tr class="row-white">
 							<th scope="row" class="border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Sub-specialty</th>
-							<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] text-slate-800">MSK · GI · IR — {PRACTITIONER.subspecialty}</td>
+							<td class="cell-body-lg">MSK · GI · IR — {PRACTITIONER.subspecialty}</td>
 						</tr>
-						<tr class="bg-white">
+						<tr class="row-white">
 							<th scope="row" class="border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Indemnity</th>
-							<td class="border-b border-slate-200 px-3 py-3 align-top font-serif text-[0.95rem] text-slate-800">{PRACTITIONER.indemnity}</td>
+							<td class="cell-body-lg">{PRACTITIONER.indemnity}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -80,14 +80,14 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 		<div class="container-page">
 			<div class="doc">
 				<span class="eyebrow">Career &amp; training</span>
-				<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Appointments &amp; qualifications</h2>
-				<ol class="mt-8 divide-y divide-slate-200 border-t border-slate-200">
+				<h2 class="sec-h-lg">Appointments &amp; qualifications</h2>
+				<ol class="stack-divide-top">
 					{career.map((item) => (
 						<li class="py-6">
 							<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">{item.period}</p>
 							<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">{item.role}</h3>
 							<p class="mt-0.5 font-sans text-sm text-slate-600">{item.org}</p>
-							<p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-slate-600">{item.detail}</p>
+							<p class="faq-a">{item.detail}</p>
 						</li>
 					))}
 				</ol>
@@ -100,7 +100,7 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 		<div class="container-page">
 			<div class="doc">
 				<span class="eyebrow">Professional bodies</span>
-				<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Memberships</h2>
+				<h2 class="sec-h-lg">Memberships</h2>
 				<ul class="mt-8 space-y-3 border-t border-slate-200 pt-4">
 					{MEMBERSHIPS.map((m) => (
 						<li class="font-serif text-[0.95rem] text-slate-700">{m}</li>

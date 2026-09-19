@@ -51,30 +51,30 @@ import { SITE_TITLE } from "../consts";
 			no copy made anywhere — which is also why there is nothing to sign up for.
 		</p>
 		<div class="mt-8 grid gap-5 sm:grid-cols-2">
-			<div class="border border-slate-200 bg-white p-6">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Nothing is uploaded</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="card-box">
+				<h3 class="case-h-sans">Nothing is uploaded</h3>
+				<p class="para-sm-relaxed">
 					The files are opened by code running on your own device. At no point do your images
 					travel over the internet to this site or to anyone else.
 				</p>
 			</div>
-			<div class="border border-slate-200 bg-white p-6">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Nothing is kept</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="card-box">
+				<h3 class="case-h-sans">Nothing is kept</h3>
+				<p class="para-sm-relaxed">
 					Close the tab or press Clear and everything is gone — no server copy, no storage,
 					no record of what you looked at.
 				</p>
 			</div>
-			<div class="border border-slate-200 bg-white p-6">
-				<h3 class="font-sans text-sm font-bold text-navy-900">No account or details needed</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="card-box">
+				<h3 class="case-h-sans">No account or details needed</h3>
+				<p class="para-sm-relaxed">
 					There is no sign-up, no email address and no payment. The viewer is free, and it
 					stays that way.
 				</p>
 			</div>
-			<div class="border border-slate-200 bg-white p-6">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Names are not shown</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="card-box">
+				<h3 class="case-h-sans">Names are not shown</h3>
+				<p class="para-sm-relaxed">
 					The details panel deliberately shows only technical information — scan type, date,
 					image size — and never patient names or identifiers.
 				</p>
@@ -90,16 +90,16 @@ import { SITE_TITLE } from "../consts";
 		</p>
 		<div class="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
 			<div>
-				<h3 class="font-sans text-sm font-bold text-navy-900">Works with</h3>
+				<h3 class="case-h-sans">Works with</h3>
 				<ul class="mt-3 space-y-2 font-serif text-sm leading-relaxed text-slate-600">
 					<li>CT, MRI, X-ray, ultrasound and PET scans</li>
-					<li>Files ending in <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">.dcm</code> — and files with no extension at all, as hospital discs often supply</li>
+					<li>Files ending in <code class="code-chip">.dcm</code> — and files with no extension at all, as hospital discs often supply</li>
 					<li>Single images or a whole folder of slices, which are sorted into order for you</li>
 					<li>Windows, Mac and Linux, in any modern browser</li>
 				</ul>
 			</div>
 			<div>
-				<h3 class="font-sans text-sm font-bold text-navy-900">Doesn't work with</h3>
+				<h3 class="case-h-sans">Doesn't work with</h3>
 				<ul class="mt-3 space-y-2 font-serif text-sm leading-relaxed text-slate-600">
 					<li>Zip archives — unzip the folder first, then drop the folder in</li>
 					<li>Photographs, PDFs or JPGs from a portal — those are not DICOM files</li>
@@ -115,31 +115,31 @@ import { SITE_TITLE } from "../consts";
 			The same basic controls a radiologist uses to look at a scan, minus the diagnostic
 			measurement tools.
 		</p>
-		<div class="mt-8 divide-y divide-slate-200">
-			<div class="py-5">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Scroll through the scan</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+		<div class="stack-divide-lg">
+			<div class="entry">
+				<h3 class="case-h-sans">Scroll through the scan</h3>
+				<p class="para-sm-relaxed">
 					Use the slice slider, the arrow buttons, or your mouse wheel over the image to move
 					through a stack of slices — like flicking through the pages of the scan.
 				</p>
 			</div>
-			<div class="py-5">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Brightness and contrast</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="entry">
+				<h3 class="case-h-sans">Brightness and contrast</h3>
+				<p class="para-sm-relaxed">
 					The Width and Level sliders adjust how the image is displayed. Scans contain far more
 					shades of grey than a screen can show at once, so this is how you bring different
 					tissues into view.
 				</p>
 			</div>
-			<div class="py-5">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Zoom and pan</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="entry">
+				<h3 class="case-h-sans">Zoom and pan</h3>
+				<p class="para-sm-relaxed">
 					Zoom with the slider or Ctrl/Cmd + mouse wheel, then drag the image to look around.
 				</p>
 			</div>
-			<div class="py-5">
-				<h3 class="font-sans text-sm font-bold text-navy-900">Invert and reset</h3>
-				<p class="mt-2 font-serif text-sm leading-relaxed text-slate-600">
+			<div class="entry">
+				<h3 class="case-h-sans">Invert and reset</h3>
+				<p class="para-sm-relaxed">
 					Invert Colours reverses black and white, which can make some structures easier to see.
 					Reset all returns the image to its natural display.
 				</p>
@@ -155,7 +155,7 @@ import { SITE_TITLE } from "../consts";
 		</Callout>
 	</Section>
 
-	<div class="bg-paper py-14">
+	<div class="band-paper">
 		<div class="container-page">
 			<div class="doc text-center">
 				<a href="/dicom-viewer-guide" class="btn btn-primary">How to use the viewer</a>

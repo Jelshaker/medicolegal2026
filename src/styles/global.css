@@ -139,13 +139,24 @@
 		}
 	}
 
-	/* Centred single-column reading measure. */
+	/* Centred single-column reading measure. Grows with the viewport on
+	   widescreen so dense content pages no longer collapse to a narrow strip. */
 	.doc {
 		margin-inline: auto;
 		width: 100%;
 		max-width: 48rem;
 		min-width: 0;
 		overflow-wrap: anywhere;
+	}
+	@media (min-width: 70rem) {
+		.doc {
+			max-width: 64rem;
+		}
+	}
+	@media (min-width: 90rem) {
+		.doc {
+			max-width: 72rem;
+		}
 	}
 
 	/* Section bands: one plain, one tinted. */
@@ -241,11 +252,21 @@
 	/* The opening paragraph of a page or section, set larger. */
 	.standfirst {
 		margin-top: 1rem;
-		max-width: 42rem;
+		max-width: 48rem;
 		font-family: var(--font-serif);
 		font-size: 1.05rem;
 		line-height: 1.625;
 		color: #475569;
+	}
+	@media (min-width: 70rem) {
+		.standfirst {
+			max-width: 60rem;
+		}
+	}
+	@media (min-width: 90rem) {
+		.standfirst {
+			max-width: 68rem;
+		}
 	}
 
 	/* Document body copy. */

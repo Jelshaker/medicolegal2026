@@ -52,7 +52,7 @@
         <button id="dv-choose-files" type="button" class="btn btn-primary !text-xs">Choose files</button>
         <button id="dv-choose-folder" type="button" class="btn btn-ghost !text-xs">Choose a folder</button>
       </div>
-      <p class="relative z-10 mt-3 font-sans text-xs text-slate-400">DICOM (.dcm) files — including files with no extension, as supplied on hospital discs</p>
+      <p class="relative z-10 mt-3 text-muted-light">DICOM (.dcm) files — including files with no extension, as supplied on hospital discs</p>
     </div>
   </div>
   <input id="dv-file-input" type="file" multiple class="absolute inset-0 z-0 cursor-pointer opacity-0" aria-label="Choose DICOM files" />
@@ -73,7 +73,7 @@
     </div>
 
     <!-- Series tabs (shown when multiple series detected) -->
-    <div id="dv-series-tabs" class="border-t border-slate-200 hidden">
+    <div id="dv-series-tabs" class="divider hidden">
       <div class="px-4 pt-3 pb-1 flex items-center justify-between">
         <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Series</h3>
         <span id="dv-series-count" class="text-[0.6rem] text-slate-400"></span>
@@ -88,7 +88,7 @@
     </div>
 
     <!-- Controls panel -->
-    <div class="border-t border-slate-200 p-4 space-y-4">
+    <div class="divider p-4 space-y-4">
       <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Controls</h3>
 
       <!-- Window / Level -->
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Actions bar -->
-    <div class="border-t border-slate-200 p-3 flex gap-2">
+    <div class="divider p-3 flex gap-2">
       <button id="dv-add" type="button" class="btn btn-ghost flex-1 !text-xs">
         <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
         Add files

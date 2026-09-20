@@ -33,10 +33,10 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 	}}
 >
 	<!-- Article header -->
-	<section class="border-b border-slate-300 bg-white py-14">
+	<section class="divider-strong bg-white py-14">
 		<div class="container-page">
 			<div class="doc text-center">
-				<nav class="font-sans text-xs text-slate-500" aria-label="Breadcrumb">
+				<nav class="text-muted" aria-label="Breadcrumb">
 					<ol class="flex items-center justify-center gap-2">
 						<li><a href="/recent-developments" class="hover:text-slate-900 hover:underline hover:underline-offset-4">Recent Developments</a></li>
 						<li aria-hidden="true">/</li>
@@ -46,7 +46,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 				<p class="meta-label mt-6">{categoryLabel(post.data.category)}</p>
 				<h1 class="mt-3 font-serif text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">{post.data.title}</h1>
 				<p class="standfirst mx-auto">{post.data.description}</p>
-				<div class="mt-6 flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2 font-sans text-xs text-slate-500">
+				<div class="mt-6 flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2 text-muted">
 					<span>Published {formatDate(post.data.pubDate)}</span>
 					<span>{readMin} min read</span>
 					{post.data.anonymised && (
@@ -65,7 +65,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 		<div class="container-page">
 			<div class="doc">
 				{post.data.keyTakeaways && (
-					<aside class="border-t border-slate-300 pt-3">
+					<aside class="divider-strong pt-3">
 						<p class="meta-label mb-2">Key takeaways for the court / tribunal</p>
 						<ol class="list mt-0">
 							{post.data.keyTakeaways.map((t, i) => (
@@ -95,7 +95,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 					</div>
 				)}
 
-				<div class="mt-12 border-t border-slate-200 pt-4">
+				<div class="mt-12 divider pt-4">
 					<p class="font-serif text-sm italic leading-snug text-slate-600">
 						{post.data.author}, Consultant Radiologist &amp; Medicolegal Expert Witness
 					</p>
@@ -109,7 +109,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 	</article>
 
 	<!-- Comments -->
-	<section class="border-t border-slate-200 bg-paper py-14">
+	<section class="divider-below bg-paper py-14">
 		<div class="container-page">
 			<div class="doc">
 				<p class="meta-label">Comments</p>
@@ -125,7 +125,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 					</label>
 					<div class="flex items-center gap-3">
 						<button type="submit" class="btn btn-primary" data-submit>Post comment</button>
-						<span class="font-sans text-xs text-slate-500">Comments are stored via Cloudflare KV and moderated.</span>
+						<span class="text-muted">Comments are stored via Cloudflare KV and moderated.</span>
 					</div>
 				</form>
 				<div id="comment-list" class="mt-8 space-y-4" data-postid={post.slug}>

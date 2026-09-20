@@ -42,7 +42,7 @@ export const prerender = true;
 					<h2 class="sec-title">
 						Browse by subject
 					</h2>
-					<p id="blog-count" class="mt-3 font-sans text-xs uppercase tracking-[0.1em] text-slate-500" aria-live="polite">
+					<p id="blog-count" class="mt-3 text-muted-alt" aria-live="polite">
 						Showing all {allPosts.length} pieces
 					</p>
 				</div>
@@ -74,8 +74,8 @@ export const prerender = true;
 							<span class="sec-no">
 								§ {String(i + 1).padStart(2, "0")}
 							</span>
-							<span class="font-sans text-xs uppercase tracking-[0.1em] text-slate-500">{categoryLabel(post.data.category)}</span>
-							<span class="font-sans text-xs text-slate-400">{formatDateShort(post.data.pubDate)}</span>
+							<span class="text-muted-alt">{categoryLabel(post.data.category)}</span>
+							<span class="text-muted-light">{formatDateShort(post.data.pubDate)}</span>
 						</div>
 						<h2 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
 							<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>

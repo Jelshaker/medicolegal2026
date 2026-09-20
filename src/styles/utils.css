@@ -1,0 +1,467 @@
+/* =====================================================================
+   Composite micro-utilities — extracted from inline class="" strings
+   scattered across .astro components and pages.
+
+   Each class bundles a small group of Tailwind utilities that are
+   reused in two or more places.  Human-editable; add / adjust here
+   instead of hunting every call site.
+
+   IMPORTANT: this file is imported BEFORE @tailwindcss so its rules
+   sit below Tailwind's utilities in specificity and can override stray
+   inline Tailwind when the class list is sorted alphabetically.
+   ===================================================================== */
+
+/* ------------------------------------------------------------------ */
+/* Type: muted / meta text                                             */
+/* ------------------------------------------------------------------ */
+
+/* Sans, 10px, slate-500 — the standard secondary text tone. */
+.text-muted {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	color: #64748b;
+}
+
+/* The same but with uppercase + tracking. Used for category labels, dates,
+   tags, and breadcrumb paths. */
+.text-muted-alt {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #64748b;
+}
+
+/* Same as .text-muted-alt but slightly tighter tracking (0.12em).
+   Used on login page eyebrow and consent badge. */
+.text-muted-alt-sm {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #64748b;
+}
+
+/* Lighter mute (slate-400) for non-essential annotations like dates and
+   disclaimers. */
+.text-muted-light {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	color: #94a3b8;
+}
+
+/* Uppercase label variant (slate-400) — used on dicom-viewer eyebrow and
+   recent-developments "ANONYMISED" badge and date-line. */
+.text-muted-light-alt {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #94a3b8;
+}
+
+/* Small muted caption used for subtitles in medical image viewers. */
+.text-subtle {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	color: #64748b;
+}
+
+/* Small italic caption — radiological notes. */
+.text-caption-italic {
+	font-family: var(--font-serif);
+	font-size: 0.75rem;
+	font-style: italic;
+	color: #64748b;
+}
+
+/* Heading on a white / dark ground — bold slate-900. */
+.text-heading {
+	font-weight: 700;
+	color: #0f172a;
+}
+
+/* Serif bold heading — same as .text-heading but with font-serif.
+   Used repeatedly on section H2s, library cards, CV items. */
+.text-heading-serif {
+	font-family: var(--font-serif);
+	font-weight: 700;
+	color: #0f172a;
+}
+
+/* Section label: uppercase, bold, tracking-wider, slate-500.
+   Used for panel headings in LocalDicomViewer (Image details, Series,
+   Controls). */
+.text-panel-label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #64748b;
+}
+
+/* ------------------------------------------------------------------ */
+/* Surfaces: dividers and section wrappers                             */
+/* ------------------------------------------------------------------ */
+
+/* Hairline horizontal rule — the most common divider in the site.
+   Replaces `border-t border-slate-200` on 25+ call sites. */
+.divider {
+	border-top: 1px solid #e2e8f0;
+}
+
+/* Same as .divider but with slate-300 (slightly stronger).
+   Used on Header mobile menu, cookie banner, sitemap CTA. */
+.divider-strong {
+	border-top: 1px solid #cbd5e1;
+}
+
+/* Box border: the hairline rule below a hero or section. */
+.divider-below {
+	border-bottom: 1px solid #e2e8f0;
+}
+
+/* Section wrapper on the default white ground, with generous vertical
+   padding. Replaces `bg-white py-14` in 10+ pages. */
+.section {
+	background: #fff;
+	padding-block: 3.5rem;
+}
+@media (min-width: 768px) {
+	.section {
+		padding-block: 4rem;
+	}
+}
+
+/* Same as .section but on the paper-tinted ground. */
+.section-paper {
+	background: var(--color-paper);
+	padding-block: 3.5rem;
+}
+@media (min-width: 768px) {
+	.section-paper {
+		padding-block: 4rem;
+	}
+}
+
+/* Section wrapper with a top border — used on the "Join the discussion"
+   and recent developments index section. */
+.section-top {
+	border-top: 1px solid #e2e8f0;
+	background: var(--color-paper);
+	padding-block: 3.5rem;
+}
+@media (min-width: 768px) {
+	.section-top {
+		padding-block: 4rem;
+	}
+}
+
+/* Section wrapper on white with a top border.  Used on expert-witness
+   referral form section. */
+.section-top-white {
+	border-top: 1px solid #e2e8f0;
+	background: #fff;
+	padding-block: 3.5rem;
+}
+@media (min-width: 768px) {
+	.section-top-white {
+		padding-block: 4rem;
+	}
+}
+
+/* Dark ground section — white text on dark ink background. */
+.section-dark {
+	background: var(--color-ink-strong);
+	color: #fff;
+	padding-block: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout: flex rows / stacks                                          */
+/* ------------------------------------------------------------------ */
+
+/* Flex row with centered items and small gap.  One of the most common
+   structural patterns in the site. */
+.row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+/* Flex row with larger gap.  Used in footer nav, login header, hero CTA. */
+.row-lg {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+/* The same as .row-lg but with justify-between.  Used in the sticky header bar. */
+.row-justify-between {
+	justify-content: space-between;
+}
+
+/* Flex row that wraps.  Used for tag clouds, filter buttons, footer
+   bottom bar. */
+.row-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+/* Flex row wrapping with larger gap.  Used in index tag lists. */
+.row-wrap-lg {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+/* Centered wrapping row — footer CTA buttons, index tag row. */
+.row-wrap-center {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+/* Row with generous horizontal gap and vertical alignment at the baseline.
+   Used in PageIntro metadata bar, breadcrumb info rows, login footer. */
+.row-baseline {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 1.5rem;
+}
+.row-baseline-center {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	gap: 1.25rem;
+}
+
+/* Two-column grid with small gap, responsive to single column. */
+.grid-sm {
+	display: grid;
+	gap: 1.25rem;
+}
+@media (min-width: 640px) {
+	.grid-sm {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Two-column grid with wider horizontal gap. */
+.grid-md {
+	display: grid;
+	gap: 2.5rem 1.5rem;
+}
+@media (min-width: 640px) {
+	.grid-md {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Three-column grid. */
+.grid-lg {
+	display: grid;
+	gap: 1.5rem;
+}
+@media (min-width: 640px) {
+	.grid-lg {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 1024px) {
+	.grid-lg {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* Padding helpers                                                   */
+/* ------------------------------------------------------------------ */
+
+/* Box / tile content padding — the standard 1.5rem around content. */
+.pad-box {
+	padding: 1.5rem;
+}
+
+/* Smaller box padding (1rem). */
+.pad-sm {
+	padding: 1rem;
+}
+
+/* Comfortable horizontal padding for form / card sections. */
+.pad-pad {
+	padding: 1.25rem;
+}
+
+/* Padding for list item rows (top/bottom only). */
+.pad-block {
+	padding-block: 1.25rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Badge / chip overlays                                               */
+/* ------------------------------------------------------------------ */
+
+/* Small uppercase label badge — used on medical image viewer modality
+   badges, anonymised tag, breadcrumb info. */
+.badge {
+	border: 1px solid #cbd5e1;
+	background: #ffffff;
+	padding: 0.125rem 0.5rem;
+	font-family: var(--font-sans);
+	font-size: 0.65rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #475569;
+}
+
+/* Badge on a dark / inverted ground. */
+.badge-dark {
+	background: #020617b3;
+	backdrop-filter: blur(4px);
+	padding: 0.25rem 0.625rem;
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #94a3b8;
+}
+
+/* ------------------------------------------------------------------ */
+/* Hover helpers                                                     */
+/* ------------------------------------------------------------------ */
+
+/* Underline link that turns fully dark on hover. Replaces the
+   `hover:text-slate-900 hover:underline hover:underline-offset-4`
+   trio repeated across many call sites. */
+.link-hover {
+	text-underline-offset: 4px;
+}
+.link-hover:hover {
+	color: #0f172a;
+	text-decoration: underline;
+	text-decoration-color: #94a3b8;
+}
+
+/* Link that decorates with slate-400 on hover. */
+.link-hover-light {
+	text-underline-offset: 4px;
+}
+.link-hover-light:hover {
+	text-decoration: underline;
+	text-decoration-color: #cbd5e1;
+}
+
+/* ------------------------------------------------------------------ */
+/* Focus / ring states                                               */
+/* ------------------------------------------------------------------ */
+
+/* Focus-visible ring — used by header menu toggle. */
+.focus-ring {
+	outline: 2px solid #64748b;
+	outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Miscellaneous repeated patterns                                   */
+/* ------------------------------------------------------------------ */
+
+/* Sticky header bar: stays at top, full width, white background,
+   bottom border, z-index above content. */
+.sticky-bar {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	border-bottom: 1px solid #cbd5e1;
+	background: #fff;
+}
+
+/* Mobile menu drawer: hidden on desktop, slide-out on mobile. */
+.mobile-menu {
+	display: none;
+}
+@media (min-width: 1024px) {
+	.mobile-menu {
+		display: none !important;
+	}
+}
+
+/* Responsive hide (lg:hidden). */
+.hide-lg {
+	display: none;
+}
+@media (min-width: 1024px) {
+	.hide-lg {
+		display: none !important;
+	}
+}
+
+/* Center-aligned text with auto margins. */
+.text-center-auto {
+	text-align: center;
+	margin-inline: auto;
+}
+
+/* Responsive max-width container: 80rem.  Replaces `max-w-5xl mx-auto`
+   pattern on the dicom-viewer intro. */
+.container-narrow {
+	margin-inline: auto;
+	max-width: 64rem;
+}
+
+/* Shrink-0 flex child — prevents shrinking in flex rows. */
+.shrink-0 {
+	flex-shrink: 0;
+}
+
+/* Object cover for images (the image should fill its container). */
+.img-cover {
+	object-fit: cover;
+}
+
+/* Flex column layout. */
+.col {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* Vertical spacing helper — margin top. */
+.space-y-1 > * + * {
+	margin-top: 0.25rem;
+}
+.space-y-2 > * + * {
+	margin-top: 0.5rem;
+}
+.space-y-3 > * + * {
+	margin-top: 0.75rem;
+}
+.space-y-4 > * + * {
+	margin-top: 1rem;
+}
+.space-y-6 > * + * {
+	margin-top: 1.5rem;
+}
+.space-y-8 > * + * {
+	margin-top: 2rem;
+}
+.space-y-12 > * + * {
+	margin-top: 3rem;
+}
+.space-y-14 > * + * {
+	margin-top: 3.5rem;
+}
+
+/* Horizontal rule in articles. */
+.rule {
+	margin: 2.5rem 0;
+	border-color: #e2e8f0;
+}

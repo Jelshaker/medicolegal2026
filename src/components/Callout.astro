@@ -20,7 +20,7 @@ const labels: Record<NonNullable<Props["tone"]>, string> = {
 const label = title ?? labels[tone];
 ---
 
-<aside class="my-8 border-t border-slate-300 pb-1 pt-3">
+<aside class="my-8 divider-strong pb-1 pt-3">
 	<p class="meta-label mb-2">{label}</p>
 	<div class="list mt-0">
 		<slot />

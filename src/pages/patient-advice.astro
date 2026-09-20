@@ -92,7 +92,7 @@ const faqs = [
 			<div class="doc">
 				<span class="meta-label">Radiation safety</span>
 				<h2 class="sec-title-lg">Justification &amp; optimisation</h2>
-				<div id="preparation" class="mt-8 scroll-mt-24 border-t border-slate-300 pt-6">
+				<div id="preparation" class="mt-8 scroll-mt-24 divider-strong pt-6">
 					<h3 class="font-serif text-lg font-bold text-slate-900">Preparation summary</h3>
 					<dl class="table mt-4">
 						{[
@@ -101,14 +101,14 @@ const faqs = [
 							{ k: 'Ultrasound', v: "Some exams (e.g. bladder or pelvis) require a full bladder or fasting. Follow the department's instruction." },
 							{ k: 'X-ray', v: 'Usually no preparation needed — just remove the relevant clothing or jewellery.' },
 						].map((row) => (
-							<div class="grid gap-1 border-b border-slate-200 py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+							<div class="grid gap-1 divider-below py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
 								<dt class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500 sm:pt-1">{row.k}</dt>
 								<dd class="para-sm text-slate-700">{row.v}</dd>
 							</div>
 						))}
 					</dl>
 				</div>
-				<div class="list border-t border-slate-200 pt-6">
+				<div class="list divider pt-6">
 					<p>Every examination that uses ionising radiation is justified by a clinician — meaning the potential benefit must outweigh the small risk. Imaging is then optimised so the lowest possible dose is used to answer the clinical question (the ALARA principle).</p>
 					<p>MRI and ultrasound use <strong>no ionising radiation</strong> at all. For CT and X-ray, modern systems auto-adjust dose to patient size while preserving diagnostic quality.</p>
 					<p>If you are pregnant or may be pregnant, always tell the imaging department so that the examination can be reconsidered or adjusted accordingly.</p>

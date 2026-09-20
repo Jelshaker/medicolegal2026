@@ -1,3 +1,4 @@
+@import "./utils.css";
 @import "tailwindcss";
 
 /* =====================================================================
@@ -9,18 +10,27 @@
    because this layer is emitted before Tailwind's utilities layer).
 
    VOCABULARY
-     layout      .container-page  .doc  .band  .band-paper  .sec  .sec-no
-     headings    .sec-title  .sec-title-lg  .entry-title  .entry-title-sm
-     copy        .meta-label (+ .meta-label-sm)  .standfirst  .para  .para-sm  .list
-                 .note-box  .callout  .rule-quote  .entry  .entry-list
-     links       .link  .link-sm  .link-quiet  .foot-link
-     surfaces    .box  .panel-dark  .tile  .chip (+ .chip-action)  .mark
-     controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white .btn-sm .btn-xs)
-                 .form-label  .input-field  .check-row  .check-icon
-     tables      .table
-     viewers     .viewer-open (+ .viewer-badge)  .lightbox-*  .toc-*
-                 .diagram  .d-*  .figure-*  .plate-reserved
-     overlays    .toast (+ .toast-icon)  .cookie-banner  .dv-badge
+      layout      .container-page  .doc  .band  .band-paper  .sec  .sec-no
+      headings    .sec-title  .sec-title-lg  .entry-title  .entry-title-sm
+      copy        .meta-label (+ .meta-label-sm)  .standfirst  .para  .para-sm  .list
+                  .note-box  .callout  .rule-quote  .entry  .entry-list
+      links       .link  .link-sm  .link-quiet  .foot-link
+      surfaces    .box  .panel-dark  .tile  .chip (+ .chip-action)  .mark
+      controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white .btn-sm .btn-xs)
+                  .form-label  .input-field  .check-row  .check-icon
+      tables      .table
+      viewers     .viewer-open (+ .viewer-badge)  .lightbox-*  .toc-*
+                  .diagram  .d-*  .figure-*  .plate-reserved
+      overlays    .toast (+ .toast-icon)  .cookie-banner  .dv-badge
+      micro       .text-muted  .text-muted-alt  .text-muted-light
+                  .divider  .divider-strong  .divider-below
+                  .section  .section-paper  .section-top  .section-dark
+                  .row  .row-lg  .row-justify-between  .row-wrap  .row-wrap-center  .row-baseline
+                  .grid-sm  .grid-md  .grid-lg
+                  .pad-box  .pad-sm  .pad-pad
+                  .badge  .badge-dark  .link-hover
+                  .sticky-bar  .text-center-auto  .container-narrow
+                  .space-y-*
 
    Anything not in that list does not exist: there is one name per job, so
    the same look cannot be produced by two different classes.
@@ -1131,4 +1141,3 @@
 .toast-anim {
 	animation: toastSlideIn 0.22s ease-out both;
 }
-

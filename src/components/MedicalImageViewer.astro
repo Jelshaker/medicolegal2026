@@ -44,11 +44,11 @@ const uid = "v" + Math.random().toString(36).slice(2, 10);
 			</span>
 		)}
 	</button>
-	<div class="border-t border-slate-200 bg-paper p-4">
+	<div class="divider bg-paper p-4">
 		<div class="flex items-start justify-between gap-3">
 			<div class="min-w-0 flex-1">
 				<p class="font-serif text-sm leading-snug text-slate-800">{caption}</p>
-				{subtitle && <p class="mt-0.5 font-sans text-xs text-slate-500">{subtitle}</p>}
+				{subtitle && <p class="mt-0.5 text-muted">{subtitle}</p>}
 				{radiologicalCaption && <p class="mt-1 font-serif text-xs italic text-slate-500">{radiologicalCaption}</p>}
 			</div>
 			{caseReference && (

@@ -1,11 +1,9 @@
 ---
-// Reusable page masthead — full-width hero image with a soft gradient overlay,
-// then the page eyebrow / title / description centred over it.
+// Reusable page masthead — full-width hero image pinned to the viewport
+// (background-attachment: fixed) so it stays visible as the user scrolls,
+// then a soft gradient overlay, then the page eyebrow / title / description.
 //
 // Props
-//   eyebrow     — uppercase label above the title (optional)
-//   title       — page heading (required)
-//   description — standfirst paragraph (optional)
 //   heroImage   — URL path to a hero image (optional)
 //   darkOverlay — strength of the dark gradient; default 0.65 (0–1)
 
@@ -25,9 +23,8 @@ const {
 	darkOverlay = 0.65,
 } = Astro.props as Props;
 
-// When a hero image is present we apply a gradient on top; 0.65 means the
-// dark layer is 65% opacity at its darkest (the text zone), fading to clear at
-// the edges so the image bleeds naturally into the next section.
+// Dark gradient that fades to clear near the bottom so the image bleeds into
+// the section below as the user scrolls.
 const gradient = heroImage
 	? `linear-gradient(to bottom, rgba(2 6 23 / ${darkOverlay}) 0%, rgba(2 6 23 / ${darkOverlay * 0.4}) 40%, rgba(2 6 23 / ${darkOverlay * 0.15}) 70%, rgba(2 6 23 / 0) 100%)`
 	: "transparent";
@@ -38,18 +35,9 @@ const gradient = heroImage
 		"relative overflow-hidden border-b border-slate-300",
 		heroImage ? "min-h-[36rem] sm:min-h-[42rem]" : "py-14 sm:py-16",
 	]}
+	style={heroImage ? `background-image: url(${heroImage}); background-attachment: fixed; background-size: cover; background-position: center;` : undefined}
 >
-	<!-- Hero background image -->
-	{heroImage && (
-		<img
-			src={heroImage}
-			alt=""
-			class="absolute inset-0 h-full w-full object-cover"
-			loading="eager"
-		/>
-	)}
-
-	<!-- Dark gradient overlay (only when there is an image) -->
+	<!-- Dark gradient overlay — scrolls normally, so it "clears away" as the user scrolls down -->
 	{heroImage && (
 		<div
 			class="absolute inset-0"

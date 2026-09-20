@@ -563,7 +563,7 @@
 	}
 
 	/* Size variants: the only sanctioned overrides of .btn padding/type.
-	   Replaces the !px-*/!py-*/!text-* utilities that used to fight .btn. */
+	   Replaces the arbitrary !py-!text-* utilities that used to fight .btn. */
 	.btn-sm {
 		padding: 0.65rem 1rem;
 		font-size: 0.75rem;

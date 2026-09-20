@@ -396,6 +396,23 @@
 		text-decoration-color: #475569;
 	}
 
+	/* Hero nav link: visible against the dark PageHero gradient.
+	   For primary cross-links that sit in the hero's <slot>. */
+	.link-hero {
+		font-family: var(--font-sans);
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: #ffffff;
+		text-decoration-line: underline;
+		text-decoration-color: #475569;
+		text-underline-offset: 4px;
+		text-shadow: 0 1px 3px rgba(0 0 0 / 0.5);
+	}
+	.link-hero:hover {
+		color: #f1f5f9;
+		text-decoration-color: #64748b;
+	}
+
 	/* Quiet link: inherits the surrounding type, underlines on hover only.
 	   For entry titles and inline references that should sit silently until
 	   pointed at. Replaces the hover:underline/hover:decoration-* trios. */

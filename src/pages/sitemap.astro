@@ -5,7 +5,7 @@ import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
 import Figure from "../components/Figure.astro";
 import Diagram from "../components/Diagram.astro";
-import { SITE_TITLE, SITEMAP } from "../consts";
+import { SITE_TITLE, SITEMAP, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 
@@ -21,6 +21,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		eyebrow="Site map"
 		title="Everything in the resource"
 		description={`${pageCount} pages across five groups: the two reference libraries, recent case commentary, and the practice behind them.`}
+		heroImage={PAGE_HERO_IMAGES["/sitemap"]}
 	/>
 
 	<PageIntro

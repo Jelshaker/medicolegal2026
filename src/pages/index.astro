@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
 import Callout from '../components/Callout.astro';
 import { getCollection } from 'astro:content';
-import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE, BLOG_CATEGORIES, RESOURCE_LIBRARIES } from '../consts';
+import { PRACTITIONER, SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE, BLOG_CATEGORIES, RESOURCE_LIBRARIES, PAGE_HERO_IMAGES } from '../consts';
 
 const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
@@ -21,26 +22,18 @@ const stats = [
 
 <BaseLayout title={`${SITE_TITLE} — ${SITE_TAGLINE}`} description={SITE_DESCRIPTION}>
 	<!-- Masthead -->
-	<section class="border-b border-slate-300 bg-white py-16 sm:py-20">
-		<div class="container-page doc text-center mx-auto">
-			<p class="meta-label">Radiology · Law · Reference resource</p>
-			<h1 class="mt-5 font-serif text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-				A radiologist's guide to medicolegal law.
-			</h1>
-			<p class="standfirst mx-auto">
-				Reference material for anyone who has to reason about radiology imaging and the law: how radiologyinvestigations
-				are performed, interpreted and reported, the standards and statutory duties that govern them,
-				and how a court, a regulator or an insurer will test the result. Written for radiologists,
-				referrers, solicitors, barristers, insurers and expert witnesses.
-			</p>
-			<div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 divider pt-5">
-				<a href="/radiology-resources" class="link-sm">Radiology reference</a>
-				<a href="/medicolegal-fundamentals" class="link-sm">Medicolegal law library</a>
-				<a href="/dicom-viewer" class="link-sm">DICOM viewer</a>
-			</div>
-			</div>
+	<PageHero
+		eyebrow="Radiology · Law · Reference resource"
+		title="A radiologist's guide to medicolegal law."
+		description="Reference material for anyone who has to reason about radiology imaging and the law: how radiologyinvestigations are performed, interpreted and reported, the standards and statutory duties that govern them, and the decisions that show what happens when they fail. Written for radiologists, referrers, solicitors, barristers, insurers and expert witnesses."
+		heroImage={PAGE_HERO_IMAGES["/"]}
+	>
+		<div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 divider pt-5">
+			<a href="/radiology-resources" class="link-sm">Radiology reference</a>
+			<a href="/medicolegal-fundamentals" class="link-sm">Medicolegal law library</a>
+			<a href="/dicom-viewer" class="link-sm">DICOM viewer</a>
 		</div>
-	</section>
+	</PageHero>
 
 	<!-- What this resource is — and what it is not -->
 	<section class="divider-below bg-paper py-14">

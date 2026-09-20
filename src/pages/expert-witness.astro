@@ -5,7 +5,7 @@ import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 
 <BaseLayout title={`Expert Witness — GI & Peritoneal Malignancy | ${SITE_TITLE}`} description="GI and peritoneal malignancy expert witness services by Dr Joseph El-Sheikha FRCR — CT/MRI staging error analysis, peritoneal carcinomatosis assessment, and CPR Part 35 compliant reports.">
@@ -13,6 +13,7 @@ import { SITE_TITLE } from '../consts';
     eyebrow="Gastrointestinal & Peritoneal Malignancy"
     title="Expert Witness — GI & Peritoneal Malignancy"
     description="Specialist medicolegal radiology services for solicitors, barristers, and insurers. Expert review of CT and MRI in cases involving gastrointestinal malignancy, peritoneal carcinomatosis, staging errors, and breach of duty in oncological reporting."
+    heroImage={PAGE_HERO_IMAGES["/expert-witness"]}
   />
 
   <PageIntro

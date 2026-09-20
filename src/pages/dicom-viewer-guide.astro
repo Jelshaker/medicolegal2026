@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
 import Section from "../components/Section.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 const faqs = [
 	{
@@ -42,6 +42,7 @@ const faqs = [
 		eyebrow="Free tools · Guide"
 		title="How to Use the DICOM Viewer"
 		description="A short, plain-English walkthrough: where your images usually are, how to load them, and what each control does once they are on screen."
+		heroImage={PAGE_HERO_IMAGES["/dicom-viewer-guide"]}
 	/>
 
 	<PageIntro

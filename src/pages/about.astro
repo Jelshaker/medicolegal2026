@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Figure from "../components/Figure.astro";
-import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE } from "../consts";
+import { PRACTITIONER, MEMBERSHIPS, SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 const scope = [
 	{
@@ -53,6 +53,7 @@ const standards = [
 		eyebrow="About this resource"
 		title={PRACTITIONER.shortName}
 		description="Consultant Radiologist, independent medicolegal expert witness, and the curator of this reference resource. The opinion I provide is written for the court rather than for the party instructing me."
+		heroImage={PAGE_HERO_IMAGES["/about"]}
 	/>
 
 	<PageIntro

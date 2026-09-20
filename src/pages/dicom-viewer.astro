@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import Callout from "../components/Callout.astro";
 import Section from "../components/Section.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
@@ -15,6 +15,7 @@ import { SITE_TITLE } from "../consts";
 		eyebrow="Free tool · No sign-up, no upload"
 		title="Free DICOM Viewer"
 		description="If you have DICOM image files and do not have a PACS viewer to view them, you are welcome to use this browser-based DICOM viewer for free. The files are kept locally and nothing is uploaded, stored or shared. As a radiologist I would only use this viewer for a superfical imaging review and any formal diagnosis can only be made by a qualified radiologist using a calibrated clinical display with PACS based reporting."
+		heroImage={PAGE_HERO_IMAGES["/dicom-viewer"]}
 	>
 		<p class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400">
 			Works with CT · MRI · X-ray · Ultrasound · PET

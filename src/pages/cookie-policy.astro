@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
@@ -17,6 +17,7 @@ export const prerender = true;
     eyebrow="Cookies"
     title="Cookie policy"
     description="One optional analytics cookie — set only if you accept it — and the strictly necessary storage that keeps the site working. Nothing else."
+    heroImage={PAGE_HERO_IMAGES["/cookie-policy"]}
   />
 
   <PageIntro

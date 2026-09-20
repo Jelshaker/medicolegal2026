@@ -103,6 +103,32 @@ export const MEMBERSHIPS = [
 	
 ] as const;
 
+// Page hero images — one high-quality picture per page, displayed large at the top.
+// Each image is chosen for tone and relevance: clinical imagery for radiology pages,
+// consultation / evidence imagery for law pages, and a mix for the home page.
+export const PAGE_HERO_IMAGES: Record<string, string | null> = {
+	"/": "/images/pexels-cottonbro-7579832.jpg",
+	"/radiology-resources": "/images/pexels-shvetsa-4226205.jpg",
+	"/medicolegal-fundamentals": "/images/pexels-konrads-photo-32251894.jpg",
+	"/radiology-legislation": "/images/pexels-shvetsa-4225925.jpg",
+	"/radiology-legal-cases": "/images/pexels-charlss-gonzhu-433318654-15277956.jpg",
+	"/recent-developments": "/images/pexels-cottonbro-5723881.jpg",
+	"/expert-witness": "/images/pexels-gustavo-fring-7446994.jpg",
+	"/patient-advice": "/images/pexels-maxmishin-11119416.jpg",
+	"/dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
+	"/dicom-viewer-guide": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
+	"/about": "/images/pexels-tima-miroshnichenko-5452281.jpg",
+	"/contact": "/images/pexels-cottonbro-6502022.jpg",
+	"/cv": "/images/pexels-tima-miroshnichenko-5452281.jpg",
+	"/sitemap": "/images/pexels-shvetsa-4225925.jpg",
+	"/disclaimer": null,
+	"/privacy-notice": null,
+	"/cookie-policy": null,
+	"/medicolegal-radiology": "/images/pexels-cottonbro-6202736.jpg",
+	"/login": null,
+	"/referrals": null,
+};
+
 // Every public page, grouped for the human-readable site map at /sitemap and for
 // the contents strip on the home page. `/login` is intentionally excluded: it is
 // an access screen, not editorial content. Carries no commercial terms.

@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { PRACTITIONER, SITE_TITLE } from "../consts";
+import { PRACTITIONER, SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
@@ -17,6 +17,7 @@ export const prerender = true;
 		eyebrow="Your information"
 		title="Privacy notice"
 		description="Who holds your information when you use this site, what is collected, why it is needed, how long it is kept, and the rights you have over it."
+		heroImage={PAGE_HERO_IMAGES["/privacy-notice"]}
 	/>
 
 	<PageIntro

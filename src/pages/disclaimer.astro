@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
@@ -17,6 +17,7 @@ export const prerender = true;
     eyebrow="Using this resource"
     title="Disclaimer and terms of use"
     description="A free reference resource, offered on the terms below. By using the site you accept them."
+    heroImage={PAGE_HERO_IMAGES["/disclaimer"]}
   />
   <PageIntro
     eyebrow="Using this resource"

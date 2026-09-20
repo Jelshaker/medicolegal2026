@@ -6,10 +6,10 @@ import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 <BaseLayout title={`Radiology Legal Cases | ${SITE_TITLE}`} description="Landmark decisions where radiology was central. Issue, facts and principle for each case. Includes incidental findings, teleradiology risk and AI-assisted reporting.">
-<PageHero eyebrow="Radiology Legal Cases" title="Radiology Legal Cases" description="Decisions where imaging defined breach, standard of care or consent. Issue, facts and principle." />
+<PageHero eyebrow="Radiology Legal Cases" title="Radiology Legal Cases" description="Decisions where imaging defined breach, standard of care or consent. Issue, facts and principle." heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"]} />
 
 <PageIntro
 	eyebrow="Case law"

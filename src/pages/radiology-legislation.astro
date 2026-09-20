@@ -6,7 +6,7 @@ import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 
 // Each statutory duty is summarised in the same four fields so the entries can be
 // compared: who it binds, what it requires, what must be recorded, and what follows
@@ -153,6 +153,7 @@ const instruments = [
 		eyebrow="Radiology Legislation"
 		title="Radiology Legislation"
 		description="The statutory framework under radiological practice: who each duty binds, what it requires, what must be recorded, and what follows from a failure. Summary only — the primary text governs."
+		heroImage={PAGE_HERO_IMAGES["/radiology-legislation"]}
 	/>
 
 	<PageIntro

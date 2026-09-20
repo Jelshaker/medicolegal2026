@@ -6,10 +6,10 @@ import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 <BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Bolam, Bolitho, Montgomery, causation and breach of duty. Famous landmark cases: Nettleship, Roe, Wilsher, Sidaway, Paris, Watt, Chester, Gregg, Little. RCR Standards, duty of candour, and AI-assisted reporting.">
-<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="Core UK medical law. Test, authority and radiology application for each principle." />
+<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="Core UK medical law. Test, authority and radiology application for each principle." heroImage={PAGE_HERO_IMAGES["/medicolegal-fundamentals"]} />
 
 <PageIntro
 	eyebrow="Medicolegal law library"

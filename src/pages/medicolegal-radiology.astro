@@ -6,7 +6,7 @@ import Section from '../components/Section.astro';
 import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 
 <BaseLayout title={`Medicolegal Radiology | ${SITE_TITLE}`} description="The debate between Pure Diagnosis and Bolam, incidentaloma liability (37% of abdominal claims), and systemic teleradiology risks including overnight reporting fatigue.">
@@ -14,6 +14,7 @@ import { SITE_TITLE } from '../consts';
 		eyebrow="Medicolegal Radiology"
 		title="Pure Diagnosis vs. Bolam — The Central Battleground"
 		description="How claimants advance the &quot;pure diagnosis&quot; argument, why ~37% of abdominal radiology claims involve incidental findings, and how teleradiology fatigue amplifies systemic risk."
+		heroImage={PAGE_HERO_IMAGES["/medicolegal-radiology"]}
 	/>
 
 	<PageIntro

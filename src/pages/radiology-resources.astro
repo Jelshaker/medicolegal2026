@@ -5,7 +5,7 @@ import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 
 // The clinical half of the resource. Each modality is described in terms of the
 // question it answers, so the page reads as a reference rather than a service list.
@@ -103,6 +103,7 @@ const lawLinks = [
 		eyebrow="Radiology library"
 		title="Radiology Reference"
 		description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
+		heroImage={PAGE_HERO_IMAGES["/radiology-resources"]}
 	/>
 
 	<PageIntro

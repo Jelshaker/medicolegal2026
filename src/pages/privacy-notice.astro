@@ -36,7 +36,7 @@ export const prerender = true;
 		reviewed="September 2026"
 	/>
 
-	<section class="band-white">
+	<section class="band">
 		<div class="container-page">
 			<div class="doc space-y-14">
 				<Section
@@ -46,22 +46,22 @@ export const prerender = true;
 					title="Who is responsible for your information"
 					lead="The person deciding how and why your information is processed is the curator of this resource."
 				>
-					<table class="mt-6 w-full border-collapse text-left">
+					<table class="table">
 						<tbody>
-							<tr class="row-white">
-								<th scope="row" class="w-32 border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Controller</th>
-								<td class="cell-body-lg">{PRACTITIONER.name}, {PRACTITIONER.title}</td>
+							<tr>
+								<th scope="row">Controller</th>
+								<td>{PRACTITIONER.name}, {PRACTITIONER.title}</td>
 							</tr>
-							<tr class="row-white">
-								<th scope="row" class="w-32 border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Contact</th>
-								<td class="cell-body-lg">
+							<tr>
+								<th scope="row">Contact</th>
+								<td>
 									<a href={`mailto:${PRACTITIONER.email}`} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{PRACTITIONER.email}</a>
 									{` · ${PRACTITIONER.phone}`}
 								</td>
 							</tr>
-							<tr class="row-white">
-								<th scope="row" class="w-32 border-b border-slate-200 bg-paper px-3 py-3 align-top font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500">Address</th>
-								<td class="cell-body-lg">{PRACTITIONER.address}</td>
+							<tr>
+								<th scope="row">Address</th>
+								<td>{PRACTITIONER.address}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -74,26 +74,26 @@ export const prerender = true;
 					title="What is collected, and when"
 					lead="Browsing is anonymous. Each interaction below collects only what that interaction needs."
 				>
-					<div class="entry-list-divide">
+					<div class="entry-list-ruled">
 						<div class="entry">
-							<h3 class="sub-h">Reading the reference material</h3>
-							<p class="para-sm-relaxed">Nothing. No account, no sign-up, no contact details. The free DICOM viewer opens images inside your own browser — files never leave your device.</p>
+							<h3 class="entry-title">Reading the reference material</h3>
+							<p class="para-sm">Nothing. No account, no sign-up, no contact details. The free DICOM viewer opens images inside your own browser — files never leave your device.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Enquiry and referral forms</h3>
-							<p class="para-sm-relaxed">Name, email, and the message or case summary you write. Referrals add referrer type, organisation, phone and a case reference. Send an anonymised summary only — no patient names, dates of birth, NHS numbers or directly identifying information.</p>
+							<h3 class="entry-title">Enquiry and referral forms</h3>
+							<p class="para-sm">Name, email, and the message or case summary you write. Referrals add referrer type, organisation, phone and a case reference. Send an anonymised summary only — no patient names, dates of birth, NHS numbers or directly identifying information.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Comments</h3>
-							<p class="para-sm-relaxed">The display name and comment text you post. Comments are public — do not include anything identifying a patient or a living individual involved in proceedings.</p>
+							<h3 class="entry-title">Comments</h3>
+							<p class="para-sm">The display name and comment text you post. Comments are public — do not include anything identifying a patient or a living individual involved in proceedings.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Optional analytics</h3>
-							<p class="para-sm-relaxed">Only if you click “Accept analytics”: Google Analytics 4 records which pages are read, using cookies beginning _ga. Reject or ignore the banner and nothing is recorded. See the <a href="/cookie-policy" class="link-inline">cookie policy</a>.</p>
+							<h3 class="entry-title">Optional analytics</h3>
+							<p class="para-sm">Only if you click “Accept analytics”: Google Analytics 4 records which pages are read, using cookies beginning _ga. Reject or ignore the banner and nothing is recorded. See the <a href="/cookie-policy" class="link">cookie policy</a>.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Technical logs</h3>
-							<p class="para-sm-relaxed">The hosting platform (Cloudflare) keeps short-lived security and delivery logs, including IP addresses, to keep the site available and defend against abuse.</p>
+							<h3 class="entry-title">Technical logs</h3>
+							<p class="para-sm">The hosting platform (Cloudflare) keeps short-lived security and delivery logs, including IP addresses, to keep the site available and defend against abuse.</p>
 						</div>
 					</div>
 				</Section>
@@ -105,18 +105,18 @@ export const prerender = true;
 					title="Why processing is lawful"
 					lead="Every use of personal data needs a lawful basis under Article 6 of the UK GDPR."
 				>
-					<div class="entry-list-divide">
+					<div class="entry-list-ruled">
 						<div class="entry">
-							<h3 class="sub-h">Consent — Article 6(1)(a)</h3>
-							<p class="para-sm-relaxed">The optional analytics cookie. Given by clicking “Accept analytics”, recorded with its date, withdrawable at any time via “Cookie settings” in the footer.</p>
+							<h3 class="entry-title">Consent — Article 6(1)(a)</h3>
+							<p class="para-sm">The optional analytics cookie. Given by clicking “Accept analytics”, recorded with its date, withdrawable at any time via “Cookie settings” in the footer.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Pre-contract steps — Article 6(1)(b)</h3>
-							<p class="para-sm-relaxed">Enquiries and referrals: handling your message to respond and, where applicable, to enter into terms of engagement.</p>
+							<h3 class="entry-title">Pre-contract steps — Article 6(1)(b)</h3>
+							<p class="para-sm">Enquiries and referrals: handling your message to respond and, where applicable, to enter into terms of engagement.</p>
 						</div>
 						<div class="entry">
-							<h3 class="sub-h">Legitimate interests — Article 6(1)(f)</h3>
-							<p class="para-sm-relaxed">A secure, available site: security logging, abuse prevention, remembering your cookie choice, comment moderation. Minimal data; anything further needs consent.</p>
+							<h3 class="entry-title">Legitimate interests — Article 6(1)(f)</h3>
+							<p class="para-sm">A secure, available site: security logging, abuse prevention, remembering your cookie choice, comment moderation. Minimal data; anything further needs consent.</p>
 						</div>
 					</div>
 					<Callout tone="limit" title="Health information">
@@ -136,13 +136,13 @@ export const prerender = true;
 					title="How information is used, and who sees it"
 					lead="For the purpose you provided it for, and for nothing else."
 				>
-					<ul class="doc-list-lg">
+					<ul class="list">
 						<li>Responding to your enquiry or assessing a referral.</li>
 						<li>Publishing comments you choose to post, under your name.</li>
 						<li>Aggregate readership statistics, only with analytics consent.</li>
 						<li>Security, availability and abuse prevention.</li>
 					</ul>
-					<p class="mt-4 font-serif text-[0.95rem] leading-relaxed text-slate-600">Processors: Cloudflare (hosting, form storage, security logs); Google Analytics 4 (consent only; US processing under Google's UK safeguards; IP anonymised); Clerk (login only). Nothing is sold or shared with advertisers. Comments are public by design; everything else is visible only to the secretariat.</p>
+					<p class="para-sm">Processors: Cloudflare (hosting, form storage, security logs); Google Analytics 4 (consent only; US processing under Google's UK safeguards; IP anonymised); Clerk (login only). Nothing is sold or shared with advertisers. Comments are public by design; everything else is visible only to the secretariat.</p>
 				</Section>
 
 				<Section
@@ -152,7 +152,7 @@ export const prerender = true;
 					title="How long information is kept"
 					lead="No longer than necessary for the purpose collected."
 				>
-					<ul class="doc-list-lg">
+					<ul class="list">
 						<li><strong>Enquiries</strong> — while live, then deleted or anonymised within 12 months unless they lead to an instruction.</li>
 						<li><strong>Instructions</strong> — medicolegal file duties (ordinarily 6+ years after conclusion).</li>
 						<li><strong>Comments</strong> — until you ask for removal, or moderation requires it.</li>
@@ -167,7 +167,7 @@ export const prerender = true;
 					title="The rights you have over your information"
 					lead="Email the secretariat to exercise any of these. You will be answered within one month."
 				>
-					<ul class="doc-list-lg">
+					<ul class="list">
 						<li><strong>Access</strong> — a copy of data held about you.</li>
 						<li><strong>Rectification</strong> — correction of anything inaccurate.</li>
 						<li><strong>Erasure</strong> — deletion where no good reason to keep it, including a published comment.</li>
@@ -175,7 +175,7 @@ export const prerender = true;
 						<li><strong>Portability</strong> — your data in a usable format, where based on consent or contract.</li>
 						<li><strong>Withdrawal</strong> — analytics consent at any time via “Cookie settings” in the footer.</li>
 					</ul>
-					<p class="mt-4 font-serif text-[0.95rem] leading-relaxed text-slate-600">Identity may be checked first. If unhappy, contact <a href={`mailto:${PRACTITIONER.email}`} class="link-inline">{PRACTITIONER.email}</a>; you may also complain to the ICO at <a href="https://ico.org.uk" class="link-inline">ico.org.uk</a> (0303 123 1113). This notice is reviewed when the site changes.</p>
+					<p class="para-sm">Identity may be checked first. If unhappy, contact <a href={`mailto:${PRACTITIONER.email}`} class="link">{PRACTITIONER.email}</a>; you may also complain to the ICO at <a href="https://ico.org.uk" class="link">ico.org.uk</a> (0303 123 1113). This notice is reviewed when the site changes.</p>
 				</Section>
 			</div>
 		</div>

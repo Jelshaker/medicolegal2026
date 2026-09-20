@@ -4,9 +4,9 @@
 export type ToastKind = "success" | "error" | "info";
 
 const KIND_STYLES: Record<ToastKind, string> = {
-	success: "border-teal-200 bg-white text-navy-900 dark:border-teal-500/40 dark:bg-navy-900 dark:text-slate-100",
-	error: "border-rose-200 bg-white text-rose-700 dark:border-rose-500/40 dark:bg-navy-900 dark:text-rose-300",
-	info: "border-slate-200 bg-white text-navy-900 dark:border-navy-600 dark:bg-navy-900 dark:text-slate-100",
+	success: "border-slate-300 bg-white text-slate-800",
+	error: "border-slate-300 bg-white text-slate-700",
+	info: "border-slate-200 bg-white text-slate-800",
 };
 
 const KIND_ICON: Record<ToastKind, string> = {
@@ -28,14 +28,14 @@ export function toast(message: string, kind: ToastKind = "success", timeout = 46
 	const el = document.createElement("div");
 	const accent =
 		kind === "error"
-			? "stroke-rose-600 dark:stroke-rose-400"
+			? "stroke-slate-600"
 			: kind === "info"
-				? "stroke-navy-500 dark:stroke-navy-300"
-				: "stroke-teal-600 dark:stroke-teal-400";
+				? "stroke-slate-500"
+				: "stroke-slate-600";
 
-	el.className = `toast-anim pointer-events-none flex items-start gap-3 rounded-xl border p-3.5 shadow-lift ${KIND_STYLES[kind]}`;
+	el.className = `toast-anim pointer-events-none flex items-start gap-3 border p-3.5 ${KIND_STYLES[kind]}`;
 	el.innerHTML = `
-		<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-current opacity-15">
+		<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center bg-current opacity-15">
 			<svg class="h-3.5 w-3.5 ${accent}" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="${KIND_ICON[kind]}"/></svg>
 		</span>
 		<p class="text-sm font-medium leading-snug"></p>

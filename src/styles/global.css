@@ -1,101 +1,45 @@
 @import "tailwindcss";
 
-/* Class-based dark mode variant kept only so that any residual `dark:` utility
-   in legacy markup compiles; the `.dark` class is never applied anywhere, so
-   these rules never activate. The archive renders in daylight only. */
-@custom-variant dark (&:where(.dark, .dark *));
+/* =====================================================================
+   The style system — one flat, monochrome document language.
 
-/* ------------------------------------------------------------------ */
-/* Design tokens — academic medical & legal archive                    */
-/* ------------------------------------------------------------------ */
+   Everything visual is defined in this file and nowhere else. Pages and
+   components carry the short semantic names below, plus plain Tailwind
+   utilities where a genuine one-off adjustment is needed (utilities win,
+   because this layer is emitted before Tailwind's utilities layer).
+
+   VOCABULARY
+     layout      .container-page  .doc  .band  .band-paper  .sec  .sec-no
+     headings    .sec-title  .sec-title-lg  .entry-title  .entry-title-sm
+     copy        .meta-label  .standfirst  .para  .para-sm  .list
+                 .note-box  .rule-quote  .entry  .entry-list
+     links       .link  .link-sm  .foot-link
+     surfaces    .box  .panel-dark  .tile  .chip  .mark
+     controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white)
+                 .form-label  .input-field  .check-row  .check-icon
+     tables      .table  (th / td / th[scope="row"] are styled for you)
+     viewers     .viewer-open  .lightbox-*  .toc-*  .diagram  .d-*  .figure-*
+
+   Anything not in that list does not exist: there is one name per job, so
+   the same look cannot be produced by two different classes.
+   ===================================================================== */
+
 @theme {
+	/* Surfaces and ink. There is one grey family (Tailwind's slate) and the
+	   two documented tints; no navy/teal/rose/amber/cyan/emerald ramp
+	   exists, so an accent colour cannot be used by accident. */
+	--color-paper: #fafafa; /* tinted section ground */
+	--color-ink: #1e293b; /* body text */
+	--color-ink-strong: #0f172a; /* headings, dark panels */
 
-	/* Monochrome remapping. The former navy / teal / amber / rose / cyan /
-	   emerald accent ramps are all flattened onto a single slate scale so
-	   that no loud colour can render anywhere in the document. */
-	--color-navy-50: #f8fafc;
-	--color-navy-100: #f1f5f9;
-	--color-navy-200: #e2e8f0;
-	--color-navy-300: #cbd5e1;
-	--color-navy-400: #94a3b8;
-	--color-navy-500: #64748b;
-	--color-navy-600: #475569;
-	--color-navy-700: #334155;
-	--color-navy-800: #1e293b;
-	--color-navy-900: #1e293b;
-	--color-navy-950: #0f172a;
-
-	--color-teal-50: #fafafa;
-	--color-teal-100: #f1f5f9;
-	--color-teal-200: #e2e8f0;
-	--color-teal-300: #cbd5e1;
-	--color-teal-400: #94a3b8;
-	--color-teal-500: #64748b;
-	--color-teal-600: #475569;
-	--color-teal-700: #334155;
-	--color-teal-800: #1e293b;
-	--color-teal-900: #1e293b;
-	--color-teal-950: #0f172a;
-
-	--color-amber-50: #fafafa;
-	--color-amber-100: #f1f5f9;
-	--color-amber-200: #e2e8f0;
-	--color-amber-300: #cbd5e1;
-	--color-amber-400: #94a3b8;
-	--color-amber-500: #64748b;
-	--color-amber-600: #475569;
-	--color-amber-700: #334155;
-	--color-amber-800: #1e293b;
-	--color-amber-900: #1e293b;
-	--color-amber-950: #0f172a;
-
-	--color-rose-50: #fafafa;
-	--color-rose-100: #f1f5f9;
-	--color-rose-200: #e2e8f0;
-	--color-rose-300: #cbd5e1;
-	--color-rose-400: #94a3b8;
-	--color-rose-500: #64748b;
-	--color-rose-600: #475569;
-	--color-rose-700: #334155;
-	--color-rose-800: #1e293b;
-	--color-rose-900: #1e293b;
-	--color-rose-950: #0f172a;
-
-	--color-cyan-50: #fafafa;
-	--color-cyan-100: #f1f5f9;
-	--color-cyan-200: #e2e8f0;
-	--color-cyan-300: #cbd5e1;
-	--color-cyan-400: #cbd5e1;
-	--color-cyan-500: #94a3b8;
-	--color-cyan-600: #64748b;
-	--color-cyan-700: #475569;
-	--color-cyan-800: #334155;
-	--color-cyan-900: #1e293b;
-	--color-cyan-950: #0f172a;
-
-	--color-emerald-50: #fafafa;
-	--color-emerald-100: #f1f5f9;
-	--color-emerald-200: #e2e8f0;
-	--color-emerald-300: #cbd5e1;
-	--color-emerald-400: #94a3b8;
-	--color-emerald-500: #64748b;
-	--color-emerald-600: #475569;
-	--color-emerald-700: #334155;
-	--color-emerald-800: #1e293b;
-	--color-emerald-900: #1e293b;
-	--color-emerald-950: #0f172a;
-
-	/* Editorial surfaces */
-	--color-paper: #fafafa; /* soft underlying canvas */
-	--color-ink: #1e293b;   /* charcoal text */
-	--color-ink-strong: #0f172a;
-
-	/* Typography — serif carries the document; sans is reserved for
-	   metadata labels, table headers and wayfinding. */
+	/* Serif carries the document; sans is reserved for metadata labels,
+	   table headers and wayfinding. */
 	--font-sans: "Inter", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
 	--font-serif: "Merriweather", Georgia, Cambria, "Times New Roman", serif;
 
-	/* Flat document: no radii, no elevation. */
+	/* A flat document: no corners and no elevation. Zeroing the tokens here —
+	   rather than policing every call site — means a stray `rounded-*` or
+	   `shadow-*` cannot break the house style. */
 	--radius-xs: 0px;
 	--radius-sm: 0px;
 	--radius-md: 0px;
@@ -104,7 +48,6 @@
 	--radius-2xl: 0px;
 	--radius-3xl: 0px;
 	--radius-4xl: 0px;
-
 	--shadow-2xs: 0 0 #0000;
 	--shadow-xs: 0 0 #0000;
 	--shadow-sm: 0 0 #0000;
@@ -112,9 +55,8 @@
 	--shadow-lg: 0 0 #0000;
 	--shadow-xl: 0 0 #0000;
 	--shadow-2xl: 0 0 #0000;
-	--shadow-soft: 0 0 #0000;
-	--shadow-lift: 0 0 #0000;
 }
+
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */
@@ -167,24 +109,28 @@
 		background-color: #e2e8f0;
 	}
 }
+
 /* ------------------------------------------------------------------ */
-/* Reusable atoms — flat document furniture                            */
+/* Components — the whole vocabulary                                   */
 /* ------------------------------------------------------------------ */
 @layer components {
+
+	/* -------------------------------------------------------------- */
+	/* Layout                                                          */
+	/* -------------------------------------------------------------- */
 	.container-page {
 		margin-inline: auto;
 		width: 100%;
 		max-width: 76rem;
 		padding-inline: 1.25rem;
 	}
-
 	@media (min-width: 768px) {
 		.container-page {
 			padding-inline: 2rem;
 		}
 	}
 
-	/* Centered single-column document column with generous margins. */
+	/* Centred single-column reading measure. */
 	.doc {
 		margin-inline: auto;
 		width: 100%;
@@ -193,7 +139,85 @@
 		overflow-wrap: anywhere;
 	}
 
-	/* Sans-serif metadata label (the only sanctioned sans use). */
+	/* Section bands: one plain, one tinted. */
+	.band {
+		padding-block: 4rem;
+	}
+	.band-paper {
+		background: var(--color-paper);
+		padding-block: 4rem;
+	}
+
+	/* In-page section: hairline above, anchored clear of the sticky header.
+	   `scroll-margin-top` is inert on sections that are never linked to, so
+	   one class serves both anchored and unanchored sections. */
+	.sec {
+		scroll-margin-top: 6rem;
+		border-top: 1px solid #cbd5e1;
+		padding-top: 2rem;
+	}
+
+	/* The § number that indexes a section or list entry. */
+	.sec-no {
+		font-family: var(--font-sans);
+		font-size: 0.7rem;
+		font-weight: 600;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.14em;
+		color: #94a3b8;
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Headings                                                        */
+	/* -------------------------------------------------------------- */
+	.sec-title {
+		margin-top: 0.75rem;
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.25;
+		color: var(--color-ink-strong);
+	}
+	@media (min-width: 640px) {
+		.sec-title {
+			font-size: 1.75rem;
+		}
+	}
+
+	/* A full-width page-section heading, one step larger than .sec-title. */
+	.sec-title-lg {
+		margin-top: 0.75rem;
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.25;
+		color: var(--color-ink-strong);
+	}
+	@media (min-width: 640px) {
+		.sec-title-lg {
+			font-size: 1.875rem;
+		}
+	}
+
+	/* Heading of one entry (a case, a card, a note). */
+	.entry-title {
+		font-weight: 700;
+		color: var(--color-ink);
+		overflow-wrap: anywhere;
+	}
+
+	/* The same heading set in sans, for entries that are labels rather than prose. */
+	.entry-title-sm {
+		font-family: var(--font-sans);
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: var(--color-ink);
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Body copy — one measure per job, no near-duplicates             */
+	/* -------------------------------------------------------------- */
+	/* Sans metadata label: the only sanctioned sans use in running text. */
 	.meta-label {
 		font-family: var(--font-sans);
 		font-size: 0.7rem;
@@ -203,12 +227,193 @@
 		color: #64748b;
 	}
 
+	/* The opening paragraph of a page or section, set larger. */
+	.standfirst {
+		margin-top: 1rem;
+		max-width: 42rem;
+		font-family: var(--font-serif);
+		font-size: 1.05rem;
+		line-height: 1.625;
+		color: #475569;
+	}
+
+	/* Document body copy. */
+	.para {
+		margin-top: 0.75rem;
+		font-family: var(--font-serif);
+		font-size: 1rem;
+		line-height: 1.625;
+		color: #475569;
+	}
+
+	/* Secondary body copy: entry detail, captions, supporting notes. */
+	.para-sm {
+		margin-top: 0.75rem;
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		line-height: 1.625;
+		color: #475569;
+	}
+
+	/* A list set as a stack of lines (no markers, as in print). It is also
+	   the wrapper for loosely stacked prose blocks. Add `border-t
+	   border-slate-200 pt-4` where a rule above the list is wanted. */
+	.list {
+		margin-top: 0.75rem;
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		line-height: 1.625;
+		color: #475569;
+	}
+	.list > * + * {
+		margin-top: 0.5rem;
+	}
+
+	/* Grey inset box for a supporting observation. */
+	.note-box {
+		margin-top: 1rem;
+		background: #f8fafc;
+		padding: 1rem;
+		font-size: 0.875rem;
+		line-height: 1.625;
+		color: #475569;
+	}
+
+	/* Pull-quote used for the proposition a case establishes. */
+	.rule-quote {
+		margin-top: 1rem;
+		border-left: 2px solid #94a3b8;
+		padding: 0.125rem 0.5rem 0.125rem 1.25rem;
+		font-size: 0.875rem;
+		color: #475569;
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Entry stacks                                                    */
+	/* -------------------------------------------------------------- */
+	.entry {
+		padding-block: 1.25rem;
+		min-width: 0;
+	}
+
+	/* A stack of entries ruled off from each other. */
+	.entry-list {
+		margin-top: 1.5rem;
+	}
+	.entry-list > * + * {
+		border-top: 1px solid #e2e8f0;
+	}
+
+	/* The same stack with a rule above it as well. */
+	.entry-list-ruled {
+		margin-top: 1.5rem;
+		border-top: 1px solid #e2e8f0;
+	}
+	.entry-list-ruled > * + * {
+		border-top: 1px solid #e2e8f0;
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Links                                                           */
+	/* -------------------------------------------------------------- */
+	/* In-text link: inherits the surrounding font and size. */
+	.link {
+		text-decoration-line: underline;
+		text-decoration-color: #cbd5e1;
+		text-underline-offset: 4px;
+	}
+	.link:hover {
+		color: #0f172a;
+		text-decoration-color: #475569;
+	}
+
+	/* Small sans link: page cross-references, "next steps" lists. */
+	.link-sm {
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: #475569;
+		text-decoration-line: underline;
+		text-decoration-color: #cbd5e1;
+		text-underline-offset: 4px;
+	}
+	.link-sm:hover {
+		color: #0f172a;
+		text-decoration-color: #475569;
+	}
+
+	/* Footer link: a nav item, underlined only on hover. */
+	.foot-link {
+		font-family: var(--font-sans);
+		color: #475569;
+	}
+	.foot-link:hover {
+		color: #0f172a;
+		text-decoration-line: underline;
+		text-underline-offset: 4px;
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Surfaces                                                        */
+	/* -------------------------------------------------------------- */
+	/* The one bordered box. Add padding utilities as needed. */
+	.box {
+		border: 1px solid #e2e8f0;
+		background: #fff;
+	}
+
+	/* Inverted panel used for the closing call to action on a library page. */
+	.panel-dark {
+		background: var(--color-ink-strong);
+		color: #fff;
+	}
+
+	/* Small tinted tile, used for categorised lists of findings. */
+	.tile {
+		border: 1px solid #e2e8f0;
+		background: var(--color-paper);
+		padding: 1rem;
+	}
+
+	/* Small uppercase tag. */
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-family: var(--font-sans);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		padding: 0.3rem 0.65rem;
+		background: var(--color-paper);
+		border: 1px solid #e2e8f0;
+		color: #475569;
+	}
+
+	/* Numbered marker used to index a list on a dark panel. */
+	.mark {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 1rem;
+		width: 1rem;
+		flex-shrink: 0;
+		background: #64748b33;
+		font-size: 0.6rem;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+		color: #cbd5e1;
+	}
+
+	/* -------------------------------------------------------------- */
+	/* Controls                                                        */
+	/* -------------------------------------------------------------- */
 	.btn {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		border-radius: 0;
 		font-family: var(--font-sans);
 		font-weight: 600;
 		font-size: 0.8125rem;
@@ -220,12 +425,12 @@
 		white-space: nowrap;
 		border: 1px solid transparent;
 	}
-
 	.btn:focus-visible {
 		outline: 2px solid #64748b;
 		outline-offset: 2px;
 	}
 
+	/* Filled: the primary action. */
 	.btn-primary {
 		background: var(--color-ink);
 		color: #fff;
@@ -236,26 +441,7 @@
 		border-color: var(--color-ink-strong);
 	}
 
-	.btn-navy {
-		background: var(--color-ink);
-		color: #fff;
-		border-color: var(--color-ink);
-	}
-	.btn-navy:hover {
-		background: var(--color-ink-strong);
-		border-color: var(--color-ink-strong);
-	}
-
-	.btn-slate {
-		background: var(--color-ink);
-		color: #fff;
-		border-color: var(--color-ink);
-	}
-	.btn-slate:hover {
-		background: var(--color-ink-strong);
-		border-color: var(--color-ink-strong);
-	}
-
+	/* Outlined: the secondary action on a light ground. */
 	.btn-ghost {
 		background: #fff;
 		color: #334155;
@@ -266,15 +452,7 @@
 		color: var(--color-ink);
 	}
 
-	.btn-white {
-		background: #fff;
-		color: var(--color-ink);
-		border-color: #cbd5e1;
-	}
-	.btn-white:hover {
-		border-color: var(--color-ink);
-	}
-
+	/* Outlined: the secondary action on a dark panel. */
 	.btn-outline-white {
 		background: transparent;
 		color: #fff;
@@ -285,28 +463,18 @@
 		background: #ffffff12;
 	}
 
-	.card {
-		background: #fff;
-		border: 1px solid #e2e8f0;
-		border-radius: 0;
-		box-shadow: none;
-	}
-
-	.eyebrow {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.45rem;
+	.form-label {
+		display: block;
 		font-family: var(--font-sans);
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		font-weight: 600;
-		letter-spacing: 0.16em;
 		text-transform: uppercase;
-		color: #64748b;
+		letter-spacing: 0.1em;
+		color: #475569;
 	}
 
 	.input-field {
 		width: 100%;
-		border-radius: 0;
 		border: 1px solid #cbd5e1;
 		background: #fff;
 		padding: 0.7rem 0.85rem;
@@ -323,124 +491,33 @@
 		border-color: var(--color-ink);
 	}
 
+	/* Checklist row: a tick or cross icon followed by its line of text. */
+	.check-row {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	.check-icon {
+		margin-top: 0.125rem;
+		height: 1rem;
+		width: 1rem;
+		flex-shrink: 0;
+		color: #64748b;
+	}
+
 	/* -------------------------------------------------------------- */
-	/* Consolidated document patterns — single home for the repeated  */
-	/* Tailwind combinations used across pages. Pages may now use     */
-	/* these short semantic classes instead of long utility strings.  */
+	/* Tables — one table style, applied by element                    */
 	/* -------------------------------------------------------------- */
-
-	/* Section bands (replaces `bg-white py-16`, `bg-paper py-14`, …) */
-	.band { padding-block: 4rem; }
-	.band-tight { padding-block: 3.5rem; }
-	.band-white { background: #fff; padding-block: 4rem; }
-	.band-paper { background: var(--color-paper); padding-block: 3.5rem; }
-
-	/* In-page section head (replaces `scroll-mt-24 border-t … pt-8`) */
-	.sec { scroll-margin-top: 6rem; border-top: 1px solid #cbd5e1; padding-top: 2rem; }
-	.sec-title {
-		margin-top: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem;
-		font-weight: 700; line-height: 1.25; color: var(--color-ink-strong);
+	.table {
+		margin-top: 1.5rem;
+		width: 100%;
+		border-collapse: collapse;
+		text-align: left;
 	}
-	.sec-num {
-		font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-		font-variant-numeric: tabular-nums; letter-spacing: 0.14em; color: #94a3b8;
-	}
-
-	/* Body copy (replaces max-w-3xl and text-slate-600 combos) */
-	.para-lead { margin-top: 1rem; max-width: 48rem; line-height: 1.625; color: #475569; }
-	.para-sm { margin-top: 0.5rem; max-width: 48rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
-	.para-sm-spaced { margin-top: 1rem; max-width: 48rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
-	.para-sm-relaxed { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.625; color: #475569; }
-	.lead { margin-top: 0.75rem; max-width: 42rem; font-family: var(--font-serif); line-height: 1.625; color: #475569; }
-
-	/* Case / entry blocks (replaces divide-y / py-5 / entry titles) */
-	.entry-list { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; }
-	.entry-list-divide { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; }
-	.entry-list-divide > * + * { border-top: 1px solid #e2e8f0; }
-	.entry { padding-block: 1.25rem; min-width: 0; }
-	.case-h { font-weight: 700; color: var(--color-navy-900); overflow-wrap: anywhere; }
-	.case-h-sans { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 700; color: var(--color-navy-900); }
-	.bullets { margin-top: 0.75rem; font-size: 0.875rem; color: #475569; }
-	.bullets > * + * { margin-top: 0.5rem; }
-	.bullets-spaced {
-		margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;
-		font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.625; color: #475569;
-	}
-	.bullets-spaced > * + * { margin-top: 0.625rem; }
-
-	/* Pull-quote / principle (replaces border-l-2 … pl-5 …) */
-	.rule-quote {
-		margin-top: 1rem; border-left: 2px solid #94a3b8;
-		padding: 0.125rem 0.5rem 0.125rem 1.25rem;
-		font-size: 0.875rem; color: #475569;
-	}
-
-	/* Grey insight box (replaces rounded-md bg-slate-50 p-4 …) */
-	.note-box {
-		margin-top: 1rem; border-radius: 0; background: #f8fafc; padding: 1rem;
-		font-size: 0.875rem; line-height: 1.625; color: #475569;
-	}
-
-	/* Inline links */
-	.link-inline { text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; }
-	.link-inline:hover { color: #0f172a; text-decoration-color: #475569; }
-	.link-nav-sm {
-		font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; color: #475569;
-		text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px;
-	}
-	.link-nav-sm:hover { color: #0f172a; text-decoration-color: #475569; }
-
-	/* Forms */
-	.form-label {
-		display: block; font-family: var(--font-sans); font-size: 0.75rem;
-		font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #475569;
-	}
-	.form-hint { font-family: var(--font-sans); font-size: 0.75rem; color: #64748b; }
-	.form-legal { font-family: var(--font-sans); font-size: 0.75rem; line-height: 1.625; color: #64748b; }
-
-	/* Tables */
-	.tbl { margin-top: 1.5rem; width: 100%; border-collapse: collapse; text-align: left; }
-	.tbl-th {
-		width: 8rem; border-bottom: 1px solid #e2e8f0; background: var(--color-paper);
-		padding: 0.75rem; vertical-align: top; font-family: var(--font-sans);
-		font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
-		letter-spacing: 0.12em; color: #64748b;
-	}
-	.chip {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		border-radius: 0;
-		font-family: var(--font-sans);
-		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		padding: 0.3rem 0.65rem;
-		background: #fafafa;
-		border: 1px solid #e2e8f0;
-		color: #475569;
-	}
-
-	.tbl-td {
+	.table th {
 		border-bottom: 1px solid #e2e8f0;
 		padding: 0.75rem;
 		vertical-align: top;
-		font-family: var(--font-serif);
-		font-size: 0.95rem;
-		color: #1e293b;
-	}
-	.tbl-td-muted {
-		border-bottom: 1px solid #e2e8f0;
-		padding: 0.75rem;
-		vertical-align: top;
-		font-family: var(--font-serif);
-		font-size: 0.875rem;
-		color: #475569;
-	}
-	.tbl-head {
-		border-bottom: 1px solid #94a3b8;
-		padding: 0.75rem;
 		font-family: var(--font-sans);
 		font-size: 0.7rem;
 		font-weight: 600;
@@ -448,178 +525,24 @@
 		letter-spacing: 0.12em;
 		color: #64748b;
 	}
-
-	/* Viewer / lightbox / diagram / TOC — moved here from scoped   */
-	/* <style> blocks so all CSS ships from global.css.              */
-	.viewer-card {
-		position: relative;
-		overflow: hidden;
-		border: 1px solid #cbd5e1;
-		background: #fff;
+	/* A row heading (the label column of a definition-style table). */
+	.table th[scope="row"] {
+		width: 8rem;
+		background: var(--color-paper);
 	}
-	.viewer-open {
-		position: relative;
-		display: block;
-		height: 16rem;
-		width: 100%;
-		cursor: zoom-in;
-		overflow: hidden;
-		background: #020617;
-		text-align: left;
-		outline: none;
-	}
-	.lightbox {
-		position: fixed;
-		inset: 0;
-		z-index: 100;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 1rem;
-	}
-	.lightbox[hidden] { display: none; }
-	.lightbox-backdrop { position: absolute; inset: 0; background: rgb(2 6 23 / 0.92); }
-	.lightbox-panel {
-		position: relative; width: min(92vw, 64rem); max-height: 92vh;
-		display: flex; flex-direction: column; border-radius: 0; overflow: hidden;
-		background: #0f172a; border: 1px solid #334155;
-		box-shadow: 0 25px 80px -20px rgb(0 0 0 / 0.7);
-	}
-	.lightbox-header { display: flex; flex-shrink: 0; }
-	.lightbox-stage { position: relative; flex: 1 1 auto; overflow: hidden; background: #020617; min-height: 0; }
-	.lightbox-img {
-		width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 50%;
-		user-select: none; touch-action: none; will-change: transform; max-height: 70vh;
-	}
-	.lightbox-cap { border-top: 1px solid #1e293b; }
-	.lightbox-tools {
-		display: flex; align-items: center; justify-content: flex-end;
-		gap: 0.4rem; padding: 0.6rem 0.75rem; border-top: 1px solid #1e293b;
-	}
-	.lightbox-btn {
-		display: inline-flex; align-items: center; justify-content: center;
-		height: 2.25rem; width: 2.25rem; border-radius: 0; color: #e2e8f0;
-		background: transparent; border: 1px solid #334155; transition: all 0.15s ease;
-	}
-	.lightbox-btn:hover { background: #1e293b; color: #f1f5f9; border-color: #94a3b8; }
-
-	.toc-sidebar { display: none; }
-	.toc-card { border-left: 1px solid #e2e8f0; padding-left: 1rem; }
-	.toc-list {
-		margin-top: 0.75rem; display: flex; flex-direction: column;
-		gap: 0.15rem; list-style: none; padding: 0;
-	}
-	.toc-link {
-		display: block; font-family: var(--font-sans); font-size: 0.76rem;
-		line-height: 1.45; color: #64748b; text-decoration: none; padding: 0.3rem 0;
-	}
-	.toc-link:hover { color: #0f172a; }
-	.toc-link.is-active { color: #0f172a; font-weight: 600; }
-	.toc-top {
-		display: inline-block; margin-top: 0.9rem; font-family: var(--font-sans);
-		font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
-		text-transform: uppercase; color: #94a3b8; text-decoration: none;
-	}
-	.toc-top:hover { color: #0f172a; }
-	@media (min-width: 80rem) {
-		.toc-sidebar.is-ready {
-			display: block; position: fixed; top: 50%; right: 1rem;
-			transform: translateY(-50%); z-index: 40; width: 13.5rem;
-			max-height: 70vh; overflow-y: auto;
-		}
+	.table td {
+		border-bottom: 1px solid #e2e8f0;
+		padding: 0.75rem;
+		vertical-align: top;
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		color: #475569;
 	}
 
-	.diagram { display: block; width: 100%; height: 100%; background: #fff; color: #475569; }
-	.diagram text { font-family: var(--font-sans); }
-	.d-cap { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; fill: #94a3b8; }
-	.d-title { font-size: 21px; font-weight: 700; fill: #0f172a; }
-	.d-num { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; fill: #94a3b8; }
-	.d-label { font-size: 14px; font-weight: 600; fill: #1e293b; }
-	.d-sub { font-size: 11.5px; fill: #64748b; }
-	.d-note { font-size: 12.5px; fill: #475569; }
-	.d-rule { stroke: #e2e8f0; stroke-width: 1; }
-	.d-box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
-	.d-fill { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1; }
-	.d-arrow { fill: none; stroke: #94a3b8; stroke-width: 1.25; }
-	.d-head { fill: #94a3b8; stroke: none; }
-	.d-dash { fill: none; stroke: #cbd5e1; stroke-width: 1.25; stroke-dasharray: 5 4; }
-	.d-outline { fill: none; stroke: #94a3b8; stroke-width: 1.25; }
-	.d-axis { stroke: #94a3b8; stroke-width: 1.25; }
-
-	/* Exact-match aliases for the highest-frequency page strings.
-	   Each replicates the Tailwind combo it replaces, so swaps are
-	   visual no-ops. */
-	.stack-divide { margin-top: 1.5rem; }
-	.stack-divide > * + * { border-top: 1px solid #e2e8f0; }
-	.stack-divide-lg { margin-top: 2rem; }
-	.stack-divide-lg > * + * { border-top: 1px solid #e2e8f0; }
-	.stack-divide-bare > * + * { border-top: 1px solid #e2e8f0; }
-	.stack-divide-top { margin-top: 2rem; border-top: 1px solid #e2e8f0; }
-	.stack-divide-top > * + * { border-top: 1px solid #e2e8f0; }
-	.stack-divide-top-lg { margin-top: 2.5rem; border-top: 1px solid #e2e8f0; }
-	.stack-divide-top-lg > * + * { border-top: 1px solid #e2e8f0; }
-	.stack-divide-light > * + * { border-top: 1px solid #f1f5f9; }
-	.card-box { border: 1px solid #e2e8f0; background: #fff; padding: 1.5rem; }
-	.check-row { display: flex; align-items: flex-start; gap: 0.5rem; }
-	.check-icon { margin-top: 0.125rem; height: 1rem; width: 1rem; flex-shrink: 0; color: var(--color-teal-500); }
-	.foot-link { font-family: var(--font-sans); color: #475569; }
-	.foot-link:hover { color: #0f172a; text-decoration-line: underline; text-underline-offset: 4px; }
-	.sub-h { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: #0f172a; }
-	.code-chip { border-radius: 0; background: #f1f5f9; padding: 0.125rem 0.375rem; font-size: 0.75rem; }
-	.sec-h { margin-top: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: #0f172a; }
-	.sec-h-lg { margin-top: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: #0f172a; }
-	@media (min-width: 640px) { .sec-h-lg { font-size: 1.875rem; } }
-	.tbl-cell { border-bottom: 1px solid #e2e8f0; padding: 0.625rem 1rem; }
-	.tbl-cell-strong { border-bottom: 1px solid #e2e8f0; padding: 0.625rem 1rem; font-weight: 500; color: var(--color-navy-900); }
-	.tbl-cell-head { border-bottom: 1px solid #e2e8f0; padding: 0.625rem 1rem; font-weight: 600; }
-	.strong-hl { color: var(--color-navy-900); }
-	.sec-no { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: 0.14em; color: #94a3b8; }
-	.link-nav { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; color: #475569; text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; }
-	.link-nav:hover { color: #0f172a; text-decoration-color: #475569; }
-	.link-nav-sm { font-family: var(--font-sans); font-size: 0.85rem; color: #475569; text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; }
-	.link-nav-sm:hover { color: #0f172a; text-decoration-color: #475569; }
-	.link-cta { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; color: #334155; text-decoration-line: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; }
-	.link-cta:hover { color: #0f172a; text-decoration-color: #475569; }
-	.link-strong { font-weight: 500; text-decoration-line: underline; text-underline-offset: 4px; }
-	.doc-list { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem; font-family: var(--font-serif); font-size: 0.875rem; color: #475569; }
-	.doc-list > * + * { margin-top: 0.5rem; }
-	.doc-list-lg { margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem; font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.625; color: #475569; }
-	.doc-list-lg > * + * { margin-top: 0.625rem; }
-	.faq-a { margin-top: 0.5rem; font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.625; color: #475569; }
-	.cell-body { border-bottom: 1px solid #e2e8f0; padding: 0.75rem; vertical-align: top; font-family: var(--font-serif); font-size: 0.875rem; color: #475569; }
-	.cell-body-lg { border-bottom: 1px solid #e2e8f0; padding: 0.75rem; vertical-align: top; font-family: var(--font-serif); font-size: 0.95rem; color: #1e293b; }
-	.cell-head { border-bottom: 1px solid #94a3b8; padding: 0.75rem; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #64748b; }
-	.term-max { margin-top: 0.5rem; max-width: 100%; font-size: 0.875rem; color: #475569; overflow-wrap: anywhere; }
-	.sec-flat { border-top: 1px solid #cbd5e1; padding-top: 2rem; }
-	.row-white { background: #fff; }
-
-	/* Local DICOM viewer chrome */
-	#dv-dropzone, #dv-workzone, #dv-workspace { transition: opacity 0.2s ease; }
-}
-
-/* Square off any residual pill shapes left in legacy markup. */
-@layer utilities {
-	.rounded-full {
-		border-radius: 0;
-	}
-}
-
-/* Long legal citations must wrap rather than force horizontal scrolling:
-   sections and grids can shrink, and very long words (neutral citations,
-   file names) may break anywhere rather than overflow the column. */
-@layer utilities {
-	.min-w-0 {
-		min-width: 0;
-	}
-	.case-body p,
-	.case-body li,
-	.case-body h3 {
-		overflow-wrap: anywhere;
-	}
 }
 
 /* ------------------------------------------------------------------ */
-/* Article reader — set like journal body copy                         */
+/* Article reader — markdown body copy set like a journal article      */
 /* ------------------------------------------------------------------ */
 .article-body {
 	font-family: var(--font-serif);
@@ -672,9 +595,6 @@
 	padding: 1rem 0;
 	border-top: 1px solid #cbd5e1;
 	border-bottom: 1px solid #cbd5e1;
-	border-left: 0;
-	border-radius: 0;
-	background: transparent;
 	font-style: italic;
 	font-size: 0.95rem;
 	color: #334155;
@@ -690,17 +610,13 @@
 .figure {
 	margin: 2.25rem 0;
 }
-
 .figure-flush {
 	margin: 0;
 }
-
 .figure-frame {
 	border: 1px solid #cbd5e1;
-	border-radius: 0;
 	overflow: hidden;
 }
-
 .figure-cap {
 	display: flex;
 	flex-wrap: wrap;
@@ -709,7 +625,6 @@
 	border-bottom: 1px solid #e2e8f0;
 	padding: 0.7rem 0;
 }
-
 .figure-index {
 	flex-shrink: 0;
 	font-family: var(--font-sans);
@@ -719,14 +634,12 @@
 	text-transform: uppercase;
 	color: #64748b;
 }
-
 .figure-cap-line {
 	font-family: var(--font-serif);
 	font-size: 0.9rem;
 	line-height: 1.55;
 	color: #475569;
 }
-
 .figure-cap-sub {
 	margin-top: 0.25rem;
 	font-family: var(--font-sans);
@@ -734,7 +647,6 @@
 	line-height: 1.5;
 	color: #64748b;
 }
-
 .figure-credit {
 	margin-left: auto;
 	flex-shrink: 0;
@@ -759,13 +671,11 @@
 		linear-gradient(90deg, #eef2f7 1px, transparent 1px);
 	background-size: 2rem 2rem;
 }
-
 .plate-reserved-inner {
 	max-width: 24rem;
 	padding: 1.25rem 1.5rem;
 	text-align: center;
 }
-
 .plate-reserved-label {
 	font-family: var(--font-sans);
 	font-size: 0.68rem;
@@ -774,7 +684,6 @@
 	text-transform: uppercase;
 	color: #94a3b8;
 }
-
 .plate-reserved-note {
 	margin-top: 0.5rem;
 	font-family: var(--font-serif);
@@ -783,14 +692,253 @@
 	color: #64748b;
 }
 
-/* Rule used above a plate to separate it from running text. */
-.plate-rule {
-	border-top: 1px solid #cbd5e1;
-	padding-top: 0.75rem;
-	margin-top: 2.25rem;
+/* ------------------------------------------------------------------ */
+/* Image viewer chrome                                                 */
+/* ------------------------------------------------------------------ */
+.viewer-open {
+	position: relative;
+	display: block;
+	height: 16rem;
+	width: 100%;
+	cursor: zoom-in;
+	overflow: hidden;
+	background: #020617;
+	text-align: left;
+	outline: none;
 }
 
-/* Smooth appearance for toasts */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+.lightbox[hidden] {
+	display: none;
+}
+.lightbox-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgb(2 6 23 / 0.92);
+}
+.lightbox-panel {
+	position: relative;
+	width: min(92vw, 64rem);
+	max-height: 92vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: #0f172a;
+	border: 1px solid #334155;
+	box-shadow: 0 25px 80px -20px rgb(0 0 0 / 0.7);
+}
+.lightbox-header {
+	display: flex;
+	flex-shrink: 0;
+}
+.lightbox-stage {
+	position: relative;
+	flex: 1 1 auto;
+	overflow: hidden;
+	background: #020617;
+	min-height: 0;
+}
+.lightbox-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transform-origin: 50% 50%;
+	user-select: none;
+	touch-action: none;
+	will-change: transform;
+	max-height: 70vh;
+}
+.lightbox-cap {
+	border-top: 1px solid #1e293b;
+}
+.lightbox-tools {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.4rem;
+	padding: 0.6rem 0.75rem;
+	border-top: 1px solid #1e293b;
+}
+.lightbox-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.25rem;
+	width: 2.25rem;
+	color: #e2e8f0;
+	background: transparent;
+	border: 1px solid #334155;
+	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.lightbox-btn:hover {
+	background: #1e293b;
+	color: #f1f5f9;
+	border-color: #94a3b8;
+}
+
+/* Local DICOM viewer: fade the drop zone / workspace when they swap. */
+#dv-dropzone,
+#dv-workzone,
+#dv-workspace {
+	transition: opacity 0.2s ease;
+}
+
+/* ------------------------------------------------------------------ */
+/* Table of contents rail                                              */
+/* ------------------------------------------------------------------ */
+.toc-sidebar {
+	display: none;
+}
+.toc-card {
+	border-left: 1px solid #e2e8f0;
+	padding-left: 1rem;
+}
+.toc-list {
+	margin-top: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	list-style: none;
+	padding: 0;
+}
+.toc-link {
+	display: block;
+	font-family: var(--font-sans);
+	font-size: 0.76rem;
+	line-height: 1.45;
+	color: #64748b;
+	text-decoration: none;
+	padding: 0.3rem 0;
+}
+.toc-link:hover {
+	color: #0f172a;
+}
+.toc-link.is-active {
+	color: #0f172a;
+	font-weight: 600;
+}
+.toc-top {
+	display: inline-block;
+	margin-top: 0.9rem;
+	font-family: var(--font-sans);
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #94a3b8;
+	text-decoration: none;
+}
+.toc-top:hover {
+	color: #0f172a;
+}
+@media (min-width: 80rem) {
+	.toc-sidebar.is-ready {
+		display: block;
+		position: fixed;
+		top: 50%;
+		right: 1rem;
+		transform: translateY(-50%);
+		z-index: 40;
+		width: 13.5rem;
+		max-height: 70vh;
+		overflow-y: auto;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* Drawn diagrams — the SVG mini-language used by Diagram.astro        */
+/* ------------------------------------------------------------------ */
+.diagram {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	color: #475569;
+}
+.diagram text {
+	font-family: var(--font-sans);
+}
+.d-cap {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	fill: #94a3b8;
+}
+.d-title {
+	font-size: 21px;
+	font-weight: 700;
+	fill: #0f172a;
+}
+.d-num {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	fill: #94a3b8;
+}
+.d-label {
+	font-size: 14px;
+	font-weight: 600;
+	fill: #1e293b;
+}
+.d-sub {
+	font-size: 11.5px;
+	fill: #64748b;
+}
+.d-note {
+	font-size: 12.5px;
+	fill: #475569;
+}
+.d-rule {
+	stroke: #e2e8f0;
+	stroke-width: 1;
+}
+.d-box {
+	fill: #ffffff;
+	stroke: #cbd5e1;
+	stroke-width: 1;
+}
+.d-fill {
+	fill: #f8fafc;
+	stroke: #cbd5e1;
+	stroke-width: 1;
+}
+.d-arrow {
+	fill: none;
+	stroke: #94a3b8;
+	stroke-width: 1.25;
+}
+.d-head {
+	fill: #94a3b8;
+	stroke: none;
+}
+.d-dash {
+	fill: none;
+	stroke: #cbd5e1;
+	stroke-width: 1.25;
+	stroke-dasharray: 5 4;
+}
+.d-outline {
+	fill: none;
+	stroke: #94a3b8;
+	stroke-width: 1.25;
+}
+.d-axis {
+	stroke: #94a3b8;
+	stroke-width: 1.25;
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion                                                              */
+/* ------------------------------------------------------------------ */
 @keyframes toastSlideIn {
 	from {
 		opacity: 0;
@@ -803,20 +951,5 @@
 }
 .toast-anim {
 	animation: toastSlideIn 0.22s ease-out both;
-}
-
-@keyframes spin {
-	to {
-		transform: rotate(360deg);
-	}
-}
-.spinner {
-	display: inline-block;
-	width: 1.1rem;
-	height: 1.1rem;
-	border: 2px solid currentColor;
-	border-right-color: transparent;
-	border-radius: 9999px;
-	animation: spin 0.7s linear infinite;
 }
 

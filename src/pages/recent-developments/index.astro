@@ -33,13 +33,13 @@ export const prerender = true;
 		reviewed="September 2026"
 	/>
 
-	<section class="band-white">
+	<section class="band">
 		<div class="container-page">
 			<!-- Browse by subject -->
 			<div id="browse-by-subject" class="doc scroll-mt-24">
-				<div class="sec-flat">
+				<div class="sec">
 					<p class="meta-label">Filter</p>
-					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
+					<h2 class="sec-title">
 						Browse by subject
 					</h2>
 					<p id="blog-count" class="mt-3 font-sans text-xs uppercase tracking-[0.1em] text-slate-500" aria-live="polite">
@@ -57,17 +57,17 @@ export const prerender = true;
 
 			<!-- Posts -->
 			<div id="latest-commentary" class="doc mt-14 scroll-mt-24">
-				<div class="sec-flat">
+				<div class="sec">
 					<p class="meta-label">Latest</p>
-					<h2 class="mt-3 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
+					<h2 class="sec-title">
 						Latest commentary
 					</h2>
-					<p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
+					<p class="standfirst">
 						Newest first. Each piece is a short analysis rather than a full case report, and all
 						clinical detail is anonymised.
 					</p>
 				</div>
-				<div id="blog-grid" class="stack-divide-top">
+				<div id="blog-grid" class="entry-list-ruled mt-8">
 				{allPosts.map((post, i) => (
 					<article class="blog-card py-7" data-categories={post.data.category}>
 						<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -80,7 +80,7 @@ export const prerender = true;
 						<h2 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
 							<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>
 						</h2>
-						<p class="mt-2 max-w-3xl font-serif text-[0.95rem] leading-relaxed text-slate-600">{post.data.description}</p>
+						<p class="para-sm">{post.data.description}</p>
 					</article>
 				))}
 				</div>
@@ -99,7 +99,7 @@ export const prerender = true;
 		filters?.querySelectorAll("[data-category]").forEach((node) => {
 			const btn = node as HTMLElement;
 			const active = btn.dataset.category === cat;
-			btn.classList.toggle("bg-teal-600", active);
+			btn.classList.toggle("bg-slate-800", active);
 			btn.classList.toggle("text-white", active);
 		});
 		let shown = 0;

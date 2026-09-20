@@ -64,37 +64,37 @@ const faqs = [
 
 	<!-- Step 1 -->
 	<Section id="step-1" index="01" eyebrow="Step 1" title="Find your images">
-		<p class="lead">
+		<p class="standfirst">
 			Whatever you were given — a disc, a USB stick or a download — the images are inside a
 			folder, and any folder will do.
 		</p>
 		<div class="mt-8 space-y-6">
-			<div class="card-box">
-				<h3 class="case-h-sans">If you have a CD or USB stick</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">If you have a CD or USB stick</h3>
+				<p class="para-sm">
 					Put it in your computer and open it in File Explorer (Windows) or Finder (Mac). You
 					will normally see a folder named <em>DICOM</em>, <em>IMAGES</em> or <em>STUDIES</em> —
 					inside it are the individual image files, often numbered. You may also see a viewer
 					program on the disc; you do not need to run it. The image files themselves may end in
-					<code class="code-chip">.dcm</code> or have no ending
+					<code>.dcm</code> or have no ending
 					at all — the viewer handles both.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">If you were sent a download or a zip file</h3>
-				<p class="para-sm-relaxed">
-					If the file ends in <code class="code-chip">.zip</code>,
+			<div class="box p-6">
+				<h3 class="entry-title-sm">If you were sent a download or a zip file</h3>
+				<p class="para-sm">
+					If the file ends in <code>.zip</code>,
 					unzip it first (on Windows: right-click → “Extract All”; on Mac: double-click). Inside
 					will be a folder of image files — that folder is what you will drop into the viewer.
-					A file ending in <code class="code-chip">.jpg</code>,
-					<code class="code-chip">.png</code> or
-					<code class="code-chip">.pdf</code> is a picture or a
+					A file ending in <code>.jpg</code>,
+					<code>.png</code> or
+					<code>.pdf</code> is a picture or a
 					report, not the scan itself.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">What a scan actually looks like on disc</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">What a scan actually looks like on disc</h3>
+				<p class="para-sm">
 					A CT or MRI study is not one file but a stack of them — one file per slice, often
 					hundreds. That is normal, and it is why the guide recommends dropping the whole
 					folder rather than picking files one by one.
@@ -105,31 +105,31 @@ const faqs = [
 
 	<!-- Step 2 -->
 	<Section id="step-2" index="02" eyebrow="Step 2" title="Load them into the viewer">
-		<p class="lead">
-			Open the <a href="/dicom-viewer" class="font-semibold text-teal-700 underline decoration-teal-400/50 underline-offset-4 hover:text-teal-600">viewer page</a> and drop the folder on the drop zone — or use the buttons, whichever is easier.
+		<p class="standfirst">
+			Open the <a href="/dicom-viewer" class="link font-semibold text-slate-800">viewer page</a> and drop the folder on the drop zone — or use the buttons, whichever is easier.
 		</p>
 		<div class="mt-8 space-y-6">
-			<div class="card-box">
-				<h3 class="case-h-sans">Drag and drop</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">Drag and drop</h3>
+				<p class="para-sm">
 					Open File Explorer or Finder alongside your browser window, find the folder of scan
 					files, and drag the whole folder onto the drop zone marked
 					<span class="font-semibold">“Drop your imaging files here”</span>. Dropping the folder
 					loads every slice in one go.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">Or use the buttons</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">Or use the buttons</h3>
+				<p class="para-sm">
 					<span class="font-semibold">Choose files</span> lets you pick individual files (hold
 					Ctrl or Cmd to pick several). <span class="font-semibold">Choose a folder</span> lets
 					you select the whole folder at once — the better option for a CT or MRI study. On a
 					phone or tablet, use these buttons; drag-and-drop is a desktop convenience.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">What happens next</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">What happens next</h3>
+				<p class="para-sm">
 					A status line shows progress as each file is read
 					(<em>“Reading… 40 of 220 files (40 images found)”</em>). When it finishes, the viewer
 					sorts the slices into anatomical order automatically — you do not have to name or
@@ -150,14 +150,14 @@ const faqs = [
 
 	<!-- Step 3 -->
 	<Section id="step-3" index="03" eyebrow="Step 3" title="Look at the image">
-		<p class="lead">
+		<p class="standfirst">
 			The large black area is your scan. If you loaded a stack, you can move through it the way
 			a radiologist would — slice by slice.
 		</p>
-		<div class="stack-divide-lg">
+		<div class="entry-list mt-8">
 			<div class="entry">
-				<h3 class="case-h-sans">Move through the slices</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Move through the slices</h3>
+				<p class="para-sm">
 					Three ways: the <span class="font-semibold">slice slider</span> at the foot of the
 					image, the <span class="font-semibold">arrow buttons</span> beside it, or simply
 					<span class="font-semibold">rolling your mouse wheel</span> while the cursor is over
@@ -165,16 +165,16 @@ const faqs = [
 				</p>
 			</div>
 			<div class="entry">
-				<h3 class="case-h-sans">Where it starts, and why</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Where it starts, and why</h3>
+				<p class="para-sm">
 					The viewer opens in the middle of the stack rather than at the first slice — the
 					middle slices usually show the most, so it is a better place to start. Counter shows
 					your position, e.g. <em>110 / 220</em>.
 				</p>
 			</div>
 			<div class="entry">
-				<h3 class="case-h-sans">One file means one slice</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">One file means one slice</h3>
+				<p class="para-sm">
 					If you were sent a single file, you will see a single image and the slider will not
 					move. That is expected — a CT or MRI study is hundreds of separate slice files. Ask
 					for the whole folder to scroll through the scan properly.
@@ -185,15 +185,15 @@ const faqs = [
 
 	<!-- Step 4 -->
 	<Section id="step-4" index="04" eyebrow="Step 4" title="Adjust the display">
-		<p class="lead">
+		<p class="standfirst">
 			Scans hold far more shades of grey than a screen can show at once. The Width and Level
 			sliders choose which range of shades you are looking at — this is the single most useful
 			control on the page.
 		</p>
-		<div class="stack-divide-lg">
+		<div class="entry-list mt-8">
 			<div class="entry">
-				<h3 class="case-h-sans">Brightness and contrast (Width and Level)</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Brightness and contrast (Width and Level)</h3>
+				<p class="para-sm">
 					<span class="font-semibold">Width</span> is the range of shades shown
 					(contrast); <span class="font-semibold">Level</span> is the centre of that range
 					(brightness). Narrowing the width makes tissues stand apart more; moving the level up
@@ -202,8 +202,8 @@ const faqs = [
 				</p>
 			</div>
 			<div class="entry">
-				<h3 class="case-h-sans">Zoom and pan</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Zoom and pan</h3>
+				<p class="para-sm">
 					Zoom with the slider, or hold <span class="font-semibold">Ctrl</span>
 					(<span class="font-semibold">Cmd</span> on a Mac) and roll the mouse wheel. To look
 					around a zoomed image, <span class="font-semibold">click and drag</span> it with the
@@ -211,16 +211,16 @@ const faqs = [
 				</p>
 			</div>
 			<div class="entry">
-				<h3 class="case-h-sans">Invert colours</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Invert colours</h3>
+				<p class="para-sm">
 					The <span class="font-semibold">Invert Colours</span> button reverses black and white.
 					It can make some structures easier to see, and it is how chest X-rays are sometimes
 					displayed.
 				</p>
 			</div>
 			<div class="entry">
-				<h3 class="case-h-sans">Start again with Reset all</h3>
-				<p class="para-sm-relaxed">
+				<h3 class="entry-title-sm">Start again with Reset all</h3>
+				<p class="para-sm">
 					If the image looks all black, all white, or flat grey, the window setting is the
 					likeliest cause. <span class="font-semibold">Reset all</span> returns the image to its
 					natural display for the scan type — always try this first.
@@ -231,26 +231,26 @@ const faqs = [
 
 	<!-- Details panel -->
 	<Section id="details-panel" index="05" title="The details panel">
-		<p class="lead">
+		<p class="standfirst">
 			The side panel beside the image lists a few technical facts about the scan — the same
 			information a reporting radiologist works from, minus anything that identifies you.
 		</p>
 		<div class="mt-8 overflow-x-auto">
-			<table class="w-full border border-slate-200 text-left font-sans text-sm">
-				<thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
+			<table class="table">
+				<thead>
 					<tr>
-						<th class="tbl-cell-head">Field</th>
-						<th class="tbl-cell-head">What it means</th>
+						<th>Field</th>
+						<th>What it means</th>
 					</tr>
 				</thead>
 				<tbody class="stack-divide-light">
-					<tr><td class="tbl-cell-strong">Scan type</td><td class="tbl-cell">The modality — CT, MR, CR (X-ray), US (ultrasound), PT (PET).</td></tr>
-					<tr><td class="tbl-cell-strong">Study date</td><td class="tbl-cell">When the scan was performed.</td></tr>
-					<tr><td class="tbl-cell-strong">Description</td><td class="tbl-cell">The scan's short title, e.g. “CT ABDOMEN/PELVIS WITH CONTRAST”.</td></tr>
-					<tr><td class="tbl-cell-strong">Slice thickness</td><td class="tbl-cell">How thick each slice is, in millimetres — thinner slices show finer detail.</td></tr>
-					<tr><td class="tbl-cell-strong">Image size</td><td class="tbl-cell">The pixel dimensions of each slice, e.g. 512 × 512.</td></tr>
-					<tr><td class="tbl-cell-strong">Bits per pixel</td><td class="tbl-cell">How much detail each pixel carries (8 or 16 in practice).</td></tr>
-					<tr><td class="tbl-cell-strong">Images</td><td class="tbl-cell">How many slices the viewer loaded into the stack.</td></tr>
+					<tr><td class="font-medium text-slate-800">Scan type</td><td>The modality — CT, MR, CR (X-ray), US (ultrasound), PT (PET).</td></tr>
+					<tr><td class="font-medium text-slate-800">Study date</td><td>When the scan was performed.</td></tr>
+					<tr><td class="font-medium text-slate-800">Description</td><td>The scan's short title, e.g. “CT ABDOMEN/PELVIS WITH CONTRAST”.</td></tr>
+					<tr><td class="font-medium text-slate-800">Slice thickness</td><td>How thick each slice is, in millimetres — thinner slices show finer detail.</td></tr>
+					<tr><td class="font-medium text-slate-800">Image size</td><td>The pixel dimensions of each slice, e.g. 512 × 512.</td></tr>
+					<tr><td class="font-medium text-slate-800">Bits per pixel</td><td>How much detail each pixel carries (8 or 16 in practice).</td></tr>
+					<tr><td class="font-medium text-slate-800">Images</td><td>How many slices the viewer loaded into the stack.</td></tr>
 				</tbody>
 			</table>
 		</div>
@@ -266,45 +266,45 @@ const faqs = [
 
 	<!-- Troubleshooting -->
 	<Section id="troubleshooting" index="06" title="If something goes wrong">
-		<p class="lead">
+		<p class="standfirst">
 			When the viewer cannot use a file it says so in the status line above the drop zone
 			rather than failing silently. Here is what each message means.
 		</p>
 		<div class="mt-8 space-y-6">
-			<div class="card-box">
-				<h3 class="case-h-sans">“Couldn't open these files as DICOM images…”</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">“Couldn't open these files as DICOM images…”</h3>
+				<p class="para-sm">
 					What you dropped was not DICOM — most often a zip archive, a PDF report or JPG
 					screenshots. Unzip first if needed, then choose the folder containing the scan files
 					themselves. Files with no extension are fine.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">“…use a compressed format this free viewer can't open”</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">“…use a compressed format this free viewer can't open”</h3>
+				<p class="para-sm">
 					A minority of scans are stored heavily compressed. Ask whoever supplied the images
 					for them in standard (uncompressed) DICOM form — discs almost always are — or view
 					them with the viewer program that came on the disc.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">“…files from a different scan were skipped”</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">“…files from a different scan were skipped”</h3>
+				<p class="para-sm">
 					Two studies were dropped together — for example a scan and a report CD. The viewer
 					keeps the larger stack and tells you what it set aside. Load one folder at a time to
 					see everything.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">“The viewer library is still loading — please wait a moment and try again.”</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">“The viewer library is still loading — please wait a moment and try again.”</h3>
+				<p class="para-sm">
 					On a slow connection the viewer's code may still be arriving. Give it a few seconds
 					and press the button again — nothing has been lost.
 				</p>
 			</div>
-			<div class="card-box">
-				<h3 class="case-h-sans">The image is there but looks wrong</h3>
-				<p class="para-sm-relaxed">
+			<div class="box p-6">
+				<h3 class="entry-title-sm">The image is there but looks wrong</h3>
+				<p class="para-sm">
 					All black or all white: adjust Level. Flat grey soup: narrow the Width.
 					Upside-down-looking anatomy: some scanners store images differently — the views are
 					still faithful. When in doubt, <span class="font-semibold">Reset all</span>.
@@ -315,12 +315,12 @@ const faqs = [
 
 	<!-- Common questions -->
 	<Section id="common-questions" index="07" title="Common questions">
-		<div class="stack-divide-lg">
+		<div class="entry-list mt-8">
 			{
 				faqs.map((f) => (
 					<div class="py-6">
-						<h3 class="case-h-sans">{f.q}</h3>
-						<p class="faq-a">{f.a}</p>
+						<h3 class="entry-title-sm">{f.q}</h3>
+						<p class="para-sm">{f.a}</p>
 					</div>
 				))
 			}

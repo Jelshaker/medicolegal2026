@@ -48,7 +48,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		</div>
 	</section>
 
-	<section class="band-white">
+	<section class="band">
 		<div class="container-page">
 			<div class="doc space-y-12">
 				{
@@ -58,15 +58,15 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 								<span class="sec-no">
 									§ {String(i + 1).padStart(2, "0")}
 								</span>
-								<span class="eyebrow">{group.title}</span>
+								<span class="meta-label">{group.title}</span>
 							</div>
 							<h2 class="mt-2 font-serif text-2xl font-bold text-slate-900 sm:text-[1.75rem]">
 								{group.title}
 							</h2>
-							<p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
+							<p class="standfirst">
 								{group.description}
 							</p>
-							<ul class="entry-list-divide">
+							<ul class="entry-list-ruled">
 								{group.pages.map((page) => (
 									<li class="entry">
 										<a
@@ -75,7 +75,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 										>
 											{page.label}
 										</a>
-										<p class="mt-1.5 font-serif text-sm leading-relaxed text-slate-600">
+										<p class="para-sm mt-1.5">
 											{page.description}
 										</p>
 									</li>
@@ -87,7 +87,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 
 				<Callout tone="limit" title="Access screen">
 					<p>
-						The secure login at <code class="code-chip"
+						The secure login at <code
 							>/login</code
 						> is deliberately not listed above. It is an access screen for instructing parties and referrers,
 						not part of the reference material.
@@ -96,7 +96,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 
 				<div class="border-t border-slate-300 pt-8 text-center">
 					<h2 class="font-serif text-2xl font-bold text-slate-900">Looking for something specific?</h2>
-					<p class="mx-auto mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-slate-600">
+					<p class="standfirst mx-auto">
 						Case commentary is the quickest route into the material, and the two libraries explain the
 						standards and authorities behind it. Enquiries about instruction go to the secretariat.
 					</p>

@@ -11,14 +11,16 @@
    VOCABULARY
      layout      .container-page  .doc  .band  .band-paper  .sec  .sec-no
      headings    .sec-title  .sec-title-lg  .entry-title  .entry-title-sm
-     copy        .meta-label  .standfirst  .para  .para-sm  .list
-                 .note-box  .rule-quote  .entry  .entry-list
-     links       .link  .link-sm  .foot-link
-     surfaces    .box  .panel-dark  .tile  .chip  .mark
-     controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white)
+     copy        .meta-label (+ .meta-label-sm)  .standfirst  .para  .para-sm  .list
+                 .note-box  .callout  .rule-quote  .entry  .entry-list
+     links       .link  .link-sm  .link-quiet  .foot-link
+     surfaces    .box  .panel-dark  .tile  .chip (+ .chip-action)  .mark
+     controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white .btn-sm .btn-xs)
                  .form-label  .input-field  .check-row  .check-icon
-     tables      .table  (th / td / th[scope="row"] are styled for you)
-     viewers     .viewer-open  .lightbox-*  .toc-*  .diagram  .d-*  .figure-*
+     tables      .table
+     viewers     .viewer-open (+ .viewer-badge)  .lightbox-*  .toc-*
+                 .diagram  .d-*  .figure-*  .plate-reserved
+     overlays    .toast (+ .toast-icon)  .cookie-banner  .dv-badge
 
    Anything not in that list does not exist: there is one name per job, so
    the same look cannot be produced by two different classes.
@@ -64,6 +66,13 @@
 	html {
 		scroll-behavior: smooth;
 		-webkit-text-size-adjust: 100%;
+	}
+
+	/* One anchor offset for the whole site: every [id] clears the sticky
+	   header when linked to. Replaces the scroll-mt-24 utilities that were
+	   repeated on each anchored section. */
+	[id] {
+		scroll-margin-top: 6rem;
 	}
 
 	body {
@@ -148,11 +157,9 @@
 		padding-block: 4rem;
 	}
 
-	/* In-page section: hairline above, anchored clear of the sticky header.
-	   `scroll-margin-top` is inert on sections that are never linked to, so
-	   one class serves both anchored and unanchored sections. */
+	/* In-page section: hairline above. (The offset that clears the sticky
+	   header on anchor jumps is set globally for [id], above.) */
 	.sec {
-		scroll-margin-top: 6rem;
 		border-top: 1px solid #cbd5e1;
 		padding-top: 2rem;
 	}
@@ -217,7 +224,8 @@
 	/* -------------------------------------------------------------- */
 	/* Body copy — one measure per job, no near-duplicates             */
 	/* -------------------------------------------------------------- */
-	/* Sans metadata label: the only sanctioned sans use in running text. */
+	/* Sans metadata label: the only sanctioned sans use in running text.
+	   .meta-label-sm is the 0.62rem brand strapline under the wordmark. */
 	.meta-label {
 		font-family: var(--font-sans);
 		font-size: 0.7rem;
@@ -225,6 +233,9 @@
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: #64748b;
+	}
+	.meta-label-sm {
+		font-size: 0.62rem;
 	}
 
 	/* The opening paragraph of a page or section, set larger. */
@@ -277,6 +288,18 @@
 		font-size: 0.875rem;
 		line-height: 1.625;
 		color: #475569;
+	}
+
+	/* Editorial aside: hairline rule, small-caps label, small serif text.
+	   (Backs Callout.astro; previously hand-rolled utilities per instance.) */
+	.callout {
+		margin-block: 2rem;
+		border-top: 1px solid #cbd5e1;
+		padding-top: 0.75rem;
+		padding-bottom: 0.25rem;
+	}
+	.callout .list {
+		margin-top: 0;
 	}
 
 	/* Pull-quote used for the proposition a case establishes. */
@@ -342,6 +365,19 @@
 		text-decoration-color: #475569;
 	}
 
+	/* Quiet link: inherits the surrounding type, underlines on hover only.
+	   For entry titles and inline references that should sit silently until
+	   pointed at. Replaces the hover:underline/hover:decoration-* trios. */
+	.link-quiet {
+		text-decoration-line: none;
+	}
+	.link-quiet:hover {
+		color: #0f172a;
+		text-decoration-line: underline;
+		text-decoration-color: #94a3b8;
+		text-underline-offset: 4px;
+	}
+
 	/* Footer link: a nav item, underlined only on hover. */
 	.foot-link {
 		font-family: var(--font-sans);
@@ -389,6 +425,21 @@
 		background: var(--color-paper);
 		border: 1px solid #e2e8f0;
 		color: #475569;
+	}
+
+	/* Filter chip: the active state is driven by aria-pressed, so the
+	   filter script never swaps colour utilities around. */
+	.chip-action {
+		cursor: pointer;
+		transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+	}
+	.chip-action:hover {
+		border-color: #475569;
+	}
+	.chip[aria-pressed="true"] {
+		background: var(--color-ink);
+		border-color: var(--color-ink);
+		color: #fff;
 	}
 
 	/* Numbered marker used to index a list on a dark panel. */
@@ -461,6 +512,17 @@
 	.btn-outline-white:hover {
 		border-color: #ffffff;
 		background: #ffffff12;
+	}
+
+	/* Size variants: the only sanctioned overrides of .btn padding/type.
+	   Replaces the !px-*/!py-*/!text-* utilities that used to fight .btn. */
+	.btn-sm {
+		padding: 0.65rem 1rem;
+		font-size: 0.75rem;
+	}
+	.btn-xs {
+		padding: 0.375rem 0.5rem;
+		font-size: 0.75rem;
 	}
 
 	.form-label {
@@ -706,6 +768,45 @@
 	text-align: left;
 	outline: none;
 }
+.viewer-open:focus-visible {
+	outline: 2px solid #64748b;
+	outline-offset: 2px;
+}
+
+/* Caption badges overlaid on the viewer image. --ref is the case-ref tag;
+   --mono is the technical (pixel dimensions / window-level) readout. */
+.viewer-badge {
+	position: absolute;
+	top: 0.75rem;
+	left: 0.75rem;
+	border: 1px solid #cbd5e1;
+	background: #fffffff2;
+	padding: 0.125rem 0.5rem;
+	font-family: var(--font-sans);
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	color: #334155;
+}
+.viewer-badge--ref {
+	left: auto;
+	right: 0.75rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #475569;
+}
+.viewer-badge--mono {
+	left: auto;
+	right: 0.75rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #475569;
+}
 
 .lightbox {
 	position: fixed;
@@ -789,6 +890,30 @@
 #dv-workzone,
 #dv-workspace {
 	transition: opacity 0.2s ease;
+}
+
+/* Readout badges inside the DICOM canvas (modality, dims, W/L). */
+.dv-badge {
+	background: #020617b3;
+	backdrop-filter: blur(4px);
+	padding: 0.25rem 0.625rem;
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #94a3b8;
+}
+.dv-badge--mono {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0;
+	text-transform: none;
+}
+.dv-badge--mono.dim {
+	color: #94a3b8;
+}
+.dv-badge--mono.wl {
+	color: #cbd5e1;
 }
 
 /* ------------------------------------------------------------------ */
@@ -948,6 +1073,39 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+/* Toast notice (built by src/lib/toast.ts). One look for every kind; the
+   icon tint is fixed slate, so no per-kind colour utilities are needed. */
+.toast {
+	pointer-events: none;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	border: 1px solid #cbd5e1;
+	background: #fff;
+	padding: 0.875rem;
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.4;
+	color: var(--color-ink);
+	animation: toastSlideIn 0.22s ease-out both;
+}
+.toast-icon {
+	margin-top: 0.125rem;
+	display: flex;
+	height: 1.5rem;
+	width: 1.5rem;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	background: #f1f5f9;
+	color: #475569;
+}
+.toast-icon svg {
+	height: 0.875rem;
+	width: 0.875rem;
 }
 .toast-anim {
 	animation: toastSlideIn 0.22s ease-out both;

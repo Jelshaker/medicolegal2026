@@ -153,7 +153,8 @@ export const SITEMAP = [
 		description: "How instruction and contact work. The resource itself is free.",
 		pages: [
 			{ href: "/expert-witness", label: "Expert witness", description: "The matters in which a formal opinion can be provided." },
-			{ href: "/referrals", label: "Referrals and terms", description: "Secure referral, terms of instruction and imaging transfer." },
+			// { href: "/referrals", label: "Referrals and terms", description: "Secure referral, terms of instruction and imaging transfer." },
+			// --- REQUIRES RE-ENABLEMENT when the referral function is ready again (see src/pages/referrals.astro) ---
 			{ href: "/contact", label: "Contact", description: "Secretariat details and a secure enquiry form." },
 			{ href: "/cv", label: "Curriculum vitae", description: "Qualifications, appointments and memberships." },
 			{ href: "/disclaimer", label: "Disclaimer & terms of use", description: "General information only: not legal or medical advice, and the terms of use." },

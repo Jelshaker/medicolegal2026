@@ -25,7 +25,7 @@ import { SITE_TITLE } from '../consts';
       { href: '#specialist-focus', label: 'Specialist focus' },
       { href: '#report-types', label: 'Report types' },
       { href: '#principles', label: 'Principles applied' },
-      { href: '#expert-referral-form', label: 'Instruction' },
+      // { href: '#expert-referral-form', label: 'Instruction' }, // DEPRECATED — referral form disabled
     ]}
     audience="Written for solicitors, barristers, insurers and instructing parties."
     reviewed="September 2026"
@@ -343,9 +343,11 @@ import { SITE_TITLE } from '../consts';
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- Referral Form                                       -->
-  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- ============================================================ -->
+  <!-- DEPRECATED — Expert Referral Form (disabled pending re-use)   -->
+  <!-- To re-enable: uncomment the section below and its script.     -->
+  <!-- ============================================================ -->
+  <!--
   <section class="bg-white py-16 border-t border-slate-200" id="expert-referral-form">
     <div class="max-w-2xl mx-auto px-6">
       <span class="meta-label block">Expert Referral</span>
@@ -409,8 +411,14 @@ import { SITE_TITLE } from '../consts';
       </form>
     </div>
   </section>
+  -->
 </BaseLayout>
 
+<!-- ============================================================ -->
+<!-- DEPRECATED — Referral form submission script (disabled)       -->
+<!-- To re-enable: uncomment the script block below.               -->
+<!-- ============================================================ -->
+<!--
 <script>
   const form = document.getElementById("expert-referral-form") as HTMLFormElement | null;
   if (form) {
@@ -437,3 +445,4 @@ import { SITE_TITLE } from '../consts';
     });
   }
 </script>
+-->

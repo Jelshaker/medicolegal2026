@@ -952,10 +952,72 @@
 /* ------------------------------------------------------------------ */
 .toc-sidebar {
 	display: none;
+	overflow-wrap: break-word;
+	overflow: hidden;
 }
 .toc-card {
-	border-left: 1px solid #e2e8f0;
-	padding-left: 1rem;
+	border: 1px solid #cbd5e1;
+	border-top: none;
+	border-bottom: none;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 2px 0 8px rgba(10, 30, 50, 0.06), -2px 0 8px rgba(10, 30, 50, 0.06);
+	padding: 1rem 1rem 1rem 1rem;
+	overflow-y: auto;
+	position: relative;
+}
+/* Scroll overflow indicators — absolutely positioned chevrons overlaid on the scroll edges */
+.toc-chevron {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: none;
+	width: 100%;
+	height: 2rem;
+	z-index: 2;
+	pointer-events: none;
+	justify-content: center;
+	align-items: center;
+}
+.toc-chevron.is-visible {
+	display: flex;
+}
+.toc-chevron svg {
+	width: 0.75rem;
+	height: 0.75rem;
+	pointer-events: auto;
+	cursor: pointer;
+}
+.toc-chevron[data-toc-overflow-top] {
+	top: 0;
+	background: linear-gradient(to bottom,
+		rgba(255, 255, 255, 0.95) 0%,
+		rgba(255, 255, 255, 0.7) 60%,
+		rgba(255, 255, 255, 0) 100%);
+}
+.toc-chevron[data-toc-overflow-top] svg {
+	color: #94a3b8;
+}
+.toc-chevron[data-toc-overflow-top] svg {
+	transform: rotate(180deg);
+}
+.toc-chevron[data-toc-overflow-bottom] {
+	bottom: 0;
+	background: linear-gradient(to top,
+		rgba(255, 255, 255, 0.95) 0%,
+		rgba(255, 255, 255, 0.7) 60%,
+		rgba(255, 255, 255, 0) 100%);
+}
+.toc-chevron[data-toc-overflow-bottom] svg {
+	color: #94a3b8;
+}
+.toc-chevron.is-visible.is-active svg {
+	color: #475569;
+}
+/* Dark-blue heading — the first thing the user sees. */
+.toc-card .meta-label {
+	font-weight: 700;
+	color: #1a365d;
+	overflow-wrap: break-word;
 }
 .toc-list {
 	margin-top: 0.75rem;
@@ -972,14 +1034,18 @@
 	line-height: 1.45;
 	color: #64748b;
 	text-decoration: none;
-	padding: 0.3rem 0;
+	padding: 0.3rem 0.5rem;
+	overflow-wrap: break-word;
+	word-break: break-word;
 }
 .toc-link:hover {
 	color: #0f172a;
+	background: rgba(248, 250, 252, 0.8);
 }
 .toc-link.is-active {
-	color: #0f172a;
+	color: #1a365d;
 	font-weight: 600;
+	background: rgba(226, 232, 240, 0.5);
 }
 .toc-top {
 	display: inline-block;
@@ -991,6 +1057,7 @@
 	text-transform: uppercase;
 	color: #94a3b8;
 	text-decoration: none;
+	overflow-wrap: break-word;
 }
 .toc-top:hover {
 	color: #0f172a;
@@ -1000,12 +1067,13 @@
 		display: block;
 		position: fixed;
 		top: 50%;
-		right: 1rem;
+		right: 0;
+		bottom: 0;
 		transform: translateY(-50%);
 		z-index: 40;
 		width: 13.5rem;
+		max-width: 13.5rem;
 		max-height: 70vh;
-		overflow-y: auto;
 	}
 }
 

@@ -3,9 +3,15 @@ const title = "On this page";
 ---
 <aside data-toc-sidebar class="toc-sidebar" aria-label="Page navigation">
   <nav aria-label={title} class="toc-card">
+    <svg class="toc-chevron" data-toc-overflow-top viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 12l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     <p class="meta-label" aria-hidden="true">{title}</p>
     <ul class="toc-list" data-toc-list></ul>
     <a href="#top" class="toc-top" data-toc-top hidden>Back to top</a>
+    <svg class="toc-chevron" data-toc-overflow-bottom viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </nav>
 </aside>
 <script>
@@ -72,5 +78,27 @@ const title = "On this page";
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
+
+    // Scroll overflow chevrons — show when content exceeds viewport height
+    const card = tocSidebar.querySelector("[data-toc-list]").parentElement;
+    const overflowTop = tocSidebar.querySelector("[data-toc-overflow-top]");
+    const overflowBottom = tocSidebar.querySelector("[data-toc-overflow-bottom]");
+    const hasScroll = card.scrollHeight > card.clientHeight;
+    if (hasScroll) {
+      const updateChevrons = () => {
+        const atTop = card.scrollTop === 0;
+        const atBottom = card.scrollTop + card.clientHeight >= card.scrollHeight - 1;
+        overflowTop.classList.toggle("is-visible", !atTop);
+        overflowBottom.classList.toggle("is-visible", !atBottom);
+      };
+      card.addEventListener("scroll", updateChevrons, { passive: true });
+      updateChevrons();
+      if (overflowTop) overflowTop.addEventListener("click", () => {
+        card.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      });
+      if (overflowBottom) overflowBottom.addEventListener("click", () => {
+        card.scrollTo({ top: card.scrollHeight, behavior: reduce ? "auto" : "smooth" });
+      });
+    }
   }
 </script>

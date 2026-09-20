@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { SITE_TITLE };
+import { SITE_TITLE } from '../consts';
 ---
 
 <!--
@@ -13,7 +13,7 @@ import { SITE_TITLE };
   re-enabled when the feature is needed again).
 
   To re-enable in the future:
-    1. Restore the original page content below (between the <!-- --> markers).
+    1. Restore the original page content below (between the <!- - - -> markers).
     2. Re-enable src/pages/api/referrals.ts (the POST endpoint).
     3. Re-add the "/referrals" entry to NAVIGATION_LINKS in src/consts.ts.
     4. Re-add the footer link and sitemap entry for /referrals.

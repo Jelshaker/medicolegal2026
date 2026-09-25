@@ -203,3 +203,10 @@ dist
 
 # clerk configuration (can include secrets)
 /.clerk/
+
+### Generated image derivatives ###
+# WebP ladder written by scripts/optimise-images.mjs (run by prebuild/predev).
+# Regenerated on demand, so not committed — the manifest that describes it,
+# src/data/image-manifest.ts, IS committed so the imports always resolve.
+public/images/opt/
+

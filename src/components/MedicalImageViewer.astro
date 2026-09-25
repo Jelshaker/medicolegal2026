@@ -2,6 +2,14 @@
 // Interactive medical image card with an embedded Lightbox modal.
 // Supports high-res zoom (wheel / pinch + pan), captioning, modality badges,
 // case reference numbers and detailed radiological descriptions.
+//
+// Both bitmaps go through the responsive pipeline
+// (`scripts/optimise-images.mjs`): the card fetches a width-appropriate WebP,
+// and the lightbox loads the largest derivative — enough to inspect the image
+// without shipping the multi-megabyte camera original.
+import { imageLargest } from "../lib/images";
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 interface Props {
 	src: string;
 	alt: string;
@@ -10,10 +18,22 @@ interface Props {
 	modality?: string;
 	caseReference?: string;
 	radiologicalCaption?: string;
+	/** How wide the card is displayed — decides which derivative is fetched. */
+	sizes?: string;
 }
 
-const { src, alt, caption, subtitle = "", modality = "CT / MRI", caseReference, radiologicalCaption = "" } = Astro.props as Props;
+const {
+	src,
+	alt,
+	caption,
+	subtitle = "",
+	modality = "CT / MRI",
+	caseReference,
+	radiologicalCaption = "",
+	sizes = "(min-width: 1024px) 768px, 100vw",
+} = Astro.props as Props;
 const uid = "v" + Math.random().toString(36).slice(2, 10);
+const fullSizeSrc = imageLargest(src);
 ---
 
 <div
@@ -27,10 +47,10 @@ const uid = "v" + Math.random().toString(36).slice(2, 10);
 		aria-haspopup="dialog"
 		aria-label={`Open image viewer: ${caption}`}
 	>
-		<img
+		<ResponsiveImage
 			src={src}
 			alt={alt}
-			loading="lazy"
+			sizes={sizes}
 			class="h-full w-full object-cover"
 		/>
 		<span
@@ -82,7 +102,7 @@ const uid = "v" + Math.random().toString(36).slice(2, 10);
 
 		<!-- Image stage -->
 		<div class="lightbox-stage">
-			<img src={src} alt={alt} class="lightbox-img" data-lightbox-img draggable="false" />
+			<img src={fullSizeSrc} alt={alt} class="lightbox-img" data-lightbox-img draggable="false" decoding="async" />
 		</div>
 
 		<!-- Caption area -->

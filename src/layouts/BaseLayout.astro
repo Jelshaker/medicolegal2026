@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import TocSidebar from "../components/TocSidebar.astro";
 import type { ArticleMeta } from "../lib/seo";
+import { GTM_ID, gtmNoscriptSrc } from "../lib/google-tags";
 
 // Shared document shell for all pages. Pages supply their own <main> content
 // through the default slot and an optional `bones` slot rendered before </body>.
@@ -12,6 +13,10 @@ import type { ArticleMeta } from "../lib/seo";
 // canonical URL, OpenGraph/Twitter tags, robots directives and JSON-LD — see it
 // for what each one does. CookieConsent renders the UK GDPR/PECR cookie banner
 // on every page using this layout.
+//
+// The one thing BaseHead cannot own is the Google Tag Manager <noscript>
+// fallback: an iframe belongs in the document body, not the head, so it is
+// emitted here as the first element in <body> (as GTM's instructions place it).
 
 interface Props {
 	title: string;
@@ -38,6 +43,22 @@ const { title, description, canonical, image, noindex, article } = Astro.props a
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col">
+		{/* GTM's no-JavaScript fallback, first in <body> as Google's snippet
+		     places it. The page already renders without JavaScript; this only
+		     adds the container's pixel. */}
+		{
+			GTM_ID && (
+				<noscript>
+					<iframe
+						src={gtmNoscriptSrc(GTM_ID)}
+						height="0"
+						width="0"
+						style="display:none;visibility:hidden"
+						title="Google Tag Manager"
+					/>
+				</noscript>
+			)
+		}
 		<Header />
 		<TocSidebar />
 		<main class="flex-1">

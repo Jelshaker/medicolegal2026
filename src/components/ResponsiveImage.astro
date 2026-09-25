@@ -1,0 +1,71 @@
+---
+// A `<picture>` around the responsive WebP derivatives produced by
+// `scripts/optimise-images.mjs`, with the original JPEG/PNG as the fallback
+// `src`. Every raster image on the site should be rendered through this
+// component: it is the single place that pairs modern-format delivery with the
+// layout hints (`width`/`height`, `loading`, `decoding`) that keep Core Web
+// Vitals healthy.
+//
+// The `<picture>` itself is `display: contents`, so the `<img>` behaves as a
+// direct child of whatever container (grid cell, aspect-ratio box, flex row) the
+// component is dropped into — no wrapper element to style around.
+import { imageRecord, imageSrcSet } from "../lib/images";
+
+interface Props {
+	/** Public path of the source image, e.g. "/images/ct_scanner.jpg". */
+	src: string;
+	alt: string;
+	/** How wide the image is displayed — decides which derivative is fetched. */
+	sizes?: string;
+	/** Applied to the `<img>`. */
+	class?: string;
+	loading?: "eager" | "lazy";
+	decoding?: "sync" | "async" | "auto";
+	fetchpriority?: "high" | "low" | "auto";
+	/** Restrict the ladder to these widths, e.g. `[768, 1440]`. */
+	widths?: number[];
+}
+
+const {
+	src,
+	alt,
+	sizes = "(min-width: 1024px) 768px, 100vw",
+	class: className = "",
+	loading = "lazy",
+	decoding = "async",
+	fetchpriority,
+	widths,
+} = Astro.props as Props;
+
+const record = imageRecord(src);
+const srcset = imageSrcSet(src, widths);
+---
+
+{
+	srcset ? (
+		<picture class="contents">
+			<source type="image/webp" srcset={srcset} sizes={sizes} />
+			<img
+				src={src}
+				alt={alt}
+				width={record?.width}
+				height={record?.height}
+				loading={loading}
+				decoding={decoding}
+				fetchpriority={fetchpriority}
+				class={className}
+			/>
+		</picture>
+	) : (
+		// No derivatives (SVG placeholders, or an image added since the last
+		// pipeline run): deliver the file as-is.
+		<img
+			src={src}
+			alt={alt}
+			loading={loading}
+			decoding={decoding}
+			fetchpriority={fetchpriority}
+			class={className}
+		/>
+	)
+}

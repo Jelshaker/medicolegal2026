@@ -9,6 +9,7 @@ import {
 } from "../consts";
 import type { ArticleMeta } from "../lib/seo";
 import { CONSENT_DEFAULTS } from "../lib/consent";
+import { GA_TAG_ID, GTM_ID, GOOGLE_TAGS_ENABLED, gtmLoader } from "../lib/google-tags";
 
 interface Props {
 	title?: string;
@@ -50,51 +51,39 @@ const canonical = new URL(canonicalOverride ?? canonicalPath, site);
 const socialImage = new URL(image, site);
 const siteUrl = new URL("/", site).toString();
 
-// Google Analytics 4 behind Google Consent Mode v2 (UK GDPR / PECR).
-// `PUBLIC_` variables are inlined at build time, so one build-time value
-// reaches prerendered pages (`/recent-developments/*`, `/sitemap`) and
-// server-rendered pages alike — see `.env.example`. The documented placeholder
-// is rejected so a copy-paste can never ship hits to a measurement ID that
-// does not exist.
+// Google tags — GA4 directly, or a GTM container (see src/lib/google-tags.ts
+// for how the two are chosen and why only one loads).
 //
 // Consent behaviour (see src/components/CookieConsent.astro and
 // src/lib/consent.ts): every page emits the default-denied Consent Mode state
-// BEFORE gtag.js loads, so no analytics cookie or identifier can be set until
+// BEFORE any tag loads, so no analytics cookie or identifier can be set until
 // the visitor clicks "Accept analytics". Accepting fires a `consent update`
 // that grants `analytics_storage`; rejecting (or ignoring the banner) leaves
-// the defaults in place and GA4 stays inert, sending no hits.
-const rawGaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
-const gaId =
-	rawGaId && rawGaId !== "G-XXXXXXXXXX" && /^G-[A-Z0-9]{4,}$/i.test(rawGaId)
-		? rawGaId
-		: undefined;
-
-// Search Console ownership token. Omitted entirely when unset, rather than the
-// literal "XXXXX" placeholder that used to be emitted on every page.
+// the defaults in place and the tags stay inert, sending no hits.
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 
 // gtag bootstrap. Built here rather than inside the tag because the contents of
 // an `is:inline` script are emitted verbatim by Astro — an interpolation written
-// inside the script would ship the literal text `${gaId}` to the browser, which
+// inside the script would ship the literal text `${id}` to the browser, which
 // would silently configure the wrong property ID. `set:html` in the markup
 // injects this already-interpolated string instead.
 //
 // `consent default` (always emitted) vs `config` (only when a real ID exists).
-// Order matters: the `consent default` must execute BEFORE gtag.js loads —
-// Google's own requirement — so it is a separate inline script placed first.
+// Order matters: the `consent default` must execute BEFORE any Google tag loads
+// — Google's own requirement — so it is a separate inline script placed first.
 // The `config` call stays after the external tag. With `analytics_storage:
 // denied`, that config cannot set cookies or send identifiers; it only takes
 // effect once CookieConsent.astro fires a `consent update` after accept.
 //
-// The defaults script is unconditional (not gated on `gaId`): the dataLayer/
-// gtag stub and the denied defaults must exist on every page so that a stored
-// "accept" can safely call `gtag('consent','update',…)` and so that nothing can
-// load a Google tag ahead of the defaults later.
+// The defaults script is unconditional (not gated on an ID being configured):
+// the dataLayer/gtag stub and the denied defaults must exist on every page so
+// that a stored "accept" can safely call `gtag('consent','update',…)` and so
+// that nothing can load a Google tag ahead of the defaults later.
 const gaConsentDefaults = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', ${JSON.stringify(CONSENT_DEFAULTS)});`;
 const gaConfig = `gtag('js', new Date());
-gtag('config', '${gaId}', { anonymize_ip: true });`;
+gtag('config', '${GA_TAG_ID}', { anonymize_ip: true });`;
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@graph": [
@@ -224,15 +213,32 @@ const jsonLd = {
 	rel="stylesheet"
 />
 
+{/* Warm the connection the Google tag will use on every page view. Only when a
+     tag is actually configured: an unconditional preconnect would open a
+     connection to Google (and so disclose the visitor's IP) even on a build
+     with no analytics. No cookies or identifiers are involved. */}
+{
+	GOOGLE_TAGS_ENABLED && (
+		<>
+			<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+			<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		</>
+	)
+}
+
 
 {/* Google Consent Mode v2 defaults — emitted on EVERY page, whether or not a
-     GA4 ID is configured. This defines the dataLayer/gtag stub and records
+     Google tag is configured. This defines the dataLayer/gtag stub and records
      default-denied consent before anything else can push to the dataLayer, per
-     Google's spec. When PUBLIC_GA_MEASUREMENT_ID holds a real ID the gtag.js
-     tag and config below load behind these defaults, so GA4 is inert until
-     CookieConsent.astro records an accept. The CSP in
-     src/lib/security-headers.ts and public/_headers permits the GA4 hosts;
+     Google's spec. The Google tags below load behind these defaults, so they
+     are inert until CookieConsent.astro records an accept. The CSP in
+     src/lib/security-headers.ts and public/_headers permits the Google hosts;
      extend both if you add another tag. */}
 <script is:inline set:html={gaConsentDefaults}></script>
-{gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
-{gaId && <script is:inline set:html={gaConfig}></script>}
+
+{/* Google tags, placed after the consent defaults and before the closing head.
+     A GTM container and the direct GA4 tag never both load — see
+     src/lib/google-tags.ts. Both are `async` so they cannot block rendering. */}
+{GTM_ID && <script is:inline set:html={gtmLoader(GTM_ID)}></script>}
+{GA_TAG_ID && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TAG_ID}`}></script>}
+{GA_TAG_ID && <script is:inline set:html={gaConfig}></script>}

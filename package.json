@@ -8,7 +8,10 @@
 	"private": true,
 	"scripts": {
 		"astro": "astro",
+		"images": "node scripts/optimise-images.mjs",
+		"predev": "npm run images",
 		"dev": "astro dev",
+		"prebuild": "npm run images",
 		"build": "astro build",
 		"preview": "astro build && wrangler dev",
 		"check": "astro build && tsc && wrangler deploy --dry-run",
@@ -25,6 +28,7 @@
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
+		"sharp": "^0.34.5",
 		"wrangler": "4.128.0"
 	}
 }

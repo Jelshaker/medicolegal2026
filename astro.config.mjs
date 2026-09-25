@@ -43,6 +43,14 @@ export default defineConfig({
 			enabled: true,
 		},
 	}),
+	// Internal navigation is the most common action on a reference site, so links
+	// are fetched as they scroll into view (`viewport`) and served from the
+	// browser cache on click. Astro injects a ~1 kB script for this; the payload
+	// it fetches is small now that images are served from the optimised ladder.
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: "viewport",
+	},
 	vite: {
 		plugins: [tailwindcss()],
 	},

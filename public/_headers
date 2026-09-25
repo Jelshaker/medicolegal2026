@@ -1,10 +1,41 @@
 # Cloudflare consults this file for STATIC ASSETS only. Server-rendered pages get
 # the same policy from src/middleware.ts (see src/lib/security-headers.ts), so
 # keep the two in step when either changes.
+#
+# The blocks below run general -> specific: the catch-all security block first,
+# then the tighter caching rule for individual paths. Each header line must keep
+# its two-space indentation, and rules that share a block must not be separated
+# by a blank line.
+#
+# On caching: Cloudflare does not apply a long browser cache to assets by
+# default, so repeat visitors revalidate every image. The rules below replace
+# that with an explicit policy — a year and `immutable` for anything whose file
+# name carries a content hash (Astro's /_astro output, and the /images/opt
+# derivatives written by scripts/optimise-images.mjs), and a week plus
+# stale-while-revalidate for the original photographs, which keep stable names
+# and can therefore be replaced in place.
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net; frame-src https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+# Astro's bundled CSS/JS output — content-hashed file names.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Original photographs and the social preview image (stable, readable names).
+/images/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Optimised WebP derivatives: name.<source-hash>-<width>.webp, so a changed
+# source always yields a new URL. Listed after /images/* as the tighter rule.
+/images/opt/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Vendored DICOM parser — deliberately not fingerprinted, and small.
+/vendor/*
+  Cache-Control: public, max-age=604800

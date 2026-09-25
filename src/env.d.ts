@@ -3,6 +3,7 @@
 interface ImportMetaEnv {
 	readonly PUBLIC_SITE_URL?: string;
 	readonly PUBLIC_GA_MEASUREMENT_ID?: string;
+	readonly PUBLIC_GTM_ID?: string;
 	readonly PUBLIC_GOOGLE_SITE_VERIFICATION?: string;
 	readonly PUBLIC_CLERK_PUBLISHABLE_KEY?: string;
 	readonly CLERK_SECRET_KEY?: string;

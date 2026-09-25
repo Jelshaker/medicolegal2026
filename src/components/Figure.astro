@@ -6,10 +6,14 @@
 // If `src` is supplied the plate renders the photograph. If it is omitted the
 // default slot is shown inside the reserved area, which is how the drawn
 // schematics in Diagram.astro are placed.
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 interface Props {
 	/** Photograph to render. Omit to render the slotted graphic instead. */
 	src?: string;
 	alt?: string;
+	/** How wide the plate is displayed — decides which derivative is fetched. */
+	sizes?: string;
 	/** Plate number, e.g. "Plate 01" or "Figure 3". */
 	label?: string;
 	/** The line that says what the reader is looking at. */
@@ -28,6 +32,7 @@ interface Props {
 const {
 	src,
 	alt = "",
+	sizes = "(min-width: 1024px) 1024px, 100vw",
 	label = "",
 	caption = "",
 	subtitle = "",
@@ -51,7 +56,7 @@ const ratioClass: Record<NonNullable<Props["ratio"]>, string> = {
 		<div class={`relative overflow-hidden ${ratioClass[ratio]}`}>
 			{
 				src ? (
-					<img src={src} alt={alt} loading="lazy" class="h-full w-full object-cover" />
+					<ResponsiveImage src={src} alt={alt} sizes={sizes} class="h-full w-full object-cover" />
 				) : (
 					<slot />
 				)

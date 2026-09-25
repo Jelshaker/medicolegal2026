@@ -9,17 +9,20 @@
 // **Keep the two in step** — if you add a tag, font or endpoint, update the CSP
 // here and the single-line copy in `public/_headers`.
 
-// Google Analytics 4 needs `www.googletagmanager.com` for the tag script and the
-// google-analytics.com hosts for collection requests. `'unsafe-inline'` is
-// required by the gtag bootstrap and by the small inline page scripts (viewer
-// setup, comment posting, the login form handler).
+// Google tags need `www.googletagmanager.com` for the tag script, for Tag
+// Manager's container fetch (a `connect-src` request) and for its no-JavaScript
+// iframe (`frame-src`); the google-analytics.com hosts receive the collection
+// requests. `'unsafe-inline'` is required by the gtag/GTM bootstrap and by the
+// small inline page scripts (viewer setup, comment posting, the login form
+// handler).
 export const CONTENT_SECURITY_POLICY = [
 	"default-src 'self'",
 	"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com",
 	"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 	"img-src 'self' data: blob: https:",
 	"font-src 'self' https://fonts.gstatic.com",
-	"connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net",
+	"connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net",
+	"frame-src https://www.googletagmanager.com",
 	"frame-ancestors 'none'",
 	"base-uri 'self'",
 	"form-action 'self'",

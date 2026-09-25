@@ -38,12 +38,13 @@ const gradient = heroImage
 	: "transparent";
 
 // Mobile and small tablets, desk/laptop, then large desktop — chosen to match
-// the three breakpoints in the <style> block below.
+// the three breakpoints in the <style> block below. Single quotes inside url()
+// keep Astro from having to escape the attribute value.
 const background = heroImage
 	? [
-			`--hero-sm: url("${imageAtWidth(heroImage, 1024)}")`,
-			`--hero-md: url("${imageAtWidth(heroImage, 1440)}")`,
-			`--hero-lg: url("${imageAtWidth(heroImage, 1920)}")`,
+			`--hero-sm: url('${imageAtWidth(heroImage, 1024)}')`,
+			`--hero-md: url('${imageAtWidth(heroImage, 1440)}')`,
+			`--hero-lg: url('${imageAtWidth(heroImage, 1920)}')`,
 		].join("; ")
 	: undefined;
 ---

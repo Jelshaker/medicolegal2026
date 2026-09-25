@@ -100,6 +100,11 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 				"w": 480,
 				"h": 720,
 				"file": "consult-room.1d05fae8-480.webp"
+			},
+			{
+				"w": 600,
+				"h": 900,
+				"file": "consult-room.1d05fae8-600.webp"
 			}
 		]
 	},
@@ -250,6 +255,11 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 				"w": 1024,
 				"h": 538,
 				"file": "og-default.948601a4-1024.webp"
+			},
+			{
+				"w": 1200,
+				"h": 630,
+				"file": "og-default.948601a4-1200.webp"
 			}
 		]
 	},
@@ -1035,6 +1045,11 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 				"w": 768,
 				"h": 512,
 				"file": "portrait-dr.4492052b-768.webp"
+			},
+			{
+				"w": 900,
+				"h": 600,
+				"file": "portrait-dr.4492052b-900.webp"
 			}
 		]
 	},
@@ -1057,6 +1072,11 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 				"w": 1024,
 				"h": 683,
 				"file": "reporting-room.30f65b29-1024.webp"
+			},
+			{
+				"w": 1280,
+				"h": 854,
+				"file": "reporting-room.30f65b29-1280.webp"
 			}
 		]
 	},

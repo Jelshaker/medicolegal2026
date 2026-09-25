@@ -167,10 +167,11 @@ async function main() {
 		const { width, height } = await sharp(contents).metadata();
 		const name = path.basename(source, path.extname(source));
 
-		// Never upscale: the ladder stops at the source width, and an image
-		// narrower than the smallest step still gets a single derivative.
-		const targets = WIDTHS.filter((w) => w <= Math.min(width, MAX_WIDTH));
-		if (targets.length === 0) targets.push(Math.min(width, MAX_WIDTH));
+		// Never upscale: the ladder stops at the source width. The source width
+		// itself is always included, so a small image (say 600 px wide) still
+		// gets a native-resolution derivative rather than only a shrunken one.
+		const ceiling = Math.min(width, MAX_WIDTH);
+		const targets = [...new Set([...WIDTHS.filter((w) => w <= ceiling), ceiling])].sort((a, b) => a - b);
 
 		const variants = [];
 		for (const target of targets) {

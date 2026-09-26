@@ -1079,17 +1079,21 @@
 .toc-top:hover {
 	color: #0f172a;
 }
+/* Page hero needs no special stacking — the TOC rail is positioned with JS
+   just below it and rides up as the page scrolls (see TocSidebar script). */
 @media (min-width: 80rem) {
+	/* Docked rail: fixed to the right edge. Its `top` is set by JS each
+	   frame — glued just under the hero image while the hero is visible,
+	   then clamped under the sticky header once the hero scrolls away. */
 	.toc-sidebar.is-ready {
 		display: block;
 		position: fixed;
-		top: 50%;
 		right: 0;
-		bottom: 0;
-		transform: translateY(-50%);
 		z-index: 40;
 		width: 13.5rem;
 		max-width: 13.5rem;
+	}
+	.toc-sidebar.is-ready .toc-card {
 		max-height: 70vh;
 	}
 }

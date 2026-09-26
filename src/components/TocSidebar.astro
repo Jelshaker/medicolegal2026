@@ -47,6 +47,38 @@ const title = "On this page";
     } else {
       tocSidebar.classList.add("is-ready");
       if (top) top.hidden = false;
+      // Dock the rail just under the hero image while the hero is on
+      // screen, then let it ride up and clamp under the sticky header as
+      // the page scrolls. rAF-throttled so it tracks smoothly; disabled
+      // below the wide breakpoint where the rail is display:none anyway.
+      const hero = document.querySelector("[data-page-hero]");
+      const mq = window.matchMedia("(min-width: 80rem)");
+      const dockToc = () => {
+        if (!mq.matches) {
+          tocSidebar.style.top = "";
+          return;
+        }
+        const header = document.querySelector("header");
+        const headerH = header ? header.getBoundingClientRect().height : 76;
+        const heroBottom = hero ? hero.getBoundingClientRect().bottom : -Infinity;
+        // While the hero is visible, sit ~1rem below its bottom edge;
+        // once it scrolls past, park just under the sticky header.
+        const top = Math.max(heroBottom + 16, headerH + 16);
+        tocSidebar.style.top = `${Math.round(top)}px`;
+      };
+      let dockQueued = false;
+      const queueDock = () => {
+        if (dockQueued) return;
+        dockQueued = true;
+        requestAnimationFrame(() => {
+          dockQueued = false;
+          dockToc();
+        });
+      };
+      dockToc();
+      window.addEventListener("scroll", queueDock, { passive: true });
+      window.addEventListener("resize", queueDock);
+      if (mq.addEventListener) mq.addEventListener("change", dockToc);
     }
     links.forEach((a) => {
       a.addEventListener("click", (e) => {

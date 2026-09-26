@@ -12,7 +12,10 @@
 //
 // Props
 //   heroImage   — URL path to a hero image (optional)
-//   darkOverlay — strength of the dark gradient; default 0.65 (0–1)
+//   darkOverlay — soft veil over the photo so the card edge never sits on a
+//                 hard bright line; default 0.30 (0–1). Kept low on purpose —
+//                 readability now comes from the card (options 4/5/6), not from
+//                 darkening the whole photo.
 import { imageAtWidth } from "../lib/images";
 
 interface Props {
@@ -28,14 +31,23 @@ const {
 	title,
 	description = "",
 	heroImage,
-	darkOverlay = 0.65,
+	darkOverlay = 0.3,
 } = Astro.props as Props;
 
-// Dark gradient — strong at the top where the text sits (0.75),
-// then fades to clear near the bottom so the image bleeds into the section below.
+// Clamped veil strength — subtle by design.
+const o = Math.min(Math.max(darkOverlay, 0), 1);
+const oTop = (o * 0.9).toFixed(2);
+const oMid = o.toFixed(2);
+const oLow = (o * 0.45).toFixed(2);
+
+// (4) Tame the photo, don't bury it — a light top-to-bottom veil that is
+// strongest where the card sits and falls to clear so the image bleeds
+// brightly into the section below. No near-black stop anywhere.
 const gradient = heroImage
-	? `linear-gradient(to bottom, rgba(2 6 23 / 0.75) 0%, rgba(2 6 23 / 0.70) 25%, rgba(2 6 23 / 0.40) 55%, rgba(2 6 23 / 0) 100%)`
+	? `linear-gradient(to bottom, rgba(2 6 23 / ${oTop}) 0%, rgba(2 6 23 / ${oMid}) 35%, rgba(2 6 23 / ${oLow}) 65%, rgba(2 6 23 / 0) 100%)`
 	: "transparent";
+
+const overlayBackground = heroImage ? gradient : undefined;
 
 // Mobile and small tablets, desk/laptop, then large desktop — chosen to match
 // the three breakpoints in the <style> block below. Single quotes inside url()
@@ -52,44 +64,149 @@ const background = heroImage
 <section data-page-hero
 	class:list={[
 		"relative overflow-hidden border-b border-slate-300",
-		heroImage ? "hero-plate min-h-[36rem] sm:min-h-[42rem]" : "py-14 sm:py-16",
+		heroImage ? "hero-plate flex min-h-[30rem] flex-col justify-center sm:min-h-[34rem]" : "py-14 sm:py-16",
 	]}
 	style={background}
 >
-	<!-- Dark gradient overlay — scrolls normally, so it "clears away" as the user scrolls down -->
+	<!-- Light veil — scrolls normally, so it "clears away" as the user scrolls down -->
 	{heroImage && (
 		<div
 			class="absolute inset-0"
-			style={`background: ${gradient};`}
+			style={`background: ${overlayBackground};`}
 			aria-hidden="true"
 		/>
 	)}
 
-	<!-- Content — centred vertically, pushed lower for breathing room -->
-	<div class="container-page relative z-10 py-32 sm:py-40">
-		<div class="doc text-center mx-auto">
-			{eyebrow && <p class="meta-label text-slate-300">{eyebrow}</p>}
-			<h1 class="mt-5 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl text-balance break-words" style="text-shadow: 0 2px 8px rgba(0 0 0 / 0.5);">
+	<!-- Content centred on the plate, inside a soft scrim so faces/detail show through -->
+	<div class="container-page relative z-10 py-20 sm:py-24">
+		<div class="hero-scrim">
+			{eyebrow && (
+				<p class="hero-eyebrow">
+					<span class="hero-eyebrow-pill">{eyebrow}</span>
+				</p>
+			)}
+			<h1 class="hero-title">
 				{title}
 			</h1>
-			{description && <p class="standfirst mx-auto mt-4 text-slate-200/90" style="text-shadow: 0 1px 4px rgba(0 0 0 / 0.4);">{description}</p>}
+			{description && <p class="hero-standfirst">{description}</p>}
 			<slot />
 		</div>
 	</div>
 </section>
 
 <style>
+	/* Soft scrim, not a card — plain translucent wash, NO backdrop-filter.
+	   backdrop-filter on an element under a sticky header is what painted a
+	   1px seam / ghost line across the page on hover/select repaint in
+	   Chromium. Solid rgba keeps contrast on white photos without any GPU
+	   compositing, so there is nothing to tear. Rounded corners soften edge. */
+	.hero-scrim {
+		margin-inline: auto;
+		width: 100%;
+		max-width: 44rem;
+		padding: 2rem 1.5rem;
+		text-align: center;
+		isolation: isolate;
+		background: rgba(2 6 23 / 0.62);
+		border: 1px solid rgba(255 255 255 / 0.16);
+		border-radius: 1.25rem;
+	}
+	@media (min-width: 640px) {
+		.hero-scrim {
+			padding: 2.5rem 3rem;
+		}
+	}
+	@media (min-width: 70rem) {
+		.hero-scrim {
+			max-width: 52rem;
+		}
+	}
+	/* Eyebrow as a small ghost pill — sits on the scrim, not the photo. */
+	.hero-eyebrow {
+		margin: 0;
+	}
+	.hero-eyebrow-pill {
+		display: inline-block;
+		font-family: var(--font-sans);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: #fff;
+		background: rgba(255 255 255 / 0.12);
+		border: 1px solid rgba(255 255 255 / 0.28);
+		border-radius: 999px;
+		padding: 0.45rem 0.9rem;
+		text-shadow: 0 1px 2px rgba(0 0 0 / 0.9);
+	}
+	.hero-title {
+		margin-top: 1.25rem;
+		font-family: var(--font-serif);
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 1.15;
+		color: #fff;
+		overflow-wrap: anywhere;
+		text-wrap: balance;
+		text-shadow:
+			0 1px 2px rgba(0 0 0 / 0.9),
+			0 2px 12px rgba(0 0 0 / 0.7);
+	}
+	@media (min-width: 640px) {
+		.hero-title {
+			font-size: 3rem;
+		}
+	}
+	@media (min-width: 768px) {
+		.hero-title {
+			font-size: 3.5rem;
+		}
+	}
+	.hero-standfirst {
+		margin-top: 1rem;
+		margin-inline: auto;
+		max-width: 48rem;
+		font-family: var(--font-serif);
+		font-size: 1.05rem;
+		font-weight: 400;
+		line-height: 1.625;
+		color: rgba(255 255 255 / 0.92);
+		text-wrap: pretty;
+		text-shadow: 0 1px 8px rgba(0 0 0 / 0.8);
+	}
+	@media (min-width: 70rem) {
+		.hero-standfirst {
+			max-width: 56rem;
+		}
+	}
+	/* Slotted links (e.g. home hero cross-links) sit on the scrim — keep
+	   them white with a soft shadow. Pages keep using class="link-hero". */
+	.hero-scrim :global(.link-hero) {
+		color: #fff;
+		text-decoration-color: rgba(255 255 255 / 0.45);
+		text-shadow: 0 1px 6px rgba(0 0 0 / 0.8);
+	}
+	.hero-scrim :global(.link-hero:hover) {
+		color: #f1f5f9;
+		text-decoration-color: rgba(255 255 255 / 0.8);
+	}
+	.hero-scrim :global(.divider) {
+		border-color: rgba(255 255 255 / 0.22);
+	}
 	/* Hero plate: a parallax background served from the responsive ladder.
 	   Slate-950 sits underneath so there is no flash of white while the WebP
 	   downloads. The custom properties come from the component's inline style
 	   (see `background` above) — media queries cannot read them, but they can
 	   swap which variable is used. */
+	/* (4) Calmer photo behind the scrim — plain scroll background (fixed
+	   attachment is what tore/left trails under the sticky header).
+	   background-position kept high so faces stay above the centred scrim. */
 	.hero-plate {
 		background-color: #020617;
 		background-image: var(--hero-sm);
-		background-position: center;
+		background-position: center 30%;
 		background-size: cover;
-		background-attachment: fixed;
+		background-attachment: scroll;
 	}
 
 	@media (min-width: 768px) {

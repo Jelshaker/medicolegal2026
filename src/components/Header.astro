@@ -34,11 +34,13 @@ const isActive = (href: string) =>
                         <a
                             href={link.href}
                             class:list={[
-                                "relative py-1 font-sans text-[0.8rem] font-medium tracking-wide transition-colors duration-200",
-                                "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-slate-900 after:transition-transform after:duration-300 hover:after:scale-x-100",
+                                // Underline is a real border on the link itself, not an
+                                // ::after pseudo — pseudos under a sticky header repainted
+                                // as a full-width streak across the bar on hover/active.
+                                "border-b-2 py-1 font-sans text-[0.8rem] font-medium tracking-wide transition-colors duration-200",
                                 isActive(link.href)
-                                    ? "text-slate-900 after:scale-x-100"
-                                    : "text-slate-600 hover:text-slate-900",
+                                    ? "border-slate-900 text-slate-900"
+                                    : "border-transparent text-slate-600 hover:border-slate-400 hover:text-slate-900",
                             ]}
                         >
                             {link.label}

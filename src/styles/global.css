@@ -971,6 +971,7 @@
 	display: none;
 	overflow-wrap: break-word;
 	overflow: hidden;
+	position: relative;
 }
 .toc-card {
 	border: 1px solid #cbd5e1;
@@ -978,7 +979,7 @@
 	border-bottom: none;
 	background: rgba(255, 255, 255, 0.92);
 	box-shadow: 2px 0 8px rgba(10, 30, 50, 0.06), -2px 0 8px rgba(10, 30, 50, 0.06);
-	padding: 1rem 1rem 1rem 1rem;
+	padding: 2rem 1rem 2rem 1rem;
 	overflow-y: auto;
 	position: relative;
 }

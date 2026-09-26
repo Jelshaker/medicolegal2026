@@ -2,17 +2,17 @@
 const title = "On this page";
 ---
 <aside data-toc-sidebar class="toc-sidebar" aria-label="Page navigation">
+  <svg class="toc-chevron" data-toc-overflow-top viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path d="M5 12l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
   <nav aria-label={title} class="toc-card">
-    <svg class="toc-chevron" data-toc-overflow-top viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M5 12l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
     <p class="meta-label" aria-hidden="true">{title}</p>
     <ul class="toc-list" data-toc-list></ul>
     <a href="#top" class="toc-top" data-toc-top hidden>Back to top</a>
-    <svg class="toc-chevron" data-toc-overflow-bottom viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
   </nav>
+  <svg class="toc-chevron" data-toc-overflow-bottom viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </aside>
 <script>
   const tocSidebar = document.querySelector("[data-toc-sidebar]");
@@ -111,19 +111,29 @@ const title = "On this page";
       window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
 
-    // Scroll overflow chevrons — show when content exceeds viewport height
+    // Scroll overflow chevrons — show based on page scroll position so the
+    // bottom chevron stays visible while the page hasn't reached the end,
+    // and hides only when the user scrolls all the way to the bottom of the
+    // page (or when the TOC card itself is not scrollable).
     const card = tocSidebar.querySelector("[data-toc-list]").parentElement;
     const overflowTop = tocSidebar.querySelector("[data-toc-overflow-top]");
     const overflowBottom = tocSidebar.querySelector("[data-toc-overflow-bottom]");
     const hasScroll = card.scrollHeight > card.clientHeight;
     if (hasScroll) {
       const updateChevrons = () => {
+        // Top chevron: visible when the TOC card itself has scrolled down
         const atTop = card.scrollTop === 0;
-        const atBottom = card.scrollTop + card.clientHeight >= card.scrollHeight - 1;
         overflowTop.classList.toggle("is-visible", !atTop);
-        overflowBottom.classList.toggle("is-visible", !atBottom);
+        // Bottom chevron: visible when the page has not yet reached its
+        // absolute bottom (scrollY + innerHeight < documentHeight), so the
+        // arrow stays on screen until the very bottom of the page is reached.
+        const docHeight = document.documentElement.scrollHeight;
+        const atPageBottom = window.scrollY + window.innerHeight >= docHeight - 2;
+        overflowBottom.classList.toggle("is-visible", !atPageBottom);
       };
+      window.addEventListener("scroll", updateChevrons, { passive: true });
       card.addEventListener("scroll", updateChevrons, { passive: true });
+      window.addEventListener("resize", updateChevrons);
       updateChevrons();
       if (overflowTop) overflowTop.addEventListener("click", () => {
         card.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });

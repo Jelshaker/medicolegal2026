@@ -26,9 +26,9 @@ export const NAVIGATION_LINKS = [
 	{ href: "/radiology-resources", label: "Radiology Fundamentals" },
 	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
-	{ href: "/radiology-legal-cases", label: "Important Radiology Case Law" },
-	{ href: "/recent-developments", label: "Recent Legal Developments" },
-	{ href: "/dicom-viewer", label: "Free DICOM viewer" },
+	{ href: "/radiology-legal-cases", label: "Radiology Case Law" },
+	{ href: "/recent-developments", label: "Important New Cases" },
+	{ href: "/dicom-viewer", label: "Free DICOM Viewer" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
 ] as const;

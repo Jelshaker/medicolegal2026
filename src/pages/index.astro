@@ -25,7 +25,7 @@ const stats = [
 	<PageHero
 		eyebrow="Radiology · Law · Reference resource"
 		title="A radiologist's guide to medicolegal law."
-		description="A free reference resource for anyone who has to reason about radiology and the law: from how radiology investigations are performed, interpreted and reported, to the standards and statutory duties that govern them, and the legal consequences when they fail. Written for radiologists, referrers, solicitors, barristers, insurers and expert witnesses."
+		description="A free reference resource for anyone who has to think about radiology and the law: from how common radiology investigations are performed, interpreted and reported, to the reporting standards and statutory duties that govern them, and the legal consequences of when things go wrong. Written for radiologists and healthcare professionals in mind."
 		heroImage={PAGE_HERO_IMAGES["/"] as string}
 	>
 		<div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 divider pt-5">
@@ -42,7 +42,7 @@ const stats = [
             <p class="meta-label">A brief explainer why this website exists</p>
             <h1 class="sec-title-lg">What is Radiology Law?</h1>
             <p class="para">
-The tidal wave of AI slop has made it increasingly difficult to separate real case law from hallucinated nonsense. As a practising radiologist with a master’s degree in healthcare ethics and law, I have a strong interest in ethics and legal issues in healthcare, especially in cases and situations relevant to clinical radiology. In my free time I like to read up on recent important medicolegal news, a past time which I find interesting and intellectually stimulating, and occasionally I even discover some important lessons which I can apply to my clinical practice.            </p>
+The recent tidal wave of AI slop has made it increasingly difficult to separate real case law from hallucinated nonsense. As a practising radiologist with a master’s degree in healthcare ethics and law, I have a strong interest in ethics and legal issues in healthcare, especially in cases relevant to clinical radiology. In my free time I like to read up on recent medicolegal news, a past time which I find interesting and intellectually stimulating, and occasionally I even discover some important lessons which I can apply to my clinical practice.            </p>
             <p class="para">
                 The main purpose of this website is to serve as a reliable resource for myself and other radiologists, legal professionals and patients to help serve as a guide through medicolegal case law, with of course a special emphasis on radiology, and to push back against computers just making stuff up. 
             </p>
@@ -80,43 +80,40 @@ The tidal wave of AI slop has made it increasingly difficult to separate real ca
 				<p class="meta-label">Website Structure</p>
 				<h2 class="sec-title-lg">Four Sections - From History to Recent Events</h2>
 				<p class="para">
-					This site is organised in a logical way to ensure that everyone, from new users to legal experts, has a thorough understanding of clinical radiology, radiology legislation and regulation, and foundational medicolegal case law before progressing to the section on recent, high-impact cases.
+					I have organised this site in a way to try to ensure that everyone, from new users to legal experts, are on a level playing field and have a thorough understanding of clinical radiology as a speciality, legislation and regulation relevant to radiology, foundational medicolegal case law and recent and important cases.
 				</p>
 			</div>
 			<div class="grid gap-6 sm:grid-cols-2 mt-10">
 				<article class="tile pad-box">
-					<span class="sec-no">01</span>
+					<span class="sec-no">Section 01</span>
 					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Radiology fundamentals</h3>
 					<p class="para-sm mt-2">
-						A each imaging modality does, what it can answer, and where it stops being useful.
-						Covers modalities, protocols, reporting standards, dose and safety, and the handling of images.
+						This section covers common radiology studies, their typical uses and their limitations. Brief discussion on the dangers inherent to radiology investigations and ways that risks are mitigated and an overview of how images are handled, quality assurance and relevant legislation.
 					</p>
 					<a href="/radiology-resources" class="link-sm mt-4 inline-block">Open the radiology library</a>
 				</article>
 				<article class="tile pad-box">
-					<span class="sec-no">02</span>
-					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Medicolegal law fundamentals</h3>
+					<span class="sec-no">Section 02</span>
+					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Medicolegal fundamentals and Radiology Legislation</h3>
 					<p class="para-sm mt-2">
-						The principles that govern every radiological claim: Bolam and Bolitho, Montgomery consent,
+						Foundational medicolegal principles such as Bolam and Bolitho and Montgomery consent. Important legislation and regulations that govern radiology practice, including
 						IRR17 and IR(ME)R, the statutory duties, and the duty of candour.
 					</p>
 					<a href="/medicolegal-fundamentals" class="link-sm mt-4 inline-block">Open the law library</a>
 				</article>
 				<article class="tile pad-box">
-					<span class="sec-no">03</span>
-					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Foundational case law</h3>
+					<span class="sec-no">Section 03</span>
+					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Radiology Case Law</h3>
 					<p class="para-sm mt-2">
-						The important court decisions that set the landscape — the authorities every radiologist and
-						practitioner should know, presented in plain language with references to the judgments.
+						This section focuses on important case law in radiology.
 					</p>
 					<a href="/radiology-legal-cases" class="link-sm mt-4 inline-block">Browse the case law</a>
 				</article>
 				<article class="tile pad-box">
-					<span class="sec-no">04</span>
-					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Recent legal developments</h3>
+					<span class="sec-no">Section 04</span>
+					<h3 class="mt-2 font-serif text-lg font-bold text-slate-900">Important New Cases</h3>
 					<p class="para-sm mt-2">
-						The latest cases that raise new or unusual radiological issues. New entries are added as
-						courts publish — this section is kept current.
+						Regularly updated with new and important cases, this section contains the most recent case discussions and analysis.
 					</p>
 					<a href="/recent-developments" class="link-sm mt-4 inline-block">See the latest</a>
 				</article>
@@ -128,13 +125,10 @@ The tidal wave of AI slop has made it increasingly difficult to separate real ca
 	<section class="divider-below bg-paper py-16">
 		<div class="container-page doc text-center">
 			<div class="sec">
-				<p class="meta-label">Free tool</p>
-				<h2 class="sec-title-lg">Open any scan — right here, no upload required</h2>
+				<p class="meta-label">A Super Useful Free Tool</p>
+				<h2 class="sec-title-lg">Free DICOM Image Viewer</h2>
 				<p class="para mx-auto" style="max-width: 48rem;">
-					This resource comes with a free local DICOM viewer. Load your own CT or MRI series from a
-					browser — nothing is uploaded to any server, so patient data never leaves your device. Use it
-					to review the images referenced in the case discussions, or examine your own scans before a
-					conversation with your clinician.
+					This page contains a free browser-based DICOM viewer which can allow anyone with DICOM images to review them in complete privacy and without uploading them to any server - it is done all in the browser. Successfully tested with plain films (x-rays), CT and MRI scans. This viewer is a great tool for radiologists, legal professionals and patients to review anonymised DICOM images in a secure and private manner.
 				</p>
 				<a href="/dicom-viewer" class="btn btn-primary mt-8">Open the DICOM viewer</a>
 			</div>

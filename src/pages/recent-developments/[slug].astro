@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, BLOG_CATEGORIES, PAGE_HERO_IMAGES } from '../../consts';
 import { formatDate, readingTime } from '../../lib/utils';
 import { isoDate } from '../../lib/seo';
+import { toast } from '../../lib/toast';
 
 export const prerender = true;
 
@@ -121,9 +122,13 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 						Comment *
 						<textarea name="text" rows="3" required class="input-field" placeholder="Your comment (moderated)"></textarea>
 					</label>
+					<!-- CSRF protection -->
+					<input type="hidden" name="csrfToken" id="comment-csrf" />
+					<!-- Spam honeypot -->
+					<input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
 					<div class="flex items-center gap-3">
 						<button type="submit" class="btn btn-primary" data-submit>Post comment</button>
-						<span class="text-muted">Comments are stored via Cloudflare KV and moderated.</span>
+						<span class="text-muted">Comments are stored in memory (replaced on deploy) and moderated.</span>
 					</div>
 				</form>
 				<div id="comment-list" class="mt-8 space-y-4" data-postid={post.slug}>
@@ -159,6 +164,18 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 			: `<p class="text-sm text-slate-500">No comments yet. Be the first to join the discussion.</p>`;
 	}
 
+	// Fetch CSRF token on page load
+	(async () => {
+		try {
+			const res = await fetch("/api/comments");
+			if (res.ok) {
+				const json = await res.json();
+				const input = document.getElementById("comment-csrf") as HTMLInputElement | null;
+				if (input && json.csrfToken) input.value = json.csrfToken;
+			}
+		} catch { /* token fetch failed — form will still work but without CSRF */ }
+	})();
+
 	form?.addEventListener("submit", async (e) => {
 		e.preventDefault();
 		const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
@@ -168,14 +185,16 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 			const res = await fetch("/api/comments", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ postId, author: data.author, text: data.text }),
+				body: JSON.stringify({ postId, author: data.author, text: data.text, csrfToken: data.csrfToken }),
 			});
 			const json = await res.json();
 			if (!res.ok) throw new Error(json.error || "Failed");
 			form.reset();
 			await load();
-		} catch (err) {
-			alert("There was a problem posting your comment.");
+			toast("Comment posted successfully.", "success", 3000);
+		} catch (err: unknown) {
+			const msg = err instanceof Error ? err.message : "There was a problem posting your comment.";
+			toast(msg, "error", 5000);
 		} finally {
 			if (btn) { btn.disabled = false; btn.textContent = "Post comment"; }
 		}

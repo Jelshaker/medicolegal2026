@@ -34,6 +34,8 @@ export const NAVIGATION_LINKS = [
 	{ href: "/dicom-viewer", label: "Free DICOM Viewer" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
+	// { href: "/referrals", label: "Referrals and terms" },
+	// --- REQUIRES RE-ENABLEMENT when the referral function is ready again (see src/pages/referrals.astro) ---
 ] as const;
 
 // The two reference libraries the resource is organised around. Referenced by the
@@ -94,8 +96,10 @@ export const CATEGORY_MARKERS: Record<string, string> = {
 export const DEMO_PORTAL_ACCOUNT = {
 	// Demo scaffolding — replace with a real identity provider (e.g. Clerk) in production.
 	// See src/pages/api/login.ts for the auth logic this is paired with.
+	//
+	// ⚠ SECURITY: The password MUST be set via the DEMO_ADMIN_PASSWORD
+	// environment variable (see .env.example). Never hardcode credentials.
 	email: "referrer@elsheikha-imaging.legal",
-	password: "DrJE-Demo-2026",
 	label: "Demo referrer account",
 };
 
@@ -128,7 +132,6 @@ export const MEMBERSHIPS = [
 	"Fellow - Royal College of Radiologists (FRCR)",
 	"Member - European Society of Radiology (ESR)",
 	"British Society of Gastroenterology and Abdominal Imaging (BSGAR)",
-	
 ] as const;
 
 // Page hero images — one high-quality picture per page, displayed large at the top.

@@ -970,7 +970,6 @@
 
 /* Local DICOM viewer: fade the drop zone / workspace when they swap. */
 #dv-dropzone,
-#dv-workzone,
 #dv-workspace {
 	transition: opacity 0.2s ease;
 }

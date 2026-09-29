@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { DEMO_PORTAL_ACCOUNT, LOGIN_BUTTON_TEXT, LOGIN_PAGE_TITLE, SITE_TITLE } from '../consts';
+import { toast, type ToastKind } from '../lib/toast';
 ---
 
 <BaseLayout
@@ -28,6 +29,10 @@ Secure portal for academic paper review and privileged legal commentary. Verify 
 						Password
 						<input name="password" type="password" required autocomplete="current-password" class="input-field" placeholder="••••••••" />
 					</label>
+					<!-- CSRF protection -->
+					<input type="hidden" name="csrfToken" id="csrf-token" />
+					<!-- Spam honeypot -->
+					<input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
 					<button type="submit" class="btn btn-primary w-full" data-submit>Sign in</button>
 				</form>
 			</div>
@@ -36,6 +41,18 @@ Secure portal for academic paper review and privileged legal commentary. Verify 
 </BaseLayout>
 
 <script>
+	// Fetch CSRF token on page load
+	(async () => {
+		try {
+			const res = await fetch("/api/login");
+			if (res.ok) {
+				const json = await res.json();
+				const input = document.getElementById("csrf-token") as HTMLInputElement | null;
+				if (input && json.csrfToken) input.value = json.csrfToken;
+			}
+		} catch { /* token fetch failed — form will still work but without CSRF */ }
+	})();
+
 	const form = document.getElementById("login-form") as HTMLFormElement | null;
 	if (form) {
 		form.addEventListener("submit", async (e) => {
@@ -51,9 +68,10 @@ Secure portal for academic paper review and privileged legal commentary. Verify 
 				});
 				const json = await res.json();
 				if (!res.ok) throw new Error(json.error || "Login failed");
-				alert("Signed in successfully.");
-			} catch (err) {
-				alert("Invalid credentials. Please try again or contact the secretariat.");
+				toast("Signed in successfully.", "success", 3000);
+			} catch (err: unknown) {
+				const msg = err instanceof Error ? err.message : "Invalid credentials. Please try again or contact the secretariat.";
+				toast(msg, "error", 5000);
 			} finally {
 				if (btn) { btn.disabled = false; btn.textContent = "Sign in"; }
 			}

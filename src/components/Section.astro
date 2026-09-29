@@ -15,8 +15,6 @@ interface Props {
 	/** Full neutral citation (or source line) set small beneath the title. */
 	citation?: string;
 	lead?: string;
-	span?: 1 | 2;
-	children?: string;
 }
 
 const { id, eyebrow, index, title, citation, lead = "" } = Astro.props as Props;

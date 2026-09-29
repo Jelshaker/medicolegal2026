@@ -434,12 +434,12 @@
       const gray = new Uint16Array(frameLength);
       if (planar === 1) {
         for (let i = 0; i < frameLength; i++) {
-          const r = raw[i] as number, g = raw[frameLength + i] as number, b = raw[2 * frameLength + i] as number;
+          const r = raw[i], g = raw[frameLength + i], b = raw[2 * frameLength + i];
           gray[i] = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
         }
       } else {
         for (let i = 0; i < frameLength; i++) {
-          const r = raw[i * samples] as number, g = raw[i * samples + 1] as number, b = raw[i * samples + 2] as number;
+          const r = raw[i * samples], g = raw[i * samples + 1], b = raw[i * samples + 2];
           gray[i] = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
         }
       }
@@ -696,18 +696,8 @@
     ).join("");
   }
 
-  function studyKeyOf(list: DvSlice[]): string | null {
-    if (list.length === 0) return null;
-    const v = (list[0] as unknown as Record<string, unknown>).__study;
-    return typeof v === "string" ? v : null;
-  }
   function colsSafe(): number {
     return width;
-  }
-  function markStudy(uid: string): void {
-    for (const s of frames) {
-      (s as unknown as Record<string, unknown>).__study = uid;
-    }
   }
 
   function loadFiles(fileList: FileList | File[]) {

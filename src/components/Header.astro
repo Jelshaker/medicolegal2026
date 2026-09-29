@@ -1,5 +1,5 @@
 ---
-import { LOGIN_BUTTON_TEXT, LOGIN_BUTTON_TEXT_MOBILE, NAVIGATION_LINKS, PRACTITIONER, SITE_BRAND_SUBTITLE, SITE_TITLE } from "../consts";
+import { LOGIN_BUTTON_TEXT, NAVIGATION_LINKS, PRACTITIONER, SITE_BRAND_SUBTITLE, SITE_TITLE } from "../consts";
 
 const pathname = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -97,9 +97,6 @@ const navLinkClass = (href: string) =>
                     </li>
                 ))
             }
-            <li class="mt-3 divider pt-4">
-                <a href="/login" class="btn btn-ghost w-full">{LOGIN_BUTTON_TEXT_MOBILE}</a>
-            </li>
         </ul>
     </div>
 

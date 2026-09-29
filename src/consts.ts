@@ -31,7 +31,7 @@ export const NAVIGATION_LINKS = [
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
 	{ href: "/radiology-legal-cases", label: "Radiology Case Law" },
 	{ href: "/recent-developments", label: "Important New Cases" },
-	{ href: "/dicom-viewer", label: "Free DICOM Viewer" },
+	{ href: "/dicom-viewer", label: "DICOM Viewer" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
 	// { href: "/referrals", label: "Referrals and terms" },

@@ -16,6 +16,7 @@
 //                 hard bright line; default 0.30 (0–1). Kept low on purpose —
 //                 readability now comes from the card (options 4/5/6), not from
 //                 darkening the whole photo.
+import { SITE_BRAND_SUBTITLE } from "../consts";
 import { imageAtWidth } from "../lib/images";
 
 interface Props {
@@ -27,7 +28,7 @@ interface Props {
 }
 
 const {
-	eyebrow = "Radiology & medicolegal law",
+	eyebrow = SITE_BRAND_SUBTITLE,
 	title,
 	description = "",
 	heroImage,

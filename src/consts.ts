@@ -7,6 +7,9 @@ export const SITE_TAGLINE = "A small working resource on radiology and the law";
 export const SITE_DESCRIPTION =
 	"A small, curated reference resource on radiology and medicolegal law, with commentary on recent cases. It sets out how imaging investigations are performed, interpreted and reported, the standards and statutory duties that govern them, and the decisions that show what happens when they fail.";
 
+// Repeated site-branding strings — update once and propagate everywhere.
+export const SITE_BRAND_SUBTITLE = "Radiology &amp; medicolegal law";
+
 // Canonical origin, with no trailing slash. Read at build time from
 // PUBLIC_SITE_URL (see `.env` / `.env.example`) and kept in step with `site` in
 // `astro.config.mjs`. Astro supplies the same value as `Astro.site`, which is
@@ -79,6 +82,15 @@ export const DEMO_PORTAL_ACCOUNT = {
 	password: "DrJE-Demo-2026",
 	label: "Demo referrer account",
 };
+
+// Shared UI strings used in the header navigation, footer, and cookie banner.
+export const LOGIN_BUTTON_TEXT = "Secure Login";
+export const LOGIN_BUTTON_TEXT_MOBILE = "Secure Client Login";
+export const LOGIN_PAGE_TITLE = "Secure Login";
+export const COOKIE_SETTINGS_LABEL = "Cookie settings";
+export const COOKIE_BANNER_TITLE = "Cookies on this site";
+export const COOKIE_ACCEPT_LABEL = "Accept analytics";
+export const COOKIE_REJECT_LABEL = "Reject analytics";
 
 export const PRACTITIONER = {
 	name: "Dr Joseph El-Sheikha, MBChB MD FRCR LLM (Master of Laws)",

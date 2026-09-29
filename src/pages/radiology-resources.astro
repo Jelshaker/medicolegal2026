@@ -14,6 +14,7 @@ const modalities = [
 		n: 'Radiography (X-ray)',
 		q: 'Fracture, consolidation, obstruction or free gas?',
 		d: 'Projection imaging of the skeleton and chest. Fast, widely available and, for the questions it answers, the lowest reasonable dose. Limited by superimposition and by the collapse of three-dimensional anatomy into two.',
+		img: '/images/placeholder-xray.svg',
 		limits: [
 			'Superimposed structures can mask or mimic pathology',
 			'Low soft-tissue contrast compared with CT or MRI',
@@ -24,6 +25,7 @@ const modalities = [
 		n: 'Computed tomography (CT)',
 		q: 'Acute abnormality, vascular complication or staging question?',
 		d: 'Cross-sectional imaging with high spatial resolution and short acquisition times. First line for acute presentations, trauma, suspected malignancy and vascular disease. Uses ionising radiation, so every request carries a justification duty.',
+		img: '/images/placeholder-ct.svg',
 		limits: [
 			'Ionising radiation dose — justification and optimisation apply',
 			'Iodinated contrast risks (allergy, renal function, thyroid)',
@@ -34,6 +36,7 @@ const modalities = [
 		n: 'Magnetic resonance imaging (MRI)',
 		q: 'Soft-tissue, marrow, joint or neurological question?',
 		d: 'High soft-tissue contrast without ionising radiation. Central to musculoskeletal, neurological, hepatobiliary and pelvic imaging. Subject to a strong static magnetic field, so implant and device screening is mandatory before scanning.',
+		img: '/images/placeholder-mri.svg',
 		limits: [
 			'Implant, device and foreign-body safety screening is mandatory',
 			'Long acquisition times, so motion degrades the study',
@@ -44,6 +47,7 @@ const modalities = [
 		n: 'Ultrasound',
 		q: 'Dynamic, superficial or flow-related question?',
 		d: 'Real-time imaging without ionising radiation, including Doppler assessment of flow. Widely used in abdominal, obstetric, musculoskeletal and soft-tissue work, and as the guidance method for many interventional procedures.',
+		img: '/images/placeholder-us.svg',
 		limits: [
 			'Operator-dependent and the least reproducible modality',
 			'Limited penetration; bowel gas obscures deeper structures',
@@ -114,9 +118,9 @@ const lawLinks = [
 		]}
 		contents={[
 			{ href: '#modalities', label: 'Modalities' },
+			{ href: '#dose-safety', label: 'Dose and safety' },
 			{ href: '#reporting-standards', label: 'Reporting standards' },
 			{ href: '#legal-questions', label: 'Legal questions' },
-			{ href: '#dose-safety', label: 'Dose and safety' },
 			{ href: '#quality-assurance', label: 'Quality assurance' },
 			{ href: '#handling-images', label: 'Handling images' },
 			{ href: '#primary-sources', label: 'Primary sources' },
@@ -139,6 +143,13 @@ const lawLinks = [
 					{
 						modalities.map((m) => (
 							<div class="entry">
+								<figure class="figure mt-0">
+									<div class="figure-frame">
+										<div class="relative aspect-[3/1] overflow-hidden">
+											<img src={m.img} alt="" class="h-full w-full object-cover" />
+										</div>
+									</div>
+								</figure>
 								<h3 class="entry-title">{m.n}</h3>
 								<p class="mt-2 text-sm font-semibold text-slate-700">{m.q}</p>
 								<p class="para-sm">{m.d}</p>
@@ -166,58 +177,10 @@ const lawLinks = [
 					ratio="wide"
 				/>
 			</Section>
-			<!-- Reporting standards -->
-			<Section
-				id="reporting-standards"
-				index="02"
-				eyebrow="Standards"
-				title="Interpretation and reporting: the professional benchmark"
-				lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
-			>
-				<div class="entry-list mt-0">
-					{
-						reportingStandards.map((s) => (
-							<div class="entry">
-								<h3 class="entry-title">{s.n}</h3>
-								<p class="para-sm">{s.d}</p>
-							</div>
-						))
-					}
-				</div>
-			</Section>
-
-			<!-- Where standards become legal questions -->
-			<Section
-				id="legal-questions"
-				index="03"
-				eyebrow="Radiology and the law"
-				title="Where a reporting standard becomes a legal question"
-				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
-			>
-				<div class="entry-list mt-0">
-					{
-						lawLinks.map((l) => (
-							<a
-								href={l.href}
-								class="box group flex flex-col p-6 transition-all hover:border-slate-400"
-							>
-								<h3 class="entry-title">{l.n}</h3>
-								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{l.d}</p>
-								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-									{l.cta}
-									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-										<path d="M5 12h14M12 5v14" />
-									</svg>
-								</span>
-							</a>
-						))
-					}
-				</div>
-			</Section>
 			<!-- Dose and safety -->
 			<Section
 				id="dose-safety"
-				index="04"
+				index="02"
 				eyebrow="Dose &amp; safety"
 				title="Dose, justification and the statutory duty"
 				lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
@@ -225,7 +188,7 @@ const lawLinks = [
 				<Figure
 					label="Figure 02"
 					caption="How the modalities compare on dose"
-					subtitle="Indicative adult effective doses. MRI and ultrasound involve no ionising radiation; for X-ray and CT the statutory duties of justification and optimisation attach."
+					subtitle="Linear scale 0–20 mSv. MRI and ultrasound involve no ionising radiation; for X-ray and CT the statutory duties of justification and optimisation attach."
 				>
 					<Diagram name="dose-scale" />
 				</Figure>
@@ -252,6 +215,55 @@ const lawLinks = [
 				<div class="mt-6 flex flex-wrap gap-3">
 					<a href="/radiology-legislation" class="btn btn-ghost">IR(ME)R and IRR17 in full</a>
 					<a href="/patient-advice" class="btn btn-ghost">Plain-language dose information for patients</a>
+				</div>
+			</Section>
+
+			<!-- Reporting standards -->
+			<Section
+				id="reporting-standards"
+				index="03"
+				eyebrow="Standards"
+				title="Interpretation and reporting: the professional benchmark"
+				lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
+			>
+				<div class="entry-list mt-0">
+					{
+						reportingStandards.map((s) => (
+							<div class="entry">
+								<h3 class="entry-title">{s.n}</h3>
+								<p class="para-sm">{s.d}</p>
+							</div>
+						))
+					}
+				</div>
+			</Section>
+
+			<!-- Where standards become legal questions -->
+			<Section
+				id="legal-questions"
+				index="04"
+				eyebrow="Radiology and the law"
+				title="Where a reporting standard becomes a legal question"
+				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
+			>
+				<div class="entry-list mt-0">
+					{
+						lawLinks.map((l) => (
+							<a
+								href={l.href}
+								class="box group flex flex-col p-6 transition-all hover:border-slate-400"
+							>
+								<h3 class="entry-title">{l.n}</h3>
+								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{l.d}</p>
+								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+									{l.cta}
+									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M5 12h14M12 5v14" />
+									</svg>
+								</span>
+							</a>
+						))
+					}
 				</div>
 			</Section>
 

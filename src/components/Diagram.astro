@@ -506,67 +506,71 @@ const labels: Record<Props["name"], string> = {
 					Dose
 				</text>
 				<text class="d-title" x="40" y="80">
-					Effective dose, on a logarithmic scale
+					Effective dose on a normal scale
 				</text>
 				<line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
 
-				<line class="d-axis" x1="60" y1="340" x2="900" y2="340" />
-				<line class="d-axis" x1="60" y1="332" x2="60" y2="348" />
-				<line class="d-axis" x1="270" y1="332" x2="270" y2="348" />
-				<line class="d-axis" x1="480" y1="332" x2="480" y2="348" />
-				<line class="d-axis" x1="690" y1="332" x2="690" y2="348" />
-				<line class="d-axis" x1="900" y1="332" x2="900" y2="348" />
+				<line class="d-axis" x1="80" y1="340" x2="880" y2="340" />
 
-				<text class="d-sub" x="60" y="370" text-anchor="middle">
-					0.001
+				<!-- X-axis ticks every 5 mSv -->
+				<line class="d-axis" x1="80" y1="332" x2="80" y2="348" />
+				<line class="d-axis" x1="280" y1="332" x2="280" y2="348" />
+				<line class="d-axis" x1="480" y1="332" x2="480" y2="348" />
+				<line class="d-axis" x1="680" y1="332" x2="680" y2="348" />
+				<line class="d-axis" x1="880" y1="332" x2="880" y2="348" />
+
+				<text class="d-sub" x="80" y="370" text-anchor="middle">
+					0
 				</text>
-				<text class="d-sub" x="270" y="370" text-anchor="middle">
-					0.01
+				<text class="d-sub" x="280" y="370" text-anchor="middle">
+					5
 				</text>
 				<text class="d-sub" x="480" y="370" text-anchor="middle">
-					0.1
-				</text>
-				<text class="d-sub" x="690" y="370" text-anchor="middle">
-					1
-				</text>
-				<text class="d-sub" x="900" y="370" text-anchor="middle">
 					10
 				</text>
-				<text class="d-note" x="60" y="400">
-					Effective dose in millisieverts — indicative order of magnitude only.
+				<text class="d-sub" x="680" y="370" text-anchor="middle">
+					15
+				</text>
+				<text class="d-sub" x="880" y="370" text-anchor="middle">
+					20 mSv
 				</text>
 
-				<line class="d-axis" x1="333" y1="340" x2="333" y2="230" />
-				<line class="d-axis" x1="657" y1="340" x2="657" y2="290" />
-				<line class="d-axis" x1="753" y1="340" x2="753" y2="230" />
-				<line class="d-axis" x1="880" y1="340" x2="880" y2="290" />
+				<!-- 40 px per mSv, x = 80 + dose × 40 -->
 
-				<text class="d-label" x="333" y="222" text-anchor="middle">
+				<!-- Chest radiograph — 0.02 mSv, at the very start -->
+				<line class="d-axis" x1="81" y1="340" x2="81" y2="308" stroke-width="2" />
+				<text class="d-label" x="81" y="296" text-anchor="middle">
 					Chest radiograph
 				</text>
-				<text class="d-sub" x="333" y="202" text-anchor="middle">
+				<text class="d-sub" x="81" y="276" text-anchor="middle">
 					around 0.02 mSv
 				</text>
 
-				<text class="d-label" x="657" y="282" text-anchor="middle">
-					Lumbar spine
-				</text>
-				<text class="d-sub" x="657" y="262" text-anchor="middle">
-					around 0.7 mSv
-				</text>
-
-				<text class="d-label" x="753" y="222" text-anchor="middle">
+				<!-- CT head — 2 mSv -->
+				<line class="d-axis" x1="160" y1="340" x2="160" y2="286" stroke-width="2" />
+				<text class="d-label" x="160" y="274" text-anchor="middle">
 					CT head
 				</text>
-				<text class="d-sub" x="753" y="202" text-anchor="middle">
+				<text class="d-sub" x="160" y="254" text-anchor="middle">
 					around 2 mSv
 				</text>
 
-				<text class="d-label" x="880" y="282" text-anchor="middle">
+				<!-- CT abdomen — 8 mSv -->
+				<line class="d-axis" x1="400" y1="340" x2="400" y2="218" stroke-width="2" />
+				<text class="d-label" x="400" y="206" text-anchor="middle">
 					CT abdomen
 				</text>
-				<text class="d-sub" x="880" y="262" text-anchor="middle">
+				<text class="d-sub" x="400" y="186" text-anchor="middle">
 					around 8 mSv
+				</text>
+
+				<!-- Occupational dose limit — 20 mSv, far right -->
+				<line class="d-axis" x1="880" y1="340" x2="880" y2="218" stroke-width="2" />
+				<text class="d-label" x="860" y="206" text-anchor="end">
+					Occupational dose limit
+				</text>
+				<text class="d-sub" x="860" y="186" text-anchor="end">
+					20 mSv per year
 				</text>
 
 				<line class="d-rule" x1="40" y1="430" x2="920" y2="430" />

@@ -16,6 +16,12 @@ import {
   PAGE_HERO_IMAGES,
 } from "../consts";
 
+const radiologyFundamentalsTitle = "Radiology fundamentals";
+const medicolegalFundamentalsTitle = "Medicolegal fundamentals";
+const radiologyLegislationTitle = "Radiology Legislation";
+const radiologyCaseLawTitle = "Radiology Case Law";
+const importantNewCasesTitle = "Important New Cases";
+
 const allPosts = (await getCollection("recent-developments")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -134,7 +140,7 @@ const categoryLabel = (id: string) =>
         <article class="tile pad-box">
           <span class="sec-no">Section 01</span>
           <h3 class="mt-2 font-serif text-lg font-bold text-slate-900">
-            Radiology fundamentals
+            {radiologyFundamentalsTitle}
           </h3>
           <p class="para-sm mt-2">
             This section covers common radiology studies, their typical uses and
@@ -144,13 +150,13 @@ const categoryLabel = (id: string) =>
             legislation.
           </p>
           <a href="/radiology-resources" class="link-sm mt-4 inline-block"
-            >Open the radiology library</a
+            >Open {radiologyFundamentalsTitle}</a
           >
         </article>
         <article class="tile pad-box">
           <span class="sec-no">Section 02</span>
           <h3 class="mt-2 font-serif text-lg font-bold text-slate-900">
-            Medicolegal fundamentals and Radiology Legislation
+            {medicolegalFundamentalsTitle}
           </h3>
           <p class="para-sm mt-2">
             Foundational medicolegal principles such as Bolam and Bolitho and
@@ -159,33 +165,45 @@ const categoryLabel = (id: string) =>
             statutory duties, and the duty of candour.
           </p>
           <a href="/medicolegal-fundamentals" class="link-sm mt-4 inline-block"
-            >Open the law library</a
+            >Open {medicolegalFundamentalsTitle}</a
           >
+          </p>
+		   
         </article>
         <article class="tile pad-box">
           <span class="sec-no">Section 03</span>
           <h3 class="mt-2 font-serif text-lg font-bold text-slate-900">
-            Radiology Case Law
+            {radiologyCaseLawTitle}
           </h3>
           <p class="para-sm mt-2">
             This section focuses on important case law in radiology.
           </p>
           <a href="/radiology-legal-cases" class="link-sm mt-4 inline-block"
-            >Browse the case law</a
+            >Open {radiologyCaseLawTitle}</a
           >
         </article>
         <article class="tile pad-box">
           <span class="sec-no">Section 04</span>
           <h3 class="mt-2 font-serif text-lg font-bold text-slate-900">
-            Important New Cases
+            {importantNewCasesTitle}
           </h3>
           <p class="para-sm mt-2">
             Regularly updated with new and important cases, this section
             contains the most recent case discussions and analysis.
           </p>
           <a href="/recent-developments" class="link-sm mt-4 inline-block"
-            >See the latest</a
+            >Open {importantNewCasesTitle}</a
           >
+        </article>
+        <article class="tile pad-box">
+          <span class="sec-no">Section 05</span>
+          <h3 class="mt-2 font-serif text-lg font-bold text-slate-900">
+            {radiologyLegislationTitle}
+          </h3>
+          <p class="para-sm mt-2">
+            The statutory framework under radiological practice: who each duty binds, what it requires, what must be recorded, and what follows from a failure. Summary only — the primary text governs.
+          </p>
+          <a href="/radiology-legislation" class="link-sm mt-4 inline-block">Browse the legislation</a>
         </article>
       </div>
     </div>

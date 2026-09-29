@@ -24,6 +24,7 @@
       viewers     .viewer-open (+ .viewer-badge)  .lightbox-*  .toc-*
                   .diagram  .d-*  .figure-*  .plate-reserved
       overlays    .toast (+ .toast-icon)  .cookie-banner  .viewer-canvas-badge
+    part marks  .part-bg  .part-mark
       micro       .text-muted  .text-muted-alt  .text-muted-light
                   .divider  .divider-strong  .divider-below
                   .section  .section-paper  .section-top  .section-dark
@@ -1257,4 +1258,109 @@
 }
 .toast-anim {
 	animation: toastSlideIn 0.22s ease-out both;
+}
+
+/* =====================================================================
+   Part markers — full-width section dividers with dot and label          */
+/* ------------------------------------------------------------------ */
+
+/* Paper-tinted part background. Use as a wrapper around a group of
+   sections within the page-level container. */
+.part-bg {
+	background: var(--color-paper);
+	padding-block: 5rem 3rem;
+	padding-inline: 1.25rem 0;
+	max-width: 76rem;
+	margin-inline: auto;
+	position: relative;
+}
+@media (min-width: 768px) {
+	.part-bg {
+		padding-inline-start: 2rem;
+	}
+}
+.part-bg > * + * {
+	margin-top: 3rem;
+}
+
+/* Color accent bar — fixed-width slab on the left edge. */
+.part-accent {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	left: 0;
+	background: var(--accent, #94a3b8);
+}
+
+/* The divider line with a dot and label.
+   Place where a part boundary is needed; the background lives in .part-bg. */
+.part-mark {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.25rem;
+	padding-inline: 2rem 0;
+	max-width: 76rem;
+	margin-inline: auto;
+}
+.part-mark-dot {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.625rem;
+	flex-shrink: 0;
+	margin-top: 0.625rem;
+	width: 0.75rem;
+}
+.part-mark-dot::before {
+	content: "";
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	background: var(--accent, #94a3b8);
+	flex-shrink: 0;
+}
+.part-mark-label {
+	font-family: var(--font-sans);
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #94a3b8;
+	padding-top: 0.625rem;
+	border-top: 2px solid #cbd5e1;
+}
+.part-mark-label-sub {
+	display: block;
+	font-weight: 400;
+	font-size: 0.65rem;
+	letter-spacing: 0.06em;
+	color: #94a3b8;
+	margin-top: 0.2rem;
+	padding-top: 0.5rem;
+	border-top: 1px solid #e2e8f0;
+}
+
+/* Mobile: stack the dot above the label, centre the whole block. */
+@media (max-width: 639px) {
+	.part-mark {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 0.5rem;
+		padding-inline: 0;
+	}
+	.part-mark-dot {
+		width: auto;
+		margin-top: 0;
+	}
+	.part-mark-dot::after {
+		display: none;
+	}
+	.part-mark-dot::before {
+		margin-bottom: 0.375rem;
+	}
+	.part-mark-label {
+		white-space: normal;
+	}
 }

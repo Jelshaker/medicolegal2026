@@ -6,11 +6,24 @@ import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
+import LegislationEntry from '../components/LegislationEntry.astro';
 import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 
 // Each statutory duty is summarised in the same four fields so the entries can be
 // compared: who it binds, what it requires, what must be recorded, and what follows
 // from a failure. Summaries only — the primary text governs.
+//
+// Each instrument gets a distinct accent colour so the sections are visually
+// distinguishable at a glance. The palette stays within slate so the page
+// remains monochrome; only the warmth/coolness of the grey shifts.
+const accentColors = [
+	'#475569', // IRMER — deep slate, authoritative
+	'#64748b', // IRR17 — mid slate, occupational
+	'#334155', // Communication — dark slate, urgent
+	'#5f6b7a', // EPR16 — cool slate, regulatory
+	'#6b7a8d', // Data protection — blue-tint slate, privacy
+];
+
 const instruments = [
 	{
 		id: 'irmer',
@@ -187,32 +200,38 @@ const instruments = [
 		</div>
 	</section>
 
-	<section class="band">
-		<div class="container-page space-y-12">
-			{
-				instruments.map((s) => (
-					<Section id={s.id} index={s.index} eyebrow={s.eyebrow} title={s.title} lead={s.lead}>
-						<div class="entry-list mt-0">
-							{s.fields.map((f) => (
-								<div class="entry">
-									<h3 class="entry-title">{f.n}</h3>
-									<p class="para-sm text-[0.95rem]">{f.d}</p>
-								</div>
-							))}
-						</div>
-						<Callout tone="authority">{s.note}</Callout>
-					</Section>
-				))
-			}
+	<!-- Dark band wraps the legislation entries for visual weight and contrast -->
+	<section class="section-dark">
+		<div class="container-page">
+			<div class="space-y-12">
+				{
+					instruments.map((s, i) => (
+						<LegislationEntry
+							id={s.id}
+							index={s.index}
+							eyebrow={s.eyebrow}
+							title={s.title}
+							lead={s.lead}
+							fields={s.fields}
+							note={s.note}
+							accent={accentColors[i] ?? '#94a3b8'}
+						/>
+					))
+				}
 
-			<Callout tone="caution" title="Summaries, not the law">
-				<p>
-					This page condenses a statutory framework into a few paragraphs per instrument. It is written
-					to explain how the duties work in practice, not to reproduce the text. Where the exact wording
-					of a regulation, a threshold or a time limit matters, go to the source.
-				</p>
-			</Callout>
+				<Callout tone="caution" title="Summaries, not the law">
+					<p>
+						This page condenses a statutory framework into a few paragraphs per instrument. It is written
+						to explain how the duties work in practice, not to reproduce the text. Where the exact wording
+						of a regulation, a threshold or a time limit matters, go to the source.
+					</p>
+				</Callout>
+			</div>
+		</div>
+	</section>
 
+	<section class="band-paper">
+		<div class="container-page">
 			<div class="panel-dark p-8 text-center sm:p-10">
 				<h2 class="text-2xl font-extrabold tracking-tight text-white">Where these duties meet the law</h2>
 				<p class="mx-auto mt-3 max-w-2xl text-slate-300">

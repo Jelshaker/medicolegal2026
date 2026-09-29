@@ -77,12 +77,12 @@ const navLinkClass = (href: string) =>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <nav
+    <div
         id="mobile-menu"
-        class="hidden menu-mobile lg:hidden"
+        class="hidden menu-mobile mobile-menu-drawer"
         aria-label="Mobile"
     >
-        <ul class="flex flex-col">
+        <ul class="flex flex-col text-right">
             {
                 NAVIGATION_LINKS.map((link) => (
                     <li class="border-b border-slate-100 last:border-b-0">
@@ -101,7 +101,7 @@ const navLinkClass = (href: string) =>
                 <a href="/login" class="btn btn-ghost w-full">{LOGIN_BUTTON_TEXT_MOBILE}</a>
             </li>
         </ul>
-    </nav>
+    </div>
 
 <style>
     .header-bar {
@@ -111,6 +111,9 @@ const navLinkClass = (href: string) =>
         .header-bar {
             height: 4.75rem;
         }
+    }
+    header {
+        /* Positioned by the .sticky-bar utility (position: sticky; top: 0; z-index: 50). */
     }
     .header-logo {
         height: 2.75rem;
@@ -165,38 +168,76 @@ const navLinkClass = (href: string) =>
             display: none !important;
         }
     }
+
+    /* Narrow dropdown menu — positioned under the hamburger button on the right */
+    .mobile-menu-drawer {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 12rem;
+        z-index: 60;
+    }
 </style>
 </header>
 
 <script>
+    function openMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconBurger = document.getElementById("icon-burger");
+        const iconClose = document.getElementById("icon-close");
+        const toggle = document.getElementById("menu-toggle");
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove("hidden");
+        toggle?.setAttribute("aria-expanded", "true");
+        iconBurger?.classList.add("hidden");
+        iconClose?.classList.remove("hidden");
+    }
+
+    function closeMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconBurger = document.getElementById("icon-burger");
+        const iconClose = document.getElementById("icon-close");
+        const toggle = document.getElementById("menu-toggle");
+        if (!mobileMenu) return;
+        mobileMenu.classList.add("hidden");
+        toggle?.setAttribute("aria-expanded", "false");
+        iconBurger?.classList.remove("hidden");
+        iconClose?.classList.add("hidden");
+    }
+
+    function toggleMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (!mobileMenu) return;
+        if (mobileMenu.classList.contains("hidden")) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    }
+
+    // Toggle open/close when clicking the menu button (burger or X icon)
     document.addEventListener("click", (e) => {
         const toggle = e.target.closest("#menu-toggle");
         if (!toggle) return;
         e.preventDefault();
-        const mobileMenu = document.getElementById("mobile-menu");
-        const iconBurger = document.getElementById("icon-burger");
-        const iconClose = document.getElementById("icon-close");
-        if (!mobileMenu) return;
-        const isOpen = mobileMenu.classList.contains("hidden");
-        // Open the menu
-        mobileMenu.classList.remove("hidden");
-        toggle.setAttribute("aria-expanded", "true");
-        iconBurger?.classList.add("hidden");
-        iconClose?.classList.remove("hidden");
+        toggleMenu();
     });
 
+    // Close mobile menu when a nav link inside it is clicked.
     document.addEventListener("click", (e) => {
-        // Close mobile menu when a nav link inside it is clicked.
         const link = e.target.closest("#mobile-menu a");
         if (!link) return;
+        closeMenu();
+    });
+
+    // Close mobile menu when clicking anywhere outside the menu area
+    document.addEventListener("click", (e) => {
         const mobileMenu = document.getElementById("mobile-menu");
-        if (!mobileMenu) return;
-        mobileMenu.classList.add("hidden");
-        const iconBurger = document.getElementById("icon-burger");
-        const iconClose = document.getElementById("icon-close");
         const toggle = document.getElementById("menu-toggle");
-        if (toggle) toggle.setAttribute("aria-expanded", "false");
-        iconBurger?.classList.remove("hidden");
-        iconClose?.classList.add("hidden");
+        if (!mobileMenu || !toggle) return;
+        if (mobileMenu.classList.contains("hidden")) return;
+        if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
+        }
     });
 </script>

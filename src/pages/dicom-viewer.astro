@@ -7,71 +7,79 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
-	title={`Free DICOM Viewer — Open Your Scan in Your Browser | ${SITE_TITLE}`}
-	description="Open your CT, MRI, X-ray or ultrasound images free in your browser. This DICOM viewer runs entirely on your device — nothing is uploaded, stored or shared."
+  title={`Free DICOM Viewer — Open Your Scan in Your Browser | ${SITE_TITLE}`}
+  description="Open your CT, MRI, X-ray or ultrasound images free in your browser. This DICOM viewer runs entirely on your device — nothing is uploaded, stored or shared."
 >
-	<PageHero
-		eyebrow="Free tool · No sign-up, no upload"
-		title="Free DICOM Viewer"
-		description="If you have DICOM image files and do not have a PACS viewer to view them, you are welcome to use this browser-based DICOM viewer for free. The files are kept locally and nothing is uploaded, stored or shared. As a radiologist I would only use this viewer for a superficial imaging review and any formal diagnosis can only be made by a qualified radiologist using a calibrated clinical display with PACS based reporting."
-		heroImage={PAGE_HERO_IMAGES["/dicom-viewer"]}
-	>
-		<p class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400">
-			Works with CT · MRI · X-ray · Ultrasound · PET
-		</p>
-	</PageHero>
+  <PageHero
+    eyebrow="Free tool · No sign-up, no upload"
+    title="Free DICOM Viewer"
+    description="If you have DICOM image files and do not have a PACS viewer to view them, you are welcome to use this browser-based DICOM viewer for free. The files are kept locally and nothing is uploaded, stored or shared. As a radiologist I would only use this viewer for a superficial imaging review and any formal diagnosis can only be made by a qualified radiologist using a calibrated clinical display with PACS based reporting."
+    heroImage={PAGE_HERO_IMAGES["/dicom-viewer"]}
+  >
+    <p
+      class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400"
+    >
+      Works with CT · MRI · X-ray · Ultrasound · PET
+    </p>
+  </PageHero>
 
-	<!-- Viewer and quick info -->
-	<section id="open-a-study" class="scroll-mt-24 bg-white py-14">
-		<div class="container-page">
-			<div class="mx-auto max-w-2xl">
-				<LocalDicomViewer />
+  <!-- Viewer and quick info -->
+  <section id="open-a-study" class="scroll-mt-24 bg-white py-14">
+    <div class="container-page">
+      <div class="mx-auto max-w-2xl">
+        <LocalDicomViewer />
 
-				<Callout tone="limit" title="Important — not for diagnosis">
-					<p>
-						This viewer is a personal reference tool only. It is not a medical device
-						and should not be used to make or interpret diagnoses. Any formal reading
-						must be performed by a qualified radiologist on a calibrated clinical display.
-					</p>
-				</Callout>
+        <Callout tone="limit" title="Important — not for diagnosis">
+          <p>
+            This viewer is a reference tool only, not a certified medical
+            device, and must not be used for diagnostic interpretation. With two
+            highly specialised £4,000 diagnostic displays connected to my PACS
+            work-station, reading DICOM images on a tiny 1080p laptop screen is
+            far from diagnostic quality. Formal readings require a calibrated
+            clinical display and a qualified radiologist (and I am not just
+            saying that because I’d like to stay employed!)
+          </p>
+        </Callout>
 
-				<div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
-					<h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
-						Quick instructions
-					</h3>
-					<ul class="list space-y-2 text-sm text-slate-600">
-						<li>
-							<strong>Open files:</strong> Click the viewer or drag in a DICOM file or
-							folder.
-						</li>
-						<li>
-							<strong>Navigate slices:</strong> Scroll the mouse wheel or use the
-							slider arrows.
-						</li>
-						<li>
-							<strong>Adjust appearance:</strong> Use the Width/Level sliders or Invert
-							Colours.
-						</li>
-						<li>
-							<strong>Zoom &amp; pan:</strong> Ctrl/Cmd + scroll to zoom; click and drag
-							to pan.
-						</li>
-						<li>
-							<strong>Reset:</strong> Click <em>Reset all</em> to restore defaults.
-						</li>
-					</ul>
-					<p class="mt-4 text-xs text-slate-400">
-						For a full walkthrough, see the{" "}
-						<a
-							href="/dicom-viewer-guide"
-							class="link font-semibold text-slate-800"
-						>
-							step-by-step guide
-						</a>
-						.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
+          <h3
+            class="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500"
+          >
+            Quick instructions
+          </h3>
+          <ul class="list space-y-2 text-sm text-slate-600">
+            <li>
+              <strong>Open files:</strong> Click the viewer or drag in a DICOM file
+              or folder.
+            </li>
+            <li>
+              <strong>Navigate slices:</strong> Scroll the mouse wheel or use the
+              slider arrows.
+            </li>
+            <li>
+              <strong>Adjust appearance:</strong> Use the Width/Level sliders or Invert
+              Colours.
+            </li>
+            <li>
+              <strong>Zoom &amp; pan:</strong> Ctrl/Cmd + scroll to zoom; click and
+              drag to pan.
+            </li>
+            <li>
+              <strong>Reset:</strong> Click <em>Reset all</em> to restore defaults.
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-slate-400">
+            For a full walkthrough, see the{" "}
+            <a
+              href="/dicom-viewer-guide"
+              class="link font-semibold text-slate-800"
+            >
+              step-by-step guide
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

@@ -611,7 +611,19 @@
    Footer                                                               */
 /* ------------------------------------------------------------------ */
 
+/* Footer top border — thicker and darker to anchor the section. */
+.footer-top {
+	border-top: 2px solid #94a3b8;
+	padding-left: 6rem;
+}
+@media (min-width: 768px) {
+	.footer-top {
+		padding-left: 8rem;
+	}
+}
+
 .footer-grid {
+	padding: 2.5rem 0 2rem;
 	display: grid;
 	gap: 2.5rem;
 	grid-template-columns: 1fr;

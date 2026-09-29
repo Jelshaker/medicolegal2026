@@ -75,6 +75,22 @@ export const BLOG_CATEGORIES = [
 	{ id: "case-law", label: "Case Law" },
 ] as const;
 
+// Flat palette of muted marker colours used on the dot indicators in the
+// recent-developments listing. One per category so the marker row is
+// instantly scannable while staying inside the house style.
+export const CATEGORY_MARKERS: Record<string, string> = {
+	musculoskeletal: "#7c9a6e",
+	gastrointestinal: "#b8935a",
+	"peritoneal-malignancy": "#a86b6b",
+	neuroradiology: "#6b8fa1",
+	interventional: "#8a8452",
+	negligence: "#a05c5c",
+	quantum: "#8b7499",
+	practice: "#7a8b99",
+	regulation: "#9a7e59",
+	"case-law": "#5a8a6e",
+};
+
 export const DEMO_PORTAL_ACCOUNT = {
 	// Demo scaffolding — replace with a real identity provider (e.g. Clerk) in production.
 	// See src/pages/api/login.ts for the auth logic this is paired with.

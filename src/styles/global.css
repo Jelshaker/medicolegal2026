@@ -197,6 +197,30 @@
 		color: #94a3b8;
 	}
 
+	/* Small coloured dot that marks a post's category on the listing. */
+	.sec-marker {
+		display: inline-block;
+		width: 0.45rem;
+		height: 0.45rem;
+		flex-shrink: 0;
+		background: var(--marker-color, #94a3b8);
+	}
+
+	/* Thin vertical marker line on the left of each blog card. */
+	.blog-card {
+		position: relative;
+		padding-left: 0.75rem;
+	}
+	.blog-card::before {
+		content: "";
+		position: absolute;
+		top: 1.75rem;
+		bottom: 1.75rem;
+		left: 0;
+		width: 2px;
+		background: var(--marker-color, #94a3b8);
+	}
+
 	/* -------------------------------------------------------------- */
 	/* Headings                                                        */
 	/* -------------------------------------------------------------- */
@@ -486,9 +510,10 @@
 	.chip-action:hover {
 		border-color: #475569;
 	}
-	.chip[aria-pressed="true"] {
-		background: var(--color-ink);
-		border-color: var(--color-ink);
+	.chip[aria-pressed="true"],
+	.chip.is-active {
+		background: var(--marker-color, var(--color-ink));
+		border-color: var(--marker-color, var(--color-ink));
 		color: #fff;
 	}
 

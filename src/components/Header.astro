@@ -4,22 +4,27 @@ import { LOGIN_BUTTON_TEXT, LOGIN_BUTTON_TEXT_MOBILE, NAVIGATION_LINKS, PRACTITI
 const pathname = Astro.url.pathname;
 const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+const navLinkClass = (href: string) =>
+    isActive(href)
+        ? "nav-link nav-link-active"
+        : "nav-link nav-link-inactive";
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-300 bg-white px-4 md:px-8">
-    <div class="container-page row-lg h-16 row-justify-between md:h-[4.75rem]">
+<header class="sticky-bar">
+    <div class="container-page row-lg header-bar">
         <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} — home`}>
             <img
                 src="/logo.png"
                 alt={`${SITE_TITLE} logo`}
                 width="512"
                 height="512"
-                class="h-11 w-11 md:h-12 md:w-12"
+                class="header-logo"
                 loading="eager"
                 decoding="async"
             />
             <span>
-                <span class="block font-serif text-[1.05rem] font-bold leading-tight text-slate-900">
+                <span class="brand-name">
                     {PRACTITIONER.shortName}
                 </span>
                 <span class="meta-label mt-0.5 block !text-[0.62rem]">{SITE_BRAND_SUBTITLE}</span>
@@ -27,21 +32,13 @@ const isActive = (href: string) =>
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden min-w-0 items-center gap-x-8 leading-tight lg:flex" aria-label="Primary">
+        <nav class="hide-lg header-nav" aria-label="Primary">
             <div class="flex items-center gap-x-6">
                 {
                     NAVIGATION_LINKS.map((link) => (
                         <a
                             href={link.href}
-                            class:list={[
-                                // Underline is a real border on the link itself, not an
-                                // ::after pseudo — pseudos under a sticky header repainted
-                                // as a full-width streak across the bar on hover/active.
-                                "border-b-2 py-1 font-sans text-[0.8rem] font-medium tracking-wide transition-colors duration-200",
-                                isActive(link.href)
-                                    ? "border-slate-900 text-slate-900"
-                                    : "border-transparent text-slate-600 hover:border-slate-400 hover:text-slate-900",
-                            ]}
+                            class:list={[navLinkClass(link.href)]}
                         >
                             {link.label}
                         </a>
@@ -50,21 +47,21 @@ const isActive = (href: string) =>
             </div>
 
             <!-- Vertical Divider -->
-            <div class="h-4 w-px bg-slate-200" aria-hidden="true"></div>
+            <div class="vrule" aria-hidden="true"></div>
 
-            <a href="/login" class="btn btn-ghost !px-4 !py-2 !text-xs shrink-0">{LOGIN_BUTTON_TEXT}</a>
+            <a href="/login" class="btn btn-ghost shrink-0 header-login">{LOGIN_BUTTON_TEXT}</a>
         </nav>
 
         <!-- Mobile Toggle & Actions -->
         <div class="flex items-center gap-3 lg:hidden">
-            <a href="/login" class="btn btn-ghost hidden !px-4 !py-2 !text-xs sm:inline-flex lg:hidden">
+            <a href="/login" class="btn btn-ghost hidden header-login-mobile sm:inline-flex lg:hidden">
                 {LOGIN_BUTTON_TEXT}
             </a>
 
             <button
                 id="menu-toggle"
                 type="button"
-                class="flex h-10 w-10 items-center justify-center border border-slate-300 text-slate-700 hover:border-slate-900 hover:text-slate-900 lg:hidden"
+                class="header-toggle"
                 aria-label="Open menu"
                 aria-expanded="false"
                 aria-controls="mobile-menu"
@@ -82,7 +79,7 @@ const isActive = (href: string) =>
     <!-- Mobile Navigation Drawer -->
     <nav
         id="mobile-menu"
-        class="hidden divider bg-white px-4 pb-4 pt-2 lg:hidden"
+        class="hidden menu-mobile lg:hidden"
         aria-label="Mobile"
     >
         <ul class="flex flex-col">
@@ -92,8 +89,7 @@ const isActive = (href: string) =>
                         <a
                             href={link.href}
                             class:list={[
-                                "block py-3 font-sans text-[0.9rem]",
-                                isActive(link.href) ? "font-semibold text-slate-900" : "text-slate-600 hover:text-slate-900",
+                                isActive(link.href) ? "nav-mobile-active" : "nav-mobile",
                             ]}
                         >
                             {link.label}
@@ -106,6 +102,62 @@ const isActive = (href: string) =>
             </li>
         </ul>
     </nav>
+
+<style>
+    .header-bar {
+        height: 4rem;
+    }
+    @media (min-width: 768px) {
+        .header-bar {
+            height: 4.75rem;
+        }
+    }
+    .header-logo {
+        height: 2.75rem;
+        width: 2.75rem;
+    }
+    @media (min-width: 768px) {
+        .header-logo {
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+    .header-nav {
+        display: none;
+        min-width: 0;
+        align-items: center;
+        gap: 2rem;
+        line-height: 1.25;
+    }
+    @media (min-width: 1024px) {
+        .header-nav {
+            display: flex;
+        }
+    }
+    .header-toggle {
+        display: flex;
+        height: 2.5rem;
+        width: 2.5rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cbd5e1;
+        color: #334155;
+        transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .header-toggle:hover {
+        border-color: #0f172a;
+        color: #0f172a;
+    }
+    .header-login {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem !important;
+    }
+    .header-login-mobile {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem !important;
+    }
+</style>
+</header>
 
 <script>
     const menuToggle = document.getElementById("menu-toggle");
@@ -130,4 +182,3 @@ const isActive = (href: string) =>
         );
     }
 </script>
-</header>

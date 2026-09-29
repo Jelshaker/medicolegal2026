@@ -42,7 +42,7 @@ const { title, description, canonical, image, noindex, article } = Astro.props a
 			article={article}
 		/>
 	</head>
-	<body class="flex min-h-screen flex-col">
+	<body class="page-shell">
 		{/* GTM's no-JavaScript fallback, first in <body> as Google's snippet
 		     places it. The page already renders without JavaScript; this only
 		     adds the container's pixel. */}
@@ -61,7 +61,7 @@ const { title, description, canonical, image, noindex, article } = Astro.props a
 		}
 		<Header />
 		<TocSidebar />
-		<main class="flex-1">
+		<main class="main-content">
 			<slot />
 		</main>
 		<Footer />

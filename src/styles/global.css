@@ -14,23 +14,25 @@
       headings    .sec-title  .sec-title-lg  .entry-title  .entry-title-sm
       copy        .meta-label (+ .meta-label-sm)  .standfirst  .para  .para-sm  .list
                   .note-box  .callout  .rule-quote  .entry  .entry-list
-      links       .link  .link-sm  .link-quiet  .foot-link
+                  .entry-list-ruled
+      links       .link  .link-sm  .link-hero  .link-quiet  .foot-link
       surfaces    .box  .panel-dark  .tile  .chip (+ .chip-action)  .mark
       controls    .btn (+ .btn-primary .btn-ghost .btn-outline-white .btn-sm .btn-xs)
-                  .form-label  .input-field  .check-row  .check-icon
+                  .form-label  .input-field  .check-row  .check-icon  .focus-ring
       tables      .table
+       helpers     .brand-name  .vrule  .push-bottom  .footer-desc  .footer-members  .menu-mobile
       viewers     .viewer-open (+ .viewer-badge)  .lightbox-*  .toc-*
                   .diagram  .d-*  .figure-*  .plate-reserved
-      overlays    .toast (+ .toast-icon)  .cookie-banner  .dv-badge
+      overlays    .toast (+ .toast-icon)  .cookie-banner  .viewer-canvas-badge
       micro       .text-muted  .text-muted-alt  .text-muted-light
                   .divider  .divider-strong  .divider-below
                   .section  .section-paper  .section-top  .section-dark
                   .row  .row-lg  .row-justify-between  .row-wrap  .row-wrap-center  .row-baseline
-                  .grid-sm  .grid-md  .grid-lg
-                  .pad-box  .pad-sm  .pad-pad
-                  .badge  .badge-dark  .link-hover
-                  .sticky-bar  .text-center-auto  .container-narrow
-                  .space-y-*
+                  .grid-tight  .grid-compact  .grid-lg  .grid-2  .grid-3
+
+                  .badge  .badge-dark  .link-hover  .link-hover-light
+                  .sticky-bar  .nav-link  .nav-mobile
+                  .space-y-1  .space-y-2  .space-y-3  .space-y-4  .space-y-5  .space-y-6  .space-y-8  .space-y-12  .space-y-14
 
    Anything not in that list does not exist: there is one name per job, so
    the same look cannot be produced by two different classes.
@@ -940,8 +942,8 @@
 	transition: opacity 0.2s ease;
 }
 
-/* Readout badges inside the DICOM canvas (modality, dims, W/L). */
-.dv-badge {
+/* Readout badges inside the study viewer canvas (modality, dims, W/L). */
+.viewer-canvas-badge {
 	background: #020617b3;
 	backdrop-filter: blur(4px);
 	padding: 0.25rem 0.625rem;
@@ -951,16 +953,16 @@
 	letter-spacing: 0.08em;
 	color: #94a3b8;
 }
-.dv-badge--mono {
+.viewer-canvas-badge.mono {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 	font-variant-numeric: tabular-nums;
 	letter-spacing: 0;
 	text-transform: none;
 }
-.dv-badge--mono.dim {
+.viewer-canvas-badge.mono.dim {
 	color: #94a3b8;
 }
-.dv-badge--mono.wl {
+.viewer-canvas-badge.mono.wl {
 	color: #cbd5e1;
 }
 

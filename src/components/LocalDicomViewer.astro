@@ -20,9 +20,9 @@
 <script is:inline src="/vendor/dicomParser.min.js" defer></script>
 
 <!-- Privacy notice banner -->
-<div class="box px-5 py-3.5 text-sm">
-  <div class="flex items-start gap-3">
-    <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<div class="viewer-privacy">
+  <div class="viewer-privacy-row">
+    <svg class="viewer-privacy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       <path d="m9 12 2 2 4-4" />
     </svg>
@@ -33,142 +33,144 @@
 </div>
 
 <!-- Inline status line (progress, errors, and guidance). Hidden until needed. -->
-<p id="dv-status" role="status" class="mt-4 hidden border border-slate-300 bg-white px-5 py-3.5 font-sans text-sm leading-relaxed text-slate-700"></p>
+<p id="dv-status" role="status" class="viewer-status"></p>
 
 <!-- Drop zone (shown when no files loaded) -->
-<div id="dv-dropzone" class="relative mt-4 overflow-hidden border border-dashed border-slate-300 bg-slate-50/50 transition-colors">
-  <div class="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center sm:py-20">
-    <svg class="h-14 w-14 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<div id="dv-dropzone" class="viewer-dropzone">
+  <div class="viewer-dropzone-inner">
+    <svg class="viewer-dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="17 8 12 3 7 8" />
       <line x1="12" y1="3" x2="12" y2="15" />
     </svg>
     <div>
-      <p class="font-serif text-lg font-semibold text-slate-800">Drop your imaging files here</p>
-      <p class="mt-1 font-sans text-sm text-slate-500">
+      <p class="viewer-dropzone-title">Drop your imaging files here</p>
+      <p class="viewer-dropzone-sub">
         CT, MRI, X-ray, ultrasound or PET — a single file, several files, or a whole folder
       </p>
-      <div class="relative z-10 mt-5 flex flex-wrap items-center justify-center gap-3">
-        <button id="dv-choose-files" type="button" class="btn btn-primary !text-xs">Choose files</button>
-        <button id="dv-choose-folder" type="button" class="btn btn-ghost !text-xs">Choose a folder</button>
+      <div class="viewer-dropzone-actions">
+        <button id="dv-choose-files" type="button" class="btn btn-primary btn-xs">Choose files</button>
+        <button id="dv-choose-folder" type="button" class="btn btn-ghost btn-xs">Choose a folder</button>
       </div>
-      <p class="relative z-10 mt-3 text-muted-light">DICOM (.dcm) files — including files with no extension, as supplied on hospital discs</p>
+      <p class="viewer-dropzone-hint">DICOM (.dcm) files — including files with no extension, as supplied on hospital discs</p>
     </div>
   </div>
-  <input id="dv-file-input" type="file" multiple class="absolute inset-0 z-0 cursor-pointer opacity-0" aria-label="Choose DICOM files" />
+  <input id="dv-file-input" type="file" multiple class="viewer-dropzone-input" aria-label="Choose DICOM files" />
   <input id="dv-folder-input" type="file" multiple webkitdirectory class="hidden" tabindex="-1" aria-hidden="true" />
 </div>
 
 <!-- Viewer workspace (hidden until files loaded) -->
-<div id="dv-workspace" class="box mt-4 hidden gap-0 overflow-hidden md:grid md:grid-cols-[280px_1fr]">
+<div id="dv-workspace" class="viewer-workspace">
   <!-- Sidebar – metadata + controls -->
-  <div class="flex flex-col border-r border-slate-200">
+  <div class="viewer-sidebar">
     <!-- Metadata panel -->
-    <div id="dv-meta" class="flex-1 overflow-y-auto p-4 space-y-3">
-      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Image details (technical only)</h3>
-      <div id="dv-meta-body" class="text-xs space-y-2">
+    <div id="dv-meta" class="viewer-meta-panel">
+      <h3 class="viewer-panel-label">Image details (technical only)</h3>
+      <div id="dv-meta-body" class="viewer-meta-body space-y-2">
         <!-- Dynamic rows inserted here -->
         <p class="text-slate-400">Choose a file to see its technical details…</p>
       </div>
     </div>
 
     <!-- Series tabs (shown when multiple series detected) -->
-    <div id="dv-series-tabs" class="divider hidden">
-      <div class="px-4 pt-3 pb-1 flex items-center justify-between">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Series</h3>
-        <span id="dv-series-count" class="text-[0.6rem] text-slate-400"></span>
+    <div id="dv-series-tabs" class="viewer-series-panel">
+      <div class="viewer-series-header">
+        <h3 class="viewer-panel-label">Series</h3>
+        <span id="dv-series-count" class="viewer-series-count"></span>
       </div>
       <!-- Scrollable list; shows first 3 by default, expands on toggle -->
-      <div id="dv-series-list" class="px-3 pb-2 space-y-1 overflow-y-auto" style="max-height: 120px;">
+      <div id="dv-series-list" class="viewer-series-list">
         <!-- Dynamic series tabs inserted here -->
       </div>
-      <button id="dv-series-toggle" class="mx-3 mb-2 mt-0 w-full px-2 py-1 text-[0.6rem] font-medium uppercase tracking-wider text-slate-400 transition-colors hover:bg-slate-100 hidden">
+      <button id="dv-series-toggle" class="viewer-series-toggle is-hidden">
         Show all
       </button>
     </div>
 
     <!-- Controls panel -->
-    <div class="divider p-4 space-y-4">
-      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Controls</h3>
+    <div class="viewer-controls space-y-4">
+      <h3 class="viewer-panel-label">Controls</h3>
 
       <!-- Window / Level -->
       <div>
-        <label class="flex justify-between text-xs font-medium text-slate-600">
+        <label class="viewer-control-row">
           <span>Width (Window)</span>
-          <span id="dv-width-val" class="tabular-nums text-slate-400">400</span>
+          <span id="dv-width-val" class="viewer-control-value">400</span>
         </label>
-        <input id="dv-width" type="range" min="1" max="4000" value="400" step="1" class="mt-1 w-full accent-slate-600" />
+        <input id="dv-width" type="range" min="1" max="4000" value="400" step="1" class="viewer-control-input accent-slate-600" />
       </div>
       <div>
-        <label class="flex justify-between text-xs font-medium text-slate-600">
+        <label class="viewer-control-row">
           <span>Level (Center)</span>
-          <span id="dv-level-val" class="tabular-nums text-slate-400">40</span>
+          <span id="dv-level-val" class="viewer-control-value">40</span>
         </label>
-        <input id="dv-level" type="range" min="-1024" max="3072" value="40" step="1" class="mt-1 w-full accent-slate-600" />
+        <input id="dv-level" type="range" min="-1024" max="3072" value="40" step="1" class="viewer-control-input accent-slate-600" />
       </div>
 
       <!-- Zoom -->
       <div>
-        <label class="flex justify-between text-xs font-medium text-slate-600">
+        <label class="viewer-control-row">
           <span>Zoom</span>
-          <span id="dv-zoom-val" class="tabular-nums text-slate-400">100%</span>
+          <span id="dv-zoom-val" class="viewer-control-value">100%</span>
         </label>
-        <input id="dv-zoom" type="range" min="10" max="500" value="100" step="5" class="mt-1 w-full accent-slate-600" />
+        <input id="dv-zoom" type="range" min="10" max="500" value="100" step="5" class="viewer-control-input accent-slate-600" />
       </div>
 
       <!-- Slice navigation (for multi-frame / MPR) -->
       <div>
-        <label class="flex justify-between text-xs font-medium text-slate-600">
+        <label class="viewer-control-row">
           <span>Slice</span>
-          <span id="dv-slice-val" class="tabular-nums text-slate-400">1 / 1</span>
+          <span id="dv-slice-val" class="viewer-control-value">1 / 1</span>
         </label>
-        <div class="mt-1 flex items-center gap-2">
-          <button id="dv-slice-prev" class="btn btn-ghost !px-2 !py-1.5 !text-xs flex-shrink-0" aria-label="Previous slice">
+        <div class="viewer-slice-nav">
+          <button id="dv-slice-prev" class="btn btn-ghost viewer-slice-btn" aria-label="Previous slice">
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
-          <input id="dv-slice" type="range" min="1" max="1" value="1" class="flex-1 accent-slate-600" />
-          <button id="dv-slice-next" class="btn btn-ghost !px-2 !py-1.5 !text-xs flex-shrink-0" aria-label="Next slice">
+          <input id="dv-slice" type="range" min="1" max="1" value="1" class="viewer-slice-slider accent-slate-600" />
+          <button id="dv-slice-next" class="btn btn-ghost viewer-slice-btn" aria-label="Next slice">
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" /></svg>
           </button>
         </div>
       </div>
 
       <!-- Reset button -->
-      <button id="dv-reset" class="btn btn-ghost w-full !text-xs">Reset all</button>
+      <button id="dv-reset" class="btn btn-ghost w-full btn-xs">Reset all</button>
 
       <!-- Invert toggle -->
-      <button id="dv-invert" class="btn btn-ghost w-full !text-xs">Invert Colours</button>
+      <button id="dv-invert" class="btn btn-ghost w-full btn-xs">Invert Colours</button>
     </div>
 
     <!-- Actions bar -->
-    <div class="divider p-3 flex gap-2">
-      <button id="dv-add" type="button" class="btn btn-ghost flex-1 !text-xs">
-        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-        Add files
-      </button>
-      <button id="dv-add-folder" type="button" class="btn btn-ghost flex-1 !text-xs">Add folder</button>
-      <button id="dv-clear" type="button" class="btn btn-ghost !text-xs !px-3 !text-slate-600 hover:bg-slate-100">
-        Clear
-      </button>
+    <div class="divider p-3">
+      <div class="viewer-actions-row">
+        <button id="dv-add" type="button" class="btn btn-ghost btn-xs">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+          Add files
+        </button>
+        <button id="dv-add-folder" type="button" class="btn btn-ghost btn-xs">Add folder</button>
+        <button id="dv-clear" type="button" class="btn btn-ghost viewer-clear-btn btn-xs">
+          Clear
+        </button>
+      </div>
     </div>
   </div>
 
   <!-- Canvas area -->
-  <div class="relative bg-slate-950 flex items-center justify-center overflow-hidden" id="dv-canvas-area">
-    <canvas id="dv-canvas" class="block" style="image-rendering: pixelated; max-width: 100%; max-height: 100%;"></canvas>
+  <div class="viewer-canvas-area" id="dv-canvas-area">
+    <canvas id="dv-canvas" class="viewer-canvas" style="image-rendering: pixelated; max-width: 100%; max-height: 100%;"></canvas>
 
-    <!-- Overlay info badge -->
-    <div class="absolute top-3 left-3 flex gap-1.5">
-      <span id="dv-modality-badge" class="bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-slate-400 backdrop-blur-sm">CT</span>
+    <!-- Overlay info badges -->
+    <div class="viewer-canvas-overlay viewer-canvas-overlay-top-left">
+      <span id="dv-modality-badge" class="badge badge-modal">CT</span>
     </div>
 
     <!-- Pixel dimensions overlay -->
-    <div class="absolute bottom-3 right-3 bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-mono tabular-nums text-slate-400 backdrop-blur-sm" id="dv-dims">
+    <div class="viewer-canvas-overlay viewer-canvas-overlay-bottom-right" id="dv-dims">
       —
     </div>
 
     <!-- Window/Level display overlay -->
-    <div class="absolute top-3 right-3 bg-slate-950/70 px-2.5 py-1 text-[0.65rem] font-mono tabular-nums text-slate-300 backdrop-blur-sm" id="dv-wl-display">
+    <div class="viewer-canvas-overlay viewer-canvas-overlay-top-right" id="dv-wl-display">
       W: 400 C: 40
     </div>
   </div>
@@ -596,10 +598,10 @@
     if (!seriesListEl) return;
 
     if (seriesMap.size <= 1) {
-      if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+      if (seriesTabsEl) seriesTabsEl.classList.add("viewer-series-toggle is-hidden");
       return;
     }
-    if (seriesTabsEl) seriesTabsEl.classList.remove("hidden");
+    if (seriesTabsEl) seriesTabsEl.classList.remove("viewer-series-toggle is-hidden");
 
     // Count
     if (seriesCountEl) seriesCountEl.textContent = `${seriesMap.size} series`;
@@ -624,12 +626,14 @@
 
     // Toggle button — only show when there are more items than the visible count
     if (seriesToggleBtn && sorted.length > VISIBLE_COUNT) {
-      seriesToggleBtn.classList.remove("hidden");
+      seriesToggleBtn.classList.remove("is-hidden");
+      seriesToggleBtn.classList.add("is-visible");
       seriesToggleBtn.textContent = seriesExpanded
         ? `Show less (${seriesMap.size - VISIBLE_COUNT} hidden)`
         : `Show all ${sorted.length}`;
     } else if (seriesToggleBtn) {
-      seriesToggleBtn.classList.add("hidden");
+      seriesToggleBtn.classList.remove("is-visible");
+      seriesToggleBtn.classList.add("is-hidden");
     }
   }
 
@@ -688,7 +692,7 @@
     // Get sliceThickness from first slice's original file data; use study-level if not available
     // We don't have it per-slice currently, so show study-level from firstGood metadata
     metaBody.innerHTML = fields.map((f) =>
-      `<div class="flex justify-between border-b border-slate-100 pb-1"><span class="text-slate-500">${f.label}:</span><span class="text-slate-800 font-medium ml-2 truncate max-w-[160px]">${f.value}</span></div>`
+      `<div class="viewer-meta-row"><span class="viewer-meta-label">${f.label}:</span><span class="viewer-meta-value">${f.value}</span></div>`
     ).join("");
   }
 
@@ -878,10 +882,8 @@
       if (dropzone) dropzone.classList.add("hidden");
       if (workspace) {
         workspace.classList.remove("hidden");
-        (workspace as HTMLElement).style.display = "";
-        void (workspace as HTMLElement).offsetWidth;
-        workspace.classList.add("md:grid");
-        (workspace as HTMLElement).style.gridTemplateColumns = "280px 1fr";
+        workspace.classList.add("is-visible");
+        render();
       }
 
       // Status line
@@ -1026,14 +1028,12 @@
     if (modBadge) modBadge.textContent = "—";
     if (dimsBadge) dimsBadge.textContent = "—";
     if (wlDisplay) wlDisplay.textContent = "W: 400 C: 40";
-    if (seriesTabsEl) seriesTabsEl.classList.add("hidden");
+    if (seriesTabsEl) seriesTabsEl.classList.add("viewer-series-toggle is-hidden");
     if (seriesListEl) seriesListEl.innerHTML = "";
     if (dropzone) dropzone.classList.remove("hidden");
     if (workspace) {
       workspace.classList.add("hidden");
-      workspace.classList.remove("md:grid");
-      (workspace as HTMLElement).style.display = "none";
-      (workspace as HTMLElement).style.gridTemplateColumns = "";
+      workspace.classList.remove("is-visible");
     }
     if (fileInput) fileInput.value = "";
     if (folderInput) folderInput.value = "";
@@ -1080,5 +1080,5 @@
   }
 
 })();
-/* component chrome (#dv-dropzone / #dv-workspace) lives in global.css */
+/* component chrome (#dv-dropzone / #dv-workspace) lives in global.css / utils.css */
 </script>

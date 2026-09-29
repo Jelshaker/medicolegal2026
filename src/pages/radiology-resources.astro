@@ -120,9 +120,9 @@ const lawLinks = [
 			{ href: '#modalities', label: 'Modalities' },
 			{ href: '#dose-safety', label: 'Dose and safety' },
 			{ href: '#reporting-standards', label: 'Reporting standards' },
+			{ href: '#handling-images', label: 'Handling images' },
 			{ href: '#legal-questions', label: 'Legal questions' },
 			{ href: '#quality-assurance', label: 'Quality assurance' },
-			{ href: '#handling-images', label: 'Handling images' },
 			{ href: '#primary-sources', label: 'Primary sources' },
 		]}
 		audience="Written for reporting radiologists, referrers, and the solicitors and experts who test their work."
@@ -238,75 +238,10 @@ const lawLinks = [
 				</div>
 			</Section>
 
-			<!-- Where standards become legal questions -->
-			<Section
-				id="legal-questions"
-				index="04"
-				eyebrow="Radiology and the law"
-				title="Where a reporting standard becomes a legal question"
-				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
-			>
-				<div class="entry-list mt-0">
-					{
-						lawLinks.map((l) => (
-							<a
-								href={l.href}
-								class="box group flex flex-col p-6 transition-all hover:border-slate-400"
-							>
-								<h3 class="entry-title">{l.n}</h3>
-								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{l.d}</p>
-								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-									{l.cta}
-									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-										<path d="M5 12h14M12 5v14" />
-									</svg>
-								</span>
-							</a>
-						))
-					}
-				</div>
-			</Section>
-
-			<!-- Quality assurance -->
-			<Section
-				id="quality-assurance"
-				index="05"
-				eyebrow="Assurance"
-				title="Quality assurance and learning"
-				lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
-			>
-				<div class="entry-list mt-0">
-					<div class="entry">
-						<h3 class="entry-title">Peer review and discrepancy audit</h3>
-						<p class="para-sm">
-							A documented sample of reports is re-read by another competent reporter, discrepancies are
-							classified and discussed, and the learning is written down. Performed properly, this is
-							also the evidence that the service was monitoring its own accuracy.
-						</p>
-					</div>
-					<div class="entry">
-						<h3 class="entry-title">Candour and correction</h3>
-						<p class="para-sm">
-							Where a report is wrong or a study is misread, the professional duty of candour runs in
-							parallel with the incident process: acknowledge the error, explain it, apologise, record
-							what happened and share the learning. An addendum supplements the original report; it does
-							not replace it.
-						</p>
-					</div>
-					<div class="entry">
-						<h3 class="entry-title">Keep the record, not just the report</h3>
-						<p class="para-sm">
-							Protocol details, the clinical information supplied, viewing conditions and the route by
-							which an urgent finding was communicated are often the decisive material later. A
-							contemporaneous note of an escalation attempt is worth more than a recollection.
-						</p>
-					</div>
-				</div>
-			</Section>
 			<!-- Handling and transferring images -->
 			<Section
 				id="handling-images"
-				index="06"
+				index="04"
 				eyebrow="Handling images"
 				title="Storage, transfer and viewing"
 				lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the record."
@@ -341,6 +276,72 @@ const lawLinks = [
 							Open the local DICOM viewer
 							<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
 						</a>
+					</div>
+				</div>
+			</Section>
+
+			<!-- Where standards become legal questions -->
+			<Section
+				id="legal-questions"
+				index="05"
+				eyebrow="Radiology and the law"
+				title="Where a reporting standard becomes a legal question"
+				lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
+			>
+				<div class="entry-list mt-0">
+					{
+						lawLinks.map((l) => (
+							<a
+								href={l.href}
+								class="box group flex flex-col p-6 transition-all hover:border-slate-400"
+							>
+								<h3 class="entry-title">{l.n}</h3>
+								<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{l.d}</p>
+								<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+									{l.cta}
+									<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M5 12h14M12 5v14" />
+									</svg>
+								</span>
+							</a>
+						))
+					}
+				</div>
+			</Section>
+
+			<!-- Quality assurance -->
+			<Section
+				id="quality-assurance"
+				index="06"
+				eyebrow="Assurance"
+				title="Quality assurance and learning"
+				lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
+			>
+				<div class="entry-list mt-0">
+					<div class="entry">
+						<h3 class="entry-title">Peer review and discrepancy audit</h3>
+						<p class="para-sm">
+							A documented sample of reports is re-read by another competent reporter, discrepancies are
+							classified and discussed, and the learning is written down. Performed properly, this is
+							also the evidence that the service was monitoring its own accuracy.
+						</p>
+					</div>
+					<div class="entry">
+						<h3 class="entry-title">Candour and correction</h3>
+						<p class="para-sm">
+							Where a report is wrong or a study is misread, the professional duty of candour runs in
+							parallel with the incident process: acknowledge the error, explain it, apologise, record
+							what happened and share the learning. An addendum supplements the original report; it does
+							not replace it.
+						</p>
+					</div>
+					<div class="entry">
+						<h3 class="entry-title">Keep the record, not just the report</h3>
+						<p class="para-sm">
+							Protocol details, the clinical information supplied, viewing conditions and the route by
+							which an urgent finding was communicated are often the decisive material later. A
+							contemporaneous note of an escalation attempt is worth more than a recollection.
+						</p>
 					</div>
 				</div>
 			</Section>

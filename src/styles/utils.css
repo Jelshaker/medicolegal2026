@@ -107,9 +107,10 @@
 	color: #0f172a;
 }
 
-/* Mobile menu panel — replaces `divider bg-white px-4 pb-4 pt-2`. */
+/* Mobile menu panel — replaces `divider bg-white px-4 pb-4 pt-2`.
+   Hiding/showing is handled by Tailwind's `hidden` class in markup;
+   do not add display:none here — it would block the toggle. */
 .menu-mobile {
-	display: none;
 	border-top: 1px solid #e2e8f0;
 	background: #fff;
 	padding: 0.5rem 1rem;

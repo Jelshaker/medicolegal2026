@@ -128,6 +128,12 @@ const navLinkClass = (href: string) =>
         align-items: center;
         gap: 2rem;
         line-height: 1.25;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     @media (min-width: 1024px) {
         .header-nav {
@@ -160,25 +166,32 @@ const navLinkClass = (href: string) =>
 </header>
 
 <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const iconBurger = document.getElementById("icon-burger");
-    const iconClose = document.getElementById("icon-close");
-
-    menuToggle?.addEventListener("click", () => {
-        const open = mobileMenu?.classList.toggle("hidden") !== true;
-        menuToggle.setAttribute("aria-expanded", String(open));
+    document.addEventListener("click", (e) => {
+        const toggle = e.target.closest("#menu-toggle");
+        if (!toggle) return;
+        e.preventDefault();
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconBurger = document.getElementById("icon-burger");
+        const iconClose = document.getElementById("icon-close");
+        if (!mobileMenu) return;
+        const open = mobileMenu.classList.toggle("hidden") !== true;
+        toggle.setAttribute("aria-expanded", String(open));
         iconBurger?.classList.toggle("hidden", open);
         iconClose?.classList.toggle("hidden", !open);
     });
 
-    if (mobileMenu) {
-        mobileMenu.querySelectorAll("a").forEach((a) =>
-            a.addEventListener("click", () => {
-                mobileMenu.classList.add("hidden");
-                iconBurger?.classList.remove("hidden");
-                iconClose?.classList.add("hidden");
-            }),
-        );
-    }
+    document.addEventListener("click", (e) => {
+        // Close mobile menu when a nav link inside it is clicked.
+        const link = e.target.closest("#mobile-menu a");
+        if (!link) return;
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (!mobileMenu) return;
+        mobileMenu.classList.add("hidden");
+        const iconBurger = document.getElementById("icon-burger");
+        const iconClose = document.getElementById("icon-close");
+        const toggle = document.getElementById("menu-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+        iconBurger?.classList.remove("hidden");
+        iconClose?.classList.add("hidden");
+    });
 </script>

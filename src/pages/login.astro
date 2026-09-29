@@ -13,13 +13,11 @@ import { DEMO_PORTAL_ACCOUNT, LOGIN_BUTTON_TEXT, LOGIN_PAGE_TITLE, SITE_TITLE } 
 			<div class="border border-slate-300 bg-white p-8">
 				<div>
 					<h1 class="font-serif text-xl font-bold text-slate-900">{LOGIN_PAGE_TITLE}</h1>
-					<p class="mt-1 font-sans text-xs uppercase tracking-[0.12em] text-slate-500">Case correspondence &amp; imaging portal</p>
+					<p class="mt-1 font-sans text-xs uppercase tracking-[0.12em] text-slate-500">Members Only</p>
 				</div>
 
 				<p class="para-sm mt-5">
-					Professional referrers and instructing parties can sign in to access secure
-					correspondence and case updates. Access is issued by the secretariat.
-				</p>
+Secure portal for academic paper review and privileged legal commentary. Verify credentials to access the review proceedings. By invitation only.				</p>
 
 				<form id="login-form" class="mt-6 grid gap-4">
 					<label class="form-label">
@@ -32,11 +30,6 @@ import { DEMO_PORTAL_ACCOUNT, LOGIN_BUTTON_TEXT, LOGIN_PAGE_TITLE, SITE_TITLE } 
 					</label>
 					<button type="submit" class="btn btn-primary w-full" data-submit>Sign in</button>
 				</form>
-
-				<div class="mt-6 divider pt-4 font-sans text-xs leading-relaxed text-muted">
-					<p class="font-semibold text-slate-600">Demo access (replace with a real provider in production)</p>
-					<p class="mt-1">Email: <code>{DEMO_PORTAL_ACCOUNT.email}</code><br />Password: <code>{DEMO_PORTAL_ACCOUNT.password}</code></p>
-				</div>
 			</div>
 		</div>
 	</section>

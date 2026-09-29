@@ -11,68 +11,77 @@ const navLinkClass = (href: string) =>
         : "nav-link nav-link-inactive";
 ---
 
-<header class="sticky-bar">
-    <div class="container-page row-lg row-justify-between header-bar">
-        <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} — home`}>
-            <img
-                src="/logo.png"
-                alt={`${SITE_TITLE} logo`}
-                width="512"
-                height="512"
-                class="header-logo"
-                loading="eager"
-                decoding="async"
-            />
-            <span>
-                <span class="brand-name">
-                    {PRACTITIONER.shortName}
-                </span>
-                <span class="meta-label mt-0.5 block !text-[0.62rem]">{SITE_BRAND_SUBTITLE}</span>
-            </span>
-        </a>
+<header>
+    <!-- Full-width background bar: sticky, white, bottom border, z-index 50.
+         The inner container keeps content centred; the right group breaks out to
+         the viewport edge so login and burger sit flush far right. -->
+    <div class="sticky-bar">
+        <div class="header-bar flex items-center">
+            <!-- Centre: logo + nav links — kept inside the content container -->
+            <div class="container-page row-lg flex items-center flex-1">
+                <div class="flex items-center gap-x-6">
+                    <!-- Logo -->
+                    <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} — home`}>
+                        <img
+                            src="/logo.png"
+                            alt={`${SITE_TITLE} logo`}
+                            width="512"
+                            height="512"
+                            class="header-logo"
+                            loading="eager"
+                            decoding="async"
+                        />
+                        <span>
+                            <span class="brand-name">
+                                {PRACTITIONER.shortName}
+                            </span>
+                            <span class="meta-label mt-0.5 block !text-[0.62rem]">{SITE_BRAND_SUBTITLE}</span>
+                        </span>
+                    </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="header-nav hidden lg:flex" aria-label="Primary">
-            <div class="flex items-center gap-x-6">
-                {
-                    NAVIGATION_LINKS.map((link) => (
-                        <a
-                            href={link.href}
-                            class:list={[navLinkClass(link.href)]}
-                        >
-                            {link.label}
-                        </a>
-                    ))
-                }
+                    <!-- Desktop nav — hidden on mobile, sits next to logo on desktop -->
+                    <nav class="header-nav hidden lg:flex" aria-label="Primary">
+                        <div class="flex items-center gap-x-6">
+                            {
+                                NAVIGATION_LINKS.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class:list={[navLinkClass(link.href)]}
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </nav>
+                </div>
             </div>
 
-            <!-- Vertical Divider -->
-            <div class="vrule" aria-hidden="true"></div>
+            <!-- Right group: login + mobile toggle — sits outside container, fixed to viewport right -->
+            <div class="shrink-0 flex items-center gap-x-4 pr-6">
+                <!-- Secure Login -->
+                <a href="/login" class="btn btn-ghost shrink-0 header-login">{LOGIN_BUTTON_TEXT}</a>
 
-            <a href="/login" class="btn btn-ghost shrink-0 header-login">{LOGIN_BUTTON_TEXT}</a>
-        </nav>
+                <!-- Desktop divider — hidden on mobile -->
+                <div class="vrule hidden sm:block" aria-hidden="true"></div>
 
-        <!-- Mobile Toggle & Actions -->
-        <div class="flex items-center gap-3 lg:hidden">
-            <a href="/login" class="btn btn-ghost header-login-mobile hidden sm:inline-flex lg:hidden">
-                {LOGIN_BUTTON_TEXT}
-            </a>
-
-            <button
-                id="menu-toggle"
-                type="button"
-                class="header-toggle"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="mobile-menu"
-            >
-                <svg id="icon-burger" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M4 7h16M4 12h16M4 17h16" />
-                </svg>
-                <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M6 6l12 12M18 6 6 18" />
-                </svg>
-            </button>
+                <!-- Mobile menu toggle — visible on mobile, hidden on desktop -->
+                <button
+                    id="menu-toggle"
+                    type="button"
+                    class="header-toggle block lg:hidden"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <svg id="icon-burger" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg>
+                    <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M6 6l12 12M18 6 6 18" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -109,9 +118,6 @@ const navLinkClass = (href: string) =>
             height: 4.75rem;
         }
     }
-    header {
-        /* Positioned by the .sticky-bar utility (position: sticky; top: 0; z-index: 50). */
-    }
     .header-logo {
         height: 2.75rem;
         width: 2.75rem;
@@ -124,16 +130,6 @@ const navLinkClass = (href: string) =>
     }
     .header-nav {
         display: none;
-        min-width: 0;
-        align-items: center;
-        gap: 2rem;
-        line-height: 1.25;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
     }
     @media (min-width: 1024px) {
         .header-nav {
@@ -154,15 +150,22 @@ const navLinkClass = (href: string) =>
         border-color: #0f172a;
         color: #0f172a;
     }
+    @media (min-width: 1024px) {
+        .header-toggle {
+            display: none !important;
+        }
+    }
     .header-login,
     .header-login-mobile {
         font-size: 0.75rem;
         padding: 0.5rem 1rem !important;
     }
-    /* Desktop nav: hidden below lg, shown at lg+ */
-    @media (max-width: 1023px) {
-        .header-nav {
-            display: none !important;
+    .header-login-mobile {
+        display: inline-flex;
+    }
+    @media (min-width: 1024px) {
+        .header-login-mobile {
+            display: none;
         }
     }
 
@@ -212,7 +215,7 @@ const navLinkClass = (href: string) =>
         }
     }
 
-    // Toggle open/close when clicking the menu button (burger or X icon)
+    // Toggle open/close when clicking the mobile menu button
     document.addEventListener("click", (e) => {
         const toggle = e.target.closest("#menu-toggle");
         if (!toggle) return;

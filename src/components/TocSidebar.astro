@@ -2,6 +2,7 @@
 const title = "On this page";
 ---
 <aside data-toc-sidebar class="toc-sidebar" aria-label="Page navigation">
+  <!-- Desktop vertical scroll chevrons (hidden on mobile) -->
   <svg class="toc-chevron" data-toc-overflow-top viewBox="0 0 20 20" fill="none" aria-hidden="true">
     <path d="M5 12l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
@@ -13,6 +14,19 @@ const title = "On this page";
   <svg class="toc-chevron" data-toc-overflow-bottom viewBox="0 0 20 20" fill="none" aria-hidden="true">
     <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
+  <!-- Mobile horizontal scroll chevrons -->
+  <div class="toc-hscroll">
+    <button class="toc-chevron-h toc-chevron-left" aria-label="Scroll left" tabindex="0">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="toc-chevron-h toc-chevron-right" aria-label="Scroll right" tabindex="0">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
 </aside>
 <script>
   const tocSidebar = document.querySelector("[data-toc-sidebar]");
@@ -98,6 +112,20 @@ const title = "On this page";
         if (on) a.setAttribute("aria-current", "true");
         else a.removeAttribute("aria-current");
       });
+      // Mobile horizontal bar: scroll the active link into view.
+      const active = links.find((a) => a.getAttribute("href") === "#" + id);
+      if (active) {
+        const mq = window.matchMedia("(max-width: 79.99rem)");
+        if (mq.matches) {
+          const listEl = active.closest(".toc-list");
+          if (listEl) {
+            const listRect = listEl.getBoundingClientRect();
+            const activeRect = active.getBoundingClientRect();
+            const scrollLeft = listEl.scrollLeft + (activeRect.left - listRect.left) - (listRect.width / 2) + (activeRect.width / 2);
+            listEl.scrollTo({ left: Math.max(0, scrollLeft), behavior: reduce ? "auto" : "smooth" });
+          }
+        }
+      }
     };
     const targets = links.map((a) => document.getElementById((a.getAttribute("href") || "").slice(1))).filter(Boolean);
     if ("IntersectionObserver" in window) {
@@ -111,15 +139,15 @@ const title = "On this page";
       window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
 
-    // Scroll overflow chevrons — show based on page scroll position so the
-    // bottom chevron stays visible while the page hasn't reached the end,
-    // and hides only when the user scrolls all the way to the bottom of the
-    // page (or when the TOC card itself is not scrollable).
+    // TOC card references for scroll chevrons
     const card = tocSidebar.querySelector("[data-toc-list]").parentElement;
     const overflowTop = tocSidebar.querySelector("[data-toc-overflow-top]");
     const overflowBottom = tocSidebar.querySelector("[data-toc-overflow-bottom]");
     const hasScroll = card.scrollHeight > card.clientHeight;
-    if (hasScroll) {
+
+    // Desktop vertical scroll chevrons (wide viewport only)
+    const isWide = window.matchMedia("(min-width: 80rem)");
+    if (isWide.matches && hasScroll) {
       const updateChevrons = () => {
         // Top chevron: visible when the TOC card itself has scrolled down
         const atTop = card.scrollTop === 0;
@@ -141,6 +169,32 @@ const title = "On this page";
       if (overflowBottom) overflowBottom.addEventListener("click", () => {
         card.scrollTo({ top: card.scrollHeight, behavior: reduce ? "auto" : "smooth" });
       });
+    }
+
+    // Mobile horizontal scroll chevrons (narrow viewport)
+    const isNarrow = window.matchMedia("(max-width: 79.99rem)");
+    if (isNarrow.matches) {
+      const listEl = list; // already scoped inside the else block
+      const chevronLeft = listEl?.closest("[data-toc-sidebar]")?.querySelector(".toc-chevron-left");
+      const chevronRight = listEl?.closest("[data-toc-sidebar]")?.querySelector(".toc-chevron-right");
+      if (listEl && chevronLeft && chevronRight) {
+        const hScrollAmount = 50; // px to scroll per chevron click
+        const updateHChevrons = () => {
+          const atLeft = listEl.scrollLeft <= 1;
+          const atRight = listEl.scrollLeft + listEl.clientWidth >= listEl.scrollWidth - 1;
+          chevronLeft.classList.toggle("is-active", !atLeft);
+          chevronRight.classList.toggle("is-active", !atRight);
+        };
+        listEl.addEventListener("scroll", updateHChevrons, { passive: true });
+        window.addEventListener("resize", updateHChevrons);
+        updateHChevrons();
+        chevronLeft.addEventListener("click", () => {
+          listEl.scrollBy({ left: -hScrollAmount, behavior: reduce ? "auto" : "smooth" });
+        });
+        chevronRight.addEventListener("click", () => {
+          listEl.scrollBy({ left: hScrollAmount, behavior: reduce ? "auto" : "smooth" });
+        });
+      }
     }
   }
 </script>

@@ -13,105 +13,106 @@ const navLinkClass = (href: string) =>
 
 <header>
     <!-- Full-width background bar: sticky, white, bottom border, z-index 50.
-         The inner container keeps content centred; the right group breaks out to
-         the viewport edge so login and burger sit flush far right. -->
+         Everything sits inside a single container so padding, max-width and
+         min-width apply uniformly - no overflow on narrow screens. -->
     <div class="sticky-bar">
         <div class="header-bar flex items-center">
-            <!-- Centre: logo + nav links — kept inside the content container -->
-            <div class="container-page row-lg flex items-center flex-1">
-                <div class="flex items-center gap-x-6">
-                    <!-- Logo -->
-                    <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} — home`}>
-                        <img
-                            src="/logo.png"
-                            alt={`${SITE_TITLE} logo`}
-                            width="512"
-                            height="512"
-                            class="header-logo"
-                            loading="eager"
-                            decoding="async"
-                        />
-                        <span>
-                            <span class="brand-name">
-                                {PRACTITIONER.shortName}
-                            </span>
-                            <span class="meta-label mt-0.5 block !text-[0.62rem]">{SITE_BRAND_SUBTITLE}</span>
+            <div class="container-page flex items-center">
+                <!-- Left: logo + brand name (hidden on very narrow screens) -->
+                <a href="/" class="group flex shrink-0 items-center gap-3" aria-label={`${SITE_TITLE} - home`}>
+                    <img
+                        src="/logo.png"
+                        alt={`${SITE_TITLE} logo`}
+                        width="512"
+                        height="512"
+                        class="header-logo"
+                        loading="eager"
+                        decoding="async"
+                    />
+                    <span class="hidden sm:block">
+                        <span class="brand-name">
+                            {PRACTITIONER.shortName}
                         </span>
-                    </a>
+                        <span class="meta-label mt-0.5 block !text-[0.62rem]">{SITE_BRAND_SUBTITLE}</span>
+                    </span>
+                </a>
 
-                    <!-- Desktop nav — hidden on mobile, sits next to logo on desktop -->
-                    <nav class="header-nav hidden lg:flex" aria-label="Primary">
-                        <div class="flex items-center gap-x-6">
-                            {
-                                NAVIGATION_LINKS.map((link) => (
-                                    <a
-                                        href={link.href}
-                                        class:list={[navLinkClass(link.href)]}
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))
-                            }
-                        </div>
-                    </nav>
+                <!-- Desktop nav - hidden on mobile, sits next to logo on desktop -->
+                <nav class="header-nav hidden md:flex" aria-label="Primary">
+                    <div class="flex items-center gap-x-6">
+                        {
+                            NAVIGATION_LINKS.map((link) => (
+                                <a
+                                    href={link.href}
+                                    class:list={[navLinkClass(link.href)]}
+                                >
+                                    {link.label}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </nav>
+
+                <!-- Flexible spacer - pushes right group to the far right -->
+                <div class="flex-1"></div>
+
+                <!-- Right group: login (desktop only) + mobile toggle -->
+                <div class="shrink-0 flex items-center gap-x-3">
+                    <!-- Secure Login - desktop only -->
+                    <a href="/login" class="btn btn-ghost shrink-0 header-login hidden lg:inline-flex">{LOGIN_BUTTON_TEXT}</a>
+
+                    <!-- Desktop divider - hidden on mobile -->
+                    <div class="vrule hidden sm:block" aria-hidden="true"></div>
+
+                    <!-- Mobile menu toggle - visible on mobile, hidden on desktop -->
+                    <button
+                        id="menu-toggle"
+                        type="button"
+                        class="header-toggle block md:hidden"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                    >
+                        <svg id="icon-burger" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M4 7h16M4 12h16M4 17h16" />
+                        </svg>
+                        <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M6 6l12 12M18 6 6 18" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-
-            <!-- Right group: login (desktop only) + mobile toggle — sits outside container, fixed to viewport right -->
-            <div class="shrink-0 flex items-center gap-x-4 pr-6">
-                <!-- Secure Login — desktop only; moved into mobile drawer below to avoid overlap -->
-                <a href="/login" class="btn btn-ghost shrink-0 header-login hidden lg:inline-flex">{LOGIN_BUTTON_TEXT}</a>
-
-                <!-- Desktop divider — hidden on mobile -->
-                <div class="vrule hidden sm:block" aria-hidden="true"></div>
-
-                <!-- Mobile menu toggle — visible on mobile, hidden on desktop -->
-                <button
-                    id="menu-toggle"
-                    type="button"
-                    class="header-toggle block lg:hidden"
-                    aria-label="Open menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                >
-                    <svg id="icon-burger" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <path d="M4 7h16M4 12h16M4 17h16" />
-                    </svg>
-                    <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <path d="M6 6l12 12M18 6 6 18" />
-                    </svg>
-                </button>
-            </div>
         </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div
-        id="mobile-menu"
-        class="hidden menu-mobile mobile-menu-drawer"
-        aria-label="Mobile"
-    >
-        <ul class="flex flex-col text-right">
-            {
-                NAVIGATION_LINKS.map((link) => (
-                    <li class="border-b border-slate-100 last:border-b-0">
-                        <a
-                            href={link.href}
-                            class:list={[
-                                isActive(link.href) ? "nav-mobile-active" : "nav-mobile",
-                            ]}
-                        >
-                            {link.label}
-                        </a>
-                    </li>
-                ))
-            }
-            <!-- Mobile login — inside drawer so it never overlaps the hamburger -->
+        <!-- Mobile Navigation Drawer - full-width panel below header bar -->
+        <div
+            id="mobile-menu"
+            class="hidden menu-mobile mobile-menu-drawer"
+            aria-label="Mobile"
+        >
+            <ul class="flex flex-col text-right">
+                {
+                    NAVIGATION_LINKS.map((link) => (
+                        <li class="border-b border-slate-100 last:border-b-0">
+                            <a
+                                href={link.href}
+                                class:list={[
+                                    isActive(link.href) ? "nav-mobile-active" : "nav-mobile",
+                                ]}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <!-- Mobile login - outside the <ul> (invalid HTML to put <div> inside <ul>) -->
             <div class="border-t border-slate-100 p-3">
                 <a href="/login" class="btn btn-ghost header-login-mobile flex w-full">{LOGIN_BUTTON_TEXT}</a>
             </div>
-        </ul>
+        </div>
     </div>
+</header>
 
 <style>
     .header-bar {
@@ -173,76 +174,97 @@ const navLinkClass = (href: string) =>
         }
     }
 
-    /* Narrow dropdown menu — positioned under the hamburger button on the right.
-       Uses min() so it caps at 20rem on wide screens but shrinks to fit narrow viewports. */
+    /* Full-width mobile menu drawer — spans the container, positioned
+       below the header bar.  No dropdown arrow, no offset. */
     .mobile-menu-drawer {
         position: absolute;
         top: 100%;
+        left: 0;
         right: 0;
-        width: min(20rem, calc(100vw - 1.5rem));
+        width: 100%;
         z-index: 60;
+        border-top: 1px solid #e2e8f0;
+        background: #fff;
+        animation: slideDown 0.15s ease-out;
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-4px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
 </style>
-</header>
 
 <script>
-    function openMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const iconBurger = document.getElementById("icon-burger");
-        const iconClose = document.getElementById("icon-close");
-        const toggle = document.getElementById("menu-toggle");
-        if (!mobileMenu) return;
-        mobileMenu.classList.remove("hidden");
-        toggle?.setAttribute("aria-expanded", "true");
-        iconBurger?.classList.add("hidden");
-        iconClose?.classList.remove("hidden");
-    }
+    // ── Mobile menu toggle ──────────────────────────────────────────────
+    // All logic is isolated in this module to avoid global scope leaks.
+    (() => {
+        const MENU_ID  = "mobile-menu";
+        const TOGGLE_ID = "menu-toggle";
 
-    function closeMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const iconBurger = document.getElementById("icon-burger");
-        const iconClose = document.getElementById("icon-close");
-        const toggle = document.getElementById("menu-toggle");
-        if (!mobileMenu) return;
-        mobileMenu.classList.add("hidden");
-        toggle?.setAttribute("aria-expanded", "false");
-        iconBurger?.classList.remove("hidden");
-        iconClose?.classList.add("hidden");
-    }
+        // Cached references (guaranteed to exist once the DOM is ready)
+        let mobileMenu: HTMLElement | null = null;
+        let toggle     : HTMLElement | null = null;
 
-    function toggleMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (!mobileMenu) return;
-        if (mobileMenu.classList.contains("hidden")) {
-            openMenu();
-        } else {
-            closeMenu();
+        const getEls = () => {
+            if (!mobileMenu) mobileMenu = document.getElementById(MENU_ID);
+            if (!toggle)     toggle     = document.getElementById(TOGGLE_ID);
+            return mobileMenu && toggle;
+        };
+
+        function openMenu() {
+            if (!getEls()) return;
+            mobileMenu!.classList.remove("hidden");
+            toggle!.setAttribute("aria-expanded", "true");
+            const burger = toggle!.querySelector<HTMLSVGElement>('#icon-burger');
+            const close  = toggle!.querySelector<HTMLSVGElement>('#icon-close');
+            burger?.classList.add("hidden");
+            close?.classList.remove("hidden");
         }
-    }
 
-    // Toggle open/close when clicking the mobile menu button
-    document.addEventListener("click", (e) => {
-        const toggle = e.target.closest("#menu-toggle");
-        if (!toggle) return;
-        e.preventDefault();
-        toggleMenu();
-    });
-
-    // Close mobile menu when a nav link inside it is clicked.
-    document.addEventListener("click", (e) => {
-        const link = e.target.closest("#mobile-menu a");
-        if (!link) return;
-        closeMenu();
-    });
-
-    // Close mobile menu when clicking anywhere outside the menu area
-    document.addEventListener("click", (e) => {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const toggle = document.getElementById("menu-toggle");
-        if (!mobileMenu || !toggle) return;
-        if (mobileMenu.classList.contains("hidden")) return;
-        if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
-            closeMenu();
+        function closeMenu() {
+            if (!getEls()) return;
+            mobileMenu!.classList.add("hidden");
+            toggle!.setAttribute("aria-expanded", "false");
+            const burger = toggle!.querySelector<HTMLSVGElement>('#icon-burger');
+            const close  = toggle!.querySelector<HTMLSVGElement>('#icon-close');
+            burger?.classList.remove("hidden");
+            close?.classList.add("hidden");
         }
-    });
+
+        // Toggle open/close when clicking the menu button
+        document.addEventListener("click", (e) => {
+            const target = (e.target as HTMLElement).closest(`#${TOGGLE_ID}`);
+            if (!target) return;
+            e.preventDefault();
+            if (mobileMenu?.classList.contains("hidden")) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        });
+
+        // Close mobile menu when a nav link inside it is clicked.
+        document.addEventListener("click", (e) => {
+            if (!getEls()) return;
+            const link = (e.target as HTMLElement).closest(`#${MENU_ID} a`);
+            if (link) {
+                closeMenu();
+            }
+        });
+
+        // Close mobile menu when clicking anywhere outside the menu area
+        document.addEventListener("click", (e) => {
+            if (!getEls()) return;
+            if (mobileMenu!.classList.contains("hidden")) return;
+            if (!mobileMenu!.contains(e.target as Node) && !toggle!.contains(e.target as Node)) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !mobileMenu?.classList.contains("hidden")) {
+                closeMenu();
+            }
+        });
+    })();
 </script>

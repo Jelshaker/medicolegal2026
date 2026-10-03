@@ -481,6 +481,102 @@
 }
 
 /* =====================================================================
+   Sticky header bar — height, logo, nav, toggle, login, drawer          */
+/* ------------------------------------------------------------------ */
+
+/* Header bar height: 4 rem on mobile, 4.75 rem on tablet+. */
+.header-bar {
+	height: 4rem;
+}
+@media (min-width: 768px) {
+	.header-bar {
+		height: 4.75rem;
+	}
+}
+
+/* Logo sizing. */
+.header-logo {
+	height: 2.75rem;
+	width: 2.75rem;
+}
+@media (min-width: 768px) {
+	.header-logo {
+		height: 3rem;
+		width: 3rem;
+	}
+}
+
+/* Desktop nav links — hidden on mobile, shown at lg breakpoint. */
+.header-nav {
+	display: none;
+}
+@media (min-width: 1024px) {
+	.header-nav {
+		display: flex;
+	}
+}
+
+/* Small gap between logo and nav links on desktop. */
+.header-nav-spaced {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+/* Hamburger / mobile menu toggle button. */
+.header-toggle {
+	display: flex;
+	height: 2.5rem;
+	width: 2.5rem;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #cbd5e1;
+	color: #334155;
+	transition: border-color 0.15s ease, color 0.15s ease;
+}
+.header-toggle:hover {
+	border-color: #0f172a;
+	color: #0f172a;
+}
+@media (min-width: 1024px) {
+	.header-toggle {
+		display: none !important;
+	}
+}
+
+/* Login button variants — shared sizing; mobile variant hidden at lg. */
+.header-login,
+.header-login-mobile {
+	font-size: 0.75rem;
+	padding: 0.5rem 1rem !important;
+}
+.header-login-mobile {
+	display: inline-flex;
+}
+@media (min-width: 1024px) {
+	.header-login-mobile {
+		display: none;
+	}
+}
+
+/* Full-width mobile menu drawer — spans the container, positioned
+   below the header bar.  Slide-down animation. */
+.mobile-menu-drawer {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 60;
+	border-top: 1px solid #e2e8f0;
+	background: #fff;
+	animation: slideDown 0.15s ease-out;
+}
+@keyframes slideDown {
+	from { opacity: 0; transform: translateY(-4px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================================
    Page shell â€” layout for body / main                                */
 /* ------------------------------------------------------------------ */
 
@@ -998,6 +1094,9 @@
 }
 .viewer-canvas {
 	display: block;
+	image-rendering: pixelated;
+	max-width: 100%;
+	max-height: 100%;
 }
 /* Overlay container (badges / readouts positioned absolutely). */
 .viewer-canvas-overlay {
@@ -1121,6 +1220,14 @@
 
 /* Shrink */
 .shrink-0 { flex-shrink: 0; }
+
+/* Max-width presets — matching common doc/content widths */
+.max-w-3xl { max-width: 48rem; }
+
+/* Text shadow helpers */
+.text-shadow-md {
+	text-shadow: 0 2px 8px rgba(0 0 0 / 0.5);
+}
 /* =====================================================================
    Vertical spacing â€” re-established after utility migration             */
 /* ------------------------------------------------------------------ */

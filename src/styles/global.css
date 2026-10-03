@@ -32,7 +32,9 @@
                   .grid-tight  .grid-compact  .grid-lg  .grid-2  .grid-3
 
                   .badge  .badge-dark  .link-hover  .link-hover-light
-                  .sticky-bar  .nav-link  .nav-mobile
+                  .sticky-bar  .header-bar  .header-logo  .header-nav  .header-nav-spaced  .header-toggle
+                  .header-login  .header-login-mobile  .mobile-menu-drawer
+                  .nav-link  .nav-mobile
                   .space-y-1  .space-y-2  .space-y-3  .space-y-4  .space-y-5  .space-y-6  .space-y-8  .space-y-12  .space-y-14
 
    Anything not in that list does not exist: there is one name per job, so
@@ -86,6 +88,12 @@
 	   repeated on each anchored section. */
 	[id] {
 		scroll-margin-top: 6rem;
+	}
+
+	/* Hide element completely (no layout space) — used for noscript placeholders. */
+	.hidden-element {
+		display: none;
+		visibility: hidden;
 	}
 
 	body {

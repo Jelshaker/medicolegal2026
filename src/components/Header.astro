@@ -57,10 +57,10 @@ const navLinkClass = (href: string) =>
                 </div>
             </div>
 
-            <!-- Right group: login + mobile toggle — sits outside container, fixed to viewport right -->
+            <!-- Right group: login (desktop only) + mobile toggle — sits outside container, fixed to viewport right -->
             <div class="shrink-0 flex items-center gap-x-4 pr-6">
-                <!-- Secure Login -->
-                <a href="/login" class="btn btn-ghost shrink-0 header-login">{LOGIN_BUTTON_TEXT}</a>
+                <!-- Secure Login — desktop only; moved into mobile drawer below to avoid overlap -->
+                <a href="/login" class="btn btn-ghost shrink-0 header-login hidden lg:inline-flex">{LOGIN_BUTTON_TEXT}</a>
 
                 <!-- Desktop divider — hidden on mobile -->
                 <div class="vrule hidden sm:block" aria-hidden="true"></div>
@@ -106,6 +106,10 @@ const navLinkClass = (href: string) =>
                     </li>
                 ))
             }
+            <!-- Mobile login — inside drawer so it never overlaps the hamburger -->
+            <div class="border-t border-slate-100 p-3">
+                <a href="/login" class="btn btn-ghost header-login-mobile flex w-full">{LOGIN_BUTTON_TEXT}</a>
+            </div>
         </ul>
     </div>
 
@@ -169,12 +173,13 @@ const navLinkClass = (href: string) =>
         }
     }
 
-    /* Narrow dropdown menu — positioned under the hamburger button on the right */
+    /* Narrow dropdown menu — positioned under the hamburger button on the right.
+       Uses min() so it caps at 20rem on wide screens but shrinks to fit narrow viewports. */
     .mobile-menu-drawer {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 18rem;
+        width: min(20rem, calc(100vw - 1.5rem));
         z-index: 60;
     }
 </style>

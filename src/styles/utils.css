@@ -507,13 +507,16 @@
 	}
 }
 
-/* Desktop nav links — hidden on mobile, shown at lg breakpoint. */
+/* Keep the full navigation hidden until the header has room for every link. */
 .header-nav {
 	display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 90rem) {
 	.header-nav {
 		display: flex;
+	}
+	.header-bar > .container-page {
+		max-width: none;
 	}
 }
 
@@ -538,13 +541,27 @@
 	border-color: #0f172a;
 	color: #0f172a;
 }
-@media (min-width: 1024px) {
+
+.header-divider {
+	display: none;
+}
+
+.header-login {
+	display: none;
+}
+@media (min-width: 90rem) {
 	.header-toggle {
 		display: none !important;
 	}
+	.header-divider {
+		display: block;
+	}
+	.header-login {
+		display: inline-flex;
+	}
 }
 
-/* Login button variants — shared sizing; mobile variant hidden at lg. */
+/* Login button variants — shared sizing; mobile variant hidden with desktop nav. */
 .header-login,
 .header-login-mobile {
 	font-size: 0.75rem;
@@ -553,7 +570,7 @@
 .header-login-mobile {
 	display: inline-flex;
 }
-@media (min-width: 1024px) {
+@media (min-width: 90rem) {
 	.header-login-mobile {
 		display: none;
 	}

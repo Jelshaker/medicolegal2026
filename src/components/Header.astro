@@ -38,7 +38,7 @@ const navLinkClass = (href: string) =>
                 </a>
 
                 <!-- Desktop nav — hidden on mobile, sits next to logo on desktop -->
-                <nav class="header-nav header-nav-spaced hidden md:flex" aria-label="Primary">
+                <nav class="header-nav header-nav-spaced" aria-label="Primary">
                     <div class="flex items-center gap-x-6">
                         {
                             NAVIGATION_LINKS.map((link) => (
@@ -59,16 +59,16 @@ const navLinkClass = (href: string) =>
                 <!-- Right group: login (desktop only) + mobile toggle -->
                 <div class="shrink-0 flex items-center gap-x-3">
                     <!-- Secure Login - desktop only -->
-                    <a href="/login" class="btn btn-ghost shrink-0 header-login hidden lg:inline-flex">{LOGIN_BUTTON_TEXT}</a>
+                    <a href="/login" class="btn btn-ghost shrink-0 header-login">{LOGIN_BUTTON_TEXT}</a>
 
-                    <!-- Desktop divider - hidden on mobile -->
-                    <div class="vrule hidden sm:block" aria-hidden="true"></div>
+                    <!-- Desktop divider -->
+                    <div class="vrule header-divider" aria-hidden="true"></div>
 
                     <!-- Mobile menu toggle - visible on mobile, hidden on desktop -->
                     <button
                         id="menu-toggle"
                         type="button"
-                        class="header-toggle block md:hidden"
+                        class="header-toggle"
                         aria-label="Open menu"
                         aria-expanded="false"
                         aria-controls="mobile-menu"

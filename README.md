@@ -10,7 +10,7 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 - **Home** — resource hero, a "what this resource is / is not" framing block, the two reference libraries, the legal framework in four questions, featured case discussion and the latest posts.
 - **Page introductions** — every content page opens with a `PageIntro` block: what the page is for, who it is written for, and an "On this page" table of contents that jumps to the numbered, anchored sections below.
 - **Site map** (`/sitemap`) — every page in the resource on one page, grouped by library, generated from `SITEMAP` in `src/consts.ts`. The XML sitemap (`/sitemap-index.xml`, via `@astrojs/sitemap`) enumerates every public route and `robots.txt` (generated from the configured domain) points crawlers at it.
-- **Radiology Reference** (`/radiology-reference`) — the clinical library: what each modality answers and where it is limited, the RCR interpretation and reporting standards, dose and safety duties, quality assurance, image handling, and a primary-source shelf that links each source to the section applying it.
+- **Radiology Reference** (`/radiology-resources`) — the clinical library: what each modality answers and where it is limited, the RCR interpretation and reporting standards, dose and safety duties, quality assurance, image handling, and a primary-source shelf that links each source to the section applying it.
 - **Curriculum Vitae** — structured timeline of appointments, qualifications and memberships.
 - **Recent Developments** (`/recent-developments`, `/recent-developments/[slug]`) — anonymised, category-filterable case discussions with a **Cloudflare KV-backed comment system**.
 - **Patient Advice** — plain-language guide to MRI / CT / ultrasound / X-ray, radiation safety, preparation and FAQs.
@@ -43,7 +43,7 @@ src/
                 recent-developments/index + [slug]
                 free-dicom-viewer (local-only viewer), medicolegal-fundamentals,
                 how-to-use-the-dicom-viewer,
-                radiology-reference (clinical library), radiology-legislation,
+                radiology-resources (clinical library), radiology-legislation,
                 radiology-legal-cases, sitemap, disclaimer-and-terms-of-use
                 api/ (comments, referrals, contact, login — Astro endpoints backed by KV)
 public/         _headers (security policy + asset caching), vendor/dicomParser.min.js, images, placeholders
@@ -108,7 +108,7 @@ framing they express is driven by `SITE_TITLE`, `SITE_TAGLINE`,
 
 | Section                      | Route                       |
 | ---------------------------- | --------------------------- |
-| Radiology Reference          | `/radiology-reference`       |
+| Radiology Reference          | `/radiology-resources`       |
 | Medicolegal Law              | `/medicolegal-fundamentals` |
 | Legislation                  | `/radiology-legislation`    |
 | Case Law                     | `/radiology-legal-cases`    |
@@ -118,10 +118,10 @@ framing they express is driven by `SITE_TITLE`, `SITE_TAGLINE`,
 | Contact                      | `/contact`                  |
 
 Page routes carry the page's own `<h1>` as its slug, so every file under
-`src/pages` is named after the heading it renders (e.g. `radiology-reference.astro`
+`src/pages` is named after the heading it renders (e.g. `radiology-resources.astro`
 renders "Radiology Reference"). The routes retired by those renames — plus the
 older legacy routes — redirect permanently (see `redirects` in `astro.config.mjs`):
-`/radiology-resources` → `/radiology-reference`, `/cv` → `/curriculum-vitae`,
+`/radiology-resources` → `/radiology-resources`, `/cv` → `/curriculum-vitae`,
 `/disclaimer` → `/disclaimer-and-terms-of-use`, `/dicom-viewer` →
 `/free-dicom-viewer`, `/dicom-viewer-guide` → `/how-to-use-the-dicom-viewer`,
 `/expert-witness` → `/expert-witness-gi-peritoneal-malignancy`,

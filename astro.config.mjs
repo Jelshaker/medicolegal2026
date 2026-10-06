@@ -41,7 +41,7 @@ export default defineConfig({
 		"/legal-blog": "/recent-developments",
 		"/legal-blog/[slug]": "/recent-developments/[slug]",
 		"/image-review": "/free-dicom-viewer",
-		"/radiology-resources": "/radiology-reference",
+		"/radiology-reference": "/radiology-resources",
 		"/cv": "/curriculum-vitae",
 		"/disclaimer": "/disclaimer-and-terms-of-use",
 		"/dicom-viewer": "/free-dicom-viewer",

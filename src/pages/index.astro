@@ -14,8 +14,8 @@ import {
 const radiologyFundamentalsTitle = "Radiology fundamentals";
 const medicolegalFundamentalsTitle = "Medicolegal fundamentals";
 const radiologyLegislationTitle = "Radiology Legislation";
-const radiologyCaseLawTitle = "Radiology Case Law";
-const importantNewCasesTitle = "Important New Cases";
+const radiologyCaseLawTitle = "Radiology Legal Cases";
+const importantNewCasesTitle = "Recent Developments";
 
 const allPosts = (await getCollection("recent-developments")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -40,7 +40,7 @@ const categoryLabel = (id: string) =>
     <div
       class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 divider pt-5"
     >
-      <a href="/radiology-reference" class="link-hero">Radiology reference</a>
+      <a href="/radiology-resources" class="link-hero">Radiology reference</a>
       <a href="/medicolegal-fundamentals" class="link-hero"
         >Medicolegal law library</a
       >
@@ -141,7 +141,7 @@ const categoryLabel = (id: string) =>
             overview of how images are handled, quality assurance and relevant
             legislation.
           </p>
-          <a href="/radiology-reference" class="link-sm mt-4 inline-block"
+          <a href="/radiology-resources" class="link-sm mt-4 inline-block"
             >Open {radiologyFundamentalsTitle}</a
           >
         </article>

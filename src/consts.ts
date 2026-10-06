@@ -26,11 +26,11 @@ export const DEFAULT_SOCIAL_IMAGE = "/images/og-default.jpg";
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/radiology-reference", label: "Radiology Fundamentals" },
+	{ href: "/radiology-resources", label: "Radiology Resources" },
 	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
-	{ href: "/radiology-legal-cases", label: "Radiology Case Law" },
-	{ href: "/recent-developments", label: "Important New Cases" },
+	{ href: "/radiology-legal-cases", label: "Radiology Legal Cases" },
+	{ href: "/recent-developments", label: "Recent Developments" },
 	{ href: "/free-dicom-viewer", label: "DICOM Viewer" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
@@ -47,7 +47,7 @@ export const RESOURCE_LIBRARIES = [
 		title: "Clinical imaging reference",
 		description:
 			"What each modality does and what it can reasonably answer, the professional standards governing interpretation and reporting, dose and safety, quality assurance, and the storage, transfer and viewing of images. A short, sourced set of entries rather than an exhaustive text.",
-		href: "/radiology-reference",
+		href: "/radiology-resources",
 		cta: "Open the radiology library",
 		topics: ["Modalities and protocols", "Reporting standards", "Dose and safety", "Image handling"],
 	},
@@ -139,7 +139,7 @@ export const MEMBERSHIPS = [
 // consultation / evidence imagery for law pages, and a mix for the home page.
 export const PAGE_HERO_IMAGES: Record<string, string | null> = {
 	"/": "/images/pexels-cottonbro-7579832.jpg",
-	"/radiology-reference": "/images/pexels-shvetsa-4226205.jpg",
+	"/radiology-resources": "/images/pexels-shvetsa-4226205.jpg",
 	"/medicolegal-fundamentals": "/images/pexels-konrads-photo-32251894.jpg",
 	"/radiology-legislation": "/images/pexels-shvetsa-4225925.jpg",
 	"/radiology-legal-cases": "/images/pexels-charlss-gonzhu-433318654-15277956.jpg",
@@ -179,7 +179,7 @@ export const SITEMAP = [
 		title: "Radiology library",
 		description: "The clinical reference: modalities, reporting standards, dose and image handling.",
 		pages: [
-			{ href: "/radiology-reference", label: "Radiology reference", description: "What each modality answers, and where it stops being useful." },
+			{ href: "/radiology-resources", label: "Radiology reference", description: "What each modality answers, and where it stops being useful." },
 			{ href: "/patient-advice", label: "Patient advice", description: "Plain-language guide to scans, safety and preparation." },
 			{ href: "/free-dicom-viewer", label: "Free DICOM viewer", description: "Open your scan in your browser — free, private, nothing uploaded." },
 			{ href: "/how-to-use-the-dicom-viewer", label: "Using the DICOM viewer", description: "Step-by-step: loading a disc or download and using the tools." },

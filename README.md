@@ -10,7 +10,7 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 - **Home** — resource hero, a "what this resource is / is not" framing block, the two reference libraries, the legal framework in four questions, featured case discussion and the latest posts.
 - **Page introductions** — every content page opens with a `PageIntro` block: what the page is for, who it is written for, and an "On this page" table of contents that jumps to the numbered, anchored sections below.
 - **Site map** (`/sitemap`) — every page in the resource on one page, grouped by library, generated from `SITEMAP` in `src/consts.ts`. The XML sitemap (`/sitemap-index.xml`, via `@astrojs/sitemap`) enumerates every public route and `robots.txt` (generated from the configured domain) points crawlers at it.
-- **Radiology Reference** (`/radiology-resources`) — the clinical library: what each modality answers and where it is limited, the RCR interpretation and reporting standards, dose and safety duties, quality assurance, image handling, and a primary-source shelf that links each source to the section applying it.
+- **Radiology Reference** (`/radiology-reference`) — the clinical library: what each modality answers and where it is limited, the RCR interpretation and reporting standards, dose and safety duties, quality assurance, image handling, and a primary-source shelf that links each source to the section applying it.
 - **Curriculum Vitae** — structured timeline of appointments, qualifications and memberships.
 - **Recent Developments** (`/recent-developments`, `/recent-developments/[slug]`) — anonymised, category-filterable case discussions with a **Cloudflare KV-backed comment system**.
 - **Patient Advice** — plain-language guide to MRI / CT / ultrasound / X-ray, radiation safety, preparation and FAQs.
@@ -18,7 +18,7 @@ Cloudflare Workers)**, **Tailwind CSS v4**, **Clerk** authentication and
 - **Contact** — secretariat details and an encrypted contact form.
 - **Secure Login** — professional portal login (`/api/login`, demo account in `src/consts.ts`).
 - **Interactive Medical Image Viewer** (`MedicalImageViewer.astro`) — lightbox with wheel/button zoom, pan and captioning.
-- **Local DICOM Viewer** (`/dicom-viewer`) — 100% client-side viewer (`LocalDicomViewer.astro`) with window/level, pan, zoom and slice navigation. `dicom-parser` is **vendored at `public/vendor/dicomParser.min.js`** so no third-party CDN is contacted and the `script-src 'self'` CSP holds. Studies are parsed in-browser and never uploaded.
+- **Local DICOM Viewer** (`/free-dicom-viewer`) — 100% client-side viewer (`LocalDicomViewer.astro`) with window/level, pan, zoom and slice navigation. `dicom-parser` is **vendored at `public/vendor/dicomParser.min.js`** so no third-party CDN is contacted and the `script-src 'self'` CSP holds. Studies are parsed in-browser and never uploaded.
 - **SEO** — every public page is indexable. The XML sitemap and `robots.txt` both derive from the configured domain (no drift); canonical URLs use a trailing slash that matches the sitemap; `/login` is `noindex`, disallowed in `robots.txt` and excluded from the sitemap; each page carries OpenGraph/Twitter tags, a `robots` meta tag, Google Search Console verification (when configured) and `MedicalBusiness` + `Person` JSON-LD. Commentary posts additionally carry `article:` metadata and a `BlogPosting` node.
 - **Analytics & consent** — GA4 via the standard `gtag.js` snippet behind Google Consent Mode v2 (`src/lib/consent.ts`, `src/components/CookieConsent.astro`): default-denied on every page, emitted only when `PUBLIC_GA_MEASUREMENT_ID` (or a `PUBLIC_GTM_ID` Tag Manager container, which is loaded instead of the direct tag) is a real ID, inert until the visitor clicks “Accept analytics”. Choice stored versioned in localStorage (`ml-consent-v1`), withdrawable via the footer “Cookie settings” link. `PUBLIC_GOOGLE_SITE_VERIFICATION` adds the Search Console meta tag when set.
 - **Security headers** — CSP, HSTS, `X-Frame-Options` and more, applied to server-rendered pages by `src/middleware.ts` and to static assets by `public/_headers`, both driven by a single policy in `src/lib/security-headers.ts`.
@@ -38,12 +38,13 @@ src/
   lib/          utils (dates, reading time) + client toast system, plus `seo.ts`,
                 `images.ts` (responsive image lookups), `google-tags.ts`,
                 `consent.ts` and `security-headers.ts`
-  pages/        index, about, cv, patient-advice, referrals, contact, login,
-                expert-witness, medicolegal-radiology
+  pages/        index, about, curriculum-vitae, patient-advice, referrals, contact,
+                login, expert-witness-gi-peritoneal-malignancy, medicolegal-radiology
                 recent-developments/index + [slug]
-                dicom-viewer (local-only viewer), medicolegal-fundamentals,
-                radiology-resources (clinical library), radiology-legislation,
-                radiology-legal-cases, sitemap
+                free-dicom-viewer (local-only viewer), medicolegal-fundamentals,
+                how-to-use-the-dicom-viewer,
+                radiology-reference (clinical library), radiology-legislation,
+                radiology-legal-cases, sitemap, disclaimer-and-terms-of-use
                 api/ (comments, referrals, contact, login — Astro endpoints backed by KV)
 public/         _headers (security policy + asset caching), vendor/dicomParser.min.js, images, placeholders
 scripts/        optimise-images.mjs (build-time responsive image pipeline)
@@ -107,18 +108,25 @@ framing they express is driven by `SITE_TITLE`, `SITE_TAGLINE`,
 
 | Section                      | Route                       |
 | ---------------------------- | --------------------------- |
-| Radiology Reference          | `/radiology-resources`      |
+| Radiology Reference          | `/radiology-reference`       |
 | Medicolegal Law              | `/medicolegal-fundamentals` |
 | Legislation                  | `/radiology-legislation`    |
 | Case Law                     | `/radiology-legal-cases`    |
 | Developments                 | `/recent-developments`      |
-| DICOM Viewer                 | `/dicom-viewer`             |
+| DICOM Viewer                 | `/free-dicom-viewer`        |
 | Site map                     | `/sitemap`                  |
 | Contact                      | `/contact`                  |
 
-Legacy routes redirect permanently (see `redirects` in `astro.config.mjs`):
-`/legal-blog` → `/recent-developments`, `/legal-blog/[slug]` →
-`/recent-developments/[slug]`, and `/image-review` → `/dicom-viewer`.
+Page routes carry the page's own `<h1>` as its slug, so every file under
+`src/pages` is named after the heading it renders (e.g. `radiology-reference.astro`
+renders "Radiology Reference"). The routes retired by those renames — plus the
+older legacy routes — redirect permanently (see `redirects` in `astro.config.mjs`):
+`/radiology-resources` → `/radiology-reference`, `/cv` → `/curriculum-vitae`,
+`/disclaimer` → `/disclaimer-and-terms-of-use`, `/dicom-viewer` →
+`/free-dicom-viewer`, `/dicom-viewer-guide` → `/how-to-use-the-dicom-viewer`,
+`/expert-witness` → `/expert-witness-gi-peritoneal-malignancy`,
+`/image-review` → `/free-dicom-viewer`, `/legal-blog` → `/recent-developments`
+and `/legal-blog/[slug]` → `/recent-developments/[slug]`.
 
 Three deliberate content policies:
 
@@ -133,7 +141,7 @@ Three deliberate content policies:
 - **The resource comes first.** Top-level messaging describes the reference
   libraries, not the services. The expert-witness practice is presented as the
   curator of the resource (`PRACTITIONER`); instruction enquiries are routed to
-  `/expert-witness` and `/contact` from the foot of the home page. The wording
+  `/expert-witness-gi-peritoneal-malignancy` and `/contact` from the foot of the home page. The wording
   lives in `SITE_TITLE`, `SITE_TAGLINE`, `SITE_DESCRIPTION` and
   `RESOURCE_LIBRARIES` (`src/consts.ts`) and is consumed by the home page,
   header, footer, `PageHero` and the `WebSite` JSON-LD — update it there rather
@@ -211,7 +219,7 @@ runtime, so you are not forced to rebuild to flip the tracking ID.
   `PUBLIC_GOOGLE_SITE_VERIFICATION` to your Search Console token (both in `.env`
   / the build env, or as runtime Worker vars). Analytics and verification stay
   absent until these are set, so a placeholder can never leak to production.
-- `/disclaimer` — terms of use: general information only (not legal/medical advice, not an expert opinion), anonymised case material, liability limits, acceptable use, England & Wales governing law.
+- `/disclaimer-and-terms-of-use` — terms of use: general information only (not legal/medical advice, not an expert opinion), anonymised case material, liability limits, acceptable use, England & Wales governing law.
 - `/privacy-notice` — UK GDPR / DPA 2018 notice: controller, data collected, Article 6/9 bases, processors (Cloudflare, GA4 with consent, Clerk), retention, rights, ICO complaints.
 - `/cookie-policy` — strictly necessary storage vs the single optional GA4 cookie; accept/reject/change-your-mind via the footer “Cookie settings” link.
 - All blog figures are anonymised. Case commentary disclaims individual advice; the DICOM viewer carries a “not a diagnosis” callout.

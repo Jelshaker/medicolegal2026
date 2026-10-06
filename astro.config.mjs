@@ -33,10 +33,20 @@ export default defineConfig({
 	// Canonical 6-section hierarchy. These legacy routes duplicated canonical
 	// pages (or the retired parallel blog tree); they redirect permanently so
 	// old inbound links and any indexed URLs keep resolving.
+	//
+	// The first block preserves the routes retired when each page file was
+	// renamed to match its own <h1> (e.g. /radiology-resources carried the
+	// heading "Radiology Reference").
 	redirects: {
 		"/legal-blog": "/recent-developments",
 		"/legal-blog/[slug]": "/recent-developments/[slug]",
-		"/image-review": "/dicom-viewer",
+		"/image-review": "/free-dicom-viewer",
+		"/radiology-resources": "/radiology-reference",
+		"/cv": "/curriculum-vitae",
+		"/disclaimer": "/disclaimer-and-terms-of-use",
+		"/dicom-viewer": "/free-dicom-viewer",
+		"/dicom-viewer-guide": "/how-to-use-the-dicom-viewer",
+		"/expert-witness": "/expert-witness-gi-peritoneal-malignancy",
 	},
 	adapter: cloudflare({
 		platformProxy: {

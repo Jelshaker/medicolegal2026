@@ -52,7 +52,7 @@
 	color: #94a3b8;
 }
 
-/* Uppercase label variant (slate-400) â€” used on dicom-viewer eyebrow and
+/* Uppercase label variant (slate-400) â€” used on free-dicom-viewer eyebrow and
    recent-developments "ANONYMISED" badge and date-line. */
 .text-muted-light-alt {
 	font-family: var(--font-sans);

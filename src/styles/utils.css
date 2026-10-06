@@ -415,14 +415,25 @@
 }
 
 /* =====================================================================
-   Sticky header bar: stays at top, full width, white background,
-   bottom border, z-index above content. */
-/* ------------------------------------------------------------------ */
+   Sticky site header.
 
-.sticky-bar {
+   The <header class="site-header"> itself must be sticky.  .sticky-bar is
+   its only in-flow child and is exactly as tall as it, so a sticky
+   .sticky-bar would have zero travel inside its containing block and would
+   scroll away with the page.  The header's containing block is <body>
+   (the whole page), so it stays pinned while the page scrolls.
+   ------------------------------------------------------------------ */
+
+.site-header {
 	position: sticky;
 	top: 0;
 	z-index: 50;
+}
+
+/* Visual treatment for the bar: full width, translucent white with blur,
+   bottom border.  The mobile drawer anchors to .site-header (sticky =
+   positioned) via `top: 100%`. */
+.sticky-bar {
 	border-bottom: 1px solid #cbd5e1;
 	background: rgba(255 255 255 / 0.92);
 	backdrop-filter: blur(8px);

@@ -11,8 +11,10 @@ const navLinkClass = (href: string) =>
         : "nav-link nav-link-inactive";
 ---
 
-<header>
-    <!-- Full-width background bar: sticky to top, translucent white with blur, z-index 50.
+<header class="site-header">
+    <!-- The <header class="site-header"> is the sticky element: it must be the
+         sticky one, because .sticky-bar fills it completely and a sticky child
+         can never travel beyond its own parent (zero range → scrolls away).
          Everything sits inside a single container so padding, max-width and
          min-width apply uniformly - no overflow on narrow screens. -->
     <div class="sticky-bar">

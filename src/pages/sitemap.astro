@@ -35,7 +35,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		reviewed="September 2026"
 	/>
 
-	<section class="divider-below bg-paper py-14">
+	<section class="section-paper-sm">
 		<div class="container-page">
 			<div class="doc">
 				<Figure
@@ -55,7 +55,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 				{
 					SITEMAP.map((group, i) => (
 						<section id={group.id} class="sec">
-							<div class="flex items-baseline gap-3">
+							<div class="flex-baseline-sm">
 								<span class="sec-no">
 									§ {String(i + 1).padStart(2, "0")}
 								</span>
@@ -101,7 +101,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 						Case commentary is the quickest route into the material, and the two libraries explain the
 						standards and authorities behind it. Enquiries about instruction go to the secretariat.
 					</p>
-					<div class="mt-6 flex flex-wrap justify-center gap-3">
+					<div class="btn-group">
 						<a href="/recent-developments" class="btn btn-primary">Recent case commentary</a>
 						<a href="/medicolegal-fundamentals" class="btn btn-ghost">Medicolegal law library</a>
 						<a href="/contact" class="btn btn-ghost">Contact the secretariat</a>

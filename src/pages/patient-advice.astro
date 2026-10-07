@@ -52,7 +52,7 @@ const faqs = [
 	/>
 
 	<!-- Modalities -->
-	<section id="modalities-explained" class="scroll-mt-24 bg-white py-16">
+	<section id="modalities-explained" class="section-scroll">
 		<div class="container-page">
 			<div class="doc">
 				<span class="meta-label">Understanding your scan</span>
@@ -104,7 +104,7 @@ const faqs = [
 						].map((row) => (
 							<div class="grid gap-1 divider-below py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
 								<dt class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500 sm:pt-1">{row.k}</dt>
-								<dd class="para-sm text-slate-700">{row.v}</dd>
+								<dd class="para-sm-dark">{row.v}</dd>
 							</div>
 						))}
 					</dl>
@@ -126,12 +126,12 @@ const faqs = [
 	</section>
 
 	<!-- FAQs -->
-	<section id="common-questions" class="scroll-mt-24 bg-white py-16">
+	<section id="common-questions" class="section-scroll">
 		<div class="container-page">
 			<div class="doc">
 				<span class="meta-label">Frequently asked questions</span>
 				<h2 class="sec-title-lg">Common questions</h2>
-				<div class="entry-list-ruled mt-8">
+				<div class="entry-list-mt-8">
 					{faqs.map((f) => (
 						<details class="group py-5">
 							<summary class="flex cursor-pointer items-center justify-between gap-4 font-serif text-[0.975rem] font-bold text-slate-900">

@@ -236,6 +236,38 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 			}
 		]
 	},
+	"/images/normal-chest-radiograph-female-5.png": {
+		"width": 1479,
+		"height": 1577,
+		"hash": "9f64a491",
+		"variants": [
+			{
+				"w": 480,
+				"h": 512,
+				"file": "normal-chest-radiograph-female-5.9f64a491-480.webp"
+			},
+			{
+				"w": 768,
+				"h": 819,
+				"file": "normal-chest-radiograph-female-5.9f64a491-768.webp"
+			},
+			{
+				"w": 1024,
+				"h": 1092,
+				"file": "normal-chest-radiograph-female-5.9f64a491-1024.webp"
+			},
+			{
+				"w": 1440,
+				"h": 1535,
+				"file": "normal-chest-radiograph-female-5.9f64a491-1440.webp"
+			},
+			{
+				"w": 1479,
+				"h": 1577,
+				"file": "normal-chest-radiograph-female-5.9f64a491-1479.webp"
+			}
+		]
+	},
 	"/images/og-default.jpg": {
 		"width": 1200,
 		"height": 630,
@@ -1050,6 +1082,38 @@ export const IMAGE_MANIFEST: Record<string, ImageRecord> = {
 				"w": 900,
 				"h": 600,
 				"file": "portrait-dr.4492052b-900.webp"
+			}
+		]
+	},
+	"/images/posterior-acoustic-shadowing-and-enhancement.jpeg": {
+		"width": 3264,
+		"height": 2448,
+		"hash": "599cf70b",
+		"variants": [
+			{
+				"w": 480,
+				"h": 360,
+				"file": "posterior-acoustic-shadowing-and-enhancement.599cf70b-480.webp"
+			},
+			{
+				"w": 768,
+				"h": 576,
+				"file": "posterior-acoustic-shadowing-and-enhancement.599cf70b-768.webp"
+			},
+			{
+				"w": 1024,
+				"h": 768,
+				"file": "posterior-acoustic-shadowing-and-enhancement.599cf70b-1024.webp"
+			},
+			{
+				"w": 1440,
+				"h": 1080,
+				"file": "posterior-acoustic-shadowing-and-enhancement.599cf70b-1440.webp"
+			},
+			{
+				"w": 1920,
+				"h": 1440,
+				"file": "posterior-acoustic-shadowing-and-enhancement.599cf70b-1920.webp"
 			}
 		]
 	},

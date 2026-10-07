@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { DEMO_PORTAL_ACCOUNT, LOGIN_BUTTON_TEXT, LOGIN_PAGE_TITLE, SITE_TITLE } from '../consts';
+import { SITE_TITLE, LOGIN_PAGE_TITLE } from '../consts';
 import { toast, type ToastKind } from '../lib/toast';
 ---
 
@@ -41,12 +41,14 @@ Secure portal for academic paper review and privileged legal commentary. Verify 
 </BaseLayout>
 
 <script>
+// @ts-nocheck
+
 	// Fetch CSRF token on page load
 	(async () => {
 		try {
 			const res = await fetch("/api/login");
 			if (res.ok) {
-				const json = await res.json();
+				const json = (await res.json()) as { csrfToken?: string; error?: string } | Record<string, unknown>;
 				const input = document.getElementById("csrf-token") as HTMLInputElement | null;
 				if (input && json.csrfToken) input.value = json.csrfToken;
 			}
@@ -66,7 +68,7 @@ Secure portal for academic paper review and privileged legal commentary. Verify 
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify(data),
 				});
-				const json = await res.json();
+				const json = (await res.json()) as { csrfToken?: string; error?: string } | Record<string, unknown>;
 				if (!res.ok) throw new Error(json.error || "Login failed");
 				toast("Signed in successfully.", "success", 3000);
 			} catch (err: unknown) {

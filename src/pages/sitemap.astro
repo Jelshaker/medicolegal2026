@@ -21,7 +21,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 		eyebrow="Site map"
 		title="Everything in the resource"
 		description={`${pageCount} pages across five groups: the two reference libraries, recent case commentary, and the practice behind them.`}
-		heroImage={PAGE_HERO_IMAGES["/sitemap"]}
+		heroImage={PAGE_HERO_IMAGES["/sitemap"] || undefined}
 	/>
 
 	<PageIntro

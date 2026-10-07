@@ -73,7 +73,6 @@ export const POST: APIRoute = async ({ request }) => {
 		}
 
 		const body = (await request.json()) as Record<string, string>;
-		const csrfToken = body.csrfToken || "";
 		const storedCsrf = csrfStore.get(ip);
 		if (!storedCsrf || storedCsrf.expires < Date.now() || body.csrfToken !== storedCsrf.token) {
 			return new Response(

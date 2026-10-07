@@ -33,7 +33,7 @@ const faqs = [
 		eyebrow="Radiology library · For patients"
 		title="Patient Advice"
 		description="Part of the radiology library, written for patients: clear information about the imaging examinations you may be asked to undergo — from how each modality works to preparation and safety."
-		heroImage={PAGE_HERO_IMAGES["/patient-advice"]}
+		heroImage={PAGE_HERO_IMAGES["/patient-advice"] || undefined}
 	/>
 
 	<PageIntro
@@ -151,6 +151,7 @@ const faqs = [
 					answer for your circumstances.
 				</p>
 			</Callout>
+		</div>
 		</div>
 	</section>
 </BaseLayout>

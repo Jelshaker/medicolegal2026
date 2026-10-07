@@ -35,7 +35,7 @@ const title = "On this page";
     const top = tocSidebar.querySelector("[data-toc-top]");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const seen = new Set();
-    const found = [];
+    const found: { id: string; label: string }[] = [];
     document.querySelectorAll("main section[id]").forEach((sec) => {
       const id = (sec.getAttribute("id") || "").trim();
       if (!id || seen.has(id)) return;
@@ -58,9 +58,9 @@ const title = "On this page";
     const links = list ? Array.from(list.querySelectorAll("[data-toc-link]")) : [];
     if (links.length < 2) {
       tocSidebar.remove();
-    } else {
+    } else if (tocSidebar instanceof HTMLElement) {
       tocSidebar.classList.add("is-ready");
-      if (top) top.hidden = false;
+      if (top instanceof HTMLElement) top.hidden = false;
       // Dock the rail just under the hero image while the hero is on
       // screen, then let it ride up and clamp under the sticky header as
       // the page scrolls. rAF-throttled so it tracks smoothly; disabled
@@ -105,7 +105,7 @@ const title = "On this page";
       });
     });
 
-    const setActive = (id) => {
+    const setActive = (id: string) => {
       links.forEach((a) => {
         const on = a.getAttribute("href") === "#" + id;
         a.classList.toggle("is-active", on);
@@ -127,12 +127,12 @@ const title = "On this page";
         }
       }
     };
-    const targets = links.map((a) => document.getElementById((a.getAttribute("href") || "").slice(1))).filter(Boolean);
+    const targets = links.map((a) => document.getElementById((a.getAttribute("href") || "").slice(1)) as HTMLElement | null).filter(Boolean) as HTMLElement[];
     if ("IntersectionObserver" in window) {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach((en) => { if (en.isIntersecting) setActive(en.target.id); });
       }, { rootMargin: "-20% 0px -65% 0px" });
-      targets.forEach((t) => obs.observe(t));
+      targets.forEach((t) => obs.observe(t as Element));
     }
     if (top) top.addEventListener("click", (e) => {
       e.preventDefault();
@@ -140,34 +140,35 @@ const title = "On this page";
     });
 
     // TOC card references for scroll chevrons
-    const card = tocSidebar.querySelector("[data-toc-list]").parentElement;
-    const overflowTop = tocSidebar.querySelector("[data-toc-overflow-top]");
-    const overflowBottom = tocSidebar.querySelector("[data-toc-overflow-bottom]");
-    const hasScroll = card.scrollHeight > card.clientHeight;
+    const listEl = tocSidebar.querySelector("[data-toc-list]")?.parentElement as HTMLElement | null;
+    const overflowTop = tocSidebar.querySelector("[data-toc-overflow-top]") as HTMLElement | null;
+    const overflowBottom = tocSidebar.querySelector("[data-toc-overflow-bottom]") as HTMLElement | null;
+    const hasScroll = listEl ? listEl.scrollHeight > listEl.clientHeight : false;
 
     // Desktop vertical scroll chevrons (wide viewport only)
     const isWide = window.matchMedia("(min-width: 80rem)");
     if (isWide.matches && hasScroll) {
       const updateChevrons = () => {
         // Top chevron: visible when the TOC card itself has scrolled down
-        const atTop = card.scrollTop === 0;
+        if (!listEl || !overflowTop) return;
+        const atTop = listEl.scrollTop === 0;
         overflowTop.classList.toggle("is-visible", !atTop);
         // Bottom chevron: visible when the page has not yet reached its
         // absolute bottom (scrollY + innerHeight < documentHeight), so the
         // arrow stays on screen until the very bottom of the page is reached.
         const docHeight = document.documentElement.scrollHeight;
         const atPageBottom = window.scrollY + window.innerHeight >= docHeight - 2;
-        overflowBottom.classList.toggle("is-visible", !atPageBottom);
+        if (overflowBottom) overflowBottom.classList.toggle("is-visible", !atPageBottom);
       };
       window.addEventListener("scroll", updateChevrons, { passive: true });
-      card.addEventListener("scroll", updateChevrons, { passive: true });
+      if (listEl) listEl.addEventListener("scroll", updateChevrons, { passive: true });
       window.addEventListener("resize", updateChevrons);
       updateChevrons();
       if (overflowTop) overflowTop.addEventListener("click", () => {
-        card.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+        if (listEl) listEl.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
       });
       if (overflowBottom) overflowBottom.addEventListener("click", () => {
-        card.scrollTo({ top: card.scrollHeight, behavior: reduce ? "auto" : "smooth" });
+        if (listEl) listEl.scrollTo({ top: listEl.scrollHeight, behavior: reduce ? "auto" : "smooth" });
       });
     }
 

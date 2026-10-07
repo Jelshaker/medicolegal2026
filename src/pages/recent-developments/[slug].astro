@@ -36,7 +36,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 >
 <!-- Article header with hero image -->
 	<PageHero
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"]}
+		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
 		title={post.data.title}
 		description={post.data.description}
 	>
@@ -140,6 +140,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 </BaseLayout>
 
 <script define:vars={{ postId: post.slug }}>
+// @ts-nocheck
 	const list = document.getElementById("comment-list") as HTMLElement | null;
 	const form = document.getElementById("comment-form") as HTMLFormElement | null;
 

@@ -9,7 +9,7 @@ import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 <BaseLayout title={`Medicolegal Fundamentals | ${SITE_TITLE}`} description="UK medical law principles applied to radiology. Foundational cases, NHS claims data, and landmark historical authorities. Bolam, Bolitho, Montgomery, causation, breach and consent — with radiology application for each.">
-<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="UK medical law: foundational cases, NHS data, historical authorities and radiology application." heroImage={PAGE_HERO_IMAGES["/medicolegal-fundamentals"]} />
+<PageHero eyebrow="Medicolegal Fundamentals" title="Medicolegal Fundamentals" description="UK medical law: foundational cases, NHS data, historical authorities and radiology application." heroImage={PAGE_HERO_IMAGES["/medicolegal-fundamentals"] || undefined} />
 
 <PageIntro
 	eyebrow="Medicolegal law library"

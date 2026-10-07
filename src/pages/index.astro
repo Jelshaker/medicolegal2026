@@ -20,8 +20,6 @@ const importantNewCasesTitle = "Recent Developments";
 const allPosts = (await getCollection("recent-developments")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const featured = allPosts.find((p) => p.data.featured) ?? allPosts[0];
-const recent = allPosts.slice(0, 3);
 const categoryLabel = (id: string) =>
   BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 ---

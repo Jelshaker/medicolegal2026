@@ -9,7 +9,7 @@ import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 ---
 <BaseLayout title={`Radiology Legal Cases | ${SITE_TITLE}`} description="Landmark decisions where radiology was central. Issue, facts and principle for each case. Includes incidental findings, teleradiology risk and AI-assisted reporting.">
-<PageHero eyebrow="Radiology Legal Cases" title="Radiology Legal Cases" description="Decisions where imaging defined breach, standard of care or consent. Issue, facts and principle." heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"]} />
+<PageHero eyebrow="Radiology Legal Cases" title="Radiology Legal Cases" description="Decisions where imaging defined breach, standard of care or consent. Issue, facts and principle." heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"] || undefined} />
 
 <PageIntro
 	eyebrow="Case law"
@@ -58,6 +58,7 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 			subtitle="In a cauda equina or cord-compression claim the question is what the study as acquired demonstrated, and whether the delay materially altered the outcome."
 			ratio="wide"
 		/>
+	</div>
 	</div>
 </section>
 <section class="band-white"><div class="container-page min-w-0 space-y-12">

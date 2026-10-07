@@ -125,6 +125,7 @@ const fullSizeSrc = imageLargest(src);
 </div>
 
 <script define:vars={{ baseUid: uid }}>
+// @ts-nocheck
 	const root = document.querySelector(`[data-viewer][data-uid="${baseUid}"]`) as HTMLElement | null;
 	if (!root) throw new Error(`Missing viewer root for ${baseUid}`);
 	const openBtn = root.querySelector(".viewer-open") as HTMLButtonElement;

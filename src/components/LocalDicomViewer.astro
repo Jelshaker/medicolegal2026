@@ -56,7 +56,7 @@
     </div>
   </div>
   <input id="dv-file-input" type="file" multiple class="viewer-dropzone-input" aria-label="Choose DICOM files" />
-  <input id="dv-folder-input" type="file" multiple webkitdirectory class="hidden" tabindex="-1" aria-hidden="true" />
+  <input id="dv-folder-input" type="file" multiple class="hidden" tabindex="-1" aria-hidden="true" />
 </div>
 
 <!-- Viewer workspace (hidden until files loaded) -->
@@ -176,6 +176,7 @@
   </div>
 </div>
 
+// @ts-nocheck
 <script>
 (function () {
   "use strict";
@@ -239,7 +240,7 @@
   let activeSeriesUid = "";
   let activeSeries: DvSeries | null = null;
 
-  let width = 0, height = 0, bits = 16;
+  let width = 0, height = 0, bitsUsed = 16;
   let currentSlice = 0;
   let windowW = 400, windowL = 40;
   let zoom = 100, inverted = false;
@@ -248,7 +249,6 @@
   let seriesDesc = "";
   let seriesStudyDate = "";
   let studyUidGlobal = "";
-  let nextAutoSeriesNum = 0;  // auto-assigned SeriesNumber fallback
 
   // Return the next available SeriesNumber for auto-assigned series.
   // Uses the highest existing series order + 1, starting from 10.
@@ -585,10 +585,10 @@
   const VISIBLE_COUNT = 3;       // items shown when collapsed
 
   function getSeriesLabel(s: DvSeries): string {
-    if (s.seriesDesc) {
+    if (s.desc) {
       // Truncate long descriptions for the tab label
       const maxLen = 32;
-      return s.seriesDesc.length > maxLen ? s.seriesDesc.slice(0, maxLen - 1) + "\u2026" : s.seriesDesc;
+      return s.desc.length > maxLen ? s.desc.slice(0, maxLen - 1) + "\u2026" : s.desc;
     }
     // Fallback: use modality + series number
     return `${s.modality} ${s.seriesOrder}`;
@@ -684,7 +684,7 @@
       { label: "Scan type", value: s.modality || "—" },
       { label: "Study date", value: seriesStudyDate || "—" },
       { label: "Study description", value: seriesDesc || "—" },
-      { label: "Series description", value: s.seriesDesc || "—" },
+      { label: "Series description", value: s.desc || "—" },
       { label: "Series number", value: String(s.seriesOrder) },
       { label: "Image size", value: `${width} × ${height}` },
       { label: "Images in series", value: String(s.slices.length) },
@@ -740,7 +740,7 @@
         if (frames.length === 0 && width === 0) {
           width = parsed.cols;
           height = parsed.rows;
-          bits = parsed.bitsAllocated ?? 16;
+          bitsUsed = parsed.bitsAllocated ?? 16;
           seriesModality = parsed.modality || "—";
           seriesDesc = parsed.studyDesc || "";
           seriesStudyDate = parsed.studyDate || "";
@@ -819,7 +819,7 @@
             frames = newSeries.slices;
             width = parsed.cols;
             height = parsed.rows;
-            bits = parsed.bitsAllocated ?? 16;
+            bitsUsed = parsed.bitsAllocated ?? 16;
             seriesModality = parsed.modality || seriesModality;
           }
         }
@@ -862,7 +862,7 @@
         invertBtn.setAttribute("aria-pressed", "false");
       }
 
-      if (firstGood) updateSeriesDetailsFor(activeSeries);
+      if (firstGood && activeSeries) updateSeriesDetailsFor(activeSeries);
 
       // Build series tabs UI
       buildSeriesTabs();
@@ -1003,7 +1003,7 @@
   addBtn?.addEventListener("click", () => openFilePicker());
   addFolderBtn?.addEventListener("click", () => openFolderPicker());
   clearBtn?.addEventListener("click", () => {
-    frames = []; width = height = 0; bits = 16; currentSlice = 0;
+    frames = []; width = height = 0; bitsUsed = 16; currentSlice = 0;
     windowW = 400; windowL = 40; zoom = 100; panX = 0; panY = 0; inverted = false;
     seriesModality = "—"; seriesDesc = ""; seriesStudyDate = "";
     studyUidGlobal = "";

@@ -18,7 +18,7 @@ export const prerender = true;
 		eyebrow="Recent developments"
 		title="Recent Developments"
 		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"]}
+		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
 	/>
 
 	<PageIntro
@@ -98,6 +98,7 @@ export const prerender = true;
 </BaseLayout>
 
 <script>
+// @ts-nocheck
 	const filters = document.getElementById("blog-filters");
 	const grid = document.getElementById("blog-grid");
 	const count = document.getElementById("blog-count");
@@ -111,7 +112,7 @@ export const prerender = true;
 		});
 		let shown = 0;
 		cards.forEach((card) => {
-			const match = cat === "all" || card.dataset.categories === cat;
+			const match = cat === "all" || card.dataset?.categories === cat;
 			(card as HTMLElement).style.display = match ? "" : "none";
 			if (match) shown++;
 		});

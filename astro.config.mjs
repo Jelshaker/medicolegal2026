@@ -4,7 +4,6 @@ import { loadEnv } from "vite";
 import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
-import clerk from "@clerk/astro";
 
 // `site` is the canonical origin: it feeds <link rel="canonical">, the OpenGraph
 // URLs, the XML sitemap and — via `src/pages/robots.txt.ts` — robots.txt, so all

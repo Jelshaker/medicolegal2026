@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
-import MedicalImageViewer from '../components/MedicalImageViewer.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
 import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
@@ -14,7 +13,7 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 		eyebrow="Medicolegal Radiology"
 		title="Pure Diagnosis vs. Bolam — The Central Battleground"
 		description="How claimants advance the &quot;pure diagnosis&quot; argument, why ~37% of abdominal radiology claims involve incidental findings, and how teleradiology fatigue amplifies systemic risk."
-		heroImage={PAGE_HERO_IMAGES["/medicolegal-radiology"]}
+		heroImage={PAGE_HERO_IMAGES["/medicolegal-radiology"] || undefined}
 	/>
 
 	<PageIntro

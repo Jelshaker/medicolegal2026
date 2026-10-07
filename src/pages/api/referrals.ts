@@ -1,4 +1,3 @@
-import type { APIRoute } from "astro";
 
 // ============================================================
 // DEPRECATED — Legal Referral API Endpoint

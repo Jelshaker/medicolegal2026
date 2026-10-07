@@ -13,7 +13,7 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
     eyebrow="Gastrointestinal & Peritoneal Malignancy"
     title="Expert Witness — GI & Peritoneal Malignancy"
     description="Specialist medicolegal radiology services for solicitors, barristers, and insurers. Expert review of CT and MRI in cases involving gastrointestinal malignancy, peritoneal carcinomatosis, staging errors, and breach of duty in oncological reporting."
-    heroImage={PAGE_HERO_IMAGES["/expert-witness-gi-peritoneal-malignancy"]}
+    heroImage={PAGE_HERO_IMAGES["/expert-witness-gi-peritoneal-malignancy"] || undefined}
   />
 
   <PageIntro
@@ -420,6 +420,7 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 <!-- To re-enable: uncomment the script block below.               -->
 <!-- ============================================================ -->
 <!--
+// @ts-nocheck
 <script>
   const form = document.getElementById("expert-referral-form") as HTMLFormElement | null;
   if (form) {

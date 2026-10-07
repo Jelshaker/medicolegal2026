@@ -15,7 +15,6 @@ const career = [
 	{ period: '2003 — 2009', role: 'MBChB (Hons)', org: 'University of Leeds School of Medicine', detail: 'Graduated with honours; distinctions in anatomy and clinical skills.' },
 ];
 
-const memberships = MEMBERSHIPS.slice(0, 5);
 ---
 
 <BaseLayout title={`Curriculum Vitae | ${SITE_TITLE}`} description="Career timeline, qualifications, sub-specialty interests and memberships of Dr Joseph El-Sheikha FRCR — Consultant Radiologist and medicolegal expert witness.">
@@ -23,7 +22,7 @@ const memberships = MEMBERSHIPS.slice(0, 5);
 		eyebrow="Professional record"
 		title="Curriculum Vitae"
 		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
-		heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"]}
+		heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"] || undefined}
 	/>
 
 	<PageIntro

@@ -35,9 +35,7 @@ const categoryLabel = (id: string) =>
     description="A free reference resource for anyone interested in radiology and the law: from how common radiological investigations are performed, interpreted, and reported, to the governing reporting standards, statutory duties, and legal consequences when things go wrong. Written with radiologists and healthcare professionals in mind."
     heroImage={PAGE_HERO_IMAGES["/"] as string}
   >
-    <div
-      class="hero-link-row"
-    >
+    <div class="hero-link-row">
       <a href="/radiology-resources" class="link-hero">Radiology reference</a>
       <a href="/medicolegal-fundamentals" class="link-hero"
         >Medicolegal law library</a
@@ -51,20 +49,21 @@ const categoryLabel = (id: string) =>
     <div class="container-page doc">
       <div class="sec">
         <p class="meta-label">A brief explainer why this website exists</p>
-        <h1 class="sec-title-lg">What is Radiology Law?</h1>
+        <h1 class="sec-title-lg">Why does Radiology Law exist?</h1>
         <p class="para">
-          The recent tidal wave of AI slop has made it increasingly difficult to
-          separate real case law from hallucinated nonsense. As a practising
-          radiologist with a master's degree in healthcare ethics and law, I
-          have a profound interest in ethics and legal issues in healthcare,
-          especially with cases relevant to clinical radiology. In my free time,
-          I like to read up on recent medicolegal news (an excercise I find
-          interesting and intellectually stimulating, if not a little nerdy!)
-          and often I discover important lessons I can apply to my clinical
-          practice."
+          As a practising radiologist with a master's degree in Healthcare
+          Ethics and Law, I have a deep interest in medical ethics and legal
+          issues in healthcare, especially in recent cases related to clinical
+          radiology. However, I have found that a recent tidal wave of AI slop
+          has made it increasingly difficult to separate real case law from
+          hallucinated nonsense. This is particularly annoying for me because my
+          free time, I like to read up on recent medicolegal news, an excercise
+          I find interesting and intellectually stimulating, if not perhaps a
+          bit nerdy!
         </p>
         <p class="para">
-          The main purpose of this website is therefore to serve as a <em
+          But I often I discover important lessons I can apply to my clinical
+          practice." The main purpose of this website is therefore to serve as a <em
             >human reviewed</em
           > and <em>trustworthy</em>
           resource for myself and other radiologists, lawyers and patients to help
@@ -80,9 +79,7 @@ const categoryLabel = (id: string) =>
     <div class="container-page doc">
       <div>
         <p class="meta-label text-slate-200">Most Recent Case Update</p>
-        <h2
-          class="heading-hero-text"
-        >
+        <h2 class="heading-hero-text">
           {allPosts[0].data.title}
         </h2>
         <p class="para text-slate-200 mt-3">
@@ -103,9 +100,7 @@ const categoryLabel = (id: string) =>
             href={`/recent-developments/${allPosts[0].slug}`}
             class="btn btn-primary">Read the analysis</a
           >
-          <a href="/recent-developments" class="btn-outline"
-            >See more →</a
-          >
+          <a href="/recent-developments" class="btn-outline">See more →</a>
         </div>
       </div>
     </div>
@@ -231,9 +226,7 @@ const categoryLabel = (id: string) =>
           <span class="sec-no">§ 01</span>
           <span class="meta-label">Scope</span>
         </div>
-        <h2 class="heading-xl">
-          Small and Specific
-        </h2>
+        <h2 class="heading-xl">Small and Specific</h2>
         <p class="para">
           This is a deliberate resource. It holds a selective set of entries on
           radiology and medicolegal law, each one sourced to the statute,
@@ -246,9 +239,7 @@ const categoryLabel = (id: string) =>
           <span class="sec-no">§ 02</span>
           <span class="meta-label">Commentary</span>
         </div>
-        <h2 class="heading-xl">
-          Recent case commentary
-        </h2>
+        <h2 class="heading-xl">Recent case commentary</h2>
         <p class="para">
           Its distinguishing feature is short, anonymised commentary on recent
           cases that raise an interesting radiological or legal point. Every

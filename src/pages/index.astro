@@ -32,7 +32,7 @@ const categoryLabel = (id: string) =>
   <PageHero
     eyebrow="Radiology · Law · Reference resource"
     title="A radiologist's guide to medicolegal law."
-    description="A free reference resource for anyone interested in radiology and the law: from how common radiological investigations are performed, interpreted, and reported, to the governing reporting standards, statutory duties, and legal consequences when things go wrong. Written with radiologists and healthcare professionals in mind."
+    description="A free, independent reference for those working at the interface of radiology and the law. It covers how common radiological investigations are performed, interpreted and reported, the standards governing reporting, relevant statutory duties, and the consequences when things go wrong. Written primarily for radiologists and healthcare professionals."
     heroImage={PAGE_HERO_IMAGES["/"] as string}
   >
     <div class="hero-link-row">
@@ -51,24 +51,23 @@ const categoryLabel = (id: string) =>
         <p class="meta-label">A brief explainer why this website exists</p>
         <h1 class="sec-title-lg">Why does Radiology Law exist?</h1>
         <p class="para">
-          As a practising radiologist with a master's degree in Healthcare
-          Ethics and Law, I have a deep interest in medical ethics and legal
-          issues in healthcare, especially in recent cases related to clinical
-          radiology. However, I have found that a recent tidal wave of AI slop
-          has made it increasingly difficult to separate real case law from
-          hallucinated nonsense. This is particularly annoying for me because my
-          free time, I like to read up on recent medicolegal news, an excercise
-          I find interesting and intellectually stimulating, if not perhaps a
-          bit nerdy!
+          I am a practising radiologist with a master's degree in Healthcare
+          Ethics and Law, an unusual combination which has given me a profound
+          interest in medical ethics and legal issues in healthcare,
+          particularly those arising in clinical radiology. In recent years it
+          has become increasingly difficult to distinguish genuine case law from
+          <b>AI-generated slop</b>. This is particularly frustrating as, in my
+          own time, I like to follow recent medicolegal developments closely.
         </p>
         <p class="para">
-          But I often I discover important lessons I can apply to my clinical
-          practice." The main purpose of this website is therefore to serve as a <em
-            >human reviewed</em
-          > and <em>trustworthy</em>
-          resource for myself and other radiologists, lawyers and patients to help
-          serve as a guide through medicolegal case law, with a special emphasis on
-          radiology.
+          I find this intellectually stimulating and not merely academic. I
+          frequently come across cases with direct relevance to my clinical
+          practice and to the NHS more generally. This site was therefore
+          created to provide a
+          <em>human-reviewed</em> and <em>trustworthy</em> resource for radiologists,
+          lawyers and patients navigating medicolegal case law, with a clear focus
+          on radiology. All material is checked against primary sources (a shocking
+          proposal in this day and age I know...).
         </p>
       </div>
     </div>
@@ -113,12 +112,12 @@ const categoryLabel = (id: string) =>
         <p class="meta-label">Website Structure</p>
         <h2 class="sec-title-lg">From Fundamentals to Recent Events</h2>
         <p class="para">
-          I have organised this site in a way to try to ensure that everyone,
-          from first time visitors to legal experts, are on a level playing
-          field both <em>clinically</em> and <em>legally</em>. This site
-          provides a clear, thorough understanding of clinical radiology as a
-          specialty, the legislation and regulations governing it, foundational
-          medicolegal case law, and important recent judgments.
+          The site is structured so that everyone, from first-time visitors to
+          experienced medicolegal practitioners, are on an equal footing both
+          <em>clinically</em> and <em>legally</em>. These following sections aim
+          to provide a concise and comprehensive overview of clinical radiology
+          as a specialty, important legislation and regulations, foundational
+          medicolegal principles, and significant recent judgments.
         </p>
       </div>
       <div class="mt-10 grid-2-col">
@@ -128,11 +127,10 @@ const categoryLabel = (id: string) =>
             {radiologyFundamentalsTitle}
           </h3>
           <p class="para-sm-mt-2">
-            This section covers common radiology studies, their typical uses and
-            their limitations. Brief discussion on the dangers inherent to
-            radiology investigations and ways that risks are mitigated and an
-            overview of how images are handled, quality assurance and relevant
-            legislation.
+            An overview of common radiological examinations, their indications,
+            limitations and associated risks. Covers risk mitigation, image
+            handling and storage, quality assurance, and the applicable
+            legislative framework.
           </p>
           <a href="/radiology-resources" class="link-sm-block"
             >Open {radiologyFundamentalsTitle}</a
@@ -144,22 +142,37 @@ const categoryLabel = (id: string) =>
             {medicolegalFundamentalsTitle}
           </h3>
           <p class="para-sm-mt-2">
-            Foundational medicolegal principles such as Bolam and Bolitho and
-            Montgomery consent. Important legislation and regulations that
-            govern radiology practice, including IRR17 and IR(ME)R, the
-            statutory duties, and the duty of candour.
+            Foundational principles including Bolam, Bolitho and Montgomery, and
+            key legislation governing radiology practice such as IRR17 and
+            IR(ME)R, statutory duties and the duty of candour.
           </p>
           <a href="/medicolegal-fundamentals" class="link-sm-block"
             >Open {medicolegalFundamentalsTitle}</a
           >
         </article>
         <article class="tile pad-box">
+          <span class="sec-no">Section 05</span>
+          <h3 class="heading-lg">
+            {radiologyLegislationTitle}
+          </h3>
+          <p class="para-sm-mt-2">
+            The statutory framework underpinning radiological practice: who each
+            duty binds, what it requires, what must be recorded, and what
+            follows from a failure. Summary only — the primary text governs.
+          </p>
+          <a href="/radiology-legislation" class="link-sm-block"
+            >Browse the legislation</a
+          >
+        </article>
+
+        <article class="tile pad-box">
           <span class="sec-no">Section 03</span>
           <h3 class="heading-lg">
             {radiologyCaseLawTitle}
           </h3>
           <p class="para-sm-mt-2">
-            This section focuses on important case law in radiology.
+            Analysis of landmark and instructive cases relevant to radiological
+            practice.
           </p>
           <a href="/radiology-legal-cases" class="link-sm-block"
             >Open {radiologyCaseLawTitle}</a
@@ -171,25 +184,11 @@ const categoryLabel = (id: string) =>
             {importantNewCasesTitle}
           </h3>
           <p class="para-sm-mt-2">
-            Regularly updated with new and important cases, this section
-            contains the most recent case discussions and analysis.
+            Regularly updated analysis of new judgments raising important
+            radiological or legal points.
           </p>
           <a href="/recent-developments" class="link-sm-block"
             >Open {importantNewCasesTitle}</a
-          >
-        </article>
-        <article class="tile pad-box">
-          <span class="sec-no">Section 05</span>
-          <h3 class="heading-lg">
-            {radiologyLegislationTitle}
-          </h3>
-          <p class="para-sm-mt-2">
-            The statutory framework under radiological practice: who each duty
-            binds, what it requires, what must be recorded, and what follows
-            from a failure. Summary only — the primary text governs.
-          </p>
-          <a href="/radiology-legislation" class="link-sm-block"
-            >Browse the legislation</a
           >
         </article>
       </div>
@@ -203,59 +202,15 @@ const categoryLabel = (id: string) =>
         <p class="meta-label">A Super Useful Free Tool</p>
         <h2 class="sec-title-lg">Free DICOM Image Viewer</h2>
         <p class="para-max-w">
-          This page contains a free browser-based DICOM viewer which can allow
-          anyone with DICOM images to review them in complete privacy and
-          without uploading them to any server - it is done all in the browser.
-          Successfully tested with plain films (x-rays), CT and MRI scans. This
-          viewer is a great tool for radiologists, legal professionals and
-          patients to review anonymised DICOM images in a secure and private
-          manner.
+          A free, browser-based DICOM viewer for reviewing imaging in complete
+          privacy. No upload to any server — all processing occurs locally in
+          the browser. Tested with plain radiographs, CT and MRI. A practical
+          tool for radiologists, legal professionals and patients reviewing
+          anonymised images securely.
         </p>
         <a href="/free-dicom-viewer" class="btn-primary-lg"
           >Open the DICOM viewer</a
         >
-      </div>
-    </div>
-  </section>
-
-  <!-- What this resource is — and what it is not -->
-  <section class="section-compact">
-    <div class="container-page doc entry-list mt-0">
-      <div class="pb-8">
-        <div class="flex-baseline">
-          <span class="sec-no">§ 01</span>
-          <span class="meta-label">Scope</span>
-        </div>
-        <h2 class="heading-xl">Small and Specific</h2>
-        <p class="para">
-          This is a deliberate resource. It holds a selective set of entries on
-          radiology and medicolegal law, each one sourced to the statute,
-          standard or decision behind it, rather than attempting to be a
-          complete text.
-        </p>
-      </div>
-      <div class="py-8">
-        <div class="flex-baseline">
-          <span class="sec-no">§ 02</span>
-          <span class="meta-label">Commentary</span>
-        </div>
-        <h2 class="heading-xl">Recent case commentary</h2>
-        <p class="para">
-          Its distinguishing feature is short, anonymised commentary on recent
-          cases that raise an interesting radiological or legal point. Every
-          piece says what the imaging showed, what the court was asked to
-          decide, and what a radiologist should take from it.
-        </p>
-      </div>
-      <div class="pt-2">
-        <Callout tone="caution" title="What it is not">
-          <p>
-            It is not a substitute for the primary sources, not a comprehensive
-            case database, and not legal or clinical advice. Where a matter
-            needs a radiological opinion, instruction is handled through the
-            practice behind the resource.
-          </p>
-        </Callout>
       </div>
     </div>
   </section>

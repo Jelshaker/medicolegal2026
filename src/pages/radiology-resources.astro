@@ -106,7 +106,7 @@ const lawLinks = [
 >
   <PageHero
     eyebrow="Radiology library"
-    title="Radiology Resources"
+    title="Radiology Fundamentals"
     description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
     heroImage={PAGE_HERO_IMAGES["/radiology-resources"] || undefined}
   />
@@ -114,8 +114,7 @@ const lawLinks = [
   <PageIntro
     eyebrow="Radiology library"
     paragraphs={[
-      "This is the clinical half of a deliberately small reference resource. It sets out what each imaging modality can reasonably answer, what the professional standards require of an interpretation and a report, and what the law demands of dose, quality and image handling.",
-      "It assumes you already know radiology, or already know law. The purpose is to show where the two meet, and to name the source behind each proposition. Every section links to the statute, standard or decision it applies.",
+      "This section covers what each radiology imaging modality can reasonably answer, the professional standards governing interpretation and reporting, and the statutory requirements for dose, quality assurance and image handling.",
     ]}
     contents={[
       { href: "#modalities", label: "Modalities" },
@@ -126,7 +125,7 @@ const lawLinks = [
       { href: "#quality-assurance", label: "Quality assurance" },
       { href: "#primary-sources", label: "Primary sources" },
     ]}
-    audience="Written for reporting radiologists, referrers, and the solicitors and experts who test their work."
+    audience="Providing a clear, practical overview of day-to-day radiological principles for non-specialist readers, trainees, and experienced practitioners seeking a concise reference."
     reviewed="September 2026"
   />
 
@@ -137,8 +136,8 @@ const lawLinks = [
         id="modalities"
         index="01"
         eyebrow="Modalities"
-        title="Each investigation, and the question it answers"
-        lead="A modality is chosen for the question it can answer and the risk it carries, not for the detail it produces. These summaries set out what each method is for and where it stops being useful."
+        title="Common radiological investigations."
+        lead="Each modality not only has its own strength and weaknesses, but also its own risks. The following sections describe what each modality can reasonably answer, and where it is limited."
       >
         <div class="entry-list mt-0">
           {
@@ -470,9 +469,7 @@ const lawLinks = [
             ].map((s) => (
               <li class="box flex flex-col gap-3 p-5 sm:flex-row sm:items-start sm:justify-between">
                 <div class="max-w-2xl">
-                  <h3 class="heading-snug-dark">
-                    {s.n}
-                  </h3>
+                  <h3 class="heading-snug-dark">{s.n}</h3>
                   <p class="para-sm">{s.d}</p>
                 </div>
                 <a
@@ -488,9 +485,7 @@ const lawLinks = [
       </Section>
 
       <div class="panel-dark-lg">
-        <h2 class="heading-hero-white">
-          Continue into the law
-        </h2>
+        <h2 class="heading-hero-white">Continue into the law</h2>
         <p class="centered-text-muted">
           The other half of this resource takes the same material and asks how a
           court, a coroner or a regulator would test it.
@@ -499,8 +494,7 @@ const lawLinks = [
           <a href="/medicolegal-fundamentals" class="btn btn-primary"
             >Medicolegal law library</a
           >
-          <a href="/radiology-legal-cases" class="btn-outline"
-            >Landmark cases</a
+          <a href="/radiology-legal-cases" class="btn-outline">Landmark cases</a
           >
           <a href="/recent-developments" class="btn-outline"
             >Recent developments</a

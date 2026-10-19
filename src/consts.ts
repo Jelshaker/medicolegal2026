@@ -26,7 +26,7 @@ export const DEFAULT_SOCIAL_IMAGE = "/images/og-default.jpg";
 
 export const NAVIGATION_LINKS = [
 	{ href: "/", label: "Home" },
-	{ href: "/radiology-resources", label: "Radiology Resources" },
+	{ href: "/radiology-resources", label: "Radiology Fundamentals" },
 	{ href: "/medicolegal-fundamentals", label: "Medicolegal Fundamentals" },
 	{ href: "/radiology-legislation", label: "Radiology Legislation" },
 	{ href: "/radiology-legal-cases", label: "Radiology Legal Cases" },

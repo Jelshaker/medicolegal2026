@@ -140,7 +140,6 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 </BaseLayout>
 
 <script define:vars={{ postId: post.slug }}>
-// @ts-nocheck
 	const list = document.getElementById("comment-list") as HTMLElement | null;
 	const form = document.getElementById("comment-form") as HTMLFormElement | null;
 

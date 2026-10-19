@@ -59,12 +59,13 @@ import { CONSENT_KEY, CONSENT_VERSION } from "../lib/consent";
 	</div>
 </div>
 
-// @ts-nocheck
 <script define:vars={{ consentKey: CONSENT_KEY, consentVersion: CONSENT_VERSION }}>
 	// Runs in the browser on every page (rendered by BaseLayout). Shows the
 	// banner only when no choice is stored; applies a stored "accept" on load
 	// (a stored "reject" needs no action — denied is already the default).
 	const banner = document.getElementById("cookie-banner");
+
+	declare const gtag: (command: string, ...args: unknown[]) => void;
 
 	function readConsent() {
 		try {
@@ -81,7 +82,6 @@ import { CONSENT_KEY, CONSENT_VERSION } from "../lib/consent";
 	}
 
 	function applyConsent(analytics) {
-		const gtag = window.gtag;
 		if (typeof gtag !== "function") return;
 		if (analytics) {
 			gtag("consent", "update", {

@@ -12,47 +12,79 @@ import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 const modalities = [
   {
     n: "Radiography (X-ray)",
-    q: "Fracture, consolidation, obstruction or free gas?",
-    d: "Projection imaging of the skeleton and chest. Fast, widely available and, for the questions it answers, the lowest reasonable dose. Limited by superimposition and by the collapse of three-dimensional anatomy into two.",
+    q: "Excellent for rapid triage and diagnosis",
+    d: "The classic radiology examination, the plain radiograph, has historically been the mainstay of most radiology departments, but in recent years lower-dose CT scanners and increasingly detailed MRI have gradually begun to supplant this old, reliable workhorse. However, plain radiographs remain extremely useful and are readily available in almost every healthcare setting. For some examinations, a plain radiograph provides all the necessary information in a single image, allowing a faster and easier diagnosis that is no less accurate. In some situations, however, a plain radiograph is much less accurate than CT or MRI. Despite their relatively low radiation dose, plain radiographs will remain a vital part of any radiology department for many years to come.",
     img: "/images/normal-chest-radiograph-female-5.png",
+    indications: [
+      "Suspected fracture or dislocation",
+      "Chest infection, consolidation or pleural effusion",
+      "Bowel obstruction or free intraperitoneal gas",
+      "Foreign-body localisation",
+    ],
     limits: [
       "Superimposed structures can mask or mimic pathology",
       "Low soft-tissue contrast compared with CT or MRI",
       "Projection geometry can conceal a fracture line",
     ],
+    safety:
+      "Low-dose examination. Pregnancy status should be checked where the abdomen or pelvis is in the primary beam. Gonad shielding is rarely indicated under modern collimation.",
   },
   {
     n: "Computed tomography (CT)",
-    q: "Acute abnormality, vascular complication or staging question?",
-    d: "Cross-sectional imaging with high spatial resolution and short acquisition times. First line for acute presentations, trauma, suspected malignancy and vascular disease. Uses ionising radiation, so every request carries a justification duty.",
+    q: "Excellent for most acute and cross-sectional questions",
+    d: "Computed tomography is the modern workhorse of acute and cross-sectional imaging, with high spatial resolution, short acquisition times and near-universal availability in secondary care. Multi-detector scanners can image the whole chest and abdomen in seconds, which is why CT is first line for acute presentations, trauma, most suspected malignancies and vascular disease. Its main weakness is that it uses ionising radiation at doses higher than those of plain radiography, and it often requires iodinated contrast (an iodine-based agent injected to make structures easier to see), which carries risks of allergy and renal injury. Other technical issues, such as beam-hardening and metal artefact, can also obscure detail — an issue less prevalent with plain radiographs. Regardless, every exposure must be justified under IR(ME)R.",
     img: "/images/head_ct_images.jpg",
+    indications: [
+      "Acute head injury, stroke or intracranial haemorrhage",
+      "Acute abdomen, trauma and suspected perforation",
+      "Pulmonary embolism and aortic dissection",
+      "Staging and follow-up of malignancy",
+    ],
     limits: [
       "Ionising radiation dose — justification and optimisation apply",
       "Iodinated contrast risks (allergy, renal function, thyroid)",
       "Beam-hardening and metal artefact can obscure detail",
     ],
+    safety:
+      "Justification is mandatory under IR(ME)R. Contrast-enhanced studies require recent renal function and allergy history. Dose is monitored against diagnostic reference levels.",
   },
   {
     n: "Magnetic resonance imaging (MRI)",
-    q: "Soft-tissue, marrow, joint or neurological question?",
-    d: "High soft-tissue contrast without ionising radiation. Central to musculoskeletal, neurological, hepatobiliary and pelvic imaging. Subject to a strong static magnetic field, so implant and device screening is mandatory before scanning.",
+    q: "Excellent for soft tissues",
+    d: "MRI delivers high soft-tissue contrast without ionising radiation and is the modality of choice for soft-tissue, marrow, joint and neurological questions. Multiplanar acquisition and a range of contrast weightings make it central to musculoskeletal, neurological, hepatobiliary and pelvic imaging, and it will demonstrate pathology that CT resolves poorly or not at all. Its constraints are physical rather than dosimetric. The static field is permanently energised, so implant, device and foreign-body screening is mandatory before entry to the controlled area, and ferromagnetic projectile injury remains the principal safety hazard. Acquisition times are long, motion degrades the study, and a proportion of patients cannot tolerate the examination. Gadolinium (an intravenous contrast agent) requires a documented renal function assessment, and there are ongoing concerns about tissue deposition in the brain. MRI capacity and cost continue to limit access compared with CT. Its principal advantage is that it carries no ionising radiation and therefore no IR(ME)R justification requirement, but the request must still identify a clinical question that MRI answers better than a faster or lower-cost alternative.",
     img: "/images/pexels-cottonbro-5723878.jpg",
-    limits: [
-      "Implant, device and foreign-body safety screening is mandatory",
-      "Long acquisition times, so motion degrades the study",
-      "Gadolinium contrast requires renal function assessment",
+    indications: [
+      "Joints and soft-tissue injury",
+      "Brain, spinal cord and peripheral nerve lesions",
+      "Liver, biliary and pelvic pathology",
+      "Bone marrow and musculoskeletal infection or tumour",
     ],
+    limits: [
+      "Implant, device and foreign-body safety",
+      "Long acquisition times, so motion degrades the study",
+      "Gadolinium contrast",
+    ],
+    safety:
+      "No ionising radiation, but the static magnetic field is always on. Implant and device status must be checked before entry to the controlled area. Gadolinium is avoided in significant renal impairment unless clinically essential.",
   },
   {
     n: "Ultrasound",
-    q: "Dynamic, superficial or flow-related question?",
-    d: "Real-time imaging without ionising radiation, including Doppler assessment of flow. Widely used in abdominal, obstetric, musculoskeletal and soft-tissue work, and as the guidance method for many interventional procedures.",
+    q: "Excellent for superficial structures and blood flow",
+    d: "Ultrasound provides real-time imaging without ionising radiation. It is a dynamic examination rather than a set of static images, so it can assess flow and superficial structures that projection and cross-sectional imaging demonstrate poorly. It is widely used in abdominal, obstetric, musculoskeletal and soft-tissue imaging, and it is the guidance method for many interventional procedures. Its principal weakness is operator dependence: image quality and interpretation vary with the practitioner, and the examination is the least reproducible of the modalities. Penetration is limited, and bowel gas obscures deeper structures. Ultrasound uses no ionising radiation, so no IR(ME)R justification requirement arises.",
     img: "/images/posterior-acoustic-shadowing-and-enhancement.jpeg",
+    indications: [
+      "Abdominal and pelvic pain, including gallstones and renal obstruction",
+      "Obstetric assessment and foetal wellbeing",
+      "Vascular stenosis, thrombosis and flow assessment",
+      "Image guidance for biopsy, drainage and vascular access",
+    ],
     limits: [
       "Operator-dependent and the least reproducible modality",
       "Limited penetration; bowel gas obscures deeper structures",
       "No whole-body overview compared with CT or MRI",
     ],
+    safety:
+      "No ionising radiation. Output parameters are kept as low as reasonably practicable. Endocavitary and interventional probes require appropriate decontamination between patients.",
   },
 ];
 
@@ -61,19 +93,27 @@ const modalities = [
 const reportingStandards = [
   {
     n: "Report content",
-    d: "A report must answer the clinical question asked, describe the findings, state the limitations of the study and give a clear conclusion. A structured format is expected where one has been agreed for that investigation.",
+    d: "A report must answer the clinical question asked, describe the findings, state the limitations of the study and give a clear conclusion. A structured format is expected where one has been agreed for that investigation. The conclusion should provide a radiological diagnosis or a reasoned differential, acknowledge limitations and make recommendations aligned with recognised guidelines.",
   },
   {
     n: "Named author and accountability",
-    d: "Every report must be attributable to a named reporting author, including where reporting is remote or assisted by software. The content must not imply a level of scrutiny that has not in fact been applied.",
+    d: "Every report must be attributable to a named reporting author, including where reporting is remote or assisted by software. The author's name, position and profession should be identifiable. The content must not imply a level of scrutiny that has not in fact been applied.",
   },
   {
     n: "Remote and offsite reporting",
-    d: "Remote reporting is acceptable only where the reporter has the images, the prior studies, the clinical information and the means to communicate an urgent finding. The same expectations of quality, turnaround and escalation apply as for onsite work.",
+    d: "Remote reporting is acceptable only where the reporter has the images, the prior studies, the clinical information and the means to communicate an urgent finding. The same expectations of quality, turnaround and escalation apply as for onsite work. The RCR standards for teleradiology set out the governance, data-transfer and indemnity requirements.",
   },
   {
     n: "AI-assisted and speech-recognition output",
-    d: "Where software generates or transcribes content, the named human author remains responsible for its accuracy. Every automated contribution must be reviewed and approved before the report is released.",
+    d: "Where software generates or transcribes content, the named human author remains responsible for its accuracy. Every automated contribution must be reviewed and approved before the report is released. The use of AI does not transfer accountability to the software provider.",
+  },
+  {
+    n: "Turnaround and communication of critical findings",
+    d: "Providers must have procedures for turnaround times, communication of unexpected or time-critical findings, imaging classification for reporting priority, and acknowledgement of reports. A critical finding must be communicated directly and the communication documented, not left to the patient or referrer to discover.",
+  },
+  {
+    n: "Addenda and corrections",
+    d: "An addendum supplements the original report; it does not replace it. It must be attributable, dated and linked to the original study. Where a discrepancy or error is identified, the addendum should be non-judgemental and should trigger the local discrepancy and candour processes.",
   },
 ];
 
@@ -81,21 +121,68 @@ const reportingStandards = [
 const lawLinks = [
   {
     n: "Disputed interpretation",
-    d: 'How the courts separate a defensible difference of opinion from a breach, and how the "pure diagnosis" argument is met.',
+    d: 'How the courts separate a defensible difference of opinion from a breach, and how the "pure diagnosis" argument is met. The Bolam/Bolitho standard is applied to the reporting decision, not only to the clinical act.',
     href: "/medicolegal-radiology",
     cta: "Read the analysis",
   },
   {
     n: "Reporting standards and candour",
-    d: "Standard of care, addenda and corrections, and the professional duty of candour where a report is found to be wrong.",
+    d: "Standard of care, addenda and corrections, and the professional and statutory duties of candour where a report is found to be wrong. The statutory duty sits alongside the GMC professional duty.",
     href: "/medicolegal-fundamentals",
     cta: "Open the law library",
   },
   {
     n: "Statutory duties",
-    d: "IR(ME)R justification and optimisation, IRR17 controls, the duty to communicate critical findings, and permitting for radioactive material.",
+    d: "IR(ME)R justification and optimisation, IRR17 controls, the duty to communicate critical findings, and permitting for radioactive material. Breach can be a criminal offence as well as a regulatory matter.",
     href: "/radiology-legislation",
     cta: "Review the legislation",
+  },
+];
+
+// Dose reference values for the comparison table beneath the diagram.
+const doseComparisons = [
+  {
+    label: "UK average annual effective dose (all sources)",
+    value: "2.6 mSv",
+    note: "About half from radon; wide regional variation.",
+  },
+  {
+    label: "Average annual dose in Cornwall",
+    value: "7.8 mSv",
+    note: "Elevated radon; the highest regional average in the UK.",
+  },
+  {
+    label: "Public dose limit (man-made sources, excluding medical)",
+    value: "1 mSv/year",
+    note: "Statutory limit under the Basic Safety Standards.",
+  },
+  {
+    label: "Chest radiograph (for comparison)",
+    value: "≈0.02 mSv",
+    note: "A single projection; dose varies with technique.",
+  },
+  {
+    label: "Occupational dose limit (effective dose) i.e. radiation workers",
+    value: "20 mSv/year",
+    note: "Averaged over any calendar year; 100 mSv over five years under IRR17.",
+  },
+];
+const qaStandards = [
+  {
+    n: "Peer review and discrepancy audit",
+    d: "A documented sample of reports is re-read by another competent reporter; discrepancies are classified, discussed and the learning recorded. The RCR recommends regular discrepancy meetings and a blame-free learning culture. Done properly, the audit trail is also the evidence that the service was monitoring its own accuracy.",
+  },
+  {
+    n: "Candour and correction",
+    d: "Where a report is wrong or a study misread, the professional duty of candour runs in parallel with the incident process: acknowledge, explain, apologise, record and share the learning. An addendum supplements the original report; it does not replace it. The statutory duty of candour binds organisations and is triggered by moderate harm or above; the professional duty binds the individual clinician.",
+  },
+  {
+    n: "Audit of unreported studies",
+    d: "Unreported investigations should be audited at a defined interval, commonly annually. This is a service-level assurance activity, distinct from individual discrepancy review, and evidences that the reporting backlog is monitored and escalated rather than merely accumulating.",
+  },
+  {
+    n: "Keep the record, not just the report",
+    d: "Protocol detail, the clinical information supplied, viewing conditions, the route by which an urgent finding was communicated and any escalation attempt are often the decisive material years later. A contemporaneous note of an escalation attempt carries more weight than a later recollection.",
   },
 ];
 ---
@@ -114,7 +201,7 @@ const lawLinks = [
   <PageIntro
     eyebrow="Radiology library"
     paragraphs={[
-      "This section covers what each radiology imaging modality can reasonably answer, the professional standards governing interpretation and reporting, and the statutory requirements for dose, quality assurance and image handling.",
+      "This section covers what each imaging modality can reasonably answer, the professional standards governing the interpretation and reporting of imaging, and the statutory requirements for dose, quality assurance and image handling.",
     ]}
     contents={[
       { href: "#modalities", label: "Modalities" },
@@ -136,8 +223,8 @@ const lawLinks = [
         id="modalities"
         index="01"
         eyebrow="Modalities"
-        title="Common radiological investigations."
-        lead="Each modality not only has its own strength and weaknesses, but also its own risks. The following sections describe what each modality can reasonably answer, and where it is limited."
+        title="Common radiology examinations"
+        lead="Each modality has its own strengths, weaknesses and clinical risks. The following sections describe what each modality can reasonably answer, where it is limited, and the practical safety considerations."
       >
         <div class="entry-list mt-0">
           {
@@ -157,85 +244,168 @@ const lawLinks = [
                 <h3 class="entry-title">{m.n}</h3>
                 <p class="mt-2 text-sm font-semibold text-slate-700">{m.q}</p>
                 <p class="para-sm">{m.d}</p>
-                <h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Where it is limited
-                </h4>
-                <ul class="mt-2 space-y-2 text-sm text-slate-600">
-                  {m.limits.map((l) => (
-                    <li class="check-row">
-                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
-                      <span>{l}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Common indications
+                    </h4>
+                    <ul class="mt-2 space-y-1 text-sm text-slate-600">
+                      {m.indications.map((i) => (
+                        <li class="check-row">
+                          <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                          <span>{i}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Limitations
+                    </h4>
+                    <ul class="mt-2 space-y-1 text-sm text-slate-600">
+                      {m.limits.map((l) => (
+                        <li class="check-row">
+                          <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                          <span>{l}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded border border-slate-200 bg-slate-50 p-3">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Safety and practical notes
+                  </h4>
+                  <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                    {m.safety}
+                  </p>
+                </div>
               </div>
             ))
           }
         </div>
         <Figure
           src="/images/reporting_radiographer.jpg"
-          alt="A sheet of magnetic resonance images"
+          alt="A radiographer reviewing a series of CT images on a monitor"
           label="Figure 01"
-          caption="A series, not a picture"
-          subtitle="Each modality answers a different question within the limits of its own physics. A study is read as a series and in the context of the request that produced it."
+          caption="A radiographer checks a series of CT images on a monitor"
+          subtitle="No modality is better than the others: each has its own clinical use, with its own strengths and limitations."
           ratio="wide"
         />
       </Section>
+
       <!-- Dose and safety -->
       <Section
         id="dose-safety"
         index="02"
         eyebrow="Dose & safety"
-        title="Dose, justification and the statutory duty"
-        lead="Dose is not a matter of preference. Where ionising radiation is used, the decision to expose, the amount of exposure and the recording of it are all governed by statute."
+        title="Information on Dose, justification and statutory duties"
+        lead="Ionising radiation is a powerful diagnostic tool, but it carries a risk of harm. The statutory duties of justification and optimisation apply to every exposure, and the law requires that the dose be kept as low as reasonably practicable for the diagnostic purpose."
       >
         <Figure
           label="Figure 02"
           caption="How the modalities compare on dose"
-          subtitle="Linear scale 0–20 mSv. MRI and ultrasound involve no ionising radiation; for X-ray and CT the statutory duties of justification and optimisation attach."
+          subtitle="Linear scale 0–20 mSv. MRI and ultrasound involve no ionising radiation."
         >
           <Diagram name="dose-scale" />
         </Figure>
-        <div class="entry-list mt-0">
+
+        {/* Reference table to accompany the diagram */}
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          {
+            doseComparisons.map((d) => (
+              <div class="rounded border border-slate-200 bg-white p-4">
+                <p class="text-sm font-semibold text-slate-900">{d.label}</p>
+                <p class="mt-1 text-xl font-bold text-slate-800">{d.value}</p>
+                <p class="mt-1 text-xs text-slate-500">{d.note}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="entry-list mt-6">
           <div class="entry">
             <h3 class="entry-title">Justification and optimisation</h3>
             <ul class="list">
               <li>
-                Justification: for that patient, the benefit of the exposure
-                must outweigh its detriment.
+                <strong>Justification:</strong> the benefit of the exposure to that
+                patient must outweigh its harm. The referrer must provide sufficient
+                clinical information to allow the radiologist to justify the examination
+                and authorises the exposure.
               </li>
               <li>
-                Optimisation: the exposure is kept as low as reasonably
-                practicable for the diagnostic purpose.
+                <strong>Optimisation:</strong> dose is kept as low as reasonably practicable
+                (ALARP) for the diagnostic purpose. The 2024 amendments to IR(ME)R
+                strengthened the duties to have regard to diagnostic reference levels
+                and to audit practice.
               </li>
               <li>
-                Diagnostic reference levels: national values for common
-                examinations. Exceedance requires review.
+                <strong>Diagnostic reference levels (DRLs):</strong> national values
+                are set from wide-scale surveys, typically at the third quartile of
+                the dose distribution for typical practice. Local DRLs should sit
+                below the national value. Departments consistently above the DRL should
+                review their practice and try to take corrective action.
               </li>
               <li>
-                Protocol choice: whether the study performed was capable of
-                answering the clinical question asked.
+                <strong>Protocol choice:</strong> whether the study performed was
+                capable of answering the question asked. A technically adequate study
+                that does not answer the clinical question is not optimised care.
               </li>
             </ul>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Duty holders under IR(ME)R</h3>
+            <ul class="list">
+              <li>
+                <strong>Employer:</strong> owns the framework — written procedures,
+                protocols, training, entitlement and compliance.
+              </li>
+              <li>
+                <strong>Referrer:</strong> supplies sufficient and accurate clinical
+                information to permit justification.
+              </li>
+              <li>
+                <strong>Practitioner:</strong> justifies and authorises the individual
+                exposure, weighing benefit against detriment.
+              </li>
+              <li>
+                <strong>Operator:</strong> performs the practical aspects and secures
+                optimisation in practice.
+              </li>
+            </ul>
+            <p class="para-sm">
+              The roles are distinct and may be held by different people for the
+              same exposure. A claim can attach to any one of them
+              independently.
+            </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Recording and reporting</h3>
             <ul class="list">
               <li>
                 Significant accidental or unintended exposures are reportable
-                incidents and must be investigated.
+                incidents and must be investigated, with the findings recorded.
               </li>
               <li>
-                Occupational exposure is managed through controlled areas,
-                monitoring and dose limits.
+                Occupational exposure is controlled through designated areas,
+                monitoring and dose limits. Under IRR17 a controlled area is
+                required where a person is likely to receive more than 6 mSv per
+                year, and a supervised area above 1 mSv per year.
+              </li>
+              <li>
+                Dose limits under IRR17 are 20 mSv per year (100 mSv over five
+                years), 150 mSv for the lens of the eye and 500 mSv for the
+                extremities.
               </li>
               <li>
                 Equipment must be commissioned, tested and withdrawn from use
                 when faulty.
               </li>
               <li>
-                Equipment QA and dose records are evidence, and are frequently
-                sought years later.
+                QA records and dose records are evidence. They are routinely
+                sought years after the event, and their absence is itself a
+                finding.
               </li>
             </ul>
           </div>
@@ -256,7 +426,7 @@ const lawLinks = [
         index="03"
         eyebrow="Standards"
         title="Interpretation and reporting: the professional benchmark"
-        lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) set out what a defensible report looks like. They are the reference point against which report practice is measured, including in disputed cases."
+        lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) define what a defensible report looks like. They are the yardstick against which report practice is measured, including in disputed cases."
       >
         <div class="entry-list mt-0">
           {
@@ -268,6 +438,21 @@ const lawLinks = [
             ))
           }
         </div>
+
+        <div class="mt-6 rounded border border-slate-200 bg-slate-50 p-4">
+          <p class="text-sm font-semibold text-slate-800">
+            The standards apply to all who interpret and report imaging,
+            regardless of professional background.
+          </p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            A doctor reporting within a narrower scope of practice is held to
+            the same standard. Where imaged anatomy falls outside the
+            interpreter's expertise, radiologist review must be agreed in
+            advance. Reporting by sonographers and radiographers should occur
+            within consultant-radiologist-led teams, with supervision and audit
+            proportionate to the scope of practice.
+          </p>
+        </div>
       </Section>
 
       <!-- Handling and transferring images -->
@@ -276,37 +461,53 @@ const lawLinks = [
         index="04"
         eyebrow="Handling images"
         title="Storage, transfer and viewing"
-        lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the record."
+        lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the clinical record."
       >
         <div class="entry-list mt-0">
           <div class="entry">
             <h3 class="entry-title">What a study actually contains</h3>
             <p class="para-sm">
-              A DICOM study is the pixel data plus a header of tags: patient and
+              A DICOM study is pixel data plus a header of tags: patient and
               study identifiers, acquisition parameters, exposure indices,
-              window presets and slice geometry. The header is what makes a
-              study searchable, transferable and anonymisable — and it is what
-              allows a later review to separate a viewing choice from a missed
-              finding.
+              window presets and slice geometry. The header makes a study
+              searchable, transferable and anonymisable, and it is what allows a
+              later review to distinguish a viewing choice from a missed
+              finding. Removing identifiers from the visible image without
+              stripping the header can leave the study identifiable.
             </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Transfer and anonymisation</h3>
             <p class="para-sm">
-              Where a study leaves the treating relationship — for a second
-              opinion or a medicolegal review — it should be anonymised at
-              source, transferred by an encrypted route and logged. Transfer and
-              anonymisation guidance is set out alongside the referral terms.
+              Where a study leaves the treating relationship — for second
+              opinion or medicolegal review — it should be anonymised at source,
+              transferred by an encrypted route and logged. RCR confidentiality
+              guidance distinguishes fully anonymised images (no name, date of
+              birth, hospital or study identifier, and no hospital name) from
+              pseudonymised data, which remains personal data because it can be
+              re-linked. Transfer and anonymisation guidance is set out
+              alongside the referral terms.
             </p>
             <!-- Referral form currently unavailable — link disabled while the referral function is deprecated -->
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Second opinions and the record</h3>
+            <p class="para-sm">
+              The fact of a second opinion, the identity of the second reporter
+              and the advice given should all be recorded. Where the second
+              opinion differs, the original report is supplemented by an
+              addendum. The addendum forms part of the record and should be
+              traceable to the original study.
+            </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Local-only viewing</h3>
             <p class="para-sm">
               Reviewing a study in a browser that never uploads it creates no
-              further copy of personal data, which satisfies data minimisation
-              by design. That is a triage aid — it is not a calibrated
-              diagnostic workstation and cannot replace official interpretation.
+              further copy of personal data, satisfying data minimisation by
+              design. It is a triage aid, not a calibrated diagnostic
+              workstation, and cannot replace official interpretation. A local
+              viewer should not be used to issue a formal report.
             </p>
             <a
               href="/free-dicom-viewer"
@@ -331,9 +532,9 @@ const lawLinks = [
         index="05"
         eyebrow="Radiology and the law"
         title="Where a reporting standard becomes a legal question"
-        lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test that is applied to it."
+        lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test applied to it."
       >
-        <div class="entry-list mt-0">
+        <div class="grid gap-4 sm:grid-cols-3">
           {
             lawLinks.map((l) => (
               <a
@@ -370,41 +571,19 @@ const lawLinks = [
         title="Quality assurance and learning"
         lead="A reporting service is only as defensible as the system that checks it. Assurance is a matter of record, not of intention."
       >
-        <div class="entry-list mt-0">
-          <div class="entry">
-            <h3 class="entry-title">Peer review and discrepancy audit</h3>
-            <p class="para-sm">
-              A documented sample of reports is re-read by another competent
-              reporter, discrepancies are classified and discussed, and the
-              learning is written down. Performed properly, this is also the
-              evidence that the service was monitoring its own accuracy.
-            </p>
-          </div>
-          <div class="entry">
-            <h3 class="entry-title">Candour and correction</h3>
-            <p class="para-sm">
-              Where a report is wrong or a study is misread, the professional
-              duty of candour runs in parallel with the incident process:
-              acknowledge the error, explain it, apologise, record what happened
-              and share the learning. An addendum supplements the original
-              report; it does not replace it.
-            </p>
-          </div>
-          <div class="entry">
-            <h3 class="entry-title">Keep the record, not just the report</h3>
-            <p class="para-sm">
-              Protocol details, the clinical information supplied, viewing
-              conditions and the route by which an urgent finding was
-              communicated are often the decisive material later. A
-              contemporaneous note of an escalation attempt is worth more than a
-              recollection.
-            </p>
-          </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            qaStandards.map((q) => (
+              <div class="entry">
+                <h3 class="entry-title">{q.n}</h3>
+                <p class="para-sm">{q.d}</p>
+              </div>
+            ))
+          }
         </div>
       </Section>
     </div>
   </section>
-
   <!-- Primary sources -->
   <section class="band-white py-16">
     <div class="content-section">
@@ -420,19 +599,37 @@ const lawLinks = [
             [
               {
                 n: "RCR Standards for interpretation and reporting of imaging investigations (3rd ed., October 2025)",
-                d: "The professional benchmark for report content, named authorship, remote reporting and AI-assisted output.",
+                d: "The professional benchmark for report content, named authorship, remote reporting, AI-assisted output, turnaround and addenda.",
+                href: "/medicolegal-fundamentals",
+                tag: "Applied in Medicolegal Law",
+              },
+              {
+                n: "RCR Standards for the provision of teleradiology within the United Kingdom (2nd ed.)",
+                d: "Governance, data transfer, reporting and communication standards where images are transmitted for remote interpretation.",
+                href: "/recent-developments",
+                tag: "Discussed in Developments",
+              },
+              {
+                n: "RCR Guidance on maintaining patient confidentiality when using radiology department information systems (2nd ed., 2019)",
+                d: "Anonymisation, pseudonymisation, disclosure and the handling of identifiable images.",
+                href: "/medicolegal-fundamentals",
+                tag: "Applied in Medicolegal Law",
+              },
+              {
+                n: "RCR Professional duty of candour guidance for radiologists (2022)",
+                d: "Candour after reporting error, the distinction between education and discrepancy meetings, and the recording of addenda.",
                 href: "/medicolegal-fundamentals",
                 tag: "Applied in Medicolegal Law",
               },
               {
                 n: "IR(ME)R 2017, as amended 2024",
-                d: "Justification, optimisation, the duty holders, diagnostic reference levels and reportable incidents.",
+                d: "Justification, optimisation, the four duty holders, diagnostic reference levels, clinical audit and reportable incidents.",
                 href: "/radiology-legislation",
                 tag: "Summarised in Legislation",
               },
               {
-                n: "Ionising Radiations Regulations 2017",
-                d: "Occupational dose limits, controlled and supervised areas, equipment QA and the roles of the radiation protection adviser and supervisor.",
+                n: "Ionising Radiations Regulations 2017 (IRR17)",
+                d: "Occupational dose limits, controlled and supervised areas, local rules, equipment QA and the roles of the radiation protection adviser and supervisor.",
                 href: "/radiology-legislation",
                 tag: "Summarised in Legislation",
               },
@@ -443,8 +640,14 @@ const lawLinks = [
                 tag: "Summarised in Legislation",
               },
               {
-                n: "GMC Good Medical Practice and the professional duty of candour",
-                d: "Record-keeping, candour after harm and the handling of patient information.",
+                n: "GMC Good Medical Practice (2024) and the professional duty of candour",
+                d: "Record-keeping, openness and honesty when things go wrong, and the handling of patient information.",
+                href: "/medicolegal-fundamentals",
+                tag: "Applied in Medicolegal Law",
+              },
+              {
+                n: "Health and Social Care Act 2008 (statutory duty of candour)",
+                d: "The organisational duty to be open and transparent with patients when harm or distress occurs.",
                 href: "/medicolegal-fundamentals",
                 tag: "Applied in Medicolegal Law",
               },
@@ -461,8 +664,8 @@ const lawLinks = [
                 tag: "Digested in Case Law",
               },
               {
-                n: "Teleradiology governance and the confidentiality of transmitted images",
-                d: "Licensing, credentialing, security and confidentiality where images are transmitted for remote reporting.",
+                n: "UK GDPR and Data Protection Act 2018",
+                d: "Lawful basis, data minimisation, subject access and the handling of special category health data in imaging.",
                 href: "/recent-developments",
                 tag: "Discussed in Developments",
               },

@@ -44,10 +44,20 @@
 @theme {
 	/* Surfaces and ink. There is one grey family (Tailwind's slate) and the
 	   two documented tints; no navy/teal/rose/amber/cyan/emerald ramp
-	   exists, so an accent colour cannot be used by accident. */
+	   exists, so an accent colour cannot be used by accident.
+
+	   Semantic tokens: every component uses these, not raw hex values. */
 	--color-paper: #fafafa; /* tinted section ground */
+	--color-paper-alt: #ffffff; /* white section / page background */
+	--color-surface: #ffffff; /* card, box, tile background */
+	--color-surface-alt: #f8fafc; /* note-box, code background */
 	--color-ink: #1e293b; /* body text */
 	--color-ink-strong: #0f172a; /* headings, dark panels */
+	--color-ink-muted: #475569; /* secondary text, paragraphs */
+	--color-muted: #64748b; /* labels, table headers, check icons */
+	--color-muted-light: #94a3b8; /* muted-light text, sec-no, markers */
+	--color-border: #e2e8f0; /* dividers, table rows, box borders */
+	--color-border-strong: #cbd5e1; /* stronger rules, sec borders */
 
 	/* Serif carries the document; sans is reserved for metadata labels,
 	   table headers and wayfinding. */
@@ -76,9 +86,33 @@
 
 /* Dark mode — flip the surface/ink palette when <html class="dark">. */
 html.dark {
-	--color-paper: #1e293b; /* slate-800 — dark but not black */
-	--color-ink: #cbd5e1; /* slate-300 — light grey body text */
-	--color-ink-strong: #f1f5f9; /* slate-100 — near-white headings */
+
+	/* ---------- Deep blue-slate palette (not pure black) ---------- */
+
+	/* Surfaces — progressively darker for visual hierarchy. */
+	--color-paper:        #0b1120; /* deepest — main page ground */
+	--color-paper-alt:    #0f172a; /* slate-900 — alternate sections */
+	--color-surface:      #111827; /* gray-900 — cards, boxes */
+	--color-surface-alt:  #0b1120; /* code / note-box background */
+
+	/* Ink — carefully chosen for contrast and readability. */
+	--color-ink:          #e2e8f0; /* slate-200 — body text (~12.6:1) */
+	--color-ink-strong:   #f8fafc; /* slate-50 — headings (~17.5:1) */
+	--color-ink-muted:    #94a3b8; /* slate-400 — paragraphs (~5.9:1) */
+	--color-muted:        #64748b; /* slate-500 — labels (~3.5:1) */
+	--color-muted-light:  #475569; /* slate-600 — faint annotations */
+
+	/* Borders — subtle but visible against deep backgrounds. */
+	--color-border:       #1e293b; /* slate-800 — hairline dividers */
+	--color-border-strong:#334155; /* slate-700 — section rules, table rows */
+
+	/* Keep corners flat and elevation zero. */
+	--radius-xs:  0px;  --radius-sm:  0px;  --radius-md:  0px;
+	--radius-lg:  0px;  --radius-xl:  0px;  --radius-2xl: 0px;
+	--radius-3xl: 0px;  --radius-4xl: 0px;
+	--shadow-2xs: 0 0 #0000; --shadow-xs: 0 0 #0000;
+	--shadow-sm:  0 0 #0000; --shadow-md: 0 0 #0000;
+	--shadow-lg:  0 0 #0000; --shadow-xl: 0 0 #0000; --shadow-2xl: 0 0 #0000;
 }
 
 /* ------------------------------------------------------------------ */
@@ -104,7 +138,7 @@ html.dark {
 	}
 
 	body {
-		background-color: #ffffff;
+		background-color: var(--color-paper-alt);
 		overflow-x: hidden;
 		overflow-x: clip;
 		color: var(--color-ink);

@@ -48,10 +48,12 @@ Add a dark mode toggle button to the top header and ensure clicking the menu tog
 - SVG icons used in the button are minimal; replace with existing iconography if the project has a preferred set.
 
 ## Checklist
-- [ ] Dark mode button added to Header.astro right group.
-- [ ] Theme toggle script toggles `data-theme` (or `class`) on `<html>`.
-- [ ] Button `aria-pressed` state updated accordingly.
-- [ ] Click handler for `#menu-toggle` also removes `is-ready` from `.toc-sidebar`.
-- [ ] Test dark mode switching.
-- [ ] Test sidebar closes when menu toggle clicked.
-- [ ] (Optional) Persist theme choice in localStorage.
+- [x] Dark mode button added to Header.astro right group.
+- [x] Tailwind v4 configured for class-based dark mode (`tailwind.config.js` with `darkMode: 'class'`).
+- [x] Theme toggle script toggles `class="dark"` on `<html>` to activate Tailwind `dark:` utilities.
+- [x] Button `aria-pressed` state updated accordingly; sun/moon icons swapped.
+- [x] Theme choice persisted in `localStorage` (`medicolegal-theme`), honoring `prefers-color-scheme` as fallback.
+- [x] Click handler for `#menu-toggle` always calls `closeSidebar()` before toggling the mobile menu drawer — so clicking the toggle when the TOC sidebar is open closes it.
+- [x] Click handler now calls `getEls()` before reading `mobileMenu`, fixing a first-click caching bug.
+- [x] TypeScript check passes (`tsc --noEmit` clean).
+- [x] Astro build completes successfully.

@@ -82,6 +82,24 @@ const navLinkClass = (href: string) =>
                             <path d="M6 6l12 12M18 6 6 18" />
                         </svg>
                     </button>
+
+                    <!-- Dark mode toggle -->
+                    <button
+                        id="theme-toggle"
+                        type="button"
+                        class="btn btn-ghost shrink-0 header-theme-toggle"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="false"
+                    >
+                        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+                            <circle cx="12" cy="12" r="5" />
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="block">
+                            <circle cx="12" cy="12" r="5" />
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -120,22 +138,70 @@ const navLinkClass = (href: string) =>
     // ── Mobile menu toggle ──────────────────────────────────────────────
     // All logic is isolated in this module to avoid global scope leaks.
     (() => {
-        const MENU_ID  = "mobile-menu";
-        const TOGGLE_ID = "menu-toggle";
+        const MENU_ID      = "mobile-menu";
+        const TOGGLE_ID    = "menu-toggle";
+        const THEME_ID     = "theme-toggle";
+        const SIDEBAR_SEL  = ".toc-sidebar";
+        const STORAGE_KEY  = "medicolegal-theme";
 
         // Cached references (guaranteed to exist once the DOM is ready)
         let mobileMenu: HTMLElement | null = null;
-        let toggle     : HTMLElement | null = null;
+        let toggle    : HTMLElement | null = null;
+        let themeBtn  : HTMLElement | null = null;
 
         const getEls = () => {
             if (!mobileMenu) mobileMenu = document.getElementById(MENU_ID);
             if (!toggle)     toggle     = document.getElementById(TOGGLE_ID);
-            return mobileMenu && toggle;
+            if (!themeBtn)   themeBtn   = document.getElementById(THEME_ID);
+            return mobileMenu && toggle && themeBtn;
         };
 
+        // Populate refs immediately so theme/menu work even before any click.
+        void getEls();
+
+        // ── Theme handling ─────────────────────────────────────────────
+        // Tailwind v4 is configured for class-based dark mode (tailwind.config.js),
+        // so we toggle `class="dark"` on <html> to activate `dark:` utilities.
+        const html = document.documentElement;
+        const themeIconMoon = () => themeBtn?.querySelector<SVGSVGElement>('#icon-moon');
+        const themeIconSun  = () => themeBtn?.querySelector<SVGSVGElement>('#icon-sun');
+
+        function loadTheme() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = saved ? saved === 'dark' : prefersDark;
+            setTheme(isDark);
+        }
+
+        function setTheme(isDark: boolean) {
+            if (!themeBtn) return;
+            if (isDark) {
+                html.classList.add('dark');
+                localStorage.setItem(STORAGE_KEY, 'dark');
+                themeBtn.setAttribute('aria-pressed', 'true');
+                themeIconMoon()?.classList.remove('hidden');
+                themeIconSun()?.classList.add('hidden');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem(STORAGE_KEY, 'light');
+                themeBtn.setAttribute('aria-pressed', 'false');
+                themeIconMoon()?.classList.add('hidden');
+                themeIconSun()?.classList.remove('hidden');
+            }
+        }
+
+        // ── Sidebar handling ───────────────────────────────────────────
+        function closeSidebar() {
+            const sidebar = document.querySelector(SIDEBAR_SEL);
+            if (sidebar instanceof HTMLElement) {
+                sidebar.classList.remove('is-ready');
+                sidebar.setAttribute('hidden', 'true');
+            }
+        }
+
         function openMenu() {
-            if (!getEls()) return;
-            mobileMenu!.classList.remove("hidden");
+            if (!mobileMenu || !toggle) return;
+            mobileMenu.classList.remove("hidden");
             toggle!.setAttribute("aria-expanded", "true");
             const burger = toggle!.querySelector<SVGSVGElement>('#icon-burger');
             const close  = toggle!.querySelector<SVGSVGElement>('#icon-close');
@@ -144,8 +210,8 @@ const navLinkClass = (href: string) =>
         }
 
         function closeMenu() {
-            if (!getEls()) return;
-            mobileMenu!.classList.add("hidden");
+            if (!mobileMenu || !toggle) return;
+            mobileMenu.classList.add("hidden");
             toggle!.setAttribute("aria-expanded", "false");
             const burger = toggle!.querySelector<SVGSVGElement>('#icon-burger');
             const close  = toggle!.querySelector<SVGSVGElement>('#icon-close');
@@ -153,12 +219,14 @@ const navLinkClass = (href: string) =>
             close?.classList.add("hidden");
         }
 
-        // Toggle open/close when clicking the menu button
-        document.addEventListener("click", (e) => {
-            const target = (e.target as HTMLElement).closest(`#${TOGGLE_ID}`);
-            if (!target) return;
+        // Toggle open/close when clicking the menu button.
+        // Always close the TOC sidebar when the toggle is clicked,
+        // whether we are opening or closing the mobile menu drawer.
+        toggle?.addEventListener("click", (e) => {
             e.preventDefault();
-            if (mobileMenu?.classList.contains("hidden")) {
+            closeSidebar(); // close the TOC sidebar if it is open
+            if (!mobileMenu) return;
+            if (mobileMenu.classList.contains("hidden")) {
                 openMenu();
             } else {
                 closeMenu();
@@ -167,7 +235,7 @@ const navLinkClass = (href: string) =>
 
         // Close mobile menu when a nav link inside it is clicked.
         document.addEventListener("click", (e) => {
-            if (!getEls()) return;
+            if (!mobileMenu || !toggle) return;
             const link = (e.target as HTMLElement).closest(`#${MENU_ID} a`);
             if (link) {
                 closeMenu();
@@ -176,18 +244,31 @@ const navLinkClass = (href: string) =>
 
         // Close mobile menu when clicking anywhere outside the menu area
         document.addEventListener("click", (e) => {
-            if (!getEls()) return;
-            if (mobileMenu!.classList.contains("hidden")) return;
-            if (!mobileMenu!.contains(e.target as Node) && !toggle!.contains(e.target as Node)) {
+            if (!mobileMenu || !toggle) return;
+            if (mobileMenu.classList.contains("hidden")) return;
+            if (!mobileMenu.contains(e.target as Node) && !toggle.contains(e.target as Node)) {
                 closeMenu();
             }
         });
 
         // Close menu on Escape key
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && !mobileMenu?.classList.contains("hidden")) {
+            if (!mobileMenu) return;
+            if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
                 closeMenu();
             }
         });
+
+        // ── Theme toggle click ─────────────────────────────────────────
+        document.addEventListener("click", (e) => {
+            const target = (e.target as HTMLElement).closest(`#${THEME_ID}`);
+            if (!target) return;
+            e.preventDefault();
+            const isCurrentlyDark = html.classList.contains('dark');
+            setTheme(!isCurrentlyDark);
+        });
+
+        // Initialise theme on load
+        loadTheme();
     })();
 </script>

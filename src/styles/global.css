@@ -74,6 +74,13 @@
 	--shadow-2xl: 0 0 #0000;
 }
 
+/* Dark mode — flip the surface/ink palette when <html class="dark">. */
+html.dark {
+	--color-paper: #1e293b; /* slate-800 — dark but not black */
+	--color-ink: #cbd5e1; /* slate-300 — light grey body text */
+	--color-ink-strong: #f1f5f9; /* slate-100 — near-white headings */
+}
+
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */

@@ -551,9 +551,11 @@ html.dark {
 		background: var(--color-surface);
 	}
 
-	/* Inverted panel used for the closing call to action on a library page. */
+	/* Inverted panel used for the closing call to action on a library page.
+	   Background is deliberately softer than `--color-ink-strong` so it doesn't
+	   look stark against the white/very-light page surface. */
 	.panel-dark {
-		background: var(--color-ink-strong);
+		background: #1e293b; /* slate-800 — softer than --color-ink-strong */
 		color: var(--color-paper-alt);
 	}
 

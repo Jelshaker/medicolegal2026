@@ -214,4 +214,41 @@ const { id, index, eyebrow, title, lead, fields, note, accent = "#94a3b8" } = As
 		color: #64748b;
 		font-style: italic;
 	}
+
+	/* --- Dark mode --- */
+	.law-entry {
+		background: #131c2e;
+		border-color: #334155;
+	}
+	.law-rule {
+		border-top-color: #334155;
+	}
+	.law-field:not(:last-child) {
+		border-bottom-color: #1e293b;
+	}
+	@media (min-width: 768px) {
+		.law-field:nth-child(odd) {
+			border-right-color: #1e293b;
+		}
+		.law-field:nth-child(2) {
+			border-bottom-color: #1e293b;
+		}
+		.law-field:nth-child(3) {
+			border-bottom-color: #1e293b;
+		}
+	}
+	.law-callout {
+		border-top-color: #334155;
+	}
+	.law-callout-text {
+		color: #94a3b8;
+	}
+
+	/* --- Dark mode overrides for text that would otherwise be black --- */
+	.law-lead {
+		color: #94a3b8;
+	}
+	.law-field-text {
+		color: #94a3b8;
+	}
 </style>

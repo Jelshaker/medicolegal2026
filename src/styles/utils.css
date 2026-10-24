@@ -859,7 +859,7 @@
 .panel-dark-lg {
 	padding: 2rem;
 	text-align: center;
-	background: #0f172a;
+	background: #1e293b;
 }
 @media (min-width: 640px) {
 	.panel-dark-lg { padding: 2.5rem; }
@@ -1699,7 +1699,7 @@
 /* Section wrapper: `divider-below bg-ink-strong py-14` */
 .section-dark {
 	border-bottom: 1px solid #e2e8f0;
-	background: #0f172a;
+	background: #1e293b;
 	padding-block: 3.5rem;
 }
 /* Compact section: `bg-white py-14` (no divider) */
@@ -2045,5 +2045,11 @@ html.dark .intro-link {
 html.dark .intro-link:hover {
 	color: var(--color-ink-strong);
 	text-decoration-color: var(--color-muted);
+}
+
+/* ---- Dark panels (composites: .panel-dark-lg, .panel-dark) ---- */
+html.dark .panel-dark,
+html.dark .panel-dark-lg {
+	background: #0f172a; /* darker than surface so the panel stands out */
 }
 

@@ -101,20 +101,23 @@ html.dark {
 	--color-surface:      #1e293b; /* was #111827 → now visible against bg */
 	--color-surface-alt:  #131c2e; /* code / note-box background */
 
-	/* Ink — carefully chosen for contrast and readability. */
-	--color-ink:          #e8eef5; /* was #e2e8f0 — now ~13.5:1 */
-	--color-ink-strong:   #ffffff; /* was #f8fafc */
-	--color-ink-muted:    #b6c2d4; /* was #94a3b8 — now ~7.5:1, passes AA */
-	--color-muted:        #94a3b8; /* was #64748b — now ~5.9:1, passes AA body */
-	--color-muted-light:  #64748b; /* was #475569 — now ~3.5:1 */
+	/* Ink — muted blue-greys that reduce glare without sacrificing legibility.
+	   Pure or near-white text on dark backgrounds causes "halation" (text seems
+	   to glow or bleed). These tinted greys keep contrast well above WCAG AA
+	   while feeling soft on the eyes. */
+	--color-ink:          #9ca8b6; /* muted blue-grey — ~8.5:1, comfortable body */
+	--color-ink-strong:   #c2ccd8; /* softer grey-blue — ~12:1, headings */
+	--color-ink-muted:    #8a96a4; /* secondary text — ~7:1, readable */
+	--color-muted:        #94a3b8; /* labels & UI — ~5.9:1 */
+	--color-muted-light:  #64748b; /* markers & annotations — ~4.2:1 */
 
 	/* Borders — must be visible; hairline at 1.2:1 reads as nothing. */
 	--color-border:       #334155; /* was #1e293b — now ~2.4:1 */
 	--color-border-strong:#475569; /* was #334155 — now ~3.4:1 */
 
-	/* Accent (dark mode) — light text on dark button. */
-	--color-accent:       #e2e8f0;
-	--color-accent-fg:    #0f172a;
+	/* Accent (dark mode) — lighter button for dark surface. */
+	--color-accent:       #f1f5f9; /* slate-100 */
+	--color-accent-fg:    #0f172a; /* dark text on light button */
 
 	/* Keep corners flat and elevation zero. */
 	--radius-xs:  0px;  --radius-sm:  0px;  --radius-md:  0px;
@@ -1417,6 +1420,38 @@ html.dark {
 	stroke: var(--color-muted-light);
 	stroke-width: 1.25;
 }
+
+/* Dark mode — swap the white SVG background for the dark surface and
+   give the text a softer fill so everything inherits the theme tokens. */
+html.dark .diagram {
+	background: var(--color-surface-alt);
+	color: var(--color-ink);
+}
+html.dark .d-box {
+	fill: var(--color-surface);
+}
+html.dark .d-fill {
+	fill: var(--color-paper-alt);
+}
+html.dark .d-title {
+	fill: var(--color-ink-strong);
+}
+html.dark .d-label {
+	fill: var(--color-ink);
+}
+html.dark .d-note {
+	fill: var(--color-ink-muted);
+}
+html.dark .d-sub {
+	fill: var(--color-muted);
+}
+html.dark .d-cap {
+	fill: var(--color-muted);
+}
+html.dark .d-num {
+	fill: var(--color-muted);
+}
+
 
 /* ------------------------------------------------------------------ */
 /* Motion                                                              */

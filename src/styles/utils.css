@@ -2036,3 +2036,14 @@ html.dark .sticky-bar,
 html.dark .toc-card {
 	background: color-mix(in srgb, var(--color-surface) 92%, transparent);
 }
+
+/* ---- PageIntro links (inline <style> overrides) ---- */
+html.dark .intro-link {
+	color: var(--color-ink);
+	text-decoration-color: var(--color-border);
+}
+html.dark .intro-link:hover {
+	color: var(--color-ink-strong);
+	text-decoration-color: var(--color-muted);
+}
+

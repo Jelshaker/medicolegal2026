@@ -118,7 +118,7 @@
 
 /* Compact white paper section variant */
 .section-white-sm {
-	background-color: var(--bg-white);
+	background-color: var(--color-surface);
 	padding: 2rem 0;
 }
 @media (min-width: 768px) {
@@ -127,7 +127,7 @@
 
 /* Compact paper section variant */
 .section-paper-sm {
-	background-color: var(--bg-paper);
+	background-color: var(--color-paper);
 	padding: 2rem 0;
 }
 @media (min-width: 768px) {
@@ -1785,9 +1785,9 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     font-weight: 500;
-    color: #64748b;
-    background: transparent;
-    border: 1px solid #e2e8f0;
+    color: var(--color-ink-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.25rem;
 }
 
@@ -1799,9 +1799,9 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #fff;
-    background: #3b82f6;
-    border: 1px solid #3b82f6;
+    color: var(--color-accent-fg);
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent);
     border-radius: 0.25rem;
 }
 
@@ -1814,8 +1814,225 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     font-weight: 500;
-    color: #64748b;
+    color: var(--color-ink-muted);
     background: transparent;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.25rem;
+}
+
+/* =====================================================================
+   Dark mode — html.dark overrides for every hex literal in this file.
+   These rules sit below the light-mode definitions so they override via
+   specificity without needing `!important`.
+   ===================================================================== */
+
+/* ---- Mapped tokens ---- */
+/* #64748b → var(--color-muted) */
+html.dark .text-muted           { color: var(--color-muted); }
+html.dark .text-muted-alt       { color: var(--color-muted); }
+html.dark .text-muted-alt-sm    { color: var(--color-muted); }
+html.dark .text-slate-500       { color: var(--color-muted); }
+html.dark .text-meta-xs-sm      { color: var(--color-muted); }
+html.dark .icon-slate           { color: var(--color-muted); }
+html.dark .viewer-panel-label   { color: var(--color-muted); }
+html.dark .viewer-meta-label    { color: var(--color-muted); }
+html.dark .viewer-series-toggle { color: var(--color-muted); }
+
+/* #94a3b8 → var(--color-muted-light) */
+html.dark .text-muted-light                { color: var(--color-muted-light); }
+html.dark .text-muted-light-alt            { color: var(--color-muted-light); }
+html.dark .text-slate-400                  { color: var(--color-muted-light); }
+html.dark .text-meta-tiny                  { color: var(--color-muted-light); }
+html.dark .text-caption-italic             { color: var(--color-muted-light); }
+html.dark .icon-muted                      { color: var(--color-muted-light); }
+html.dark .viewer-canvas-badge             { color: var(--color-muted-light); }
+html.dark .viewer-canvas-badge.dim         { color: var(--color-muted-light); }
+html.dark .viewer-series-count             { color: var(--color-muted-light); }
+
+/* #475569 → var(--color-ink-muted) */
+html.dark .text-slate-600              { color: var(--color-ink-muted); }
+html.dark .viewer-control-value        { color: var(--color-ink-muted); }
+html.dark .toc-hscroll button.is-active svg { color: var(--color-ink-muted); }
+
+/* #1e293b → var(--color-ink) */
+html.dark .text-slate-700             { color: var(--color-ink); }
+html.dark .text-label                  { color: var(--color-ink); }
+html.dark .text-label-sm               { color: var(--color-ink); }
+html.dark .heading-snug-dark           { color: var(--color-ink); }
+html.dark .viewer-meta-value           { color: var(--color-ink); }
+
+/* #334155 → var(--color-ink) */
+html.dark .text-slate-800              { color: var(--color-ink); }
+html.dark .badge-modal                 { color: var(--color-ink); }
+html.dark .badge-modal.mono            { color: var(--color-ink-muted); }
+
+/* #0f172a → var(--color-ink-strong) */
+html.dark .text-slate-900              { color: var(--color-ink-strong); }
+html.dark .heading-lg                  { color: var(--color-ink-strong); }
+html.dark .heading-xl                  { color: var(--color-ink-strong); }
+
+/* #f1f5f9 → var(--color-surface-alt) */
+html.dark .bg-slate-100 { background: var(--color-surface-alt); }
+
+/* #f8fafc → var(--color-surface-alt) */
+html.dark .bg-slate-50         { background: var(--color-surface-alt); }
+html.dark .from-slate-50       { --tw-gradient-from: var(--color-surface-alt); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-from, var(--color-surface-alt)); }
+
+/* #fff → var(--color-surface) */
+html.dark .bg-white            { background: var(--color-surface); }
+
+/* #e2e8f0 → var(--color-border) */
+html.dark .text-slate-200      { color: var(--color-border); }
+html.dark .bg-slate-200        { background: var(--color-border); }
+
+/* #cbd5e1 → var(--color-border-strong) */
+html.dark .text-slate-300      { color: var(--color-border-strong); }
+html.dark .bg-slate-300        { background: var(--color-border-strong); }
+
+/* ---- Dividers ---- */
+html.dark .divider,
+html.dark .divider-strong,
+html.dark .divider-below,
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+	border-color: var(--color-border);
+}
+html.dark .divider-strong,
+html.dark .border-slate-300 {
+	border-color: var(--color-border-strong);
+}
+html.dark .border-slate-100  { border-color: var(--color-surface-alt); }
+html.dark .border-slate-400  { border-color: var(--color-muted-light); }
+html.dark .border-slate-500  { border-color: var(--color-muted); }
+
+/* ---- Sections ---- */
+html.dark .section-white,
+html.dark .section-tight,
+html.dark .section-compact,
+html.dark .section-white-sm,
+html.dark .footer-top,
+html.dark .sticky-bar,
+html.dark .menu-mobile,
+html.dark .mobile-menu-drawer,
+html.dark .cookie-banner,
+html.dark .bg-slate-900 {
+	background: var(--color-surface);
+}
+html.dark .section-paper,
+html.dark .section-paper-compact {
+	background: var(--color-paper);
+}
+html.dark .section-dark {
+	background: var(--color-surface-alt);
+}
+
+/* ---- Surfaces (popups, badges, toast) ---- */
+html.dark .toast,
+html.dark .toast-icon,
+html.dark .badge,
+html.dark .badge-dark,
+html.dark .viewer-badge,
+html.dark .badge-modal,
+html.dark .toc-card,
+html.dark .viewer-card,
+html.dark .viewer-workspace,
+html.dark .viewer-sidebar,
+html.dark .viewer-controls,
+html.dark .viewer-series-panel {
+	background: var(--color-surface);
+	border-color: var(--color-border);
+	color: var(--color-ink);
+}
+html.dark .viewer-card-caption {
+	border-color: var(--color-border);
+	background: var(--color-paper);
+}
+html.dark .viewer-meta-row {
+	border-color: var(--color-surface-alt);
+}
+html.dark .viewer-series-toggle:hover {
+	background: var(--color-surface-alt);
+}
+html.dark .viewer-clear-btn:hover {
+	background: var(--color-surface-alt);
+}
+
+/* ---- Text tones (extras) ---- */
+html.dark .text-slate-950 { color: var(--color-ink-strong); }
+html.dark .text-caption    { color: var(--color-ink-muted); }
+html.dark .bg-slate-500    { background: var(--color-muted); }
+html.dark .bg-slate-600    { background: var(--color-ink-muted); }
+html.dark .bg-slate-700    { background: var(--color-muted-light); }
+html.dark .bg-slate-800    { background: var(--color-ink); }
+html.dark .bg-slate-400    { background: var(--color-border-strong); }
+
+/* ---- Heading variants ---- */
+html.dark .heading-hero-white,
+html.dark .heading-white-lg,
+html.dark .heading-white-base { color: var(--color-ink-strong); }
+
+/* ---- Text on dark backgrounds ---- */
+html.dark .text-white,
+html.dark .bg-slate-900 { color: var(--color-ink-strong); }
+
+/* ---- Focus ring ---- */
+html.dark .focus-ring { outline-color: var(--color-ink-muted); }
+
+/* ---- Input fields & boxes ---- */
+html.dark .input-field,
+html.dark .viewer-workspace {
+	background: var(--color-surface);
+	border-color: var(--color-border);
+}
+html.dark .input-field::placeholder { color: var(--color-muted-light); }
+
+/* ---- Link hover states ---- */
+html.dark .link:hover { color: var(--color-ink-strong); text-decoration-color: var(--color-muted); }
+html.dark .link-sm:hover { color: var(--color-ink-strong); text-decoration-color: var(--color-muted); }
+html.dark .link-quiet:hover { color: var(--color-ink-strong); }
+html.dark .foot-link:hover { color: var(--color-ink-strong); }
+
+/* ---- Table rows ---- */
+html.dark .entry-list > * + *,
+html.dark .entry-list-ruled > * + *,
+html.dark .entry-list-ruled {
+	border-color: var(--color-border);
+}
+
+/* ---- Nav links (mobile) ---- */
+html.dark .nav-link,
+html.dark .nav-mobile-link { color: var(--color-ink); }
+html.dark .nav-link:hover,
+html.dark .nav-mobile-link:hover { color: var(--color-ink-strong); }
+html.dark .nav-link-active {
+	background: var(--color-surface-alt);
+	color: var(--color-ink-strong);
+}
+html.dark .nav-link-inactive { color: var(--color-ink-muted); }
+html.dark .nav-divider { background: var(--color-border); }
+
+/* ---- Footer ---- */
+html.dark .footer-bottom { background: var(--color-surface-alt); border-color: var(--color-border); }
+html.dark .foot-link { color: var(--color-ink-muted); }
+html.dark .footer-desc { color: var(--color-ink-muted); }
+html.dark .footer-members { color: var(--color-ink-muted); }
+
+/* ---- Header ---- */
+html.dark .brand-name { color: var(--color-ink-strong); }
+html.dark .meta-label { color: var(--color-muted); }
+html.dark .vrule { background: var(--color-border); }
+
+/* ---- TOC mobile horizontal bar ---- */
+html.dark .toc-link { color: var(--color-muted); }
+html.dark .toc-link:hover { color: var(--color-ink); background: var(--color-surface-alt); }
+html.dark .toc-link.is-active { color: var(--color-ink-strong); background: var(--color-surface-alt); }
+html.dark .toc-top { color: var(--color-muted-light); }
+html.dark .toc-top:hover { color: var(--color-ink-strong); }
+html.dark .toc-hscroll button svg { color: var(--color-muted-light); }
+html.dark .toc-hscroll button:hover svg { color: var(--color-ink-strong); }
+
+/* ---- Header / sticky bar / TOC background (glassmorphism) ---- */
+html.dark .sticky-bar,
+html.dark .toc-card {
+	background: color-mix(in srgb, var(--color-surface) 92%, transparent);
 }

@@ -5,6 +5,7 @@ import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
 import Figure from "../components/Figure.astro";
 import Diagram from "../components/Diagram.astro";
+import { SITE_TITLE } from "../consts";
 
 export const prerender = true;
 const SITEMAP = [
@@ -51,7 +52,7 @@ const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.ti
 ---
 
 <BaseLayout
-	title="Site map | Radiology title={`Site map | ${SITE_TITLE}`}amp; Medicolegal Law"
+	title={`Site map | ${SITE_TITLE}`}
 	description="Every page in this small radiology and medicolegal law resource on one page — the clinical library, the legal library, recent case commentary, and how instruction works."
 >
 	<PageHero

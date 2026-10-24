@@ -6,7 +6,82 @@ import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
 import LegislationEntry from '../components/LegislationEntry.astro';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
 
+const instruments = [
+  {
+    id: 'irmer',
+    index: '01',
+    eyebrow: 'Medical exposures',
+    title: 'IR(ME)R 2017',
+    lead: 'The Ionising Radiation (Medical Exposure) Regulations 2017 govern every exposure of a patient to ionising radiation for medical purposes.',
+    fields: [
+      { n: 'Who it binds', d: 'Employer, referrer, practitioner, operator — each with distinct duties.' },
+      { n: 'What it requires', d: 'Justification, optimisation, dose constraints, authorisation, clinical evaluation.' },
+      { n: 'What must be recorded', d: 'Justification records, authorisation protocols, dose records, clinical evaluation outcomes.' },
+      { n: 'Consequence of failure', d: 'Criminal offence, regulatory enforcement, civil liability where breach causes harm.' },
+    ],
+    note: 'SI 2017/1322. Guidance: PHE-CRCE-010, RCR Standards 2025. The 2024 amendments tightened justification and dose recording.',
+  },
+  {
+    id: 'irr17',
+    index: '02',
+    eyebrow: 'Occupational & equipment',
+    title: 'IRR17',
+    lead: 'The Ionising Radiations Regulations 2017 control occupational exposure and equipment safety in all work with ionising radiation.',
+    fields: [
+      { n: 'Who it binds', d: 'Employer, radiation employer, employees, outside workers.' },
+      { n: 'What it requires', d: 'Risk assessment, classification of areas, dose limits, monitoring, PPE, training, contingency plans.' },
+      { n: 'What must be recorded', d: 'Prior risk assessments, area classifications, dose records, training records, equipment QA logs.' },
+      { n: 'Consequence of failure', d: 'Criminal offence, HSE enforcement, improvement/prohibition notices, civil liability.' },
+    ],
+    note: 'SI 2017/1075. ACOP L121. Dose limit 20 mSv/year (100 mSv over 5 years).',
+  },
+  {
+    id: 'communication',
+    index: '03',
+    eyebrow: 'Critical findings',
+    title: 'Duty to communicate critical findings',
+    lead: 'Providers must have documented procedures for the urgent, direct communication of unexpected or time-critical findings.',
+    fields: [
+      { n: 'Who it binds', d: 'Employer (provider), reporting radiologist, referrer.' },
+      { n: 'What it requires', d: 'Written protocols, direct communication to referrer, documented acknowledgement, audit trail.' },
+      { n: 'What must be recorded', d: 'Time of finding, time of communication, method, recipient, acknowledgement.' },
+      { n: 'Consequence of failure', d: 'Regulatory breach (IR(ME)R reg 8), GMC fitness-to-practise, civil claim for delayed diagnosis.' },
+    ],
+    note: 'RCR Standards 2025 §4.7–4.9. Communication must be direct, not via the patient or administrative channels.',
+  },
+  {
+    id: 'epr16',
+    index: '04',
+    eyebrow: 'Radioactive substances',
+    title: 'EPR16',
+    lead: 'The Environmental Permitting (England and Wales) Regulations 2016 control the keeping, use and disposal of radioactive substances.',
+    fields: [
+      { n: 'Who it binds', d: 'Permit holder (usually the trust/employer), radiation protection adviser.' },
+      { n: 'What it requires', d: 'Permit for keeping/use/disposal, record-keeping, leak testing, waste audits, annual returns.' },
+      { n: 'What must be recorded', d: 'Source inventory, leak test records, disposal records, permit conditions compliance.' },
+      { n: 'Consequence of failure', d: 'Criminal offence, EA/NRW enforcement, permit revocation, civil liability.' },
+    ],
+    note: 'SI 2016/1154. Separate regimes in Scotland (RSA93) and Northern Ireland.',
+  },
+  {
+    id: 'data-protection',
+    index: '05',
+    eyebrow: 'Data protection',
+    title: 'Data protection & imaging',
+    lead: 'UK GDPR and DPA 2018 apply to all patient imaging data — clinical images are special category health data.',
+    fields: [
+      { n: 'Who it binds', d: 'Controller (trust/employer), processor (teleradiology provider), any recipient.' },
+      { n: 'What it requires', d: 'Lawful basis, DPIA for large-scale processing, contracts with processors, breach notification.' },
+      { n: 'What must be recorded', d: 'ROPA entries, DPIA reports, processor agreements, breach logs, retention schedules.' },
+      { n: 'Consequence of failure', d: 'ICO enforcement, fines up to £17.5M / 4% turnover, individual claims for distress.' },
+    ],
+    note: 'Clinical images are special category data (Art 9 UK GDPR). Teleradiology contracts must include Art 28 processor terms.',
+  },
+] as const;
+
+const accentColors = ['#7c9a6e', '#b8935a', '#a86b6b', '#7a8da0', '#a07a8d'] as const;
 // Each statutory duty is summarised in the same four fields so the entries can be
 // compared: who it binds, what it requires, what must be recorded, and what follows
 // from a failure. Summaries only — the primary text governs.

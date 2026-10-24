@@ -145,7 +145,6 @@ export const PAGE_HERO_IMAGES: Record<string, string | null> = {
 	"/radiology-legal-cases": "/images/pexels-charlss-gonzhu-433318654-15277956.jpg",
 	"/recent-developments": "/images/pexels-cottonbro-5723881.jpg",
 	"/expert-witness-gi-peritoneal-malignancy": "/images/pexels-gustavo-fring-7446994.jpg",
-	"/patient-advice": "/images/pexels-maxmishin-11119416.jpg",
 	"/free-dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
 	"/how-to-use-the-dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
 	"/about": "/images/pexels-tima-miroshnichenko-5452281.jpg",
@@ -180,7 +179,6 @@ export const SITEMAP = [
 		description: "The clinical reference: modalities, reporting standards, dose and image handling.",
 		pages: [
 			{ href: "/radiology-fundamentals", label: "Radiology fundamentals", description: "What each modality answers, and where it stops being useful." },
-			{ href: "/patient-advice", label: "Patient advice", description: "Plain-language guide to scans, safety and preparation." },
 			{ href: "/free-dicom-viewer", label: "Free DICOM viewer", description: "Open your scan in your browser — free, private, nothing uploaded." },
 			{ href: "/how-to-use-the-dicom-viewer", label: "Using the DICOM viewer", description: "Step-by-step: loading a disc or download and using the tools." },
 		],

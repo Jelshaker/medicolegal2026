@@ -1085,7 +1085,9 @@ html.dark {
 	border: 1px solid #cbd5e1;
 	border-top: none;
 	border-bottom: none;
-	background: rgba(255, 255, 255, 0.92);
+	background: linear-gradient(to bottom,
+		rgba(255, 255, 255, 0.96) 0%,
+		rgba(255, 255, 255, 0.88) 100%);
 	box-shadow: 2px 0 8px rgba(10, 30, 50, 0.06), -2px 0 8px rgba(10, 30, 50, 0.06);
 	padding: 2rem 1rem 2rem 1rem;
 	overflow-y: auto;
@@ -1136,14 +1138,43 @@ html.dark {
 .toc-chevron[data-toc-overflow-bottom] svg {
 	color: #94a3b8;
 }
+
+/* Dark mode: invert chevron overlays to dark tones */
+html.dark .toc-chevron[data-toc-overflow-top] {
+	background: linear-gradient(to bottom,
+		rgba(11, 17, 32, 0.95) 0%,
+		rgba(11, 17, 32, 0.7) 60%,
+		rgba(11, 17, 32, 0) 100%) !important;
+}
+html.dark .toc-chevron[data-toc-overflow-top] svg {
+	color: #64748b;
+}
+html.dark .toc-chevron[data-toc-overflow-bottom] {
+	background: linear-gradient(to top,
+		rgba(11, 17, 32, 0.95) 0%,
+		rgba(11, 17, 32, 0.7) 60%,
+		rgba(11, 17, 32, 0) 100%) !important;
+}
+html.dark .toc-chevron[data-toc-overflow-bottom] svg {
+	color: #64748b;
+}
 .toc-chevron.is-visible.is-active svg {
 	color: #475569;
+}
+
+html.dark .toc-chevron.is-visible.is-active svg {
+	color: #94a3b8;
 }
 /* Dark-blue heading — the first thing the user sees. */
 .toc-card .meta-label {
 	font-weight: 700;
 	color: #1a365d;
 	overflow-wrap: break-word;
+}
+
+/* Dark mode: light heading on dark sidebar */
+html.dark .toc-card .meta-label {
+	color: var(--color-ink-strong) !important;
 }
 .toc-list {
 	margin-top: 0.75rem;
@@ -1232,7 +1263,9 @@ html.dark {
 		box-shadow: none;
 		padding: 0.6rem 0;
 		overflow-y: visible;
-		background: rgba(255, 255, 255, 0.97);
+		background: linear-gradient(to bottom,
+			rgba(255, 255, 255, 0.99) 0%,
+			rgba(255, 255, 255, 0.95) 100%);
 		backdrop-filter: blur(6px);
 		-webkit-backdrop-filter: blur(6px);
 	}
@@ -1660,3 +1693,8 @@ html.dark .article-body li { color: var(--color-ink-muted); }
 html.dark .article-body code { background: var(--color-surface-alt); }
 html.dark .article-body table th { color: var(--color-muted); border-color: var(--color-border); }
 html.dark .article-body table td { border-color: var(--color-border); color: var(--color-ink-muted); }
+
+/* ---- Sidebar (TOC) dark mode gradient — forced last so it wins all other bg rules ---- */
+html.dark .toc-card {
+	background: linear-gradient(to bottom, #0f172a 0%, #0b1120 100%) !important;
+}

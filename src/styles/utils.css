@@ -510,6 +510,10 @@
 	}
 }
 
+html.dark .header-logo {
+	border: 2px solid #000;
+}
+
 /* Keep the full navigation hidden until the header has room for every link. */
 .header-nav {
 	display: none;
@@ -2034,7 +2038,9 @@ html.dark .toc-hscroll button:hover svg { color: var(--color-ink-strong); }
 /* ---- Header / sticky bar / TOC background (glassmorphism) ---- */
 html.dark .sticky-bar,
 html.dark .toc-card {
-	background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+	background: linear-gradient(to bottom,
+		#0f172a 0%,
+		#0b1120 100%);
 }
 
 /* ---- PageIntro links (inline <style> overrides) ---- */

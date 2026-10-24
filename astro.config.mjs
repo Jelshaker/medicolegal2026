@@ -35,12 +35,12 @@ export default defineConfig({
 	//
 	// The first block preserves the routes retired when each page file was
 	// renamed to match its own <h1> (e.g. /radiology-resources carried the
-	// heading "Radiology Reference").
+	// heading "Radiology Fundamentals").
 	redirects: {
 		"/legal-blog": "/recent-developments",
 		"/legal-blog/[slug]": "/recent-developments/[slug]",
 		"/image-review": "/free-dicom-viewer",
-		"/radiology-reference": "/radiology-resources",
+		"/radiology-reference": "/radiology-fundamentals",
 		"/cv": "/curriculum-vitae",
 		"/disclaimer": "/disclaimer-and-terms-of-use",
 		"/dicom-viewer": "/free-dicom-viewer",

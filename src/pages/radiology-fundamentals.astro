@@ -8,7 +8,7 @@ import Diagram from "../components/Diagram.astro";
 import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 // The clinical half of the resource. Each modality is described in terms of the
-// question it answers, so the page reads as a reference rather than a service list.
+// question it answers, so the page reads as a fundamentals guide rather than a service list.
 const modalities = [
   {
     n: "Radiography (X-ray)",
@@ -188,14 +188,14 @@ const qaStandards = [
 ---
 
 <BaseLayout
-  title={`Radiology Reference | ${SITE_TITLE}`}
+  title={`Radiology Fundamentals | ${SITE_TITLE}`}
   description="A working radiology reference: what each modality answers and where it is limited, the RCR standards for interpretation and reporting, radiation dose and safety duties, quality assurance, and how imaging should be stored, transferred and viewed."
 >
   <PageHero
     eyebrow="Radiology library"
     title="Radiology Fundamentals"
     description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
-    heroImage={PAGE_HERO_IMAGES["/radiology-resources"] || undefined}
+    heroImage={PAGE_HERO_IMAGES["/radiology-fundamentals"] || undefined}
   />
 
   <PageIntro

@@ -243,10 +243,10 @@ const qaStandards = [
                 </figure>
                 <h3 class="entry-title">{m.n}</h3>
                 <p class="mt-2 text-sm font-semibold text-slate-700">{m.q}</p>
-                <p class="para-sm">{m.d}</p>
+                <p class="para-sm pl-3">{m.d}</p>
 
                 <div class="mt-4 grid gap-4 sm:grid-cols-2">
-                  <div>
+                  <div class="pl-4">
                     <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
                       Common indications
                     </h4>
@@ -259,14 +259,14 @@ const qaStandards = [
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <div class="pl-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-600">
                       Limitations
                     </h4>
                     <ul class="mt-2 space-y-1 text-sm text-slate-600">
                       {m.limits.map((l) => (
                         <li class="check-row">
-                          <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                          <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
                           <span>{l}</span>
                         </li>
                       ))}
@@ -274,11 +274,11 @@ const qaStandards = [
                   </div>
                 </div>
 
-                <div class="mt-4 rounded border border-slate-200 bg-slate-50 p-3">
-                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                <div class="mt-4 rounded-l-md border-l-[3px] border-teal-600 bg-teal-50/50 dark:bg-slate-900/60 p-4">
+                  <p class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">
                     Safety and practical notes
-                  </h4>
-                  <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                  </p>
+                  <p class="mt-1.5 pl-3 text-sm leading-relaxed text-teal-900/80 dark:text-teal-200/80">
                     {m.safety}
                   </p>
                 </div>
@@ -327,7 +327,7 @@ const qaStandards = [
         <div class="entry-list mt-6">
           <div class="entry">
             <h3 class="entry-title">Justification and optimisation</h3>
-            <ul class="list">
+            <ul class="list pl-4">
               <li>
                 <strong>Justification:</strong> the benefit of the exposure to that
                 patient must outweigh its harm. The referrer must provide sufficient
@@ -356,7 +356,7 @@ const qaStandards = [
           </div>
           <div class="entry">
             <h3 class="entry-title">Duty holders under IR(ME)R</h3>
-            <ul class="list">
+            <ul class="list pl-4">
               <li>
                 <strong>Employer:</strong> owns the framework — written procedures,
                 protocols, training, entitlement and compliance.
@@ -374,15 +374,17 @@ const qaStandards = [
                 optimisation in practice.
               </li>
             </ul>
-            <p class="para-sm">
-              The roles are distinct and may be held by different people for the
-              same exposure. A claim can attach to any one of them
-              independently.
-            </p>
+            <div class="mt-4 rounded-l-md border-l-[3px] border-blue-600 bg-blue-50/50 dark:bg-slate-900/60 p-4">
+              <p class="text-sm leading-relaxed text-blue-900/80 dark:text-blue-200/80 pl-3">
+                The roles are distinct and may be held by different people for the
+                same exposure. A claim can attach to any one of them
+                independently.
+              </p>
+            </div>
           </div>
           <div class="entry">
             <h3 class="entry-title">Recording and reporting</h3>
-            <ul class="list">
+            <ul class="list pl-4">
               <li>
                 Significant accidental or unintended exposures are reportable
                 incidents and must be investigated, with the findings recorded.
@@ -433,18 +435,18 @@ const qaStandards = [
             reportingStandards.map((s) => (
               <div class="entry">
                 <h3 class="entry-title">{s.n}</h3>
-                <p class="para-sm">{s.d}</p>
+                <p class="para-sm pl-3">{s.d}</p>
               </div>
             ))
           }
         </div>
 
-        <div class="mt-6 rounded border border-slate-200 bg-slate-50 p-4">
-          <p class="text-sm font-semibold text-slate-800">
+        <div class="mt-6 rounded-l-md border-l-[3px] border-slate-600 bg-slate-100/60 dark:bg-slate-900/60 p-4">
+          <p class="text-sm font-semibold text-slate-900 dark:text-slate-200 pl-3">
             The standards apply to all who interpret and report imaging,
             regardless of professional background.
           </p>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          <p class="mt-2 pl-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
             A doctor reporting within a narrower scope of practice is held to
             the same standard. Where imaged anatomy falls outside the
             interpreter's expertise, radiologist review must be agreed in
@@ -463,10 +465,10 @@ const qaStandards = [
         title="Storage, transfer and viewing"
         lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the clinical record."
       >
-        <div class="entry-list mt-0">
+        <div class="entry-list mt-0 space-y-8">
           <div class="entry">
             <h3 class="entry-title">What a study actually contains</h3>
-            <p class="para-sm">
+            <p class="para-sm pl-3">
               A DICOM study is pixel data plus a header of tags: patient and
               study identifiers, acquisition parameters, exposure indices,
               window presets and slice geometry. The header makes a study
@@ -476,9 +478,12 @@ const qaStandards = [
               stripping the header can leave the study identifiable.
             </p>
           </div>
+
+          <div class="divider" />
+
           <div class="entry">
             <h3 class="entry-title">Transfer and anonymisation</h3>
-            <p class="para-sm">
+            <p class="para-sm pl-3">
               Where a study leaves the treating relationship — for second
               opinion or medicolegal review — it should be anonymised at source,
               transferred by an encrypted route and logged. RCR confidentiality
@@ -488,11 +493,13 @@ const qaStandards = [
               re-linked. Transfer and anonymisation guidance is set out
               alongside the referral terms.
             </p>
-            <!-- Referral form currently unavailable — link disabled while the referral function is deprecated -->
           </div>
+
+          <div class="divider" />
+
           <div class="entry">
             <h3 class="entry-title">Second opinions and the record</h3>
-            <p class="para-sm">
+            <p class="para-sm pl-3">
               The fact of a second opinion, the identity of the second reporter
               and the advice given should all be recorded. Where the second
               opinion differs, the original report is supplemented by an
@@ -500,9 +507,12 @@ const qaStandards = [
               traceable to the original study.
             </p>
           </div>
+
+          <div class="divider" />
+
           <div class="entry">
             <h3 class="entry-title">Local-only viewing</h3>
-            <p class="para-sm">
+            <p class="para-sm pl-3">
               Reviewing a study in a browser that never uploads it creates no
               further copy of personal data, satisfying data minimisation by
               design. It is a triage aid, not a calibrated diagnostic
@@ -511,7 +521,7 @@ const qaStandards = [
             </p>
             <a
               href="/free-dicom-viewer"
-              class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-slate-700"
+              class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700"
             >
               Open the local DICOM viewer
               <svg
@@ -542,10 +552,10 @@ const qaStandards = [
                 class="box group flex flex-col p-6 transition-all hover:border-slate-400"
               >
                 <h3 class="entry-title">{l.n}</h3>
-                <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
+                <p class="mt-3 flex-1 pl-3 text-sm leading-relaxed text-slate-600">
                   {l.d}
                 </p>
-                <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+                <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
                   {l.cta}
                   <svg
                     class="h-4 w-4"
@@ -576,7 +586,7 @@ const qaStandards = [
             qaStandards.map((q) => (
               <div class="entry">
                 <h3 class="entry-title">{q.n}</h3>
-                <p class="para-sm">{q.d}</p>
+                <p class="para-sm pl-3">{q.d}</p>
               </div>
             ))
           }
@@ -673,7 +683,7 @@ const qaStandards = [
               <li class="box flex flex-col gap-3 p-5 sm:flex-row sm:items-start sm:justify-between">
                 <div class="max-w-2xl">
                   <h3 class="heading-snug-dark">{s.n}</h3>
-                  <p class="para-sm">{s.d}</p>
+                  <p class="para-sm pl-3">{s.d}</p>
                 </div>
                 <a
                   href={s.href}

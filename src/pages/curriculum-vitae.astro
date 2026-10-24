@@ -4,7 +4,6 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
-import { PRACTITIONER, SITE_TITLE, MEMBERSHIPS, PAGE_HERO_IMAGES } from '../consts';
 
 const career = [
 	{ period: '2021 — Present', role: 'Consultant Radiologist', org: 'NHS Foundation Trust', detail: 'Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.' },
@@ -17,12 +16,12 @@ const career = [
 
 ---
 
-<BaseLayout title={`Curriculum Vitae | ${SITE_TITLE}`} description="Career timeline, qualifications, sub-specialty interests and memberships of Dr Joseph El-Sheikha FRCR — Consultant Radiologist and medicolegal expert witness.">
+<BaseLayout title="Curriculum Vitae | Radiology &amp; Medicolegal Law" description="Career timeline, qualifications, sub-specialty interests and memberships of Dr Joseph El-Sheikha FRCR — Consultant Radiologist and medicolegal expert witness.">
 	<PageHero
 		eyebrow="Professional record"
 		title="Curriculum Vitae"
 		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
-		heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"] || undefined}
+		heroImage={"/images/pexels-tima-miroshnichenko-5452281.jpg" || undefined}
 	/>
 
 	<PageIntro
@@ -48,24 +47,24 @@ const career = [
 					<tbody>
 						<tr>
 							<th scope="row">GMC</th>
-							<td>{PRACTITIONER.gmcNumber.replace("GMC ", "")} — full registration with a licence to practise</td>
+							<td>{"1234567".replace("GMC ", "")} — full registration with a licence to practise</td>
 						</tr>
 						<tr>
 							<th scope="row">Sub-specialty</th>
-							<td>MSK · GI · IR — {PRACTITIONER.subspecialty}</td>
+							<td>MSK · GI · IR — {"MSK, GI & Interventional Radiology"}</td>
 						</tr>
 						<tr>
 							<th scope="row">Indemnity</th>
-							<td>{PRACTITIONER.indemnity}</td>
+							<td>{"Medical Defence Union"}</td>
 						</tr>
 					</tbody>
 				</table>
 				<div class="mx-auto mt-10 max-w-xs">
 					<Figure
-						src={PRACTITIONER.photo}
-						alt={PRACTITIONER.shortName}
+						src={"/images/practitioner.jpg"}
+						alt={"Dr Joseph El-Sheikha"}
 						label="Plate 01"
-						caption={PRACTITIONER.shortName}
+						caption={"Dr Joseph El-Sheikha"}
 						subtitle="Consultant Radiologist · MSK · GI · IR"
 						ratio="portrait"
 						flush
@@ -82,14 +81,42 @@ const career = [
 				<span class="meta-label">Career &amp; training</span>
 				<h2 class="sec-title-lg">Appointments &amp; qualifications</h2>
 				<ol class="entry-list-mt-8">
-					{career.map((item) => (
-						<li class="py-6">
-							<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">{item.period}</p>
-							<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">{item.role}</h3>
-							<p class="mt-0.5 font-sans text-sm text-slate-600">{item.org}</p>
-							<p class="para-sm">{item.detail}</p>
-						</li>
-					))}
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2021 — Present</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Consultant Radiologist</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">NHS Foundation Trust</p>
+						<p class="para-sm">Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.</p>
+					</li>
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2019 — 2021</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Consultant Radiologist</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">Independent sector | The Harley Street Medico-Legal Imaging Unit</p>
+						<p class="para-sm">Independent expert workload: CPR Part 35 compliant reporting for solicitors, barristers and insurers.</p>
+					</li>
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2017 — 2019</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Sub-specialty Fellowship</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">MSK, GI & Interventional Radiology</p>
+						<p class="para-sm">Advanced fellowship training including CT-guided and fluoroscopic interventional procedures.</p>
+					</li>
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2013 — 2017</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Clinical Radiology Training (ST1–ST5)</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">Royal College of Radiologists (FRCR)</p>
+						<p class="para-sm">Completed full radiology training programme; passed all FRCR examinations.</p>
+					</li>
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2009 — 2013</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Core Surgical Training</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">Royal College of Surgeons of England (MRCS)</p>
+						<p class="para-sm">Surgical foundation and core training, providing the basis for an interventional practice.</p>
+					</li>
+					<li class="py-6">
+						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2003 — 2009</p>
+						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">MBChB (Hons)</h3>
+						<p class="mt-0.5 font-sans text-sm text-slate-600">University of Leeds School of Medicine</p>
+						<p class="para-sm">Graduated with honours; distinctions in anatomy and clinical skills.</p>
+					</li>
 				</ol>
 			</div>
 		</div>
@@ -102,9 +129,9 @@ const career = [
 				<span class="meta-label">Professional bodies</span>
 				<h2 class="sec-title-lg">Memberships</h2>
 				<ul class="mt-8 space-y-3 divider pt-4">
-					{MEMBERSHIPS.map((m) => (
-						<li class="font-serif text-[0.95rem] text-slate-700">{m}</li>
-					))}
+					<li class="font-serif text-[0.95rem] text-slate-700">Fellow - Royal College of Radiologists (FRCR)</li>
+					<li class="font-serif text-[0.95rem] text-slate-700">Member - European Society of Radiology (ESR)</li>
+					<li class="font-serif text-[0.95rem] text-slate-700">British Society of Gastroenterology and Abdominal Imaging (BSGAR)</li>
 				</ul>
 				<Callout tone="key" title="Publications & research">
 					<p>

@@ -3,22 +3,52 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, BLOG_CATEGORIES, PAGE_HERO_IMAGES, CATEGORY_MARKERS } from '../../consts';
 import { formatDateShort } from '../../lib/utils';
+const markerColor = (id) => {
+  const m = {
+    musculoskeletal: '#7c9a6e',
+    gastrointestinal: '#b8935a',
+    'peritoneal-malignancy': '#a86b6b',
+    neuroradiology: '#7a8da0',
+    interventional: '#a07a8d',
+    negligence: '#8d7a9a',
+    quantum: '#7a9a8d',
+    practice: '#9a8d7a',
+    regulation: '#8d9a7a',
+    'case-law': '#9a7a8d',
+  };
+  return m[id] || '#94a3b8';
+};
+
+const categoryLabel = (id) => {
+  const m = {
+    all: 'All updates',
+    musculoskeletal: 'Musculoskeletal',
+    gastrointestinal: 'Gastrointestinal',
+    'peritoneal-malignancy': 'Peritoneal Malignancy',
+    neuroradiology: 'Neuroradiology',
+    interventional: 'Interventional',
+    negligence: 'Negligence',
+    quantum: 'Quantum and Causation',
+    practice: 'Practice and Procedure',
+    regulation: 'Regulation',
+    'case-law': 'Case Law',
+  };
+  return m[id] || id;
+};
+
 
 const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
-const markerColor = (id: string) => CATEGORY_MARKERS[id] ?? '#94a3b8';
 
 export const prerender = true;
 ---
 
-<BaseLayout title={`Recent Developments | ${SITE_TITLE}`} description="Recent developments across radiology and medicolegal law — anonymised case discussions on negligence, quantum, practice and procedure, MSK, gastrointestinal and peritoneal malignancy, and the reporting standards behind them.">
+<BaseLayout title="Recent Developments | Radiology &amp; Medicolegal Law" description="Recent developments across radiology and medicolegal law — anonymised case discussions on negligence, quantum, practice and procedure, MSK, gastrointestinal and peritoneal malignancy, and the reporting standards behind them.">
 	<PageHero
 		eyebrow="Recent developments"
 		title="Recent Developments"
 		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
+		heroImage={"/images/pexels-cottonbro-5723881.jpg" || undefined}
 	/>
 
 	<PageIntro
@@ -48,12 +78,18 @@ export const prerender = true;
 						Showing all {allPosts.length} pieces
 					</p>
 				</div>
-				<div id="blog-filters" class="mt-6 flex flex-wrap gap-2">
-					{BLOG_CATEGORIES.map((c) => (
-						<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category={c.id} style={`--marker-color: ${c.id === 'all' ? '#94a3b8' : markerColor(c.id)}; background-color: ${c.id === 'all' ? '' : `color-mix(in srgb, ${markerColor(c.id)} 25%, white)`}`}>
-							{c.label}
-						</button>
-					))}
+								<div id="blog-filters" class="mt-6 flex flex-wrap gap-2">
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="all" style="--marker-color: #94a3b8;">All updates</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="musculoskeletal" style="--marker-color: #7c9a6e;">Musculoskeletal</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="gastrointestinal" style="--marker-color: #b8935a;">Gastrointestinal</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="peritoneal-malignancy" style="--marker-color: #a86b6b;">Peritoneal Malignancy</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="neuroradiology" style="--marker-color: #7a8da0;">Neuroradiology</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="interventional" style="--marker-color: #a07a8d;">Interventional</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="negligence" style="--marker-color: #8d7a9a;">Negligence</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="quantum" style="--marker-color: #7a9a8d;">Quantum and Causation</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="practice" style="--marker-color: #9a8d7a;">Practice and Procedure</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="regulation" style="--marker-color: #8d9a7a;">Regulation</button>
+					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="case-law" style="--marker-color: #9a7a8d;">Case Law</button>
 				</div>
 			</div>
 

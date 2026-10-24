@@ -4,20 +4,19 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
 
 <BaseLayout
-  title={`Cookie policy | ${SITE_TITLE}`}
+  title={"Cookie policy | Radiology &amp; Medicolegal Law"}
   description="Which cookies this radiology and medicolegal law resource uses: strictly necessary storage, the single optional Google Analytics cookie, and how to accept, reject or change your choice."
 >
   <PageHero
     eyebrow="Cookies"
     title="Cookie policy"
     description="One optional analytics cookie — set only if you accept it — and the strictly necessary storage that keeps the site working. Nothing else."
-    heroImage={PAGE_HERO_IMAGES["/cookie-policy"] || undefined}
+    
   />
 
   <PageIntro

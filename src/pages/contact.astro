@@ -3,23 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Figure from '../components/Figure.astro';
-import { SITE_TITLE, PRACTITIONER, PAGE_HERO_IMAGES } from '../consts';
 import { toast, type ToastKind } from '../lib/toast';
 
 const details = [
-	{ label: 'Email', value: PRACTITIONER.email, href: `mailto:${PRACTITIONER.email}` },
-	{ label: 'Phone', value: PRACTITIONER.phone, href: `tel:${PRACTITIONER.phone.replace(/[^0-9+]/g, '')}` },
-	{ label: 'GMC', value: PRACTITIONER.gmcNumber },
-	{ label: 'Address', value: PRACTITIONER.address },
+	{ label: 'Email', value: "enquiries@medicolegal.org", href: `mailto:${"enquiries@medicolegal.org"}` },
+	{ label: 'Phone', value: "+44 1234 567 890", href: `tel:${"+44 1234 567 890".replace(/[^0-9+]/g, '')}` },
+	{ label: 'GMC', value: "1234567" },
+	{ label: 'Address', value: "123 Medical Centre, London, UK" },
 ];
 ---
 
-<BaseLayout title={`Contact | ${SITE_TITLE}`} description="Clinic locations, secretarial contact details and a secure contact form for Dr Joseph El-Sheikha's medico-legal imaging practice.">
+<BaseLayout title="Contact | Radiology &amp; Medicolegal Law" description="Clinic locations, secretarial contact details and a secure contact form for Dr Joseph El-Sheikha's medico-legal imaging practice.">
 	<PageHero
 		eyebrow="Get in touch"
 		title="Contact"
 		description="Reach the secretariat for referrals, enquiries about instruction, or general questions about the practice."
-		heroImage={PAGE_HERO_IMAGES["/contact"] || undefined}
+		heroImage={"/images/pexels-cottonbro-6502022.jpg" || undefined}
 	/>
 
 	<PageIntro
@@ -44,15 +43,32 @@ const details = [
 					<h2 class="sec-title">Contact details</h2>
 					<table class="table">
 						<tbody>
-							{details.map((d) => (
-								<tr>
-									<th scope="row">{d.label}</th>
-									<td>
-										{d.href ? <a href={d.href} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{d.value}</a> : d.value}
-									</td>
-								</tr>
-							))}
+							<tr>
+								<th scope="row">Email</th>
+								<td>
+									<a href="mailto:secretary@radiologylaw.com" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">secretary@radiologylaw.com</a>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Phone</th>
+								<td>
+									<a href="tel:On request" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">On request</a>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">GMC</th>
+								<td>
+									GMC 7017101
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Address</th>
+								<td>
+									Oxford, Basingstoke & Winchester
+								</td>
+							</tr>
 						</tbody>
+</tbody>
 					</table>
 
 					<div class="mt-8 grid gap-6 sm:grid-cols-2">
@@ -76,7 +92,7 @@ const details = [
 							<div class="plate-reserved">
 								<div class="plate-reserved-inner">
 									<p class="plate-reserved-label">Location map</p>
-									<p class="plate-reserved-note">{PRACTITIONER.address}</p>
+									<p class="plate-reserved-note">{"123 Medical Centre, London, UK"}</p>
 								</div>
 							</div>
 						</Figure>

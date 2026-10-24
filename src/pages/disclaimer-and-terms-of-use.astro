@@ -4,20 +4,19 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
 
 <BaseLayout
-  title={`Disclaimer and terms of use | ${SITE_TITLE}`}
+  title={"Disclaimer and terms of use | Radiology &amp; Medicolegal Law"}
   description="The terms on which this radiology and medicolegal law reference may be used: general information only, no legal or medical advice, anonymised case material, and limits of liability."
 >
   <PageHero
     eyebrow="Using this resource"
     title="Disclaimer and terms of use"
     description="A free reference resource, offered on the terms below. By using the site you accept them."
-    heroImage={PAGE_HERO_IMAGES["/disclaimer-and-terms-of-use"] || undefined}
+    
   />
   <PageIntro
     eyebrow="Using this resource"

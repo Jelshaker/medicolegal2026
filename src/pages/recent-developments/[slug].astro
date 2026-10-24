@@ -3,9 +3,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../../components/MedicalImageViewer.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, BLOG_CATEGORIES, PAGE_HERO_IMAGES } from '../../consts';
 import { formatDate, readingTime } from '../../lib/utils';
 import { isoDate } from '../../lib/seo';
+const categoryLabelMap = {
+  all: 'All updates',
+  musculoskeletal: 'Musculoskeletal',
+  gastrointestinal: 'Gastrointestinal',
+  'peritoneal-malignancy': 'Peritoneal Malignancy',
+  neuroradiology: 'Neuroradiology',
+  interventional: 'Interventional',
+  negligence: 'Negligence',
+  quantum: 'Quantum and Causation',
+  practice: 'Practice and Procedure',
+  regulation: 'Regulation',
+  'case-law': 'Case Law',
+};
+const categoryLabel = (id) => categoryLabelMap[id] || id;
 import { toast } from '../../lib/toast';
 
 export const prerender = true;
@@ -21,11 +34,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props as { post: Awaited<ReturnType<typeof getCollection<'recent-developments'>>>[number] };
 const { Content } = await post.render();
 const readMin = readingTime(post.body);
-const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 ---
 
 <BaseLayout
-	title={`${post.data.title} | ${SITE_TITLE}`}
+	title=`${post.data.title} | medicolegal.org`
 	description={post.data.description}
 	article={{
 		headline: post.data.title,
@@ -36,7 +48,7 @@ const categoryLabel = (id: string) => BLOG_CATEGORIES.find((c) => c.id === id)?.
 >
 <!-- Article header with hero image -->
 	<PageHero
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
+		heroImage={"/images/pexels-cottonbro-5723881.jpg" || undefined}
 		title={post.data.title}
 		description={post.data.description}
 	>

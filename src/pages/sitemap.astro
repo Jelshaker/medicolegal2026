@@ -5,23 +5,60 @@ import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
 import Figure from "../components/Figure.astro";
 import Diagram from "../components/Diagram.astro";
-import { SITE_TITLE, SITEMAP, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
+const SITEMAP = [
+  { id: 'start', title: 'Start here', description: 'What the resource is, who keeps it, and how it is organised.',
+    pages: [
+      { href: '/', label: 'Home', description: 'Overview, the two libraries, and the latest commentary.' },
+      { href: '/about', label: 'About this resource', description: 'The curator, the scope, and the standards worked to.' },
+      { href: '/sitemap', label: 'Site map', description: 'Everything in the resource on one page.' },
+    ]
+  },
+  { id: 'radiology', title: 'Radiology library', description: 'The clinical reference: modalities, reporting standards, dose and image handling.',
+    pages: [
+      { href: '/radiology-fundamentals', label: 'Radiology fundamentals', description: 'What each modality answers, and where it stops being useful.' },
+      { href: '/free-dicom-viewer', label: 'Free DICOM viewer', description: 'Open your scan in your browser — free, private, nothing uploaded.' },
+      { href: '/how-to-use-the-dicom-viewer', label: 'Using the DICOM viewer', description: 'Step-by-step: loading a disc or download and using the tools.' },
+    ]
+  },
+  { id: 'law', title: 'Medicolegal law library', description: 'The legal reference: principles, authorities and statutory duties.',
+    pages: [
+      { href: '/medicolegal-fundamentals', label: 'Medicolegal law', description: 'Standard of care, consent, causation, candour and AI-assisted reporting.' },
+      { href: '/radiology-legislation', label: 'Legislation', description: 'IR(ME)R, IRR17, the communication duty and EPR16.' },
+      { href: '/radiology-legal-cases', label: 'Case law', description: 'Decisions in which imaging evidence determined the outcome.' },
+      { href: '/medicolegal-radiology', label: 'Disputed interpretation', description: 'The pure-diagnosis argument, incidental findings and teleradiology risk.' },
+    ]
+  },
+  { id: 'commentary', title: 'Recent case commentary', description: 'Anonymised discussions of medicolegal cases as they develop, grouped by theme.',
+    pages: [ { href: '/recent-developments', label: 'All recent developments', description: 'A timeline of commentary across every specialty and legal topic covered.' } ]
+  },
+  { id: 'practice', title: 'Practice and instruction', description: 'How to use the resource, how instructions work, and how the service is governed.',
+    pages: [
+      { href: '/referrals', label: 'Referrals and instructions', description: 'How to engage the expert, evidence requirements and timelines.' },
+      { href: '/expert-witness-gi-peritoneal-malignancy', label: 'GI & peritoneal malignancy expertise', description: 'Specialist scope, relevant guidelines, and the evidential standard expected.' },
+      { href: '/curriculum-vitae', label: 'Curriculum vitae', description: 'Qualifications, appointments, continuing professional development and indemnity.' },
+      { href: '/contact', label: 'Contact', description: 'General enquiries, portal access and phone numbers.' },
+      { href: '/privacy-notice', label: 'Privacy notice', description: 'What personal data is processed and how it is handled.' },
+      { href: '/cookie-policy', label: 'Cookie policy', description: 'The single optional analytics cookie and the strictly necessary storage.' },
+      { href: '/disclaimer-and-terms-of-use', label: 'Disclaimer and terms', description: 'The limits of what this site provides and the conditions of use.' },
+    ]
+  },
+];
 
 const pageCount = SITEMAP.reduce((n, group) => n + group.pages.length, 0);
 const contents = SITEMAP.map((group) => ({ href: `#${group.id}`, label: group.title }));
 ---
 
 <BaseLayout
-	title={`Site map | ${SITE_TITLE}`}
+	title="Site map | Radiology title={`Site map | ${SITE_TITLE}`}amp; Medicolegal Law"
 	description="Every page in this small radiology and medicolegal law resource on one page — the clinical library, the legal library, recent case commentary, and how instruction works."
 >
 	<PageHero
 		eyebrow="Site map"
 		title="Everything in the resource"
 		description={`${pageCount} pages across five groups: the two reference libraries, recent case commentary, and the practice behind them.`}
-		heroImage={PAGE_HERO_IMAGES["/sitemap"] || undefined}
+		heroImage={"/images/pexels-shvetsa-4225925.jpg" || undefined}
 	/>
 
 	<PageIntro

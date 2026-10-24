@@ -4,20 +4,19 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
-import { PRACTITIONER, SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 export const prerender = true;
 ---
 
 <BaseLayout
-	title={`Privacy notice | ${SITE_TITLE}`}
+	title={"Privacy notice | Radiology &amp; Medicolegal Law"}
 	description="How this radiology and medicolegal law resource handles personal data: enquiry, referral and comment forms, optional analytics, lawful bases, retention, transfers, and your UK GDPR rights."
 >
 	<PageHero
 		eyebrow="Your information"
 		title="Privacy notice"
 		description="Who holds your information when you use this site, what is collected, why it is needed, how long it is kept, and the rights you have over it."
-		heroImage={PAGE_HERO_IMAGES["/privacy-notice"] || undefined}
+		
 	/>
 
 	<PageIntro
@@ -51,18 +50,18 @@ export const prerender = true;
 						<tbody>
 							<tr>
 								<th scope="row">Controller</th>
-								<td>{PRACTITIONER.name}, {PRACTITIONER.title}</td>
+								<td>{"Dr Joseph El-Sheikha"}, {"Consultant Radiologist"}</td>
 							</tr>
 							<tr>
 								<th scope="row">Contact</th>
 								<td>
-									<a href={`mailto:${PRACTITIONER.email}`} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{PRACTITIONER.email}</a>
-									{` · ${PRACTITIONER.phone}`}
+									<a href={`mailto:${"enquiries@medicolegal.org"}`} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{"enquiries@medicolegal.org"}</a>
+									{` · ${"+44 1234 567 890"}`}
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">Address</th>
-								<td>{PRACTITIONER.address}</td>
+								<td>{"123 Medical Centre, London, UK"}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -177,7 +176,7 @@ export const prerender = true;
 						<li><strong>Portability</strong> — your data in a usable format, where based on consent or contract.</li>
 						<li><strong>Withdrawal</strong> — analytics consent at any time via “Cookie settings” in the footer.</li>
 					</ul>
-					<p class="para-sm">Identity may be checked first. If unhappy, contact <a href={`mailto:${PRACTITIONER.email}`} class="link">{PRACTITIONER.email}</a>; you may also complain to the ICO at <a href="https://ico.org.uk" class="link">ico.org.uk</a> (0303 123 1113). This notice is reviewed when the site changes.</p>
+					<p class="para-sm">Identity may be checked first. If unhappy, contact <a href={`mailto:${"enquiries@medicolegal.org"}`} class="link">{"enquiries@medicolegal.org"}</a>; you may also complain to the ICO at <a href="https://ico.org.uk" class="link">ico.org.uk</a> (0303 123 1113). This notice is reviewed when the site changes.</p>
 				</Section>
 			</div>
 		</div>

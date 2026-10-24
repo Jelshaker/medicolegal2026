@@ -3,18 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import Callout from "../components/Callout.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
-import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
-  title={`Free DICOM Viewer — Open Your Scan in Your Browser | ${SITE_TITLE}`}
+  title={"Free DICOM Viewer — Open Your Scan in Your Browser | Radiology &amp; Medicolegal Law"}
   description="Open your CT, MRI, X-ray or ultrasound images free in your browser. This DICOM viewer runs entirely on your device — nothing is uploaded, stored or shared."
 >
   <PageHero
     eyebrow="Free tool · No sign-up, no upload"
     title="Free DICOM Viewer"
     description="If you have DICOM image files and do not have a PACS viewer to view them, you are welcome to use this browser-based DICOM viewer for free. The files are kept locally and nothing is uploaded, stored or shared. As a radiologist I would only use this viewer for a superficial imaging review and any formal diagnosis can only be made by a qualified radiologist using a calibrated clinical display with PACS based reporting."
-    heroImage={PAGE_HERO_IMAGES["/free-dicom-viewer"] || undefined}
+    heroImage={"/images/pexels-valery-arispe-2149327983-34170810.jpg" || undefined}
   >
     <p
       class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400"

@@ -4,7 +4,6 @@ import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
 import Section from "../components/Section.astro";
-import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 const faqs = [
 	{
@@ -35,14 +34,14 @@ const faqs = [
 ---
 
 <BaseLayout
-	title={`How to Use the DICOM Viewer — Step by Step | ${SITE_TITLE}`}
+	title="How to Use the DICOM Viewer — Step by Step | Radiology &amp; Medicolegal Law"
 	description="A plain-English walkthrough of the free DICOM viewer: finding your images on a hospital disc or download, loading them, and using the on-screen tools."
 >
 	<PageHero
 		eyebrow="Free tools · Guide"
 		title="How to Use the DICOM Viewer"
 		description="A short, plain-English walkthrough: where your images usually are, how to load them, and what each control does once they are on screen."
-		heroImage={PAGE_HERO_IMAGES["/how-to-use-the-dicom-viewer"] || undefined}
+		heroImage={"/images/pexels-valery-arispe-2149327983-34170810.jpg" || undefined}
 	/>
 
 	<PageIntro
@@ -318,12 +317,31 @@ const faqs = [
 	<Section id="common-questions" index="07" title="Common questions">
 		<div class="entry-list mt-8">
 			{
-				faqs.map((f) => (
-					<div class="py-6">
-						<h3 class="entry-title-sm">{f.q}</h3>
-						<p class="para-sm">{f.a}</p>
-					</div>
-				))
+				<div class="py-6">
+					<h3 class="entry-title-sm">Is my scan really not uploaded anywhere?</h3>
+					<p class="para-sm">Correct. The viewer is a small program that runs inside your browser after the page loads. It opens the files that are already on your device and draws them on screen. No file is transmitted to this website or to any other server at any point.</p>
+				</div>
+				<div class="py-6">
+					<h3 class="entry-title-sm">Is it free?</h3>
+					<p class="para-sm">Yes — there is no charge, no account and no time limit. You do not even have to give an email address.</p>
+				</div>
+				<div class="py-6">
+					<h3 class="entry-title-sm">Can I use it on a phone or tablet?</h3>
+					<p class="para-sm">Yes. The viewer works in any modern browser on Windows, Mac, Linux, Android and iOS. On a phone, use the Choose files button rather than drag-and-drop, and the sliders instead of the mouse gestures.</p>
+				</div>
+				<div class="py-6">
+					<h3 class="entry-title-sm">What if the image looks all black, white or grey?</h3>
+					<p class="para-sm">That is almost always the window setting, not a problem with the file. Reset all first. If it is still not right, try the Level slider — most CT and MRI slices look correct with a level somewhere between 20 and 80, and a width between 200 and 400.</p>
+				</div>
+				<div class="py-6">
+					<h3 class="entry-title-sm">Someone sent me a single file</h3>
+					<p class="para-sm">A CT or MRI study is made up of many separate slice files, usually dozens or hundreds. If you were sent just one file, you have one slice. Ask for the whole folder, or drop several files at once.</p>
+				</div>
+				<div class="py-6">
+					<h3 class="entry-title-sm">Can I get a second opinion using this viewer?</h3>
+					<p class="para-sm">Not from this tool on its own. A formal second opinion needs a radiologist to read the full study on calibrated equipment, and it needs the images themselves — not screenshots. The viewer helps you understand what you have; the expert-witness service on this site is where a formal opinion begins.</p>
+				</div>
+			}
 			}
 		</div>
 	</Section>

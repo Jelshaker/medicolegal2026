@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
 import Callout from "../components/Callout.astro";
+import { PAGE_HERO_IMAGES } from "../consts";
 import Section from "../components/Section.astro";
 
 const faqs = [
@@ -41,7 +42,7 @@ const faqs = [
 		eyebrow="Free tools · Guide"
 		title="How to Use the DICOM Viewer"
 		description="A short, plain-English walkthrough: where your images usually are, how to load them, and what each control does once they are on screen."
-		heroImage={"/images/pexels-valery-arispe-2149327983-34170810.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/how-to-use-the-dicom-viewer"] || undefined}
 	/>
 
 	<PageIntro

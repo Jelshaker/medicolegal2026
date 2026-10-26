@@ -4,6 +4,7 @@ import MedicalImageViewer from '../../components/MedicalImageViewer.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getCollection } from 'astro:content';
 import { formatDate, readingTime } from '../../lib/utils';
+import { PAGE_HERO_IMAGES } from '../../consts';
 import { isoDate } from '../../lib/seo';
 const categoryLabelMap = {
   all: 'All updates',
@@ -48,7 +49,7 @@ const readMin = readingTime(post.body);
 >
 <!-- Article header with hero image -->
 	<PageHero
-		heroImage={"/images/pexels-cottonbro-5723881.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
 		title={post.data.title}
 		description={post.data.description}
 	>

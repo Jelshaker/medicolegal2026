@@ -4,6 +4,7 @@ import PageHero from '../../components/PageHero.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import { getCollection } from 'astro:content';
 import { formatDateShort } from '../../lib/utils';
+import { PAGE_HERO_IMAGES } from '../../consts';
 const markerColor = (id) => {
   const m = {
     musculoskeletal: '#7c9a6e',
@@ -48,7 +49,7 @@ export const prerender = true;
 		eyebrow="Recent developments"
 		title="Recent Developments"
 		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
-		heroImage={"/images/pexels-cottonbro-5723881.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
 	/>
 
 	<PageIntro

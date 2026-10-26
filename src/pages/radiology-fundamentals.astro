@@ -5,6 +5,7 @@ import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Figure from "../components/Figure.astro";
 import Diagram from "../components/Diagram.astro";
+import { PAGE_HERO_IMAGES } from '../consts';
 ---
 
 <BaseLayout
@@ -15,7 +16,7 @@ import Diagram from "../components/Diagram.astro";
     eyebrow="Radiology library"
     title="Radiology Fundamentals"
     description="The clinical half of this resource: what each investigation can reasonably answer, the professional standards that govern reporting, the statutory duties attached to dose and data, and how images should be handled."
-    heroImage="/images/pexels-cottonbro-5723881.jpg"
+    heroImage={PAGE_HERO_IMAGES["/radiology-fundamentals"] || undefined}
   />
 
   <PageIntro

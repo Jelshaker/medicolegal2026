@@ -26,7 +26,7 @@ const categoryLabel = (id: string) =>
     eyebrow="Radiology · Law · Reference resource"
     title="A radiologist's guide to medicolegal law."
     description="A free, independent reference for those working at the interface of radiology and the law. It covers how common radiological investigations are performed, interpreted and reported, the standards governing reporting, relevant statutory duties, and the consequences when things go wrong. Written primarily for radiologists and healthcare professionals."
-    heroImage={PAGE_HERO_IMAGES["/"] as string}
+    heroImage={PAGE_HERO_IMAGES["/"] || undefined}
   >
     <div class="hero-link-row">
       <a href="/radiology-fundamentals" class="link-hero"

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Figure from "../components/Figure.astro";
@@ -53,7 +53,7 @@ const standards = [
 		eyebrow="About this resource"
 		title={"Dr Joseph El-Sheikha"}
 		description="Consultant Radiologist, independent medicolegal expert witness, and the curator of this reference resource. The opinion I provide is written for the court rather than for the party instructing me."
-		heroImage={"/images/pexels-tima-miroshnichenko-5452281.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/about"] || undefined}
 	/>
 
 	<PageIntro

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
+import { PAGE_HERO_IMAGES } from '../consts';
 
 const career = [
 	{ period: '2021 — Present', role: 'Consultant Radiologist', org: 'NHS Foundation Trust', detail: 'Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.' },
@@ -21,7 +22,7 @@ const career = [
 		eyebrow="Professional record"
 		title="Curriculum Vitae"
 		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
-		heroImage={"/images/pexels-tima-miroshnichenko-5452281.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"] || undefined}
 	/>
 
 	<PageIntro

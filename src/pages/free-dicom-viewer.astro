@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import Callout from "../components/Callout.astro";
 import LocalDicomViewer from "../components/LocalDicomViewer.astro";
+import { PAGE_HERO_IMAGES } from '../consts';
 ---
 
 <BaseLayout
@@ -13,7 +14,7 @@ import LocalDicomViewer from "../components/LocalDicomViewer.astro";
     eyebrow="Free tool · No sign-up, no upload"
     title="Free DICOM Viewer"
     description="If you have DICOM image files and do not have a PACS viewer to view them, you are welcome to use this browser-based DICOM viewer for free. The files are kept locally and nothing is uploaded, stored or shared. As a radiologist I would only use this viewer for a superficial imaging review and any formal diagnosis can only be made by a qualified radiologist using a calibrated clinical display with PACS based reporting."
-    heroImage={"/images/pexels-valery-arispe-2149327983-34170810.jpg" || undefined}
+    heroImage={PAGE_HERO_IMAGES["/free-dicom-viewer"] || undefined}
   >
     <p
       class="mt-4 font-sans text-xs uppercase tracking-[0.14em] text-slate-400"

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Figure from '../components/Figure.astro';
 import { toast, type ToastKind } from '../lib/toast';
+import { PAGE_HERO_IMAGES } from '../consts';
 
 const details = [
 	{ label: 'Email', value: "enquiries@medicolegal.org", href: `mailto:${"enquiries@medicolegal.org"}` },
@@ -18,7 +19,7 @@ const details = [
 		eyebrow="Get in touch"
 		title="Contact"
 		description="Reach the secretariat for referrals, enquiries about instruction, or general questions about the practice."
-		heroImage={"/images/pexels-cottonbro-6502022.jpg" || undefined}
+		heroImage={PAGE_HERO_IMAGES["/contact"] || undefined}
 	/>
 
 	<PageIntro

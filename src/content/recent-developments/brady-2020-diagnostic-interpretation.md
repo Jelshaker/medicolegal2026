@@ -18,66 +18,15 @@ keyTakeaways:
 **Brady v Southend University Hospital NHS Foundation Trust**  
 **[2020] EWHC 158 (QB)**
 
-## Issue
+The claimant developed persistent abdominal pain after an appendicectomy in May 2013. An initial CT reported a right upper-quadrant fat-containing mass as likely omental infarction, but her symptoms continued. A follow-up CT showed an enlarging mass, and although a biopsy was considered, conservative management was pursued. In February 2014 she developed a psoas abscess, and microbiology later identified *Actinomyces*. She argued that earlier biopsy would have permitted diagnosis and treatment.
 
-Whether an incorrect radiological interpretation was necessarily negligent, and whether the *Bolam* and *Bolitho* principles applied to a claim centred on diagnosis.
+The claim was dismissed. The court held that the original CT report represented a reasonable professional interpretation and that deferring biopsy fell within responsible clinical practice. The mere possibility that an earlier biopsy might have identified actinomycosis did not establish that competent clinicians were required to undertake it.
 
-## Facts
+*Bolam*, subject to the logical scrutiny required by *Bolitho*, applies to diagnostic interpretation. A claimant cannot establish breach merely by proving that the eventual diagnosis differed from the original radiological opinion; the court must consider whether the interpretation and management were reasonably open to competent practitioners using the information available at the time.
 
-The claimant underwent an appendicectomy in May 2013. She later developed abdominal pain and raised inflammatory markers.
+Radiological diagnosis involves selecting the most likely explanation from several possible differentials, and a later diagnosis does not retrospectively make an earlier interpretation negligent. A report should communicate material findings, the appropriate degree of diagnostic confidence and any further investigation reasonably indicated. *Brady* does not establish that cautious wording protects an otherwise indefensible interpretation; diagnostic judgment is assessed in its contemporaneous clinical and imaging context.
 
-An ultrasound demonstrated an ill-defined epigastric mass. The first CT showed a right upper-quadrant mass containing fat and was reported as most likely representing omental infarction.
-
-Persistent symptoms led to further imaging. A second CT demonstrated that the mass had enlarged and was causing local mass effect. Biopsy was considered, and specialist review of the imaging was obtained, but conservative management continued.
-
-In February 2014, the claimant developed a left psoas abscess requiring drainage and further surgery. Microbiology identified *Actinomyces*. She alleged that the earlier abdominal mass represented actinomycosis rather than omental infarction and that earlier biopsy would have permitted diagnosis and treatment.
-
-## Decision
-
-The claim was dismissed.
-
-The court held that the first CT report represented a reasonable professional interpretation of the appearances. The subsequent assessment and decision not to proceed immediately to biopsy also fell within responsible clinical practice.
-
-The fact that an earlier biopsy might have identified actinomycosis did not establish that competent clinicians were required to undertake it at the time.
-
-## Principle
-
-*Bolam*, subject to the logical scrutiny required by *Bolitho*, applies to diagnostic interpretation.
-
-A claimant cannot establish breach merely by proving that the eventual diagnosis differed from the original radiological opinion. The court must consider whether the interpretation and proposed management were reasonably open to competent practitioners using the information available at the time.
-
-The court therefore rejected the proposition that a diagnostic error should be treated as a “pure diagnosis” question falling outside conventional professional-negligence principles.
-
-## Radiological significance
-
-Radiological diagnosis commonly involves selecting the most likely explanation from several possible differentials. A later diagnosis does not retrospectively make the earlier interpretation negligent.
-
-The relevant questions are:
-
-- what the original examination demonstrated;
-- what clinical information was available;
-- whether the proposed diagnosis was reasonably supported by the appearances;
-- whether further investigation was indicated at that stage; and
-- whether the supporting expert opinion is logically defensible.
-
-## Practical point for radiologists
-
-A report should communicate the material findings, the appropriate degree of diagnostic confidence and any further investigation reasonably indicated by the appearances.
-
-*Brady* does not establish that cautious wording protects an otherwise indefensible interpretation. It confirms that diagnostic judgment must be assessed in its contemporaneous clinical and imaging context.
-
-## Practical point for legal professionals
-
-The analysis should not begin and end with the eventual diagnosis.
-
-Expert evidence should address separately:
-
-1. what the original imaging showed;
-2. whether the interpretation was reasonably open to a competent radiologist;
-3. whether further investigation was then required; and
-4. whether any breach probably altered the outcome.
-
-The availability of a test that would have revealed the diagnosis does not itself prove that failure to arrange that test was negligent.
+Expert evidence should address separately what the original imaging showed, whether the interpretation was reasonably open to a competent radiologist, whether further investigation was then required, and whether any breach probably altered the outcome. A test that would have revealed the diagnosis does not itself prove that failure to arrange it was negligent.
 
 /radiology-legal-cases#brady.
 

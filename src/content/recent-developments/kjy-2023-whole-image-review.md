@@ -28,46 +28,19 @@ The claimant was anonymised by order of the court because he was a child.
 
 Whether radiologists reporting neonatal abdominal radiographs should have identified and reported abnormal hip alignment visible outside the principal clinical area under investigation.
 
-The central questions were:
-
-1. what the radiographs demonstrated;
-2. whether the hip abnormalities were sufficiently apparent to require identification;
-3. whether a competent radiologist was required to review anatomy outside the immediate referral question; and
-4. whether failure to report the abnormality amounted to breach of duty.
+Central questions: what the radiographs demonstrated; whether the hip abnormalities were sufficiently apparent to require identification; whether a competent radiologist was required to review anatomy outside the referral question; and whether omission amounted to breach.
 
 ## Facts
 
-The claimant was born by Caesarean section on 14 October 2010.
-
-Shortly after birth, he experienced choking and swallowing difficulties. Several abdominal radiographs were obtained on 15 and 16 October because of concern about possible gastrointestinal malrotation.
-
-The radiographs included the pelvis and hips. They were reviewed by two radiologists, but no hip abnormality was reported.
-
-The claimant was subsequently diagnosed at approximately 14 months of age with bilateral developmental dysplasia of the hips. He required treatment and surgery.
-
-The claim alleged that abnormalities of hip alignment were visible on the neonatal radiographs and should have been identified and reported.
+The claimant, a child anonymised by court order, was born by Caesarean section on 14 October 2010 and experienced choking/swallowing difficulties. Abdominal radiographs on 15–16 October investigated possible gastrointestinal malrotation and included the pelvis and hips; two radiologists reviewed them but reported no hip abnormality. He was diagnosed at ~14 months with bilateral developmental dysplasia of the hips requiring treatment and surgery. The claim alleged hip-alignment abnormalities were visible on the neonatal radiographs and should have been identified and reported.
 
 ## The Parties’ Positions
 
-The claimant contended that the radiographs demonstrated abnormal alignment of the hips that should have been recognised by any reasonably competent radiologist.
-
-The defendant maintained that:
-
-- the examinations had been performed for a gastrointestinal question;
-- the appearances were subtle;
-- the neonatal hips were incompletely ossified;
-- the images were not dedicated pelvic examinations; and
-- responsible radiologists could reasonably have concentrated on the abdominal indication without identifying developmental dysplasia.
-
-The Trust did not admit breach. The issue was decided by the court after considering factual and expert radiological evidence.
+The claimant contended the radiographs demonstrated abnormal hip alignment any reasonably competent radiologist should recognise. The defendant maintained the examinations were for a gastrointestinal question, the appearances were subtle, neonatal hips were incompletely ossified, the images were not dedicated pelvic examinations, and responsible radiologists could reasonably concentrate on the abdominal indication without identifying developmental dysplasia. The Trust did not admit breach; the issue was decided on factual and expert radiological evidence.
 
 ## Decision
 
-The court found that the reporting radiologists had breached their duty of care.
-
-The judge concluded that the abnormalities around the hips and proximal femora were sufficiently apparent to require recognition and reporting.
-
-The court rejected the proposition that a reporting radiologist was entitled to confine review strictly to the organ or clinical question identified in the request.
+The court found the reporting radiologists had breached their duty of care: the abnormalities around the hips and proximal femora were sufficiently apparent to require recognition and reporting, and a radiologist was not entitled to confine review strictly to the organ or clinical question identified in the request.
 
 On the facts, the radiologists had failed to meet the minimum professional standard required when reviewing the images.
 

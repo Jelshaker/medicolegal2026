@@ -28,43 +28,19 @@ Whether the claimant's presentation on 3 March 2015 required emergency MRI for s
 
 ## Facts
 
-The claimant was a primary school teacher who injured her back at work on 17 February 2015.
+The claimant, a primary school teacher, injured her back at work on 17 February 2015 and subsequently reported back pain with subjective symptoms potentially associated with cauda equina syndrome (altered genital/perianal sensation, urinary changes, bowel difficulty). On 3 March 2015, following symptom progression, her GP advised attendance at the emergency department.
 
-She subsequently reported back pain and a number of subjective symptoms potentially associated with cauda equina syndrome. These included altered genital and perianal sensation, changes in urinary sensation and difficulty opening her bowels.
+An orthopaedic registrar took a history and performed an examination directed at possible cauda equina syndrome. Recorded objective findings were preserved perianal sensation, normal anal tone, no objective lower-limb motor deficit, no significant post-void residual bladder volume, and no objective clinical evidence of cauda equina syndrome. The registrar considered a lumbar disc prolapse but did not diagnose cauda equina syndrome; MRI was arranged for continuing back/radicular symptoms and safety-netting advice given.
 
-She was initially assessed in primary care. On 3 March 2015, following progression of her sensory symptoms, her general practitioner advised her to attend the emergency department.
-
-At the hospital, she was referred for assessment by an orthopaedic registrar. The registrar took a detailed history and performed an examination directed at possible cauda equina syndrome.
-
-The recorded objective findings included:
-
-- preserved perianal sensation;
-- normal anal tone;
-- no objective lower-limb motor deficit;
-- no significant post-void residual bladder volume; and
-- no objective clinical evidence of cauda equina syndrome.
-
-The registrar considered that the claimant probably had a lumbar disc prolapse but did not diagnose cauda equina syndrome. MRI was arranged to investigate the continuing back and radicular symptoms, and the claimant was given safety-netting advice.
-
-MRI was performed on 18 March 2015. It demonstrated a prolapsed disc compressing the cauda equina. The report was reviewed on 20 March, and decompression surgery was performed on 21 March 2015.
-
-The claimant was left with permanent neurological symptoms.
+MRI on 18 March 2015 demonstrated a prolapsed disc compressing the cauda equina. The report was reviewed on 20 March and decompression surgery performed on 21 March 2015. The claimant was left with permanent neurological symptoms.
 
 ## The Claim
 
-The claimant alleged that the Trust should have arranged emergency or substantially earlier MRI when she attended hospital on 3 March.
-
-Her case was that earlier imaging would have demonstrated cauda equina compression, led to earlier decompression and produced a better neurological outcome.
-
-The Trust denied both breach of duty and causation.
-
-It maintained that the registrar had reasonably excluded clinical cauda equina syndrome following a careful examination and that the timing of the later surgery did not cause additional neurological injury.
+The claimant alleged the Trust should have arranged emergency or substantially earlier MRI on 3 March, arguing earlier imaging would have demonstrated cauda equina compression, led to earlier decompression and produced a better neurological outcome. The Trust denied breach and causation, maintaining the registrar had reasonably excluded clinical cauda equina syndrome after careful examination and that surgery timing did not cause additional injury.
 
 ## Decision
 
-The claim was dismissed.
-
-The court held that the orthopaedic registrar was not negligent in concluding that the claimant did not exhibit clinical cauda equina syndrome on 3 March 2015.
+The claim was dismissed. The court held that the orthopaedic registrar was not negligent in concluding that the claimant did not exhibit clinical cauda equina syndrome on 3 March 2015.
 
 Although she reported subjective symptoms capable of raising concern, the objective examination did not support a diagnosis requiring emergency imaging. The registrar's examination was comprehensive and was described by the claimant's own orthopaedic expert as unusually thorough.
 
@@ -129,70 +105,30 @@ Where cauda equina syndrome is being considered, the contemporaneous record shou
 - the reason for the imaging priority; and
 - the safety-netting advice given.
 
+The claimant also failed on causation: earlier decompression would not probably have improved the outcome. Subjective red-flag symptoms require careful assessment, but the complete contemporaneous clinical picture determines imaging urgency; later confirmation of compression does not retrospectively establish negligent triage.
+
 Documentation is not a substitute for adequate care, but it is essential evidence of the assessment and reasoning that occurred.
 
 ## Practical Point for Radiologists
 
-Where the referral indicates possible cauda equina syndrome, the radiologist or vetting clinician should consider whether the requested priority is consistent with the clinical information supplied.
-
-If the request contains material red flags but seeks routine or substantially deferred imaging, clarification or escalation may be appropriate.
-
-The radiologist should not independently downgrade a clearly stated clinical suspicion of cauda equina syndrome without obtaining sufficient information and following the relevant local pathway.
+Where a referral indicates possible cauda equina syndrome, the radiologist or vetting clinician should consider whether the requested priority matches the clinical information supplied; material red flags seeking routine or deferred imaging warrant clarification or escalation. A clearly stated clinical suspicion should not be independently downgraded without sufficient information and adherence to the local pathway.
 
 ## Practical Point for Legal Professionals
 
-The analysis should distinguish:
-
-1. the adequacy of the clinical history and examination;
-2. the decision about whether emergency imaging was required;
-3. the administrative priority assigned to the MRI;
-4. when MRI would probably have occurred with competent care;
-5. what that earlier MRI would probably have shown;
-6. when surgery would then have taken place; and
-7. whether earlier decompression would probably have improved the outcome.
-
-The later MRI diagnosis does not determine breach. The contemporaneous records, witness evidence and clinical findings are central.
-
-Causation requires a specific counterfactual timeline. It is not enough to show that earlier imaging was possible; the claimant must prove that earlier investigation and treatment would probably have avoided or reduced the permanent injury.
+The analysis should distinguish the adequacy of the history and examination, the decision on emergency imaging, the administrative MRI priority, when MRI would probably have occurred with competent care, what it would have shown, when surgery would have taken place, and whether earlier decompression would probably have improved the outcome. The later MRI diagnosis does not determine breach; contemporaneous records, witness evidence and clinical findings are central. Causation requires a specific counterfactual timeline — earlier investigation being possible is not enough.
 
 ## Evidence to Obtain
 
-A delayed-MRI cauda equina claim will commonly require:
-
-- primary-care records;
-- physiotherapy and emergency-department records;
-- orthopaedic or spinal assessment notes;
-- bladder-scan records;
-- the MRI request and assigned priority;
-- booking and scheduling records;
-- the original MRI images and report;
-- spinal-surgical records;
-- operative findings;
-- postoperative neurological assessments;
-- local cauda equina and emergency-MRI pathways in force at the time;
-- expert evidence in the relevant clinical specialties; and
-- evidence addressing neurological causation and prognosis.
+Primary-care, physiotherapy and emergency-department records; orthopaedic/spinal assessment notes; bladder-scan records; the MRI request and assigned priority; booking and scheduling records; original MRI images and report; spinal-surgical and operative findings; postoperative neurological assessments; local cauda equina/emergency-MRI pathways; expert evidence in the relevant specialties; and neurological causation and prognosis evidence.
 
 ## Relationship with Other Authorities
 
-*Jarman* should not be conflated with *Darnley v Croydon Health Services NHS Trust* [2018] UKSC 50.
-
-*Darnley* concerned misleading information provided to a patient about the likely wait for medical assessment. *Jarman* concerned the clinical judgment of an orthopaedic registrar following examination.
-
-The case should also not be presented as authority on the adequacy of acquired radiographic views. Its focus was whether the clinical presentation required emergency MRI and whether the subsequent interval caused additional harm.
+*Jarman* should not be conflated with *Darnley v Croydon Health Services NHS Trust* [2018] UKSC 50 (misleading information about emergency-department waiting time) nor presented as authority on adequacy of radiographic views. Its focus was whether the clinical presentation required emergency MRI and whether the interval caused additional harm.
 
 ## Conclusion
 
-*Jarman* is a fact-specific decision about suspected cauda equina syndrome.
-
-It confirms that:
-
-- subjective red-flag symptoms require careful assessment;
-- the complete contemporaneous clinical picture determines imaging urgency;
-- later confirmation of compression does not retrospectively establish negligent triage;
-- a reasoned decision should be supported by an adequate examination and clear safety-netting; and
-- liability still requires proof that earlier imaging and treatment would probably have improved the outcome.
+*Jarman* is a fact-specific decision confirming that liability requires proof that earlier imaging and treatment would probably have improved the outcome.
 
 [Back to the case-law digest](/radiology-legal-cases#jarman).
 
-> Educational case commentary only. It is not legal advice, medical advice or a substituteion date above is the date of this commentary; the judgment was delivered on 18 February 2021.
+> Educational case commentary only. It is not legal advice, medical advice or a substitute for the judgment. The publication date above is the date of this commentary; the judgment was delivered on 18 February 2021.

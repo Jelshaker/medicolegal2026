@@ -472,22 +472,59 @@ html.dark {
 		border-top: 1px solid var(--color-border);
 	}
 
-	/* Gentle hierarchy inside part entries: detail sits slightly under its
-	   title, with tighter padding so entries stack compactly. */
+	/* Two-column entries: title left, detail right — inline, compact,
+	   and easy to scan. Scoped to parts so other pages keep their stack. */
 	.part-bg .entry {
-		padding-block: 1rem;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		column-gap: 1.5rem;
+		row-gap: 0.25rem;
+		align-items: start;
+		padding-block: 0.625rem;
+	}
+	.part-bg .entry-title {
+		margin: 0;
+		font-size: 0.875rem;
 	}
 	.part-bg .entry > .para-sm,
 	.part-bg .entry > .list {
-		padding-inline-start: 0.75rem;
+		margin: 0;
+		padding-inline-start: 0;
 	}
 
 	/* Tighter spacing between entries inside a part. */
 	.part-bg .entry-list {
-		margin-top: 1rem;
+		margin-top: 0.5rem;
 	}
 	.part-bg .entry-list > * + * {
 		border-top: 1px solid var(--color-border);
+	}
+
+	/* Condense every remaining element inside parts: sections, headings,
+	   copy — all tighter, all on this page only. */
+	.part-bg .sec {
+		padding-top: 1rem;
+	}
+	.part-bg .sec-title {
+		margin-top: 0.5rem;
+		font-size: 1.25rem;
+		line-height: 1.2;
+	}
+	@media (min-width: 640px) {
+		.part-bg .sec-title {
+			font-size: 1.4rem;
+		}
+	}
+	.part-bg .para {
+		margin-top: 0.5rem;
+		line-height: 1.5;
+	}
+	.part-bg .para-sm {
+		margin-top: 0.5rem;
+		line-height: 1.5;
+	}
+	.part-bg section {
+		scroll-margin-top: 4rem;
 	}
 
 	/* -------------------------------------------------------------- */
@@ -1564,7 +1601,7 @@ html.dark .d-num {
    sections within the page-level container. */
 .part-bg {
 	background: var(--color-paper);
-	padding-block: 3rem 2rem;
+	padding-block: 2rem 1.5rem;
 	padding-inline: 1.25rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1576,7 +1613,7 @@ html.dark .d-num {
 	}
 }
 .part-bg > * + * {
-	margin-top: 1.5rem;
+	margin-top: 1rem;
 }
 
 /* Color accent bar — fixed-width slab on the left edge. */

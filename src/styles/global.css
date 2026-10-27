@@ -480,11 +480,11 @@ html.dark {
 		column-gap: 1.5rem;
 		row-gap: 0.25rem;
 		align-items: start;
-		padding-block: 0.625rem;
+		padding-block: 0.875rem;
 	}
 	.part-bg .entry-title {
 		margin: 0;
-		font-size: 0.875rem;
+		font-size: 1rem;
 	}
 	.part-bg .entry > .para-sm,
 	.part-bg .entry > .list {
@@ -507,21 +507,23 @@ html.dark {
 	}
 	.part-bg .sec-title {
 		margin-top: 0.5rem;
-		font-size: 1.25rem;
-		line-height: 1.2;
+		font-size: 1.5rem;
+		line-height: 1.25;
 	}
 	@media (min-width: 640px) {
 		.part-bg .sec-title {
-			font-size: 1.4rem;
+			font-size: 1.75rem;
 		}
 	}
 	.part-bg .para {
 		margin-top: 0.5rem;
-		line-height: 1.5;
+		font-size: 1rem;
+		line-height: 1.6;
 	}
 	.part-bg .para-sm {
 		margin-top: 0.5rem;
-		line-height: 1.5;
+		font-size: 0.9375rem;
+		line-height: 1.6;
 	}
 	.part-bg section {
 		scroll-margin-top: 4rem;
@@ -1601,7 +1603,8 @@ html.dark .d-num {
    sections within the page-level container. */
 .part-bg {
 	background: var(--color-paper);
-	padding-block: 2rem 1.5rem;
+	border-top: 4px solid var(--accent, #94a3b8);
+	padding-block: 3rem 2rem;
 	padding-inline: 1.25rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1621,7 +1624,7 @@ html.dark .d-num {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 3px;
+	width: 5px;
 	left: 0;
 	background: var(--accent, #94a3b8);
 }
@@ -1631,7 +1634,8 @@ html.dark .d-num {
 .part-mark {
 	display: flex;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 2rem;
+	padding-block: 1.5rem 1rem;
 	padding-inline: 2rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1640,50 +1644,50 @@ html.dark .d-num {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0.75rem;
 	flex-shrink: 0;
-	width: 0.75rem;
-	min-height: 2rem;
+	width: 1.25rem;
+	min-height: 3.5rem;
 	position: relative;
 }
 .part-mark-dot::after {
 	content: "";
 	position: absolute;
 	left: 50%;
-	top: 0.9rem;
-	bottom: 0.4rem;
-	width: 1px;
-	background: #e2e8f0;
+	top: 1.25rem;
+	bottom: 0.6rem;
+	width: 2px;
+	background: #b0b8c1;
 	transform: translatex(-50%);
 }
 .part-mark-dot::before {
 	content: "";
 	display: block;
-	width: 0.55rem;
-	height: 0.55rem;
+	width: 1.25rem;
+	height: 1.25rem;
 	border-radius: 50%;
 	background: var(--accent, #94a3b8);
 	flex-shrink: 0;
 }
 .part-mark-label {
 	font-family: var(--font-sans);
-	font-size: 0.7rem;
-	font-weight: 600;
-	letter-spacing: 0.14em;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
 	text-transform: uppercase;
-	color: #94a3b8;
-	padding-top: 0.5rem;
-	border-top: 1px solid #cbd5e1;
+	color: #1e293b;
+	padding-top: 1rem;
+	border-top: 2px solid var(--accent, #94a3b8);
 }
 .part-mark-label-sub {
 	display: block;
 	font-weight: 400;
-	font-size: 0.65rem;
-	letter-spacing: 0.06em;
-	color: #94a3b8;
-	margin-top: 0.2rem;
-	padding-top: 0.5rem;
-	border-top: 1px solid #e2e8f0;
+	font-size: 0.9375rem;
+	letter-spacing: 0.05em;
+	color: #475569;
+	margin-top: 0.5rem;
+	padding-top: 0.625rem;
+	border-top: 1px solid var(--accent, #94a3b8);
 }
 
 /* Mobile: stack the dot above the label, centre the whole block. */

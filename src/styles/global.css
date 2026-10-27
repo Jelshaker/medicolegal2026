@@ -473,13 +473,21 @@ html.dark {
 	}
 
 	/* Gentle hierarchy inside part entries: detail sits slightly under its
-	   title, and entries breathe a little more. */
+	   title, with tighter padding so entries stack compactly. */
 	.part-bg .entry {
-		padding-block: 1.5rem;
+		padding-block: 1rem;
 	}
 	.part-bg .entry > .para-sm,
 	.part-bg .entry > .list {
-		padding-inline-start: 1rem;
+		padding-inline-start: 0.75rem;
+	}
+
+	/* Tighter spacing between entries inside a part. */
+	.part-bg .entry-list {
+		margin-top: 1rem;
+	}
+	.part-bg .entry-list > * + * {
+		border-top: 1px solid var(--color-border);
 	}
 
 	/* -------------------------------------------------------------- */
@@ -1556,7 +1564,7 @@ html.dark .d-num {
    sections within the page-level container. */
 .part-bg {
 	background: var(--color-paper);
-	padding-block: 5rem 3.5rem;
+	padding-block: 3rem 2rem;
 	padding-inline: 1.25rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1568,7 +1576,7 @@ html.dark .d-num {
 	}
 }
 .part-bg > * + * {
-	margin-top: 3rem;
+	margin-top: 1.5rem;
 }
 
 /* Color accent bar — fixed-width slab on the left edge. */
@@ -1595,17 +1603,17 @@ html.dark .d-num {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.625rem;
+	gap: 0.5rem;
 	flex-shrink: 0;
 	width: 0.75rem;
-	min-height: 3rem;
+	min-height: 2rem;
 	position: relative;
 }
 .part-mark-dot::after {
 	content: "";
 	position: absolute;
 	left: 50%;
-	top: 1.35rem;
+	top: 0.9rem;
 	bottom: 0.4rem;
 	width: 1px;
 	background: #e2e8f0;
@@ -1614,8 +1622,8 @@ html.dark .d-num {
 .part-mark-dot::before {
 	content: "";
 	display: block;
-	width: 0.6rem;
-	height: 0.6rem;
+	width: 0.55rem;
+	height: 0.55rem;
 	border-radius: 50%;
 	background: var(--accent, #94a3b8);
 	flex-shrink: 0;
@@ -1627,7 +1635,7 @@ html.dark .d-num {
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
 	color: #94a3b8;
-	padding-top: 0.625rem;
+	padding-top: 0.5rem;
 	border-top: 1px solid #cbd5e1;
 }
 .part-mark-label-sub {

@@ -18,174 +18,36 @@ keyTakeaways:
 ---
 
 **KJY v University College London Hospital NHS Foundation Trust**  
-**[2023] EWHC 2719 (KB)**
-
-Judgment was given by Dexter Dias KC, sitting as a Deputy High Court Judge, on 25 July 2023.
-
-The claimant was anonymised by order of the court because he was a child.
+**[2023] EWHC 2719 (KB)**  
+Judgment given by Dexter Dias KC, sitting as a Deputy High Court Judge, on 25 July 2023.
 
 ## Issue
 
-Whether radiologists reporting neonatal abdominal radiographs should have identified and reported abnormal hip alignment visible outside the principal clinical area under investigation.
+The central question was whether radiologists reviewing neonatal abdominal radiographs had a duty to identify and report hip alignment abnormalities visible outside the primary gastrointestinal referral question. This required determining what the images objectively demonstrated, whether the findings were sufficiently conspicuous, and whether omitting them fell outside responsible professional practice.
 
-Central questions: what the radiographs demonstrated; whether the hip abnormalities were sufficiently apparent to require identification; whether a competent radiologist was required to review anatomy outside the referral question; and whether omission amounted to breach.
+## Facts and Positions
 
-## Facts
+The claimant, a child anonymised by court order, presented with swallowing difficulties in October 2010. Abdominal radiographs obtained to investigate possible gastrointestinal malrotation incidentally included the pelvis and hips. Two radiologists reviewed the images but reported no hip abnormality. The child was later diagnosed with bilateral developmental dysplasia of the hip (DDH). The claimant contended that the hip abnormalities were obvious on the initial films, while the Trust argued the examinations were targeted at a gastrointestinal indication, the neonatal hips were incompletely ossified, and responsible radiologists could reasonably focus on the abdominal question without identifying DDH.
 
-The claimant, a child anonymised by court order, was born by Caesarean section on 14 October 2010 and experienced choking/swallowing difficulties. Abdominal radiographs on 15–16 October investigated possible gastrointestinal malrotation and included the pelvis and hips; two radiologists reviewed them but reported no hip abnormality. He was diagnosed at ~14 months with bilateral developmental dysplasia of the hips requiring treatment and surgery. The claim alleged hip-alignment abnormalities were visible on the neonatal radiographs and should have been identified and reported.
+## Decision and Legal Principle
 
-## The Parties’ Positions
+The court found that the reporting radiologists had breached their duty of care, holding that the hip abnormalities were sufficiently apparent to require recognition. Crucially, a radiologist is not entitled to confine their review strictly to the organ or clinical question specified in the referral. The clinical indication guides attention and protocol but does not absolve the reporter from identifying clinically significant, sufficiently conspicuous abnormalities elsewhere on the acquired images. The assessment remains governed by the Bolam test, subject to Bolitho’s requirement for logical scrutiny, requiring the court to objectively evaluate image quality, the conspicuity of the finding, and whether a responsible body of radiologists could reasonably have omitted it. The judgment determined breach of duty only; causation and quantum were left undetermined.
 
-The claimant contended the radiographs demonstrated abnormal hip alignment any reasonably competent radiologist should recognise. The defendant maintained the examinations were for a gastrointestinal question, the appearances were subtle, neonatal hips were incompletely ossified, the images were not dedicated pelvic examinations, and responsible radiologists could reasonably concentrate on the abdominal indication without identifying developmental dysplasia. The Trust did not admit breach; the issue was decided on factual and expert radiological evidence.
+## Scope of Review and Incidental Findings
 
-## Decision
+While the case advocates for whole-image review, it does not mandate exhaustive scrutiny of every anatomical structure regardless of context. The duty to report incidental findings is fact-sensitive and balances several factors: the technical adequacy of the image, the anatomical coverage, the clinical importance and conspicuity of the abnormality, the inherent limitations of the examination, and the standard reasonably expected at the time. Minor, equivocal, or poorly visualised variations may reasonably be omitted. However, clear and clinically significant abnormalities require reporting, even when incidental to the primary referral. The court’s conclusion rested on the specific neonatal radiographs and expert evidence that the hip abnormalities fell squarely on the reportable side of this distinction.
 
-The court found the reporting radiologists had breached their duty of care: the abnormalities around the hips and proximal femora were sufficiently apparent to require recognition and reporting, and a radiologist was not entitled to confine review strictly to the organ or clinical question identified in the request.
+## Clinical and Practical Guidance
 
-On the facts, the radiologists had failed to meet the minimum professional standard required when reviewing the images.
+This judgment is particularly relevant for examinations that naturally encompass anatomy beyond the immediate clinical target, such as hips on abdominal films, lung bases on upper abdominal views, or kidneys on spinal imaging. Radiologists should employ a systematic review pattern to minimise the risk of overlooking significant incidental abnormalities. Reports must directly answer the referral question, clearly identify clinically significant incidental findings, distinguish definitive observations from areas of uncertainty, and recommend further investigation where appropriate. Where included anatomy is inadequately demonstrated, reporters should avoid implying false reassurance and instead note the limited assessability. Urgent or unexpected incidental findings must be communicated through established safety-netting pathways.
 
-The judgment determined breach of duty. It did not determine causation or quantum.
+## Legal Analysis, Evidence and Precedential Value
 
-## Principle
-
-A radiologist reporting an examination should review the acquired images as a whole and should not disregard a clinically significant abnormality merely because it falls outside the principal referral question.
-
-The clinical indication remains important. It directs attention, informs protocol selection and affects interpretation. It does not necessarily remove responsibility for other sufficiently apparent abnormalities included within the examination.
-
-The legal analysis remains governed by *Bolam v Friern Hospital Management Committee* [1957] 1 WLR 582, subject to the logical scrutiny required by *Bolitho v City and Hackney Health Authority* [1998] AC 232.
-
-The court must determine:
-
-- what the images objectively showed;
-- whether the abnormality was sufficiently conspicuous;
-- whether a responsible body of radiologists could reasonably have omitted it; and
-- whether the supporting professional opinion has a logical basis.
-
-## Whole-Image Review
-
-The expression “whole-image review” should be used with care.
-
-*KJY* does not mean that every structure on every examination must receive identical attention regardless of:
-
-- the clinical indication;
-- the imaging modality;
-- anatomical coverage;
-- image quality;
-- patient age;
-- study protocol;
-- the conspicuity of the finding; or
-- the limitations inherent in the examination.
-
-The decision establishes a more limited and defensible proposition: a radiologist cannot necessarily ignore a clinically important abnormality that is sufficiently apparent on the images simply because it is incidental to the reason for the examination.
-
-Whether omission amounts to negligence remains fact-sensitive.
-
-## Incidental Findings
-
-An incidental finding is an abnormality unrelated to the principal clinical indication.
-
-Its presence on the image does not automatically establish that failure to report it was negligent. Relevant considerations include:
-
-- conspicuity;
-- clinical importance;
-- anatomical coverage;
-- technical adequacy;
-- the purpose of the examination;
-- whether the structure was assessable;
-- whether the appearance required further investigation; and
-- the standard reasonably expected at the time.
-
-A small, equivocal or poorly demonstrated abnormality may reasonably be omitted. A clear and clinically important abnormality is more likely to require reporting even if it lies outside the referral question.
-
-*KJY* fell on the latter side of that distinction.
-
-## Radiological Significance
-
-The case is particularly relevant to radiographs that include anatomy beyond the immediate clinical target.
-
-Examples may include:
-
-- hips visible on abdominal or pelvic radiographs;
-- lung bases visible on upper abdominal imaging;
-- bones and soft tissues included on chest radiographs;
-- kidneys and other abdominal organs included on spinal imaging; and
-- vascular or skeletal abnormalities visible on examinations performed for another purpose.
-
-The appropriate standard is not exhaustive reporting of every benign variation. It is a competent and systematic review capable of identifying significant abnormalities reasonably apparent within the examination.
-
-## Practical Point for Radiologists
-
-A systematic review pattern reduces the risk of overlooking abnormalities outside the principal clinical question.
-
-The report should:
-
-- answer the referral question;
-- identify significant incidental abnormalities;
-- distinguish definite findings from uncertainty;
-- recommend further investigation where reasonably required; and
-- communicate urgent or unexpected findings through the appropriate pathway.
-
-Where anatomy is included but inadequately demonstrated, the reporter should avoid giving false reassurance about structures that cannot reliably be assessed.
-
-## Practical Point for Legal Professionals
-
-The fact that an abnormality is visible retrospectively is not sufficient to prove breach.
-
-Expert evidence should address:
-
-1. whether the relevant anatomy was included;
-2. whether it was technically assessable;
-3. what the original images demonstrated;
-4. how conspicuous the abnormality was without annotation or knowledge of the later diagnosis;
-5. whether the clinical indication materially affected detection;
-6. whether a responsible body of radiologists could reasonably have omitted the finding; and
-7. whether the supporting opinion withstands logical analysis.
-
-The expert should review the original DICOM or source images where available rather than relying on selected screenshots or later annotated copies.
-
-## Precedential Status
-
-*KJY* is a first-instance decision of the High Court.
-
-It provides important guidance on incidental findings and review of the acquired image, but it does not carry the same precedential weight as a decision of the Court of Appeal or Supreme Court.
-
-Its conclusion was based on the particular neonatal radiographs and the factual and expert evidence presented at trial.
-
-The case should therefore not be cited as establishing automatic liability whenever an incidental abnormality is subsequently identified.
-
-## Relationship with Research on Incidental Findings
-
-Research into abdominal-radiology claims indicates that allegations concerning incidental abnormalities are common, but most allegations do not necessarily establish substandard reporting.
-
-That evidence is consistent with the fact-sensitive approach required by *KJY*.
-
-The proper question is not merely whether the abnormality was present. It is whether it was sufficiently apparent and clinically important that omission fell outside responsible radiological practice.
-
-## Evidence to Obtain
-
-A claim concerning an incidental imaging finding will commonly require:
-
-- the complete original examination;
-- the original report and any addenda;
-- the imaging request and clinical details;
-- relevant prior imaging;
-- subsequent imaging demonstrating the abnormality;
-- details of the original display and image quality where available;
-- professional standards in force at the time;
-- evidence concerning the clinical significance of the finding; and
-- evidence addressing what earlier reporting would probably have changed.
-
-Causation should be considered separately from breach.
+As a first-instance High Court decision, KJY does not carry binding precedential weight equal to the Court of Appeal or Supreme Court, nor does it establish automatic liability for every missed incidental finding. Instead, it represents a careful application of established negligence principles to imaging practice. For legal professionals, proving breach requires robust expert evidence addressing whether the relevant anatomy was technically assessable, what the original images objectively showed, how conspicuous the abnormality was without post-hoc knowledge, and whether the omission defied a logically sound professional opinion. Original DICOM data, rather than annotated screenshots, should be reviewed. Causation and clinical significance must always be analysed separately from breach.
 
 ## Conclusion
 
-*KJY* demonstrates that the referral question does not necessarily define the outer boundary of a radiologist’s responsibility.
-
-Where a clinically significant abnormality is sufficiently apparent on the acquired images, it may require reporting even though it is incidental to the original indication.
-
-The decision does not impose liability for every missed incidental finding. The court must still consider the examination, conspicuity, clinical context and range of responsible professional opinion.
-
-As a first-instance judgment, *KJY* is best treated as a careful application of established negligence principles to whole-image review rather than as an absolute rule.
+KJY clarifies that a clinical referral does not define the absolute boundary of a radiologist’s responsibility. When a clinically significant abnormality is sufficiently apparent on acquired images, it generally warrants reporting, irrespective of the primary indication. However, the decision does not impose strict liability for every overlooked incidental finding. Each case remains fact-specific, requiring careful evaluation of image quality, conspicuousness, clinical context, and prevailing professional standards.
 
 /radiology-legal-cases#kjy.
 

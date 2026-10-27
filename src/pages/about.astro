@@ -1,203 +1,340 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
-import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
-import PageIntro from "../components/PageIntro.astro";
-import Section from "../components/Section.astro";
-import Figure from "../components/Figure.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
+import Figure from '../components/Figure.astro';
+import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
+
+const qualifications = [
+    'MBChB',
+    'PGCert Diagnostic Imaging',
+    'PGDip Clinical Education',
+    'PGDip Research Training',
+    'LLM Healthcare Ethics and Law',
+    'MD',
+    'FRCR',
+] as const;
 
 const scope = [
-	{
-		t: "Delayed diagnosis",
-		d: "Whether a finding was demonstrable on the images as acquired, and whether any delay materially altered the treatment pathway or outcome.",
-	},
-	{
-		t: "Staging & incidental findings",
-		d: "Tumour staging errors, peritoneal disease, and pathology that was incidental to the clinical question actually asked of the reporter.",
-	},
-	{
-		t: "Consent & interventional practice",
-		d: "Whether material risks were explained and documented, and whether complications were disclosed promptly and candidly.",
-	},
-	{
-		t: "Measurement & quantum",
-		d: "Reproducibility of size, angle and index measurements where damages turn on a numerical threshold.",
-	},
-	{
-		t: "Teleradiology & systemic risk",
-		d: "The reporting chain as a whole — the individual reporter, the reporting provider, escalation protocols and contract safeguards.",
-	},
-	{
-		t: "Protocol adequacy",
-		d: "Whether the study performed was capable of answering the clinical question, and whose decision that protocol was.",
-	},
-];
+    {
+        title: 'Gastrointestinal and hepatobiliary imaging',
+        description:
+            'CT, MRI, ultrasound and fluoroscopic assessment of gastrointestinal and hepatobiliary disease.',
+    },
+    {
+        title: 'Peritoneal malignancy',
+        description:
+            'Detection, distribution and radiological assessment of peritoneal disease, including comparison across serial examinations.',
+    },
+    {
+        title: 'Oncological imaging',
+        description:
+            'Diagnosis, staging, treatment response and surveillance in abdominal malignancy.',
+    },
+    {
+        title: 'Delayed diagnosis',
+        description:
+            'Assessment of whether an abnormality should reasonably have been identified, characterised or investigated earlier.',
+    },
+    {
+        title: 'Protocol and report review',
+        description:
+            'Consideration of examination technique, image quality, clinical information and the adequacy of the contemporaneous report.',
+    },
+    {
+        title: 'Diagnostic intervention',
+        description:
+            'Radiological issues arising from image-guided diagnostic procedures, including ultrasound- and CT-guided biopsy.',
+    },
+] as const;
 
-const standards = [
-	{ n: "Bolam v Friern Hospital Management Committee [1957] 1 WLR 582", d: "The standard of care — a responsible body of skilled professional opinion." },
-	{ n: "Bolitho v City and Hackney HA [1997] UKHL 46", d: "A body of opinion must have a logical basis before it can defeat a claim." },
-	{ n: "Montgomery v Lanarkshire Health Board [2015] UKSC 11", d: "Consent judged by the materiality of risk to a reasonable patient in that patient's position." },
-	{ n: "CPR Part 35 and PD 35", d: "The overriding duty to the court, the required form of the report, and the limits of expert advocacy." },
-	{ n: "Ikarian Reefer [1993] 2 Lloyd's Rep 68", d: "The classic statement of an expert's independent duties, including the duty to state the basis of opinion." },
-	{ n: "GMC Good Medical Practice & Confidentiality guidance", d: "Professional obligations on record-keeping, candour and the handling of patient information." },
-	{ n: "RCR Standards for interpretation and reporting (2025)", d: "The professional benchmark for report content, escalation, remote reporting and AI-assisted reporting." },
-	{ n: "EMA / Expert Witness Institute Code of Practice", d: "Duties of competence, impartiality, confidentiality and the maintenance of a complaints procedure." },
-];
+const memberships = [
+    'Fellow of the Royal College of Radiologists',
+    'British Society of Gastrointestinal and Abdominal Radiology',
+] as const;
 ---
 
 <BaseLayout
-	title={`About | ${SITE_TITLE}`}
-	description="The curator of this radiology and medicolegal law resource: Dr Joseph El-Sheikha, Consultant Radiologist and medicolegal expert witness — how the reference material is maintained, and the scope of his independent CPR Part 35 opinions on delayed diagnosis, staging error, consent and teleradiology."
+    title={`About | ${SITE_TITLE}`}
+    description="About Dr Joseph El-Sheikha, Consultant Radiologist, and the purpose and editorial approach of this radiology and medicolegal resource."
 >
-	<PageHero
-		eyebrow="About this resource"
-		title={"Dr Joseph El-Sheikha"}
-		description="Consultant Radiologist, independent medicolegal expert witness, and the curator of this reference resource. The opinion I provide is written for the court rather than for the party instructing me."
-		heroImage={PAGE_HERO_IMAGES["/about"] || undefined}
-	/>
+    <PageHero
+        eyebrow="About"
+        title="Dr Joseph El-Sheikha"
+        description="Consultant Radiologist with specialist interests in gastrointestinal, hepatobiliary, oncological and peritoneal imaging."
+        heroImage={PAGE_HERO_IMAGES["/about"] || undefined}
+    />
 
-	<PageIntro
-		eyebrow="About this resource"
-		paragraphs={[
-			"The resource is curated by a single consultant radiologist in NHS practice with an independent medicolegal workload. That is deliberate: a small resource can be kept accurate and sourced, and does not accumulate the padding that larger collections do.",
-			"The commentary is written from practice rather than from a textbook, and is checked against the primary sources cited throughout.",
-		]}
-		contents={[
-			{ href: "#independence", label: "Independence" },
-			{ href: "#scope", label: "Scope of practice" },
-			{ href: "#standards", label: "Standards worked to" },
-			{ href: "#memberships", label: "Memberships" },
-			{ href: "#next-steps", label: "Next steps" },
-		]}
-		audience="Written for radiologists, trust legal teams, solicitors, barristers, insurers and expert witnesses."
-		reviewed="September 2026"
-	/>
+    <PageIntro
+        eyebrow="Professional profile"
+        paragraphs={[
+            'Dr Joseph El-Sheikha is a Consultant Radiologist at Hampshire Hospitals NHS Foundation Trust. His principal interests include gastrointestinal, hepatobiliary, oncological and peritoneal imaging, together with image-guided diagnostic intervention.',
+            'He curates this independent educational resource on radiology and medicolegal law. The material is intended to provide concise, sourced clinical and legal reference for healthcare and legal professionals.'
+        ]}
+        contents={[
+            { href: '#profile', label: 'Professional profile' },
+            { href: '#scope', label: 'Scope of practice' },
+            { href: '#memberships', label: 'Qualifications and memberships' },
+            { href: '#resource', label: 'About the resource' },
+            { href: '#expert-evidence', label: 'Expert evidence' },
+            { href: '#next-steps', label: 'Further information' },
+        ]}
+        audience="For healthcare and legal professionals."
+        reviewed="October 2026"
+    />
 
-	<section class="band">
-		<div class="container-page">
-			<div class="doc space-y-12">
-				<Section
-					id="independence"
-					index="01"
-					eyebrow="Independent expert evidence"
-					title="Opinion written for the court, not for the party instructing me"
-					lead="An expert's overriding duty is to the court. The method does not change with the side that has instructed me."
-				>
-					<p class="para">
-						My practice is a radiological one with a legal method. The images answer technical questions —
-						what was acquired, what was demonstrable, what a competent reporter would have seen at the
-						time — and the law then asks separate questions about breach, causation and loss. Keeping those
-						analyses apart is the discipline that makes an expert report useful, and it is the reason a
-						report stands up in cross-examination.
-					</p>
-					<p class="para">
-						I accept instructions from claimants and defendants alike. Under CPR 35.3 an expert's
-						overriding duty is to the court, so the analysis is the same whichever side has instructed me:
-						re-derive from the source DICOM, reconstruct the contemporaneous conditions, state clearly what
-						is fact and what is opinion, and set out what would change my view. Where the radiological
-						evidence does not support the case being advanced, the report says so.
-					</p>
-					<p class="para">
-						I do not express opinions outside my competence. Questions of surgical technique, oncology
-						management or life expectancy fall to surgeons and oncologists; my role is to define precisely
-						what imaging did and did not show, and to identify where a radiological conclusion ends and
-						another discipline's begins.
-					</p>
-					<div class="mx-auto mt-10 max-w-sm">
-						<Figure
-							src={"/images/practitioner.jpg"}
-							alt={"Dr Joseph El-Sheikha"}
-							label="Plate 01"
-							caption={"Dr Joseph El-Sheikha"}
-							subtitle="Consultant Radiologist and independent medicolegal expert witness."
-							ratio="portrait"
-							flush
-						/>
-					</div>
-					<table class="mt-10 w-full border-collapse text-left">
-						<thead>
-							<tr>
-								<th scope="col" class="border-b border-slate-400 bg-paper px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">At a glance</th>
-								<th scope="col" class="border-b border-slate-400 bg-paper px-3 py-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Particulars</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">Qualifications</th>
-								<td>{"MBChB (Hons), FRCS, FRCR"}</td>
-							</tr>
-							<tr>
-								<th scope="row">Sub-specialty</th>
-								<td>{"MSK, GI & Interventional Radiology"}</td>
-							</tr>
-							<tr>
-								<th scope="row">Registration</th>
-								<td>{"1234567"}</td>
-							</tr>
-							<tr>
-								<th scope="row">Indemnity</th>
-								<td>{"Medical Defence Union"}</td>
-							</tr>
-						</tbody>
-					</table>
-				</Section>
+    <section class="band">
+        <div class="container-page">
+            <div class="doc space-y-14">
 
-				<Section
-					id="scope"
-					index="02"
-					eyebrow="Scope of practice"
-					title="Where radiological opinion decides the issue"
-					lead="These are the questions in which a radiological opinion is usually decisive rather than peripheral."
-				>
-					<div class="entry-list-ruled">
-						<div class="entry"><h3 class="entry-title">Delayed diagnosis</h3><p class="para-sm">Whether a finding was demonstrable on the images as acquired, and whether any delay materially altered the treatment pathway or outcome.</p></div>
-						<div class="entry"><h3 class="entry-title">Staging &amp; incidental findings</h3><p class="para-sm">Tumour staging errors, peritoneal disease, and pathology that was incidental to the clinical question actually asked of the reporter.</p></div>
-						<div class="entry"><h3 class="entry-title">Consent &amp; interventional practice</h3><p class="para-sm">Whether material risks were explained and documented, and whether complications were disclosed promptly and candidly.</p></div>
-						<div class="entry"><h3 class="entry-title">Measurement &amp; quantum</h3><p class="para-sm">Reproducibility of size, angle and index measurements where damages turn on a numerical threshold.</p></div>
-						<div class="entry"><h3 class="entry-title">Teleradiology &amp; systemic risk</h3><p class="para-sm">The reporting chain as a whole -- the individual reporter, the reporting provider, escalation protocols and contract safeguards.</p></div>
-						<div class="entry"><h3 class="entry-title">Protocol adequacy</h3><p class="para-sm">Whether the study performed was capable of answering the clinical question, and whose decision that protocol was.</p></div>
-					</div>
-				</Section>
+                <Section
+                    id="profile"
+                    index="01"
+                    eyebrow="Professional profile"
+                    title="Consultant Radiologist"
+                >
+                    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+                        <div>
+                            <p class="para">
+                                Dr El-Sheikha practises as a Consultant Radiologist at
+                                Hampshire Hospitals NHS Foundation Trust. His work includes
+                                cross-sectional imaging, ultrasound, fluoroscopy and
+                                image-guided diagnostic procedures.
+                            </p>
 
-				<Section
-					id="standards"
-					index="03"
-					eyebrow="The framework"
-					title="Standards and authorities I work to"
-					lead="The professional standards and legal authorities against which an imaging opinion is prepared and tested."
-				>
-					<div class="entry-list-ruled">
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">01</span><p class="font-serif text-sm font-bold text-slate-900">Bolam v Friern Hospital Management Committee [1957] 1 WLR 582</p></div><p class="para-sm mt-1">The standard of care -- a responsible body of skilled professional opinion.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">02</span><p class="font-serif text-sm font-bold text-slate-900">Bolitho v City and Hackney HA [1997] UKHL 46</p></div><p class="para-sm mt-1">A body of opinion must have a logical basis before it can defeat a claim.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">03</span><p class="font-serif text-sm font-bold text-slate-900">Montgomery v Lanarkshire Health Board [2015] UKSC 11</p></div><p class="para-sm mt-1">Consent judged by the materiality of risk to a reasonable patient in that patient's position.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">04</span><p class="font-serif text-sm font-bold text-slate-900">CPR Part 35 and PD 35</p></div><p class="para-sm mt-1">The overriding duty to the court, the required form of the report, and the limits of expert advocacy.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">05</span><p class="font-serif text-sm font-bold text-slate-900">Ikarian Reefer [1993] 2 Lloyd's Rep 68</p></div><p class="para-sm mt-1">The classic statement of an expert's independent duties, including the duty to state the basis of opinion.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">06</span><p class="font-serif text-sm font-bold text-slate-900">GMC Good Medical Practice &amp; Confidentiality guidance</p></div><p class="para-sm mt-1">Professional obligations on record-keeping, candour and the handling of patient information.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">07</span><p class="font-serif text-sm font-bold text-slate-900">RCR Standards for interpretation and reporting (2025)</p></div><p class="para-sm mt-1">The professional benchmark for report content, escalation, remote reporting and AI-assisted reporting.</p></div>
-						<div class="py-4"><div class="flex-baseline-sm"><span class="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">08</span><p class="font-serif text-sm font-bold text-slate-900">EMA / Expert Witness Institute Code of Practice</p></div><p class="para-sm mt-1">Duties of competence, impartiality, confidentiality and the maintenance of a complaints procedure.</p></div>
-					</div>
-				</Section>
+                            <p class="para">
+                                His specialist interests are gastrointestinal,
+                                hepatobiliary and oncological imaging, with a particular
+                                interest in peritoneal malignancy.
+                            </p>
 
-				<Section id="memberships" eyebrow="Professional bodies" title="Memberships">
-					<ul class="list">
-						<li>Fellow - Royal College of Radiologists (FRCR)</li>
-						<li>Member - European Society of Radiology (ESR)</li>
-						<li>British Society of Gastroenterology and Abdominal Imaging (BSGAR)</li>
-					</ul>
+                            <p class="para">
+                                His academic and professional training includes clinical
+                                education, research methodology, diagnostic imaging and
+                                healthcare ethics and law.
+                            </p>
+                        </div>
 
-				</Section>
+                        <Figure
+                            src="/images/practitioner.jpg"
+                            alt="Dr Joseph El-Sheikha"
+                            label="Profile"
+                            caption="Dr Joseph El-Sheikha"
+                            subtitle="Consultant Radiologist."
+                            ratio="portrait"
+                            flush
+                        />
+                    </div>
+                </Section>
 
-				<Section id="next-steps" eyebrow="Elsewhere in the resource" title="Next steps">
-					<ul class="mt-6 space-y-2.5 divider pt-4">
-						<li><a href="/curriculum-vitae" class="link-sm">Full curriculum vitae</a></li>
-						<li><a href="/expert-witness-gi-peritoneal-malignancy" class="link-sm">Expert witness services</a></li>
-						<li><a href="/radiology-fundamentals" class="link-sm">Radiology fundamentals</a></li>
-						<li><a href="/medicolegal-fundamentals" class="link-sm">Medicolegal law library</a></li>
-						<li><a href="/sitemap" class="link-sm">Site map</a></li>
-						<li><a href="/contact" class="link-sm">Contact the secretariat</a></li>
-					</ul>
-				</Section>
-			</div>
-		</div>
-	</section>
+                <Section
+                    id="scope"
+                    index="02"
+                    eyebrow="Clinical practice"
+                    title="Scope of Practice"
+                    lead="Clinical and medicolegal work is confined to matters within current radiological expertise."
+                >
+                    <div class="entry-list-ruled">
+                        {
+                            scope.map((item) => (
+                                <div class="entry">
+                                    <h3 class="entry-title">{item.title}</h3>
+                                    <p class="para-sm">{item.description}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </Section>
+
+                <Section
+                    id="memberships"
+                    index="03"
+                    eyebrow="Professional background"
+                    title="Qualifications and Memberships"
+                >
+                    <div class="entry-list">
+                        <div class="entry">
+                            <h3 class="entry-title">Qualifications</h3>
+
+                            <ul class="list">
+                                {
+                                    qualifications.map((qualification) => (
+                                        <li>{qualification}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Professional memberships</h3>
+
+                            <ul class="list">
+                                {
+                                    memberships.map((membership) => (
+                                        <li>{membership}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="para-sm mt-6">
+                        Current medical registration may be confirmed through the
+                        <a
+                            href="https://www.gmc-uk.org/registration-and-licensing/our-registers"
+                            class="link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            General Medical Council register
+                        </a>.
+                    </p>
+                </Section>
+
+                <Section
+       ence principles
+                        and relevant case law.
+                    </p>
+
+                    <div class="entry-list">
+                        <div class="entry">
+                            <h3 class="entry-title">Clinically grounded</h3>
+                            <p class="para-sm">
+                                Radiological subjects are explained by reference to clinical
+                                practice, image acquisition, interpretation and reporting
+                                context.
+                            </p>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Source based</h3>
+                            <p class="para-sm">
+                                Legal and professional material is checked against primary
+                                authorities, legislation and current published guidance
+                                wherever possible.
+                            </p>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Selective</h3>
+                            <p class="para-sm">
+                                The aim is a practical and accessible reference rather than
+                                an exhaustive legal textbook or clinical manual.
+                            </p>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Independently curated</h3>
+                            <p class="para-sm">
+                                The resource is maintained by a practising consultant
+                                radiologist. Content is reviewed and revised as the law,
+                                professional guidance and radiological practice develop.
+                            </p>
+                        </div>
+                    </div>
+
+                    <Callout tone="caution" title="Educational material">
+                        <p>
+                            The content is general information. It does not constitute
+                            medical advice, legal advice or an expert opinion on an
+                            individual patient or claim.
+                        </p>
+                    </Callout>
+                </Section>
+
+                <Section
+                    id="expert-evidence"
+                    index="05"
+                    eyebrow="Independent opinion"
+                    title="Expert Evidence"
+                >
+                    <p class="para">
+                        Independent radiological opinion may be provided in suitable civil
+                        matters within current clinical expertise, subject to conflict,
+                        competence and capacity checks.
+                    </p>
+
+                    <p class="para">
+                        Instructions may concern diagnostic interpretation, delayed
+                        diagnosis, tumour staging, peritoneal disease, incidental findings,
+                        examination protocol or the adequacy of a contemporaneous radiology
+                        report.
+                    </p>
+
+                    <p class="para-sm">
+                        Where CPR Part 35 applies, the expert's overriding duty is to assist
+                        the court on matters within their expertise. That duty takes
+                        precedence over any obligation to the party giving instructions.
+                    </p>
+
+                    <Callout tone="key" title="Independence">
+                        <p>
+                            Expert opinion is objective and confined to the available
+                            evidence and the expert's field of competence. It may not support
+                            the position of the instructing party. Material limitations and
+                            matters that could alter the opinion are stated expressly.
+                        </p>
+                    </Callout>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        /expert-witness-gi-peritoneal-malignancy
+                            Expert-witness information
+                        </a>
+
+                        /contact
+                            Contact
+                        </a>
+                    </div>
+                </Section>
+
+                <Section
+                    id="next-steps"
+                    index="06"
+                    eyebrow="Further information"
+                    title="Elsewhere on the Site"
+                >
+                    <ul class="list">
+                        <li>
+                            /curriculum-vitae
+                                Curriculum vitae
+                            </a>
+                        </li>
+
+                        <li>
+                            /expert-witness-gi-peritoneal-malignancy
+                                Expert-witness services
+                            </a>
+                        </li>
+
+                        <li>
+                            /radiology-fundamentals
+                                Radiology fundamentals
+                            </a>
+                        </li>
+
+                        <li>
+                            /medicolegal-fundamentals
+                                Medicolegal fundamentals
+                            </a>
+                        </li>
+
+                        <li>
+                            /radiology-legal-cases
+                                Radiology legal cases
+                            </a>
+                        </li>
+
+                        <li>
+                            /contact
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </Section>
+
+            </div>
+        </div>
+    </section>
 </BaseLayout>

@@ -3,448 +3,303 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import Diagram from '../components/Diagram.astro';
 import { PAGE_HERO_IMAGES } from '../consts';
+
+const contactEmail = 'enquiries@medicolegal.org';
 ---
 
-<BaseLayout title={"Expert Witness — GI & Peritoneal Malignancy | Radiology &amp; Medicolegal Law"} description="GI and peritoneal malignancy expert witness services by Dr Joseph El-Sheikha FRCR — CT/MRI staging error analysis, peritoneal carcinomatosis assessment, and CPR Part 35 compliant reports.">
-  <PageHero
-    eyebrow="Gastrointestinal & Peritoneal Malignancy"
-    title="Expert Witness — GI & Peritoneal Malignancy"
-    description="Specialist medicolegal radiology services for solicitors, barristers, and insurers. Expert review of CT and MRI in cases involving gastrointestinal malignancy, peritoneal carcinomatosis, staging errors, and breach of duty in oncological reporting."
-    heroImage={PAGE_HERO_IMAGES["/expert-witness-gi-peritoneal-malignancy"] || undefined}
-  />
+<BaseLayout
+    title="Expert Witness | GI and Peritoneal Malignancy"
+    description="Independent radiological expert evidence in gastrointestinal and peritoneal malignancy, including diagnostic interpretation, staging and delayed-diagnosis claims."
+>
+    <PageHero
+        eyebrow="GI and peritoneal malignancy"
+        title="Radiology Expert Witness"
+        description="Independent radiological opinion on gastrointestinal malignancy, peritoneal disease, staging and delayed diagnosis."
+        heroImage={PAGE_HERO_IMAGES["/expert-witness-gi-peritoneal-malignancy"] || undefined}
+    />
 
-  <PageIntro
-    eyebrow="The practice behind the resource"
-    paragraphs={[
-      'The resource is the work; instruction is how it is funded. This page sets out the matters in which a formal radiological opinion can be provided, and how that opinion is prepared — independently, and in the form the court requires.',
-      'The reference libraries on this site remain free to use and need no instruction. A formal opinion is a separate exercise, prepared under CPR Part 35, and is available to claimants and defendants alike.',
-    ]}
-    contents={[
-      { href: '#specialist-focus', label: 'Specialist focus' },
-      { href: '#report-types', label: 'Report types' },
-      { href: '#principles', label: 'Principles applied' },
-      // { href: '#expert-referral-form', label: 'Instruction' }, // DEPRECATED — referral form disabled
-    ]}
-    audience="Written for solicitors, barristers, insurers and instructing parties."
-    reviewed="September 2026"
-  />
+    <PageIntro
+        eyebrow="Expert evidence"
+        paragraphs={[
+            'Independent radiological opinion is available in civil claims involving gastrointestinal and peritoneal malignancy. Instructions may be accepted from claimants, defendants or as a single joint expert, subject to competence, capacity and conflict checks.',
+            'Expert evidence is prepared in accordance with CPR Part 35 and Practice Direction 35. The overriding duty is to the court, irrespective of the party giving instructions.'
+        ]}
+        contents={[
+            { href: '#scope', label: 'Scope of practice' },
+            { href: '#services', label: 'Types of opinion' },
+            { href: '#method', label: 'Method' },
+            { href: '#instruction', label: 'Instructions' },
+        ]}
+        audience="For solicitors, barristers, insurers and NHS legal teams."
+        reviewed="October 2026"
+    />
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- Figures: the shape of an instruction                -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="band-paper">
-    <div class="container-page">
-      <div class="doc">
-        <Figure
-          label="Figure 01"
-          caption="From letter of instruction to the report"
-          subtitle="The sequence does not change with the party instructing. Competence, independence and the source DICOM are dealt with before any opinion is expressed."
-        >
-          <Diagram name="instruction-cycle" />
-        </Figure>
-        <Figure
-          src="/images/reporting_radiographer.jpg"
-          alt="A radiologist reporting at a diagnostic workstation"
-          label="Plate 01"
-          caption="Re-derivation, not recollection"
-          subtitle="Findings are re-derived from the source DICOM on a diagnostic workstation, and the contemporaneous viewing conditions are reconstructed before breach is addressed."
-          ratio="wide"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- Specialist Focus                                  -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="band-white">
-    <div class="content-section">
-      <Section
-        id="specialist-focus"
-        index="01"
-        eyebrow="Specialist focus"
-        title="Where radiological accuracy meets medicolegal scrutiny"
-        lead="GI and peritoneal malignancy is where subtle imaging findings and high-stakes legal argument meet most often."
-      >
-        <p class="para">
-          Gastrointestinal and peritoneal malignancy represent some of the most complex and high-stakes areas of
-          medicolegal radiology. Subtle changes in bowel wall, peritoneal nodularity, and early metastatic disease
-          are frequently at the centre of delay-in-diagnosis claims — yet also the most contested.
-        </p>
-      </Section>
-
-      <div class="entry-list mt-0">
-        <!-- Card 1 -->
-        <div class="entry">
-          <h3 class="entry-title">Peritoneal Carcinomatosis</h3>
-          <p class="para-sm">
-            Detection and staging of peritoneal seeding on CT and MRI remains an area of significant disagreement
-            between parties. I assess whether subtle peritoneal nodularity, omental caking, or ascites were
-            reportable at the time of imaging — and whether the reported stage was consistent with the visual data.
-          </p>
-          <ul class="list">
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Peritoneal Carcinomatosis Index (PCI) verification
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Sensitivity of CT vs MRI for peritoneal deposits
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Delay to HIPEC / cytoreduction assessment
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Peritoneal enhancement patterns and differential
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="entry">
-          <h3 class="entry-title">GI Malignancy Staging</h3>
-          <p class="para-sm">
-            Colorectal, gastric, oesophageal and pancreatic malignancies require precise TNM staging. I review
-            whether the initial staging was adequate per BSGE/ESMO guidelines, whether lymph node assessment met
-            NCCN criteria, and whether a delay altered the patient's management pathway or prognosis.
-          </p>
-          <ul class="list">
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              CT colonography / triple-phase abdominal CT review
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Liver metastasis detection (Li-RADS equivalents)
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Peritoneal spread on limited-phase studies
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Neo-adjuvant treatment response assessment
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="entry">
-          <h3 class="entry-title">Staging Errors & Reporting Gaps</h3>
-          <p class="para-sm">
-            Staging errors — whether by omission or by mischaracterisation — are central to many claims. I
-            distinguish between lesions that were genuinely occult at the time of imaging and those that were
-            visible but not recognised, applying the Bolam test and current peer-reviewed literature.
-          </p>
-          <ul class="list">
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Retrospective vs contemporaneous assessment
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Appropriate use of contrast phases & reconstructions
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Comparison with prior and subsequent studies
-            </li>
-            <li class="check-row">
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-              Impact of protocol deviation on staging accuracy
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- Report Types & Services                             -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="bg-paper py-16">
-    <div class="content-section-sm">
-      <Section
-        id="report-types"
-        index="02"
-        eyebrow="Services"
-        title="Report types & expert services offered"
-        lead="Every opinion is prepared in full compliance with CPR Part 35, the Expert Witness Institute Guidelines and the GMC's Duty of Candour principles."
-      >
-        <div class="grid-2-col-lg">
-          <!-- Service 1 -->
-          <div class="entry">
-            <h3 class="entry-title">CPR Part 35 / Form 35 Compliant Reports</h3>
-            <p class="para-sm">
-              Full expert witness reports suitable for filing in the High Court or County Court. Structured to meet
-              the Expert Witness Institute template — covering background, instructions, findings, opinion, and
-              summary. Includes annotated DICOM images where appropriate.
-            </p>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="entry">
-            <h3 class="entry-title">Breach of Duty vs Causation Analysis</h3>
-            <p class="para-sm">
-              Separate analysis of whether the radiological interpretation fell below the Bolam-standard of a
-              competent body of radiologists (breach), and whether any identified breach caused or materially
-              contributed to the adverse outcome (causation). Applied with reference to <em>Rogers v Whittaker</em>
-              and <em>Bolitho</em> principles as relevant to diagnostic imaging.
-            </p>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="entry">
-            <h3 class="entry-title">Pre-litigation Screening Opinions</h3>
-            <p class="para-sm">
-              Rapid screening reports to help solicitors assess the merit of a potential claim before a full
-              Part 35 report is instructed. Includes an honest assessment of the strengths and weaknesses of the
-              case from a radiological perspective, and identification of any further imaging or information
-              required.
-            </p>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="entry">
-            <h3 class="entry-title">High Court Oral Evidence</h3>
-            <p class="para-sm">
-              Availability to give oral evidence at settlement conferences, mediation sessions or trial in the
-              High Court and County Courts. Experienced in cross-examination as a CPR Part 35 joint expert or
-              party-appointed expert. Prepared to use the local DICOM viewer for real-time image demonstration.
-            </p>
-          </div>
-
-          <!-- Service 5 -->
-          <div class="entry">
-            <h3 class="entry-title">Imaging Re-derivation</h3>
-            <p class="para-sm">
-              Re-processing of source DICOM data using the expert's PACS workstation to verify whether findings
-              were demonstrable using alternative window settings, multi-planar reconstructions (MPR), maximum
-              intensity projections (MIP), or other standard radiological post-processing techniques.
-            </p>
-          </div>
-
-          <!-- Service 6 -->
-          <div class="entry">
-            <h3 class="entry-title">Letter of Instruction Response</h3>
-            <p class="para-sm">
-              Direct responses to specific questions posed by instructing solicitors or barristers in relation
-              to the quality, completeness or adequacy of an existing radiology report — without requiring a
-              full Part 35 opinion where a focused answer is sufficient.
-            </p>
-          </div>
-        </div>
-      </Section>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- Medicolegal Framework                               -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="band-white">
-    <div class="content-section-sm">
-      <Section
-        id="principles"
-        index="03"
-        eyebrow="Legal framework"
-        title="Key medicolegal principles in GI radiology claims"
-        lead="The three arguments that decide most GI and peritoneal malignancy imaging claims, and what the expert is asked to establish in each."
-      >
-        <div class="mt-8 space-y-8">
-          <!-- Bolam vs Pure Diagnosis -->
-          <div class="entry">
-            <h3 class="entry-title">The Bolam Test vs "Pure Diagnosis"</h3>
-            <div class="list">
-              <p>
-                Radiological interpretation is judged against the standard of a competent body of
-                <strong>general radiologists</strong> — the <em>Bolam</em> test (<em>Bolam v Friern Hospital
-                Management Committee</em> [1957]). This means that a failure to detect a lesion is not automatically
-                negligent if a responsible body of radiologists would have reached the same conclusion on the same
-                images.
-              </p>
-              <p>
-                Claimants' counsel frequently advance the argument of <strong>"pure diagnosis"</strong> — the
-                assumption that if a lesion is visible in retrospect (e.g., on a subsequent, optimally-phased scan
-                or at surgery), missing it on the original study is automatically negligent. This is a legal
-                fallacy that the expert is uniquely positioned to address.
-              </p>
-              <p>
-                The key distinction is whether the lesion was <em>demonstrable</em> on the images as acquired and
-                reviewed, or whether the retrospective finding benefits from hindsight bias. The expert must
-                reconstruct the contemporaneous clinical context — including the imaging protocol, patient
-                preparation, contrast phase, and the clinical question asked by the referrer.
-              </p>
+    <section class="band-paper">
+        <div class="container-page">
+            <div class="doc">
+                <Figure
+                    label="Figure 01"
+                    caption="From instruction to opinion"
+                    subtitle="Conflict and competence checks precede review of the records, source imaging and questions in issue."
+                >
+                    <Diagram name="instruction-cycle" />
+                </Figure>
             </div>
-          </div>
-
-          <!-- Incidental Pathologies & RCR Standards -->
-          <div class="entry">
-            <h3 class="entry-title">Incidental Pathologies & RCR Standards</h3>
-            <div class="list">
-              <p>
-                Analysis of claims handled by Medical Protection and published data indicates that approximately
-                <strong>37% of abdominal radiology allegations</strong> relate to incidental findings — such as
-                subtle colonic lesions, small renal masses, or early liver metastases — identified on CT studies
-                that were <strong>not dedicated</strong> to those organs.
-              </p>
-              <p>
-                The <strong>Royal College of Radiologists (RCR) Standards (2018)</strong> set out the expectation
-                that reporting radiologists should consider all visible anatomy within the scanned field — but
-                this duty is bounded by what is clinically reasonable given the study indication and technique.
-              </p>
-              <p>
-                The <strong>updated RCR Standards (October 2025)</strong> further emphasise:
-              </p>
-              <ul class="list-disc pl-6 space-y-1.5">
-                <li>Referral forms must include adequate clinical detail to guide the reporting radiologist's approach to non-target areas.</li>
-                <li>When clinical information is insufficient, the report should reflect this uncertainty and suggest appropriate further imaging if warranted.</li>
-                <li>Escalation pathways for unexpected significant findings must be documented and practicable for remote reporting.</li>
-              </ul>
-              <p>
-                In a medicolegal context, the expert must evaluate whether the radiologist's handling of incidental
-                findings fell below the Bolam standard — and whether the failure to detect an incidental lesion
-                caused or materially contributed to the adverse outcome.
-              </p>
-            </div>
-          </div>
-
-          <!-- Teleradiology Risks -->
-          <div class="entry">
-            <h3 class="entry-title">Teleradiology & Outsourced Reporting Risks</h3>
-            <div class="list">
-              <p>
-                Outsourced remote radiology reporting has increased significantly in the UK, particularly following
-                the pandemic. While pragmatically useful, this model introduces systemic risks that are frequently
-                at the heart of medicolegal claims.
-              </p>
-              <p>
-                <strong>Key systemic issues identified by GIRFT (2020) and the Parliamentary and Health Service
-                Ombudsman (2021), and reinforced by claims data from Medical Protection:</strong>
-              </p>
-              <ul class="list-disc pl-6 space-y-1.5">
-                <li><strong>Lack of prior imaging access:</strong> Many remote reporting systems cannot share previous studies between hospital trusts, leaving the reporting radiologist without critical comparative information.</li>
-                <li><strong>Uninformative request forms:</strong> Remote referrers frequently provide insufficient clinical detail, and face-to-face communication is not available to clarify the clinical question.</li>
-                <li><strong>Communication breakdowns:</strong> Receiving clinicians may be unable to contact the remote reporting radiologist, particularly for out-of-hours reporting. Ambiguous reports or unexpected findings may be interpreted incorrectly.</li>
-                <li><strong>Increased error rates:</strong> Studies show offsite reporting error rates between 8.7% and 12.7% — nearly double the 3–5% rate for co-located radiologists (<em>Howlett et al., Clinical Radiology 2017</em>).</li>
-                <li><strong>Duty of Candour obligations:</strong> Remote radiologists have the same duty of candour as their NHS colleagues when significant unexpected findings are identified.</li>
-              </ul>
-              <p>
-                The expert witness is often asked to assess whether the outsourcing arrangement itself, or the
-                specific actions of the remote radiologist, contributed to a diagnostic error and its consequences.
-              </p>
-            </div>
-          </div>
         </div>
-      </Section>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================ -->
-  <!-- DEPRECATED — Expert Referral Form (disabled pending re-use)   -->
-  <!-- To re-enable: uncomment the section below and its script.     -->
-  <!-- ============================================================ -->
-  <!--
-  <section class="bg-white py-16 border-t border-slate-200" id="expert-referral-form">
-    <div class="max-w-2xl mx-auto px-6">
-      <span class="meta-label block">Expert Referral</span>
-      <h2 class="mt-3 text-2xl font-bold tracking-tight text-slate-900">Request an expert opinion</h2>
-      <p class="mt-3 text-slate-600">
-        Complete the form below to request a GI / peritoneal malignancy expert opinion. All referrals are
-        handled in accordance with CPR Part 35 and GDPR. Fields marked * are required.
-      </p>
+    <section class="band-white">
+        <div class="content-section">
+            <Section
+                id="scope"
+                index="01"
+                eyebrow="Scope of practice"
+                title="GI and Peritoneal Imaging"
+                lead="Opinion is confined to matters within current radiological expertise."
+            >
+                <div class="entry-list">
+                    <div class="entry">
+                        <h3 class="entry-title">Peritoneal malignancy</h3>
+                        <p class="para-sm">
+                            Review of CT and MRI for peritoneal deposits, omental disease,
+                            ascites, disease distribution and radiological staging.
+                        </p>
+                    </div>
 
-      <form id="expert-referral-form" class="mt-8"><div class="grid gap-5 sm:grid-cols-2">
-        <label class="form-label">
-          Referrer type *
-          <select name="referrerType" required class="input-field">
-            <option value="">Select…</option>
-            <option>GP / General Practice</option>
-            <option>Solicitor / Barrister</option>
-            <option>Insurer</option>
-            <option>Hospital / NHS Trust</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <label class="form-label">
-          Referrer name *
-          <input name="referrerName" type="text" required class="input-field" placeholder="Full name" />
-        </label>
-        <label class="form-label">
-          Firm / organisation
-          <input name="organisation" type="text" class="input-field" placeholder="Firm or trust" />
-        </label>
-        <label class="form-label">
-          Email *
-          <input name="referrerEmail" type="email" required class="input-field" placeholder="you@firm.co.uk" />
-        </label>
-        <label class="form-label sm:col-span-2">
-          Case brief / clinical summary *
-          <textarea name="summary" rows="5" required class="input-field" placeholder="Brief, anonymised summary of the case, imaging performed, and the specific radiological question"></textarea>
-        </label>
-        <label class="form-label">
-          Urgency
-          <select name="urgency" class="input-field">
-            <option value="standard">Standard (14 working days)</option>
-            <option value="urgent">Urgent (48–72 hours)</option>
-          </select>
-        </label>
-        <label class="form-label">
-          Report type *
-          <select name="reportType" required class="input-field">
-            <option value="">Select…</option>
-            <option>CPR Part 35 Full Report</option>
-            <option>Pre-litigation Screening</option>
-            <option>Breach & Causation Analysis</option>
-            <option>High Court Oral Evidence</option>
-            <option>Imaging Re-derivation</option>
-            <option>Letter Response</option>
-          </select>
-        </label>
-        <div class="sm:col-span-2 flex-gap-sm">
-          <button type="submit" class="btn btn-primary" data-submit>Submit referral</button>
-          <span class="text-meta self-center">Stored securely in KV; never including patient-identifying details on this page.</span>
+                    <div class="entry">
+                        <h3 class="entry-title">Gastrointestinal malignancy</h3>
+                        <p class="para-sm">
+                            Diagnostic and staging imaging in colorectal, oesophageal,
+                            gastric, pancreatic and related gastrointestinal malignancies.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Metastatic disease</h3>
+                        <p class="para-sm">
+                            Review of hepatic, nodal and peritoneal metastatic disease,
+                            including comparison with prior and subsequent examinations.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Delayed diagnosis</h3>
+                        <p class="para-sm">
+                            Assessment of whether an abnormality should reasonably have
+                            been detected, characterised, reported or investigated earlier.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Protocol and technical adequacy</h3>
+                        <p class="para-sm">
+                            Consideration of examination protocol, contrast phase,
+                            anatomical coverage, image quality and relevant limitations.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Treatment response</h3>
+                        <p class="para-sm">
+                            Radiological assessment of interval change and treatment
+                            response where this falls within the questions instructed.
+                        </p>
+                    </div>
+                </div>
+            </Section>
         </div>
-      </form>
-    </div>
-  </section>
-  -->
+    </section>
+
+    <section class="bg-paper py-16">
+        <div class="content-section-sm">
+            <Section
+                id="services"
+                index="02"
+                eyebrow="Services"
+                title="Types of Opinion"
+            >
+                <div class="grid-2-col-lg">
+                    <div class="entry">
+                        <h3 class="entry-title">Preliminary screening opinion</h3>
+                        <p class="para-sm">
+                            Focused review to identify the principal radiological issues,
+                            the apparent merits and limitations, and any further material
+                            required before a full opinion can be given.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Part 35 report</h3>
+                        <p class="para-sm">
+                            A reasoned report addressing the letter of instruction and
+                            complying with CPR Part 35, Practice Direction 35 and the
+                            applicable statement of truth.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Breach of duty</h3>
+                        <p class="para-sm">
+                            Opinion on whether the examination and report met the standard
+                            reasonably expected of a competent radiologist undertaking
+                            that work at the relevant time.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Radiological causation</h3>
+                        <p class="para-sm">
+                            Opinion on what competent reporting would probably have shown
+                            and the likely next radiological step. Questions of treatment,
+                            prognosis or survival may require evidence from another
+                            specialty.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Supplementary opinion</h3>
+                        <p class="para-sm">
+                            Responses to Part 35 questions, review of additional evidence
+                            and revision where new material affects the opinion.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">Expert discussion and evidence</h3>
+                        <p class="para-sm">
+                            Participation in expert meetings, joint statements, conferences
+                            and oral evidence where appropriate and directed.
+                        </p>
+                    </div>
+                </div>
+            </Section>
+        </div>
+    </section>
+
+    <section class="band-white">
+        <div class="content-section-sm">
+            <Section
+                id="method"
+                index="03"
+                eyebrow="Method"
+                title="How the Opinion Is Prepared"
+            >
+                <div class="entry-list">
+                    <div class="entry">
+                        <h3 class="entry-title">1. Conflict and competence</h3>
+                        <p class="para-sm">
+                            The parties, issues and requested field of opinion are reviewed
+                            before an instruction is accepted.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">2. Source material</h3>
+                        <p class="para-sm">
+                            The original DICOM examinations are reviewed where available,
+                            together with the reports, referral information, relevant
+                            records and imaging chronology.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">3. Independent interpretation</h3>
+                        <p class="para-sm">
+                            The imaging findings are derived independently before comparison
+                            with the contemporaneous report and later examinations.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">4. Contemporaneous standard</h3>
+                        <p class="para-sm">
+                            The opinion considers the protocol, image quality, available
+                            clinical information and professional practice at the relevant
+                            date, while allowing for hindsight bias.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">5. Reasoned conclusions</h3>
+                        <p class="para-sm">
+                            Fact, assumption and opinion are distinguished. Any reasonable
+                            range of professional opinion, evidential limitation or matter
+                            outside radiological expertise is stated.
+                        </p>
+                    </div>
+                </div>
+
+                <Callout tone="key" title="Duty to the court">
+                    <p>
+                        The opinion is independent and may not support the case of the
+                        instructing party. Material evidence that detracts from the
+                        conclusion is considered, and any subsequent material change of
+                        opinion is communicated promptly.
+                    </p>
+                </Callout>
+            </Section>
+        </div>
+    </section>
+
+    <section id="instruction" class="band-paper">
+        <div class="container-page">
+            <div class="doc">
+                <Section
+                    index="04"
+                    eyebrow="Instructions"
+                    title="Making an Enquiry"
+                >
+                    <p class="para">
+                        Initial enquiries should identify the parties, the proposed field
+                        of opinion, the principal radiological issues and the relevant
+                        deadline. This permits conflict, competence and capacity checks
+                        before confidential records are transferred.
+                    </p>
+
+                    <div class="entry-list">
+                        <div class="entry">
+                            <h3 class="entry-title">Initial information</h3>
+                            <ul class="list">
+                                <li>Names of the parties and instructing organisations.</li>
+                                <li>A brief anonymised case summary.</li>
+                                <li>The imaging modalities and dates in issue.</li>
+                                <li>The questions on which opinion is sought.</li>
+                                <li>Any conference, limitation or court deadline.</li>
+                            </ul>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Material usually required</h3>
+                            <ul class="list">
+                                <li>The formal letter of instruction.</li>
+                                <li>Original DICOM imaging and reports.</li>
+                                <li>Relevant referral and clinical records.</li>
+                                <li>Earlier and later comparative imaging.</li>
+                                <li>Pleadings and other expert evidence where relevant.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <Callout tone="caution" title="Confidential material">
+                        <p>
+                            Do not send patient-identifiable records through a public
+                            website form or ordinary email. A secure transfer route will
+                            be provided after preliminary checks and acceptance of the
+                            instruction.
+                        </p>
+                    </Callout>
+
+                    <div class="mt-8">
+                        {`mailto:${contactEmail}?subject=GI%20radiology%20expert%20witness%20enquiry`}
+                            Make an initial enquiry
+                        </a>
+                    </div>
+                </Section>
+            </div>
+        </div>
+    </section>
 </BaseLayout>
-
-<!-- ============================================================ -->
-<!-- DEPRECATED — Referral form submission script (disabled)       -->
-<!-- To re-enable: uncomment the script block below.               -->
-<!-- ============================================================ -->
-<!--
-// @ts-nocheck
-<script>
-  const form = document.getElementById("expert-referral-form") as HTMLFormElement | null;
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
-      const btn = form.querySelector("[data-submit]") as HTMLButtonElement | null;
-      if (btn) { btn.disabled = true; btn.textContent = "Submitting…"; }
-      try {
-        const res = await fetch("/api/referrals", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        const json = await res.json();
-        if (!res.ok) throw new Error(json.error || "Submission failed");
-        form.reset();
-        alert("Thank you. Your GI & Peritoneal Malignancy expert referral has been received (reference " + json.reference.slice(0, 8).toUpperCase() + "). The secretariat will acknowledge within one working day.");
-      } catch (err) {
-        alert("There was a problem submitting the referral. Please email the secretariat directly at secretary@elsheikha-imaging.legal");
-      } finally {
-        if (btn) { btn.disabled = false; btn.textContent = "Submit referral"; }
-      }
-    });
-  }
-</script>
--->

@@ -1,102 +1,204 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
-import PageIntro from "../components/PageIntro.astro";
-import Section from "../components/Section.astro";
-import Callout from "../components/Callout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
 
 export const prerender = true;
 ---
 
 <BaseLayout
-  title={"Cookie policy | Radiology &amp; Medicolegal Law"}
-  description="Which cookies this radiology and medicolegal law resource uses: strictly necessary storage, the single optional Google Analytics cookie, and how to accept, reject or change your choice."
+    title="Cookie Policy | Radiology & Medicolegal Law"
+    description="Information about essential browser storage, optional analytics and how to change your preferences."
 >
-  <PageHero
-    eyebrow="Cookies"
-    title="Cookie policy"
-    description="One optional analytics cookie — set only if you accept it — and the strictly necessary storage that keeps the site working. Nothing else."
-    
-  />
+    <PageHero
+        eyebrow="Cookies"
+        title="Cookie Policy"
+        description="How this website uses browser storage and optional analytics."
+    />
 
-  <PageIntro
-    eyebrow="Cookies"
-    paragraphs={[
-      "UK law requires consent before storing anything on your device that is not strictly necessary. This site therefore asks first: the banner offers Accept analytics or Reject analytics, and nothing optional is set until you choose.",
-      "Your choice is remembered on your own device. You can change it at any time through the Cookie settings link in the footer, which re-opens the banner.",
-    ]}
-    contents={[
-      { href: "#necessary", label: "Strictly necessary" },
-      { href: "#analytics", label: "Optional analytics" },
-      { href: "#choice", label: "Your choice" },
-      { href: "#managing", label: "Managing cookies" },
-    ]}
-    reviewed="September 2026"
-  />
+    <PageIntro
+        eyebrow="Your preferences"
+        paragraphs={[
+            'The site uses limited browser storage for essential functions and, with your permission, analytics to understand how the resource is used.',
+            'You can accept or reject optional analytics and change your choice at any time through Cookie settings in the footer.'
+        ]}
+        contents={[
+            { href: '#essential', label: 'Essential storage' },
+            { href: '#analytics', label: 'Optional analytics' },
+            { href: '#preferences', label: 'Your preferences' },
+        ]}
+        reviewed="October 2026"
+    />
 
-  <section class="band">
-    <div class="container-page">
-      <div class="doc space-y-14">
-        <Section id="necessary" index="01" eyebrow="Always on" title="Strictly necessary storage" lead="What the site needs to function. No consent is required, and it cannot be switched off.">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Purpose</th>
-                <th scope="col">Expiry</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-slate-800"><code>ml-consent-v1</code> (localStorage)</td>
-                <td>Remembers your cookie choice so the banner does not ask again. Not a cookie; nothing leaves your device.</td>
-                <td>Until cleared</td>
-              </tr>
-              <tr>
-                <td class="text-slate-800">Clerk session</td>
-                <td>Keeps you signed in to the secure login area only. Casual readers never receive it.</td>
-                <td>Session</td>
-              </tr>
-              <tr>
-                <td class="text-slate-800">Cloudflare security</td>
-                <td>Bot protection and load management set by the hosting platform.</td>
-                <td>Short-lived</td>
-              </tr>
-            </tbody>
-          </table>
-        </Section>
-        <Section id="analytics" index="02" eyebrow="Optional" title="Analytics — only with consent" lead="A single Google Analytics 4 cookie, set only after you click Accept analytics.">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Purpose</th>
-                <th scope="col">Expiry</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-slate-800"><code>_ga*</code></td>
-                <td>Google Analytics 4: aggregate page-read counts. IP anonymised; 14-month retention.</td>
-                <td>Up to 2 years</td>
-              </tr>
-            </tbody>
-          </table>
-          <Callout tone="key" title="Before you choose">
-            <p>Until you accept, Google's tag loads in consent-denied mode: it cannot set cookies or send identifiers. Rejecting or ignoring the banner leaves it that way — the site works identically either way.</p>
-          </Callout>
-        </Section>
-        <Section id="choice" index="03" eyebrow="Consent" title="How your choice works" lead="Withdrawing consent is as easy as giving it.">
-          <ul class="list">
-            <li><strong>Accept analytics</strong> — the _ga cookie may be set and page reads counted.</li>
-            <li><strong>Reject analytics</strong> — nothing optional is set, and nothing is recorded.</li>
-            <li><strong>Change your mind</strong> — the Cookie settings link in the footer re-opens the banner on any page.</li>
-          </ul>
-        </Section>
-        <Section id="managing" index="04" eyebrow="Your browser" title="Managing cookies yourself" lead="Every browser also lets you control cookies directly.">
-          <p class="para-sm-divider">You can block or delete cookies in browser settings at any time; the ICO guidance at <a href="https://ico.org.uk/for-the-public/online/cookies" class="link">ico.org.uk</a> explains how. Blocking strictly necessary storage may stop sign-in working, but reading the reference material is unaffected. Questions: see the <a href="/privacy-notice" class="link">privacy notice</a>.</p>
-        </Section>
-      </div>
-    </div>
-  </section>
+    <section class="band">
+        <div class="container-page">
+            <div class="doc space-y-14">
+
+                <Section
+                    id="essential"
+                    index="01"
+                    eyebrow="Essential"
+                    title="Essential Storage"
+                >
+                    <p class="para">
+                        The website may use cookies or browser storage that are necessary
+                        for security, access control and remembering your privacy choice.
+                        These functions do not require analytics consent.
+                    </p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Technology</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="text-slate-800">
+                                    <code>ml-consent-v1</code>
+                                </td>
+                                <td>
+                                    Stores your analytics preference in local browser
+                                    storage.
+                                </td>
+                                <td>
+                                    Until deleted or replaced
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-slate-800">
+                                    Security and session technologies
+                                </td>
+                                <td>
+                                    Protect the website and, where applicable, maintain
+                                    an authenticated session.
+                                </td>
+                                <td>
+                                    Session or short-lived
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="para-sm">
+                        Local storage is not a conventional cookie, but similar privacy
+                        rules may apply because it stores information on your device.
+                    </p>
+                </Section>
+
+                <Section
+                    id="analytics"
+                    index="02"
+                    eyebrow="Optional"
+                    title="Analytics"
+                >
+                    <p class="para">
+                        Google Analytics 4 is used only in accordance with the preference
+                        shown in the site's cookie settings. It helps identify which pages
+                        are used and how visitors navigate the resource.
+                    </p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Cookie</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Typical duration</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="text-slate-800">
+                                    <code>_ga</code>
+                                </td>
+                                <td>
+                                    Distinguishes browsers for analytics purposes.
+                                </td>
+                                <td>
+                                    Up to 2 years
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-slate-800">
+                                    <code>_ga_*</code>
+                                </td>
+                                <td>
+                                    Maintains information about the analytics session.
+                                </td>
+                                <td>
+                                    Up to 2 years
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <Callout tone="key" title="No advertising">
+                        <p>
+                            Analytics information is used to understand readership and
+                            improve the site. The site does not use advertising or
+                            remarketing cookies.
+                        </p>
+                    </Callout>
+                </Section>
+
+                <Section
+                    id="preferences"
+                    index="03"
+                    eyebrow="Control"
+                    title="Changing Your Preference"
+                >
+                    <ul class="list">
+                        <li>
+                            <strong>Accept analytics:</strong> permits the configured
+                            analytics technologies to operate.
+                        </li>
+
+                        <li>
+                            <strong>Reject analytics:</strong> keeps optional analytics
+                            storage disabled.
+                        </li>
+
+                        <li>
+                            <strong>Change your choice:</strong> use Cookie settings in
+                            the footer at any time.
+                        </li>
+                    </ul>
+
+                    <p class="para-sm">
+                        You can also delete or block cookies and local storage through
+                        your browser settings. Blocking essential storage may affect
+                        sign-in or security functions but should not prevent access to
+                        public reference material.
+                    </p>
+
+                    <p class="para-sm">
+                        Further information about personal-data processing appears in
+                        the
+                        {' '}
+                        /privacy-notice
+                            privacy notice
+                        </a>.
+                    </p>
+                </Section>
+
+                <Callout tone="caution" title="Configuration governs">
+                    <p>
+                        Cookie names and durations can change when services or browser
+                        settings change. This policy should be checked against the
+                        deployed website and updated whenever its analytics, security
+                        or authentication configuration changes.
+                    </p>
+                </Callout>
+
+            </div>
+        </div>
+    </section>
 </BaseLayout>

@@ -6,180 +6,229 @@ import Section from "../components/Section.astro";
 import Callout from "../components/Callout.astro";
 
 export const prerender = true;
+
+const contactEmail = "enquiries@medicolegal.org";
 ---
 
 <BaseLayout
-	title={"Privacy notice | Radiology &amp; Medicolegal Law"}
-	description="How this radiology and medicolegal law resource handles personal data: enquiry, referral and comment forms, optional analytics, lawful bases, retention, transfers, and your UK GDPR rights."
+    title="Privacy notice | Radiology & Medicolegal Law"
+    description="How this website collects, uses and protects personal information."
 >
-	<PageHero
-		eyebrow="Your information"
-		title="Privacy notice"
-		description="Who holds your information when you use this site, what is collected, why it is needed, how long it is kept, and the rights you have over it."
-		
-	/>
+    <PageHero
+        eyebrow="Your information"
+        title="Privacy Notice"
+        description="How personal information is collected, used and protected when you use this website."
+    />
 
-	<PageIntro
-		eyebrow="Your information"
-		paragraphs={[
-			"Reading the reference material needs no account and collects nothing about you. Personal data is only processed when you choose to send something — an enquiry, a referral, a comment — or when you accept the optional analytics cookie.",
-			"This notice is written for the UK General Data Protection Regulation and the Data Protection Act 2018. It explains what is collected, the lawful basis for each use, how long it is kept, and the rights you have over it.",
-		]}
-		contents={[
-			{ href: "#controller", label: "Who is responsible" },
-			{ href: "#what-collected", label: "What is collected" },
-			{ href: "#lawful-bases", label: "Why it is lawful" },
-			{ href: "#how-used", label: "Uses and sharing" },
-			{ href: "#retention", label: "Retention" },
-			{ href: "#rights", label: "Your rights" },
-		]}
-		reviewed="September 2026"
-	/>
+    <br><br>
 
-	<section class="band">
-		<div class="container-page">
-			<div class="doc space-y-14">
-				<Section
-					id="controller"
-					index="01"
-					eyebrow="Data controller"
-					title="Who is responsible for your information"
-					lead="The person deciding how and why your information is processed is the curator of this resource."
-				>
-					<table class="table">
-						<tbody>
-							<tr>
-								<th scope="row">Controller</th>
-								<td>{"Dr Joseph El-Sheikha"}, {"Consultant Radiologist"}</td>
-							</tr>
-							<tr>
-								<th scope="row">Contact</th>
-								<td>
-									<a href={`mailto:${"enquiries@medicolegal.org"}`} class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">{"enquiries@medicolegal.org"}</a>
-									{` · ${"+44 1234 567 890"}`}
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Address</th>
-								<td>{"123 Medical Centre, London, UK"}</td>
-							</tr>
-						</tbody>
-					</table>
-				</Section>
+    <PageIntro
+        eyebrow="Privacy"
+        paragraphs={[
+            "No account is required to read this resource. Limited technical information is processed when the site is accessed, and further information is collected only if you contact the site or accept optional analytics.",
+            "This notice explains how that information is handled under the UK GDPR and the Data Protection Act 2018."
+        ]}
+        contents={[
+            { href: "#controller", label: "Controller" },
+            { href: "#information", label: "Information collected" },
+            { href: "#use", label: "How it is used" },
+            { href: "#sharing", label: "Sharing and transfers" },
+            { href: "#retention", label: "Retention" },
+            { href: "#rights", label: "Your rights" },
+        ]}
+        reviewed="October 2026"
+    />
 
-				<Section
-					id="what-collected"
-					index="02"
-					eyebrow="Data collected"
-					title="What is collected, and when"
-					lead="Browsing is anonymous. Each interaction below collects only what that interaction needs."
-				>
-					<div class="entry-list-ruled">
-						<div class="entry">
-							<h3 class="entry-title">Reading the reference material</h3>
-							<p class="para-sm">Nothing. No account, no sign-up, no contact details. The free DICOM viewer opens images inside your own browser — files never leave your device.</p>
-						</div>
-						<div class="entry">
-							<!-- DEPRECATED: Referral form data collection is currently disabled -->
-							<h3 class="entry-title">Enquiry and referral forms</h3>
-							<p class="para-sm">Name, email, and the message or case summary you write. <!-- Referrals add referrer type, organisation, phone and a case reference. --> Send an anonymised summary only — no patient names, dates of birth, NHS numbers or directly identifying information.</p>
-						</div>
-						<div class="entry">
-							<h3 class="entry-title">Comments</h3>
-							<p class="para-sm">The display name and comment text you post. Comments are public — do not include anything identifying a patient or a living individual involved in proceedings.</p>
-						</div>
-						<div class="entry">
-							<h3 class="entry-title">Optional analytics</h3>
-							<p class="para-sm">Only if you click “Accept analytics”: Google Analytics 4 records which pages are read, using cookies beginning _ga. Reject or ignore the banner and nothing is recorded. See the <a href="/cookie-policy" class="link">cookie policy</a>.</p>
-						</div>
-						<div class="entry">
-							<h3 class="entry-title">Technical logs</h3>
-							<p class="para-sm">The hosting platform (Cloudflare) keeps short-lived security and delivery logs, including IP addresses, to keep the site available and defend against abuse.</p>
-						</div>
-					</div>
-				</Section>
+    <br><br>
 
-				<Section
-					id="lawful-bases"
-					index="03"
-					eyebrow="Lawful bases"
-					title="Why processing is lawful"
-					lead="Every use of personal data needs a lawful basis under Article 6 of the UK GDPR."
-				>
-					<div class="entry-list-ruled">
-						<div class="entry">
-							<h3 class="entry-title">Consent — Article 6(1)(a)</h3>
-							<p class="para-sm">The optional analytics cookie. Given by clicking “Accept analytics”, recorded with its date, withdrawable at any time via “Cookie settings” in the footer.</p>
-						</div>
-						<div class="entry">
-							<h3 class="entry-title">Pre-contract steps — Article 6(1)(b)</h3>
-							<p class="para-sm">Enquiries and referrals: handling your message to respond and, where applicable, to enter into terms of engagement.</p>
-						</div>
-						<div class="entry">
-							<h3 class="entry-title">Legitimate interests — Article 6(1)(f)</h3>
-							<p class="para-sm">A secure, available site: security logging, abuse prevention, remembering your cookie choice, comment moderation. Minimal data; anything further needs consent.</p>
-						</div>
-					</div>
-					<Callout tone="limit" title="Health information">
-						<p>
-							Health information is special-category data under Article 9 of the UK GDPR. That is
-							why the forms ask for an anonymised summary only. Anything patient-identifiable you
-							send voluntarily about a prospective instruction is processed under Article 9(2)(f) —
-							legal claims — under a doctor's duty of confidentiality.
-						</p>
-					</Callout>
-				</Section>
+    <section class="band">
+        <div class="container-page">
+            <div class="doc space-y-14">
 
-				<Section
-					id="how-used"
-					index="04"
-					eyebrow="Purposes and sharing"
-					title="How information is used, and who sees it"
-					lead="For the purpose you provided it for, and for nothing else."
-				>
-					<ul class="list">
-						<li>Responding to your enquiry or assessing a referral.</li>
-						<li>Publishing comments you choose to post, under your name.</li>
-						<li>Aggregate readership statistics, only with analytics consent.</li>
-						<li>Security, availability and abuse prevention.</li>
-					</ul>
-					<p class="para-sm">Processors: Cloudflare (hosting, form storage, security logs); Google Analytics 4 (consent only; US processing under Google's UK safeguards; IP anonymised); Clerk (login only). Nothing is sold or shared with advertisers. Comments are public by design; everything else is visible only to the secretariat.</p>
-				</Section>
+                <Section
+                    id="controller"
+                    index="01"
+                    eyebrow="Controller"
+                    title="Who is responsible"
+                >
+                    <p class="para">
+                        The controller for information processed through this website is
+                        <strong> Dr Joseph El-Sheikha, Consultant Radiologist</strong>.
+                    </p>
 
-				<Section
-					id="retention"
-					index="05"
-					eyebrow="Retention"
-					title="How long information is kept"
-					lead="No longer than necessary for the purpose collected."
-				>
-					<ul class="list">
-						<li><strong>Enquiries</strong> — while live, then deleted or anonymised within 12 months unless they lead to an instruction.</li>
-						<li><strong>Instructions</strong> — medicolegal file duties (ordinarily 6+ years after conclusion).</li>
-						<li><strong>Comments</strong> — until you ask for removal, or moderation requires it.</li>
-						<li><strong>Analytics</strong> — 14-month retention; your choice lives on your device until cleared.</li>
-					</ul>
-				</Section>
+                    <p class="para-sm">
+                        Privacy enquiries may be sent to
+                        {" "}
+                        <a href={`mailto:${contactEmail}`} class="link">
+                            {contactEmail}
+                        </a>.
+                    </p>
+                </Section>
 
-				<Section
-					id="rights"
-					index="06"
-					eyebrow="Your rights"
-					title="The rights you have over your information"
-					lead="Email the secretariat to exercise any of these. You will be answered within one month."
-				>
-					<ul class="list">
-						<li><strong>Access</strong> — a copy of data held about you.</li>
-						<li><strong>Rectification</strong> — correction of anything inaccurate.</li>
-						<li><strong>Erasure</strong> — deletion where no good reason to keep it, including a published comment.</li>
-						<li><strong>Restriction and objection</strong> — freeze or objection on grounds of your situation.</li>
-						<li><strong>Portability</strong> — your data in a usable format, where based on consent or contract.</li>
-						<li><strong>Withdrawal</strong> — analytics consent at any time via “Cookie settings” in the footer.</li>
-					</ul>
-					<p class="para-sm">Identity may be checked first. If unhappy, contact <a href={`mailto:${"enquiries@medicolegal.org"}`} class="link">{"enquiries@medicolegal.org"}</a>; you may also complain to the ICO at <a href="https://ico.org.uk" class="link">ico.org.uk</a> (0303 123 1113). This notice is reviewed when the site changes.</p>
-				</Section>
-			</div>
-		</div>
-	</section>
+                <Section
+                    id="information"
+                    index="02"
+                    eyebrow="Information collected"
+                    title="What information is collected"
+                >
+                    <div class="entry-list-ruled">
+                        <div class="entry">
+                            <h3 class="entry-title">Website use</h3>
+                            <p class="para-sm">
+                                The hosting and security services may process limited technical
+                                information, including IP address, browser information, requested
+                                pages and security events.
+                            </p>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Enquiries</h3>
+                            <p class="para-sm">
+                                If you contact the site, your name, contact details and the
+                                contents of your message will be processed.
+                            </p>
+                        </div>
+
+                        <div class="entry">
+                            <h3 class="entry-title">Optional analytics</h3>
+                            <p class="para-sm">
+                                If you accept analytics cookies, information about site use is
+                                collected to help improve the resource. Analytics remains
+                                disabled if you decline or make no choice.
+                            </p>
+                        </div>
+                    </div>
+
+                    <Callout tone="limit" title="Do not send patient information">
+                        <p>
+                            Please do not submit patient names, dates of birth, NHS numbers,
+                            medical records, diagnostic images or other identifiable clinical
+                            information through the public enquiry form or ordinary email.
+                            Initial case enquiries should be anonymised.
+                        </p>
+                    </Callout>
+                </Section>
+
+                <Section
+                    id="use"
+                    index="03"
+                    eyebrow="Purpose"
+                    title="How information is used"
+                >
+                    <ul class="list">
+                        <li>To operate, secure and maintain the website.</li>
+                        <li>To respond to enquiries.</li>
+                        <li>To consider a prospective professional instruction.</li>
+                        <li>To understand site use where analytics consent has been given.</li>
+                        <li>To meet applicable legal and professional obligations.</li>
+                    </ul>
+
+                    <p class="para-sm">
+                        Website security and general correspondence are processed on the basis
+                        of legitimate interests. Information needed to consider or perform an
+                        instruction may be processed for contractual, legal or legitimate-interest
+                        purposes. Optional analytics relies on consent.
+                    </p>
+
+                    <p class="para-sm">
+                        Where health information is necessary for a legal claim, it may be
+                        processed under the legal-claims condition in Article 9(2)(f) of the UK
+                        GDPR. An appropriate secure transfer method will be provided before
+                        identifiable case material is accepted.
+                    </p>
+                </Section>
+
+                <Section
+                    id="sharing"
+                    index="04"
+                    eyebrow="Recipients"
+                    title="Sharing and international transfers"
+                >
+                    <p class="para">
+                        Information may be processed by providers supporting hosting, security,
+                        email and consented analytics. It may also be disclosed where necessary
+                        to professional advisers, insurers, regulators, courts or public
+                        authorities.
+                    </p>
+
+                    <p class="para-sm">
+                        Personal information is not sold or used for third-party advertising.
+                        Where a supplier processes information outside the United Kingdom,
+                        an applicable adequacy decision or other lawful safeguard is used.
+                    </p>
+                </Section>
+
+                       id="retention"
+                    index="05"
+                    eyebrow="Retention"
+                    title="How long information is kept"
+                >
+                    <ul class="list">
+                        <li>
+                            <strong>General enquiries:</strong> normally for no more than
+                            12 months after the last substantive contact.
+                        </li>
+                        <li>
+                            <strong>Professional instructions:</strong> for the period required
+                            by the engagement, professional obligations and applicable law.
+                        </li>
+                        <li>
+                            <strong>Technical and security records:</strong> only for as long
+                            as reasonably required for operation and security.
+                        </li>
+                        <li>
+                            <strong>Analytics:</strong> for the period stated in the
+                            /cookie-policy cookie policy</a>.
+                        </li>
+                    </ul>
+
+                    <p class="para-sm">
+                        Information may be retained for longer where required for a complaint,
+                        investigation, legal claim or other legal obligation.
+                    </p>
+                </Section>
+
+                <Section
+                    id="rights"
+                    index="06"
+                    eyebrow="Your rights"
+                    title="Your data-protection rights"
+                >
+                    <p class="para">
+                        Depending on the circumstances, you may ask to access, correct, delete,
+                        restrict or receive a copy of your personal information. You may object
+                        to processing based on legitimate interests and withdraw analytics
+                        consent at any time through “Cookie settings”.
+                    </p>
+
+                    <p class="para-sm">
+                        Rights are subject to legal exceptions. Identity may be checked before
+                        information is released. Requests are normally answered within one
+                        month.
+                    </p>
+
+                    <p class="para-sm">
+                        To exercise a right or raise a concern, email
+                        {" "}
+                        {`mailto:${contactEmail}`}
+                            {contactEmail}
+                        </a>.
+                        You may also complain to the
+                        {" "}
+                        https://ico.org.uk/make-a-complaint/
+                            Information Commissioner’s Office
+                        </a>.
+                    </p>
+                </Section>
+
+                <Callout tone="caution" title="Scope">
+                    <p>
+                        This notice applies to the website. A separate privacy notice or terms
+                        of engagement may apply if an enquiry becomes a professional instruction.
+                    </p>
+                </Callout>
+
+            </div>
+        </div>
+    </section>
 </BaseLayout>
-

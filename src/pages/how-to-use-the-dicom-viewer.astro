@@ -1,360 +1,322 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
-import PageIntro from "../components/PageIntro.astro";
-import Callout from "../components/Callout.astro";
-import { PAGE_HERO_IMAGES } from "../consts";
-import Section from "../components/Section.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Section from '../components/Section.astro';
+import Callout from '../components/Callout.astro';
+import { PAGE_HERO_IMAGES } from '../consts';
 
 const faqs = [
-	{
-		q: "Is my scan really not uploaded anywhere?",
-		a: "Correct. The viewer is a small program that runs inside your browser after the page loads. It opens the files that are already on your device and draws them on screen. No file is transmitted to this website or to any other server at any point.",
-	},
-	{
-		q: "Is it free?",
-		a: "Yes — there is no charge, no account and no time limit. You do not even have to give an email address.",
-	},
-	{
-		q: "Can I use it on a phone or tablet?",
-		a: "Yes. The viewer works in any modern browser on Windows, Mac, Linux, Android and iOS. On a phone, use the “Choose files” button rather than drag-and-drop, and the sliders instead of the mouse gestures.",
-	},
-	{
-		q: "What if the image looks all black, white or grey?",
-		a: "That is almost always the window setting, not a problem with the file. Reset all first. If it is still not right, try the Level slider — most CT and MRI slices look correct with a level somewhere between 20 and 80, and a width between 200 and 400.",
-	},
-	{
-		q: "Someone sent me a single file — why can't I scroll through the scan?",
-		a: "A CT or MRI study is made up of many separate slice files, usually dozens or hundreds. If you were sent just one file, you have one slice. Ask for the whole folder, or drop several files at once.",
-	},
-	{
-		q: "Can I get a second opinion using this viewer?",
-		a: "Not from this tool on its own. A formal second opinion needs a radiologist to read the full study on calibrated equipment, and it needs the images themselves — not screenshots. The viewer helps you understand what you have; the expert-witness service on this site is where a formal opinion begins.",
-	},
-];
+    {
+        q: 'Are my images uploaded?',
+        a: 'The viewer is designed to process selected files locally in your browser. Before using identifiable clinical images, confirm that this remains true of the current implementation and that no analytics, error-reporting or other service receives file contents or DICOM metadata.',
+    },
+    {
+        q: 'Is the viewer free?',
+        a: 'Yes. No account or payment is required.',
+    },
+    {
+        q: 'Can I use a phone or tablet?',
+        a: 'The viewer may work on a recent mobile browser, although large studies and some DICOM formats are better handled on a desktop or laptop.',
+    },
+    {
+        q: 'Why can I see only one image?',
+        a: 'A CT or MRI examination usually contains many files and may include several series. If only one file was selected, the viewer may have received only one image.',
+    },
+    {
+        q: 'Can I obtain a medical opinion from the viewer?',
+        a: 'No. The viewer displays images but does not interpret them. Clinical or medicolegal review requires the complete examination, relevant prior imaging and clinical information.',
+    },
+] as const;
 ---
 
 <BaseLayout
-	title="How to Use the DICOM Viewer — Step by Step | Radiology &amp; Medicolegal Law"
-	description="A plain-English walkthrough of the free DICOM viewer: finding your images on a hospital disc or download, loading them, and using the on-screen tools."
+    title="How to Use the DICOM Viewer | Radiology & Medicolegal Law"
+    description="A concise guide to opening and viewing DICOM images in the browser."
 >
-	<PageHero
-		eyebrow="Free tools · Guide"
-		title="How to Use the DICOM Viewer"
-		description="A short, plain-English walkthrough: where your images usually are, how to load them, and what each control does once they are on screen."
-		heroImage={PAGE_HERO_IMAGES["/how-to-use-the-dicom-viewer"] || undefined}
-	/>
+    <PageHero
+        eyebrow="Free tools · Guide"
+        title="How to Use the DICOM Viewer"
+        description="Find your imaging files, open them in the viewer and use the basic display controls."
+        heroImage={PAGE_HERO_IMAGES["/how-to-use-the-dicom-viewer"] || undefined}
+    />
 
-	<PageIntro
-		eyebrow="How this works"
-		paragraphs={[
-			'Hospitals give scans to patients in the DICOM format — usually on a CD or USB stick, sometimes as a download from a patient portal. The files are not photographs, so they will not open by double-clicking, and a special viewer is needed to see them.',
-			'The free viewer on this site opens those files in your browser. Nothing is uploaded and nothing is stored: the files are read by code running on your own device, and when you close the page they are gone. This guide takes you through it step by step.',
-		]}
-		contents={[
-			{ href: '#step-1', label: 'Find your images' },
-			{ href: '#step-2', label: 'Load them in' },
-			{ href: '#step-3', label: 'Look at the image' },
-			{ href: '#step-4', label: 'Adjust the display' },
-			{ href: '#details-panel', label: 'The details panel' },
-			{ href: '#troubleshooting', label: 'If something goes wrong' },
-			{ href: '#common-questions', label: 'Common questions' },
-		]}
-		reviewed="September 2026"
-	/>
+    <PageIntro
+        eyebrow="Getting started"
+        paragraphs={[
+            'Hospital imaging is commonly supplied in DICOM format on a disc, portable drive or secure download. A CT or MRI examination will usually contain many image files rather than one ordinary photograph.',
+            'This browser viewer is intended for basic review. It is not a diagnostic workstation and does not provide a medical opinion.'
+        ]}
+        contents={[
+            { href: '#find-files', label: 'Find the files' },
+            { href: '#open-study', label: 'Open the study' },
+            { href: '#controls', label: 'Viewer controls' },
+            { href: '#privacy', label: 'Privacy' },
+            { href: '#troubleshooting', label: 'Troubleshooting' },
+            { href: '#questions', label: 'Common questions' },
+        ]}
+        reviewed="October 2026"
+    />
 
-	<!-- Step 1 -->
-	<Section id="step-1" index="01" eyebrow="Step 1" title="Find your images">
-		<p class="standfirst">
-			Whatever you were given — a disc, a USB stick or a download — the images are inside a
-			folder, and any folder will do.
-		</p>
-		<div class="mt-8 space-y-6">
-			<div class="box p-6">
-				<h3 class="entry-title-sm">If you have a CD or USB stick</h3>
-				<p class="para-sm">
-					Put it in your computer and open it in File Explorer (Windows) or Finder (Mac). You
-					will normally see a folder named <em>DICOM</em>, <em>IMAGES</em> or <em>STUDIES</em> —
-					inside it are the individual image files, often numbered. You may also see a viewer
-					program on the disc; you do not need to run it. The image files themselves may end in
-					<code>.dcm</code> or have no ending
-					at all — the viewer handles both.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">If you were sent a download or a zip file</h3>
-				<p class="para-sm">
-					If the file ends in <code>.zip</code>,
-					unzip it first (on Windows: right-click → “Extract All”; on Mac: double-click). Inside
-					will be a folder of image files — that folder is what you will drop into the viewer.
-					A file ending in <code>.jpg</code>,
-					<code>.png</code> or
-					<code>.pdf</code> is a picture or a
-					report, not the scan itself.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">What a scan actually looks like on disc</h3>
-				<p class="para-sm">
-					A CT or MRI study is not one file but a stack of them — one file per slice, often
-					hundreds. That is normal, and it is why the guide recommends dropping the whole
-					folder rather than picking files one by one.
-				</p>
-			</div>
-		</div>
-	</Section>
+    <Section
+        id="find-files"
+        index="01"
+        eyebrow="Step 1"
+        title="Find the Imaging Files"
+    >
+        <p class="para">
+            Open the disc, drive or downloaded folder using File Explorer on Windows
+            or Finder on macOS. Look for folders containing files ending in
+            <code>.dcm</code>, or files with no extension.
+        </p>
 
-	<!-- Step 2 -->
-	<Section id="step-2" index="02" eyebrow="Step 2" title="Load them into the viewer">
-		<p class="standfirst">
-			Open the <a href="/free-dicom-viewer" class="link-strong">viewer page</a> and drop the folder on the drop zone — or use the buttons, whichever is easier.
-		</p>
-		<div class="mt-8 space-y-6">
-			<div class="box p-6">
-				<h3 class="entry-title-sm">Drag and drop</h3>
-				<p class="para-sm">
-					Open File Explorer or Finder alongside your browser window, find the folder of scan
-					files, and drag the whole folder onto the drop zone marked
-					<span class="font-semibold">“Drop your imaging files here”</span>. Dropping the folder
-					loads every slice in one go.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">Or use the buttons</h3>
-				<p class="para-sm">
-					<span class="font-semibold">Choose files</span> lets you pick individual files (hold
-					Ctrl or Cmd to pick several). <span class="font-semibold">Choose a folder</span> lets
-					you select the whole folder at once — the better option for a CT or MRI study. On a
-					phone or tablet, use these buttons; drag-and-drop is a desktop convenience.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">What happens next</h3>
-				<p class="para-sm">
-					A status line shows progress as each file is read
-					(<em>“Reading… 40 of 220 files (40 images found)”</em>). When it finishes, the viewer
-					sorts the slices into anatomical order automatically — you do not have to name or
-					number anything — and shows the middle of the stack. Files that are not DICOM images
-					are skipped and counted in the status line rather than stopping everything.
-				</p>
-			</div>
-		</div>
-		<Callout tone="key" title="Adding more later">
-			<p>
-				You are not limited to one drop. <span class="font-semibold">Add files</span> and
-				<span class="font-semibold">Add folder</span> in the viewer's side panel add more images
-				to the same stack, and <span class="font-semibold">Clear</span> empties the viewer
-				entirely when you are finished.
-			</p>
-		</Callout>
-	</Section>
+        <div class="entry-list">
+            <div class="entry">
+                <h3 class="entry-title">Disc or portable drive</h3>
+                <p class="para-sm">
+                    The images may be in a folder named DICOM, IMAGES or STUDIES.
+                    The supplied disc may also contain a separate viewing application,
+                    which is not required for this browser viewer.
+                </p>
+            </div>
 
-	<!-- Step 3 -->
-	<Section id="step-3" index="03" eyebrow="Step 3" title="Look at the image">
-		<p class="standfirst">
-			The large black area is your scan. If you loaded a stack, you can move through it the way
-			a radiologist would — slice by slice.
-		</p>
-		<div class="entry-list mt-8">
-			<div class="entry">
-				<h3 class="entry-title-sm">Move through the slices</h3>
-				<p class="para-sm">
-					Three ways: the <span class="font-semibold">slice slider</span> at the foot of the
-					image, the <span class="font-semibold">arrow buttons</span> beside it, or simply
-					<span class="font-semibold">rolling your mouse wheel</span> while the cursor is over
-					the image. Each notch of the wheel is one slice.
-				</p>
-			</div>
-			<div class="entry">
-				<h3 class="entry-title-sm">Where it starts, and why</h3>
-				<p class="para-sm">
-					The viewer opens in the middle of the stack rather than at the first slice — the
-					middle slices usually show the most, so it is a better place to start. Counter shows
-					your position, e.g. <em>110 / 220</em>.
-				</p>
-			</div>
-			<div class="entry">
-				<h3 class="entry-title-sm">One file means one slice</h3>
-				<p class="para-sm">
-					If you were sent a single file, you will see a single image and the slider will not
-					move. That is expected — a CT or MRI study is hundreds of separate slice files. Ask
-					for the whole folder to scroll through the scan properly.
-				</p>
-			</div>
-		</div>
-	</Section>
+            <div class="entry">
+                <h3 class="entry-title">Downloaded archive</h3>
+                <p class="para-sm">
+                    If the download is a ZIP archive and the viewer does not open ZIP
+                    files directly, extract it before selecting the images. A PDF is
+                    usually the written report, not the complete imaging examination.
+                </p>
+            </div>
 
-	<!-- Step 4 -->
-	<Section id="step-4" index="04" eyebrow="Step 4" title="Adjust the display">
-		<p class="standfirst">
-			Scans hold far more shades of grey than a screen can show at once. The Width and Level
-			sliders choose which range of shades you are looking at — this is the single most useful
-			control on the page.
-		</p>
-		<div class="entry-list mt-8">
-			<div class="entry">
-				<h3 class="entry-title-sm">Brightness and contrast (Width and Level)</h3>
-				<p class="para-sm">
-					<span class="font-semibold">Width</span> is the range of shades shown
-					(contrast); <span class="font-semibold">Level</span> is the centre of that range
-					(brightness). Narrowing the width makes tissues stand apart more; moving the level up
-					or down brings brighter or darker tissue into view. The readout on the image —
-					<em>W: 400 C: 40</em> — records the setting, exactly as on clinical viewers.
-				</p>
-			</div>
-			<div class="entry">
-				<h3 class="entry-title-sm">Zoom and pan</h3>
-				<p class="para-sm">
-					Zoom with the slider, or hold <span class="font-semibold">Ctrl</span>
-					(<span class="font-semibold">Cmd</span> on a Mac) and roll the mouse wheel. To look
-					around a zoomed image, <span class="font-semibold">click and drag</span> it with the
-					mouse or your finger.
-				</p>
-			</div>
-			<div class="entry">
-				<h3 class="entry-title-sm">Invert colours</h3>
-				<p class="para-sm">
-					The <span class="font-semibold">Invert Colours</span> button reverses black and white.
-					It can make some structures easier to see, and it is how chest X-rays are sometimes
-					displayed.
-				</p>
-			</div>
-			<div class="entry">
-				<h3 class="entry-title-sm">Start again with Reset all</h3>
-				<p class="para-sm">
-					If the image looks all black, all white, or flat grey, the window setting is the
-					likeliest cause. <span class="font-semibold">Reset all</span> returns the image to its
-					natural display for the scan type — always try this first.
-				</p>
-			</div>
-		</div>
-	</Section>
+            <div class="entry">
+                <h3 class="entry-title">Complete examination</h3>
+                <p class="para-sm">
+                    CT and MRI examinations commonly contain many images and several
+                    series. Keep the original folder structure where possible.
+                </p>
+            </div>
+        </div>
+    </Section>
 
-	<!-- Details panel -->
-	<Section id="details-panel" index="05" title="The details panel">
-		<p class="standfirst">
-			The side panel beside the image lists a few technical facts about the scan — the same
-			information a reporting radiologist works from, minus anything that identifies you.
-		</p>
-		<div class="mt-8 overflow-x-auto">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Field</th>
-						<th>What it means</th>
-					</tr>
-				</thead>
-				<tbody class="stack-divide-light">
-					<tr><td class="text-label">Scan type</td><td>The modality — CT, MR, CR (X-ray), US (ultrasound), PT (PET).</td></tr>
-					<tr><td class="text-label">Study date</td><td>When the scan was performed.</td></tr>
-					<tr><td class="text-label">Description</td><td>The scan's short title, e.g. “CT ABDOMEN/PELVIS WITH CONTRAST”.</td></tr>
-					<tr><td class="text-label">Slice thickness</td><td>How thick each slice is, in millimetres — thinner slices show finer detail.</td></tr>
-					<tr><td class="text-label">Image size</td><td>The pixel dimensions of each slice, e.g. 512 × 512.</td></tr>
-					<tr><td class="text-label">Bits per pixel</td><td>How much detail each pixel carries (8 or 16 in practice).</td></tr>
-					<tr><td class="text-label">Images</td><td>How many slices the viewer loaded into the stack.</td></tr>
-				</tbody>
-			</table>
-		</div>
-		<Callout tone="key" title="Deliberately anonymous">
-			<p>
-				Patient names, hospital numbers and dates of birth are read by the viewer only to keep
-				its workings honest — they are never displayed on screen, never logged, and never sent
-				anywhere. What you see in the panel is technical detail about the images and nothing
-				else.
-			</p>
-		</Callout>
-	</Section>
+    <Section
+        id="open-study"
+        index="02"
+        eyebrow="Step 2"
+        title="Open the Study"
+    >
+        <p class="para">
+            Open the
+            {' '}
+            /free-dicom-viewer
+                DICOM viewer
+            </a>
+            {' '}
+            and choose the files or folder containing the examination.
+        </p>
 
-	<!-- Troubleshooting -->
-	<Section id="troubleshooting" index="06" title="If something goes wrong">
-		<p class="standfirst">
-			When the viewer cannot use a file it says so in the status line above the drop zone
-			rather than failing silently. Here is what each message means.
-		</p>
-		<div class="mt-8 space-y-6">
-			<div class="box p-6">
-				<h3 class="entry-title-sm">“Couldn't open these files as DICOM images…”</h3>
-				<p class="para-sm">
-					What you dropped was not DICOM — most often a zip archive, a PDF report or JPG
-					screenshots. Unzip first if needed, then choose the folder containing the scan files
-					themselves. Files with no extension are fine.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">“…use a compressed format this free viewer can't open”</h3>
-				<p class="para-sm">
-					A minority of scans are stored heavily compressed. Ask whoever supplied the images
-					for them in standard (uncompressed) DICOM form — discs almost always are — or view
-					them with the viewer program that came on the disc.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">“…files from a different scan were skipped”</h3>
-				<p class="para-sm">
-					Two studies were dropped together — for example a scan and a report CD. The viewer
-					keeps the larger stack and tells you what it set aside. Load one folder at a time to
-					see everything.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">“The viewer library is still loading — please wait a moment and try again.”</h3>
-				<p class="para-sm">
-					On a slow connection the viewer's code may still be arriving. Give it a few seconds
-					and press the button again — nothing has been lost.
-				</p>
-			</div>
-			<div class="box p-6">
-				<h3 class="entry-title-sm">The image is there but looks wrong</h3>
-				<p class="para-sm">
-					All black or all white: adjust Level. Flat grey soup: narrow the Width.
-					Upside-down-looking anatomy: some scanners store images differently — the views are
-					still faithful. When in doubt, <span class="font-semibold">Reset all</span>.
-				</p>
-			</div>
-		</div>
-	</Section>
+        <div class="entry-list">
+            <div class="entry">
+                <h3 class="entry-title">Choose files</h3>
+                <p class="para-sm">
+                    Select one or more DICOM files. For a CT or MRI examination,
+                    select all relevant files rather than a single image.
+                </p>
+            </div>
 
-	<!-- Common questions -->
-	<Section id="common-questions" index="07" title="Common questions">
-		<div class="entry-list mt-8">
-			{
-				<div class="py-6">
-					<h3 class="entry-title-sm">Is my scan really not uploaded anywhere?</h3>
-					<p class="para-sm">Correct. The viewer is a small program that runs inside your browser after the page loads. It opens the files that are already on your device and draws them on screen. No file is transmitted to this website or to any other server at any point.</p>
-				</div>
-				<div class="py-6">
-					<h3 class="entry-title-sm">Is it free?</h3>
-					<p class="para-sm">Yes — there is no charge, no account and no time limit. You do not even have to give an email address.</p>
-				</div>
-				<div class="py-6">
-					<h3 class="entry-title-sm">Can I use it on a phone or tablet?</h3>
-					<p class="para-sm">Yes. The viewer works in any modern browser on Windows, Mac, Linux, Android and iOS. On a phone, use the Choose files button rather than drag-and-drop, and the sliders instead of the mouse gestures.</p>
-				</div>
-				<div class="py-6">
-					<h3 class="entry-title-sm">What if the image looks all black, white or grey?</h3>
-					<p class="para-sm">That is almost always the window setting, not a problem with the file. Reset all first. If it is still not right, try the Level slider — most CT and MRI slices look correct with a level somewhere between 20 and 80, and a width between 200 and 400.</p>
-				</div>
-				<div class="py-6">
-					<h3 class="entry-title-sm">Someone sent me a single file</h3>
-					<p class="para-sm">A CT or MRI study is made up of many separate slice files, usually dozens or hundreds. If you were sent just one file, you have one slice. Ask for the whole folder, or drop several files at once.</p>
-				</div>
-				<div class="py-6">
-					<h3 class="entry-title-sm">Can I get a second opinion using this viewer?</h3>
-					<p class="para-sm">Not from this tool on its own. A formal second opinion needs a radiologist to read the full study on calibrated equipment, and it needs the images themselves — not screenshots. The viewer helps you understand what you have; the expert-witness service on this site is where a formal opinion begins.</p>
-				</div>
-			}
-			}
-		</div>
-	</Section>
+            <div class="entry">
+                <h3 class="entry-title">Choose a folder</h3>
+                <p class="para-sm">
+                    Where supported by the browser, selecting the complete folder is
+                    usually the simplest way to open a full examination.
+                </p>
+            </div>
 
-	<div class="band-paper">
-		<div class="container-page">
-			<div class="doc text-center">
-				<p class="meta-label">Ready to look at your scan?</p>
-				<div class="mt-5">
-					<a href="/free-dicom-viewer" class="btn btn-primary">Open the DICOM viewer</a>
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="entry">
+                <h3 class="entry-title">Drag and drop</h3>
+                <p class="para-sm">
+                    On a desktop computer, files or folders may also be dragged onto
+                    the viewer. Use the selection buttons on a phone or tablet.
+                </p>
+            </div>
+        </div>
+
+        <Callout tone="key" title="Open one study at a time">
+            <p>
+                If a folder contains several examinations or series, confirm that the
+                viewer has grouped them correctly. Do not assume that every selected
+                file belongs to the same examination.
+            </p>
+        </Callout>
+    </Section>
+
+    <Section
+        id="controls"
+        index="03"
+        eyebrow="Step 3"
+        title="Use the Viewer Controls"
+    >
+        <div class="entry-list">
+            <div class="entry">
+                <h3 class="entry-title">Move through images</h3>
+                <p class="para-sm">
+                    Use the slice control, arrow buttons, mouse wheel or touch gesture,
+                    depending on the device and browser.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Window and level</h3>
+                <p class="para-sm">
+                    Window width controls the displayed contrast. Window level controls
+                    the centre of the displayed brightness range. Suitable settings vary
+                    by modality, sequence and tissue.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Zoom and pan</h3>
+                <p class="para-sm">
+                    Zoom enlarges the image. Pan moves around an enlarged image without
+                    changing the underlying data.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Invert</h3>
+                <p class="para-sm">
+                    Invert reverses the displayed black and white values. It does not
+                    alter the source file.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Reset</h3>
+                <p class="para-sm">
+                    Use Reset if the image becomes difficult to see after adjusting the
+                    display.
+                </p>
+            </div>
+        </div>
+
+        <Callout tone="caution" title="Display only">
+            <p>
+                Display controls can make an abnormality more or less conspicuous.
+                They do not determine whether an examination is normal and should not
+                be used for self-diagnosis.
+            </p>
+        </Callout>
+    </Section>
+
+    <Section
+        id="privacy"
+        index="04"
+        eyebrow="Privacy"
+        title="Clinical Information in DICOM Files"
+    >
+        <p class="para">
+            DICOM files may contain patient names, dates of birth, hospital identifiers,
+            examination dates and other clinical information, even when those details
+            are not displayed on the screen.
+        </p>
+
+        <p class="para-sm">
+            The viewer is intended to process selected files locally in the browser.
+            This should be confirmed by technical testing of the deployed viewer,
+            including network activity, analytics, error reporting, browser storage
+            and third-party scripts.
+        </p>
+
+        <Callout tone="limit" title="Use an appropriate device">
+            <p>
+                Open identifiable clinical images only on a secure device and only
+                where you are authorised to access them. Closing the page does not
+                necessarily remove the original files from the device, download folder,
+                browser history or backups.
+            </p>
+        </Callout>
+    </Section>
+
+    <Section
+        id="troubleshooting"
+        index="05"
+        eyebrow="Troubleshooting"
+        title="If the Study Does Not Open"
+    >
+        <div class="entry-list">
+            <div class="entry">
+                <h3 class="entry-title">No images found</h3>
+                <p class="para-sm">
+                    Confirm that the selected folder contains DICOM images rather than
+                    only a PDF report, screenshots or the disc's viewing program.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Unsupported file</h3>
+                <p class="para-sm">
+                    Some compressed, encrypted, multi-frame or vendor-specific objects
+                    may not be supported. Try the viewer supplied with the examination
+                    or request a standard DICOM export.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Only one image appears</h3>
+                <p class="para-sm">
+                    Check whether only one file was selected. A complete CT or MRI
+                    examination usually contains many files.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">The image appears too dark or bright</h3>
+                <p class="para-sm">
+                    Use Reset, then adjust window and level gradually. There is no single
+                    correct setting for every CT or MRI examination.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3 class="entry-title">Performance is poor</h3>
+                <p class="para-sm">
+                    Large studies may exceed the available memory of a phone, tablet or
+                    older computer. Try a current desktop browser or the viewer supplied
+                    by the imaging provider.
+                </p>
+            </div>
+        </div>
+    </Section>
+
+    <Section
+        id="questions"
+        index="06"
+        eyebrow="Reference"
+        title="Common Questions"
+    >
+        <div class="entry-list">
+            {
+                faqs.map((item) => (
+                    <div class="entry">
+                        <h3 class="entry-title">{item.q}</h3>
+                        <p class="para-sm">{item.a}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </Section>
+
+    <section class="band-paper">
+        <div class="container-page">
+            <div class="doc text-center">
+                <p class="meta-label">Ready to open the examination?</p>
+
+                <div class="mt-5">
+                    /free-dicom-viewer
+                        Open the DICOM viewer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </BaseLayout>

@@ -2,189 +2,377 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PageIntro from '../components/PageIntro.astro';
-import Figure from '../components/Figure.astro';
-import { toast, type ToastKind } from '../lib/toast';
+import Callout from '../components/Callout.astro';
 import { PAGE_HERO_IMAGES } from '../consts';
 
-const details = [
-	{ label: 'Email', value: "enquiries@medicolegal.org", href: `mailto:${"enquiries@medicolegal.org"}` },
-	{ label: 'Phone', value: "+44 1234 567 890", href: `tel:${"+44 1234 567 890".replace(/[^0-9+]/g, '')}` },
-	{ label: 'GMC', value: "1234567" },
-	{ label: 'Address', value: "123 Medical Centre, London, UK" },
-];
+const contactEmail = 'enquiries@medicolegal.org';
+const gmcNumber = '7017101';
 ---
 
-<BaseLayout title="Contact | Radiology &amp; Medicolegal Law" description="Clinic locations, secretarial contact details and a secure contact form for Dr Joseph El-Sheikha's medico-legal imaging practice.">
-	<PageHero
-		eyebrow="Get in touch"
-		title="Contact"
-		description="Reach the secretariat for referrals, enquiries about instruction, or general questions about the practice."
-		heroImage={PAGE_HERO_IMAGES["/contact"] || undefined}
-	/>
+<BaseLayout
+    title="Contact | Radiology & Medicolegal Law"
+    description="Contact details and general enquiries for the radiology and medicolegal practice."
+>
+    <PageHero
+        eyebrow="Contact"
+        title="Contact"
+        description="General enquiries and preliminary enquiries about expert instruction."
+        heroImage={PAGE_HERO_IMAGES["/contact"] || undefined}
+    />
 
-	<PageIntro
-		eyebrow="Get in touch"
-		paragraphs={[
-			'Contact details for the secretariat, and a secure form for enquiries about the resource, instruction, or imaging transfer.',
-			'The reference material on this site is free to use and needs no account. Enquiries about a specific matter, or about instructing an expert, go to the secretariat rather than through the library pages.',
-		]}
-		contents={[
-			{ href: '#secretariat', label: 'Secretariat' },
-			{ href: '#enquiry-form', label: 'Enquiry form' },
-		]}
-		reviewed="September 2026"
-	/>
+    <PageIntro
+        eyebrow="Enquiries"
+        paragraphs={[
+            'Please use the contact details or form below for general enquiries and preliminary enquiries about expert instruction.',
+            'Do not send patient-identifiable information, medical records or diagnostic images through this form. A secure transfer method will be provided if an instruction is accepted.'
+        ]}
+        contents={[
+            { href: '#contact-details', label: 'Contact details' },
+            { href: '#enquiry-form', label: 'Send an enquiry' },
+        ]}
+        reviewed="October 2026"
+    />
 
-	<section class="band">
-		<div class="container-page">
-			<div class="doc space-y-14">
-				<!-- Contact details -->
-				<div id="secretariat" class="sec">
-					<span class="meta-label">Secretariat</span>
-					<h2 class="sec-title">Contact details</h2>
-					<table class="table">
-						<tbody>
-							<tr>
-								<th scope="row">Email</th>
-								<td>
-									<a href="mailto:secretary@radiologylaw.com" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">secretary@radiologylaw.com</a>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Phone</th>
-								<td>
-									<a href="tel:On request" class="underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-slate-600">On request</a>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">GMC</th>
-								<td>
-									GMC 7017101
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Address</th>
-								<td>
-									Oxford, Basingstoke & Winchester
-								</td>
-							</tr>
-						</tbody>
-</tbody>
-					</table>
+    <section class="band">
+        <div class="container-page">
+            <div class="doc space-y-14">
 
-					<div class="mt-8 grid gap-6 sm:grid-cols-2">
-						<Figure
-							src="/images/consult-room.jpg"
-							alt="A consultation room used for medicolegal appointments"
-							label="Plate 01"
-							caption="Consultation and reporting rooms"
-							subtitle="Appointments are held by arrangement; imaging is reviewed at the reporting workstation rather than in consultation."
-							ratio="photo"
-							sizes="(min-width: 640px) 45vw, 100vw"
-							flush
-						/>
-						<Figure
-							label="Plate 02"
-							caption="Location"
-							subtitle="A map or plan of the consulting address sits here; the full address is given in the table above."
-							ratio="photo"
-							flush
-						>
-							<div class="plate-reserved">
-								<div class="plate-reserved-inner">
-									<p class="plate-reserved-label">Location map</p>
-									<p class="plate-reserved-note">{"123 Medical Centre, London, UK"}</p>
-								</div>
-							</div>
-						</Figure>
-					</div>
-				</div>
+                <section id="contact-details" class="sec">
+                    <span class="meta-label">Secretariat</span>
+                    <h2 class="sec-title">Contact Details</h2>
 
-				<!-- Contact form -->
-				<div id="enquiry-form" class="sec">
-					<span class="meta-label">Encrypted enquiry</span>
-					<h2 class="sec-title">Send a message</h2>
-					<form id="contact-form" class="mt-6 grid gap-5">
-						<label class="form-label">
-							Name *
-							<input name="name" type="text" required class="input-field" placeholder="Full name" />
-						</label>
-						<label class="form-label">
-							Email *
-							<input name="email" type="email" required class="input-field" placeholder="you@example.com" />
-						</label>
-						<label class="form-label">
-							Subject
-							<select name="subject" class="input-field">
-								<option>General enquiry</option>
-								<!-- <option>Referral / instruction</option> -->
-								<option>Imaging transfer</option>
-								<option>Case progress</option>
-							</select>
-						</label>
-						<label class="form-label">
-							Message *
-							<textarea name="message" rows="6" required class="input-field" placeholder="How can we help?"></textarea>
-						</label>
-						<!-- CSRF protection -->
-						<input type="hidden" name="csrfToken" id="contact-csrf" />
-						<!-- Spam honeypot — hidden from humans, filled by bots -->
-						<input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
-						<div class="flex-gap-sm">
-							<button type="submit" class="btn btn-primary" data-submit>Send message</button>
-							<span class="text-muted">Encrypted in transit and stored securely.</span>
-						</div>
-						<p class="text-muted leading-relaxed">
-							Please keep your message anonymised — no patient names, dates of birth, NHS numbers or
-							other identifying information. By sending, you agree to the
-							<a href="/privacy-notice" class="link">privacy notice</a>
-							and the
-							<a href="/disclaimer-and-terms-of-use" class="link">terms of use</a>.
-						</p>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>
+                                    {`mailto:${contactEmail}`}
+                                        {contactEmail}
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">GMC</th>
+                                <td>{gmcNumber}</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Location</th>
+                                <td>Basingstoke, Hampshire</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="para-sm mt-6">
+                        Telephone and postal details are provided where required following
+                        initial contact.
+                    </p>
+                </section>
+
+                <section id="enquiry-form" class="sec">
+                    <span class="meta-label">General enquiry</span>
+                    <h2 class="sec-title">Send a Message</h2>
+
+                    <form id="contact-form" class="mt-6 grid gap-5">
+                        <label class="form-label">
+                            Name
+                            <input
+                                name="name"
+                                type="text"
+                                required
+                                autocomplete="name"
+                                maxlength="120"
+                                class="input-field"
+                            />
+                        </label>
+
+                        <label class="form-label">
+                            Email address
+                            <input
+                                name="email"
+                                type="email"
+                                required
+                                autocomplete="email"
+                                inputmode="email"
+                                maxlength="254"
+                                class="input-field"
+                            />
+                        </label>
+
+                        <label class="form-label">
+                            Subject
+                            <select name="subject" class="input-field">
+                                <option value="general">General enquiry</option>
+                                <option value="expert-instruction">
+                                    Expert-witness enquiry
+                                </option>
+                                <option value="existing-matter">
+                                    Existing instruction
+                                </option>
+                                <option value="website">
+                                    Website query
+                                </option>
+                            </select>
+                        </label>
+
+                        <label class="form-label">
+                            Message
+                            <textarea
+                                name="message"
+                                rows="6"
+                                required
+                                maxlength="4000"
+                                class="input-field"
+                                placeholder="Please provide a brief anonymised summary."
+                            ></textarea>
+                        </label>
+
+                        <input
+                            type="hidden"
+                            name="csrfToken"
+                            id="contact-csrf"
+                        />
+
+                        <div
+                            class="absolute -left-[9999px]"
+                            aria-hidden="true"
+                        >
+                            <label for="contact-website">
+                                Leave this field empty
+                            </label>
+
+                            <input
+                                id="contact-website"
+                                name="_honey"
+                                type="text"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <Callout tone="limit" title="Do not include patient information">
+                            <p>
+                                Do not enter patient names, dates of birth, NHS or hospital
+                                numbers, addresses, medical records or other identifiable
+                                clinical information. Do not send DICOM images or attachments
+                                by ordinary email.
+                            </p>
+                        </Callout>
+
+                        <p
+                            id="contact-status"
+                            class="hidden text-sm"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+
+                        <div class="flex-gap-sm">
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                data-submit
+                                disabled
+                            >
+                                Preparing form…
+                            </button>
+
+                            <span class="text-muted">
+                                Your information is handled in accordance with the
+                                {' '}
+                                /privacy-notice
+                                    privacy notice
+                                </a>.
+                            </span>
+                        </div>
+                    </form>
+                </section>
+
+            </div>
+        </div>
+    </section>
 </BaseLayout>
 
 <script>
+    import { toast } from '../lib/toast';
 
-	// Fetch CSRF token on page load
-	(async () => {
-		try {
-			const res = await fetch("/api/contact");
-			if (res.ok) {
-				const json = (await res.json()) as { csrfToken?: string; error?: string } | Record<string, unknown>;
-				const input = document.getElementById("contact-csrf") as HTMLInputElement | null;
-				if (input && json.csrfToken) input.value = json.csrfToken;
-			}
-		} catch { /* token fetch failed — form will still work but without CSRF */ }
-	})();
+    interface ContactResponse {
+        csrfToken?: string;
+        reference?: string;
+        error?: string;
+    }
 
-	const form = document.getElementById("contact-form") as HTMLFormElement | null;
-	if (form) {
-		form.addEventListener("submit", async (e) => {
-			e.preventDefault();
-			const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
-			const btn = form.querySelector("[data-submit]") as HTMLButtonElement | null;
-			if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-			try {
-				const res = await fetch("/api/contact", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(data),
-				});
-				const json = (await res.json()) as { csrfToken?: string; error?: string } | Record<string, unknown>;
-				if (!res.ok) throw new Error(json.error || "Failed");
-				form.reset();
-				toast("Thank you — your message has been received.", "success", 4000);
-			} catch (err: unknown) {
-				const msg = err instanceof Error ? err.message : "There was a problem sending your message. Please email the secretariat directly.";
-				toast(msg, "error", 5000);
-			} finally {
-				if (btn) { btn.disabled = false; btn.textContent = "Send message"; }
-			}
-		});
-	}
+    const form = document.getElementById(
+        'contact-form'
+    ) as HTMLFormElement | null;
+
+    const csrfInput = document.getElementById(
+        'contact-csrf'
+    ) as HTMLInputElement | null;
+
+    const submitButton = form?.querySelector(
+        '[data-submit]'
+    ) as HTMLButtonElement | null;
+
+    const status = document.getElementById('contact-status');
+
+    function setStatus(
+        message: string,
+        kind: 'neutral' | 'error' | 'success' = 'neutral'
+    ): void {
+        if (!status) return;
+
+        status.textContent = message;
+        status.classList.remove(
+            'hidden',
+            'text-slate-600',
+            'text-red-700',
+            'text-green-700'
+        );
+
+        if (kind === 'error') {
+            status.classList.add('text-red-700');
+        } else if (kind === 'success') {
+            status.classList.add('text-green-700');
+        } else {
+            status.classList.add('text-slate-600');
+        }
+    }
+
+    function clearStatus(): void {
+        if (!status) return;
+
+        status.textContent = '';
+        status.classList.add('hidden');
+    }
+
+    async function readResponse(
+        response: Response
+    ): Promise<ContactResponse> {
+        try {
+            return await response.json() as ContactResponse;
+        } catch {
+            return {};
+        }
+    }
+
+    async function prepareForm(): Promise<void> {
+        if (!form || !csrfInput || !submitButton) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Preparing form…';
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'GET',
+                credentials: 'same-origin',
+                headers: {
+                    Accept: 'application/json',
+                },
+            });
+
+            const result = await readResponse(response);
+
+            if (!response.ok || !result.csrfToken) {
+                throw new Error();
+            }
+
+            csrfInput.value = result.csrfToken;
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send message';
+        } catch {
+            setStatus(
+                'The enquiry form is temporarily unavailable. Please use the email address above.',
+                'error'
+            );
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Form unavailable';
+        }
+    }
+
+    form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (!form || !csrfInput || !submitButton) return;
+
+        clearStatus();
+
+        if (!csrfInput.value) {
+            setStatus(
+                'The secure form session has expired. Please reload the page.',
+                'error'
+            );
+            return;
+        }
+
+        if (!form.reportValidity()) return;
+
+        const payload = Object.fromEntries(
+            new FormData(form).entries()
+        );
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        form.setAttribute('aria-busy', 'true');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const result = await readResponse(response);
+
+            if (!response.ok) {
+                if (result.csrfToken) {
+                    csrfInput.value = result.csrfToken;
+                }
+
+                const message =
+                    result.error === 'RATE_LIMITED'
+                        ? 'Too many messages have been submitted. Please try again later.'
+                        : 'The message could not be sent. Please check the form and try again.';
+
+                throw new Error(message);
+            }
+
+            form.reset();
+
+            if (result.csrfToken) {
+                csrfInput.value = result.csrfToken;
+            } else {
+                await prepareForm();
+            }
+
+            const confirmation = result.reference
+                ? `Your message has been received. Reference: ${result.reference}.`
+                : 'Your message has been received.';
+
+            setStatus(confirmation, 'success');
+            toast(confirmation, 'success', 4000);
+        } catch (error: unknown) {
+            const message =
+                error instanceof Error
+                    ? error.message
+                    : 'The message could not be sent. Please use the email address above.';
+
+            setStatus(message, 'error');
+            toast(message, 'error', 5000);
+        } finally {
+            form.removeAttribute('aria-busy');
+
+            if (csrfInput.value) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send message';
+            }
+        }
+    });
+
+    void prepareForm();
 </script>

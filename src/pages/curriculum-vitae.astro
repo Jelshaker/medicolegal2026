@@ -6,142 +6,537 @@ import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
 import { PAGE_HERO_IMAGES } from '../consts';
 
-const career = [
-	{ period: '2021 — Present', role: 'Consultant Radiologist', org: 'NHS Foundation Trust', detail: 'Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.' },
-	{ period: '2019 — 2021', role: 'Consultant Radiologist', org: 'Independent sector | The Harley Street Medico-Legal Imaging Unit', detail: 'Independent expert workload: CPR Part 35 compliant reporting for solicitors, barristers and insurers.' },
-	{ period: '2017 — 2019', role: 'Sub-specialty Fellowship', org: 'MSK, GI & Interventional Radiology', detail: 'Advanced fellowship training including CT-guided and fluoroscopic interventional procedures.' },
-	{ period: '2013 — 2017', role: 'Clinical Radiology Training (ST1–ST5)', org: 'Royal College of Radiologists (FRCR)', detail: 'Completed full radiology training programme; passed all FRCR examinations.' },
-	{ period: '2009 — 2013', role: 'Core Surgical Training', org: 'Royal College of Surgeons of England (MRCS)', detail: 'Surgical foundation and core training, providing the basis for an interventional practice.' },
-	{ period: '2003 — 2009', role: 'MBChB (Hons)', org: 'University of Leeds School of Medicine', detail: 'Graduated with honours; distinctions in anatomy and clinical skills.' },
-];
+const qualifications = [
+    {
+        year: '2019',
+        award: 'Fellowship of the Royal College of Radiologists',
+        institution: 'Royal College of Radiologists',
+    },
+    {
+        year: '2017',
+        award: 'LLM Healthcare Ethics and Law',
+        institution: 'University of Manchester',
+    },
+    {
+        year: '2017',
+        award: 'Doctor of Medicine',
+        institution: 'Hull York Medical School',
+    },
+    {
+        year: '2014',
+        award: 'Postgraduate Diploma in Research Training',
+        institution: 'Hull York Medical School',
+    },
+    {
+        year: '2013',
+        award: 'Postgraduate Diploma in Clinical Education',
+        institution:
+            'Royal College of Physicians and Surgeons of Glasgow / Association of Business Practitioners',
+    },
+    {
+        year: '2013',
+        award: 'Postgraduate Certificate in Diagnostic Imaging',
+        institution: 'University of Leeds',
+    },
+    {
+        year: '2011',
+        award: 'Membership of the Royal College of Surgeons',
+        institution: 'Royal College of Surgeons of England',
+    },
+    {
+        year: '2008',
+        award: 'Bachelor of Medicine, Bachelor of Surgery',
+        institution: 'University of Manchester',
+    },
+] as const;
 
+const career = [
+    {
+        period: 'September 2023 — Present',
+        role: 'Consultant Radiologist',
+        organisation: 'Hampshire Hospitals NHS Foundation Trust',
+        detail:
+            'Consultant practice with specialist interests in gastrointestinal, hepatobiliary, oncological and peritoneal imaging.',
+    },
+    {
+        period: 'September 2022 — September 2023',
+        role: 'Locum Consultant Radiologist',
+        organisation: 'Hampshire Hospitals NHS Foundation Trust',
+        detail:
+            'Consultant radiology practice based principally at Winchester.',
+    },
+    {
+        period: 'September 2021 — September 2022',
+        role: 'Peritoneal Malignancy Radiology Fellow',
+        organisation: 'Basingstoke Hospital',
+        detail:
+            'Specialist fellowship in the imaging assessment of peritoneal malignancy.',
+    },
+    {
+        period: 'August 2016 — September 2021',
+        role: 'Clinical Radiology Specialist Trainee',
+        organisation: 'John Radcliffe Hospital, Oxford',
+        detail:
+            'Higher specialist training in clinical radiology, leading to completion of FRCR.',
+    },
+    {
+        period: '2012 — 2014',
+        role: 'Vascular Surgery Research Fellow',
+        organisation: 'Hull Royal Infirmary',
+        detail:
+            'Clinical research in venous disease, trial outcomes and patient-reported outcome measures.',
+    },
+    {
+        period: '2008 — 2016',
+        role: 'Foundation, surgical and specialty posts',
+        organisation: 'North West, Yorkshire, Warwickshire and North Wales',
+        detail:
+            'Clinical posts in general surgery, trauma and orthopaedics, urology, paediatrics, obstetrics and gynaecology, elderly medicine and general practice.',
+    },
+] as const;
+
+const memberships = [
+    'General Medical Council',
+    'Fellow of the Royal College of Radiologists',
+    'British Society of Gastrointestinal and Abdominal Radiology',
+] as const;
+
+const selectedPublications = [
+    {
+        title:
+            'The appendix “mucocoele” misnomer: radiological terminology of “likely appendiceal mucinous neoplasm” better reflects the pathological finding',
+        authors:
+            'Bhagwanani A, El-Sheikha J, Shah N, Thrower A, Carr NJ, Moran BJ',
+        journal: 'Clinical Radiology',
+    },
+    {
+        title:
+            'Rectal venous malformation treated by superior rectal artery embolization',
+        authors: 'El-Sheikha J, Little MW, Bratby M',
+        journal: 'Cardiovascular and Interventional Radiology, 2019',
+    },
+    {
+        title:
+            'Long-term outcomes of endovenous laser ablation and conventional surgery for great saphenous varicose veins',
+        authors:
+            'Wallace T, El-Sheikha J, Nandhra S, Carradice D, Samuel N, Smith GE, Chetter IC',
+        journal: 'British Journal of Surgery, 2018',
+    },
+    {
+        title:
+            'A systematic review of the compression regimes used in randomised clinical trials following endovenous ablation',
+        authors:
+            'El-Sheikha J, Carradice D, Nandhra S, Leung C, Smith GE, Wallace T, Campbell B, Chetter IC',
+        journal: 'Phlebology, 2016',
+    },
+    {
+        title:
+            'Clinical outcomes and quality of life five years after a randomised trial of concomitant or sequential phlebectomy following endovenous laser ablation',
+        authors:
+            'El-Sheikha J, Nandhra S, Carradice D, Wallace T, Samuel N, Smith GE, Chetter IC',
+        journal: 'British Journal of Surgery, 2014',
+    },
+] as const;
+
+const selectedPresentations = [
+    {
+        year: '2022',
+        title:
+            'The value of providing a second read of external imaging for patients referred to a specialist peritoneal malignancy centre',
+        meeting:
+            'European Society of Gastrointestinal and Abdominal Radiology, Lisbon',
+    },
+    {
+        year: '2022',
+        title: 'Imaging atlas of peritoneal anatomy',
+        meeting:
+            'European Society of Gastrointestinal and Abdominal Radiology, Lisbon',
+    },
+    {
+        year: '2015',
+        title:
+            'Ureteric stone length, area and volume as predictors of spontaneous expulsion',
+        meeting:
+            'European Symposium on Urogenital Radiology, Copenhagen',
+    },
+] as const;
+
+const awards = [
+    {
+        year: '2022',
+        award: 'Top 20 Presenter',
+        body: 'European Society of Gastrointestinal and Abdominal Radiology',
+    },
+    {
+        year: '2022',
+        award: 'Travel Bursary',
+        body: 'British Society of Gastrointestinal and Abdominal Radiology',
+    },
+    {
+        year: '2016',
+        award: 'First Prize, Oral Presentation',
+        body: 'European Venous Forum',
+    },
+    {
+        year: '2015',
+        award: 'First Prize, Oral Presentation and Poster',
+        body: 'European Venous Forum',
+    },
+    {
+        year: '2014',
+        award: 'British Journal of Surgery Prize',
+        body: 'Society of Academic and Research Surgery',
+    },
+] as const;
 ---
 
-<BaseLayout title="Curriculum Vitae | Radiology &amp; Medicolegal Law" description="Career timeline, qualifications, sub-specialty interests and memberships of Dr Joseph El-Sheikha FRCR — Consultant Radiologist and medicolegal expert witness.">
-	<PageHero
-		eyebrow="Professional record"
-		title="Curriculum Vitae"
-		description="A structured record of qualifications, appointments, sub-specialty interests and memberships."
-		heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"] || undefined}
-	/>
+<BaseLayout
+    title="Curriculum Vitae | Radiology & Medicolegal Law"
+    description="Qualifications, appointments, specialist interests, research and teaching record of Dr Joseph El-Sheikha, Consultant Radiologist."
+>
+    <PageHero
+        eyebrow="Professional record"
+        title="Curriculum Vitae"
+        description="Qualifications, appointments, specialist interests, research and teaching."
+        heroImage={PAGE_HERO_IMAGES["/curriculum-vitae"] || undefined}
+    />
 
-	<PageIntro
-		eyebrow="Professional record"
-		paragraphs={[
-			'A structured record of the qualifications, appointments and memberships behind the resource, provided so that the basis of the commentary can be checked.',
-			'The resource is written from an NHS consultant practice with an independent medicolegal workload. This page sets out the training and subspecialty interests that sit behind it.',
-		]}
-		contents={[
-			{ href: '#overview', label: 'Overview' },
-			{ href: '#appointments', label: 'Appointments and qualifications' },
-			{ href: '#memberships', label: 'Memberships' },
-		]}
-		reviewed="September 2026"
-	/>
+    <PageIntro
+        eyebrow="Dr Joseph El-Sheikha"
+        paragraphs={[
+            'Consultant Radiologist at Hampshire Hospitals NHS Foundation Trust, with specialist interests in gastrointestinal, hepatobiliary, oncological and peritoneal imaging.',
+            'This page provides a selective public record. A complete curriculum vitae and supporting professional information are available where required for an instruction.'
+        ]}
+        contents={[
+            { href: '#overview', label: 'Overview' },
+            { href: '#appointments', label: 'Appointments' },
+            { href: '#qualifications', label: 'Qualifications' },
+            { href: '#memberships', label: 'Memberships' },
+            { href: '#research', label: 'Research' },
+            { href: '#teaching', label: 'Teaching' },
+        ]}
+        reviewed="October 2026"
+    />
 
-	<!-- Overview -->
-	<section id="overview" class="scroll-mt-24 section-white-sm">
-		<div class="container-page">
-			<div class="doc">
-				<p class="meta-label">Registration & standing</p>
-				<table class="table mt-4">
-					<tbody>
-						<tr>
-							<th scope="row">GMC</th>
-							<td>{"1234567".replace("GMC ", "")} — full registration with a licence to practise</td>
-						</tr>
-						<tr>
-							<th scope="row">Sub-specialty</th>
-							<td>MSK · GI · IR — {"MSK, GI & Interventional Radiology"}</td>
-						</tr>
-						<tr>
-							<th scope="row">Indemnity</th>
-							<td>{"Medical Defence Union"}</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="mx-auto mt-10 max-w-xs">
-					<Figure
-						src={"/images/practitioner.jpg"}
-						alt={"Dr Joseph El-Sheikha"}
-						label="Plate 01"
-						caption={"Dr Joseph El-Sheikha"}
-						subtitle="Consultant Radiologist · MSK · GI · IR"
-						ratio="portrait"
-						flush
-					/>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section id="overview" class="scroll-mt-24 section-white-sm">
+        <div class="container-page">
+            <div class="doc">
+                <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+                    <div>
+                        <p class="meta-label">Professional overview</p>
 
-	<!-- Timeline -->
-	<section id="appointments" class="scroll-mt-24 section-paper">
-		<div class="container-page">
-			<div class="doc">
-				<span class="meta-label">Career &amp; training</span>
-				<h2 class="sec-title-lg">Appointments &amp; qualifications</h2>
-				<ol class="entry-list-mt-8">
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2021 — Present</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Consultant Radiologist</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">NHS Foundation Trust</p>
-						<p class="para-sm">Reporting general radiology with sub-specialty sessions in MSK and gastrointestinal imaging; teaching and supervision of registrars.</p>
-					</li>
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2019 — 2021</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Consultant Radiologist</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">Independent sector | The Harley Street Medico-Legal Imaging Unit</p>
-						<p class="para-sm">Independent expert workload: CPR Part 35 compliant reporting for solicitors, barristers and insurers.</p>
-					</li>
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2017 — 2019</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Sub-specialty Fellowship</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">MSK, GI & Interventional Radiology</p>
-						<p class="para-sm">Advanced fellowship training including CT-guided and fluoroscopic interventional procedures.</p>
-					</li>
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2013 — 2017</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Clinical Radiology Training (ST1–ST5)</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">Royal College of Radiologists (FRCR)</p>
-						<p class="para-sm">Completed full radiology training programme; passed all FRCR examinations.</p>
-					</li>
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2009 — 2013</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">Core Surgical Training</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">Royal College of Surgeons of England (MRCS)</p>
-						<p class="para-sm">Surgical foundation and core training, providing the basis for an interventional practice.</p>
-					</li>
-					<li class="py-6">
-						<p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">2003 — 2009</p>
-						<h3 class="mt-1 font-serif text-lg font-bold text-slate-900">MBChB (Hons)</h3>
-						<p class="mt-0.5 font-sans text-sm text-slate-600">University of Leeds School of Medicine</p>
-						<p class="para-sm">Graduated with honours; distinctions in anatomy and clinical skills.</p>
-					</li>
-				</ol>
-			</div>
-		</div>
-	</section>
+                        <h2 class="sec-title-lg">
+                            Consultant Radiologist
+                        </h2>
 
-	<!-- Memberships -->
-	<section id="memberships" class="section-scroll">
-		<div class="container-page">
-			<div class="doc">
-				<span class="meta-label">Professional bodies</span>
-				<h2 class="sec-title-lg">Memberships</h2>
-				<ul class="mt-8 space-y-3 divider pt-4">
-					<li class="font-serif text-[0.95rem] text-slate-700">Fellow - Royal College of Radiologists (FRCR)</li>
-					<li class="font-serif text-[0.95rem] text-slate-700">Member - European Society of Radiology (ESR)</li>
-					<li class="font-serif text-[0.95rem] text-slate-700">British Society of Gastroenterology and Abdominal Imaging (BSGAR)</li>
-				</ul>
-				<Callout tone="key" title="Publications & research">
-					<p>
-						Peer-reviewed and invited contributions on delayed-diagnosis radiology, measurement
-						reproducibility and expert-report writing. A full publication list, appraisal portfolio
-						and appraisal date are available on request.
-					</p>
-				</Callout>
-			</div>
-		</div>
-	</section>
+                        <p class="para">
+                            Dr El-Sheikha practises at Hampshire Hospitals NHS
+                            Foundation Trust. His clinical interests include
+                            gastrointestinal, hepatobiliary and oncological imaging,
+                            with a particular interest in peritoneal malignancy.
+                        </p>
+
+                        <p class="para">
+                            His background includes specialist radiology training in
+                            Oxford, a dedicated peritoneal malignancy fellowship in
+                            Basingstoke, clinical research and earlier surgical training.
+                        </p>
+
+                        <table class="table mt-8">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Current appointment</th>
+                                    <td>
+                                        Consultant Radiologist, Hampshire Hospitals
+                                        NHS Foundation Trust
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Specialist interests</th>
+                                    <td>
+                                        GI, hepatobiliary, oncological and peritoneal
+                                        imaging
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Registration</th>
+                                    <td>
+                                        GMC 7017101
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Qualifications</th>
+                                    <td>
+                                        MBChB · MRCS · FRCR · MD · LLM
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <Figure
+                        src="/images/practitioner.jpg"
+                        alt="Dr Joseph El-Sheikha"
+                        label="Plate 01"
+                        caption="Dr Joseph El-Sheikha"
+                        subtitle="Consultant Radiologist"
+                        ratio="portrait"
+                        flush
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointments" class="scroll-mt-24 section-paper">
+        <div class="container-page">
+            <div class="doc">
+                <span class="meta-label">Career</span>
+                <h2 class="sec-title-lg">Appointments</h2>
+
+                <ol class="entry-list-mt-8">
+                    {
+                        career.map((appointment) => (
+                            <li class="py-6">
+                                <p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                                    {appointment.period}
+                                </p>
+
+                                <h3 class="mt-1 font-serif text-lg font-bold text-slate-900">
+                                    {appointment.role}
+                                </h3>
+
+                                <p class="mt-0.5 font-sans text-sm text-slate-600">
+                                    {appointment.organisation}
+                                </p>
+
+                                <p class="para-sm">
+                                    {appointment.detail}
+                                </p>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualifications" class="scroll-mt-24 section-white-sm">
+        <div class="container-page">
+            <div class="doc">
+                <span class="meta-label">Education</span>
+                <h2 class="sec-title-lg">Qualifications</h2>
+
+                <div class="entry-list-ruled mt-8">
+                    {
+                        qualifications.map((item) => (
+                            <div class="entry">
+                                <p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                                    {item.year}
+                                </p>
+
+                                <h3 class="entry-title">
+                                    {item.award}
+                                </h3>
+
+                                <p class="para-sm">
+                                    {item.institution}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <Callout tone="key" title="Additional examination">
+                    <p>
+                        United States Medical Licensing Examination completed in
+                        2014 through the Educational Commission for Foreign Medical
+                        Graduates.
+                    </p>
+                </Callout>
+            </div>
+        </div>
+    </section>
+
+    <section id="memberships" class="scroll-mt-24 section-paper">
+        <div class="container-page">
+            <div class="doc">
+                <span class="meta-label">Professional bodies</span>
+                <h2 class="sec-title-lg">Memberships</h2>
+
+                <ul class="mt-8 space-y-3 divider pt-4">
+                    {
+                        memberships.map((membership) => (
+                            <li class="font-serif text-[0.95rem] text-slate-700">
+                                {membership}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="scroll-mt-24 section-white-sm">
+        <div class="container-page">
+            <div class="doc space-y-12">
+                <div>
+                    <span class="meta-label">Academic work</span>
+                    <h2 class="sec-title-lg">Research and Publications</h2>
+
+                    <p class="para">
+                        Research interests include peritoneal malignancy              selectedPublications.map((publication) => (
+                                <div class="entry">
+                                    <p class="font-serif text-[0.95rem] font-bold text-slate-900">
+                                        {publication.title}
+                                    </p>
+
+                                    <p class="para-sm">
+                                        {publication.authors}
+                                    </p>
+
+                                    <p class="text-meta">
+                                        {publication.journal}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="entry-title">Selected presentations</h3>
+
+                    <div class="entry-list-ruled mt-6">
+                        {
+                            selectedPresentations.map((presentation) => (
+                                <div class="entry">
+                                    <p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                                        {presentation.year}
+                                    </p>
+
+                                    <p class="font-serif text-[0.95rem] font-bold text-slate-900">
+                                        {presentation.title}
+                                    </p>
+
+                                    <p class="para-sm">
+                                        {presentation.meeting}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="entry-title">Selected awards</h3>
+
+                    <div class="entry-list-ruled mt-6">
+                        {
+                            awards.map((item) => (
+                                <div class="entry">
+                                    <p class="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                                        {item.year}
+                                    </p>
+
+                                    <p class="font-serif text-[0.95rem] font-bold text-slate-900">
+                                        {item.award}
+                                    </p>
+
+                                    <p class="para-sm">
+                                        {item.body}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <Callout tone="key" title="Complete academic record">
+                    <p>
+                        A full publication, presentation and awards record is available
+                        in the complete curriculum vitae.
+                    </p>
+                </Callout>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching" class="scroll-mt-24 section-paper">
+        <div class="container-page">
+            <div class="doc">
+                <span class="meta-label">Education</span>
+                <h2 class="sec-title-lg">Teaching</h2>
+
+                <p class="para">
+                    Dr El-Sheikha teaches gastrointestinal and hepatobiliary radiology
+                    and has experience in postgraduate and undergraduate medical
+                    education.
+                </p>
+
+                <div class="entry-list mt-8">
+                    <div class="entry">
+                        <h3 class="entry-title">
+                            South East Radiology Academy
+                        </h3>
+
+                        <p class="para-sm">
+                            Tutor in gastrointestinal and hepatobiliary and pancreatic
+                            radiology.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">
+                            Clinical education
+                        </h3>
+
+                        <p class="para-sm">
+                            Postgraduate Diploma in Clinical Education and Training the
+                            Trainers qualification.
+                        </p>
+                    </div>
+
+                    <div class="entry">
+                        <h3 class="entry-title">
+                            Previous teaching roles
+                        </h3>
+
+                        <p class="para-sm">
+                            Teaching and examining roles in surgical skills, vascular
+                            ultrasound, undergraduate assessment and clinical mentoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="band-white">
+        <div class="container-page">
+            <div class="panel-dark-lg">
+                <h2 class="heading-hero-white">
+                    Further Information
+                </h2>
+
+                <p class="centered-text-muted">
+                    A complete curriculum vitae and supporting professional information
+                    are available where required for an instruction.
+                </p>
+
+                <div class="btn-group">
+                    /expert-witness-gi-peritoneal-malignancy
+                        Expert-witness information
+                    </a>
+
+                    /contact
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </BaseLayout>

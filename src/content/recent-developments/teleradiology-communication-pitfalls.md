@@ -1,247 +1,483 @@
 ---
-title: "Communication and Teleradiology Pitfalls in Acute Abdominal Imaging: Escalation Protocols & Duty of Candour"
-description: "Outsourced remote reporting increases radiology error rates from 3–5% to 8–13%. How do communication breakdowns, missing prior imaging and uninformative referral forms contribute to diagnostic delay — and what are the duty of candour obligations?"
+title: "Communication and Teleradiology in Acute Abdominal Imaging"
+description: "How access to clinical information, prior imaging, escalation pathways and provider governance affect the safety of remote abdominal CT reporting."
 pubDate: 2026-03-02
 category: practice
-tags: ["Teleradiology", "Remote Reporting", "Communication", "Duty of Candour", "Escalation", "Reporting Errors"]
+tags:
+  - "Teleradiology"
+  - "Remote Reporting"
+  - "Communication"
+  - "Critical Findings"
+  - "Duty of Candour"
+  - "Clinical Governance"
 featured: true
-anonymised: true
-author: "Dr Joseph El-Sheikha, MBChB MRCS FRCR"
+anonymised: false
+author: "Dr Joseph El-Sheikha"
 keyTakeaways:
-  - "Offsite radiology reporting is associated with error rates of 8.7–12.7% compared to 3–5% for co-located radiologists."
-  - "Missing prior imaging, uninformative request forms and communication breakdowns are the three systemic risk factors most frequently cited in teleradiology claims."
-  - "The duty of candour applies equally to remote reporting radiologists as to their NHS colleagues."
-  - "Robust escalation protocols must be practicable — not just documented — before a radiologist undertakes remote work."
+  - "Remote reporting should meet the same clinical, technical and governance standards as reporting performed within the healthcare organisation."
+  - "The reporter should have access to adequate clinical information, relevant prior imaging and a practicable route for urgent communication."
+  - "A fail-safe pathway should extend beyond transmission of the report to acknowledgement, clinical review and action."
+  - "Professional candour and the provider's statutory duty of candour are related but distinct obligations."
+  - "A medicolegal review should distinguish individual interpretation from referral, technical, communication and organisational failures."
 figures:
   - "/images/reporting_radiographer.jpg"
 ---
 
-## The teleradiology reality
+## Introduction
 
-Remote radiology reporting is not new — radiologists have worked from home and
-undertaken locum reporting across sites for decades. But the pandemic accelerated
-a structural shift: outsourcing to dedicated remote reporting companies became
-widespread, driven by consultant shortages, the need for 24/7 cover and the
-pragmatic demands of NHS financial pressure.
+Teleradiology allows imaging to be interpreted away from the organisation in which it was acquired. It may support out-of-hours services, provide additional capacity and permit access to specialist opinion.
 
-The results are mixed. On the one hand, remote reporting enabled continuous
-coverage and allowed radiologists to work flexibly. On the other hand, it
-introduced systemic risks that are now appearing with increasing frequency in
-medicolegal claims.
+Remote location does not lower the standard of care.
 
-### What the data says
+A teleradiology service should provide the reporter with the images, clinical information, prior examinations, reporting tools and communication routes necessary to perform the work safely. The healthcare provider and reporting organisation should also maintain appropriate credentialing, workload controls, quality assurance and incident-management arrangements.
 
-The key studies and reports:
+The medicolegal question is not whether a report was produced remotely. It is whether the complete reporting system was reasonable and whether any failure caused harm.
 
-- **Howlett et al. (2017)** — *The accuracy of interpretation of emergency
-  abdominal CT in adult patients who present with non-traumatic abdominal pain:
-  Results of a UK national audit.* Clinical Radiology 72:41–51.
-  > Showed that offsite reporting was associated with an increased rate of
-  > reporting errors — between 8.7% and 12.7%.
+## Remote Reporting and Diagnostic Error
 
-- **GIRFT Radiology National Specialty Report (2020)** — *Getting It Right
-  First Time.* NHS.
-  > Highlighted areas where outsourced remote reporting might contribute to
-  > systemic problems, including inadequate clinical information and lack of
-  > comparative imaging.
+Published discrepancy rates vary substantially according to:
 
-- **Parliamentary and Health Service Ombudsman (2021)** — *Unlocking solutions
-  in imaging.*
-  > Documented repeated failings in imaging pathways, noting that remote
-  > reporting arrangements often lacked effective escalation and feedback
-  > mechanisms.
+- modality;
+- clinical setting;
+- body region;
+- case complexity;
+- subspecialist review;
+- whether discrepancies are major or minor;
+- whether the reviewer knows the eventual diagnosis;
+- time of day;
+- workload; and
+- the method used to classify disagreement.
 
-- **Patel et al. (2020)** — *Radiology 297:374–9.*
-  > Radiologists make more errors interpreting off-hours body CT studies during
-  > overnight assignments compared with daytime assignments.
+A discrepancy is not synonymous with negligence. Two competent radiologists may reasonably differ, particularly where findings are subtle or non-specific.
 
-These are not studies of remote reporting per se — they include off-hours and
-night-time reporting. But they consistently show that the environment in which
-a radiologist works materially affects the error rate, and remote reporting
-amplifies the existing off-hours effect.
+It is therefore unsafe to infer that teleradiology is negligent from a published percentage or to apply a discrepancy rate from one service directly to another.
 
-## Three systemic failure modes
+The appropriate analysis is case-specific:
 
-In my experience reviewing medicolegal claims arising from remote reporting,
-three failure modes predominate:
+1. What information and imaging were available?
+2. Was the reporting environment adequate?
+3. Was the interpretation reasonably open to a competent reporter?
+4. Was the result communicated appropriately?
+5. Did any identified failure probably alter the outcome?
 
-### 1. Lack of prior imaging access
+## Four Areas of Risk
 
-Many hospital trusts use different PACS vendors that do not interoperate. A
-remote radiologist reporting for a trust may not have access to previous studies
-from that trust or from other local hospitals. This is not merely an
-inconvenience — it is a well-recognised risk factor in diagnostic error.
+### 1. Clinical Information
 
-> "Comparison with prior imaging is one of the most important factors in
-> radiological interpretation."
->
-> — RCR Standards for the Reporting and Interpretation of Imaging
-> Investigations (2018, Section 4.2)
+Acute abdominal CT often requires correlation with symptoms, examination, laboratory results, operative history and previous disease.
 
-In a medicolegal context, the absence of prior comparison magnifies the risk of:
+A request limited to “abdominal pain” may omit information relevant to:
 
-- **Misinterpreting a chronic finding as acute** (e.g., a chronic collection
-  mistaken for an abscess),
-- **Failing to detect interval change** (e.g., a growing mass that was present
-  but unchanged from a study six months earlier),
-- **Over-reporting a stable anatomical variant** as pathological.
+- the anatomical focus of review;
+- vascular or haemorrhagic risk;
+- possible obstruction or perforation;
+- recent surgery;
+- immunosuppression;
+- known malignancy;
+- anticoagulant treatment;
+- inflammatory markers;
+- amylase or lipase;
+- lactate; and
+- the urgency of the clinical question.
 
-### 2. Uninformative request forms
+The reporter remains responsible for reviewing the whole examination. Inadequate clinical information does not excuse failure to identify a clear and important abnormality.
 
-Radiology request forms are only as good as the clinical detail included. In a
-co-located setting, the radiologist can pick up the phone, visit the ward or
-check the clinical notes. Remote reporting eliminates these options.
+It may, however, affect:
 
-Common deficiencies in request forms for acute abdominal studies:
+- protocol selection;
+- the reasonable differential diagnosis;
+- the interpretation of equivocal findings;
+- the need for clarification;
+- the degree of confidence that can be expressed; and
+- whether additional imaging is required.
 
-| Deficiency | Clinical consequence |
-|------------|---------------------|
-| "Abdominal pain" (no site, no duration, no associated symptoms) | Cannot assess likelihood of vascular, obstructive or inflammatory aetiologies |
-| No relevant past medical history | Misses risk factors (e.g., anticoagulation → bleed; known malignancy → metastasis) |
-| No laboratory values | Ignores CRP, WBC, amylase, troponin that may sharpen the differential |
-| No prior procedure history | Misses post-operative complications (e.g., anastomotic leak after recent surgery) |
+Where the available information is insufficient to answer the clinical question safely, the reporter should seek clarification where practicable or state the material limitation clearly.
 
-When a remote radiologist receives a non-specific clinical request, their
-report is necessarily constrained by that lack of information. If the eventual
-diagnosis is something that would have been clear with better clinical context,
-the radiologist may face a claim — but the Bolam defence is strong when the
-available information was genuinely insufficient.
+## 2. Prior Imaging
 
-### 3. Communication breakdowns
+Comparison with relevant previous examinations may:
 
-The loss of informal communication channels is perhaps the most insidious risk.
-In a hospital setting, a radiologist might:
+- establish chronicity;
+- demonstrate interval change;
+- identify progression or resolution;
+- distinguish postoperative anatomy from acute pathology;
+- show that a lesion was previously present;
+- prevent duplication of previous recommendations; and
+- alter the significance of an equivocal finding.
 
-- Call the referring registrar to discuss an unexpected finding,
-- Speak to the on-call surgeon about whether a particular appearance is
-  consistent with the clinical picture,
-- Check with a colleague whether a particular protocol has been shown to be
-  more sensitive,
-- Escalate a critical finding through a documented phone call with
-  contemporaneous note.
+Remote reporters should have access to relevant prior imaging where reasonably required for interpretation.
 
-Remote reporting may eliminate all of these options. The receiving clinician may
-not be able to contact the remote reporter. The remote reporter may not know
-who the on-call surgeon is. The escalation pathway may be documented in a
-protocol but not tested in practice.
+If previous imaging is known to exist but cannot be accessed, the reporter should consider:
 
-## The duty of candour
+- whether the examination can still be reported safely;
+- whether retrieval or transfer should be requested;
+- whether the limitation should be recorded;
+- whether a provisional report is appropriate; and
+- whether subsequent comparison and an addendum are required.
 
-The General Medical Council's guidance on the **duty of candour** (updated 2023)
-applies equally to all doctors, including remote and teleradiology reporters:
+Absence of prior imaging does not automatically make a report negligent. The issue is whether a competent reporter could reasonably provide the opinion without it and whether the limitation was managed appropriately.
 
-> "When something that has happened in connection with the care provided is or
-> may have caused — or may in the future cause — patient harm, you must personally
-> and officially report it."
+## 3. Technical and Workflow Integration
 
-A remote radiologist who identifies a significant unexpected finding — a missed
-aortic aneurysm, a pulmonary embolism, a perforated viscus — has the same duty
-to escalate and, if necessary, to trigger the duty of candour process as a
-colleague reporting from the hospital PACS.
+Safe teleradiology requires more than transmission of pixel data.
 
-The medicolegal question is often whether the remote radiologist's escalation was
-**adequate and effective**, not just whether it was **documented**.
+The reporter should be able to:
 
-### Escalation protocol requirements
+- confirm patient and examination identity;
+- access the complete study;
+- review all relevant series and reconstructions;
+- use appropriate diagnostic displays and software;
+- access referral information;
+- review previous imaging and reports;
+- create and amend a permanent report;
+- contact the responsible clinical team;
+- issue urgent alerts;
+- receive relevant feedback; and
+- participate in quality assurance.
 
-A defensible escalation protocol should include:
+The reporting organisation and healthcare provider should define:
 
-1. **Documented procedures** for immediate notification of significant findings,
-2. **Real-time contact** with the receiving clinician (not just a report flagged
-   "urgent"),
-3. **Time-stamped records** of when the finding was identified, when notification
-   was made, and to whom,
-4. **Escalation to a senior colleague or clinical lead** if the initial contact
-   does not result in appropriate action,
-5. **Feedback mechanisms** so the remote radiologist can learn from outcomes —
-   a deficiency that is commonly absent in outsourcing arrangements.
+- responsibility for work allocation;
+- the reporter's declared competence;
+- reporting turnaround;
+- discrepancy review;
+- significant addenda;
+- critical-result communication;
+- downtime arrangements;
+- record retention;
+- information governance;
+- indemnity; and
+- management of incidents and complaints.
 
-## A real claim scenario
+A written policy is not sufficient if staff cannot use it in practice.
 
-Anonymised case:
+## 4. Communication
 
-> A 58-year-old female presented with acute abdominal pain. A CT abdomen
-> (emergency protocol) was reported by a remote radiologist at 22:00 as "mild
-> faecal loading. No acute abnormality." The patient was discharged. She
-> returned the following morning with peritonism. Exploratory laparotomy
-> revealed a perforated diverticulum with faecal peritonitis.
+Routine verification and electronic release will be sufficient for many reports.
 
-> The remote radiologist had no access to the patient's primary care records.
-> The request form read "abdominal pain x 2 days, unknown cause." The CT protocol
-> was single-phase axial without reconstructions.
+Additional communication may be required where a finding is:
 
-> On retrospective review, a small amount of free fluid was noted in the right
-> lower quadrant adjacent to the ascending colon. The claim was that a
-> responsible radiologist should have recognised this as potentially significant
-> in a patient with acute right-sided pain.
+- immediately life-threatening;
+- time-critical;
+- unexpected and clinically significant;
+- suspicious for a new malignancy or recurrence;
+- likely to alter urgent management; or
+- introduced in a significant report addendum.
 
-### Defence analysis
+The urgency and method of notification should reflect the likely consequence of delay.
 
-The defence case rested on:
+For a time-critical finding, passive release to an electronic inbox may be insufficient. The reporter should use the agreed escalation route and document the action taken.
 
-- **Technical adequacy:** The study was performed in the emergency protocol
-  appropriate for the clinical request. It was not a dedicated appendicitis
-  or diverticular CT.
-- **Information insufficiency:** The clinical request was entirely non-specific.
-  No localisation, no labs, no history.
-- **Finding sensitivity:** The free fluid was < 10 ml — an amount that, even on
-  dedicated CT, carries a significant false-positive rate for pathology.
-- **Escalation:** The report was generated at 22:12. An automated notification
-  was sent at 22:13. No callback was received at the emergency department
-  number. An escalation to the on-call registrar was documented at 23:30 with
-  no response.
-- **Causation:** The perforation was the result of natural disease progression.
-  Even with an earlier diagnosis, the patient required the same surgery and
-  would have faced the same risks.
+## Closed-Loop Communication
 
-The claim was settled at a modest figure — a settlement, in the claimant's
-counsel's view, reflecting the "contribution" of the communication gap rather
-than a finding of primary radiological negligence.
+A safe communication pathway should address:
 
-## What referrers should consider
+1. **Report creation**  
+   The finding and its significance are expressed clearly.
 
-If you are considering instructing an expert in a teleradiology-related claim,
-ask for:
+2. **Alert generation**  
+   An appropriate notification method is selected.
 
-1. **The full escalation log** — when the report was generated, when it was
-   received, when notification was attempted, and what the response was.
-2. **The remote reporting company's quality assurance record** — were there other
-   discrepancies for this radiologist or this shift?
-3. **The contract terms** — what indemnity arrangements were in place, and were
-   they adequate?
-4. **The request form as it was completed** — not as it is retrospectively
-   recalled, but the actual form (or electronic equivalent) that accompanied
-   the images.
-5. **The PACS login and reporting timestamp** — to verify that the radiologist
-   actually reviewed the images on the relevant date.
+3. **Receipt**  
+   The alert reaches a clinician or team able to consider it.
 
-## Practical recommendations for remote radiologists
+4. **Acknowledgement**  
+   Receipt is recorded where required by the local system.
 
-The GIRFT, RCR and Medical Protection reports all converge on a set of
-recommendations that a remote radiologist should implement:
+5. **Clinical action**  
+   The result is reviewed and acted upon appropriately.
 
-- **Ensure the reporting environment is configured** to access prior imaging,
-  even if this requires an additional PACS session or a formal transfer
-  request.
-- **If clinical information is inadequate, state this explicitly in the report**
-  and recommend appropriate further action. Do not hedge — be clear about the
-  limitations.
-- **When unexpected significant findings are identified, escalate in real time**
-  and document the escalation with timestamps and the identity of the person
-  notified.
-- **Never report outside your declared competence** — outsourcing companies
-  sometimes allocate studies to radiologists based on availability rather than
-  expertise.
-- **Participate in peer review and REALMs** even when remote. Quality
-  assurance must be ongoing, not retrospective.
+6. **Fail-safe escalation**  
+   The system identifies absent acknowledgement or action and escalates the result.
 
-## Concluding thought
+A sent alert is evidence of transmission. It is not necessarily proof that the result was received, understood or acted upon.
 
-Teleradiology is here to stay. The question is not whether it should exist, but
-how its risks can be managed in a way that protects patients, referrers and
-radiologists alike. The medicolegal landscape is shifting in real time, and
-those who work in remote reporting must be proactive — not reactive — in
-addressing the unique risks that their environment presents.
+Equally, an absent electronic acknowledgement does not necessarily prove that no communication occurred. Telephone records, contemporaneous notes and witness evidence may also be relevant.
 
-> All imaging referenced is fully anonymised and no patient-identifiable data is
-> reproduced. Nothing in this discussion constitutes legal advice.
+## Responsibilities Within the Pathway
+
+### The reporter
+
+The reporter should:
+
+- issue an accurate and appropriately prioritised report;
+- identify findings requiring additional communication;
+- use the agreed escalation route;
+- communicate with appropriate urgency;
+- record significant communication;
+- issue and communicate material addenda; and
+- raise concerns where the communication system is unsafe.
+
+### The referring or responsible clinical team
+
+The clinical team should:
+
+- review requested investigations and reports;
+- maintain cover for absent staff and unattended inboxes;
+- acknowledge significant alerts where required;
+- act on findings and recommendations;
+- document the clinical response;
+- arrange onward referral or follow-up; and
+- communicate relevant results and plans to the patient.
+
+### The healthcare provider
+
+The provider should:
+
+- define responsibility at each stage;
+- provide reliable digital and telephone communication routes;
+- ensure out-of-hours cover;
+- maintain a fail-safe process;
+- audit acknowledgement and action;
+- review incidents;
+- support communication across organisational boundaries; and
+- ensure that outsourced services are integrated into local governance.
+
+### The teleradiology provider
+
+The remote reporting provider should:
+
+- verify reporter credentials and competence;
+- allocate work appropriately;
+- maintain technical and information-security standards;
+- provide accessible escalation routes;
+- support report amendments and addenda;
+- participate in discrepancy and incident review;
+- monitor workload and performance; and
+- cooperate with the healthcare organisation when concerns arise.
+
+## Acute Abdominal Findings
+
+Several findings in acute abdominal imaging may require urgent communication, depending on their severity and clinical context.
+
+Examples include:
+
+- ruptured or leaking abdominal aortic aneurysm;
+- acute mesenteric arterial occlusion;
+- bowel ischaemia with threatened perforation;
+- perforated viscus;
+- active haemorrhage;
+- closed-loop obstruction with features of ischaemia;
+- severe intra-abdominal sepsis requiring urgent source control;
+- misplaced lines, drains or devices with immediate risk; and
+- another unexpected finding requiring time-critical intervention.
+
+Not every abnormal abdominal CT requires a telephone call.
+
+The report, alert category and communication method should be proportionate to:
+
+- the certainty of the finding;
+- the urgency of treatment;
+- the patient's current location;
+- whether the finding was expected;
+- whether the responsible team is already managing the condition; and
+- the reliability of the ordinary reporting pathway.
+
+## Significant Addenda
+
+A material report amendment is a new communication event.
+
+Where an addendum may change management, the reporter should consider:
+
+- whether the original recipient remains responsible;
+- whether the patient has moved to another team or location;
+- whether direct notification is required;
+- how receipt will be confirmed; and
+- whether the original clinical decision has already been made.
+
+The record should preserve the original report and identify:
+
+- the amendment;
+- its author;
+- the time and date;
+- the reason for the change;
+- its clinical significance; and
+- the person or team notified.
+
+Replacing the original text without a visible audit trail may obscure the chronology and should be avoided.
+
+## Duty of Candour
+
+Communication of an urgent imaging result and the duty of candour are not the same process.
+
+Urgent-result communication aims to secure timely clinical action.
+
+Candour concerns openness when something has gone wrong in care and has caused, or has the potential to cause, harm or distress.
+
+### Professional duty
+
+Doctors must be open and honest when care has gone wrong. This may require:
+
+- informing the patient or an appropriate representative;
+- explaining what is known;
+- apologising;
+- offering appropriate support or remedy where possible;
+- explaining the actual or possible consequences;
+- reporting the event within the organisation; and
+- cooperating with review and investigation.
+
+The professional duty applies to radiologists working remotely as it does to those working on site.
+
+### Statutory duty
+
+In England, the statutory duty of candour applies to the regulated provider when the criteria for a notifiable safety incident are met.
+
+The provider should have a process for determining:
+
+- whether the statutory threshold is met;
+- who will communicate with the patient;
+- what information should be provided;
+- what written follow-up is required; and
+- how the process will be documented.
+
+The individual radiologist should not assume that personally contacting the patient is always the correct first step. The appropriate approach depends on the circumstances, the provider's procedure, the reporter's relationship with the patient and the clinical team responsible for ongoing care.
+
+Remote working does not remove the professional duty, but it may require cooperation between the teleradiology provider and the organisation responsible for the patient's care.
+
+## Discrepancy, Error and Candour
+
+A later difference of opinion does not automatically trigger candour.
+
+The review should distinguish:
+
+- a reasonable difference in interpretation;
+- a minor discrepancy without clinical consequence;
+- a significant reporting error;
+- a material addendum;
+- an incident causing or potentially causing harm; and
+- a notifiable safety incident under the applicable statutory framework.
+
+The duty should be assessed using the facts and consequences of the individual event rather than the mere existence of retrospective disagreement.
+
+## Medicolegal Analysis
+
+A claim involving remote reporting should examine the entire pathway.
+
+### Referral
+
+- What clinical information was supplied?
+- Was the request accurate and sufficiently specific?
+- Was the examination appropriately prioritised?
+- Was the selected protocol suitable?
+
+### Access
+
+- Could the reporter review the complete examination?
+- Were relevant prior studies and reports available?
+- Could clinical records be accessed where required?
+- Were technical limitations identified?
+
+### Interpretation
+
+- What did the images demonstrate?
+- Was the report reasonably open to a competent radiologist?
+- Was uncertainty communicated appropriately?
+- Was further imaging or review indicated?
+
+### Notification
+
+- Did the finding require additional communication?
+- Which pathway applied?
+- Who was contacted?
+- When and by what method?
+- Was receipt acknowledged?
+- What happened if the first contact failed?
+
+### Clinical action
+
+- Who was responsible for reviewing the result?
+- What action followed?
+- Was follow-up arranged?
+- Was the patient informed?
+- Did responsibility transfer between teams?
+
+### Governance
+
+- Were the contractual responsibilities clear?
+- Was the reporter working within declared competence?
+- Were workload and turnaround expectations reasonable?
+- Were incidents and discrepancies reviewed?
+- Did the organisations cooperate after the event?
+
+### Causation
+
+- What would competent reporting and communication have changed?
+- When would treatment probably have occurred?
+- Would earlier action probably have avoided or reduced the harm?
+
+## Evidence to Obtain
+
+A teleradiology claim may require:
+
+- the original DICOM examination;
+- the imaging request and clinical details;
+- the protocol and acquisition record;
+- prior imaging and evidence of its availability;
+- PACS and RIS audit logs;
+- report creation, verification and amendment times;
+- alert and acknowledgement records;
+- telephone, switchboard or secure-message logs;
+- the remote provider's escalation record;
+- local and outsourced reporting policies;
+- the service contract and allocation of responsibilities;
+- reporter credentialing and scope-of-practice records;
+- relevant workload and rota information;
+- discrepancy and peer-review records relating to the event;
+- incident reports and investigation findings;
+- records of communication with the patient; and
+- evidence addressing the clinical consequences of delay.
+
+Requests for unrelated performance data should remain proportionate. The fact that a radiologist has previously made a discrepancy does not prove negligence in the case under consideration.
+
+## Practical Principles for Remote Reporters
+
+- Confirm that the complete study has transferred.
+- Review the referral information and seek clarification where necessary.
+- Access relevant prior examinations where reasonably required.
+- State material limitations clearly.
+- Do not accept work outside current competence.
+- Use the agreed urgent-alert pathway.
+- Document significant communication contemporaneously.
+- Escalate if the intended recipient cannot be reached.
+- Treat a clinically significant addendum as requiring fresh consideration of communication.
+- Participate in discrepancy review, audit and learning.
+- Raise concerns if the remote system does not permit safe reporting.
+
+## Practical Principles for Providers
+
+- Integrate remote reporting into the same clinical-governance framework as local reporting.
+- Define responsibility for priors, work allocation, communication and follow-up.
+- Ensure that escalation routes work out of hours.
+- Test fail-safe and downtime arrangements.
+- Monitor workload, turnaround and quality without treating discrepancy rates as direct measures of negligence.
+- Share relevant incidents and learning with the remote provider.
+- Define who leads candour discussions when care crosses organisational boundaries.
+- Maintain a clear route for referrers to discuss a report with the reporter.
+
+## Conclusion
+
+Teleradiology is a method of delivering radiological expertise, not a separate or lower standard of practice.
+
+Its safety depends on more than the individual reporter. Clinical information, prior imaging, technical integration, communication, acknowledgement, clinical action and organisational governance all form part of the reporting pathway.
+
+When harm follows a remote report, the analysis should identify precisely where the pathway failed. It should not assume that remote location caused the error, nor should it confine the review to the text of the report.
+
+The central questions remain:
+
+- Was the examination reported reasonably?
+- Was the finding communicated with appropriate urgency?
+- Did the relevant organisations maintain a workable fail-safe system?
+- Were the patient and clinical team treated openly when something went wrong?
+- Would competent reporting and communication probably have changed the outcome?
+
+## References
+
+- Royal College of Radiologists. *Standards for the Provision of Teleradiology Within the United Kingdom*. 2nd ed. 2016.
+- Parliamentary and Health Service Ombudsman. *Unlocking Solutions in Imaging: Working Together to Learn from Failings in the NHS*. 2021.
+- Academy of Medical Royal Colleges and Royal College of Radiologists. *Alerts and Notification of Imaging Reports: Recommendations*. 2022.
+- See TC, Callaway M, et al. *Alerts and notification of imaging reports recommendations*. Clinical Radiology. 2023;78:e227–e236.
+- Royal College of Radiologists. *Professional Duty of Candour: Guidance for Radiologists*. 2022.
+- General Medical Council and Nursing and Midwifery Council. *Openness and Honesty When Things Go Wrong: The Professional Duty of Candour*. Updated 2024.
+- NHS England. *Guidance on Patient Digital Notification of Diagnostic Imaging Reports*. 2025.
+
+> Educational clinical and medicolegal commentary only. It is not medical advice, legal advice or an expert opinion on an individual case.

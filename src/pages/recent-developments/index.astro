@@ -5,161 +5,272 @@ import PageIntro from '../../components/PageIntro.astro';
 import { getCollection } from 'astro:content';
 import { formatDateShort } from '../../lib/utils';
 import { PAGE_HERO_IMAGES } from '../../consts';
-const markerColor = (id) => {
-  const m = {
-    musculoskeletal: '#7c9a6e',
-    gastrointestinal: '#b8935a',
-    'peritoneal-malignancy': '#a86b6b',
-    neuroradiology: '#7a8da0',
-    interventional: '#a07a8d',
-    negligence: '#8d7a9a',
-    quantum: '#7a9a8d',
-    practice: '#9a8d7a',
-    regulation: '#8d9a7a',
-    'case-law': '#9a7a8d',
-  };
-  return m[id] || '#94a3b8';
-};
-
-const categoryLabel = (id) => {
-  const m = {
-    all: 'All updates',
-    musculoskeletal: 'Musculoskeletal',
-    gastrointestinal: 'Gastrointestinal',
-    'peritoneal-malignancy': 'Peritoneal Malignancy',
-    neuroradiology: 'Neuroradiology',
-    interventional: 'Interventional',
-    negligence: 'Negligence',
-    quantum: 'Quantum and Causation',
-    practice: 'Practice and Procedure',
-    regulation: 'Regulation',
-    'case-law': 'Case Law',
-  };
-  return m[id] || id;
-};
-
-
-const allPosts = (await getCollection('recent-developments')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 export const prerender = true;
+
+const categories = {
+    all: {
+        label: 'All',
+        color: '#94a3b8',
+    },
+    musculoskeletal: {
+        label: 'Musculoskeletal',
+        color: '#7c9a6e',
+    },
+    gastrointestinal: {
+        label: 'Gastrointestinal',
+        color: '#b8935a',
+    },
+    'peritoneal-malignancy': {
+        label: 'Peritoneal malignancy',
+        color: '#a86b6b',
+    },
+    neuroradiology: {
+        label: 'Neuroradiology',
+        color: '#7a8da0',
+    },
+    interventional: {
+        label: 'Interventional',
+        color: '#a07a8d',
+    },
+    negligence: {
+        label: 'Negligence',
+        color: '#8d7a9a',
+    },
+    quantum: {
+        label: 'Quantum and causation',
+        color: '#7a9a8d',
+    },
+    practice: {
+        label: 'Practice and procedure',
+        color: '#9a8d7a',
+    },
+    regulation: {
+        label: 'Regulation',
+        color: '#8d9a7a',
+    },
+    'case-law': {
+        label: 'Case law',
+        color: '#9a7a8d',
+    },
+} as const;
+
+type Category = keyof typeof categories;
+
+function categoryLabel(category: string): string {
+    return categories[category as Category]?.label ?? category;
+}
+
+function categoryColor(category: string): string {
+    return categories[category as Category]?.color ?? '#94a3b8';
+}
+
+const allPosts = (await getCollection('recent-developments')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const usedCategories = Object.entries(categories).filter(
+    ([id]) =>
+        id === 'all' ||
+        allPosts.some((post) => post.data.category === id)
+);
 ---
 
-<BaseLayout title="Recent Developments | Radiology &amp; Medicolegal Law" description="Recent developments across radiology and medicolegal law — anonymised case discussions on negligence, quantum, practice and procedure, MSK, gastrointestinal and peritoneal malignancy, and the reporting standards behind them.">
-	<PageHero
-		eyebrow="Recent developments"
-		title="Recent Developments"
-		description="Anonymised analysis of recent issues at the intersection of radiology and the law — from delayed diagnosis and causation to reporting standards, teleradiology and expert-report practice."
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
-	/>
+<BaseLayout
+    title="Recent Developments | Radiology & Medicolegal Law"
+    description="Concise commentary on recent developments in radiology, clinical negligence, case law, regulation and expert practice."
+>
+    <PageHero
+        eyebrow="Commentary"
+        title="Recent Developments"
+        description="Concise analysis of recent developments in radiology and medicolegal practice."
+        heroImage={PAGE_HERO_IMAGES['/recent-developments'] || undefined}
+    />
 
-	<PageIntro
-		eyebrow="Commentary on recent cases"
-		paragraphs={[
-			'This is the part of the resource worth returning to: short, anonymised commentary on recent cases and developments that raise an interesting radiological or legal point.',
-			'Each piece says what happened, what the imaging showed, what the court or tribunal was asked to decide, and what a radiologist should take from it. The selection is deliberately small — a few cases at a time, chosen because they change how a question should be answered.',
-		]}
-		contents={[
-			{ href: '#latest-commentary', label: 'Latest commentary' },
-			{ href: '#browse-by-subject', label: 'Browse by subject' },
-		]}
-		audience="Written for radiologists, solicitors, barristers and insurers. All material is anonymised in accordance with GMC guidance and CPR Part 35."
-		reviewed="September 2026"
-	/>
+    <PageIntro
+        eyebrow="Recent developments"
+        paragraphs={[
+            'Short commentary on cases, professional standards and clinical issues with direct relevance to radiologists and legal practitioners.',
+            'Each article identifies the radiological issue, the applicable legal or professional principle and its practical significance.'
+        ]}
+        contents={[
+            { href: '#latest-commentary', label: 'Latest commentary' },
+            { href: '#browse-by-subject', label: 'Browse by subject' },
+        ]}
+        audience="For radiologists, solicitors, barristers, insurers and expert witnesses."
+        reviewed="October 2026"
+    />
 
-	<section class="band">
-		<div class="container-page">
-			<!-- Browse by subject -->
-			<div id="browse-by-subject" class="doc scroll-mt-24">
-				<div class="sec">
-					<p class="meta-label">Filter</p>
-					<h2 class="sec-title">
-						Browse by subject
-					</h2>
-					<p id="blog-count" class="mt-3 text-muted-alt" aria-live="polite">
-						Showing all {allPosts.length} pieces
-					</p>
-				</div>
-								<div id="blog-filters" class="mt-6 flex flex-wrap gap-2">
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="all" style="--marker-color: #94a3b8;">All updates</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="musculoskeletal" style="--marker-color: #7c9a6e;">Musculoskeletal</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="gastrointestinal" style="--marker-color: #b8935a;">Gastrointestinal</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="peritoneal-malignancy" style="--marker-color: #a86b6b;">Peritoneal Malignancy</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="neuroradiology" style="--marker-color: #7a8da0;">Neuroradiology</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="interventional" style="--marker-color: #a07a8d;">Interventional</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="negligence" style="--marker-color: #8d7a9a;">Negligence</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="quantum" style="--marker-color: #7a9a8d;">Quantum and Causation</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="practice" style="--marker-color: #9a8d7a;">Practice and Procedure</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="regulation" style="--marker-color: #8d9a7a;">Regulation</button>
-					<button type="button" class="chip cursor-pointer transition-colors hover:border-slate-600" data-category="case-law" style="--marker-color: #9a7a8d;">Case Law</button>
-				</div>
-			</div>
+    <section class="band">
+        <div class="container-page">
+            <div
+                id="browse-by-subject"
+                class="doc scroll-mt-24"
+            >
+                <div class="sec">
+                    <p class="meta-label">Filter</p>
+                    <h2 class="sec-title">Browse by Subject</h2>
 
-			<!-- Posts -->
-			<div id="latest-commentary" class="doc mt-14 scroll-mt-24">
-				<div class="sec">
-					<p class="meta-label">Latest</p>
-					<h2 class="sec-title">
-						Latest commentary
-					</h2>
-					<p class="standfirst">
-						Newest first. Each piece is a short analysis rather than a full case report, and all
-						clinical detail is anonymised.
-					</p>
-				</div>
-				<div id="blog-grid" class="entry-list-ruled mt-8">
-				{allPosts.map((post, i) => (
-					<article class="blog-card py-7" data-categories={post.data.category} style={`--marker-color: ${markerColor(post.data.category)}`}>
-						<section>
-							<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-								<div class="flex items-center gap-2">
-								<span class="sec-marker"></span>
-									<span class="sec-no">
-										§ {String(i + 1).padStart(2, "0")}
-									</span>
-								</div>
-								<span class="text-muted-alt">{categoryLabel(post.data.category)}<span class="sec-marker"></span></span>
-								<span class="text-muted-light">{formatDateShort(post.data.pubDate)}</span>
-							</div>
-							<h2 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
-								<a href={`/recent-developments/${post.slug}`} class="hover:underline hover:decoration-slate-400 hover:underline-offset-4">{post.data.title}</a>
-							</h2>
-							<p class="para-sm">{post.data.description}</p>
-							<p class="mt-3 text-sm"><a href={`/recent-developments/${post.slug}`} class="link font-medium">Read the full analysis &rarr;</a></p>
-						</section>
-					</article>
-				))}
-				</div>
-			</div>
-		</div>
-	</section>
+                    <p
+                        id="blog-count"
+                        class="mt-3 text-muted-alt"
+                        aria-live="polite"
+                    >
+                        Showing all {allPosts.length} articles
+                    </p>
+                </div>
+
+                <div
+                    id="blog-filters"
+                    class="mt-6 flex flex-wrap gap-2"
+                    aria-label="Filter articles by subject"
+                >
+                    {usedCategories.map(([id, category]) => (
+                        <button
+                            type="button"
+                            class="chip cursor-pointer transition-colors hover:border-slate-600"
+                            data-category={id}
+                            style={`--marker-color: ${category.color}`}
+                            aria-pressed="false"
+                        >
+                            {category.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div
+                id="latest-commentary"
+                class="doc mt-14 scroll-mt-24"
+            >
+                <div class="sec">
+                    <p class="meta-label">Latest</p>
+                    <h2 class="sec-title">Latest Commentary</h2>
+
+                    <p class="standfirst">
+                        Newest first. Each article is a concise analysis rather than
+                        a substitute for the judgment, guidance or primary source.
+                    </p>
+                </div>
+
+                <div
+                    id="blog-grid"
+                    class="entry-list-ruled mt-8"
+                >
+                    {allPosts.map((post) => (
+                        <article
+                            class="blog-card py-7"
+                            data-category={post.data.category}
+                            style={`--marker-color: ${categoryColor(post.data.category)}`}
+                        >
+                            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="sec-marker"
+                                        aria-hidden="true"
+                                    ></span>
+
+                                    <span class="text-muted-alt">
+                                        {categoryLabel(post.data.category)}
+                                    </span>
+                                </div>
+
+                                <time
+                                    class="text-muted-light"
+                                    datetime={post.data.pubDate.toISOString()}
+                                >
+                                    {formatDateShort(post.data.pubDate)}
+                                </time>
+                            </div>
+
+                            <h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
+                                {`/recent-developments/${post.slug}`}
+                                    {post.data.title}
+                                </a>
+                            </h3>
+
+                            <p class="para-sm">
+                                {post.data.description}
+                            </p>
+
+                            <p class="mt-3 text-sm">
+                                {`/recent-developments/${post.slug}`}
+                                    Read analysis &rarr;
+                                </a>
+                            </p>
+                        </article>
+                    ))}
+                </div>
+
+                <p
+                    id="blog-empty"
+                    class="mt-8 hidden text-sm text-slate-500"
+                >
+                    No articles are currently available in this category.
+                </p>
+            </div>
+        </div>
+    </section>
 </BaseLayout>
 
 <script>
-	const filters = document.getElementById("blog-filters");
-	const grid = document.getElementById("blog-grid");
-	const count = document.getElementById("blog-count");
-	const cards = Array.from(grid?.querySelectorAll(".blog-card") ?? []);
+    const filters = document.getElementById('blog-filters');
+    const grid = document.getElementById('blog-grid');
+    const count = document.getElementById('blog-count');
+    const emptyMessage = document.getElementById('blog-empty');
 
-	function apply(cat: string) {
-		filters?.querySelectorAll("[data-category]").forEach((node) => {
-			const btn = node as HTMLElement;
-			const active = btn.dataset.category === cat;
-			btn.classList.toggle("is-active", active);
-		});
-		let shown = 0;
-		cards.forEach((card) => {
-			const match = cat === "all" || card.dataset?.categories === cat;
-			(card as HTMLElement).style.display = match ? "" : "none";
-			if (match) shown++;
-		});
-		if (count) count.textContent = `Showing ${shown} of ${cards.length} pieces`;
-	}
+    const cards = Array.from(
+        grid?.querySelectorAll<HTMLElement>('.blog-card') ?? []
+    );
 
-	filters?.addEventListener("click", (e) => {
-		const btn = (e.target as HTMLElement).closest("[data-category]") as HTMLElement | null;
-		if (!btn) return;
-		apply(btn.dataset.category ?? "all");
-	});
+    function applyFilter(category: string): void {
+        filters
+            ?.querySelectorAll<HTMLButtonElement>('[data-category]')
+            .forEach((button) => {
+                const active = button.dataset.category === category;
 
-	apply("all");
+                button.classList.toggle('is-active', active);
+                button.setAttribute(
+                    'aria-pressed',
+                    active ? 'true' : 'false'
+                );
+            });
+
+        let visible = 0;
+
+        cards.forEach((card) => {
+            const matches =
+                category === 'all' ||
+                card.dataset.category === category;
+
+            card.hidden = !matches;
+
+            if (matches) {
+                visible += 1;
+            }
+        });
+
+        if (count) {
+            count.textContent =
+                category === 'all'
+                    ? `Showing all ${cards.length} articles`
+                    : `Showing ${visible} of ${cards.length} articles`;
+        }
+
+        emptyMessage?.classList.toggle('hidden', visible > 0);
+    }
+
+    filters?.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+
+        const button = target.closest<HTMLButtonElement>(
+            '[data-category]'
+        );
+
+        if (!button) return;
+
+        applyFilter(button.dataset.category ?? 'all');
+    });
+
+    applyFilter('all');
 </script>

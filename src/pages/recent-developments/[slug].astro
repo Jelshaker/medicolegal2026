@@ -2,216 +2,190 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MedicalImageViewer from '../../components/MedicalImageViewer.astro';
 import PageHero from '../../components/PageHero.astro';
-import { getCollection } from 'astro:content';
+import Callout from '../../components/Callout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { formatDate, readingTime } from '../../lib/utils';
 import { PAGE_HERO_IMAGES } from '../../consts';
 import { isoDate } from '../../lib/seo';
-const categoryLabelMap = {
-  all: 'All updates',
-  musculoskeletal: 'Musculoskeletal',
-  gastrointestinal: 'Gastrointestinal',
-  'peritoneal-malignancy': 'Peritoneal Malignancy',
-  neuroradiology: 'Neuroradiology',
-  interventional: 'Interventional',
-  negligence: 'Negligence',
-  quantum: 'Quantum and Causation',
-  practice: 'Practice and Procedure',
-  regulation: 'Regulation',
-  'case-law': 'Case Law',
-};
-const categoryLabel = (id) => categoryLabelMap[id] || id;
-import { toast } from '../../lib/toast';
 
 export const prerender = true;
 
-export async function getStaticPaths() {
-	const posts = await getCollection('recent-developments');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
-	}));
+const categoryLabels = {
+    musculoskeletal: 'Musculoskeletal',
+    gastrointestinal: 'Gastrointestinal',
+    'peritoneal-malignancy': 'Peritoneal malignancy',
+    neuroradiology: 'Neuroradiology',
+    interventional: 'Interventional',
+    negligence: 'Negligence',
+    quantum: 'Quantum and causation',
+    practice: 'Practice and procedure',
+    regulation: 'Regulation',
+    'case-law': 'Case law',
+} as const;
+
+type Category = keyof typeof categoryLabels;
+
+function categoryLabel(category: string): string {
+    return categoryLabels[category as Category] ?? category;
 }
 
-const { post } = Astro.props as { post: Awaited<ReturnType<typeof getCollection<'recent-developments'>>>[number] };
+export async function getStaticPaths() {
+    const posts = await getCollection('recent-developments');
+
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+interface Props {
+    post: CollectionEntry<'recent-developments'>;
+}
+
+const { post } = Astro.props as Props;
 const { Content } = await post.render();
-const readMin = readingTime(post.body);
+const readMinutes = readingTime(post.body);
 ---
 
 <BaseLayout
-	title=`${post.data.title} | medicolegal.org`
-	description={post.data.description}
-	article={{
-		headline: post.data.title,
-		datePublished: isoDate(post.data.pubDate),
-		dateModified: post.data.updatedDate ? isoDate(post.data.updatedDate) : undefined,
-		section: categoryLabel(post.data.category),
-	}}
+    title={`${post.data.title} | Radiology & Medicolegal Law`}
+    description={post.data.description}
+    article={{
+        headline: post.data.title,
+        datePublished: isoDate(post.data.pubDate),
+        dateModified: post.data.updatedDate
+            ? isoDate(post.data.updatedDate)
+            : undefined,
+        section: categoryLabel(post.data.category),
+    }}
 >
-<!-- Article header with hero image -->
-	<PageHero
-		heroImage={PAGE_HERO_IMAGES["/recent-developments"] || undefined}
-		title={post.data.title}
-		description={post.data.description}
-	>
-		<nav class="mt-4" aria-label="Breadcrumb">
-			<ol class="flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-[0.14em] text-slate-400">
-				<li><a href="/recent-developments" class="hover:text-slate-200 hover:underline">Recent Developments</a></li>
-				<li aria-hidden="true">/</li>
-				<li>{categoryLabel(post.data.category)}</li>
-			</ol>
-		</nav>
-		<div class="mt-4 flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2 text-slate-300/80">
-			<span>Published {formatDate(post.data.pubDate)}</span>
-			<span>{readMin} min read</span>
-			{post.data.anonymised && (
-				<span class="border border-slate-500/50 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-slate-400">Anonymised</span>
-			)}
-		</div>
-		<p class="mt-3 font-sans text-xs uppercase tracking-[0.1em] text-slate-400">
-			{post.data.tags.join(" · ")}
-		</p>
-	</PageHero>
+    <PageHero
+        heroImage={PAGE_HERO_IMAGES['/recent-developments'] || undefined}
+        eyebrow={categoryLabel(post.data.category)}
+        title={post.data.title}
+        description={post.data.description}
+    >
+        <nav class="mt-4" aria-label="Breadcrumb">
+            <ol class="flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-[0.14em] text-slate-400">
+                <li>
+                    <a
+                        href="/recent-developments"
+                        class="hover:text-slate-200 hover:underline"
+                    >
+                        Recent developments
+                    </a>
+                </li>
 
-	<!-- Body -->
-	<article class="bg-white py-12">
-		<div class="container-page">
-			<div class="doc">
-				{post.data.keyTakeaways && (
-					<aside class="divider-strong pt-3">
-						<p class="meta-label mb-2">Key takeaways for the court / tribunal</p>
-						<ol class="list mt-0">
-							{post.data.keyTakeaways.map((t, i) => (
-								<li class="flex gap-3">
-									<span class="shrink-0 font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400">{i + 1}.</span>
-									<span>{t}</span>
-								</li>
-							))}
-						</ol>
-					</aside>
-				)}
+                <li aria-hidden="true">/</li>
 
-				<div class="article-body mt-10">
-					<Content />
-				</div>
+                <li aria-current="page">
+                    {categoryLabel(post.data.category)}
+                </li>
+            </ol>
+        </nav>
 
-				{post.data.figures && post.data.figures.length > 0 && (
-					<div class="mt-10 space-y-6">
-						{post.data.figures.map((src, i) => (
-							<MedicalImageViewer
-								src={src}
-								alt={`Anonymised figure ${i + 1}`}
-								caption={`Anonymised reference figure ${i + 1} for this analysis`}
-								modality="MRI / CT / X-ray"
-							/>
-						))}
-					</div>
-				)}
+        <div class="mt-4 flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2 text-slate-300/80">
+            <span>Published {formatDate(post.data.pubDate)}</span>
 
-				<div class="mt-12 divider pt-4">
-					<p class="font-serif text-sm italic leading-snug text-slate-600">
-						{post.data.author}, Consultant Radiologist &amp; Medicolegal Expert Witness
-					</p>
-				</div>
+            {post.data.updatedDate && (
+                <span>
+                    Updated {formatDate(post.data.updatedDate)}
+                </span>
+            )}
 
-				<div class="mt-8">
-					<a href="/recent-developments" class="link-sm">&larr; All recent developments</a>
-				</div>
-			</div>
-		</div>
-	</article>
+            <span>{readMinutes} min read</span>
+        </div>
 
-	<!-- Comments -->
-	<section class="divider-below bg-paper py-14">
-		<div class="container-page">
-			<div class="doc">
-				<p class="meta-label">Comments</p>
-				<h2 class="sec-title">Join the discussion</h2>
-				<form id="comment-form" class="mt-6 grid gap-4 border border-slate-300 bg-white p-5">
-					<label class="form-label">
-						Name *
-						<input name="author" type="text" required class="input-field" placeholder="Your name" />
-					</label>
-					<label class="form-label">
-						Comment *
-						<textarea name="text" rows="3" required class="input-field" placeholder="Your comment (moderated)"></textarea>
-					</label>
-					<!-- CSRF protection -->
-					<input type="hidden" name="csrfToken" id="comment-csrf" />
-					<!-- Spam honeypot -->
-					<input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
-					<div class="flex items-center gap-3">
-						<button type="submit" class="btn btn-primary" data-submit>Post comment</button>
-						<span class="text-muted">Comments are stored in memory (replaced on deploy) and moderated.</span>
-					</div>
-				</form>
-				<div id="comment-list" class="mt-8 space-y-4" data-postid={post.slug}>
-					<!-- populated client-side -->
-				</div>
-			</div>
-		</div>
-	</section>
+        {post.data.tags?.length > 0 && (
+            <p class="mt-3 font-sans text-xs uppercase tracking-[0.1em] text-slate-400">
+                {post.data.tags.join(' · ')}
+            </p>
+        )}
+    </PageHero>
+
+    <article class="bg-white py-12">
+        <div class="container-page">
+            <div class="doc">
+                {post.data.keyTakeaways?.length > 0 && (
+                    <aside
+                        class="divider-strong pt-4"
+                        aria-labelledby="key-takeaways-heading"
+                    >
+                        <p
+                            id="key-takeaways-heading"
+                            class="meta-label mb-3"
+                        >
+                            Key points
+                        </p>
+
+                        <ol class="list mt-0">
+                            {post.data.keyTakeaways.map((takeaway, index) => (
+                                <li class="flex gap-3">
+                                    <span
+                                        class="shrink-0 font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.1em] text-slate-400"
+                                        aria-hidden="true"
+                                    >
+                                        {index + 1}.
+                                    </span>
+
+                                    <span>{takeaway}</span>
+                                </li>
+                            ))}
+                        </ol>
+                    </aside>
+                )}
+
+                <div class="article-body mt-10">
+                    <Content />
+                </div>
+
+                {post.data.figures?.length > 0 && (
+                    <section
+                        class="mt-12 space-y-8"
+                        aria-label="Reference figures"
+                    >
+                        {post.data.figures.map((src, index) => (
+                            <MedicalImageViewer
+                                src={src}
+                                alt={`Reference figure ${index + 1}`}
+                                caption={`Reference figure ${index + 1}`}
+                                modality="Medical imaging"
+                            />
+                        ))}
+                    </section>
+                )}
+
+                <Callout tone="caution" title="Scope">
+                    <p>
+                        This article is an educational summary and not legal advice,
+                        medical advice or an expert opinion on an individual case.
+                        The judgment, legislation and professional guidance should be
+                        checked before the material is relied upon.
+                    </p>
+                </Callout>
+
+                <footer class="mt-12 divider pt-5">
+                    <p class="font-serif text-sm italic leading-snug text-slate-600">
+                        {post.data.author}, Consultant Radiologist
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a
+                            href="/recent-developments"
+                            class="link-sm"
+                        >
+                            &larr; All recent developments
+                        </a>
+
+                        <a
+                            href="/contact"
+                            class="link-sm"
+                        >
+                            Contact
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </article>
 </BaseLayout>
-
-<script define:vars={{ postId: post.slug }}>
-	const list = document.getElementById("comment-list") as HTMLElement | null;
-	const form = document.getElementById("comment-form") as HTMLFormElement | null;
-
-	function escapeHtml(s: string) {
-		return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
-	}
-
-	async function load() {
-		if (!list) return;
-		const res = await fetch(`/api/comments?postId=${encodeURIComponent(postId)}`);
-		if (!res.ok) return;
-		const comments = await res.json();
-		list.innerHTML = comments.length
-			? comments.map((c) => `
-				<div class="border border-slate-200 bg-white p-5">
-					<div class="flex items-center justify-between text-sm">
-						<span class="font-semibold text-slate-800">${escapeHtml(c.author)}</span>
-						<span class="text-xs text-slate-500">${new Date(c.date).toLocaleDateString("en-GB")}</span>
-					</div>
-					<p class="mt-2 text-slate-600">${escapeHtml(c.text)}</p>
-				</div>`).join("")
-			: `<p class="text-sm text-slate-500">No comments yet. Be the first to join the discussion.</p>`;
-	}
-
-	// Fetch CSRF token on page load
-	(async () => {
-		try {
-			const res = await fetch("/api/comments");
-			if (res.ok) {
-				const json = await res.json();
-				const input = document.getElementById("comment-csrf") as HTMLInputElement | null;
-				if (input && json.csrfToken) input.value = json.csrfToken;
-			}
-		} catch { /* token fetch failed — form will still work but without CSRF */ }
-	})();
-
-	form?.addEventListener("submit", async (e) => {
-		e.preventDefault();
-		const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
-		const btn = form.querySelector("[data-submit]") as HTMLButtonElement | null;
-		if (btn) { btn.disabled = true; btn.textContent = "Posting…"; }
-		try {
-			const res = await fetch("/api/comments", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ postId, author: data.author, text: data.text, csrfToken: data.csrfToken }),
-			});
-			const json = await res.json();
-			if (!res.ok) throw new Error(json.error || "Failed");
-			form.reset();
-			await load();
-			toast("Comment posted successfully.", "success", 3000);
-		} catch (err: unknown) {
-			const msg = err instanceof Error ? err.message : "There was a problem posting your comment.";
-			toast(msg, "error", 5000);
-		} finally {
-			if (btn) { btn.disabled = false; btn.textContent = "Post comment"; }
-		}
-	});
-
-	load();
-</script>

@@ -472,6 +472,16 @@ html.dark {
 		border-top: 1px solid var(--color-border);
 	}
 
+	/* Gentle hierarchy inside part entries: detail sits slightly under its
+	   title, and entries breathe a little more. */
+	.part-bg .entry {
+		padding-block: 1.5rem;
+	}
+	.part-bg .entry > .para-sm,
+	.part-bg .entry > .list {
+		padding-inline-start: 1rem;
+	}
+
 	/* -------------------------------------------------------------- */
 	/* Links                                                           */
 	/* -------------------------------------------------------------- */
@@ -1546,7 +1556,7 @@ html.dark .d-num {
    sections within the page-level container. */
 .part-bg {
 	background: var(--color-paper);
-	padding-block: 5rem 3rem;
+	padding-block: 5rem 3.5rem;
 	padding-inline: 1.25rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1575,8 +1585,8 @@ html.dark .d-num {
    Place where a part boundary is needed; the background lives in .part-bg. */
 .part-mark {
 	display: flex;
-	align-items: flex-start;
-	gap: 1.25rem;
+	align-items: center;
+	gap: 1.5rem;
 	padding-inline: 2rem 0;
 	max-width: 76rem;
 	margin-inline: auto;
@@ -1587,14 +1597,26 @@ html.dark .d-num {
 	align-items: center;
 	gap: 0.625rem;
 	flex-shrink: 0;
-	margin-top: 0.625rem;
 	width: 0.75rem;
+	min-height: 3rem;
+	position: relative;
+}
+.part-mark-dot::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 1.35rem;
+	bottom: 0.4rem;
+	width: 1px;
+	background: #e2e8f0;
+	transform: translatex(-50%);
 }
 .part-mark-dot::before {
 	content: "";
 	display: block;
-	width: 0.55rem;
-	height: 0.55rem;
+	width: 0.6rem;
+	height: 0.6rem;
+	border-radius: 50%;
 	background: var(--accent, #94a3b8);
 	flex-shrink: 0;
 }
@@ -1606,7 +1628,7 @@ html.dark .d-num {
 	text-transform: uppercase;
 	color: #94a3b8;
 	padding-top: 0.625rem;
-	border-top: 2px solid #cbd5e1;
+	border-top: 1px solid #cbd5e1;
 }
 .part-mark-label-sub {
 	display: block;
@@ -1631,6 +1653,8 @@ html.dark .d-num {
 	.part-mark-dot {
 		width: auto;
 		margin-top: 0;
+		min-height: auto;
+		position: static;
 	}
 	.part-mark-dot::after {
 		display: none;

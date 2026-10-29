@@ -5,7 +5,6 @@ import PageIntro from '../components/PageIntro.astro';
 import Section from '../components/Section.astro';
 import Callout from '../components/Callout.astro';
 import Figure from '../components/Figure.astro';
-import Diagram from '../components/Diagram.astro';
 import { PAGE_HERO_IMAGES } from '../consts';
 ---
 
@@ -20,6 +19,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
         heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"] || undefined}
     />
 
+
     <PageIntro
         eyebrow="Case law"
         paragraphs={[
@@ -27,32 +27,17 @@ import { PAGE_HERO_IMAGES } from '../consts';
             'Appellate decisions carry greater precedential weight than first-instance judgments. More detailed commentary on recent cases appears in Recent Developments.'
         ]}
         contents={[
-            { href: '#kjy', label: 'KJY' },
-            { href: '#spellman', label: 'Spellman' },
-            { href: '#penney', label: 'Penney' },
-            { href: '#muller', label: 'Muller' },
-            { href: '#darnley', label: 'Darnley' },
+            { href: '#penney', label: 'Penney (2000)' },
+            { href: '#muller', label: 'Muller (2017)' },
+            { href: '#darnley', label: 'Darnley (2018)' },
+            { href: '#kjy', label: 'KJY (2023)' },
+            { href: '#spellman', label: 'Spellman (2024)' },
             { href: '#themes', label: 'Principles' },
         ]}
         audience="Written for radiologists, solicitors, barristers and expert witnesses."
         reviewed="October 2026"
     />
 
-    <Figure
-        label="Figure 01"
-        caption="The principal diagnostic authorities"
-        subtitle="The leading decisions on image interpretation, incidental findings and expert evidence."
-    >
-        <Diagram name="case-timeline" />
-    </Figure>
-
-      <Figure
-        src="/images/pexels-konrads-photo-32251894.jpg"
-        alt="Radiology image for case law introduction"
-        label="Figure 01"
-        caption="Illustration for case law principles"
-        ratio="wide"
-      />
 
     <section class="band-paper">
         <div class="container-page min-w-0">
@@ -78,124 +63,21 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
             
 
-            <Section
-                id="kjy"
-                index="03"
-                eyebrow="Incidental abnormality"
-               
-                title="KJY"
-                citation="[2023] EWHC 2719 (KB)"
-            >
-                <p class="para-sm">
-                    <strong>Issue:</strong> Whether radiologists reporting neonatal abdominal
-                    radiographs should have identified hip abnormalities incidental to the
-                    clinical question.
-                </p>
-
-                <p class="para-sm">
-                    <strong>Facts:</strong> Abdominal radiographs were obtained shortly after
-                    birth because of choking and swallowing difficulties. Bilateral
-                    developmental dysplasia of the hips was diagnosed later. Abnormal hip
-                    alignment was visible on the earlier radiographs but had not been reported.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> an abnormality is not necessarily outside
-                        the reporter's responsibility merely because it is incidental to the
-                        referral question. On the facts, the hip abnormality should have been
-                        identified and reported.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Significance:</strong>
-                        the clinical question focuses the examination but does not invariably
-                        limit responsibility to a single structure. Visibility, clinical
-                        importance and the reporting circumstances remain relevant.
-                    </p>
-
-                    <p class="mt-2">
-                        <strong class="text-slate-800">Status:</strong>
-                        KJY is a first-instance decision. It should not be treated as creating
-                        an absolute rule detached from its facts and expert evidence.
-                    </p>
-                </div>
-
-                <p class="mt-3 text-sm">
-                    /recent-developments/kjy-2023-whole-image-review
-                        Detailed KJY commentary &rarr;
-                    </a>
-                </p>
-            </Section>
-
-            <Section
-                id="spellman"
-                index="04"
-                eyebrow="MRI interpretation"
-               
-                title="Spellman"
-                citation="[2024] EWHC 2011 (KB)"
-            >
-                <p class="para-sm">
-                    <strong>Issue:</strong> Whether an MRI was negligently reported as showing
-                    only mild stenosis when it was alleged to demonstrate cauda equina
-                    compression requiring urgent decompression.
-                </p>
-
-                <p class="para-sm">
-                    <strong>Facts:</strong> The claimant had previous spinal surgery, chronic
-                    pain and longstanding urological symptoms. She alleged that the reporting
-                    radiologist had failed to identify cauda equina compression on MRI.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> the court first determines what the imaging
-                        showed and then considers whether the report was reasonably open to a
-                        competent radiologist. Descriptions such as mild or moderate may
-                        involve legitimate judgment where no fixed grading system exists.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Outcome:</strong>
-                        the court found no radiological evidence of cauda equina compression.
-                        The report was reasonably open to a competent radiologist and the claim
-                        was dismissed.
-                    </p>
-
-                    <p class="mt-2">
-                        <strong class="text-slate-800">Significance:</strong>
-                        disagreement between experts does not establish breach. Objective image
-                        content must be distinguished from reasonable differences in
-                        description and interpretation.
-                    </p>
-                </div>
-
-                <p class="mt-3 text-sm">
-                    /recent-developments/spellman-2024-radiological-opinion
-                        Detailed Spellman commentary &rarr;
-                    </a>
-                </p>
-            </Section>
-
+            
             <Section
                 id="penney"
-                index="05"
+                index="03"
                 eyebrow="Diagnostic screening"
                
                 title="Penney"
                 citation="[2000] Lloyd's Rep Med 41 (CA)"
             >
-                <p class="para-sm">
+                <p class="para">
                     <strong>Issue:</strong> The standard applicable to false-negative cervical
                     screening reports.
                 </p>
 
-                <p class="para-sm">
+                <p class="para">
                     <strong>Facts:</strong> Cervical cytology slides were reported as negative.
                     The court found abnormalities that should have led to a different
                     classification and further action.
@@ -223,18 +105,18 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
             <Section
                 id="muller"
-                index="06"
+                index="04"
                 eyebrow="Diagnostic interpretation"
                
                 title="Muller"
                 citation="[2017] EWHC 128 (QB), [2017] QB 987"
             >
-                <p class="para-sm">
+                <p class="para">
                     <strong>Issue:</strong> Whether a histopathologist negligently reported a
                     biopsy from a non-healing foot lesion as benign.
                 </p>
 
-                <p class="para-sm">
+                <p class="para">
                     <strong>Facts:</strong> The biopsy was reported as showing a non-malignant
                     ulcer. The lesion was subsequently diagnosed as acral lentiginous melanoma.
                 </p>
@@ -266,19 +148,19 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
             <Section
                 id="darnley"
-                index="07"
+                index="05"
                 eyebrow="Imaging pathway"
                
                 title="Darnley"
                 citation="[2018] UKSC 50"
             >
-                <p class="para-sm">
+                <p class="para">
                     <strong>Issue:</strong> Whether misleading information given by an
                     emergency-department receptionist could amount to a breach of the
                     hospital's duty of care.
                 </p>
 
-                <p class="para-sm">
+                <p class="para">
                     <strong>Facts:</strong> A patient with a head injury was incorrectly told
                     that he might wait four or five hours before being seen. He left after
                     approximately 19 minutes and later collapsed from an extradural haematoma.
@@ -304,6 +186,110 @@ import { PAGE_HERO_IMAGES } from '../consts';
             </Section>
 
             <Section
+                id="kjy"
+                index="06"
+                eyebrow="Incidental abnormality"
+               
+                title="KJY"
+                citation="[2023] EWHC 2719 (KB)"
+            >
+                <p class="para">
+                    <strong>Issue:</strong> Whether radiologists reporting neonatal abdominal
+                    radiographs should have identified hip abnormalities incidental to the
+                    clinical question.
+                </p>
+
+                <p class="para">
+                    <strong>Facts:</strong> Abdominal radiographs were obtained shortly after
+                    birth because of choking and swallowing difficulties. Bilateral
+                    developmental dysplasia of the hips was diagnosed later. Abnormal hip
+                    alignment was visible on the earlier radiographs but had not been reported.
+                </p>
+
+                <div class="rule-quote">
+                    <p class="text-caption">
+                        <strong>Principle:</strong> an abnormality is not necessarily outside
+                        the reporter's responsibility merely because it is incidental to the
+                        referral question. On the facts, the hip abnormality should have been
+                        identified and reported.
+                    </p>
+                </div>
+
+                <div class="note-box">
+                    <p>
+                        <strong class="text-slate-800">Significance:</strong>
+                        the clinical question focuses the examination but does not invariably
+                        limit responsibility to a single structure. Visibility, clinical
+                        importance and the reporting circumstances remain relevant.
+                    </p>
+
+                    <p class="mt-2">
+                        <strong class="text-slate-800">Status:</strong>
+                        KJY is a first-instance decision. It should not be treated as creating
+                        an absolute rule detached from its facts and expert evidence.
+                    </p>
+                </div>
+
+                <p class="mt-3 text-sm">
+                    <a href="/recent-developments/kjy-2023-whole-image-review">
+                        Detailed KJY commentary &rarr;
+                    </a>
+                </p>
+            </Section>
+
+            <Section
+                id="spellman"
+                index="07"
+                eyebrow="MRI interpretation"
+               
+                title="Spellman"
+                citation="[2024] EWHC 2011 (KB)"
+            >
+                <p class="para">
+                    <strong>Issue:</strong> Whether an MRI was negligently reported as showing
+                    only mild stenosis when it was alleged to demonstrate cauda equina
+                    compression requiring urgent decompression.
+                </p>
+
+                <p class="para">
+                    <strong>Facts:</strong> The claimant had previous spinal surgery, chronic
+                    pain and longstanding urological symptoms. She alleged that the reporting
+                    radiologist had failed to identify cauda equina compression on MRI.
+                </p>
+
+                <div class="rule-quote">
+                    <p class="text-caption">
+                        <strong>Principle:</strong> the court first determines what the imaging
+                        showed and then considers whether the report was reasonably open to a
+                        competent radiologist. Descriptions such as mild or moderate may
+                        involve legitimate judgment where no fixed grading system exists.
+                    </p>
+                </div>
+
+                <div class="note-box">
+                    <p>
+                        <strong class="text-slate-800">Outcome:</strong>
+                        the court found no radiological evidence of cauda equina compression.
+                        The report was reasonably open to a competent radiologist and the claim
+                        was dismissed.
+                    </p>
+
+                    <p class="mt-2">
+                        <strong class="text-slate-800">Significance:</strong>
+                        disagreement between experts does not establish breach. Objective image
+                        content must be distinguished from reasonable differences in
+                        description and interpretation.
+                    </p>
+                </div>
+
+                <p class="mt-3 text-sm">
+                    <a href="/recent-developments/spellman-2024-radiological-opinion">
+                        Detailed Spellman commentary &rarr;
+                    </a>
+                </p>
+            </Section>
+
+            <Section
                 id="themes"
                 index="08"
                 eyebrow="Synthesis"
@@ -313,7 +299,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
                 <div class="entry-list mt-0">
                     <div class="entry">
                         <h3 class="entry-title">Determine what the study showed</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             The content of the original examination must be established before
                             the adequacy of the report can be assessed.
                         </p>
@@ -321,7 +307,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
                     <div class="entry">
                         <h3 class="entry-title">Diagnostic reporting involves judgment</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             Bolam and Bolitho apply. A later diagnosis does not make an earlier
                             reasonable interpretation negligent.
                         </p>
@@ -329,7 +315,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
                     <div class="entry">
                         <h3 class="entry-title">Assess the contemporaneous context</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             Referral details, protocol, image quality, prior examinations and
                             contemporary knowledge are all relevant.
                         </p>
@@ -337,7 +323,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
                     <div class="entry">
                         <h3 class="entry-title">Consider significant incidental findings</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             A clearly visible and clinically important abnormality may require
                             reporting despite falling outside the principal clinical question.
                         </p>
@@ -345,7 +331,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
                     <div class="entry">
                         <h3 class="entry-title">Preserve expert independence</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             Relevant professional relationships must be disclosed. Unsupported
                             or partisan opinion may be rejected.
                         </p>
@@ -353,23 +339,14 @@ import { PAGE_HERO_IMAGES } from '../consts';
 
                     <div class="entry">
                         <h3 class="entry-title">Separate breach from causation</h3>
-                        <p class="para-sm">
+                        <p class="para">
                             A negligent report does not establish that every subsequent injury
                             was caused by it. The clinical counterfactual must be proved.
                         </p>
                     </div>
                 </div>
             </Section>
-
-            <Callout tone="caution">
-                <p>
-                    These summaries are an educational reference and not a substitute for the
-                    judgments. First-instance decisions illustrate the application of existing
-                    principles but do not carry the same precedential authority as appellate
-                    decisions. The judgment and its subsequent treatment should be checked
-                    before a case is relied upon.
-                </p>
-            </Callout>
+        
 
         </div>
     </section>

@@ -1,68 +1,365 @@
 ---
-title: "Shaheen (2025): communicating an imaging request and contributory negligence"
-description: "Whether a GP informed a patient about a walk-in chest radiograph request, whether the patient would have attended, and whether later non-attendance amounted to contributory negligence."
-pubDate: 2026-09-16
+title: "Spellman (2024): MRI interpretation and cauda equina compression"
+description: "Whether a movement-degraded lumbar MRI was negligently reported as showing mild stenosis, and whether the imaging demonstrated cauda equina compression requiring urgent surgery."
+pubDate: 2026-10-29
 category: case-law
 tags:
   - "Case Law"
-  - "Imaging Requests"
-  - "Primary Care"
-  - "Contributory Negligence"
-  - "Delayed Diagnosis"
-  - "Lung Cancer"
+  - "Radiology"
+  - "Clinical Negligence"
+  - "MRI"
+  - "Cauda Equina Syndrome"
+  - "Standard of Care"
+  - "Causation"
 anonymised: false
 keyTakeaways:
-  - "Creating an electronic imaging request is not enough where the patient must take a further step before the examination will occur."
-  - "The clinician should explain that imaging has been requested, why it is required, how it will be obtained and what the patient should do next."
-  - "A contemporaneous record of the discussion may be important where neither clinician nor patient can later recall the consultation reliably."
-  - "Contributory negligence requires proof that the patient failed to take reasonable care despite understanding the relevant advice and its significance."
-  - "The judgment determined preliminary issues concerning communication, attendance and contributory negligence; it did not determine oncological causation or quantum."
+  - "The court must first determine what the imaging showed and then assess separately whether the radiological report was reasonably competent."
+  - "Spinal canal stenosis and thecal sac constriction do not necessarily establish compression of the cauda equina."
+  - "Descriptive grades such as mild and moderate are subjective where no accepted quantitative standard exists."
+  - "A movement-degraded examination may remain diagnostically adequate and need not automatically be repeated."
+  - "Later surgery does not prove that the earlier imaging demonstrated a surgical emergency."
+  - "An expert's errors in identifying anatomy, pathology or spinal level may materially reduce the weight attached to the opinion."
+  - "Even if stenosis was understated as mild rather than moderate, liability required proof that the difference affected management and outcome."
 ---
+<br><br>
 
-## Scope of the Judgment
+## **Spellman v Portsmouth Hospitals University NHS Trust**
 
-The claim was brought by Mrs Amina Shaheen and Mr Mudassar Ahmed as executors of the estate of Mr Ajaz Ahmed, who died from lung cancer at age 49. The High Court judgment addressed three preliminary issues: whether the defendant GP informed the patient that a chest radiograph had been requested and required walk-in attendance; whether the patient would have attended if properly informed; and whether his subsequent non-attendance amounted to contributory negligence. The court explicitly excluded determination of oncological causation and quantum, focusing solely on the communication pathway and factual counterfactuals preceding imaging.
+**[2024] EWHC 2011 (KB)**  
+**High Court, King’s Bench Division**  
+**Mr Justice Sweeting**  
+**Judgment delivered: 31 July 2024**
 
-## Facts and Agreed Medical Position
+<br>
 
-Mr Ahmed attended his GP on 11 February 2019 with worsening breathlessness following a respiratory infection. Dr Daish examined him, diagnosed an asthma exacerbation, and generated an electronic chest radiograph request through the local Integrated Clinical Environment. Under local arrangements, the electronic request did not generate an appointment; the patient had to attend a walk-in radiology department directly, with no automatic follow-up if attendance failed. The consultation note omitted any record that Mr Ahmed was told about the request, its purpose, the location, or required actions. Dr Daish could not recall the specific consultation but relied on evidence of her usual practice. Mr Ahmed never attended. His lung cancer was subsequently diagnosed via chest radiograph in January 2020. The parties agreed that a 2019 radiograph would likely have shown an abnormality leading to CT and treatment, but disputed whether earlier diagnosis would probably have altered the disease course or outcome.
+### Background
 
-## Claim, Defence and Decision
+The claimant had a long history of recurrent back pain, urinary and bowel symptoms and three previous lumbar operations at L4–5. Earlier investigations had not demonstrated cauda equina compression, although she had previously required intermittent self-catheterisation and had experienced sensory and continence symptoms.
 
-The claimants alleged that Dr Daish failed to explain the request, walk-in process, and clinical importance. Dr Daish denied the failure occurred, citing her standard practice, and additionally argued contributory negligence based on Mr Ahmed's later missed appointments. The court found for the claimants on all three issues. On the balance of probabilities, Dr Daish did not inform the patient about the request or the need to attend a walk-in department. The court concluded that Mr Ahmed would probably have attended had he received clear instructions, and rejected the contributory negligence defence. A silent contemporaneous record was not automatic proof that no discussion occurred, but it carried significant weight when considered alongside the timing of the electronic request (completed after the patient left), detailed recording of other consultation elements, entries from other clinicians discussing investigations, the patient's expressed health concerns, and his prior compliance with medical advice. Evidence of usual practice is relevant but cannot override contemporaneous documentation or the full factual context.
+On 6 June 2017, she presented with acute lower-back pain, left-leg symptoms, altered perineal sensation and abnormal sensation when passing urine. The referral information raised concern about possible cauda equina syndrome.
 
-## Legal Principle
+An urgent lumbar MRI was obtained. Image quality was reduced by significant movement artefact because the claimant was in pain. The reporting consultant radiologist nevertheless considered the examination diagnostic and reported:
 
-Where an imaging investigation requires the patient to take a further step, the clinician must provide sufficient information to enable that step. This includes communicating that imaging has been requested, its clinical purpose, the location or method of attendance, expected timescales, and instructions if the examination does not occur. The judgment does not mandate discussion of every possible diagnosis whenever imaging is ordered, but firmly establishes that patients cannot reasonably be expected to attend investigations they have not been told were requested. Clear communication is a procedural necessity whenever the pathway depends on patient action.
+- multilevel lumbar disc degeneration;
+- a slightly tight canal at L2–3 and L3–4;
+- reduced cerebrospinal fluid within the thecal sac at those levels;
+- epidural lipomatosis contributing to thecal sac constriction;
+- mild central canal stenosis; and
+- postoperative change at L4–5.
 
-## Contributory Negligence and Counterfactual Attendance
+No acute cauda equina compression or surgically remediable lesion was reported. Following clinical review, the claimant was discharged.
 
-The defendant bore the burden of proving contributory negligence, which the court treats as comparatively unusual in clinical negligence claims. Patient non-attendance does not automatically constitute negligence; it requires proof that the patient understood the medical advice, appreciated its significance, knew what action was required, and lacked a reasonable explanation for non-attendance. The court found no evidence that Mr Ahmed understood the importance of the chest radiograph request, and rejected the inference that his later missed appointments proved he would have ignored a clearly explained investigation for serious disease. The question of whether he would have attended if properly informed was a factual counterfactual distinct from medical causation. The court considered his symptom concern, prior healthcare engagement, conduct regarding other requested tests, response to medical advice, and the practical accessibility of the walk-in service, concluding attendance was probable.
+Six days later, a private spinal surgeon reviewed the same MRI, suspected cauda equina compression and performed urgent L3–4 decompression and discectomy. The claimant subsequently continued to experience urinary and bowel dysfunction, neuropathic symptoms and back pain.
 
-## Radiological and Pathway Significance
+<br>
 
-This case did not involve radiological interpretation or missed diagnoses, as no chest radiograph was performed in 2019. It highlights the systemic risk created when electronic requests are treated as complete despite requiring patient action. A request can exist electronically without generating an appointment, attendance, image acquisition, report, or clinical result. The imaging pathway contains multiple discrete stages: clinical decision, request creation, patient information, referral triage, appointment or walk-in attendance, image acquisition, reporting, result review, and clinical action. Failure can occur at any stage, and legal responsibility depends on local processes, participant knowledge, policy assignments, examination urgency, and the availability of fail-safe monitoring.
+### The claim
 
-## Unperformed Requests and Fail-Safe Systems
+The claimant alleged that the reporting radiologist had:
 
-The local walk-in system generated no automatic follow-up for non-attendance, a feature noted in the factual background but not legally determined as a radiology breach. The court did not establish that radiology departments must universally track every unperformed request, but the judgment underscores why providers must clearly define responsibilities, appointment versus walk-in classifications, urgent referral monitoring, non-attendance visibility to referrers, suspected-cancer tracking protocols, and loop-closure procedures. Pathway design must match examination type and urgency, ensuring that administrative gaps do not compromise patient safety.
+- understated the degree of stenosis at L2–3 and L3–4;
+- wrongly described the stenosis as mild rather than moderate, moderately severe or severe;
+- failed to identify substantial cauda equina compression;
+- failed to identify pathology capable of accounting for the claimant’s symptoms;
+- failed to recommend repeat imaging or specialist discussion; and
+- produced an unduly reassuring report that led to delayed decompression.
 
-## Distinguishing Imaging Pathway Failures
+The claimant contended that correct reporting would have led to surgery by the morning of 7 June 2017 and a materially better neurological and functional outcome.
 
-Three distinct pathway failures must be carefully separated. An unperformed investigation involves a request that never results in image acquisition, evidenced by booking, attendance, and follow-up records. An unreported investigation involves a performed study lacking a timely report, evidenced by acquisition timestamps, worklist allocation, and reporting status. An unactioned result involves a reported study where significant findings are not reviewed or acted upon, evidenced by report release, alerts, acknowledgement logs, and clinical response. _Shaheen_ concerns only the first category and must not be conflated with failures to communicate imaging results or interpret completed studies.
+The defendant denied that the MRI demonstrated cauda equina compression. It maintained that the report was reasonable and that earlier surgery would not have improved the claimant’s outcome.
 
-## Practical Guidance
+Damages had been agreed at £300,000, subject to the claimant establishing both breach of duty and causation.
 
-Referring clinicians must document in the consultation note that the investigation was requested, the clinical rationale, the exact patient instructions, location, timescale, urgency, and contingency plans if the examination is not completed. The record need not reproduce verbatim discussion but must demonstrate essential advice and planned steps. Imaging providers should ensure clear referral processes, distinguish appointment-based from walk-in services, provide accessible patient instructions, maintain request status visibility, notify referrers of rejected or incomplete requests, monitor urgent referrals, track non-attendance, and communicate pathway breakdowns. Radiologists typically do not encounter unperformed worklists, making this primarily a referral and governance issue; however, those in leadership should ensure urgent pathways are clearly defined, responsibilities are allocated, downgraded requests are communicated, administrative systems flag unresolved urgent referrals, and governance frameworks distinguish unperformed, unreported, and unactioned examinations. Legal professionals must tailor disclosure to the alleged failure stage; for unperformed walk-in investigations, relevant material includes consultation records, electronic request timestamps, system workflow, patient instructions, subsequent attendance, and follow-up logs, while PACS reporting and acknowledgement records are typically irrelevant where no imaging occurred.
+<br>
 
-## Medical Causation and Relationship With Darnley
+### The central issues
 
-The preliminary judgment did not resolve oncological causation. A full counterfactual analysis would require establishing when attendance would likely have occurred, what the chest radiograph would have shown, when CT would follow, the probable cancer stage at diagnosis, what treatment would have been offered, and whether that treatment would likely have altered survival or other losses. Radiological evidence may assist with imaging findings, disease staging, and progression timing, but oncological treatment, prognosis, and survival require specialist cancer evidence. The case should not be conflated with _Darnley v Croydon Health Services NHS Trust_, which concerned inaccurate waiting time information in an emergency department. Both demonstrate that non-clinical or pathway information can affect timely care, but the duties, factual tests, and causal mechanisms differ. Later missed appointments may inform the counterfactual but are not decisive; their significance depends on communication, perceived urgency, practical barriers, and overall healthcare engagement. A court will not infer that a patient would ignore a clearly explained serious disease investigation based on isolated non-attendance.
+The court had to determine:
 
-## Conclusion
+1. what the MRI of 6 June 2017 objectively demonstrated;
+2. whether the cauda equina was compressed;
+3. whether the report understated or omitted material pathology;
+4. whether the degraded examination should have been repeated;
+5. whether the claimant had cauda equina syndrome attributable to radiological compression;
+6. whether earlier decompression would have occurred following a different report; and
+7. whether earlier surgery would probably have improved the outcome.
 
-_Shaheen_ is authority on communication of imaging requests, factual counterfactual attendance, and contributory negligence, not radiological interpretation. The principal lessons are that electronic requests do not guarantee imaging, patients must be explicitly informed about what has been requested and what action is required, contemporaneous documentation is crucial where recollection is absent, usual-practice evidence is relevant but not conclusive, non-attendance does not automatically establish contributory negligence, patients must understand advice and its significance before failure to act can be fairly criticised, and medical causation remains distinct from breach and counterfactual attendance. The case exposes systemic vulnerabilities in unperformed imaging requests but does not impose a universal duty on radiology departments to track every referral to completion.
+The claimant accepted that if the MRI did not demonstrate cauda equina compression, failure to report compression could not amount to negligence and no injury could have resulted from that alleged omission.
 
-/radiology-legal-cases#shaheen.
+<br>
 
-> Educational case commentary only. It is not legal advice, medical advice or a substitute for the judgment. The publication date above is the date of this commentary; judgment was given on 28 November 2025. The reported decision concerns preliminary issues and should not be presented as resolving oncological causation or quantum.
+### The legal approach
+
+The court applied the ordinary principles in *Bolam v Friern Hospital Management Committee*, subject to the logical scrutiny required by *Bolitho v City and Hackney Health Authority*.
+
+Following *Penney v East Kent Health Authority* and *Brady v Southend University Hospital NHS Foundation Trust*, the court adopted a two-stage analysis:
+
+1. **What did the images show?**  
+   This was a question of fact for the court, decided on the balance of probabilities with the assistance of expert evidence.
+
+2. **Was the report reasonably competent?**  
+   Once the imaging findings had been determined, the court had to assess whether the interpretation and communication fell within a responsible and logically defensible body of radiological practice.
+
+A court may therefore find that imaging contained a particular feature without necessarily finding that failure to report it was negligent. Conversely, conflicting expert opinions do not require the court to accept that both interpretations were professionally defensible.
+
+<br>
+
+### What the MRI showed
+
+The court found that the MRI demonstrated:
+
+- moderate central canal stenosis at L2–3 and L3–4;
+- facet and ligamentous hypertrophic degeneration;
+- epidural lipomatosis contributing to thecal sac constriction;
+- a left intracanalicular facet-joint cyst at L2–3, although this was not distinctly demonstrated prospectively;
+- a small left paracentral disc extrusion at L3–4;
+- reduced, but not absent, cerebrospinal fluid signal at the affected levels; and
+- longstanding constitutional and degenerative change.
+
+Crucially, the court found no point at which the nerve roots were sufficiently crowded or clumped to demonstrate compression of the cauda equina.
+
+The presence of stenosis, epidural fat, a facet-joint cyst or a small disc abnormality did not itself prove neural compression. The decisive question was their effect on the cauda equina, not merely whether they occupied space within an already narrowed canal.
+
+<br>
+
+### Constriction was not compression
+
+The judgment distinguished between:
+
+- narrowing of the spinal canal;
+- constriction or deformation of the thecal sac; and
+- actual compression of the cauda equina nerve roots.
+
+Although the thecal sac was narrowed at L2–3 and L3–4, cerebrospinal fluid remained visible around the nerve roots. The court accepted the defendant’s expert evidence that the nerve roots were not clumped into a compressed mass.
+
+Accordingly, the anatomical abnormalities did not provide radiological evidence of acute cauda equina compression or a surgically correctable cause for the claimant’s presentation.
+
+<br>
+
+### Mild or moderate stenosis
+
+The expert radiologists agreed that grading central canal stenosis is substantially subjective. Terms such as “mild”, “moderate” and “severe” are not governed by a universally accepted quantitative threshold.
+
+Published grading systems differed in:
+
+- the anatomical features assessed;
+- whether measurements or morphology were emphasised;
+- the terminology assigned to particular appearances; and
+- the relationship assumed between narrowing and clinical symptoms.
+
+The court accepted that “moderate” was a better description of the stenosis than “mild”. However, the distinction did not establish negligence.
+
+The original report also recorded:
+
+- that the canal was tight;
+- that less cerebrospinal fluid was visible;
+- that epidural fat materially contributed to constriction; and
+- that there was multilevel degenerative disease.
+
+Read as a whole, the report did not materially misrepresent the imaging. In the absence of a fixed grading standard, describing the stenosis as mild rather than moderate remained within the range reasonably open to a competent radiologist.
+
+More importantly, both spinal experts agreed that moderate stenosis would ordinarily be managed conservatively rather than by emergency decompression. The terminology therefore did not establish a causative reporting error.
+
+<br>
+
+### Image quality and the decision not to repeat the MRI
+
+The MRI was degraded by substantial movement artefact. However, poor image quality did not automatically make the examination non-diagnostic.
+
+The reporting radiologist:
+
+- recognised the artefact;
+- understood that the examination had been requested urgently to assess possible cauda equina syndrome;
+- began reviewing the images while scanning continued;
+- asked for an important sequence to be repeated;
+- considered whether further imaging would add useful information; and
+- concluded that additional attempts were unlikely to produce materially better images while the claimant remained in significant pain.
+
+Both radiology experts agreed that a responsible and reasonably competent body of radiologists could regard the examination as sufficiently diagnostic to issue a definitive report without recommending another scan.
+
+The court therefore found that:
+
+- it was reasonable to interpret and report the available study;
+- there was no duty to continue scanning indefinitely;
+- further imaging offered uncertain benefit and additional discomfort; and
+- failure to recommend repeat MRI or external specialist review was not negligent.
+
+<br>
+
+### The claimant’s radiology expert
+
+The claimant’s expert originally identified a significant disc extrusion at L3–4 as the cause of severe cauda equina compression. He later accepted that he had:
+
+- identified pathology at the wrong spinal level;
+- mistaken a facet-joint cyst at L2–3 for a disc extrusion at L3–4;
+- failed initially to identify the separate small L3–4 disc abnormality later relied upon;
+- overstated the stenosis as severe before agreeing that moderate was appropriate;
+- changed his opinion about whether the small disc abnormality required reporting;
+- accepted that the facet-joint cyst could reasonably have been missed prospectively; and
+- withdrawn the contention that repeat imaging or discussion with a regional spinal centre was required.
+
+He had reviewed converted JPEG images rather than the original medical-grade images on radiological software. The defendant’s expert had been provided with the same material but did not make comparable anatomical or localisation errors.
+
+The court found that these errors reduced confidence in the claimant expert’s interpretation. Where the radiologists disagreed about the images, it preferred the evidence of the defendant’s expert.
+
+<br>
+
+### The defendant’s radiology expert
+
+The defendant’s expert considered the abnormalities longstanding, constitutional and degenerative. In his opinion:
+
+- cerebrospinal fluid remained present at the affected levels;
+- the narrowing did not produce sufficient crowding to compress the cauda equina;
+- the facet-joint cyst formed part of the overall moderate stenosis;
+- the small disc abnormality was not compressive;
+- the imaging appearances were commonly encountered without cauda equina syndrome; and
+- there was no acute, surgically remediable lesion.
+
+The court found his anatomical explanation logical and consistent with the images. It accepted that stenosis and space-occupying pathology do not inevitably interfere with nerve function while sufficient cerebrospinal fluid and space remain around the nerve roots.
+
+<br>
+
+### The spinal-surgical evidence
+
+The claimant’s spinal expert considered that an apparent absence of cerebrospinal fluid on one image indicated compression and that a repeat scan or urgent surgery was required. However, this produced a tension in his evidence: the scan was said to be too poor for reliable surgical planning but sufficiently diagnostic to mandate urgent decompression.
+
+The defendant’s spinal expert considered that:
+
+- the scan was difficult to interpret but did not demonstrate cauda equina compression;
+- an isolated reduction in cerebrospinal fluid signal could reflect artefact or postoperative fibrosis;
+- genuine compression would be expected to affect adjacent images more progressively;
+- the claimant had previously experienced similar symptoms without radiological compression; and
+- pain, distress and pre-existing dysfunction provided alternative explanations for the presentation.
+
+Both spinal experts agreed that moderate stenosis alone would usually lead to conservative outpatient management rather than emergency intervention.
+
+<br>
+
+### Clinical symptoms and imaging
+
+Cauda equina syndrome is a clinical diagnosis assessed through symptoms, examination and imaging. Urgent MRI remains necessary where red-flag symptoms are present, but such symptoms do not by themselves prove compressive cauda equina syndrome.
+
+The court noted that:
+
+- many patients following a suspected cauda equina pathway have no explanatory compression on imaging;
+- clinical symptoms correlate imperfectly with the severity of lumbar stenosis;
+- the claimant had experienced similar bladder, sensory and pain symptoms previously without cauda equina compression;
+- her prior urinary and bowel history was complex;
+- the history given in June 2017 contained material inconsistencies;
+- the alleged fall was not disclosed to the original treating clinicians;
+- a later episode in 2018 produced similar symptoms without explanatory imaging; and
+- there was no reliable evidence of material neurological progression between 6 and 12 June 2017.
+
+The symptoms therefore did not provide a sufficient basis for inferring compression that was not demonstrated radiologically.
+
+<br>
+
+### The later operation
+
+The private surgeon’s decision to operate on 12 June 2017 did not establish that the MRI had demonstrated acute cauda equina compression six days earlier.
+
+The court noted that:
+
+- the surgeon did not give evidence;
+- no detailed contemporaneous history had been recorded;
+- his correspondence and operative documentation differed regarding episodes of urinary incontinence;
+- it was unclear precisely what pathology he considered diagnostic;
+- decompression was performed only at L3–4, despite alleged abnormalities at both L2–3 and L3–4;
+- no repeat preoperative MRI was obtained; and
+- the claimant’s symptoms persisted after surgery.
+
+The court made no criticism of the private surgeon’s professional judgment. It held only that the later decision to operate did not prove the factual or legal propositions required in the claim.
+
+<br>
+
+### Breach of duty
+
+The court found no breach of duty.
+
+The MRI contained moderate stenosis and additional degenerative abnormalities, but it did not demonstrate cauda equina compression. As compression was not present radiologically, failure to report it was an accurate assessment rather than a negligent omission.
+
+The report was also reasonable in its wider description because:
+
+- the scan was diagnostically adequate despite movement artefact;
+- reduced cerebrospinal fluid was recorded;
+- epidural fat and its contribution to constriction were identified;
+- postoperative and degenerative changes were described;
+- the distinction between mild and moderate stenosis was subjective;
+- the facet-joint cyst was not sufficiently distinct to require prospective identification;
+- the small disc abnormality was not compressive or clinically material; and
+- neither repeat imaging nor external consultation was required.
+
+<br>
+
+### Causation
+
+Because breach of duty was not established, the causation claim necessarily failed.
+
+The evidence also created substantial independent difficulties for causation:
+
+- moderate stenosis would not ordinarily have prompted emergency surgery;
+- no compressive surgical target was shown;
+- the claimant’s symptoms had several plausible alternative explanations;
+- the timing and progression of symptoms were unclear;
+- the claimant had similar previous presentations without compression;
+- the later operation did not produce the alleged improvement;
+- some symptoms may have pre-dated the index presentation; and
+- the evidence did not establish that decompression on 7 June would probably have produced a better outcome.
+
+The claim was dismissed.
+
+<br>
+
+### Significance for radiological practice
+
+- **Identify the clinical question.** In suspected cauda equina syndrome, the central radiological task is to identify or exclude compression and any surgically remediable cause.
+- **Distinguish narrowing from neural compression.** Stenosis, thecal sac constriction and reduced cerebrospinal fluid do not necessarily mean that the cauda equina is compressed.
+- **Describe the functional effect of pathology.** The report should explain whether abnormalities crowd, displace or compress the nerve roots.
+- **Read grading terms in context.** “Mild”, “moderate” and “severe” may lack fixed boundaries and should not be considered in isolation from the report’s anatomical description.
+- **Do not overstate isolated findings.** A cyst, disc protrusion or epidural fat may be present without constituting an acute surgical target.
+- **Assess the whole examination.** A single degraded or apparently alarming image should be correlated with adjacent levels, sequences and planes.
+- **Record technical limitations.** Movement artefact should be acknowledged, together with its effect on diagnostic confidence.
+- **Repeat imaging only where necessary.** A technically imperfect scan may still answer the urgent clinical question.
+- **Avoid retrospective reconstruction.** Later imaging and surgery may assist interpretation but cannot automatically establish what should have been reported prospectively.
+- **Communicate material uncertainty.** If image quality prevents confident exclusion of compression, that limitation and any required next step should be stated expressly.
+
+<br>
+
+### Significance for expert witnesses
+
+- Review the original medical-grade images wherever possible.
+- Confirm spinal levels systematically before attributing pathology.
+- Distinguish a facet-joint cyst, disc abnormality, epidural fat and postoperative change.
+- Separate the presence of stenosis from its effect on the cauda equina.
+- Explain whether cerebrospinal fluid is reduced or absent.
+- Avoid inferring preoperative findings uncritically from postoperative imaging.
+- State whether grading terminology reflects an accepted system or subjective clinical usage.
+- Reconcile any contention that imaging is non-diagnostic with reliance on the same imaging to mandate surgery.
+- Identify clearly when an opinion has changed and why.
+- Address whether any alleged reporting difference would probably have altered clinical management.
+- Keep breach and causation analytically separate.
+- Test the opinion against plausible alternative explanations for the clinical presentation.
+
+<br>
+
+### Practical framework for reviewing a suspected cauda equina MRI
+
+1. Was the clinical indication and urgency understood?
+2. Was the examination technically adequate to answer the clinical question?
+3. What levels demonstrate canal stenosis?
+4. What structures are causing the narrowing?
+5. Is cerebrospinal fluid preserved, reduced or absent?
+6. Are the nerve roots separate and freely distributed, or crowded and clumped?
+7. Is there actual cauda equina compression?
+8. Is there an acute or surgically remediable lesion?
+9. Are the abnormalities acute, chronic or indeterminate?
+10. Do findings persist across adjacent slices, sequences and planes?
+11. Could an apparent abnormality be explained by movement or other artefact?
+12. Would repeat imaging probably provide material additional information?
+13. Does the report communicate the degree, cause and effect of the stenosis?
+14. Would alternative terminology materially change clinical management?
+15. Is any retrospective interpretation being influenced by later imaging, surgery or outcome?
+
+<br>
+
+> Educational case commentary only. It is not legal or medical advice and is not a substitute for the full judgment. The publication date above is the date of this commentary; judgment was delivered on 31 July 2024.

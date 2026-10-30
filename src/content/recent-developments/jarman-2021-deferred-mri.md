@@ -65,6 +65,6 @@ _Jarman_ should not be conflated with _Darnley v Croydon Health Services NHS Tru
 
 _Jarman_ is a fact-specific decision reaffirming that medicolegal liability requires clear proof that earlier imaging and surgical intervention would probably have improved the patient’s neurological outcome. Clinical urgency must be guided by comprehensive, contemporaneous assessment rather than automatic escalation for subjective symptoms alone.
 
-[Back to the case-law digest](/radiology-legal-cases#jarman)
+[Back to the case-law digest](/medicolegal-fundamentals#jarman)
 
 > Educational case commentary only. It is not legal advice, medical advice or a substitute for the judgment. The publication date above is the date of this commentary; the judgment was delivered on 18 February 2021.

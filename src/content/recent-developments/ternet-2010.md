@@ -1,7 +1,7 @@
 ---
 title: "Ternent v Ashford & St Peter's Hospital NHS Trust (2010): wound dehiscence, causation and proof of surgical negligence"
 description: "High Court decision addressing whether post-caesarean wound dehiscence permitted an inference of negligent suturing, and examining the burden of proof, Bolam principles and the limits of expert reconstruction of surgical events."
-pubDate: 2026-10-29
+pubDate: 2010-01-01
 category: case-law
 tags:
   - "Case Law"

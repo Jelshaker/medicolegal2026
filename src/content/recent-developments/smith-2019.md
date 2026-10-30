@@ -1,7 +1,7 @@
 ---
 title: "Smith v Castle Point Borough Council (2019): contamination, planning judgment and green-belt impact"
 description: "Judicial review challenge to planning permission for a 5-metre boundary wall around a scrapyard, addressing contaminated land assessments, alleged intensification of use, planning conditions, officer reports and visual impact on the Green Belt."
-pubDate: 2026-10-29
+pubDate: 2019-01-01
 category: case-law
 tags:
   - "Case Law"

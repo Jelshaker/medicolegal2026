@@ -1,7 +1,7 @@
 ---
 title: "Communicating Critical Imaging Findings: Closing the Reporting Loop"
 description: "Why issuing a radiology report may not be sufficient for an urgent or unexpected finding, and how fail-safe communication should operate across the clinical pathway."
-pubDate: 2026-09-16
+pubDate: 2021-01-01
 category: practice
 tags:
   - "Practice and Procedure"

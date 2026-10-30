@@ -1,7 +1,7 @@
 ---
 title: "Dalton (2019): breast assessment, imaging concordance and biopsy"
 description: "Whether benign clinical examination, mammography and ultrasound findings required core biopsy of a palpable breast lump, and whether biopsy would probably have detected an occult 3 mm carcinoma."
-pubDate: 2026-10-29
+pubDate: 2019-01-01
 category: case-law
 tags:
   - "Case Law"

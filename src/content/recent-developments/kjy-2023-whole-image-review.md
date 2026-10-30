@@ -1,7 +1,7 @@
 ---
 title: "KJY (2023): incidental findings and the duty to review the whole image"
 description: "Whether radiologists negligently failed to identify possible developmental dysplasia of the hips on neonatal abdominal radiographs obtained for an unrelated clinical indication."
-pubDate: 2026-10-29
+pubDate: 2023-01-01
 category: case-law
 tags:
   - "Case Law"

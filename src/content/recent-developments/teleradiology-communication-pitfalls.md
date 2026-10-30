@@ -1,7 +1,7 @@
 ---
 title: "Communication and Teleradiology in Acute Abdominal Imaging"
 description: "How access to clinical information, prior imaging, escalation pathways and provider governance affect the safety of remote abdominal CT reporting."
-pubDate: 2026-03-02
+pubDate: 2025-01-01
 category: practice
 tags:
   - "Teleradiology"

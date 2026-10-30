@@ -32,7 +32,7 @@ const categoryLabel = (id: string) =>
   <PageHero
     eyebrow="Radiology · Law · Reference resource"
     title="A radiologist's guide to medicolegal law."
-    description="A free, independent reference for those working at the interface of radiology and the law. It covers how common radiological investigations are performed, interpreted and reported, the standards governing reporting, relevant statutory duties, and the consequences when things go wrong. Written primarily for radiologists and healthcare professionals."
+    description="A free, independent reference for those interested in radiology and the law. This website discusses common radiological investigations, the standards governing reporting, statutory duties, and the legal issues when problems arise. Written primarily for radiologists and healthcare professionals. Also has a free DICOM viewer."
     heroImage={PAGE_HERO_IMAGES["/"] || undefined}
   >
     <div class="hero-link-row">
@@ -58,19 +58,18 @@ const categoryLabel = (id: string) =>
           medical ethics and healthcare law, especially in relation to clinical
           radiology. In recent years it has become increasingly difficult to
           distinguish genuine case law from
-          <b>AI-generated slop</b>. This is particularly frustrating as, in my
-          free time, I like to follow recent and interesting medicolegal
-          developments.
+          <b>AI-generated slop</b>. This is particularly frustrating as I quite
+          like to follow recent and interesting medicolegal developments.
         </p>
         <p class="para">
-          This is intellectually stimulating and not simply academic. I
-          frequently come across cases with direct relevance to my clinical
-          practice and to the NHS more generally. This site was therefore
-          created to provide a
+          I find this an intellectually stimulating exercise and I frequently
+          come across cases with direct relevance to my clinical practice and to
+          my NHS department. This website was created to provide a
           <em>human-reviewed</em> and <em>trustworthy</em> resource for radiologists,
           lawyers and patients navigating medicolegal case law, with a clear focus
           on radiology. All material is checked against primary sources (a shocking
-          proposal in this day and age I know...).
+          proposal in this day and age I know...) and summarised and rewritten to
+          act as a helpful resource without legal experience.
         </p>
       </div>
     </div>
@@ -116,11 +115,11 @@ const categoryLabel = (id: string) =>
         <h2 class="sec-title-lg">From Fundamentals to Recent Events</h2>
         <p class="para">
           The site is structured so that everyone, from first-time visitors to
-          experienced medicolegal practitioners, are on an equal footing both
-          <em>clinically</em> and <em>legally</em>. These following sections aim
-          to provide a concise and comprehensive overview of clinical radiology
-          as a specialty, important legislation and regulations, foundational
-          medicolegal principles, and significant recent judgments.
+          experienced medicolegal practitioners, are on an equal foundation
+          <em>clinically</em> and <em>legally</em>. The sections are divided to
+          try to provide a concise and comprehensive overview of clinical
+          radiology as a specialty, important legislation and regulations,
+          foundational medicolegal principles, and important recent judgments.
         </p>
       </div>
       <div class="mt-10 grid-2-col">
@@ -136,7 +135,7 @@ const categoryLabel = (id: string) =>
             legislative framework.
           </p>
           <a href="/radiology-fundamentals" class="link-sm-block"
-            >Open {radiologyFundamentalsTitle}</a
+            ><b>Browse {radiologyFundamentalsTitle}</b></a
           >
         </article>
         <article class="tile pad-box">
@@ -150,7 +149,7 @@ const categoryLabel = (id: string) =>
             IR(ME)R, statutory duties and the duty of candour.
           </p>
           <a href="/medicolegal-fundamentals" class="link-sm-block"
-            >Open {medicolegalFundamentalsTitle}</a
+            ><b>Browse {medicolegalFundamentalsTitle}</b></a
           >
         </article>
         <article class="tile pad-box">
@@ -164,7 +163,7 @@ const categoryLabel = (id: string) =>
             follows from a failure. Summary only — the primary text governs.
           </p>
           <a href="/radiology-legislation" class="link-sm-block"
-            >Browse the legislation</a
+            ><b>Browse the legislation</b></a
           >
         </article>
 
@@ -178,7 +177,7 @@ const categoryLabel = (id: string) =>
             practice.
           </p>
           <a href="/radiology-legal-cases" class="link-sm-block"
-            >Open {radiologyCaseLawTitle}</a
+            ><b>Browse {radiologyCaseLawTitle}</b></a
           >
         </article>
         <article class="tile pad-box">
@@ -191,7 +190,7 @@ const categoryLabel = (id: string) =>
             radiological or legal points.
           </p>
           <a href="/recent-developments" class="link-sm-block"
-            >Open {importantNewCasesTitle}</a
+            ><b>Open {importantNewCasesTitle}</b></a
           >
         </article>
       </div>

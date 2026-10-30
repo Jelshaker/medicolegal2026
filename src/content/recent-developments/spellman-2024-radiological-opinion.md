@@ -1,7 +1,7 @@
 ---
 title: "Spellman (2024): MRI interpretation and cauda equina compression"
 description: "Whether a movement-degraded lumbar MRI was negligently reported as showing mild stenosis, and whether the imaging demonstrated cauda equina compression requiring urgent surgery."
-pubDate: 2026-10-29
+pubDate: 2024-01-01
 category: case-law
 tags:
   - "Case Law"

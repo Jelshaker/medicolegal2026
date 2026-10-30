@@ -1,7 +1,7 @@
 ---
 title: "Shaheen (2025): communicating imaging requests and patient follow-up"
 description: "Whether a GP informed a patient that a chest radiograph had been requested, whether he would have attended if properly informed, and whether missed follow-up amounted to contributory negligence."
-pubDate: 2026-10-29
+pubDate: 2025-01-01
 category: case-law
 tags:
   - "Case Law"

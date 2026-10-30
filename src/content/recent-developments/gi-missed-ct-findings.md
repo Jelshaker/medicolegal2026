@@ -1,7 +1,7 @@
 ---
 title: "Missed Gastrointestinal Findings on CT: Luminal, Mesenteric and Ischaemic Disease"
 description: "Why gastrointestinal abnormalities may be difficult to detect on CT, and how medicolegal review should distinguish limitations of referral, protocol, acquisition and interpretation."
-pubDate: 2025-10-21
+pubDate: 2023-01-01
 category: gastrointestinal
 tags:
   - "Gastrointestinal"

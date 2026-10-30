@@ -1,7 +1,7 @@
 ---
 title: "Penney v East Kent Health Authority (1999): cervical smear screening, Bolam and obvious abnormalities"
 description: "Court of Appeal decision on negligent cervical-smear screening, addressing the application of Bolam to cytoscreeners, the distinction between factual findings and professional judgment, and liability for reporting abnormal smears as negative."
-pubDate: 2026-10-29
+pubDate: 1999-01-01
 category: case-law
 tags:
   - "Case Law"

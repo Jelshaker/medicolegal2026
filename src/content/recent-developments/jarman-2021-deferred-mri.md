@@ -1,7 +1,7 @@
 ---
 title: "Jarman (2021): suspected cauda equina syndrome and the timing of MRI"
 description: "Whether the clinical presentation required emergency MRI for suspected cauda equina syndrome, and whether the interval before surgery caused additional neurological injury."
-pubDate: 2026-09-16
+pubDate: 2021-01-01
 category: case-law
 tags:
   - "Case Law"

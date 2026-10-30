@@ -1,7 +1,7 @@
 ---
 title: "Bolitho v City and Hackney Health Authority (1998): the logical limits of Bolam"
 description: "Leading House of Lords authority refining the Bolam test by confirming that courts are not bound to accept professional opinion unless it is capable of withstanding logical analysis."
-pubDate: 2026-10-29
+pubDate: 1997-01-01
 category: case-law
 tags:
   - "Case Law"

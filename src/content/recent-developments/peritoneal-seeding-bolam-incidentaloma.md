@@ -1,8 +1,8 @@
 ---
 title: "Subtle Peritoneal Metastases on CT: Detection, Staging and Negligence"
 description: "How an expert should assess alleged failure to identify peritoneal metastases, including clinical context, CT technique, conspicuity, hindsight and causation."
-pubDate: 2026-01-28
-updatedDate: 2026-02-15
+pubDate: 2025-01-01
+updatedDate: 2025-02-01
 category: peritoneal-malignancy
 tags:
   - "Peritoneal Malignancy"

@@ -1,7 +1,7 @@
 ---
 title: "CPR Part 35 and the Single Joint Expert: Preparing a Radiological Report for the Court"
 description: "The practical requirements for independent radiological expert evidence under CPR Part 35, Practice Direction 35 and the civil-claims expert guidance."
-pubDate: 2026-01-18
+pubDate: 2025-01-01
 category: practice
 tags:
   - "Practice and Procedure"

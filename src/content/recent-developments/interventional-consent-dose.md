@@ -1,7 +1,7 @@
 ---
 title: "Consent, Sedation and Radiation Exposure in Interventional Radiology"
 description: "The medicolegal significance of consent, sedation, radiation records, complication management and candour in interventional radiology."
-pubDate: 2025-12-03
+pubDate: 2024-01-01
 category: interventional
 tags:
   - "Interventional Radiology"

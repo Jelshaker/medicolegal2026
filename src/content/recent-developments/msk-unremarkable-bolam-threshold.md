@@ -1,7 +1,7 @@
 ---
 title: "Musculoskeletal Reporting: When a Normal Examination Is Disputed"
 description: "How Bolam and Bolitho apply to an apparently normal musculoskeletal examination, and how experts should assess image adequacy, interpretation and causation."
-pubDate: 2025-11-10
+pubDate: 2023-01-01
 category: musculoskeletal
 tags:
   - "Musculoskeletal"

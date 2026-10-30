@@ -1,7 +1,7 @@
 ---
 title: "Measurement Error in Radiological Quantification"
 description: "How calibration, positioning, plane selection, anatomical landmarks and observer variability affect radiological measurements used in personal-injury and clinical-negligence claims."
-pubDate: 2026-02-02
+pubDate: 2025-01-01
 category: quantum
 tags:
   - "Quantum and Causation"

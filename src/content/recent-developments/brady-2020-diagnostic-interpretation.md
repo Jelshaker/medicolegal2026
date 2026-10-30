@@ -1,7 +1,7 @@
 ---
 title: "Brady (2020): radiological diagnosis, biopsy and the Bolam standard"
 description: "Whether an incorrect radiological diagnosis and the decision not to biopsy an enlarging abdominal mass amounted to clinical negligence."
-pubDate: 2026-09-16
+pubDate: 2020-01-01
 category: case-law
 tags:
   - "Case Law"

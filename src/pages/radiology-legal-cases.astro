@@ -1,353 +1,248 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import PageIntro from '../components/PageIntro.astro';
-import Section from '../components/Section.astro';
-import Callout from '../components/Callout.astro';
-import Figure from '../components/Figure.astro';
-import { PAGE_HERO_IMAGES } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
+import Section from "../components/Section.astro";
+import Callout from "../components/Callout.astro";
+import Figure from "../components/Figure.astro";
+import { PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
-   
-    description="A concise digest of leading clinical negligence decisions concerning radiological interpretation, incidental findings, expert evidence and imaging pathways."
+  description="A concise digest of foundational pre-2010 medical negligence decisions establishing the legal principles governing clinical practice and diagnostic interpretation."
 >
-    <PageHero
-        eyebrow="Radiology legal cases"
-       
-        description="Leading decisions on diagnostic interpretation, incidental findings, expert evidence and imaging pathways."
-        heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"] || undefined}
-    />
+  <PageHero
+    eyebrow="Foundational legal cases"
+    description="Landmark pre-2010 judicial decisions establishing the legal standards of care, clinical judgment, and diagnostic interpretation."
+    heroImage={PAGE_HERO_IMAGES["/radiology-legal-cases"] || undefined}
+  />
 
+  <PageIntro
+    eyebrow="Case law"
+    paragraphs={[
+      "A selective digest of foundational pre-2010 judicial authorities that govern medical negligence and inform the legal assessment of radiological practice.",
+      "These landmark appellate and House of Lords decisions establish the enduring legal tests for professional standard of care, logical peer review, and diagnostic evaluation.",
+    ]}
+    contents={[
+      { href: "#bolam", label: "Bolam (1957)" },
+      { href: "#whitehouse", label: "Whitehouse (1981)" },
+      { href: "#bolitho", label: "Bolitho (1997)" },
+      { href: "#penney", label: "Penney (2000)" },
+      { href: "#themes", label: "Principles" },
+    ]}
+    audience="Written for radiologists, solicitors, barristers and expert witnesses."
+    reviewed="October 2026"
+  />
 
-    <PageIntro
-        eyebrow="Case law"
-        paragraphs={[
-            'A selective digest of decisions relevant to radiological practice. Each entry identifies the issue, material facts and legal principle.',
-            'Appellate decisions carry greater precedential weight than first-instance judgments. More detailed commentary on recent cases appears in Recent Developments.'
-        ]}
-        contents={[
-            { href: '#penney', label: 'Penney (2000)' },
-            { href: '#muller', label: 'Muller (2017)' },
-            { href: '#darnley', label: 'Darnley (2018)' },
-            { href: '#kjy', label: 'KJY (2023)' },
-            { href: '#spellman', label: 'Spellman (2024)' },
-            { href: '#themes', label: 'Principles' },
-        ]}
-        audience="Written for radiologists, solicitors, barristers and expert witnesses."
-        reviewed="October 2026"
-    />
+  <section class="band-paper">
+    <div class="container-page min-w-0">
+      <div class="doc min-w-0">
+        <Figure
+          src="/images/spine_CT.jpg"
+          alt="Cross-sectional CT image of the spine"
+          label="Plate 01"
+          caption="The image is evidence, not the legal conclusion"
+          subtitle="The court must determine what the original study showed before evaluating whether the report met the required legal standard."
+          ratio="wide"
+        />
+      </div>
+    </div>
+  </section>
 
+  <section class="band-white">
+    <div class="container-page min-w-0 space-y-12">
+      <Section
+        id="bolam"
+        index="01"
+        eyebrow="Standard of care"
+        title="Bolam v Friern Hospital Management Committee"
+        citation="[1957] 1 WLR 582"
+      >
+        <p class="para">
+          <strong>Issue:</strong> The legal test for determining the standard of care
+          required of a professional exercising a skilled calling.
+        </p>
 
-    <section class="band-paper">
-        <div class="container-page min-w-0">
-            <div class="doc min-w-0">
-                <Figure
-                    src="/images/spine_CT.jpg"
-                    alt="Cross-sectional CT image of the spine"
-                    label="Plate 01"
-                    caption="The image is evidence, not the legal conclusion"
-                    subtitle="The court must determine what the original study showed before deciding whether the report fell below the required standard."
-                    ratio="wide"
-                />
-            </div>
+        <p class="para">
+          <strong>Facts:</strong> A patient suffered severe fractures during electroconvulsive
+          therapy when relaxant drugs were not administered and no physical restraint
+          was used, though a responsible body of medical opinion supported this practice
+          at the time.
+        </p>
+
+        <div class="rule-quote">
+          <p class="text-caption">
+            <strong>Principle:</strong> a doctor is not negligent if they act in accordance
+            with a practice accepted as proper by a responsible body of medical men
+            skilled in that particular art.
+          </p>
         </div>
-    </section>
 
-    <section class="band-white">
-        <div class="container-page min-w-0 space-y-12">
-
-            
-
-            
-
-            
-
-            
-            <Section
-                id="penney"
-                index="03"
-                eyebrow="Diagnostic screening"
-               
-                title="Penney"
-                citation="[2000] Lloyd's Rep Med 41 (CA)"
-            >
-                <p class="para">
-                    <strong>Issue:</strong> The standard applicable to false-negative cervical
-                    screening reports.
-                </p>
-
-                <p class="para">
-                    <strong>Facts:</strong> Cervical cytology slides were reported as negative.
-                    The court found abnormalities that should have led to a different
-                    classification and further action.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> the court must determine what the material
-                        showed. Evidence that other screeners might also have issued a negative
-                        report was not conclusive where the abnormalities required a different
-                        response.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Relevance:</strong>
-                        Penney concerned cytology rather than radiology. It is relevant by
-                        analogy where a claim turns on whether an abnormal feature was
-                        demonstrably present and whether its omission was professionally
-                        defensible.
-                    </p>
-                </div>
-            </Section>
-
-            <Section
-                id="muller"
-                index="04"
-                eyebrow="Diagnostic interpretation"
-               
-                title="Muller"
-                citation="[2017] EWHC 128 (QB), [2017] QB 987"
-            >
-                <p class="para">
-                    <strong>Issue:</strong> Whether a histopathologist negligently reported a
-                    biopsy from a non-healing foot lesion as benign.
-                </p>
-
-                <p class="para">
-                    <strong>Facts:</strong> The biopsy was reported as showing a non-malignant
-                    ulcer. The lesion was subsequently diagnosed as acral lentiginous melanoma.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> the court considered whether the report fell
-                        below the required professional standard, taking account of the slides,
-                        competing expert evidence, the rarity of the condition and hindsight.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Relevance:</strong>
-                        Muller is a histopathology decision, not a radiology case. Its approach
-                        to visual diagnosis is relevant by analogy but should now be read
-                        alongside Brady.
-                    </p>
-
-                    <p class="mt-2">
-                        <strong class="text-slate-800">Causation:</strong>
-                        although breach was established, damages were limited because the
-                        melanoma had probably already metastasised by the date of the negligent
-                        report.
-                    </p>
-                </div>
-            </Section>
-
-            <Section
-                id="darnley"
-                index="05"
-                eyebrow="Imaging pathway"
-               
-                title="Darnley"
-                citation="[2018] UKSC 50"
-            >
-                <p class="para">
-                    <strong>Issue:</strong> Whether misleading information given by an
-                    emergency-department receptionist could amount to a breach of the
-                    hospital's duty of care.
-                </p>
-
-                <p class="para">
-                    <strong>Facts:</strong> A patient with a head injury was incorrectly told
-                    that he might wait four or five hours before being seen. He left after
-                    approximately 19 minutes and later collapsed from an extradural haematoma.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> the hospital owed a duty not to provide
-                        misleading information about the likely timing of clinical assessment.
-                        The receptionist's non-clinical role did not prevent liability for
-                        inaccurate information given within the scope of that role.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Radiology relevance:</strong>
-                        Darnley was not a reporting case. Its relevance lies in the diagnostic
-                        pathway: administrative information and operational systems may
-                        determine whether urgent assessment and imaging occur.
-                    </p>
-                </div>
-            </Section>
-
-            <Section
-                id="kjy"
-                index="06"
-                eyebrow="Incidental abnormality"
-               
-                title="KJY"
-                citation="[2023] EWHC 2719 (KB)"
-            >
-                <p class="para">
-                    <strong>Issue:</strong> Whether radiologists reporting neonatal abdominal
-                    radiographs should have identified hip abnormalities incidental to the
-                    clinical question.
-                </p>
-
-                <p class="para">
-                    <strong>Facts:</strong> Abdominal radiographs were obtained shortly after
-                    birth because of choking and swallowing difficulties. Bilateral
-                    developmental dysplasia of the hips was diagnosed later. Abnormal hip
-                    alignment was visible on the earlier radiographs but had not been reported.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> an abnormality is not necessarily outside
-                        the reporter's responsibility merely because it is incidental to the
-                        referral question. On the facts, the hip abnormality should have been
-                        identified and reported.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Significance:</strong>
-                        the clinical question focuses the examination but does not invariably
-                        limit responsibility to a single structure. Visibility, clinical
-                        importance and the reporting circumstances remain relevant.
-                    </p>
-
-                    <p class="mt-2">
-                        <strong class="text-slate-800">Status:</strong>
-                        KJY is a first-instance decision. It should not be treated as creating
-                        an absolute rule detached from its facts and expert evidence.
-                    </p>
-                </div>
-
-                <p class="mt-3 text-sm">
-                    <a href="/recent-developments/kjy-2023-whole-image-review">
-                        Detailed KJY commentary &rarr;
-                    </a>
-                </p>
-            </Section>
-
-            <Section
-                id="spellman"
-                index="07"
-                eyebrow="MRI interpretation"
-               
-                title="Spellman"
-                citation="[2024] EWHC 2011 (KB)"
-            >
-                <p class="para">
-                    <strong>Issue:</strong> Whether an MRI was negligently reported as showing
-                    only mild stenosis when it was alleged to demonstrate cauda equina
-                    compression requiring urgent decompression.
-                </p>
-
-                <p class="para">
-                    <strong>Facts:</strong> The claimant had previous spinal surgery, chronic
-                    pain and longstanding urological symptoms. She alleged that the reporting
-                    radiologist had failed to identify cauda equina compression on MRI.
-                </p>
-
-                <div class="rule-quote">
-                    <p class="text-caption">
-                        <strong>Principle:</strong> the court first determines what the imaging
-                        showed and then considers whether the report was reasonably open to a
-                        competent radiologist. Descriptions such as mild or moderate may
-                        involve legitimate judgment where no fixed grading system exists.
-                    </p>
-                </div>
-
-                <div class="note-box">
-                    <p>
-                        <strong class="text-slate-800">Outcome:</strong>
-                        the court found no radiological evidence of cauda equina compression.
-                        The report was reasonably open to a competent radiologist and the claim
-                        was dismissed.
-                    </p>
-
-                    <p class="mt-2">
-                        <strong class="text-slate-800">Significance:</strong>
-                        disagreement between experts does not establish breach. Objective image
-                        content must be distinguished from reasonable differences in
-                        description and interpretation.
-                    </p>
-                </div>
-
-                <p class="mt-3 text-sm">
-                    <a href="/recent-developments/spellman-2024-radiological-opinion">
-                        Detailed Spellman commentary &rarr;
-                    </a>
-                </p>
-            </Section>
-
-            <Section
-                id="themes"
-                index="08"
-                eyebrow="Synthesis"
-                title="Principles Emerging from the Cases"
-               
-            >
-                <div class="entry-list mt-0">
-                    <div class="entry">
-                        <h3 class="entry-title">Determine what the study showed</h3>
-                        <p class="para">
-                            The content of the original examination must be established before
-                            the adequacy of the report can be assessed.
-                        </p>
-                    </div>
-
-                    <div class="entry">
-                        <h3 class="entry-title">Diagnostic reporting involves judgment</h3>
-                        <p class="para">
-                            Bolam and Bolitho apply. A later diagnosis does not make an earlier
-                            reasonable interpretation negligent.
-                        </p>
-                    </div>
-
-                    <div class="entry">
-                        <h3 class="entry-title">Assess the contemporaneous context</h3>
-                        <p class="para">
-                            Referral details, protocol, image quality, prior examinations and
-                            contemporary knowledge are all relevant.
-                        </p>
-                    </div>
-
-                    <div class="entry">
-                        <h3 class="entry-title">Consider significant incidental findings</h3>
-                        <p class="para">
-                            A clearly visible and clinically important abnormality may require
-                            reporting despite falling outside the principal clinical question.
-                        </p>
-                    </div>
-
-                    <div class="entry">
-                        <h3 class="entry-title">Preserve expert independence</h3>
-                        <p class="para">
-                            Relevant professional relationships must be disclosed. Unsupported
-                            or partisan opinion may be rejected.
-                        </p>
-                    </div>
-
-                    <div class="entry">
-                        <h3 class="entry-title">Separate breach from causation</h3>
-                        <p class="para">
-                            A negligent report does not establish that every subsequent injury
-                            was caused by it. The clinical counterfactual must be proved.
-                        </p>
-                    </div>
-                </div>
-            </Section>
-        
-
+        <div class="note-box">
+          <p>
+            <strong class="text-slate-800">Relevance:</strong>
+            The foundational cornerstone for evaluating whether a radiologist's interpretation
+            or failure to detect an abnormality falls below the accepted professional
+            standard.
+          </p>
         </div>
-    </section>
+      </Section>
+
+      <Section
+        id="whitehouse"
+        index="02"
+        eyebrow="Clinical judgment"
+        title="Whitehouse v Jordan"
+        citation="[1981] 1 All ER 267 (HL)"
+      >
+        <p class="para">
+          <strong>Issue:</strong> The legal distinction between a negligent act or
+          omission and an error of clinical judgment.
+        </p>
+
+        <p class="para">
+          <strong>Facts:</strong> Difficult forceps delivery resulted in severe neonatal
+          asphyxia and brain damage. Allegations focused on the duration and force
+          applied during traction.
+        </p>
+
+        <div class="rule-quote">
+          <p class="text-caption">
+            <strong>Principle:</strong> an error of judgment is not necessarily negligence.
+            A distinction must be drawn between a professional exercising reasonable
+            care who makes an incorrect evaluation, and a failure to exercise the
+            required standard of care.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <p>
+            <strong class="text-slate-800">Relevance:</strong>
+            Highly pertinent to radiological reporting, where visual interpretation
+            often involves nuanced perception and grey-scale differentiation rather
+            than absolute binary answers.
+          </p>
+        </div>
+      </Section>
+
+      <Section
+        id="bolitho"
+        index="03"
+        eyebrow="Logical scrutiny"
+        title="Bolitho v City and Hackney Health Authority"
+        citation="[1998] AC 232 (HL)"
+      >
+        <p class="para">
+          <strong>Issue:</strong> Whether the court can reject expert medical opinion
+          advanced under the <em>Bolam</em> test if that opinion is shown to be illogical.
+        </p>
+
+        <p class="para">
+          <strong>Facts:</strong> A two-year-old boy suffering from croup experienced
+          respiratory arrests and suffered catastrophic brain damage after a doctor
+          failed to attend to intubate.
+        </p>
+
+        <div class="rule-quote">
+          <p class="text-caption">
+            <strong>Principle:</strong> the court must be satisfied that the expert
+            opinion relied upon has a logical basis. If professional opinion cannot
+            withstand logical analysis, the judge is entitled to hold that it is not
+            responsible or responsible in law.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <p>
+            <strong class="text-slate-800">Relevance:</strong>
+            Ensures that retrospective expert assertions in radiology negligence claims
+            (e.g., claiming a subtle nodule was "obviously visible") must be logically
+            defensible rather than mere hindsight assertion.
+          </p>
+        </div>
+      </Section>
+
+      <Section
+        id="penney"
+        index="04"
+        eyebrow="Diagnostic interpretation"
+        title="Penney v East Kent Health Authority"
+        citation="[2000] Lloyd's Rep Med 41 (CA)"
+      >
+        <p class="para">
+          <strong>Issue:</strong> The standard applicable to false-negative screening
+          and diagnostic reporting.
+        </p>
+
+        <p class="para">
+          <strong>Facts:</strong> Cervical cytology slides were reported as negative
+          when subsequent review revealed abnormalities that should have prompted
+          referral for treatment.
+        </p>
+
+        <div class="rule-quote">
+          <p class="text-caption">
+            <strong>Principle:</strong> the court must determine what the material
+            actually showed. Evidence that other practitioners might also have issued
+            a negative report is not conclusive where the material demonstrates abnormalities
+            requiring action.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <p>
+            <strong class="text-slate-800">Relevance:</strong>
+            Directly analogous to radiological image review, establishing that a missed
+            finding cannot be excused purely by citing inter-observer variability
+            if the feature is demonstrably present on the study.
+          </p>
+        </div>
+      </Section>
+
+      <Section
+        id="themes"
+        index="05"
+        eyebrow="Synthesis"
+        title="Principles Emerging from Foundational Case Law"
+      >
+        <div class="entry-list mt-0">
+          <div class="entry">
+            <h3 class="entry-title">Objective baseline of image content</h3>
+            <p class="para">
+              The court first establishes what was objectively visible on the
+              contemporaneous imaging before evaluating whether the reporting
+              standard was met.
+            </p>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">Logical defence of opinion</h3>
+            <p class="para">
+              Under <em>Bolitho</em>, professional opinion supporting a missed
+              or deferred finding must withstand logical scrutiny rather than
+              relying on unexamined custom.
+            </p>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">Judgment versus breach</h3>
+            <p class="para">
+              As established in <em>Whitehouse</em>, difficult diagnostic grey
+              areas involve legitimate clinical judgment which does not equate
+              to professional negligence.
+            </p>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">Guard against hindsight bias</h3>
+            <p class="para">
+              Assessments must be made based on knowledge and circumstances
+              contemporaneous with the examination, avoiding contamination by
+              subsequent clinical outcomes.
+            </p>
+          </div>
+        </div>
+      </Section>
+    </div>
+  </section>
 </BaseLayout>

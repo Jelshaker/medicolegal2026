@@ -1,302 +1,370 @@
----
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import PageIntro from '../components/PageIntro.astro';
-import Callout from '../components/Callout.astro';
-import Figure from '../components/Figure.astro';
-import Diagram from '../components/Diagram.astro';
-import LegislationEntry from '../components/LegislationEntry.astro';
-import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
+import Callout from "../components/Callout.astro";
+import LegislationEntry from "../components/LegislationEntry.astro";
+import { SITE_TITLE, PAGE_HERO_IMAGES } from "../consts";
 
 const instruments = [
-    {
-        id: 'irmer',
-        index: '01',
-        eyebrow: 'Patient exposures',
-        title: 'IR(ME)R 2017',
-        lead:
-            'IR(ME)R governs the justification, optimisation and clinical evaluation of individual medical exposures to ionising radiation in Great Britain.',
-        fields: [
-            {
-                n: 'Duty holders',
-                d: 'The employer, referrer, practitioner and operator, each exercising defined statutory functions.',
-            },
-            {
-                n: 'Principal duties',
-                d: 'Justification, authorisation, optimisation, clinical evaluation, quality assurance, clinical audit and appropriate training.',
-            },
-            {
-                n: 'Records',
-                d: 'Entitlement and training, referrals and authorisations, exposure information, clinical evaluations and investigations of accidental or unintended exposures.',
-            },
-            {
-                n: 'Enforcement',
-                d: 'Enforced as criminal law by the relevant national authority. In England, this is the Care Quality Commission.',
-            },
-        ],
-        note:
-            'Ionising Radiation (Medical Exposure) Regulations 2017, SI 2017/1322, as amended. Northern Ireland has separate regulations.',
-    },
-
-    {
-        id: 'irr17',
-        index: '02',
-        eyebrow: 'Staff and workplace',
-        title: 'IRR17',
-        lead:
-            'IRR17 protects staff and the public from risks arising from work with ionising radiation.',
-        fields: [
-            {
-                n: 'Duty holders',
-                d: 'The radiation employer and employees working with ionising radiation.',
-            },
-            {
-                n: 'Principal duties',
-                d: 'Prior risk assessment, restriction of exposure, engineering controls, designated areas, local rules, contingency planning, training and appropriate monitoring.',
-            },
-            {
-                n: 'Records',
-                d: 'Risk assessments, local rules, training, equipment examinations, area monitoring, dose assessments and health records where required.',
-            },
-            {
-                n: 'Enforcement',
-                d: 'Enforced principally by the Health and Safety Executive through statutory notices and criminal prosecution.',
-            },
-        ],
-        note:
-            'Ionising Radiations Regulations 2017, SI 2017/1075. The effective-dose limit for an adult employee is generally 20 mSv in a calendar year.',
-    },
-    {
-        id: 'epr16',
-        index: '03',
-        eyebrow: 'Radioactive substances',
-        title: 'EPR 2016',
-        lead:
-            'The Environmental Permitting Regulations control radioactive-material activities and radioactive waste in England and Wales.',
-        fields: [
-            {
-                n: 'Duty holder',
-                d: 'The operator holding the environmental permit, usually the NHS trust or other employing organisation.',
-            },
-            {
-                n: 'Principal duties',
-                d: 'Compliance with permit conditions governing radioactive materials, accumulation, disposal, monitoring and environmental protection.',
-            },
-            {
-                n: 'Records',
-                d: 'Source and waste inventories, monitoring results, accumulations, disposals, compliance records and regulatory returns.',
-            },
-            {
-                n: 'Enforcement',
-                d: 'The Environment Agency acts in England and Natural Resources Wales in Wales.',
-            },
-        ],
-        note:
-            'Environmental Permitting (England and Wales) Regulations 2016, SI 2016/1154. Different legislation applies in Scotland and Northern Ireland.',
-    },
-    {
-        id: 'data-protection',
-        index: '04',
-        eyebrow: 'Patient information',
-        title: 'UK GDPR and Data Protection Act 2018',
-        lead:
-            'Identifiable images, reports and associated clinical information are personal data and usually special-category health data.',
-        fields: [
-            {
-                n: 'Duty holders',
-                d: 'The controller determines the purpose and means of processing. External suppliers may act as processors or separate controllers.',
-            },
-            {
-                n: 'Principal duties',
-                d: 'Lawfulness, fairness, transparency, data minimisation, accuracy, security, accountability and controls over disclosure and transfer.',
-            },
-            {
-                n: 'Records',
-                d: 'Processing records, privacy information, retention schedules, supplier contracts, access controls, breach records and DPIAs where required.',
-            },
-            {
-                n: 'Enforcement',
-                d: 'The Information Commissioner may investigate, issue enforcement notices and impose administrative penalties.',
-            },
-        ],
-        note:
-            'Healthcare processing does not ordinarily rely on patient consent as its data-protection lawful basis. The appropriate Article 6 basis and Article 9 condition must be identified.',
-    },
+  {
+    id: "irmer",
+    index: "01",
+    eyebrow: "Patient exposures",
+    title: "IR(ME)R 2017",
+    titleHref: "https://www.legislation.gov.uk/uksi/2017/1322/contents",
+    lead: "Governs the clinical justification, individual optimisation, and formal evaluation of medical exposures to ionising radiation across Great Britain.",
+    fields: [
+      {
+        n: "Duty holders",
+        d: "The employer, referrer, practitioner, and operator, each fulfilling distinct, statutory operational functions.",
+      },
+      {
+        n: "Principal duties",
+        d: "Clinical justification, formal authorisation, dose optimisation, diagnostic evaluation, quality assurance programmes, clinical audit, and mandatory training.",
+      },
+      {
+        n: "Records",
+        d: "Staff entitlements, training matrices, referral documentation, authorisation logs, exposure parameters, clinical evaluations, and formal incident investigations.",
+      },
+      {
+        n: "Enforcement",
+        d: "Enforced under criminal law by national regulatory bodies. In England, regulatory compliance and enforcement are led by the Care Quality Commission.",
+      },
+    ],
+    note: "Ionising Radiation (Medical Exposure) Regulations 2017, SI 2017/1322, as amended. Separate statutory regulations apply in Northern Ireland.",
+  },
+  {
+    id: "irr17",
+    index: "02",
+    eyebrow: "Staff and workplace",
+    title: "IRR17",
+    titleHref: "https://www.legislation.gov.uk/uksi/2017/1075/contents",
+    lead: "Establishes comprehensive protection for healthcare personnel, workers, and members of the public against risks arising from occupational ionising radiation.",
+    fields: [
+      {
+        n: "Duty holders",
+        d: "The designated radiation employer and all occupationally exposed employees handling radioactive sources or radiation equipment.",
+      },
+      {
+        n: "Principal duties",
+        d: "Prior risk assessments, strict dose restriction, engineered safety controls, controlled or supervised areas, local rules, contingency planning, and comprehensive staff training.",
+      },
+      {
+        n: "Records",
+        d: "Risk assessments, local safety rules, training logs, critical equipment testing, area monitoring surveys, individual dose assessments, and occupational health records.",
+      },
+      {
+        n: "Enforcement",
+        d: "Enforced primarily by the Health and Safety Executive (HSE) through formal prohibition/improvement notices and criminal prosecution.",
+      },
+    ],
+    note: "Ionising Radiations Regulations 2017, SI 2017/1075. The statutory effective-dose limit for adult employees is generally 20 mSv in a calendar year.",
+  },
+  {
+    id: "hswa74",
+    index: "03",
+    eyebrow: "General workplace safety",
+    title: "HSWA 1974",
+    titleHref: "https://www.legislation.gov.uk/ukpga/1974/37/contents",
+    lead: "Serves as the primary parent legislation governing occupational health and safety across all healthcare workplaces and clinical environments in Great Britain.",
+    fields: [
+      {
+        n: "Duty holders",
+        d: "The healthcare employer (Trust, Board, or private provider) and employees at all levels of the organisational hierarchy.",
+      },
+      {
+        n: "Principal duties",
+        d: "Ensuring, so far as is reasonably practicable, the health, safety, and welfare of all employees and non-employees affected by work activities, including safe plant and systems of work.",
+      },
+      {
+        n: "Records",
+        d: "Health and safety policies, risk assessment documentation, safety committee minutes, accident/incident reporting logs (RIDDOR), and equipment maintenance records.",
+      },
+      {
+        n: "Enforcement",
+        d: "Enforced by the Health and Safety Executive (HSE) or local authorities, possessing powers to issue improvement/prohibition notices and prosecute corporate bodies or individuals.",
+      },
+    ],
+    note: "Health and Safety at Work etc. Act 1974. Forms the broad statutory umbrella under which subordinate regulations like IRR17 operate.",
+  },
+  {
+    id: "epr16",
+    index: "04",
+    eyebrow: "Radioactive substances",
+    title: "EPR 2016",
+    titleHref: "https://www.legislation.gov.uk/uksi/2016/1154/contents",
+    lead: "Regulates radioactive material handling, storage activities, and the safe accumulation and disposal of radioactive waste across England and Wales.",
+    fields: [
+      {
+        n: "Duty holder",
+        d: "The formal permit holder, typically represented by the NHS trust executive or corporate healthcare provider organisation.",
+      },
+      {
+        n: "Principal duties",
+        d: "Absolute compliance with environmental permit conditions governing radioactive source acquisition, secure accumulation, authorised disposal, and continuous environmental monitoring.",
+      },
+      {
+        n: "Records",
+        d: "Active source inventories, waste disposal logs, environmental monitoring results, compliance verification audits, and mandatory regulatory returns.",
+      },
+      {
+        n: "Enforcement",
+        d: "Regulated and enforced by the Environment Agency in England and Natural Resources Wales within Wales.",
+      },
+    ],
+    note: "Environmental Permitting (England and Wales) Regulations 2016, SI 2016/1154. Distinct legislative frameworks apply in Scotland and Northern Ireland.",
+  },
+  {
+    id: "hsce2008",
+    index: "05",
+    eyebrow: "Quality and governance",
+    title:
+      "Health and Social Care Act 2008 (Regulated Activities) Regulations 2014",
+    titleHref: "https://www.legislation.gov.uk/ukpga/2008/14/contents",
+    lead: "Establishes the mandatory fundamental standards of safety and quality required for running regulated healthcare activities, including diagnostic and screening procedures.",
+    fields: [
+      {
+        n: "Duty holders",
+        d: "The registered care provider, nominated individuals, and directors legally accountable for service quality and safety compliance.",
+      },
+      {
+        n: "Principal duties",
+        d: "Maintaining safe care and treatment (Regulation 12), robust governance systems (Regulation 17), proper staff vetting, cleanliness, and managing clinical safety incidents.",
+      },
+      {
+        n: "Records",
+        d: "Audits, governance meeting minutes, incident investigation reports, duty of candour logs, staff competency records, and risk management portfolios.",
+      },
+      {
+        n: "Enforcement",
+        d: "Enforced by the Care Quality Commission (CQC) through compliance warnings, restriction of services, financial penalties, or cancellation of provider registration.",
+      },
+    ],
+    note: "Health and Social Care Act 2008 (Regulated Activities) Regulations 2014, SI 2014/2936. Applicable directly to registered health and care providers in England.",
+  },
+  {
+    id: "data-protection",
+    index: "06",
+    eyebrow: "Patient information",
+    title: "UK GDPR and Data Protection Act 2018",
+    titleHref: "https://www.legislation.gov.uk/ukpga/2018/12/contents",
+    lead: "Classifies identifiable diagnostic images, formal reports, and associated clinical metadata as protected personal data and special-category health data.",
+    fields: [
+      {
+        n: "Duty holders",
+        d: "The healthcare data controller dictates processing purposes and means. External software or IT vendors act strictly as processors or independent controllers.",
+      },
+      {
+        n: "Principal duties",
+        d: "Adherence to principles of lawfulness, fairness, transparency, data minimisation, storage limitation, accuracy, security, and strict controls on cross-border disclosures.",
+      },
+      {
+        n: "Records",
+        d: "Article 30 records of processing activities, transparent privacy notices, retention schedules, vendor data processing agreements, breach registers, and DPIAs.",
+      },
+      {
+        n: "Enforcement",
+        d: "The Information Commissioner's Office (ICO) possesses powers to investigate, serve enforcement notices, and issue severe administrative financial penalties.",
+      },
+    ],
+    note: "Routine clinical healthcare processing rarely relies on patient consent. Appropriate legal bases under Article 6 and condition under Article 9 must be explicitly documented.",
+  },
 ] as const;
 
 const accentColors = [
-    '#7c9a6e',
-    '#b8935a',
-    '#7a8da0',
-    '#a07a8d',
+  "#7c9a6e",
+  "#b8935a",
+  "#6b8e9b",
+  "#7a8da0",
+  "#9b6b7a",
+  "#a07a8d",
 ] as const;
 ---
 
 <BaseLayout
-    title={`Radiology Legislation | ${SITE_TITLE}`}
-    description="The principal legislation governing medical exposures, workplace radiation protection, radioactive substances and imaging data."
+  title={`Radiology Legislation | ${SITE_TITLE}`}
+  description="The principal statutory framework governing medical exposures, workplace radiation safety, radioactive substances, clinical governance, and health data."
 >
-    <PageHero
-        eyebrow="Radiology legislation"
-        title="Radiology Legislation"
-        description="The statutory framework governing patient exposure, workplace radiation protection, radioactive substances and imaging data."
-        heroImage={PAGE_HERO_IMAGES["/radiology-legislation"] || undefined}
-    />
+  <PageHero
+    eyebrow="Radiology legislation"
+    title="Radiology Legislation"
+    description="The statutory and regulatory framework governing patient exposure, occupational radiation protection, environmental permitting, healthcare quality standards, and health data."
+    heroImage={PAGE_HERO_IMAGES["/radiology-legislation"] || undefined}
+  />
 
-    <PageIntro
-        eyebrow="Statutory framework"
-        paragraphs={[
-            'Four principal legal regimes govern radiological practice: IR(ME)R for medical exposures; IRR17 for staff and public protection; environmental permitting for radioactive substances and waste; and data protection law for identifiable images and clinical information.',
-            'Each entry identifies the principal duty holders, requirements, records and enforcement route. Professional standards and civil negligence are considered separately.'
-        ]}
-        contents={[
-            { href: '#irmer', label: 'IR(ME)R 2017' },
-            { href: '#irr17', label: 'IRR17' },
-            { href: '#epr16', label: 'EPR 2016' },
-            { href: '#data-protection', label: 'Data protection' },
-            { href: '#communication', label: 'Critical findings' },
-            { href: '#legal-effect', label: 'Legal effect' },
-        ]}
-        audience="Written for radiologists, radiographers, medical physicists, radiation protection professionals and expert witnesses."
-        reviewed="October 2026"
-    />
+  <PageIntro
+    eyebrow="Statutory framework"
+    paragraphs={[
+      "Radiological practice is anchored by comprehensive legal regimes: IR(ME)R governing patient medical exposures; IRR17 and the Health and Safety at Work Act ensuring workplace safety; environmental permitting laws controlling radioactive materials; CQC fundamental standards driving clinical governance; and data protection legislation safeguarding clinical records.",
+      "Each framework outlines core duty holders, operational mandates, evidentiary record-keeping standards, and enforcement routes. Broader professional standards and civil negligence principles operate alongside these statutory duties.",
+    ]}
+    contents={[
+      { href: "#irmer", label: "IR(ME)R 2017" },
+      { href: "#irr17", label: "IRR17" },
+      { href: "#hswa74", label: "HSWA 1974" },
+      { href: "#epr16", label: "EPR 2016" },
+      { href: "#hsce2008", label: "CQC Regulations" },
+      { href: "#data-protection", label: "Data protection" },
+      { href: "#communication", label: "Critical findings" },
+      { href: "#legal-effect", label: "Legal effect" },
+    ]}
+    audience="Essential reference for radiologists, radiographers, medical physicists, radiation protection advisers, and expert witnesses."
+    reviewed="October 2026"
+  />
 
-    <section class="band-paper">
-        <div class="container-page">
-            <div class="doc">
-                <figure class="figure mt-0">
-                    <div class="figure-frame">
-                        <div class="relative aspect-[3/1] overflow-hidden">
-                            <img
-                                src="/images/og-default.jpg"
-                                alt=""
-                                class="h-full w-full object-cover"
-                            />
-                        </div>
-                    </div>
-                </figure>
+  <section class="band-paper">
+    <div class="container-page">
+      <div class="doc">
+        <figure class="figure mt-0">
+          <div class="figure-frame">
+            <div class="relative aspect-[3/1] overflow-hidden">
+              <img
+                src="/images/og-default.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
             </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-paper">
+    <div class="container-page">
+      <div class="space-y-12">
+        {
+          instruments.map((instrument, index) => (
+            <LegislationEntry
+              id={instrument.id}
+              index={instrument.index}
+              eyebrow={instrument.eyebrow}
+              title={instrument.title}
+              titleHref={instrument.titleHref}
+              lead={instrument.lead}
+              fields={[...instrument.fields]}
+              note={instrument.note}
+              accent={accentColors[index] ?? "#94a3b8"}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="communication" class="band-paper">
+    <div class="container-page">
+      <div class="doc space-y-8">
+        <div>
+          <p class="eyebrow">Professional duty</p>
+          <h2 class="heading-lg">
+            Communication and Escalation of Critical Findings
+          </h2>
+
+          <p class="para">
+            The timely transmission of urgent, unexpected, or critical imaging
+            results does not constitute a standalone statutory regulatory
+            regime. Instead, it is a fundamental clinical obligation derived
+            from the overarching duty of care, professional codes of practice,
+            and rigorous institutional governance frameworks.
+          </p>
         </div>
-    </section>
 
-    <section class="section-paper">
-        <div class="container-page">
-            <div class="space-y-12">
-                {
-                    instruments.map((instrument, index) => (
-                        <LegislationEntry
-                            id={instrument.id}
-                            index={instrument.index}
-                            eyebrow={instrument.eyebrow}
-                            title={instrument.title}
-                            lead={instrument.lead}
-                            fields={instrument.fields}
-                            note={instrument.note}
-                            accent={accentColors[index] ?? '#94a3b8'}
-                        />
-                    ))
-                }
-            </div>
+        <div class="entry-list">
+          <div class="entry">
+            <h3 class="entry-title">Provider organisation</h3>
+            <p class="para-sm">
+              Must establish, maintain, and audit robust institutional systems
+              for transmitting, acknowledging, and tracking urgent
+              findings—incorporating fail-safe escalation pathways when timely
+              receipt cannot be confirmed.
+            </p>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">Reporting clinician</h3>
+            <p class="para-sm">
+              Must actively utilise designated escalation routes, communicate
+              urgent diagnostic warnings with appropriate clinical urgency, and
+              contemporaneously log all communication actions taken.
+            </p>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">Receiving clinical team</h3>
+            <p class="para-sm">
+              Must formally review, acknowledge, act upon, and document
+              communicated results in strict accordance with local safety
+              policies and pathways.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <section id="communication" class="band-paper">
-        <div class="container-page">
-            <div class="doc space-y-8">
-                <div>
-                    <p class="eyebrow">Professional duty</p>
-                    <h2 class="heading-lg">Communication of Critical Findings</h2>
+        <p class="para-sm">
+          Authoritative professional guidance: Royal College of Radiologists,
+          <a
+            href="https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications/recommendations-on-alerts-and-notification-of-imaging-reports/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:underline"
+          >
+            <em>Alerts and notification of imaging reports: recommendations</em>
+          </a>, October 2022.
+        </p>
 
-                    <p class="para">
-                        Communication of urgent or unexpected findings is not a separate
-                        statutory regime. It arises from the duty of care, professional
-                        standards and local governance arrangements.
-                    </p>
-                </div>
+        <Callout
+          tone="caution"
+          title="Regulatory distinction: Findings versus exposures"
+        >
+          <p>
+            Regulation 8 of IR(ME)R strictly governs accidental or unintended
+            radiation exposures. It does not establish or substitute for the
+            wider common-law and professional duty to urgently escalate critical
+            diagnostic findings.
+          </p>
+        </Callout>
+      </div>
+    </div>
+  </section>
 
-                <div class="entry-list">
-                    <div class="entry">
-                        <h3 class="entry-title">Provider</h3>
-                        <p class="para-sm">
-                            The provider should maintain a documented system for communicating,
-                            acknowledging and acting on urgent findings, including a fail-safe
-                            process where acknowledgement is not received.
-                        </p>
-                    </div>
+  <section id="legal-effect" class="band-white">
+    <div class="container-page">
+      <div>
+        <h2 class="heading-lg">Regulatory Breach versus Civil Liability</h2>
 
-                    <div class="entry">
-                        <h3 class="entry-title">Reporter</h3>
-                        <p class="para-sm">
-                            The reporter should use the agreed escalation route, communicate
-                            with appropriate urgency and record the action taken.
-                        </p>
-                    </div>
+        <p class="centered-text-muted">
+          Administrative regulatory compliance and clinical negligence operate
+          under entirely separate legal doctrines. A statutory or regulatory
+          breach can occur without resulting in compensable patient injury,
+          whereas a successful civil negligence claim requires strict legal
+          proof of duty, breach of standard, direct causation, and resulting
+          actionable damage.
+        </p>
 
-                    <div class="entry">
-                        <h3 class="entry-title">Clinical team</h3>
-                        <p class="para-sm">
-                            The responsible clinical team should review, act on and communicate
-                            the result in accordance with local arrangements.
-                        </p>
-                    </div>
-                </div>
+        <div class="btn-group">
+          <a href="/medicolegal-fundamentals"> Medicolegal fundamentals </a>
 
-                <p class="para-sm">
-                    Professional source: Royal College of Radiologists,
-                    <em>Alerts and notification of imaging reports: recommendations</em>,
-                    October 2022.
-                </p>
+          <a href="/radiology-legal-cases"> Case law analysis </a>
 
-                <Callout tone="caution" title="Findings and exposures are distinct">
-                    <p>
-                        IR(ME)R regulation 8 concerns accidental or unintended radiation
-                        exposures. It does not create the general duty to escalate a critical
-                        diagnostic finding.
-                    </p>
-                </Callout>
-            </div>
+          <a href="/radiology-fundamentals"> Radiology fundamentals </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="legal-effect" class="band-white">
-        <div class="container-page">
-            <div>
-                <h2 class="heading-lg">
-                    Regulatory breach and civil liability
-                </h2>
-
-                <p class="centered-text-muted">
-                    Regulatory enforcement and clinical negligence are distinct. A regulatory
-                    contravention may occur without compensable injury. A civil claim requires
-                    proof of duty, breach, causation and damage.
-                </p>
-
-                <div class="btn-group">
-                    <a href="/medicolegal-fundamentals">
-                        Medicolegal fundamentals
-                    </a>
-
-                    <a href="/radiology-legal-cases">
-                        Case law
-                    </a>
-
-                    <a href="/radiology-fundamentals">
-                        Radiology fundamentals
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="band-paper">
-        <div class="container-page">
-            <Callout tone="caution" title="Summary only">
-                <p>
-                    This page is an overview. The current legislation, permit conditions and
-                    regulator guidance should be consulted where the precise wording or
-                    application of a requirement matters.
-                </p>
-            </Callout>
-        </div>
-    </section>
+  <section class="band-paper">
+    <div class="container-page">
+      <div class="container-page">
+        <Callout tone="caution" title="Advisory disclaimer">
+          <p>
+            This page provides a high-level summary overview. Up-to-date primary
+            legislation, active permit conditions, and official regulatory
+            guidance must always be consulted directly when evaluating precise
+            legal interpretations or specific operational applications.
+          </p>
+        </Callout>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

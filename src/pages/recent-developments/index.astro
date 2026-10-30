@@ -157,6 +157,17 @@ const usedCategories = Object.entries(categories).filter(
                     id="blog-grid"
                     class="entry-list-ruled mt-8"
                 >
+                    <figure class="figure mt-0">
+                        <div class="figure-frame">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img
+                                    src="/images/pexels-shvetsa-4226205.jpg"
+                                    alt="Radiology image"
+                                    class="h-full w-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </figure>
                     {allPosts.map((post) => (
                         <article
                             class="blog-card py-7"

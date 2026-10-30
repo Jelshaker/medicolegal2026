@@ -168,8 +168,7 @@ const navLinkClass = (href: string) =>
 
         function loadTheme() {
             const saved = localStorage.getItem(STORAGE_KEY);
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = saved ? saved === 'dark' : prefersDark;
+            const isDark = saved ? saved === 'dark' : false;
             setTheme(isDark);
         }
 

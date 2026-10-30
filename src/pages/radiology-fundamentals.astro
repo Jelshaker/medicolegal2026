@@ -5,11 +5,11 @@ import PageIntro from "../components/PageIntro.astro";
 import Section from "../components/Section.astro";
 import Figure from "../components/Figure.astro";
 import Diagram from "../components/Diagram.astro";
-import { PAGE_HERO_IMAGES } from '../consts';
+import { PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
-  title="Radiology Fundamentals | Radiology &amp; medicolegal law"
+  title="Radiology Fundamentals | Radiology & medicolegal law"
   description="A working radiology reference: what each modality answers and where it is limited, the RCR standards for interpretation and reporting, radiation dose and safety duties, quality assurance, and how imaging should be stored, transferred and viewed."
 >
   <PageHero
@@ -48,142 +48,461 @@ import { PAGE_HERO_IMAGES } from '../consts';
         lead="Each modality has its own strengths, weaknesses and clinical risks. The following sections describe what each modality can reasonably answer, where it is limited, and the practical safety considerations."
       >
         <div class="entry-list mt-0">
-          {
           <!-- 1: X-ray -->
           <div class="entry">
             <figure class="figure mt-0">
               <div class="figure-frame">
                 <div class="relative aspect-[3/1] overflow-hidden">
-                  <img src="/images/normal-chest-radiograph-female-5.png" alt="" class="h-full w-full object-cover" />
+                  <img
+                    src="/images/normal-chest-radiograph-female-5.png"
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </figure>
             <h3 class="entry-title">Radiography (X-ray)</h3>
-            <p class="mt-2 text-sm font-semibold text-slate-700">Excellent for rapid triage and diagnosis</p>
-            <p class="para-sm pl-3">The classic radiology examination, the plain radiograph, has historically been the mainstay of most radiology departments, but in recent years lower-dose CT scanners and increasingly detailed MRI have gradually begun to supplant this old, reliable workhorse. However, plain radiographs remain extremely useful and are readily available in almost every healthcare setting. For some examinations, a plain radiograph provides all the necessary information in a single image, allowing a faster and easier diagnosis that is no less accurate. In some situations, however, a plain radiograph is much less accurate than CT or MRI. Despite their relatively low radiation dose, plain radiographs will remain a vital part of any radiology department for many years to come.</p>
+            <p class="mt-2 text-sm font-semibold text-slate-700">
+              Excellent for rapid triage and diagnosis
+            </p>
+            <p class="para-sm pl-3">
+              The classic radiology examination, the plain radiograph, has
+              historically been the mainstay of most radiology departments, but
+              in recent years lower-dose CT scanners and increasingly detailed
+              MRI have gradually begun to supplant this old, reliable workhorse.
+              However, plain radiographs remain extremely useful and are readily
+              available in almost every healthcare setting. For some
+              examinations, a plain radiograph provides all the necessary
+              information in a single image, allowing a faster and easier
+              diagnosis that is no less accurate. In some situations, however, a
+              plain radiograph is much less accurate than CT or MRI. Despite
+              their relatively low radiation dose, plain radiographs will remain
+              a vital part of any radiology department for many years to come.
+            </p>
             <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Common indications</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Common indications
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Suspected fracture or dislocation</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Chest infection, consolidation or pleural effusion</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Bowel obstruction or free intraperitoneal gas</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Foreign-body localisation</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Suspected fracture or dislocation</span>
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Chest infection, consolidation or pleural effusion</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Bowel obstruction or free intraperitoneal gas</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Foreign-body localisation</span>
+                  </li>
                 </ul>
               </div>
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Limitations</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Limitations
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Superimposed structures can mask or mimic pathology</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Low soft-tissue contrast compared with CT or MRI</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Projection geometry can conceal a fracture line</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Superimposed structures can mask or mimic pathology</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Low soft-tissue contrast compared with CT or MRI</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Projection geometry can conceal a fracture line</span
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mt-4 rounded-l-md border-l-[3px] border-slate-300 p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Safety and practical notes</p>
-              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">Low-dose examination. Pregnancy status should be checked where the abdomen or pelvis is in the primary beam. Gonad shielding is no longer indicated under modern collimation.</p>
+              <p
+                class="text-xs font-bold uppercase tracking-wider text-slate-600"
+              >
+                Safety and practical notes
+              </p>
+              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">
+                Low-dose examination. Pregnancy status should be checked where
+                the abdomen or pelvis is in the primary beam. Gonad shielding is
+                no longer indicated under modern collimation.
+              </p>
             </div>
-</div>
+          </div>
 
           <!-- 2: CT -->
           <div class="entry">
             <figure class="figure mt-0">
               <div class="figure-frame">
                 <div class="relative aspect-[3/1] overflow-hidden">
-                  <img src="/images/head_ct_images.jpg" alt="" class="h-full w-full object-cover" />
+                  <img
+                    src="/images/head_ct_images.jpg"
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </figure>
             <h3 class="entry-title">Computed tomography (CT)</h3>
-            <p class="mt-2 text-sm font-semibold text-slate-700">Excellent for most acute and cross-sectional questions</p>
-            <p class="para-sm pl-3">Computed tomography is the modern workhorse of acute and cross-sectional imaging, with high spatial resolution, short acquisition times and near-universal availability in secondary care. Multi-detector scanners can image the whole chest and abdomen in seconds, which is why CT is first line for acute presentations, trauma, most suspected malignancies and vascular disease. Its main weakness is that it uses ionising radiation at doses higher than those of plain radiography, and it often requires iodinated contrast (an iodine-based agent injected to make structures easier to see), which carries risks of allergy and renal injury. Other technical issues, such as beam-hardening and metal artefact, can also obscure detail -- an issue less prevalent with plain radiographs. Regardless, every exposure must be justified under IR(ME)R.</p>
+            <p class="mt-2 text-sm font-semibold text-slate-700">
+              Excellent for most acute and cross-sectional questions
+            </p>
+            <p class="para-sm pl-3">
+              Computed tomography is the modern workhorse of acute and
+              cross-sectional imaging, with high spatial resolution, short
+              acquisition times and near-universal availability in secondary
+              care. Multi-detector scanners can image the whole chest and
+              abdomen in seconds, which is why CT is first line for acute
+              presentations, trauma, most suspected malignancies and vascular
+              disease. Its main weakness is that it uses ionising radiation at
+              doses higher than those of plain radiography, and it often
+              requires iodinated contrast (an iodine-based agent injected to
+              make structures easier to see), which carries risks of allergy and
+              renal injury. Other technical issues, such as beam-hardening and
+              metal artefact, can also obscure detail -- an issue less prevalent
+              with plain radiographs. Regardless, every exposure must be
+              justified under IR(ME)R.
+            </p>
             <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Common indications</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Common indications
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Acute head injury, stroke or intracranial haemorrhage</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Acute abdomen, trauma and suspected perforation</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Pulmonary embolism and aortic dissection</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Staging and follow-up of malignancy</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Acute head injury, stroke or intracranial haemorrhage</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Acute abdomen, trauma and suspected perforation</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Pulmonary embolism and aortic dissection</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Staging and follow-up of malignancy</span>
+                  </li>
                 </ul>
               </div>
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Limitations</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Limitations
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Ionising radiation dose -- justification and optimisation apply</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Iodinated contrast risks (allergy, renal function, thyroid)</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Beam-hardening and metal artefact can obscure detail</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Ionising radiation dose -- justification and optimisation
+                      apply</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Iodinated contrast risks (allergy, renal function,
+                      thyroid)</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Beam-hardening and metal artefact can obscure detail</span
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mt-4 rounded-l-md border-l-[3px] border-slate-300 p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Safety and practical notes</p>
-              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">Justification is mandatory under IR(ME)R. Contrast-enhanced studies require recent renal function and allergy history. Dose is monitored against diagnostic reference levels.</p>
+              <p
+                class="text-xs font-bold uppercase tracking-wider text-slate-600"
+              >
+                Safety and practical notes
+              </p>
+              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">
+                Justification is mandatory under IR(ME)R. Contrast-enhanced
+                studies require recent renal function and allergy history. Dose
+                is monitored against diagnostic reference levels.
+              </p>
             </div>
+          </div>
+
           <!-- 3: MRI -->
           <div class="entry">
             <figure class="figure mt-0">
               <div class="figure-frame">
                 <div class="relative aspect-[3/1] overflow-hidden">
-                  <img src="/images/pexels-cottonbro-5723878.jpg" alt="" class="h-full w-full object-cover" />
+                  <img
+                    src="/images/pexels-cottonbro-5723878.jpg"
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </figure>
             <h3 class="entry-title">Magnetic resonance imaging (MRI)</h3>
-            <p class="mt-2 text-sm font-semibold text-slate-700">Excellent for soft tissues</p>
-            <p class="para-sm pl-3">MRI delivers high soft-tissue contrast without ionising radiation and is the modality of choice for soft-tissue, marrow, joint and neurological questions. Multiplanar acquisition and a range of contrast weightings make it central to musculoskeletal, neurological, hepatobiliary and pelvic imaging, and it will demonstrate pathology that CT resolves poorly or not at all. Its constraints are physical rather than dosimetric. The static field is permanently energised, so implant, device and foreign-body screening is mandatory before entry to the controlled area, and ferromagnetic projectile injury remains the principal safety hazard. Acquisition times are long, motion degrades the study, and a proportion of patients cannot tolerate the examination. Gadolinium (an intravenous contrast agent) requires a documented renal function assessment, and there are ongoing concerns about tissue deposition in the brain. MRI capacity and cost continue to limit access compared with CT. Its principal advantage is that it carries no ionising radiation and therefore no IR(ME)R justification requirement, but the request must still identify a clinical question that MRI answers better than a faster or lower-cost alternative.</p>
+            <p class="mt-2 text-sm font-semibold text-slate-700">
+              Excellent for soft tissues
+            </p>
+            <p class="para-sm pl-3">
+              MRI delivers high soft-tissue contrast without ionising radiation
+              and is the modality of choice for soft-tissue, marrow, joint and
+              neurological questions. Multiplanar acquisition and a range of
+              contrast weightings make it central to musculoskeletal,
+              neurological, hepatobiliary and pelvic imaging, and it will
+              demonstrate pathology that CT resolves poorly or not at all. Its
+              constraints are physical rather than dosimetric. The static field
+              is permanently energised, so implant, device and foreign-body
+              screening is mandatory before entry to the controlled area, and
+              ferromagnetic projectile injury remains the principal safety
+              hazard. Acquisition times are long, motion degrades the study, and
+              a proportion of patients cannot tolerate the examination.
+              Gadolinium (an intravenous contrast agent) requires a documented
+              renal function assessment, and there are ongoing concerns about
+              tissue deposition in the brain. MRI capacity and cost continue to
+              limit access compared with CT. Its principal advantage is that it
+              carries no ionising radiation and therefore no IR(ME)R
+              justification requirement, but the request must still identify a
+              clinical question that MRI answers better than a faster or
+              lower-cost alternative.
+            </p>
             <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Common indications</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Common indications
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Joints and soft-tissue injury</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Brain, spinal cord and peripheral nerve lesions</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Liver, biliary and pelvic pathology</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Bone marrow and musculoskeletal infection or tumour</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Joints and soft-tissue injury</span>
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Brain, spinal cord and peripheral nerve lesions</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span>Liver, biliary and pelvic pathology</span>
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Bone marrow and musculoskeletal infection or tumour</span
+                    >
+                  </li>
                 </ul>
               </div>
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Limitations</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Limitations
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Implant, device and foreign-body safety</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Long acquisition times, so motion degrades the study</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Gadolinium contrast</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span>Implant, device and foreign-body safety</span>
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Long acquisition times, so motion degrades the study</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span>Gadolinium contrast</span>
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mt-4 rounded-l-md border-l-[3px] border-slate-300 p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Safety and practical notes</p>
-              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">No ionising radiation, but the static magnetic field is always on. Implant and device status must be checked before entry to the controlled area. Gadolinium is avoided in significant renal impairment unless clinically essential.</p>
+              <p
+                class="text-xs font-bold uppercase tracking-wider text-slate-600"
+              >
+                Safety and practical notes
+              </p>
+              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">
+                No ionising radiation, but the static magnetic field is always
+                on. Implant and device status must be checked before entry to
+                the controlled area. Gadolinium is avoided in significant renal
+                impairment unless clinically essential.
+              </p>
             </div>
+          </div>
+
           <!-- 4: Ultrasound -->
           <div class="entry">
             <figure class="figure mt-0">
               <div class="figure-frame">
                 <div class="relative aspect-[3/1] overflow-hidden">
-                  <img src="/images/posterior-acoustic-shadowing-and-enhancement.jpeg" alt="" class="h-full w-full object-cover" />
+                  <img
+                    src="/images/posterior-acoustic-shadowing-and-enhancement.jpeg"
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </figure>
             <h3 class="entry-title">Ultrasound</h3>
-            <p class="mt-2 text-sm font-semibold text-slate-700">Excellent for superficial structures and blood flow</p>
-            <p class="para-sm pl-3">Ultrasound provides real-time imaging without ionising radiation. It is a dynamic examination rather than a set of static images, so it can assess flow and superficial structures that projection and cross-sectional imaging demonstrate poorly. It is widely used in abdominal, obstetric, musculoskeletal and soft-tissue imaging, and it is the guidance method for many interventional procedures. Its principal weakness is operator dependence: image quality and interpretation vary with the practitioner, and the examination is the least reproducible of the modalities. Penetration is limited, and bowel gas obscures deeper structures. Ultrasound uses no ionising radiation, so no IR(ME)R justification requirement arises.</p>
+            <p class="mt-2 text-sm font-semibold text-slate-700">
+              Excellent for superficial structures and blood flow
+            </p>
+            <p class="para-sm pl-3">
+              Ultrasound provides real-time imaging without ionising radiation.
+              It is a dynamic examination rather than a set of static images, so
+              it can assess flow and superficial structures that projection and
+              cross-sectional imaging demonstrate poorly. It is widely used in
+              abdominal, obstetric, musculoskeletal and soft-tissue imaging, and
+              it is the guidance method for many interventional procedures. Its
+              principal weakness is operator dependence: image quality and
+              interpretation vary with the practitioner, and the examination is
+              the least reproducible of the modalities. Penetration is limited,
+              and bowel gas obscures deeper structures. Ultrasound uses no
+              ionising radiation, so no IR(ME)R justification requirement
+              arises.
+            </p>
             <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Common indications</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Common indications
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Abdominal and pelvic pain, including gallstones and renal obstruction</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Obstetric assessment and foetal wellbeing</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Vascular stenosis, thrombosis and flow assessment</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" /><span>Image guidance for biopsy, drainage and vascular access</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Abdominal and pelvic pain, including gallstones and renal
+                      obstruction</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Obstetric assessment and foetal wellbeing</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Vascular stenosis, thrombosis and flow assessment</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"
+                    ></span><span
+                      >Image guidance for biopsy, drainage and vascular access</span
+                    >
+                  </li>
                 </ul>
               </div>
-              <div class="pl-4"><h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Limitations</h4>
+              <div class="pl-4">
+                <h4
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                >
+                  Limitations
+                </h4>
                 <ul class="mt-2 space-y-1 text-sm text-slate-600">
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Operator-dependent and the least reproducible modality</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>Limited penetration; bowel gas obscures deeper structures</span></li>
-                  <li class="check-row"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" /><span>No whole-body overview compared with CT or MRI</span></li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Operator-dependent and the least reproducible modality</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >Limited penetration; bowel gas obscures deeper structures</span
+                    >
+                  </li>
+                  <li class="check-row">
+                    <span
+                      class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                    ></span><span
+                      >No whole-body overview compared with CT or MRI</span
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="mt-4 rounded-l-md border-l-[3px] border-slate-300 p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Safety and practical notes</p>
-              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">No ionising radiation. Output parameters are kept as low as reasonably practicable. Endocavitary and interventional probes require appropriate decontamination between patients.</p>
+              <p
+                class="text-xs font-bold uppercase tracking-wider text-slate-600"
+              >
+                Safety and practical notes
+              </p>
+              <p class="mt-1.5 pl-3 text-sm leading-relaxed text-slate-700">
+                No ionising radiation. Output parameters are kept as low as
+                reasonably practicable. Endocavitary and interventional probes
+                require appropriate decontamination between patients.
+              </p>
             </div>
           </div>
+        </div>
 
         <Figure
           src="/images/reporting_radiographer.jpg"
@@ -214,85 +533,111 @@ import { PAGE_HERO_IMAGES } from '../consts';
         {/* Reference table to accompany the diagram */}
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
           <div class="rounded border border-slate-200 bg-white p-4">
-            <p class="text-sm font-semibold text-slate-900">UK average annual effective dose (all sources)</p>
+            <p class="text-sm font-semibold text-slate-900">
+              UK average annual effective dose (all sources)
+            </p>
             <p class="mt-1 text-xl font-bold text-slate-800">2.6 mSv</p>
-            <p class="mt-1 text-xs text-slate-500">About half from radon; wide regional variation.</p>
+            <p class="mt-1 text-xs text-slate-500">
+              About half from radon; wide regional variation.
+            </p>
           </div>
           <div class="rounded border border-slate-200 bg-white p-4">
-            <p class="text-sm font-semibold text-slate-900">Average annual dose in Cornwall</p>
+            <p class="text-sm font-semibold text-slate-900">
+              Average annual dose in Cornwall
+            </p>
             <p class="mt-1 text-xl font-bold text-slate-800">7.8 mSv</p>
-            <p class="mt-1 text-xs text-slate-500">Elevated radon; the highest regional average in the UK.</p>
+            <p class="mt-1 text-xs text-slate-500">
+              Elevated radon; the highest regional average in the UK.
+            </p>
           </div>
           <div class="rounded border border-slate-200 bg-white p-4">
-            <p class="text-sm font-semibold text-slate-900">Public dose limit (man-made sources, excluding medical)</p>
+            <p class="text-sm font-semibold text-slate-900">
+              Public dose limit (man-made sources, excluding medical)
+            </p>
             <p class="mt-1 text-xl font-bold text-slate-800">1 mSv/year</p>
-            <p class="mt-1 text-xs text-slate-500">Statutory limit under the Basic Safety Standards.</p>
+            <p class="mt-1 text-xs text-slate-500">
+              Statutory limit under the Basic Safety Standards.
+            </p>
           </div>
           <div class="rounded border border-slate-200 bg-white p-4">
-            <p class="text-sm font-semibold text-slate-900">Chest radiograph (for comparison)</p>
+            <p class="text-sm font-semibold text-slate-900">
+              Chest radiograph (for comparison)
+            </p>
             <p class="mt-1 text-xl font-bold text-slate-800">≈0.02 mSv</p>
-            <p class="mt-1 text-xs text-slate-500">A single projection; dose varies with technique.</p>
+            <p class="mt-1 text-xs text-slate-500">
+              A single projection; dose varies with technique.
+            </p>
           </div>
           <div class="rounded border border-slate-200 bg-white p-4">
-            <p class="text-sm font-semibold text-slate-900">Occupational dose limit (effective dose) i.e. radiation workers</p>
+            <p class="text-sm font-semibold text-slate-900">
+              Occupational dose limit (effective dose) i.e. radiation workers
+            </p>
             <p class="mt-1 text-xl font-bold text-slate-800">20 mSv/year</p>
-            <p class="mt-1 text-xs text-slate-500">Averaged over any calendar year; 100 mSv over five years under IRR17.</p>
+            <p class="mt-1 text-xs text-slate-500">
+              Averaged over any calendar year; 100 mSv over five years under
+              IRR17.
+            </p>
           </div>
         </div>
+
         <div class="entry-list mt-6">
           <div class="entry">
-            <h3 class="entry-title">Justification and optimisation keywords explained</h3>
+            <h3 class="entry-title">
+              Justification and optimisation keywords explained
+            </h3>
             <ul class="list pl-4">
               <li>
-                <strong>Justification:</strong> the benefit of the exposure to that
-                patient must outweigh its harm. The referrer must provide sufficient
-                clinical information to allow the radiologist to justify the examination
-                and authorises the exposure.
+                <strong>Justification:</strong> The benefit of the exposure to the
+                patient must outweigh any potential harm. The referrer must provide
+                sufficient clinical information to allow the practitioner to justify
+                the examination and authorise the exposure.
               </li>
               <li>
-                <strong>Optimisation:</strong> dose is kept as low as reasonably practicable
-                (ALARP) for the diagnostic purpose. The 2024 amendments to IR(ME)R
-                strengthened the duties to have regard to diagnostic reference levels
-                and to audit practice.
+                <strong>Optimisation:</strong> Radiation doses are kept as low as
+                reasonably practicable (ALARP) while achieving the required diagnostic
+                purpose. The 2024 amendments to IR(ME)R strengthened duties to have
+                regard for diagnostic reference levels and to audit practice.
               </li>
               <li>
-                <strong>Diagnostic reference levels (DRLs):</strong> national values
-                are set from wide-scale surveys, typically at the third quartile of
-                the dose distribution for typical practice. Local DRLs should sit
-                below the national value. Departments consistently above the DRL should
-                review their practice and try to take corrective action.
+                <strong>Diagnostic reference levels (DRLs):</strong> National values
+                derived from wide-scale surveys, typically set at the third quartile
+                of the dose distribution for standard practice. Local DRLs should
+                sit below national values, and departments consistently exceeding
+                them must review their practice and take corrective action.
               </li>
               <li>
-                <strong>Protocol choice:</strong> whether the study performed was
-                capable of answering the question asked. A technically adequate study
-                that does not answer the clinical question is not optimised care.
+                <strong>Protocol choice:</strong> Ensuring the chosen study is capable
+                of answering the specific clinical question asked. A technically adequate
+                scan that fails to address the clinical query does not constitute
+                optimised care.
               </li>
             </ul>
           </div>
           <div class="entry">
-            <h3 class="entry-title">Who are the duty holders under IR(ME)R</h3>
+            <h3 class="entry-title">Who are the duty holders under IR(ME)R?</h3>
             <ul class="list pl-4">
               <li>
-                <strong>Employer:</strong> owns the framework — written procedures,
-                protocols, training, entitlement and compliance.
+                <strong>Employer:</strong> Establishes the organisational framework,
+                including written procedures, protocols, training, staff entitlements,
+                and compliance.
               </li>
               <li>
-                <strong>Referrer:</strong> supplies sufficient and accurate clinical
-                information to permit justification.
+                <strong>Referrer:</strong> Provides sufficient and accurate clinical
+                information to enable the justification of an exposure.
               </li>
               <li>
-                <strong>Practitioner:</strong> justifies and authorises the individual
-                exposure, weighing benefit against detriment.
+                <strong>Practitioner:</strong> Justifies and authorises the individual
+                exposure by weighing clinical benefits against potential risks.
               </li>
               <li>
-                <strong>Operator:</strong> performs the practical aspects and secures
-                optimisation in practice.
+                <strong>Operator:</strong> Carries out the practical aspects of the
+                procedure and ensures optimisation in practice.
               </li>
             </ul>
             <div class="mt-4 rounded-l-md border-l-[3px] border-slate-300 p-4">
               <p class="text-sm leading-relaxed text-slate-700 pl-3">
-                The roles are distinct and may be held by different people for the
-                same exposure. A claim can attach to any one of them
+                The roles are distinct and may be held by different people for
+                the same exposure. A claim can attach to any one of them
                 independently.
               </p>
             </div>
@@ -327,10 +672,11 @@ import { PAGE_HERO_IMAGES } from '../consts';
             </ul>
           </div>
         </div>
+
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/radiology-legislation" class="btn btn-ghost"
             >IR(ME)R and IRR17 in full
-            </a>
+          </a>
         </div>
       </Section>
 
@@ -338,7 +684,7 @@ import { PAGE_HERO_IMAGES } from '../consts';
         src="/images/pexels-konrads-photo-32251894.jpg"
         alt="Radiology image for reporting standards"
         label="Figure 03"
-        caption="Illustration for reporting standards section"
+        caption="The importance of reporting standards"
         ratio="wide"
       />
 
@@ -348,32 +694,75 @@ import { PAGE_HERO_IMAGES } from '../consts';
         index="03"
         eyebrow="Standards"
         title="Interpretation and reporting: the professional benchmark"
-        lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) define what a defensible report looks like. They are the yardstick against which report practice is measured, including in disputed cases."
+        lead="The Royal College of Radiologists' Standards for interpretation and reporting of imaging investigations (third edition, October 2025) define what a defensible report looks like."
       >
         <div class="entry-list mt-0">
           <div class="entry">
             <h3 class="entry-title">Report content</h3>
-            <p class="para-sm pl-3">A report must answer the clinical question asked, describe the findings, state the limitations of the study and give a clear conclusion. A structured format is expected where one has been agreed for that investigation. The conclusion should provide a radiological diagnosis or a reasoned differential, acknowledge limitations and make recommendations aligned with recognised guidelines.</p>
+            <p class="para-sm pl-3">
+              A report must answer the clinical question asked, describe the
+              findings, state the limitations of the study and give a clear
+              conclusion. A structured format is expected where one has been
+              agreed for that investigation. The conclusion should provide a
+              radiological diagnosis or a reasoned differential, acknowledge
+              limitations and make recommendations aligned with recognised
+              guidelines.
+            </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Named author and accountability</h3>
-            <p class="para-sm pl-3">Every report must be attributable to a named reporting author, including where reporting is remote or assisted by software. The author's name, position and profession should be identifiable. The content must not imply a level of scrutiny that has not in fact been applied.</p>
+            <p class="para-sm pl-3">
+              Every report must be attributable to a named reporting author,
+              including where reporting is remote or assisted by software. The
+              author's name, position and profession should be identifiable. The
+              content must not imply a level of scrutiny that has not in fact
+              been applied.
+            </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Remote and offsite reporting</h3>
-            <p class="para-sm pl-3">Remote reporting is acceptable only where the reporter has the images, the prior studies, the clinical information and the means to communicate an urgent finding. The same expectations of quality, turnaround and escalation apply as for onsite work. The RCR standards for teleradiology set out the governance, data-transfer and indemnity requirements.</p>
+            <p class="para-sm pl-3">
+              Remote reporting is acceptable only where the reporter has the
+              images, the prior studies, the clinical information and the means
+              to communicate an urgent finding. The same expectations of
+              quality, turnaround and escalation apply as for onsite work. The
+              RCR standards for teleradiology set out the governance,
+              data-transfer and indemnity requirements.
+            </p>
           </div>
           <div class="entry">
-            <h3 class="entry-title">AI-assisted and speech-recognition output</h3>
-            <p class="para-sm pl-3">Where software generates or transcribes content, the named human author remains responsible for its accuracy. Every automated contribution must be reviewed and approved before the report is released. The use of AI does not transfer accountability to the software provider.</p>
+            <h3 class="entry-title">
+              AI-assisted and speech-recognition output
+            </h3>
+            <p class="para-sm pl-3">
+              Where software generates or transcribes content, the named human
+              author remains responsible for its accuracy. Every automated
+              contribution must be reviewed and approved before the report is
+              released. The use of AI does not transfer accountability to the
+              software provider.
+            </p>
           </div>
           <div class="entry">
-            <h3 class="entry-title">Turnaround and communication of critical findings</h3>
-            <p class="para-sm pl-3">Providers must have procedures for turnaround times, communication of unexpected or time-critical findings, imaging classification for reporting priority, and acknowledgement of reports. A critical finding must be communicated directly and the communication documented, not left to the patient or referrer to discover.</p>
+            <h3 class="entry-title">
+              Turnaround and communication of critical findings
+            </h3>
+            <p class="para-sm pl-3">
+              Providers must have procedures for turnaround times, communication
+              of unexpected or time-critical findings, imaging classification
+              for reporting priority, and acknowledgement of reports. A critical
+              finding must be communicated directly and the communication
+              documented, not left to the patient or referrer to discover.
+            </p>
           </div>
           <div class="entry">
             <h3 class="entry-title">Addenda and corrections</h3>
-            <p class="para-sm pl-3">An addendum supplements the original report; it does not replace it. It must be attributable, dated and linked to the original study. Where a discrepancy or error is identified, the addendum should be non-judgemental and should trigger the local discrepancy and candour processes.</p>
+            <p class="para-sm pl-3">
+              An addendum supplements the original report; it does not replace
+              it. It must be attributable, dated and linked to the original
+              study. Where a discrepancy or error is identified, the addendum
+              should be non-judgemental and should trigger the local discrepancy
+              and candour processes.
+            </p>
           </div>
         </div>
 
@@ -407,153 +796,53 @@ import { PAGE_HERO_IMAGES } from '../consts';
         index="04"
         eyebrow="Handling images"
         title="Storage, transfer and viewing"
-        lead="Most imaging disputes are ultimately about a file: what was acquired, what the header records, and who was able to see it. Handling practice is therefore part of the clinical record."
+        lead="Imaging disputes and clinical investigations frequently turn on digital provenance: what data was acquired, how metadata was handled, and who accessed the study. Rigorous image handling is an essential component of the clinical and legal record."
       >
         <div class="entry-list mt-0 space-y-8">
           <div class="entry">
-            <h3 class="entry-title">What a study actually contains</h3>
+            <h3 class="entry-title">Anatomy of a DICOM study</h3>
             <p class="para-sm pl-3">
-              A DICOM study is pixel data plus a header of tags: patient and
-              study identifiers, acquisition parameters, exposure indices,
-              window presets and slice geometry. The header makes a study
-              searchable, transferable and anonymisable, and it is what allows a
-              later review to distinguish a viewing choice from a missed
-              finding. Removing identifiers from the visible image without
-              stripping the header can leave the study identifiable.
+              A complete DICOM dataset comprises both pixel matrix data and an
+              immutable header containing metadata: patient and study
+              identifiers, acquisition parameters, exposure indices, display
+              presets, and slice geometry. This metadata enables searchability,
+              secure transfer, and anonymisation, while allowing subsequent
+              reviewers to distinguish between native acquisition features,
+              windowing choices, and actual pathology. Simply obscuring
+              identifiers on the visible image without stripping the DICOM
+              header leaves the file fully identifiable.
             </p>
           </div>
 
-          <div class="divider" />
+          <div class="divider"></div>
 
           <div class="entry">
-            <h3 class="entry-title">Transfer and anonymisation</h3>
+            <h3 class="entry-title">Secure transfer and anonymisation</h3>
             <p class="para-sm pl-3">
-              Where a study leaves the treating relationship — for second
-              opinion or medicolegal review — it should be anonymised at source,
-              transferred by an encrypted route and logged. RCR confidentiality
-              guidance distinguishes fully anonymised images (no name, date of
-              birth, hospital or study identifier, and no hospital name) from
-              pseudonymised data, which remains personal data because it can be
-              re-linked. Transfer and anonymisation guidance is set out
-              alongside the referral terms.
+              When a study is transmitted outside the primary care pathway—such
+              as for specialist second opinions or medicolegal review—it must be
+              anonymised at source, transferred via secure encrypted channels,
+              and audit-logged. Royal College of Radiologists (RCR)
+              confidentiality standards distinguish between fully anonymised
+              data (stripped of all personal identifiers, dates of birth, and
+              facility tags) and pseudonymised data, which legally remains
+              personal data as re-linking keys exist. All transfers must comply
+              with institutional information governance protocols.
             </p>
           </div>
 
-          <div class="divider" />
+          <div class="divider"></div>
 
           <div class="entry">
-            <h3 class="entry-title">Second opinions and the record</h3>
+            <h3 class="entry-title">Second opinions and audit trails</h3>
             <p class="para-sm pl-3">
-              The fact of a second opinion, the identity of the second reporter
-              and the advice given should all be recorded. Where the second
-              opinion differs, the original report is supplemented by an
-              addendum. The addendum forms part of the record and should be
-              traceable to the original study.
+              The initiation of a second opinion, the credentials of the
+              reviewing clinician, and the formal advice rendered must be
+              documented within the clinical record. Where a secondary
+              interpretation diverges from the original report, formal
+              institutional discrepancy and escalation pathways must be invoked
+              to ensure patient safety and clear clinical accountability.
             </p>
-          </div>
-
-          <div class="divider" />
-
-          <div class="entry">
-            <h3 class="entry-title">Local-only viewing</h3>
-            <p class="para-sm pl-3">
-              Reviewing a study in a browser that never uploads it creates no
-              further copy of personal data, satisfying data minimisation by
-              design. It is a triage aid, not a calibrated diagnostic
-              workstation, and cannot replace official interpretation. A local
-              viewer should not be used to issue a formal report.
-            </p>
-            <a
-              href="/free-dicom-viewer"
-              class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-700"
-            >
-              Open the local DICOM viewer
-              <svg
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"><path d="M5 12h14M12 5v14"></path></svg
-              >
-            </a>
-          </div>
-        </div>
-      </Section>
-
-      <Figure
-        src="/images/pexels-shvetsa-4225925.jpg"
-        alt="Radiology image for legal questions"
-        label="Figure 05"
-        caption="Illustration for legal questions section"
-        ratio="wide"
-      />
-
-      <!-- Where standards become legal questions -->
-      <Section
-        id="legal-questions"
-        index="05"
-        eyebrow="Radiology and the law"
-        title="Where a reporting standard becomes a legal question"
-        lead="The same standards are the yardstick in a claim. These links move from the professional requirement to the legal test applied to it."
-      >
-        <div class="grid gap-4 sm:grid-cols-3">
-          <a href="/medicolegal-radiology" class="box group flex flex-col p-6 transition-all hover:border-slate-400">
-            <h3 class="entry-title">Disputed interpretation</h3>
-            <p class="mt-3 flex-1 pl-3 text-sm leading-relaxed text-slate-600">
-              How the courts separate a defensible difference of opinion from a breach, and how the &quot;pure diagnosis&quot; argument is met. The Bolam/Bolitho standard is applied to the reporting decision, not only to the clinical act.
-            </p>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-              Read the analysis
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
-            </span>
-          </a>
-          <a href="/medicolegal-fundamentals" class="box group flex flex-col p-6 transition-all hover:border-slate-400">
-            <h3 class="entry-title">Reporting standards and candour</h3>
-            <p class="mt-3 flex-1 pl-3 text-sm leading-relaxed text-slate-600">
-              Standard of care, addenda and corrections, and the professional and statutory duties of candour where a report is found to be wrong. The statutory duty sits alongside the GMC professional duty.
-            </p>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-              Open the law library
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
-            </span>
-          </a>
-          <a href="/radiology-legislation" class="box group flex flex-col p-6 transition-all hover:border-slate-400">
-            <h3 class="entry-title">Statutory duties</h3>
-            <p class="mt-3 flex-1 pl-3 text-sm leading-relaxed text-slate-600">
-              IR(ME)R justification and optimisation, IRR17 controls, the duty to communicate critical findings, and permitting for radioactive material. Breach can be a criminal offence as well as a regulatory matter.
-            </p>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-              Review the legislation
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14" /></svg>
-            </span>
-          </a>
-        </div>
-      </Section>
-
-      <!-- Quality assurance -->
-      <Section
-        id="quality-assurance"
-        index="06"
-        eyebrow="Assurance"
-        title="Quality assurance and learning"
-        lead="How to maintain public confidence in a radiology service, and how to learn from mistakes."
-      >
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="entry">
-            <h3 class="entry-title">Peer review and discrepancy audit</h3>
-            <p class="para-sm pl-3">A documented sample of reports is re-read by another competent reporter; discrepancies are classified, discussed and the learning recorded. The RCR recommends regular discrepancy meetings and a blame-free learning culture. Done properly, the audit trail is also the evidence that the service was monitoring its own accuracy.</p>
-          </div>
-          <div class="entry">
-            <h3 class="entry-title">Candour and correction</h3>
-            <p class="para-sm pl-3">Where a report is wrong or a study misread, the professional duty of candour runs in parallel with the incident process: acknowledge, explain, apologise, record and share the learning. An addendum supplements the original report; it does not replace it. The statutory duty of candour binds organisations and is triggered by moderate harm or above; the professional duty binds the individual clinician.</p>
-          </div>
-          <div class="entry">
-            <h3 class="entry-title">Audit of unreported studies</h3>
-            <p class="para-sm pl-3">Unreported investigations should be audited at a defined interval, commonly annually. This is a service-level assurance activity, distinct from individual discrepancy review, and evidences that the reporting backlog is monitored and escalated rather than merely accumulating.</p>
-          </div>
-          <div class="entry">
-            <h3 class="entry-title">Keep the record, not just the report</h3>
-            <p class="para-sm pl-3">Protocol detail, the clinical information supplied, viewing conditions, the route by which an urgent finding was communicated and any escalation attempt are often the decisive material years later. A contemporaneous note of an escalation attempt carries more weight than a later recollection.</p>
           </div>
         </div>
       </Section>

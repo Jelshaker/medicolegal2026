@@ -19,7 +19,6 @@ interface Props {
 }
 
 const { name } = Astro.props as Props;
-
 const labels: Record<Props["name"], string> = {
   "legal-questions":
     "Diagram: the four questions that decide a radiological claim",
@@ -47,86 +46,111 @@ const labels: Record<Props["name"], string> = {
     name === "legal-questions" && (
       <g>
         <text class="d-cap" x="40" y="46">
-          Framework
+          Legal Framework
         </text>
         <text class="d-title" x="40" y="80">
-          Four questions decide a radiological claim
+          Four foundational questions governing a radiological claim
         </text>
         <line class="d-rule" x1="40" y1="104" x2="920" y2="104" />
 
-        <rect class="d-box" x="40" y="170" width="190" height="180" />
-        <text class="d-num" x="58" y="204">
-          01
-        </text>
-        <text class="d-label" x="58" y="240">
-          Standard of care
-        </text>
-        <text class="d-sub" x="58" y="270">
-          Bolam v Friern [1957]
-        </text>
-        <text class="d-sub" x="58" y="292">
-          Bolitho [1997]
-        </text>
+        <!-- Box 01: Standard of Care -->
+        <a href="#bolam" aria-label="Standard of care — Bolam v Friern [1957] 1 WLR 582">
+          <rect class="d-box" x="40" y="150" width="190" height="220" />
+          <text class="d-num" x="58" y="184">
+            01
+          </text>
+          <text class="d-label" x="58" y="216">
+            Standard of Care
+          </text>
+          <text class="d-sub" x="58" y="246">
+            Bolam v Friern
+          </text>
+          <text class="d-sub" x="58" y="268">
+            [1957] 1 WLR 582
+          </text>
+          <text class="d-sub" x="58" y="294">
+            Bolitho v City &amp; Hackney
+          </text>
+          <text class="d-sub" x="58" y="316">
+            [1998] AC 232
+          </text>
+        </a>
 
         <line class="d-arrow" x1="232" y1="260" x2="264" y2="260" />
         <path class="d-head" d="M270 260 L262 256 L262 264 Z" />
 
-        <rect class="d-box" x="270" y="170" width="190" height="180" />
-        <text class="d-num" x="288" y="204">
-          02
-        </text>
-        <text class="d-label" x="288" y="240">
-          Breach
-        </text>
-        <text class="d-sub" x="288" y="270">
-          Visible vs demonstrable
-        </text>
-        <text class="d-sub" x="288" y="292">
-          Muller [2017] · FB [2017]
-        </text>
+        <!-- Box 02: Breach -->
+        <a href="#muller" aria-label="Breach of duty — Muller v King's College Hospital [2017] EWHC 128 (QB)">
+          <rect class="d-box" x="270" y="150" width="190" height="220" />
+          <text class="d-num" x="288" y="184">
+            02
+          </text>
+          <text class="d-label" x="288" y="216">
+            Breach of Duty
+          </text>
+          <text class="d-sub" x="288" y="246">
+            Muller v KCH
+          </text>
+          <text class="d-sub" x="288" y="268">
+            [2017] EWHC 128 (QB)
+          </text>
+          <text class="d-sub" x="288" y="294">
+            FB v Kurian [2017]
+          </text>
+        </a>
 
         <line class="d-arrow" x1="462" y1="260" x2="494" y2="260" />
         <path class="d-head" d="M500 260 L492 256 L492 264 Z" />
 
-        <rect class="d-box" x="500" y="170" width="190" height="180" />
-        <text class="d-num" x="518" y="204">
-          03
-        </text>
-        <text class="d-label" x="518" y="240">
-          Causation
-        </text>
-        <text class="d-sub" x="518" y="270">
-          Gregg v Scott [2005]
-        </text>
-        <text class="d-sub" x="518" y="292">
-          Wilsher · Little
-        </text>
+        <!-- Box 03: Causation -->
+        <a href="#barnett" aria-label="Causation — Barnett v Chelsea [1969] 1 QB 428">
+          <rect class="d-box" x="500" y="150" width="190" height="220" />
+          <text class="d-num" x="518" y="184">
+            03
+          </text>
+          <text class="d-label" x="518" y="216">
+            Causation
+          </text>
+          <text class="d-sub" x="518" y="246">
+            Barnett v Chelsea
+          </text>
+          <text class="d-sub" x="518" y="268">
+            [1969] 1 QB 428
+          </text>
+          <text class="d-sub" x="518" y="294">
+            Gregg v Scott [2005]
+          </text>
+          <text class="d-sub" x="518" y="316">
+            [2005] UKHL 2
+          </text>
+        </a>
 
         <line class="d-arrow" x1="692" y1="260" x2="724" y2="260" />
         <path class="d-head" d="M730 260 L722 256 L722 264 Z" />
 
-        <rect class="d-box" x="730" y="170" width="190" height="180" />
-        <text class="d-num" x="748" y="204">
-          04
-        </text>
-        <text class="d-label" x="748" y="240">
-          Consent
-        </text>
-        <text class="d-sub" x="748" y="270">
-          Montgomery [2015]
-        </text>
-        <text class="d-sub" x="748" y="292">
-          Material risk to the patient
-        </text>
+        <!-- Box 04: Consent -->
+        <a href="#montgomery" aria-label="Consent — Montgomery v Lanarkshire [2015] UKSC 11">
+          <rect class="d-box" x="730" y="150" width="190" height="220" />
+          <text class="d-num" x="748" y="184">
+            04
+          </text>
+          <text class="d-label" x="748" y="216">
+            Consent
+          </text>
+          <text class="d-sub" x="748" y="246">
+            Montgomery v
+          </text>
+          <text class="d-sub" x="748" y="268">
+            Lanarkshire
+          </text>
+          <text class="d-sub" x="748" y="294">
+            [2015] UKSC 11
+          </text>
+        </a>
 
         <line class="d-rule" x1="40" y1="420" x2="920" y2="420" />
         <text class="d-note" x="40" y="452">
-          Each question is set out in the law library with the authority and the
-          professional standard behind it.
-        </text>
-        <text class="d-note" x="40" y="478">
-          Breach asks what was demonstrable; causation asks what would have
-          changed.
+          Sequential analysis required to establish clinical negligence under English law.
         </text>
       </g>
     )
@@ -361,18 +385,18 @@ const labels: Record<Props["name"], string> = {
 
         <line class="d-axis" x1="228" y1="278" x2="228" y2="302" />
         <text class="d-label" x="228" y="328" text-anchor="middle">
-          1993
+          1969
         </text>
         <text class="d-sub" x="228" y="352" text-anchor="middle">
-          Ikarian Reefer
+          Barnett v Chelsea
         </text>
         <text class="d-sub" x="228" y="370" text-anchor="middle">
-          duties of the expert
+          factual causation
         </text>
 
         <line class="d-axis" x1="366" y1="278" x2="366" y2="302" />
         <text class="d-label" x="366" y="252" text-anchor="middle">
-          1997
+          1998
         </text>
         <text class="d-sub" x="366" y="230" text-anchor="middle">
           Bolitho
@@ -383,13 +407,13 @@ const labels: Record<Props["name"], string> = {
 
         <line class="d-axis" x1="504" y1="278" x2="504" y2="302" />
         <text class="d-label" x="504" y="328" text-anchor="middle">
-          2000
+          2005
         </text>
         <text class="d-sub" x="504" y="352" text-anchor="middle">
-          Penney, Palmer &amp; Canon
+          Gregg v Scott
         </text>
         <text class="d-sub" x="504" y="370" text-anchor="middle">
-          screening and perception
+          loss of a chance
         </text>
 
         <line class="d-axis" x1="642" y1="278" x2="642" y2="302" />
@@ -408,21 +432,10 @@ const labels: Record<Props["name"], string> = {
           2017
         </text>
         <text class="d-sub" x="780" y="352" text-anchor="middle">
-          Muller · FB
+          Muller v KCH
         </text>
         <text class="d-sub" x="780" y="370" text-anchor="middle">
-          perception and task standard
-        </text>
-
-        <line class="d-axis" x1="900" y1="278" x2="900" y2="302" />
-        <text class="d-label" x="900" y="252" text-anchor="middle">
-          2025
-        </text>
-        <text class="d-sub" x="900" y="230" text-anchor="middle">
-          RCR Standards
-        </text>
-        <text class="d-sub" x="900" y="212" text-anchor="middle">
-          third edition
+          visible vs demonstrable error
         </text>
 
         <line class="d-rule" x1="40" y1="410" x2="920" y2="410" />
@@ -585,7 +598,14 @@ const labels: Record<Props["name"], string> = {
         {/* ---- Single medical procedure: thicker solid bars ---- */}
 
         {/* Chest radiograph — 0.02 mSv */}
-        <line class="d-axis" x1="81" y1="340" x2="81" y2="308" stroke-width="3" />
+        <line
+          class="d-axis"
+          x1="81"
+          y1="340"
+          x2="81"
+          y2="308"
+          stroke-width="3"
+        />
         <text class="d-label" x="81" y="296" text-anchor="middle">
           Chest radiograph
         </text>
@@ -594,7 +614,14 @@ const labels: Record<Props["name"], string> = {
         </text>
 
         {/* CT head — 2 mSv */}
-        <line class="d-axis" x1="160" y1="340" x2="160" y2="250" stroke-width="3" />
+        <line
+          class="d-axis"
+          x1="160"
+          y1="340"
+          x2="160"
+          y2="250"
+          stroke-width="3"
+        />
         <text class="d-label" x="150" y="238" text-anchor="end">
           CT head
         </text>
@@ -603,7 +630,14 @@ const labels: Record<Props["name"], string> = {
         </text>
 
         {/* CT abdomen — 8 mSv */}
-        <line class="d-axis" x1="400" y1="340" x2="400" y2="218" stroke-width="3" />
+        <line
+          class="d-axis"
+          x1="400"
+          y1="340"
+          x2="400"
+          y2="218"
+          stroke-width="3"
+        />
         <text class="d-label" x="422" y="206" text-anchor="start">
           CT abdomen
         </text>
@@ -612,7 +646,14 @@ const labels: Record<Props["name"], string> = {
         </text>
 
         {/* Occupational dose limit — 20 mSv */}
-        <line class="d-axis" x1="880" y1="340" x2="880" y2="218" stroke-width="3" />
+        <line
+          class="d-axis"
+          x1="880"
+          y1="340"
+          x2="880"
+          y2="218"
+          stroke-width="3"
+        />
         <text class="d-label" x="860" y="206" text-anchor="end">
           Occupational limit
         </text>
@@ -622,10 +663,12 @@ const labels: Record<Props["name"], string> = {
 
         <line class="d-rule" x1="40" y1="430" x2="920" y2="430" />
         <text class="d-note" x="40" y="462">
-          MRI and ultrasound use no ionising radiation. For X-ray and CT the exposure must be
+          MRI and ultrasound use no ionising radiation. For X-ray and CT the
+          exposure must be
         </text>
         <text class="d-note" x="40" y="484">
-          justified and then optimised, keeping the dose as low as reasonably practicable.
+          justified and then optimised, keeping the dose as low as reasonably
+          practicable.
         </text>
       </g>
     )

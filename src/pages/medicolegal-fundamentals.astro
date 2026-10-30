@@ -1,542 +1,571 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import PageIntro from '../components/PageIntro.astro';
-import Section from '../components/Section.astro';
-import Callout from '../components/Callout.astro';
-import Figure from '../components/Figure.astro';
-import Diagram from '../components/Diagram.astro';
-import { PAGE_HERO_IMAGES } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageIntro from "../components/PageIntro.astro";
+import Section from "../components/Section.astro";
+import Callout from "../components/Callout.astro";
+import Figure from "../components/Figure.astro";
+import Diagram from "../components/Diagram.astro";
+import { PAGE_HERO_IMAGES } from "../consts";
 ---
 
 <BaseLayout
-    title="Medicolegal Fundamentals | Radiology & Medicolegal Law"
-    description="The core principles of UK clinical negligence law applied to radiology: duty, breach, causation, consent and expert evidence."
+  title="Medicolegal Fundamentals | Radiology & Medicolegal Law"
+  description="The core principles of UK clinical negligence law applied to radiology: duty, breach, causation, consent and expert evidence."
 >
-    <PageHero
-        eyebrow="Medicolegal fundamentals"
-        title="Medicolegal Fundamentals"
-        description="The legal principles that govern radiological practice and clinical negligence."
-        heroImage={PAGE_HERO_IMAGES["/medicolegal-fundamentals"] || undefined}
-    />
+  <PageHero
+    eyebrow="Medicolegal fundamentals"
+    title="Medicolegal Fundamentals"
+    description="The legal principles that govern radiological practice and clinical negligence."
+    heroImage={PAGE_HERO_IMAGES["/medicolegal-fundamentals"] || undefined}
+  />
 
-    <PageIntro
-        eyebrow="Core legal framework"
-        paragraphs={[
-            'Most radiology claims turn on four questions: was a duty owed, did the radiologist fall below the required standard, did that breach cause harm, and was the patient properly informed where consent was required?',
-            'This page covers the foundational principles only. Detailed legislation, professional standards and recent radiology cases are considered separately.'
-        ]}
-        contents={[
-            { href: '#framework', label: 'The legal framework' },
-            { href: '#authorities', label: 'Core authorities' },
-            { href: '#radiology', label: 'Application to radiology' },
-            { href: '#nhs-data', label: 'NHS and claims data' },
-            { href: '#expert-evidence', label: 'Expert evidence' },
-        ]}
-        audience="Written for radiologists, lawyers, NHS legal teams and expert witnesses."
-        reviewed="October 2026"
-    />
+  <PageIntro
+    eyebrow="Core legal framework"
+    paragraphs={[
+      "To establish clinical negligence in radiology, a claimant must prove that a duty of care was breached, and that this breach directly caused actionable harm.",
+      "This page sets out foundational legal principles. Detailed legislation, professional standards, and recent case law are explored separately.",
+    ]}
+    contents={[
+      { href: "#framework", label: "The legal framework" },
+      { href: "#authorities", label: "Core authorities" },
+      { href: "#radiology", label: "Application to radiology" },
+      { href: "#nhs-data", label: "NHS and claims data" },
+      { href: "#expert-evidence", label: "Expert evidence" },
+    ]}
+    audience="Written for radiologists, lawyers, NHS legal teams and expert witnesses."
+    reviewed="October 2026"
+  />
 
-    <div class="container-page space-y-6 band">
-        <Figure
-            label="Figure 01"
-            caption="The structure of a clinical negligence claim"
-            subtitle="Duty, breach, causation and damage must be considered separately."
-        >
-            <Diagram name="legal-questions" />
-        </Figure>
+  <div class="container-page space-y-6 band">
+    <Figure
+      label="Figure 01"
+      caption="The structure of a clinical negligence claim"
+      subtitle="Duty, breach, causation and damage must be considered separately."
+    >
+      <Diagram name="legal-questions" />
+    </Figure>
+  </div>
+
+  <!-- PART I: LEGAL FRAMEWORK -->
+
+  <div class="part-bg" style="--accent: #64748b;">
+    <span class="part-accent"></span>
+
+    <div class="part-mark">
+      <span class="part-mark-dot"></span>
+      <span class="part-mark-label">
+        Part I
+        <span class="part-mark-label-sub">Legal framework</span>
+      </span>
     </div>
 
-    <!-- PART I: LEGAL FRAMEWORK -->
+    <Section
+      id="framework"
+      eyebrow="Part I"
+      title="The Elements of a Clinical Negligence Claim"
+    >
+      <p class="para">
+        An adverse clinical outcome, reporting discrepancy, or missed
+        abnormality does not automatically establish negligence. On the balance
+        of probabilities, the claimant must prove duty, breach, causation, and
+        compensable harm.
+      </p>
 
-    <div class="part-bg" style="--accent: #64748b;">
-        <span class="part-accent"></span>
-
-        <div class="part-mark">
-            <span class="part-mark-dot"></span>
-            <span class="part-mark-label">
-                Part I
-                <span class="part-mark-label-sub">Legal framework</span>
-            </span>
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Duty</h3>
+          <p class="para-sm">
+            A radiologist ordinarily assumes a duty of care when accepting
+            responsibility for an examination, procedure, or report.
+          </p>
         </div>
 
-        <Section
-            id="framework"
-            eyebrow="Part I"
-            title="The Elements of a Clinical Negligence Claim"
-        >
-            <p class="para">
-                A poor outcome, reporting discrepancy or missed abnormality does not
-                by itself establish negligence. The claimant must prove duty, breach,
-                causation and compensable harm on the balance of probabilities.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Duty</h3>
-                    <p class="para-sm">
-                        A radiologist ordinarily owes a duty when accepting responsibility
-                        for an examination, procedure or report.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Breach</h3>
-                    <p class="para-sm">
-                        The question is whether the radiologist exercised the reasonable
-                        skill and care expected of a competent practitioner undertaking
-                        that work at the time.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Causation</h3>
-                    <p class="para-sm">
-                        The claimant must usually prove that, but for the breach, the
-                        injury or materially worse outcome would probably have been avoided.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Damage</h3>
-                    <p class="para-sm">
-                        Negligence is not actionable without injury or loss. A reporting
-                        error that causes no clinical consequence will not ordinarily
-                        support an award of damages.
-                    </p>
-                </div>
-            </div>
-        </Section>
-    </div>
-
-    <!-- PART II: CORE AUTHORITIES -->
-
-    <div class="part-bg" style="--accent: #475569;">
-        <span class="part-accent"></span>
-
-        <div class="part-mark">
-            <span class="part-mark-dot"></span>
-            <span class="part-mark-label">
-                Part II
-                <span class="part-mark-label-sub">Core authorities</span>
-            </span>
+        <div class="entry">
+          <h3 class="entry-title">Breach</h3>
+          <p class="para-sm">
+            The core test is whether the radiologist exercised the reasonable
+            skill and care expected of a competent practitioner undertaking that
+            work at the time.
+          </p>
         </div>
 
-        <Section
-            id="authorities"
-            eyebrow="Part II"
-            title="The Foundational Cases"
-        >
-            <p class="para">
-                These authorities provide the essential framework for professional
-                standard, hindsight, causation and consent.
-            </p>
-        </Section>
-
-        <Section
-            eyebrow="Standard of care"
-            title="Bolam v Friern Hospital Management Committee"
-            citation="[1957] 1 WLR 582"
-        >
-            <p class="para">
-                Professional practice is not negligent where it accords with a
-                responsible body of appropriately skilled medical opinion.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Principle</h3>
-                    <p class="para-sm">
-                        The law permits a range of responsible professional practice.
-                        A clinician is not negligent merely because another responsible
-                        practitioner would have acted differently.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        A reasonable difference in interpretation may fall within the
-                        permitted range. The question is not simply whether another
-                        radiologist can identify the abnormality retrospectively.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Section
-            eyebrow="Logical scrutiny"
-            title="Bolitho v City and Hackney Health Authority"
-            citation="[1998] AC 232"
-        >
-            <p class="para">
-                Professional opinion must withstand logical analysis. A court is not
-                required to accept expert evidence merely because it represents the
-                opinion of a body of practitioners.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Principle</h3>
-                    <p class="para-sm">
-                        Supporting opinion must be responsible, reasoned and capable of
-                        accounting for the material risks and benefits.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        An expert should explain why the report was reasonable in light
-                        of the images, protocol, clinical information and practice at the
-                        time. Assertion alone is insufficient.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Section
-            eyebrow="Hindsight"
-            title="Roe v Minister of Health"
-            citation="[1954] 2 QB 66"
-        >
-            <p class="para">
-                Clinical conduct is judged using the knowledge reasonably available at
-                the time, not through later scientific knowledge or the eventual outcome.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Principle</h3>
-                    <p class="para-sm">
-                        A known adverse outcome must not be allowed to redefine what was
-                        reasonably foreseeable or recognisable earlier.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        The original examination must be assessed with the clinical
-                        details, prior imaging and technical information available to
-                        the reporter at the time.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Section
-            eyebrow="Factual causation"
-            title="Barnett v Chelsea and Kensington Hospital Management Committee"
-            citation="[1969] 1 QB 428"
-        >
-            <p class="para">
-                A breach does not establish liability unless it caused the injury.
-                The conventional starting point is the “but for” test.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Principle</h3>
-                    <p class="para-sm">
-                        Ask whether the injury would probably have occurred in any event.
-                        If it would, factual causation is not established.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        A missed abnormality is not enough. The claimant must usually show
-                        that a competent report would have led to action that would probably
-                        have prevented or reduced the harm.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Section
-            eyebrow="Multiple causes"
-            title="Wilsher v Essex Area Health Authority"
-            citation="[1988] AC 1074"
-        >
-            <p class="para">
-                Where several distinct factors could have caused the injury, proof that
-                one negligent factor merely increased the risk may be insufficient.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Principle</h3>
-                    <p class="para-sm">
-                        The claimant must ordinarily prove that the negligent act or
-                        omission probably caused the injury, rather than merely being
-                        one possible cause.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        This is important where outcome depended on several diseases,
-                        comorbidities or treatment variables. Breach and causation must
-                        remain separate.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Section
-            eyebrow="Consent"
-            title="Montgomery v Lanarkshire Health Board"
-            citation="[2015] UKSC 11"
-        >
-            <p class="para">
-                A clinician must take reasonable care to ensure that the patient is
-                aware of material risks of the recommended treatment and any reasonable
-                alternatives.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Materiality</h3>
-                    <p class="para-sm">
-                        A risk is material if a reasonable person in the patient's
-                        position would probably attach significance to it, or if the
-                        clinician should reasonably know that this patient would do so.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Radiology</h3>
-                    <p class="para-sm">
-                        The principle is particularly important in interventional
-                        radiology. Consent should address material risks and reasonable
-                        alternatives in a discussion tailored to the individual patient.
-                    </p>
-                </div>
-            </div>
-        </Section>
-
-        <Figure
-            label="Figure 02"
-            caption="The foundational authorities"
-            subtitle="Professional standard, logical scrutiny, hindsight, causation and consent."
-        >
-            <Diagram name="case-timeline" />
-        </Figure>
-    </div>
-
-    <!-- PART III: APPLICATION TO RADIOLOGY -->
-
-    <div class="part-bg" style="--accent: #334155;">
-        <span class="part-accent"></span>
-
-        <div class="part-mark">
-            <span class="part-mark-dot"></span>
-            <span class="part-mark-label">
-                Part III
-                <span class="part-mark-label-sub">Application to radiology</span>
-            </span>
+        <div class="entry">
+          <h3 class="entry-title">Causation</h3>
+          <p class="para-sm">
+            The claimant must demonstrate that, but for the breach, the injury
+            or materially worse outcome would probably have been avoided.
+          </p>
         </div>
 
-        <Section
-            id="radiology"
-            eyebrow="Part III"
-            title="Applying the Principles"
-        >
-            <p class="para">
-                Radiological negligence is not determined simply by showing that an
-                abnormality can be seen retrospectively. The reporting circumstances
-                must be reconstructed.
-            </p>
+        <div class="entry">
+          <h3 class="entry-title">Damage</h3>
+          <p class="para-sm">
+            Negligence is not actionable without injury or loss. A reporting
+            error with no clinical consequence will not support an award of
+            damages.
+          </p>
+        </div>
+      </div>
+    </Section>
+  </div>
 
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Original study</h3>
-                    <p class="para-sm">
-                        Review the complete source examination, including the protocol,
-                        image quality, anatomical coverage and relevant prior imaging.
-                    </p>
-                </div>
+  <!-- PART II: CORE AUTHORITIES -->
 
-                <div class="entry">
-                    <h3 class="entry-title">Clinical context</h3>
-                    <p class="para-sm">
-                        Identify the referral information and clinical question available
-                        to the original reporter. Later knowledge must not be treated as
-                        contemporaneous.
-                    </p>
-                </div>
+  <div class="part-bg" style="--accent: #475569;">
+    <span class="part-accent"></span>
 
-                <div class="entry">
-                    <h3 class="entry-title">Interpretation</h3>
-                    <p class="para-sm">
-                        Distinguish a perceptual omission from an abnormality that was
-                        detected but reasonably characterised differently.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Communication</h3>
-                    <p class="para-sm">
-                        Consider whether an urgent or unexpected finding was reported,
-                        escalated and acknowledged through the appropriate pathway.
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Causation</h3>
-                    <p class="para-sm">
-                        Identify what a competent report would probably have changed:
-                        further imaging, referral, biopsy, treatment and eventual outcome.
-                    </p>
-                </div>
-            </div>
-        </Section>
+    <div class="part-mark">
+      <span class="part-mark-dot"></span>
+      <span class="part-mark-label">
+        Part II
+        <span class="part-mark-label-sub">Core authorities</span>
+      </span>
     </div>
 
-    <!-- PART IV: NHS AND CLAIMS DATA -->
+    <Section id="authorities" eyebrow="Part II" title="Key Legal Precedents">
+      <p class="para">
+        Established case law provides the essential framework for professional
+        standards, perceptual versus evaluative errors, causation, loss of
+        chance, and informed consent.
+      </p>
+    </Section>
 
-    <div class="part-bg" style="--accent: #1e293b;">
-        <span class="part-accent"></span>
+    <Section
+      id="bolam"
+      eyebrow="Standard of care"
+      title="Bolam v Friern Hospital Management Committee"
+      citation="[1957] 1 WLR 582"
+    >
+      <p class="para">
+        Professional practice is not negligent if it accords with a responsible
+        body of medical opinion.
+      </p>
 
-        <div class="part-mark">
-            <span class="part-mark-dot"></span>
-            <span class="part-mark-label">
-                Part IV
-                <span class="part-mark-label-sub">NHS and claims data</span>
-            </span>
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Principle</h3>
+          <p class="para-sm">
+            The law acknowledges a range of acceptable professional practice. A
+            clinician is not negligent merely because a peer would have acted
+            differently.
+          </p>
         </div>
 
-        <Section
-            id="nhs-data"
-            eyebrow="Part IV"
-            title="NHS Claims Context"
-        >
-            <p class="para">
-                NHS Resolution publishes national data on clinical negligence claims,
-                expenditure and methods of resolution. These figures describe the claims
-                system; they do not measure the incidence of clinical negligence.
-            </p>
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            Divergent interpretations often fall within a permitted range of
+            practice. Liability turns on whether original reporting fell outside
+            responsible standards, not simply whether an abnormality can be seen
+            retrospectively.
+          </p>
+        </div>
+      </div>
+    </Section>
 
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">National position</h3>
-                    <p class="para-sm">
-                        In 2025/26, NHS Resolution received 15,236 new clinical negligence
-                        claims and reported incidents. Eighty-four per cent of claims were
-                        resolved without formal legal proceedings.
-                    </p>
-                </div>
+    <Section
+      id="bolitho"
+      eyebrow="Logical scrutiny"
+      title="Bolitho v City and Hackney Health Authority"
+      citation="[1998] AC 232"
+    >
+      <p class="para">
+        Professional opinion must withstand logical analysis; courts are not
+        bound to accept expert testimony simply because a body of practitioners
+        supports it.
+      </p>
 
-                <div class="entry">
-                    <h3 class="entry-title">Interpreting the data</h3>
-                    <p class="para-sm">
-                        Claim notifications, settled claims, payments and financial
-                        provisions are different measures. A claim is not equivalent to
-                        a judicial finding of negligence.
-                    </p>
-                </div>
-            </div>
-
-            <p class="para-sm">
-                Source: NHS Resolution, <em>Annual Report and Accounts 2025/26</em>.
-            </p>
-        </Section>
-
-        <Section
-            eyebrow="Radiology evidence"
-            title="Incidental Findings in Abdominal Radiology Claims"
-        >
-            <p class="para">
-                A retrospective review by five abdominal-radiology expert witnesses
-                examined 112 medicolegal cases involving 176 examinations.
-            </p>
-
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Findings</h3>
-                    <ul class="list">
-                        <li>Forty-one of 112 allegations, or 37%, concerned incidental pathology.</li>
-                        <li>Tumour was the most frequent incidental-finding allegation.</li>
-                        <li>Twelve of the 41 incidental interpretations were judged substandard.</li>
-                    </ul>
-                </div>
-
-                <div class="entry">
-                    <h3 class="entry-title">Limitation</h3>
-                    <p class="para-sm">
-                        This was a selected expert-witness series, not a national dataset.
-                        It does not show that 37% of all NHS radiology claims concern
-                        incidental findings.
-                    </p>
-                </div>
-            </div>
-
-            <p class="para-sm">
-                Source: Halligan S, Blunt D, Boone D, Higginson T and Plumb AA,
-                <em>Clinical Radiology</em>, 2026;92:107162.
-            </p>
-        </Section>
-    </div>
-
-    <!-- PART V: EXPERT EVIDENCE -->
-
-    <div class="part-bg" style="--accent: #0f172a;">
-        <span class="part-accent"></span>
-
-        <div class="part-mark">
-            <span class="part-mark-dot"></span>
-            <span class="part-mark-label">
-                Part V
-                <span class="part-mark-label-sub">Expert evidence</span>
-            </span>
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Principle</h3>
+          <p class="para-sm">
+            Supporting opinion must be reasonable, reasoned, and capable of
+            balancing material risks and benefits.
+          </p>
         </div>
 
-        <Section
-            id="expert-evidence"
-            eyebrow="Part V"
-            title="A Defensible Expert Approach"
-        >
-            <p class="para">
-                The expert assists the court rather than either party. Opinion should
-                distinguish what is visible retrospectively, what should reasonably have
-                been identified prospectively and what difference a competent report
-                would probably have made.
-            </p>
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            Experts must explain why a report was defensible given the images,
+            protocol, clinical context, and standards of the era. Assertion
+            alone is insufficient.
+          </p>
+        </div>
+      </div>
+    </Section>
 
-            <div class="entry-list">
-                <div class="entry">
-                    <h3 class="entry-title">Breach</h3>
-                    <ul class="list">
-                        <li>Review the original source images where available.</li>
-                        <li>Record the protocol, quality and relevant limitations.</li>
-                        <li>Identify the information available to the original reporter.</li>
-                        <li>Review prior studies in their proper chronology.</li>
-                        <li>Explain why the report did or did not fall outside responsible practice.</li>
-                    </ul>
-                </div>
+    <Section
+      id="muller"
+      eyebrow="Breach: Visible vs. Demonstrable"
+      title="Muller v King's College Hospital NHS Foundation Trust"
+      citation="[2017] EWHC 128 (QB)"
+    >
+      <p class="para">
+        In pure diagnostic and interpretation cases (such as radiology,
+        histology, and ECGs), the traditional <em class="italic">Bolam</em> deference
+        to a "responsible body of opinion" has restricted application when deciding
+        whether an anomaly was visible.
+      </p>
 
-                <div class="entry">
-                    <h3 class="entry-title">Causation</h3>
-                    <ul class="list">
-                        <li>State what the competent report should have said.</li>
-                        <li>Identify the probable clinical response.</li>
-                        <li>Separate radiological opinion from other specialist evidence.</li>
-                        <li>Avoid assuming that earlier diagnosis necessarily meant a better outcome.</li>
-                    </ul>
-                </div>
-            </div>
-        </Section>
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Principle</h3>
+          <p class="para-sm">
+            The court must determine as a matter of fact whether what is visible
+            on the image or slide demonstrates a clear reporting error,
+            distinguishing objective perceptual omissions from matters of
+            genuine clinical judgment or opinion.
+          </p>
+        </div>
 
-        <Callout tone="caution" title="Scope">
-            <p>
-                This page provides an educational summary of foundational principles.
-                Detailed legislation, professional standards, recent decisions, candour
-                and AI-assisted reporting are addressed separately. It is not legal advice
-                or a substitute for the primary authorities.
-            </p>
-        </Callout>
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            A failure to identify a plain, conspicuous abnormality falls outside
+            acceptable standards of care, regardless of whether a minority of
+            peers might miss it.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="barnett"
+      eyebrow="Factual causation"
+      title="Barnett v Chelsea and Kensington Hospital Management Committee"
+      citation="[1969] 1 QB 428"
+    >
+      <p class="para">
+        A breach establishes liability only if it actively caused the injury,
+        evaluated through the conventional “but for” test.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Principle</h3>
+          <p class="para-sm">
+            If the injury would likely have occurred regardless of the breach,
+            factual causation is not established.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            Identifying a missed finding is insufficient; the claimant must
+            prove that a competent report would have prompted action preventing
+            or reducing the harm.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="gregg"
+      eyebrow="Loss of chance"
+      title="Gregg v Scott"
+      citation="[2005] UKHL 2"
+    >
+      <p class="para">
+        English law rejects the doctrine of "loss of a chance" for
+        medical-negligence claims concerning physical injury and reduced life
+        expectancy.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Principle</h3>
+          <p class="para-sm">
+            A claimant must prove on a balance of probabilities (greater than
+            50%) that a delayed diagnosis caused a worse outcome, rather than
+            simply proving that a delay reduced their statistical chance of
+            survival.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            In oncology delays, proving that a missed tumour reduced survival
+            odds from 51% to 40% succeeds, whereas a drop from 45% to 30% fails
+            because the baseline probability of survival was already below 50%.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="montgomery"
+      eyebrow="Consent"
+      title="Montgomery v Lanarkshire Health Board"
+      citation="[2015] UKSC 11"
+    >
+      <p class="para">
+        Clinicians must take reasonable care to ensure patients are informed of
+        the material risks of recommended treatments and any reasonable
+        alternatives.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Materiality</h3>
+          <p class="para-sm">
+            A risk is material if a reasonable person in the patient's position
+            would attach significance to it, or if the clinician should
+            reasonably know that this specific patient would do so.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Radiology</h3>
+          <p class="para-sm">
+            This duty is critical in interventional procedures, requiring
+            consent discussions tailored to the individual patient regarding
+            material risks and options.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Figure
+      label="Figure 02"
+      caption="The foundational authorities"
+      subtitle="Professional standard, logical scrutiny, visible error, causation, loss of chance, and consent."
+    >
+      <Diagram name="case-timeline" />
+    </Figure>
+  </div>
+
+  <!-- PART III: APPLICATION TO RADIOLOGY -->
+
+  <div class="part-bg" style="--accent: #334155;">
+    <span class="part-accent"></span>
+
+    <div class="part-mark">
+      <span class="part-mark-dot"></span>
+      <span class="part-mark-label">
+        Part III
+        <span class="part-mark-label-sub">Application to radiology</span>
+      </span>
     </div>
+
+    <Section
+      id="radiology"
+      eyebrow="Part III"
+      title="Applying Legal Principles to Clinical Practice"
+    >
+      <p class="para">
+        Assessing radiological negligence requires more than demonstrating
+        retrospective visibility; it demands careful reconstruction of the
+        original reporting context.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Original study</h3>
+          <p class="para-sm">
+            Review the complete source examination, including protocols, image
+            quality, anatomical coverage, and relevant prior studies.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Clinical context</h3>
+          <p class="para-sm">
+            Establish the referral information and clinical questions available
+            to the original reporter at the time.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Interpretation</h3>
+          <p class="para-sm">
+            Distinguish a perceptual oversight from an abnormality that was
+            detected but reasonably interpreted differently.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Communication</h3>
+          <p class="para-sm">
+            Verify whether urgent or unexpected findings were appropriately
+            escalated, communicated, and logged through proper pathways.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Causation</h3>
+          <p class="para-sm">
+            Determine what a competent report would have changed in terms of
+            follow-up imaging, referral, intervention, and ultimate outcome.
+          </p>
+        </div>
+      </div>
+    </Section>
+  </div>
+
+  <!-- PART IV: NHS AND CLAIMS DATA -->
+
+  <div class="part-bg" style="--accent: #1e293b;">
+    <span class="part-accent"></span>
+
+    <div class="part-mark">
+      <span class="part-mark-dot"></span>
+      <span class="part-mark-label">
+        Part IV
+        <span class="part-mark-label-sub">NHS and claims data</span>
+      </span>
+    </div>
+
+    <Section id="nhs-data" eyebrow="Part IV" title="NHS Claims Context">
+      <p class="para">
+        NHS Resolution publishes national data detailing clinical negligence
+        claims, expenditure, and resolution methods. These figures reflect
+        systemic claims activity rather than the absolute incidence of clinical
+        error.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">National position</h3>
+          <p class="para-sm">
+            In 2025/26, NHS Resolution received 15,236 new clinical negligence
+            claims and reported incidents. Eighty-four per cent of claims were
+            resolved without formal proceedings.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Interpreting the data</h3>
+          <p class="para-sm">
+            Notifications, settlements, payments, and financial provisions
+            measure different metrics. A claim notification does not equate to a
+            judicial finding of negligence.
+          </p>
+        </div>
+      </div>
+
+      <p class="para-sm">
+        Source: NHS Resolution, <em>Annual Report and Accounts 2025/26</em>.
+      </p>
+    </Section>
+
+    <Section
+      eyebrow="Radiology evidence"
+      title="Incidental Findings in Abdominal Radiology Claims"
+    >
+      <p class="para">
+        A retrospective review by five abdominal-radiology expert witnesses
+        examined 112 medicolegal cases comprising 176 individual examinations.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Findings</h3>
+          <ul class="list">
+            <li>
+              Forty-one of 112 allegations (37%) involved incidental pathology.
+            </li>
+            <li>
+              Suspected malignancy represented the most frequent incidental
+              finding allegation.
+            </li>
+            <li>
+              Twelve of the 41 incidental interpretations were judged
+              substandard.
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Limitations</h3>
+          <p class="para-sm">
+            This analysis represents a selected expert-witness cohort rather
+            than a national dataset, and should not be generalized to estimate
+            total claim distributions.
+          </p>
+        </div>
+      </div>
+
+      <p class="para-sm">
+        Source: Halligan S, Blunt D, Boone D, Higginson T, and Plumb AA,
+        <em>Clinical Radiology</em>, 2026;92:107162.
+      </p>
+    </Section>
+  </div>
+
+  <!-- PART V: EXPERT EVIDENCE -->
+
+  <div class="part-bg" style="--accent: #0f172a;">
+    <span class="part-accent"></span>
+
+    <div class="part-mark">
+      <span class="part-mark-dot"></span>
+      <span class="part-mark-label">
+        Part V
+        <span class="part-mark-label-sub">Expert evidence</span>
+      </span>
+    </div>
+
+    <Section
+      id="expert-evidence"
+      eyebrow="Part V"
+      title="A Defensible Expert Approach"
+    >
+      <p class="para">
+        Medical experts owe an overriding duty to assist the court rather than
+        the instructing party. Opinions must clearly distinguish retrospective
+        visibility from prospective standards of care, and critically assess
+        whether a competent report would have altered the clinical outcome.
+      </p>
+
+      <div class="entry-list">
+        <div class="entry">
+          <h3 class="entry-title">Breach</h3>
+          <ul class="list">
+            <li>Examine original source images where available.</li>
+            <li>
+              Record technical parameters, image quality, and study limitations.
+            </li>
+            <li>
+              Define precisely what information was available to the original
+              reporter.
+            </li>
+            <li>Review prior imaging in strict chronological sequence.</li>
+            <li>
+              Assess objectively whether the report fell outside responsible
+              practice.
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Causation</h3>
+          <ul class="list">
+            <li>State what a competent report should have contained.</li>
+            <li>Identify the probable clinical response to that report.</li>
+            <li>
+              Isolate radiological opinions from other specialist medical
+              evidence.
+            </li>
+            <li>
+              Avoid assuming an earlier diagnosis guaranteed an improved
+              clinical outcome.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Section>
+
+    <Callout tone="caution" title="Scope">
+      <p>
+        This page provides an educational summary of foundational principles.
+        Detailed legislation, professional standards, recent case law, duty of
+        candour, and AI-assisted reporting are addressed separately. It does not
+        constitute legal advice or replace primary source authorities.
+      </p>
+    </Callout>
+  </div>
 </BaseLayout>

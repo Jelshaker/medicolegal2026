@@ -1497,6 +1497,16 @@ html.dark .toc-card .meta-label {
 	fill: var(--color-muted-light);
 	stroke: none;
 }
+/* Diagram links: each box in the legal-questions schematic links to its
+   matching authority in Part II of medicolegal-fundamentals. */
+.diagram a {
+	cursor: pointer;
+}
+.diagram a:hover .d-box {
+	stroke: var(--color-ink-strong);
+	stroke-width: 1.5;
+}
+
 .d-dash {
 	fill: none;
 	stroke: var(--color-border-strong);

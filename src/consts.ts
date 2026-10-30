@@ -140,7 +140,7 @@ export const MEMBERSHIPS = [
 export const PAGE_HERO_IMAGES: Record<string, string | null> = {
 	"/": "/images/pexels-cottonbro-7579832.jpg",
 	"/radiology-fundamentals": "/images/pexels-shvetsa-4226205.jpg",
-	"/medicolegal-fundamentals": "/images/pexels-konrads-photo-32251894.jpg",
+	"/medicolegal-fundamentals": "/images/consult-room.jpg",
 	"/radiology-legislation": "/images/pexels-shvetsa-4225925.jpg",
 	"/radiology-legal-cases": "/images/pexels-charlss-gonzhu-433318654-15277956.jpg",
 	"/recent-developments": "/images/pexels-cottonbro-5723881.jpg",

@@ -115,9 +115,9 @@ html.dark {
 	--color-border:       #334155; /* was #1e293b — now ~2.4:1 */
 	--color-border-strong:#475569; /* was #334155 — now ~3.4:1 */
 
-	/* Accent (dark mode) — lighter button for dark surface. */
-	--color-accent:       #f1f5f9; /* slate-100 */
-	--color-accent-fg:    #0f172a; /* dark text on light button */
+	/* Accent (dark mode) — darker button for dark surface, with light text. */
+	--color-accent: #0f172a; /* slate-900 — darker button background */
+	--color-accent-fg: #f1f5f9; /* slate-100 — light text on dark button */
 
 	/* Keep corners flat and elevation zero. */
 	--radius-xs:  0px;  --radius-sm:  0px;  --radius-md:  0px;

@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION, PAGE_HERO_IMAGES, BLOG_CATEGORIES } from "../consts";
+import {
+  SITE_TITLE,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  PAGE_HERO_IMAGES,
+  BLOG_CATEGORIES,
+} from "../consts";
 import Callout from "../components/Callout.astro";
 import { getCollection } from "astro:content";
 
@@ -17,6 +23,7 @@ const allPosts = (await getCollection("recent-developments")).sort(
 const categoryLabel = (id: string) =>
   BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 ---
+
 <BaseLayout
   title={`${SITE_TITLE} — ${SITE_TAGLINE}`}
   description={SITE_DESCRIPTION}

@@ -12,6 +12,11 @@ tags:
   - "Bolam"
   - "Bolitho"
   - "Medical Evidence"
+  - "Screening"
+  - "Reporting"
+  - "Standard of Care"
+  - "Professional Duty"
+  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "The Bolam test applies to cytoscreeners exercising professional skill and judgment."

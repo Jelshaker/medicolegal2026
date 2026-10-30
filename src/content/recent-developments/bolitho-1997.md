@@ -6,10 +6,13 @@ category: case-law
 tags:
   - "Case Law"
   - "Clinical Negligence"
+  - "Causation"
+  - "Standard of Care"
   - "Bolam"
   - "Bolitho"
-  - "Causation"
   - "Expert Evidence"
+  - "Professional Duty"
+  - "Breach"
   - "Medical Law"
 keyTakeaways:
   - "Bolam remains the starting point for determining the standard of care in medical negligence."

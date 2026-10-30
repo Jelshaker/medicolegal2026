@@ -12,6 +12,10 @@ tags:
   - "Bolam"
   - "Causation"
   - "Expert Evidence"
+  - "Standard of Care"
+  - "Burden of Proof"
+  - "Wound Dehiscence"
+  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "The occurrence of a rare surgical complication does not, by itself, establish negligence."

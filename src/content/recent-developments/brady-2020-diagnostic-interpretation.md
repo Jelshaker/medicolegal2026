@@ -5,10 +5,15 @@ pubDate: 2020-01-01
 category: case-law
 tags:
   - "Case Law"
-  - "Radiology"
   - "Clinical Negligence"
-  - "Standard of Care"
   - "Diagnostic Error"
+  - "Radiology"
+  - "Standard of Care"
+  - "Breach"
+  - "Causation"
+  - "Imaging"
+  - "Imaging Reporting"
+  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "A diagnosis may be wrong in hindsight without having been negligent when made."

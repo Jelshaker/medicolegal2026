@@ -11,6 +11,11 @@ tags:
   - "Triple Assessment"
   - "Standard of Care"
   - "Causation"
+  - "Imaging"
+  - "Biopsy"
+  - "Radiology"
+  - "Professional Duty"
+  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "A later cancer diagnosis does not establish that an earlier benign assessment was negligent."

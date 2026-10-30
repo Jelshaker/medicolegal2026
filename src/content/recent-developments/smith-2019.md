@@ -12,6 +12,11 @@ tags:
   - "Planning Conditions"
   - "Officer Reports"
   - "Environmental Regulation"
+  - "Professional Negligence"
+  - "Standard of Care"
+  - "Duty of Care"
+  - "Breach"
+  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "Contaminated-land assessments are not automatically required for every development on potentially contaminated land."

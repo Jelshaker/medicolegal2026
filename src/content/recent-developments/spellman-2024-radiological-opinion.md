@@ -11,6 +11,11 @@ tags:
   - "Cauda Equina Syndrome"
   - "Standard of Care"
   - "Causation"
+  - "Diagnostic Error"
+  - "Imaging"
+  - "Reporting"
+  - "Medical Law"
+  - "Radiological Interpretation"
 anonymised: false
 keyTakeaways:
   - "The court must first determine what the imaging showed and then assess separately whether the radiological report was reasonably competent."

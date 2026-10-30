@@ -509,6 +509,12 @@
 		width: 3rem;
 	}
 }
+/* Centre the logo/mark on mobile where the brand name is hidden */
+@media (max-width: 639px) {
+	.header-bar > .container-page > a:first-child {
+		justify-content: center;
+	}
+}
 
 html.dark .header-logo {
 	border: 2px solid #000;

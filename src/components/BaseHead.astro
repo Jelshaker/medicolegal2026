@@ -205,13 +205,8 @@ const jsonLd = {
 {/* Structured data: WebSite + MedicalBusiness + Person (+ BlogPosting). */}
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
-<!-- Inter (metadata sans) + Merriweather (document serif, Georgia fallback) -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-	rel="stylesheet"
-/>
+<!-- Self-hosted fonts — Inter (sans) + Merriweather (serif, Georgia fallback) -->
+<link rel="stylesheet" href="/fonts/google-fonts.css" />
 
 {/* Warm the connection the Google tag will use on every page view. Only when a
      tag is actually configured: an unconditional preconnect would open a

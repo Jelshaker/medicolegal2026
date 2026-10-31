@@ -13,10 +13,6 @@ keyTakeaways:
   - "Identified or reasonably apparent incidental abnormalities must be reported, even when unrelated to the clinical indication."
   - "The obligation may be to identify and report a possible abnormality, not to make a definitive diagnosis."
   - "In a diagnostic-negligence claim, the correct question is whether no reasonable and responsible radiologist would have failed to identify the abnormality."
-  - "Professional guidance informs the standard of care but does not determine negligence by itself."
-  - "Expert opinion must be tested for logic, internal consistency, conformity with professional standards and responsiveness to the evidence."
-  - "A court should not infer that a finding was reasonably missable merely because more than one reporting radiologist missed it."
-  - "The judgment determined breach of duty only; it did not decide causation or quantum."
 ---
 
 <br><br>

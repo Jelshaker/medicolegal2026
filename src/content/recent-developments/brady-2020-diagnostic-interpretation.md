@@ -12,9 +12,7 @@ keyTakeaways:
   - "A diagnosis may be wrong in hindsight without having been negligent when made."
   - "The court must first determine what the imaging showed, then separately assess whether the clinician's interpretation was reasonably competent."
   - "Bolam, subject to Bolitho's requirement for a logical and defensible basis, applies to radiological interpretation and recommendations for further investigation."
-  - "A radiologist is not invariably required to list every remote differential diagnosis."
   - "Where diagnostic uncertainty increases, the report must communicate that uncertainty and recommend appropriate further evaluation."
-  - "Proof that an earlier biopsy would have revealed the diagnosis does not establish that competent clinicians were required to perform one."
 ---
 
 <br><br>

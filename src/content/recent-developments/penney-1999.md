@@ -11,12 +11,8 @@ anonymised: false
 keyTakeaways:
   - "The Bolam test applies to cytoscreeners exercising professional skill and judgment."
   - "The court must first determine as a matter of fact what was visible on the slides before considering negligence."
-  - "A body of professional opinion will not automatically defeat a negligence claim if its reasoning lacks a logical basis."
   - "Where obvious abnormalities are visible, a competent screener should not classify a smear as negative."
   - "If a screener is not confident that abnormalities are benign, the smear should be referred for further review."
-  - "The distinction between false negatives and negligent reporting is critical; not every missed cancer amounts to negligence."
-  - "Evidence that a patient later developed cancer does not retrospectively prove negligent screening."
-  - "Appellate courts will be slow to overturn trial judges' factual findings based on competing expert evidence."
 ---
 <br><br>
 &lt;br&gt;&lt;br&gt;

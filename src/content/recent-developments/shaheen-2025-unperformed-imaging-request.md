@@ -11,11 +11,8 @@ anonymised: false
 keyTakeaways:
   - "Requesting an investigation is insufficient if the patient is not told that it has been requested and what action is required."
   - "Where a walk-in imaging request generates no appointment or automatic reminder, clear patient communication is essential."
-  - "Evidence of a clinician's usual practice may assist but does not necessarily overcome silence in the contemporaneous record."
   - "Clinical records should document the investigation requested, its purpose, the action required from the patient and the follow-up plan."
   - "A patient cannot ordinarily be blamed for failing to pursue an investigation whose existence or significance was not communicated."
-  - "The court found that the patient would probably have attended for the chest radiograph if properly informed."
-  - "The judgment determined preliminary issues only; cancer causation and quantum remained undecided."
 ---
 
 <br><br>

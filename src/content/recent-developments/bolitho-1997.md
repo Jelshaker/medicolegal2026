@@ -11,11 +11,7 @@ keyTakeaways:
   - "Bolam remains the starting point for determining the standard of care in medical negligence."
   - "A court is not obliged to accept professional opinion simply because a responsible body of experts supports it."
   - "Expert opinion must be capable of withstanding logical analysis."
-  - "Judges retain ultimate responsibility for determining whether a professional opinion is reasonable, responsible and defensible."
   - "The Bolitho qualification to Bolam will only rarely justify rejection of expert medical opinion."
-  - "Where negligence consists of an omission, causation may require consideration of what would have happened had the omitted act been performed."
-  - "A defendant cannot avoid liability by arguing that they would have committed a further negligent act if the original breach had not occurred."
-  - "Clinical decisions require balancing risks and benefits, and courts must examine whether experts have undertaken that balancing exercise."
 ---
 <br><br>
 &lt;br&gt;&lt;br&gt;

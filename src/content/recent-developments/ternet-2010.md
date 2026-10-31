@@ -13,10 +13,6 @@ keyTakeaways:
   - "The burden of proving negligence remains on the claimant throughout the case."
   - "Where both negligent and non-negligent explanations remain possible, the claimant fails if negligence is not proved on the balance of probabilities."
   - "Res ipsa loquitur did not apply merely because wound dehiscence occurred."
-  - "Expert theories must be supported by reliable evidence rather than speculation or retrospective reconstruction."
-  - "A court may reject expert conclusions where the factual foundations for those conclusions are not established."
-  - "The absence of a proven non-negligent explanation does not shift the burden of proof to the defendant."
-  - "Rare complications can occur despite competent surgical care."
 ---
 <br><br>
 &lt;br&gt;&lt;br&gt;

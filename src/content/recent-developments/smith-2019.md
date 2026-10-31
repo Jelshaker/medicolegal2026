@@ -11,11 +11,7 @@ anonymised: false
 keyTakeaways:
   - "Contaminated-land assessments are not automatically required for every development on potentially contaminated land."
   - "Planning policies on contamination are principally directed at changes of use or developments creating contamination risk."
-  - "Local planning authorities may generally assume that separate environmental regulatory regimes will be properly enforced."
-  - "Speculation that a development might facilitate future intensification of use is insufficient without supporting evidence."
   - "A planning condition must be necessary and sufficiently related to the development being permitted."
-  - "Officer reports are read fairly and as a whole, not subjected to overly forensic scrutiny."
-  - "Visual-impact assessments involve planning judgment and will rarely be disturbed on judicial review absent legal error."
   - "Judicial review will fail where the authority has considered relevant matters and reached a lawful planning judgment."
 ---
 <br><br>

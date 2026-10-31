@@ -10,12 +10,9 @@ tags:
 anonymised: false
 keyTakeaways:
   - "A later cancer diagnosis does not establish that an earlier benign assessment was negligent."
-  - "Triple assessment does not require every patient to undergo clinical examination, imaging and biopsy."
   - "Biopsy is required where clinical and imaging findings are suspicious, uncertain or materially discordant."
   - "A responsible and logically defensible interpretation of national guidelines satisfies Bolam and Bolitho even where another expert would have biopsied."
-  - "The court must assess the decision using the findings available at the time, without hindsight from the subsequent diagnosis."
   - "Causation requires proof that the proposed biopsy would probably have detected the malignancy, not merely that detection was possible."
-  - "Contributory negligence in clinical-negligence claims will be rare and requires a proper evidential basis."
 ---
 
 <br><br>

@@ -12,10 +12,7 @@ keyTakeaways:
   - "The court must first determine what the imaging showed and then assess separately whether the radiological report was reasonably competent."
   - "Spinal canal stenosis and thecal sac constriction do not necessarily establish compression of the cauda equina."
   - "Descriptive grades such as mild and moderate are subjective where no accepted quantitative standard exists."
-  - "A movement-degraded examination may remain diagnostically adequate and need not automatically be repeated."
   - "Later surgery does not prove that the earlier imaging demonstrated a surgical emergency."
-  - "An expert's errors in identifying anatomy, pathology or spinal level may materially reduce the weight attached to the opinion."
-  - "Even if stenosis was understated as mild rather than moderate, liability required proof that the difference affected management and outcome."
 ---
 <br><br>
 

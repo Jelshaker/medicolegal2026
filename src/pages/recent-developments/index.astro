@@ -69,11 +69,7 @@ const allPosts = (await getCollection('recent-developments')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const usedCategories = Object.entries(categories).filter(
-    ([id]) =>
-        id === 'all' ||
-        allPosts.some((post) => post.data.category === id)
-);
+const usedCategories = Object.entries(categories);
 ---
 
 <BaseLayout

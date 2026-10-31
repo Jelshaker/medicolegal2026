@@ -41,11 +41,9 @@ export default defineConfig({
 		"/legal-blog/[slug]": "/recent-developments/[slug]",
 		"/image-review": "/free-dicom-viewer",
 		"/radiology-reference": "/radiology-fundamentals",
-		"/cv": "/curriculum-vitae",
 		"/disclaimer": "/disclaimer-and-terms-of-use",
 		"/dicom-viewer": "/free-dicom-viewer",
 		"/dicom-viewer-guide": "/how-to-use-the-dicom-viewer",
-		"/expert-witness": "/expert-witness-gi-peritoneal-malignancy",
 	},
 	adapter: cloudflare({
 		platformProxy: {

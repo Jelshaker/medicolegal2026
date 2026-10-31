@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
@@ -9,52 +9,89 @@ export const prerender = true;
 ---
 
 <BaseLayout
-  title={"Disclaimer and terms of use | Radiology &amp; Medicolegal Law"}
-  description="The terms on which this radiology and medicolegal law reference may be used: general information only, no legal or medical advice, anonymised case material, and limits of liability."
+  title="Disclaimer and terms of use | Radiology &amp; Medicolegal Law"
+  description="This resource provides general information on radiology and the law. It does not constitute legal or medical advice."
 >
   <PageHero
-    eyebrow="Using this resource"
+    eyebrow="Legal notice"
     title="Disclaimer and terms of use"
-    description="A free reference resource, offered on the terms below. By using the site you accept them."
-    
+    description="General information only: not legal or medical advice, and the terms of use for this resource."
   />
+
   <PageIntro
-    eyebrow="Using this resource"
-    paragraphs={["This site is a curated reference on radiology and medicolegal law: how imaging is performed and reported, the standards and duties governing it, and anonymised commentary on recent cases. It is general information for a professional audience.", "It is not advice about any individual case or patient. Nothing here creates a doctor-patient, solicitor-client or expert-instructing-party relationship."]}
-    contents={[{ href: "#not-advice", label: "Not advice" },{ href: "#anonymisation", label: "Anonymised material" },{ href: "#liability", label: "Liability" },{ href: "#use", label: "Acceptable use" }]}
-    reviewed="September 2026"
+    eyebrow="Terms of use"
+    paragraphs={[
+      "This site is a free, personal reference resource. It is maintained by one practising radiologist with an interest in healthcare law.",
+      "Everything on this website is general information. It is not advice and does not create a professional relationship."
+    ]}
+    contents={[
+      { href: "#no-advice", label: "Not advice" },
+      { href: "#no-endorsement", label: "External links" },
+      { href: "#liability", label: "Liability" },
+      { href: "#governing-law", label: "Governing law" }
+    ]}
+    reviewed="October 2026"
   />
+
   <section class="band">
     <div class="container-page">
       <div class="doc space-y-14">
-        <Section id="not-advice" index="01" eyebrow="General information" title="Not legal advice, not medical advice" lead="Read the principles here; take advice about your own case from your own advisers.">
-          <ul class="list">
-            <li><strong>Not legal advice.</strong> Case summaries and commentary explain decisions; they do not advise on prospects, procedure or strategy. Instructed matters need independent legal advice.</li>
-            <li><strong>Not medical advice.</strong> Patient-facing pages and the DICOM viewer are general information. Decisions about investigation or treatment belong with the clinician holding your history.</li>
-            <li><strong>Not an expert opinion.</strong> A formal opinion is a separate exercise under CPR Part 35 — see <a href="/expert-witness-gi-peritoneal-malignancy" class="link">expert witness</a>. Nothing on these pages is one.</li>
-          </ul>
-        </Section>
-        <Section id="anonymisation" index="02" eyebrow="Confidentiality" title="Anonymised case material" lead="Every case discussion is fully anonymised; images carry no identifying data.">
-          <p class="para-sm-divider">Identifying details are removed in line with GMC confidentiality guidance and CPR Part 35. Images shown are anonymised or licence-free illustrations. If you believe anything identifies a living individual, contact the secretariat and it will be reviewed promptly.</p>
-          <Callout tone="limit" title="Your own submissions">
-            <p>Keep referrals, enquiries and comments anonymised: no patient names, dates of birth, NHS numbers or other directly identifying information. Public comments cannot be un-published from every archive once posted.</p>
-          </Callout>
-        </Section>
-        <Section id="liability" index="03" eyebrow="Liability" title="Accuracy and limits of liability" lead="Kept accurate and sourced — but used at your own risk, as the law requires stating plainly.">
-          <ul class="list">
-            <li>The material is maintained to a professional standard with primary sources cited, and corrected when errors are found. It is not warranted complete, current or fit for any particular purpose; law, guidance and links change.</li>
-            <li>External links are for convenience and do not imply endorsement or responsibility for their content.</li>
-            <li>To the extent permitted by law, liability for reliance on the reference material is excluded. Nothing excludes liability for death or personal injury caused by negligence, for fraud, or for any liability that cannot lawfully be limited. Nothing here affects your statutory consumer rights.</li>
-          </ul>
-        </Section>
-        <Section id="use" index="04" eyebrow="Use of the site" title="Acceptable use and governing law" lead="The resource is free to read and share with attribution; the forms and commentary are moderated."
+
+        <Section
+          id="no-advice"
+          index="01"
+          eyebrow="Not advice"
+          title="Not legal advice, not medical advice"
         >
           <ul class="list">
-            <li>You may link to and quote pages with attribution. You may not present the material as your own work or as advice from this practice.</li>
-            <li>Do not misuse the forms or commentary: no unlawful, defamatory or harassing content, no patient-identifiable data, no attempts to disrupt the site. Submissions breaching these terms may be removed and access restricted.</li>
-            <li>These terms are governed by the law of England and Wales; disputes are subject to the exclusive jurisdiction of its courts. Questions about these terms: see <a href="/contact" class="link">contact</a>; data questions: <a href="/privacy-notice" class="link">privacy notice</a>.</li>
+            <li><strong>Not legal advice.</strong> Case summaries and commentary explain legal decisions in general terms. They do not advise on your prospects, procedure or strategy. Instructed matters require independent legal advice.</li>
+            <li><strong>Not medical advice.</strong> The radiology content is general information only. Decisions about investigation or treatment belong with the clinician responsible for your care.</li>
+            <li><strong>Not an expert opinion.</strong> A formal opinion under CPR Part 35 is a separate exercise. Nothing on this website is one.</li>
           </ul>
         </Section>
+
+        <Section
+          id="no-endorsement"
+          index="02"
+          eyebrow="External links"
+          title="Links to other websites"
+          lead="Provided for convenience only."
+        >
+          <p class="para">
+            This site links to external websites for convenience. The operator accepts no responsibility for their content and linking does not imply endorsement.
+          </p>
+        </Section>
+
+        <Section
+          id="liability"
+          index="03"
+          eyebrow="Liability"
+          title="Limits of liability"
+          lead="Used at your own risk."
+        >
+          <ul class="list">
+            <li>This resource is provided "as is" without warranties of any kind.</li>
+            <li>To the extent permitted by law, liability for reliance on the information is excluded. Law, guidance and sources change, and the operator makes no guarantees about completeness or currency.</li>
+            <li>Nothing excludes liability for death or personal injury caused by negligence, for fraud, or for any liability that cannot lawfully be limited under the law of England and Wales.</li>
+            <li>Nothing here affects your statutory consumer rights.</li>
+          </ul>
+        </Section>
+
+        <Section
+          id="governing-law"
+          index="04"
+          eyebrow="Legal notice"
+          title="Governing law and jurisdiction"
+        >
+          <p class="para">
+            These terms are governed by the law of England and Wales. Disputes are subject to the exclusive jurisdiction of its courts.
+          </p>
+
+          <p class="para-sm">
+            Questions about these terms: see the <a href="/privacy-notice" class="link">privacy notice</a>.
+          </p>
+        </Section>
+
       </div>
     </div>
   </section>

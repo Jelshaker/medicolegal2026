@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
@@ -7,7 +7,7 @@ import Callout from "../components/Callout.astro";
 
 export const prerender = true;
 
-const contactEmail = "enquiries@medicolegal.org";
+const contactEmail = "secretary@radiologylaw.com";
 ---
 
 <BaseLayout
@@ -19,8 +19,6 @@ const contactEmail = "enquiries@medicolegal.org";
         title="Privacy Notice"
         description="How personal information is collected, used and protected when you use this website."
     />
-
-    <br><br>
 
     <PageIntro
         eyebrow="Privacy"
@@ -38,8 +36,6 @@ const contactEmail = "enquiries@medicolegal.org";
         ]}
         reviewed="October 2026"
     />
-
-    <br><br>
 
     <section class="band">
         <div class="container-page">
@@ -59,7 +55,7 @@ const contactEmail = "enquiries@medicolegal.org";
                     <p class="para-sm">
                         Privacy enquiries may be sent to
                         {" "}
-                        <a href={`mailto:${contactEmail}`} class="link">
+                        <a href={"mailto:" + contactEmail} class="link">
                             {contactEmail}
                         </a>.
                     </p>
@@ -94,55 +90,35 @@ const contactEmail = "enquiries@medicolegal.org";
                             <p class="para-sm">
                                 If you accept analytics cookies, information about site use is
                                 collected to help improve the resource. Analytics remains
-                                disabled if you decline or make no choice.
+                                inert until you make a choice.
                             </p>
                         </div>
                     </div>
-
-                    <Callout tone="limit" title="Do not send patient information">
-                        <p>
-                            Please do not submit patient names, dates of birth, NHS numbers,
-                            medical records, diagnostic images or other identifiable clinical
-                            information through the public enquiry form or ordinary email.
-                            Initial case enquiries should be anonymised.
-                        </p>
-                    </Callout>
                 </Section>
 
                 <Section
                     id="use"
                     index="03"
-                    eyebrow="Purpose"
-                    title="How information is used"
+                    eyebrow="How it is used"
+                    title="Why it is processed"
                 >
-                    <ul class="list">
-                        <li>To operate, secure and maintain the website.</li>
-                        <li>To respond to enquiries.</li>
-                        <li>To consider a prospective professional instruction.</li>
-                        <li>To understand site use where analytics consent has been given.</li>
-                        <li>To meet applicable legal and professional obligations.</li>
-                    </ul>
-
-                    <p class="para-sm">
-                        Website security and general correspondence are processed on the basis
-                        of legitimate interests. Information needed to consider or perform an
-                        instruction may be processed for contractual, legal or legitimate-interest
-                        purposes. Optional analytics relies on consent.
+                    <p class="para">
+                        Information is processed to provide and improve this website, respond to
+                        enquiries, comply with legal obligations and protect the site and its
+                        visitors. It is also used to manage the optional analytics consent you
+                        have given.
                     </p>
 
                     <p class="para-sm">
-                        Where health information is necessary for a legal claim, it may be
-                        processed under the legal-claims condition in Article 9(2)(f) of the UK
-                        GDPR. An appropriate secure transfer method will be provided before
-                        identifiable case material is accepted.
+                        No automated decision-making or profiling is carried out.
                     </p>
                 </Section>
 
                 <Section
                     id="sharing"
                     index="04"
-                    eyebrow="Recipients"
-                    title="Sharing and international transfers"
+                    eyebrow="Sharing and transfers"
+                    title="Who information is shared with"
                 >
                     <p class="para">
                         Information may be processed by providers supporting hosting, security,
@@ -158,7 +134,8 @@ const contactEmail = "enquiries@medicolegal.org";
                     </p>
                 </Section>
 
-                       id="retention"
+                <Section
+                    id="retention"
                     index="05"
                     eyebrow="Retention"
                     title="How long information is kept"
@@ -178,7 +155,7 @@ const contactEmail = "enquiries@medicolegal.org";
                         </li>
                         <li>
                             <strong>Analytics:</strong> for the period stated in the
-                            /cookie-policy cookie policy</a>.
+                            <a href="/cookie-policy">cookie policy</a>.
                         </li>
                     </ul>
 
@@ -198,7 +175,7 @@ const contactEmail = "enquiries@medicolegal.org";
                         Depending on the circumstances, you may ask to access, correct, delete,
                         restrict or receive a copy of your personal information. You may object
                         to processing based on legitimate interests and withdraw analytics
-                        consent at any time through “Cookie settings”.
+                        consent at any time through "Cookie settings".
                     </p>
 
                     <p class="para-sm">
@@ -210,13 +187,13 @@ const contactEmail = "enquiries@medicolegal.org";
                     <p class="para-sm">
                         To exercise a right or raise a concern, email
                         {" "}
-                        {`mailto:${contactEmail}`}
+                        <a href={"mailto:" + contactEmail}>
                             {contactEmail}
                         </a>.
                         You may also complain to the
                         {" "}
-                        https://ico.org.uk/make-a-complaint/
-                            Information Commissioner’s Office
+                        <a href="https://ico.org.uk/make-a-complaint/">
+                            Information Commissioner's Office
                         </a>.
                     </p>
                 </Section>

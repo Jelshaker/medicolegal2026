@@ -32,7 +32,6 @@ export const NAVIGATION_LINKS = [
 	{ href: "/recent-developments", label: "Recent Developments" },
 	{ href: "/free-dicom-viewer", label: "DICOM Viewer" },
 	{ href: "/about", label: "About" },
-	{ href: "/contact", label: "Contact" },
 	// { href: "/referrals", label: "Referrals and terms" },
 	// --- REQUIRES RE-ENABLEMENT when the referral function is ready again (see src/pages/referrals.astro) ---
 ] as const;
@@ -129,9 +128,6 @@ export const PRACTITIONER = {
 
 export const MEMBERSHIPS = [
 	"Fellow of the Royal College of Radiologists (FRCR)",
-	"British Society for Gastrointestinal and Abdominal Radiology (BSGAR)",
-	"European Society for Gastrointestinal and Abdominal Radiology (ESGAR)",
-	"Radiological Society of North America (RSNA)",
 ] as const;
 
 // Page hero images — one high-quality picture per page, displayed large at the top.
@@ -143,17 +139,13 @@ export const PAGE_HERO_IMAGES: Record<string, string | null> = {
 	"/medicolegal-fundamentals": "/images/consult-room.jpg",
 	"/radiology-legislation": "/images/pexels-shvetsa-4225925.jpg",
 	"/recent-developments": "/images/pexels-cottonbro-5723881.jpg",
-	"/expert-witness-gi-peritoneal-malignancy": "/images/pexels-gustavo-fring-7446994.jpg",
 	"/free-dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
 	"/how-to-use-the-dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
 	"/about": "/images/pexels-tima-miroshnichenko-5452281.jpg",
-	"/contact": "/images/pexels-cottonbro-6502022.jpg",
-	"/curriculum-vitae": "/images/pexels-tima-miroshnichenko-5452281.jpg",
 	"/sitemap": "/images/pexels-shvetsa-4225925.jpg",
 	"/disclaimer-and-terms-of-use": null,
 	"/privacy-notice": null,
 	"/cookie-policy": null,
-	"/medicolegal-radiology": "/images/pexels-cottonbro-6202736.jpg",
 	"/login": null,
 	"/referrals": null,
 };
@@ -165,54 +157,48 @@ export const SITEMAP = [
 	{
 		id: "start",
 		title: "Start here",
-		description: "What the resource is, who keeps it, and how it is organised.",
+		description: "",
 		pages: [
-			{ href: "/", label: "Home", description: "Overview, the two libraries, and the latest commentary." },
-			{ href: "/sitemap", label: "Site map", description: "Everything in the resource on one page." },
+			{ href: "/", label: "Home", description: "Overview of the two libraries and the latest commentary." },
+			{ href: "/about", label: "About", description: "The curator, scope and standards." },
+			{ href: "/sitemap", label: "Site map", description: "A full list of every page on the site." },
 		],
 	},
 	{
 		id: "radiology",
 		title: "Radiology library",
-		description: "The clinical reference: modalities, reporting standards, dose and image handling.",
+		description: "Clinical reference on imaging modalities, reporting and safety.",
 		pages: [
-			{ href: "/radiology-fundamentals", label: "Radiology fundamentals", description: "What each modality answers, and where it stops being useful." },
-			{ href: "/free-dicom-viewer", label: "Free DICOM viewer", description: "Open your scan in your browser — free, private, nothing uploaded." },
-			{ href: "/how-to-use-the-dicom-viewer", label: "Using the DICOM viewer", description: "Step-by-step: loading a disc or download and using the tools." },
+			{ href: "/radiology-fundamentals", label: "Radiology fundamentals", description: "What each modality shows and where it stops being useful." },
+			{ href: "/free-dicom-viewer", label: "Free DICOM viewer", description: "Open your scan in the browser — nothing uploaded." },
+			{ href: "/how-to-use-the-dicom-viewer", label: "Using the DICOM viewer", description: "How to load a disc or downloaded scan." },
 		],
 	},
 	{
 		id: "law",
 		title: "Medicolegal law library",
-		description: "The legal reference: principles, authorities and statutory duties.",
+		description: "Legal principles, authorities and statutory duties.",
 		pages: [
-			{ href: "/medicolegal-fundamentals", label: "Medicolegal law", description: "Standard of care, consent, causation, candour and AI-assisted reporting." },
+			{ href: "/medicolegal-fundamentals", label: "Medicolegal law", description: "Standard of care, consent, causation and candour." },
 			{ href: "/radiology-legislation", label: "Legislation", description: "IR(ME)R, IRR17, the communication duty and EPR16." },
-			{ href: "/medicolegal-fundamentals", label: "Case law", description: "Decisions in which imaging evidence determined the outcome." },
-			{ href: "/medicolegal-radiology", label: "Disputed interpretation", description: "The pure-diagnosis argument, incidental findings and teleradiology risk." },
 		],
 	},
 	{
 		id: "commentary",
 		title: "Case commentary",
-		description: "Recent, anonymised cases and what they mean in practice.",
+		description: "Anonymised discussions of real cases.",
 		pages: [
-			{ href: "/recent-developments", label: "Recent developments", description: "Short analyses of recent cases, filterable by subject." },
+			{ href: "/recent-developments", label: "Recent developments", description: "Short analyses of recent cases." },
 		],
 	},
 	{
 		id: "practice",
 		title: "The practice",
-		description: "How instruction and contact work. The resource itself is free.",
+		description: "",
 		pages: [
-			{ href: "/expert-witness-gi-peritoneal-malignancy", label: "Expert witness", description: "The matters in which a formal opinion can be provided." },
-			// { href: "/referrals", label: "Referrals and terms", description: "Secure referral, terms of instruction and imaging transfer." },
-			// --- REQUIRES RE-ENABLEMENT when the referral function is ready again (see src/pages/referrals.astro) ---
-			{ href: "/contact", label: "Contact", description: "Secretariat details and a secure enquiry form." },
-			{ href: "/curriculum-vitae", label: "Curriculum vitae", description: "Qualifications, appointments and memberships." },
-			{ href: "/disclaimer-and-terms-of-use", label: "Disclaimer & terms of use", description: "General information only: not legal or medical advice, and the terms of use." },
-			{ href: "/privacy-notice", label: "Privacy notice", description: "What is collected, why it is lawful, retention, and your UK GDPR rights." },
-			{ href: "/cookie-policy", label: "Cookie policy", description: "Strictly necessary storage, optional analytics, and your cookie choice." },
+			{ href: "/disclaimer-and-terms-of-use", label: "Disclaimer & terms", description: "" },
+			{ href: "/privacy-notice", label: "Privacy notice", description: "How personal data is handled." },
+			{ href: "/cookie-policy", label: "Cookie policy", description: "Analytics cookies and your choice." },
 		],
 	},
 ] as const;

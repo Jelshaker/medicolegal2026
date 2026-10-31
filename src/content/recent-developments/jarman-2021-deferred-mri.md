@@ -4,17 +4,9 @@ description: "Whether the clinical presentation required emergency MRI for suspe
 pubDate: 2021-01-01
 category: case-law
 tags:
-  - "Case Law"
-  - "Cauda Equina Syndrome"
+  - "Radiology & Imaging"
   - "MRI"
-  - "Delayed Diagnosis"
-  - "Causation"
   - "Emergency Imaging"
-  - "Clinical Judgment"
-  - "Standard of Care"
-  - "Breach"
-  - "Neurological Injury"
-  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "Cauda equina syndrome is a clinical emergency, but not every patient with back pain and subjective neurological symptoms requires immediate MRI."

@@ -13,45 +13,73 @@ const categories = {
         label: 'All',
         color: '#94a3b8',
     },
-    musculoskeletal: {
-        label: 'Musculoskeletal',
-        color: '#7c9a6e',
-    },
-    gastrointestinal: {
-        label: 'Gastrointestinal',
-        color: '#b8935a',
-    },
-    'peritoneal-malignancy': {
-        label: 'Peritoneal malignancy',
-        color: '#a86b6b',
-    },
-    neuroradiology: {
-        label: 'Neuroradiology',
-        color: '#7a8da0',
-    },
-    interventional: {
-        label: 'Interventional',
-        color: '#a07a8d',
-    },
-    negligence: {
-        label: 'Negligence',
+    'clinical-negligence': {
+        label: 'Clinical Negligence',
         color: '#8d7a9a',
     },
-    quantum: {
-        label: 'Quantum and causation',
+    'diagnostic-error': {
+        label: 'Diagnostic Error',
+        color: '#b8935a',
+    },
+    'radiology-imaging': {
+        label: 'Radiology & Imaging',
         color: '#7a9a8d',
     },
-    practice: {
-        label: 'Practice and procedure',
-        color: '#9a8d7a',
+    'primary-care': {
+        label: 'Primary Care',
+        color: '#a07a8d',
     },
-    regulation: {
-        label: 'Regulation',
+    causation: {
+        label: 'Causation',
+        color: '#a86b6b',
+    },
+    'standard-of-care': {
+        label: 'Standard of Care',
+        color: '#7c9a6e',
+    },
+    'expert-evidence': {
+        label: 'Expert Evidence',
+        color: '#7a8da0',
+    },
+    obstetrics: {
+        label: 'Obstetrics',
         color: '#8d9a7a',
     },
-    'case-law': {
-        label: 'Case law',
+    mri: {
+        label: 'MRI',
+        color: '#7a9a8d',
+    },
+    'emergency-imaging': {
+        label: 'Emergency Imaging',
+        color: '#a07a8d',
+    },
+    'incidental-findings': {
+        label: 'Incidental Findings',
+        color: '#b8935a',
+    },
+    screening: {
+        label: 'Screening',
+        color: '#8d7a9a',
+    },
+    'radiology-requests': {
+        label: 'Radiology Requests',
+        color: '#7c9a6e',
+    },
+    'planning-law': {
+        label: 'Planning Law',
         color: '#9a7a8d',
+    },
+    'environmental-regulation': {
+        label: 'Environmental Regulation',
+        color: '#7a8da0',
+    },
+    'judicial-review': {
+        label: 'Judicial Review',
+        color: '#9a8d7a',
+    },
+    'surgical-negligence': {
+        label: 'Surgical Negligence',
+        color: '#a86b6b',
     },
 } as const;
 
@@ -63,6 +91,10 @@ function categoryLabel(category: string): string {
 
 function categoryColor(category: string): string {
     return categories[category as Category]?.color ?? '#94a3b8';
+}
+
+function slugifyTag(tag: string): string {
+    return tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
 const allPosts = (await getCollection('recent-developments')).sort(
@@ -81,6 +113,7 @@ const usedCategories = Object.entries(categories);
         title="Recent Developments"
         description="Concise analysis of recent developments in radiology and medicolegal practice."
         heroImage={PAGE_HERO_IMAGES['/recent-developments'] || undefined}
+        compact
     />
 
     <PageIntro
@@ -118,7 +151,7 @@ const usedCategories = Object.entries(categories);
 
                 <div
                     id="blog-filters"
-                    class="mt-6 flex flex-wrap gap-2"
+                    class="mt-4 flex flex-wrap gap-2"
                     aria-label="Filter articles by subject"
                 >
                     {usedCategories.map(([id, category]) => (
@@ -137,7 +170,7 @@ const usedCategories = Object.entries(categories);
 
             <div
                 id="latest-commentary"
-                class="doc mt-14 scroll-mt-24"
+                class="doc mt-8 scroll-mt-24"
             >
                 <div class="sec">
                     <p class="meta-label">Latest</p>
@@ -155,7 +188,7 @@ const usedCategories = Object.entries(categories);
                 >
                     <figure class="figure mt-0">
                         <div class="figure-frame">
-                            <div class="relative aspect-[3/1] overflow-hidden">
+                            <div class="relative aspect-[5/1] overflow-hidden">
                                 <img
                                     src="/images/pexels-shvetsa-4226205.jpg"
                                     alt="Radiology image"
@@ -164,45 +197,54 @@ const usedCategories = Object.entries(categories);
                             </div>
                         </div>
                     </figure>
-                    {allPosts.map((post) => (
-                        <article
-                            class="blog-card py-7"
-                            data-category={post.data.category}
-                            style={`--marker-color: ${categoryColor(post.data.category)}`}
-                        >
-                            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="sec-marker"
-                                        aria-hidden="true"
-                                    ></span>
+                    {allPosts.map((post) => {
+                        const postTags = post.data.tags;
+                        const firstTagSlug = slugifyTag(postTags[0]);
+                        const categorySlug = post.data.category as string;
+                        return (
+                            <article
+                                class="blog-card py-5"
+                                data-tags={postTags.map(t => slugifyTag(t)).join(' ')}
+                                style={`--marker-color: ${categoryColor(firstTagSlug)}`}
+                            >
+                                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="sec-marker"
+                                            aria-hidden="true"
+                                        ></span>
 
-                                    <span class="text-muted-alt">
-                                        {categoryLabel(post.data.category)}
+                                        <span class="text-muted-alt">
+                                            {categoryLabel(categorySlug)}
+                                        </span>
+                                    </div>
+
+                                    <span class="text-muted-alt ml-2">
+                                        {categoryLabel(firstTagSlug)}
                                     </span>
+
+                                    <time
+                                        class="text-muted-light ml-auto"
+                                        datetime={post.data.pubDate.toISOString()}
+                                    >
+                                        {formatDateShort(post.data.pubDate)}
+                                    </time>
                                 </div>
 
-                                <time
-                                    class="text-muted-light"
-                                    datetime={post.data.pubDate.toISOString()}
-                                >
-                                    {formatDateShort(post.data.pubDate)}
-                                </time>
-                            </div>
+                                <h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
+                                    <a href={`/recent-developments/${post.slug}`}>{post.data.title}</a>
+                                </h3>
 
-                            <h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-900">
-                                <a href={`/recent-developments/${post.slug}`}>{post.data.title}</a>
-                            </h3>
+                                <p class="para-sm">
+                                    {post.data.description}
+                                </p>
 
-                            <p class="para-sm">
-                                {post.data.description}
-                            </p>
-
-                            <p class="mt-3 text-sm">
-                                <a href={`/recent-developments/${post.slug}`}>Read analysis →</a>
-                            </p>
-                        </article>
-                    ))}
+                                <p class="mt-3 text-sm">
+                                    <a href={`/recent-developments/${post.slug}`}>Read analysis →</a>
+                                </p>
+                            </article>
+                        );
+                    })}
                 </div>
 
                 <p
@@ -244,7 +286,7 @@ const usedCategories = Object.entries(categories);
         cards.forEach((card) => {
             const matches =
                 category === 'all' ||
-                card.dataset.category === category;
+                card.dataset.tags?.split(' ').includes(category);
 
             card.hidden = !matches;
 

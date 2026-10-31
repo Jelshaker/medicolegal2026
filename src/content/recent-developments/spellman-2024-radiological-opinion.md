@@ -4,18 +4,9 @@ description: "Whether a movement-degraded lumbar MRI was negligently reported as
 pubDate: 2024-01-01
 category: case-law
 tags:
-  - "Case Law"
-  - "Radiology"
-  - "Clinical Negligence"
+  - "Radiology & Imaging"
   - "MRI"
-  - "Cauda Equina Syndrome"
-  - "Standard of Care"
-  - "Causation"
   - "Diagnostic Error"
-  - "Imaging"
-  - "Reporting"
-  - "Medical Law"
-  - "Radiological Interpretation"
 anonymised: false
 keyTakeaways:
   - "The court must first determine what the imaging showed and then assess separately whether the radiological report was reasonably competent."

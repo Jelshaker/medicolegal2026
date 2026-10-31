@@ -4,16 +4,9 @@ description: "Whether an incorrect radiological diagnosis and the decision not t
 pubDate: 2020-01-01
 category: case-law
 tags:
-  - "Case Law"
-  - "Clinical Negligence"
+  - "Radiology & Imaging"
   - "Diagnostic Error"
-  - "Radiology"
   - "Standard of Care"
-  - "Breach"
-  - "Causation"
-  - "Imaging"
-  - "Imaging Reporting"
-  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "A diagnosis may be wrong in hindsight without having been negligent when made."

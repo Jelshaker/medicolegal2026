@@ -4,18 +4,9 @@ description: "Whether benign clinical examination, mammography and ultrasound fi
 pubDate: 2019-01-01
 category: case-law
 tags:
-  - "Case Law"
-  - "Breast Imaging"
   - "Clinical Negligence"
   - "Diagnostic Error"
-  - "Triple Assessment"
-  - "Standard of Care"
-  - "Causation"
-  - "Imaging"
-  - "Biopsy"
-  - "Radiology"
-  - "Professional Duty"
-  - "Medical Law"
+  - "Radiology & Imaging"
 anonymised: false
 keyTakeaways:
   - "A later cancer diagnosis does not establish that an earlier benign assessment was negligent."

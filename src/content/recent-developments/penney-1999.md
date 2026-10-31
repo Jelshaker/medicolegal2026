@@ -4,19 +4,9 @@ description: "Court of Appeal decision on negligent cervical-smear screening, ad
 pubDate: 1999-01-01
 category: case-law
 tags:
-  - "Case Law"
   - "Clinical Negligence"
-  - "Diagnostic Error"
-  - "Cervical Screening"
-  - "Pathology"
-  - "Bolam"
-  - "Bolitho"
-  - "Medical Evidence"
   - "Screening"
-  - "Reporting"
-  - "Standard of Care"
-  - "Professional Duty"
-  - "Medical Law"
+  - "Diagnostic Error"
 anonymised: false
 keyTakeaways:
   - "The Bolam test applies to cytoscreeners exercising professional skill and judgment."

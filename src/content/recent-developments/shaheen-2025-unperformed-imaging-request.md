@@ -4,18 +4,9 @@ description: "Whether a GP informed a patient that a chest radiograph had been r
 pubDate: 2025-01-01
 category: case-law
 tags:
-  - "Case Law"
   - "Clinical Negligence"
   - "Primary Care"
   - "Radiology Requests"
-  - "Communication"
-  - "Medical Records"
-  - "Contributory Negligence"
-  - "Follow-Up"
-  - "Patient Safety"
-  - "Standard of Care"
-  - "Breach"
-  - "Medical Law"
 anonymised: false
 keyTakeaways:
   - "Requesting an investigation is insufficient if the patient is not told that it has been requested and what action is required."

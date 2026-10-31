@@ -4,19 +4,9 @@ description: "Judicial review challenge to planning permission for a 5-metre bou
 pubDate: 2019-01-01
 category: case-law
 tags:
-  - "Case Law"
   - "Planning Law"
-  - "Judicial Review"
-  - "Contaminated Land"
-  - "Green Belt"
-  - "Planning Conditions"
-  - "Officer Reports"
   - "Environmental Regulation"
-  - "Professional Negligence"
-  - "Standard of Care"
-  - "Duty of Care"
-  - "Breach"
-  - "Medical Law"
+  - "Judicial Review"
 anonymised: false
 keyTakeaways:
   - "Contaminated-land assessments are not automatically required for every development on potentially contaminated land."

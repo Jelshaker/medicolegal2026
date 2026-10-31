@@ -4,18 +4,9 @@ description: "High Court decision addressing whether post-caesarean wound dehisc
 pubDate: 2010-01-01
 category: case-law
 tags:
-  - "Case Law"
   - "Clinical Negligence"
-  - "Obstetrics"
   - "Surgical Negligence"
-  - "Caesarean Section"
-  - "Bolam"
-  - "Causation"
-  - "Expert Evidence"
-  - "Standard of Care"
-  - "Burden of Proof"
-  - "Wound Dehiscence"
-  - "Medical Law"
+  - "Obstetrics"
 anonymised: false
 keyTakeaways:
   - "The occurrence of a rare surgical complication does not, by itself, establish negligence."

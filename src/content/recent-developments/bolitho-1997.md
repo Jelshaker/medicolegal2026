@@ -4,16 +4,9 @@ description: "Leading House of Lords authority refining the Bolam test by confir
 pubDate: 1997-01-01
 category: case-law
 tags:
-  - "Case Law"
   - "Clinical Negligence"
-  - "Causation"
   - "Standard of Care"
-  - "Bolam"
-  - "Bolitho"
   - "Expert Evidence"
-  - "Professional Duty"
-  - "Breach"
-  - "Medical Law"
 keyTakeaways:
   - "Bolam remains the starting point for determining the standard of care in medical negligence."
   - "A court is not obliged to accept professional opinion simply because a responsible body of experts supports it."

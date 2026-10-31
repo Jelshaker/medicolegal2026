@@ -4,18 +4,9 @@ description: "Whether radiologists negligently failed to identify possible devel
 pubDate: 2023-01-01
 category: case-law
 tags:
-  - "Case Law"
-  - "Radiology"
-  - "Clinical Negligence"
-  - "Standard of Care"
+  - "Radiology & Imaging"
   - "Incidental Findings"
-  - "Expert Evidence"
-  - "Duty of Care"
   - "Diagnostic Error"
-  - "Reporting"
-  - "Medical Law"
-  - "System Failure"
-  - "Patient Safety"
 anonymised: true
 keyTakeaways:
   - "A radiologist must review the entire image with appropriate and equal professional care, not only the area relevant to the referral question."

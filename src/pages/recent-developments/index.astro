@@ -109,6 +109,10 @@ function slugifyTag(tag: string): string {
     return tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
+function normalizeCategory(category: string): string {
+    return category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 const allPosts = (await getCollection('recent-developments')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -231,8 +235,13 @@ const usedCategories = Object.entries(categories);
                                         </span>
                                     </div>
 
-                                    <span class="text-muted-alt ml-2">
-                                        {categoryLabel(firstTagSlug)}
+                                    <span class="ml-2">
+                                        <a
+                                            href={`/recent-developments/?category=${firstTagSlug}`}
+                                            class="text-sm font-sans text-muted-alt hover:text-slate-700 underline underline-offset-2"
+                                        >
+                                            {categoryLabel(firstTagSlug)}
+                                        </a>
                                     </span>
 
                                     <time
@@ -271,6 +280,14 @@ const usedCategories = Object.entries(categories);
 </BaseLayout>
 
 <script>
+    function slugifyTag(tag) {
+        return tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    function normalizeCategory(category) {
+        return category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
     const filters = document.getElementById('blog-filters');
     const grid = document.getElementById('blog-grid');
     const count = document.getElementById('blog-count');
@@ -295,10 +312,16 @@ const usedCategories = Object.entries(categories);
 
         let visible = 0;
 
+        const normalizedCategory = normalizeCategory(category);
+
         cards.forEach((card) => {
+            const cardTags = card.dataset.tags
+                ? card.dataset.tags.split(' ').map(slugifyTag)
+                : [];
+
             const matches =
                 category === 'all' ||
-                card.dataset.tags?.split(' ').includes(category);
+                cardTags.includes(normalizedCategory);
 
             card.hidden = !matches;
 
@@ -330,4 +353,15 @@ const usedCategories = Object.entries(categories);
     });
 
     applyFilter('all');
+
+    // Activate filter from URL ?category= param (e.g. when clicking a tag link)
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('category');
+    if (category) {
+        applyFilter(category);
+        // Clean the URL so it doesn't persist on subsequent navigation
+        const url = new URL(window.location.href);
+        url.searchParams.delete('category');
+        window.history.replaceState({}, '', url.toString());
+    }
 </script>

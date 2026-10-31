@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "sessionId": "session-ef2d09db-e876-482e-adfc-762fb1e71c19",
+  "cwd": "C:\\Users\\jelsh\\vscodeprojects\\medicolegal2026",
+  "updatedAt": 1793456242683,
+  "checkpoints": [
+    {
+      "turn": 1,
+      "commit": "5071bda50f75deb20859328184722fc0f202046a",
+      "parent": "94c46be9d03a3893135140fcbbf74bce9772df92",
+      "time": 1793448381914,
+      "untracked": [],
+      "truncated": false,
+      "after": {
+        "commit": "454c1a2922429f3b8b16cac8d92b0f82f42f7b70",
+        "time": 1793455827145
+      }
+    },
+    {
+      "turn": 2,
+      "commit": "454c1a2922429f3b8b16cac8d92b0f82f42f7b70",
+      "parent": "454c1a2922429f3b8b16cac8d92b0f82f42f7b70",
+      "time": 1793456023313,
+      "untracked": [],
+      "truncated": false,
+      "after": {
+        "commit": "8c45408c0fdd26d673b1273a20926a0f11c7dd92",
+        "time": 1793456105039
+      }
+    },
+    {
+      "turn": 3,
+      "commit": "8c45408c0fdd26d673b1273a20926a0f11c7dd92",
+      "parent": "8c45408c0fdd26d673b1273a20926a0f11c7dd92",
+      "time": 1793456204664,
+      "untracked": [],
+      "truncated": false,
+      "after": {
+        "commit": "af4adc4d7b67f0191749d3bedd6d9377214f5e97",
+        "time": 1793456241780
+      }
+    }
+  ],
+  "rolls": [],
+  "undos": []
+}

@@ -78,7 +78,7 @@ const background = heroImage
 	<!-- Light veil — scrolls normally, so it "clears away" as the user scrolls down -->
 	{heroImage && (
 		<div
-			class="absolute inset-0"
+			class="absolute inset-0 pointer-events-none"
 			style={`background: ${overlayBackground};`}
 			aria-hidden="true"
 		/>

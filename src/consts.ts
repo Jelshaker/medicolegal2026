@@ -128,9 +128,10 @@ export const PRACTITIONER = {
 } as const;
 
 export const MEMBERSHIPS = [
-	"Fellow - Royal College of Radiologists (FRCR)",
-	"Member - European Society of Radiology (ESR)",
-	"British Society of Gastroenterology and Abdominal Imaging (BSGAR)",
+	"Fellow of the Royal College of Radiologists (FRCR)",
+	"British Society for Gastrointestinal and Abdominal Radiology (BSGAR)",
+	"European Society for Gastrointestinal and Abdominal Radiology (ESGAR)",
+	"Radiological Society of North America (RSNA)",
 ] as const;
 
 // Page hero images — one high-quality picture per page, displayed large at the top.
@@ -141,7 +142,6 @@ export const PAGE_HERO_IMAGES: Record<string, string | null> = {
 	"/radiology-fundamentals": "/images/pexels-shvetsa-4226205.jpg",
 	"/medicolegal-fundamentals": "/images/consult-room.jpg",
 	"/radiology-legislation": "/images/pexels-shvetsa-4225925.jpg",
-	"/medicolegal-fundamentals": "/images/pexels-charlss-gonzhu-433318654-15277956.jpg",
 	"/recent-developments": "/images/pexels-cottonbro-5723881.jpg",
 	"/expert-witness-gi-peritoneal-malignancy": "/images/pexels-gustavo-fring-7446994.jpg",
 	"/free-dicom-viewer": "/images/pexels-valery-arispe-2149327983-34170810.jpg",
@@ -168,7 +168,6 @@ export const SITEMAP = [
 		description: "What the resource is, who keeps it, and how it is organised.",
 		pages: [
 			{ href: "/", label: "Home", description: "Overview, the two libraries, and the latest commentary." },
-			{ href: "/about", label: "About this resource", description: "The curator, the scope, and the standards worked to." },
 			{ href: "/sitemap", label: "Site map", description: "Everything in the resource on one page." },
 		],
 	},

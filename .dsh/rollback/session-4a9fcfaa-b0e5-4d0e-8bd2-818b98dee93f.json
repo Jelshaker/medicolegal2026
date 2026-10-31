@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "sessionId": "session-4a9fcfaa-b0e5-4d0e-8bd2-818b98dee93f",
+  "cwd": "C:\\Users\\jelsh\\vscodeprojects\\medicolegal2026",
+  "updatedAt": 1793458428160,
+  "checkpoints": [
+    {
+      "turn": 1,
+      "commit": "d7e38efdfbc9f5925f726f49835691530e2183f5",
+      "parent": "be9cfa1314bc6ce03a1f02269bb930161896f642",
+      "time": 1793458171860,
+      "untracked": [],
+      "truncated": false
+    },
+    {
+      "turn": 2,
+      "commit": "d7e38efdfbc9f5925f726f49835691530e2183f5",
+      "parent": "d7e38efdfbc9f5925f726f49835691530e2183f5",
+      "time": 1793458214808,
+      "untracked": [],
+      "truncated": false,
+      "after": {
+        "commit": "3c13332f7bb580ed6f11b8140bfacf855a4bf21d",
+        "time": 1793458427147
+      }
+    }
+  ],
+  "rolls": [],
+  "undos": []
+}

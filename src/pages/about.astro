@@ -1,340 +1,110 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import PageIntro from '../components/PageIntro.astro';
-import Section from '../components/Section.astro';
-import Callout from '../components/Callout.astro';
-import Figure from '../components/Figure.astro';
-import { SITE_TITLE, PAGE_HERO_IMAGES } from '../consts';
-
-const qualifications = [
-    'MBChB',
-    'PGCert Diagnostic Imaging',
-    'PGDip Clinical Education',
-    'PGDip Research Training',
-    'LLM Healthcare Ethics and Law',
-    'MD',
-    'FRCR',
-] as const;
-
-const scope = [
-    {
-        title: 'Gastrointestinal and hepatobiliary imaging',
-        description:
-            'CT, MRI, ultrasound and fluoroscopic assessment of gastrointestinal and hepatobiliary disease.',
-    },
-    {
-        title: 'Peritoneal malignancy',
-        description:
-            'Detection, distribution and radiological assessment of peritoneal disease, including comparison across serial examinations.',
-    },
-    {
-        title: 'Oncological imaging',
-        description:
-            'Diagnosis, staging, treatment response and surveillance in abdominal malignancy.',
-    },
-    {
-        title: 'Delayed diagnosis',
-        description:
-            'Assessment of whether an abnormality should reasonably have been identified, characterised or investigated earlier.',
-    },
-    {
-        title: 'Protocol and report review',
-        description:
-            'Consideration of examination technique, image quality, clinical information and the adequacy of the contemporaneous report.',
-    },
-    {
-        title: 'Diagnostic intervention',
-        description:
-            'Radiological issues arising from image-guided diagnostic procedures, including ultrasound- and CT-guided biopsy.',
-    },
-] as const;
-
-const memberships = [
-    'Fellow of the Royal College of Radiologists',
-    'British Society of Gastrointestinal and Abdominal Radiology',
-] as const;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <BaseLayout
-    title={`About | ${SITE_TITLE}`}
-    description="About Dr Joseph El-Sheikha, Consultant Radiologist, and the purpose and editorial approach of this radiology and medicolegal resource."
+  title={`About | ${SITE_TITLE}`}
+  description="Brief background of the curator."
 >
-    <PageHero
-        eyebrow="About"
-        title="Dr Joseph El-Sheikha"
-        description="Consultant Radiologist with specialist interests in gastrointestinal, hepatobiliary, oncological and peritoneal imaging."
-        heroImage={PAGE_HERO_IMAGES["/about"] || undefined}
-    />
-
-    <PageIntro
-        eyebrow="Professional profile"
-        paragraphs={[
-            'Dr Joseph El-Sheikha is a Consultant Radiologist at Hampshire Hospitals NHS Foundation Trust. His principal interests include gastrointestinal, hepatobiliary, oncological and peritoneal imaging, together with image-guided diagnostic intervention.',
-            'He curates this independent educational resource on radiology and medicolegal law. The material is intended to provide concise, sourced clinical and legal reference for healthcare and legal professionals.'
-        ]}
-        contents={[
-            { href: '#profile', label: 'Professional profile' },
-            { href: '#scope', label: 'Scope of practice' },
-            { href: '#memberships', label: 'Qualifications and memberships' },
-            { href: '#resource', label: 'About the resource' },
-            { href: '#expert-evidence', label: 'Expert evidence' },
-            { href: '#next-steps', label: 'Further information' },
-        ]}
-        audience="For healthcare and legal professionals."
-        reviewed="October 2026"
-    />
-
-    <section class="band">
-        <div class="container-page">
-            <div class="doc space-y-14">
-
-                <Section
-                    id="profile"
-                    index="01"
-                    eyebrow="Professional profile"
-                    title="Consultant Radiologist"
-                >
-                    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
-                        <div>
-                            <p class="para">
-                                Dr El-Sheikha practises as a Consultant Radiologist at
-                                Hampshire Hospitals NHS Foundation Trust. His work includes
-                                cross-sectional imaging, ultrasound, fluoroscopy and
-                                image-guided diagnostic procedures.
-                            </p>
-
-                            <p class="para">
-                                His specialist interests are gastrointestinal,
-                                hepatobiliary and oncological imaging, with a particular
-                                interest in peritoneal malignancy.
-                            </p>
-
-                            <p class="para">
-                                His academic and professional training includes clinical
-                                education, research methodology, diagnostic imaging and
-                                healthcare ethics and law.
-                            </p>
-                        </div>
-
-                        <Figure
-                            src="/images/practitioner.jpg"
-                            alt="Dr Joseph El-Sheikha"
-                            label="Profile"
-                            caption="Dr Joseph El-Sheikha"
-                            subtitle="Consultant Radiologist."
-                            ratio="portrait"
-                            flush
-                        />
-                    </div>
-                </Section>
-
-                <Section
-                    id="scope"
-                    index="02"
-                    eyebrow="Clinical practice"
-                    title="Scope of Practice"
-                    lead="Clinical and medicolegal work is confined to matters within current radiological expertise."
-                >
-                    <div class="entry-list-ruled">
-                        {
-                            scope.map((item) => (
-                                <div class="entry">
-                                    <h3 class="entry-title">{item.title}</h3>
-                                    <p class="para-sm">{item.description}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </Section>
-
-                <Section
-                    id="memberships"
-                    index="03"
-                    eyebrow="Professional background"
-                    title="Qualifications and Memberships"
-                >
-                    <div class="entry-list">
-                        <div class="entry">
-                            <h3 class="entry-title">Qualifications</h3>
-
-                            <ul class="list">
-                                {
-                                    qualifications.map((qualification) => (
-                                        <li>{qualification}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-
-                        <div class="entry">
-                            <h3 class="entry-title">Professional memberships</h3>
-
-                            <ul class="list">
-                                {
-                                    memberships.map((membership) => (
-                                        <li>{membership}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    </div>
-
-                    <p class="para-sm mt-6">
-                        Current medical registration may be confirmed through the
-                        <a
-                            href="https://www.gmc-uk.org/registration-and-licensing/our-registers"
-                            class="link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            General Medical Council register
-                        </a>.
-                    </p>
-                </Section>
-
-                <Section
-       ence principles
-                        and relevant case law.
-                    </p>
-
-                    <div class="entry-list">
-                        <div class="entry">
-                            <h3 class="entry-title">Clinically grounded</h3>
-                            <p class="para-sm">
-                                Radiological subjects are explained by reference to clinical
-                                practice, image acquisition, interpretation and reporting
-                                context.
-                            </p>
-                        </div>
-
-                        <div class="entry">
-                            <h3 class="entry-title">Source based</h3>
-                            <p class="para-sm">
-                                Legal and professional material is checked against primary
-                                authorities, legislation and current published guidance
-                                wherever possible.
-                            </p>
-                        </div>
-
-                        <div class="entry">
-                            <h3 class="entry-title">Selective</h3>
-                            <p class="para-sm">
-                                The aim is a practical and accessible reference rather than
-                                an exhaustive legal textbook or clinical manual.
-                            </p>
-                        </div>
-
-                        <div class="entry">
-                            <h3 class="entry-title">Independently curated</h3>
-                            <p class="para-sm">
-                                The resource is maintained by a practising consultant
-                                radiologist. Content is reviewed and revised as the law,
-                                professional guidance and radiological practice develop.
-                            </p>
-                        </div>
-                    </div>
-
-                    <Callout tone="caution" title="Educational material">
-                        <p>
-                            The content is general information. It does not constitute
-                            medical advice, legal advice or an expert opinion on an
-                            individual patient or claim.
-                        </p>
-                    </Callout>
-                </Section>
-
-                <Section
-                    id="expert-evidence"
-                    index="05"
-                    eyebrow="Independent opinion"
-                    title="Expert Evidence"
-                >
-                    <p class="para">
-                        Independent radiological opinion may be provided in suitable civil
-                        matters within current clinical expertise, subject to conflict,
-                        competence and capacity checks.
-                    </p>
-
-                    <p class="para">
-                        Instructions may concern diagnostic interpretation, delayed
-                        diagnosis, tumour staging, peritoneal disease, incidental findings,
-                        examination protocol or the adequacy of a contemporaneous radiology
-                        report.
-                    </p>
-
-                    <p class="para-sm">
-                        Where CPR Part 35 applies, the expert's overriding duty is to assist
-                        the court on matters within their expertise. That duty takes
-                        precedence over any obligation to the party giving instructions.
-                    </p>
-
-                    <Callout tone="key" title="Independence">
-                        <p>
-                            Expert opinion is objective and confined to the available
-                            evidence and the expert's field of competence. It may not support
-                            the position of the instructing party. Material limitations and
-                            matters that could alter the opinion are stated expressly.
-                        </p>
-                    </Callout>
-
-                    <div class="mt-8 flex flex-wrap gap-3">
-                        /expert-witness-gi-peritoneal-malignancy
-                            Expert-witness information
-                        </a>
-
-                        /contact
-                            Contact
-                        </a>
-                    </div>
-                </Section>
-
-                <Section
-                    id="next-steps"
-                    index="06"
-                    eyebrow="Further information"
-                    title="Elsewhere on the Site"
-                >
-                    <ul class="list">
-                        <li>
-                            /curriculum-vitae
-                                Curriculum vitae
-                            </a>
-                        </li>
-
-                        <li>
-                            /expert-witness-gi-peritoneal-malignancy
-                                Expert-witness services
-                            </a>
-                        </li>
-
-                        <li>
-                            /radiology-fundamentals
-                                Radiology fundamentals
-                            </a>
-                        </li>
-
-                        <li>
-                            /medicolegal-fundamentals
-                                Medicolegal fundamentals
-                            </a>
-                        </li>
-
-                        <li>
-                            /medicolegal-fundamentals
-                                Radiology legal cases
-                            </a>
-                        </li>
-
-                        <li>
-                            /contact
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </Section>
-
-            </div>
-        </div>
+  <main class="mx-auto max-w-3xl px-4 py-12">
+    <header class="mb-8">
+      <p class="text-sm uppercase tracking-wide opacity-60 mb-2">
+        About this resource
+      </p>
+      <h1 class="text-3xl font-bold mb-3">Joseph El-Sheikha</h1>
+      <p class="text-lg leading-relaxed">
+        Consultant Radiologist at Hampshire Hospitals NHS Foundation Trust (GMC
+        7017101). I curate this medicolegal radiology reference — practical,
+        sourced, and written from practice rather than from a textbook.
+      </p>
+    </header>
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">Qualifications</h2>
+      <p class="leading-relaxed">
+        FRCR (2019), MRCS (2011). LLM Healthcare Ethics and Law (Manchester,
+        2017), MD (Hull York, 2017). BMedSci/MBChB (Manchester, 2008).
+      </p>
     </section>
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">Professional memberships</h2>
+      <ul class="list-disc pl-6 space-y-1 leading-relaxed">
+        <li>General Medical Council (GMC 7017101)</li>
+        <li>Fellow, Royal College of Radiologists (FRCR)</li>
+        <li>
+          Member, British Society of Gastrointestinal and Abdominal Radiology
+          (BSGAR)
+        </li>
+      </ul>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">Employment</h2>
+      <p class="leading-relaxed">
+        Consultant Radiologist, HHFT (Sept 2023–present). Previously peritoneal
+        malignancy radiology fellowship (Basingstoke), clinical radiology
+        training (Oxford), and surgical/vascular research roles.
+      </p>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">Selected publications</h2>
+      <ul class="list-disc pl-6 space-y-1 leading-relaxed">
+        <li>Appendix mucocoele misnomer — Clinical Radiology (in press)</li>
+        <li>Rectal venous malformation embolisation — CVIR (2019)</li>
+        <li>Long-term outcomes of EVLA vs surgery — BJS (2018)</li>
+        <li>Systematic review of compression regimes — Phlebology (2016)</li>
+      </ul>
+    </section>
+    <p class="text-sm opacity-70">Full CV available on request.</p>
+  </main>
 </BaseLayout>
+
+<header class="mb-8">
+  <p class="text-sm uppercase tracking-wide opacity-60 mb-2">
+    About this resource
+  </p>
+  <h1 class="text-3xl font-bold mb-3">Joseph El-Sheikha</h1>
+  <p class="text-lg leading-relaxed">
+    Consultant Radiologist at Hampshire Hospitals NHS Foundation Trust (GMC
+    7017101). I curate this medicolegal radiology reference — practical,
+    sourced, and written from practice rather than from a textbook.
+  </p>
+</header>
+<section class="mb-8">
+  <h2 class="text-xl font-semibold mb-3">Qualifications</h2>
+  <p class="leading-relaxed">
+    FRCR (2019), MRCS (2011). LLM Healthcare Ethics and Law (Manchester, 2017),
+    MD (Hull York, 2017). BMedSci/MBChB (Manchester, 2008).
+  </p>
+</section>
+<section class="mb-8">
+  <h2 class="text-xl font-semibold mb-3">Professional memberships</h2>
+  <ul class="list-disc pl-6 space-y-1 leading-relaxed">
+    <li>General Medical Council (GMC 7017101)</li>
+    <li>Fellow, Royal College of Radiologists (FRCR)</li>
+    <li>
+      Member, British Society of Gastrointestinal and Abdominal Radiology
+      (BSGAR)
+    </li>
+    <li>
+      European Society of Gastrointestinal and Abdominal Radiology (ESGAR)
+    </li>
+  </ul>
+</section>
+<section class="mb-8">
+  <h2 class="text-xl font-semibold mb-3">Employment</h2>
+  <p class="leading-relaxed">
+    Consultant Radiologist, HHFT (Sept 2023–present). Previously peritoneal
+    malignancy radiology fellowship (Basingstoke), clinical radiology training
+    (Oxford), and surgical/vascular research roles.
+  </p>
+</section>
+<section class="mb-8">
+  <h2 class="text-xl font-semibold mb-3">Selected publications</h2>
+  <ul class="list-disc pl-6 space-y-1 leading-relaxed">
+    <li>Appendix mucocoele misnomer — Clinical Radiology (in press)</li>
+    <li>Rectal venous malformation embolisation — CVIR (2019)</li>
+    <li>Long-term outcomes of EVLA vs surgery — BJS (2018)</li>
+    <li>Systematic review of compression regimes — Phlebology (2016)</li>
+  </ul>
+</section>
+<p class="text-sm opacity-70">Full CV available on request.</p>

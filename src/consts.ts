@@ -2,10 +2,10 @@
 
 // The site is framed as a reference resource, not a service brochure: the
 // library is the product, and the expert-witness practice sits behind it.
-export const SITE_TITLE = "Radiology & Medicolegal Law";
+export const SITE_TITLE = "Radiology Law — Legal Resources for Radiology Professionals";
 export const SITE_TAGLINE = "A small working resource on radiology and the law";
 export const SITE_DESCRIPTION =
-	"A small, curated reference resource on radiology and medicolegal law, with commentary on recent cases. It sets out how imaging investigations are performed, interpreted and reported, the standards and statutory duties that govern them, and the decisions that show what happens when they fail.";
+	"Expert legal resources and services for radiology professionals, imaging centers, and medical practices.";
 
 // Repeated site-branding strings — update once and propagate everywhere.
 export const SITE_BRAND_SUBTITLE = "Radiology &amp; medicolegal law";
@@ -17,7 +17,7 @@ export const SITE_BRAND_SUBTITLE = "Radiology &amp; medicolegal law";
 // this fallback exists only so the site still renders a sane absolute URL when
 // the variable is missing.
 export const SITE_URL = (
-	import.meta.env.PUBLIC_SITE_URL?.trim() || "https://medicolegal2026.pages.dev"
+	import.meta.env.PUBLIC_SITE_URL?.trim() || "https://radiologylaw.com"
 ).replace(/\/+$/, "");
 
 // Default social preview image (1200×630), used when a page does not supply its

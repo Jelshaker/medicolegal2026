@@ -17,7 +17,7 @@
 // handler).
 export const CONTENT_SECURITY_POLICY = [
 	"default-src 'self'",
-	"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com",
+	"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com https://static.cloudflareinsights.com",
 	"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 	"img-src 'self' data: blob: https:",
 	"font-src 'self' https://fonts.gstatic.com",

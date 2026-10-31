@@ -1,7 +1,6 @@
 /* ------------------------------------------------------------------
-   Self-hosted Google Fonts — Inter (sans) + Merriweather (serif).
-   Replaces the Google Fonts CSS import so browsers no longer make
-   cross-origin requests to fonts.googleapis.com / fonts.gstatic.com.
+   Self-hosted fonts — Inter (sans) + Merriweather (serif).
+   Eliminates cross-origin requests to fonts.googleapis.com / fonts.gstatic.com.
    ------------------------------------------------------------------ */
 
 /* Inter — 400 500 600 700 */
@@ -34,7 +33,7 @@
   src: url('/fonts/inter-700.ttf') format('truetype');
 }
 
-/* Merriweather — 400 italic, 700, 700 italic */
+/* Merriweather — 400, 400 italic, 700, 700 italic */
 @font-face {
   font-family: 'Merriweather';
   font-style: normal;

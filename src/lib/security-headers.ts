@@ -17,10 +17,10 @@
 // handler).
 export const CONTENT_SECURITY_POLICY = [
 	"default-src 'self'",
-	"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com https://static.cloudflareinsights.com",
-	"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+	"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com",
+	"style-src 'self' 'unsafe-inline'",
 	"img-src 'self' data: blob: https:",
-	"font-src 'self' https://fonts.gstatic.com",
+	"font-src 'self'",
 	"connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net",
 	"frame-src https://www.googletagmanager.com",
 	"frame-ancestors 'none'",

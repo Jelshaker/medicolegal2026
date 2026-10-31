@@ -32,8 +32,6 @@ export const NAVIGATION_LINKS = [
 	{ href: "/recent-developments", label: "Recent Developments" },
 	{ href: "/free-dicom-viewer", label: "DICOM Viewer" },
 	{ href: "/about", label: "About" },
-	// { href: "/referrals", label: "Referrals and terms" },
-	// --- REQUIRES RE-ENABLEMENT when the referral function is ready again (see src/pages/referrals.astro) ---
 ] as const;
 
 // The two reference libraries the resource is organised around. Referenced by the

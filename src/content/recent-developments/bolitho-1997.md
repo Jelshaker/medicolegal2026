@@ -1,5 +1,5 @@
----
-title: "Bolitho v City and Hackney Health Authority (1998): the logical limits of Bolam"
+﻿---
+title: "Bolitho v City and Hackney Health Authority (1997): the logical limits of Bolam"
 description: "Leading House of Lords authority refining the Bolam test by confirming that courts are not bound to accept professional opinion unless it is capable of withstanding logical analysis."
 pubDate: 1997-01-01
 category: case-law
@@ -13,18 +13,19 @@ keyTakeaways:
   - "Expert opinion must be capable of withstanding logical analysis."
   - "The Bolitho qualification to Bolam will only rarely justify rejection of expert medical opinion."
 ---
-<br><br>
-&lt;br&gt;&lt;br&gt;
+
 <br><br>
 
-# **Bolitho v City and Hackney Health Authority**
+## **Bolitho v City and Hackney Health Authority**
 
 **[1997] UKHL 46; [1998] AC 232**  
 **House of Lords**  
 **Lord Browne-Wilkinson, Lord Slynn, Lord Nolan, Lord Hoffmann, Lord Clyde**  
 **Decision: 13 November 1997**
 
-## Background
+<br>
+
+### Background
 
 Patrick Bolitho, a two-year-old child suffering from croup, experienced two episodes of significant respiratory distress while admitted to hospital. Nursing staff urgently contacted the responsible paediatric registrar, Dr Horn, requesting medical review.
 
@@ -34,23 +35,20 @@ Patrick subsequently suffered a complete airway obstruction leading to respirato
 
 The Health Authority admitted that Dr Horn's failure to attend amounted to a breach of duty. The central dispute was whether that breach caused the injury.
 
-## The Legal Issues
+<br>
+
+### The legal issues
 
 The House of Lords considered two distinct questions:
 
-### 1. Causation
-
-If Dr Horn had attended, would Patrick have been intubated before the catastrophic event occurred?
-
-### 2. Standard of Care
-
-If she would not have intubated, would that decision itself have been negligent?
+1. **what Dr Horn would have done if she had attended.**
+2. **whether that decision would itself have been negligent.**
 
 The second question required consideration of the scope of the **Bolam** principle.
 
----
+<br>
 
-## The Decision
+### The decision
 
 The House of Lords dismissed the appeal.
 
@@ -62,9 +60,9 @@ The trial judge had found:
 
 The House of Lords upheld those findings.
 
----
+<br>
 
-# The Bolam Test
+### The Bolam test
 
 The court reaffirmed the principle from:
 
@@ -74,9 +72,9 @@ A clinician is not negligent if acting in accordance with a practice accepted as
 
 Before **Bolitho**, this was often interpreted as meaning that support from a responsible body of experts would effectively defeat a negligence claim.
 
----
+<br>
 
-# The Bolitho Qualification
+### The Bolitho qualification
 
 The landmark contribution of the case was Lord Browne-Wilkinson's refinement of Bolam.
 
@@ -90,36 +88,36 @@ The crucial passage states:
 
 The relevant body of opinion must be:
 
-- responsible;
-- reasonable;
-- respectable; and
+- responsible.
+- reasonable.
+- respectable.
 - logically defensible.
 
----
+<br>
 
-# The Logical Analysis Test
+### The logical analysis test
 
 Lord Browne-Wilkinson explained that a court must ensure that experts have genuinely:
 
-- considered relevant risks;
-- considered anticipated benefits;
-- balanced those risks and benefits; and
+- considered relevant risks.
+- considered anticipated benefits.
+- balanced those risks and benefits.
 - reached a defensible conclusion.
 
 A court may reject expert evidence where:
 
-- it lacks coherent reasoning;
-- it ignores obvious risks;
-- it fails to evaluate benefits and disadvantages;
+- it lacks coherent reasoning.
+- it ignores obvious risks.
+- it fails to evaluate benefits and disadvantages.
 - it cannot withstand logical scrutiny.
 
 Accordingly:
 
 > Professional opinion is necessary, but not always sufficient.
 
----
+<br>
 
-# How Difficult Is It To Satisfy Bolitho?
+### How difficult is it to satisfy Bolitho?
 
 The House of Lords emphasised that this power should be exercised only rarely.
 
@@ -136,9 +134,9 @@ The court does not choose between competing respectable schools of medical thoug
 
 Judicial intervention is justified only where the supporting professional opinion is not logically defensible.
 
----
+<br>
 
-# Causation and Omissions
+### Causation and omissions
 
 A further important principle concerns clinical omissions.
 
@@ -148,19 +146,14 @@ The court held that where negligence consists of a failure to act, causation req
 
 In such cases the court must distinguish between:
 
-### Factual Question
-
-What would the doctor actually have done?
-
-### Legal Question
-
-If that action would itself have been negligent, what should a competent doctor have done?
+- the factual question of what the doctor would actually have done.
+- the legal question of whether that action, if itself negligent, would have breached the standard expected of a competent doctor.
 
 This distinction remains central in modern causation analysis.
 
----
+<br>
 
-# Further Significant Principle
+### Further significant principle
 
 The House of Lords confirmed:
 
@@ -168,24 +161,24 @@ The House of Lords confirmed:
 
 The standard against which causation is assessed is one of proper and competent medical care.
 
----
+<br>
 
-# Why The Claim Failed
+### Why the claim failed
 
 Although Dr Horn was negligent in failing to attend:
 
-- the trial judge accepted evidence that she would not have intubated;
-- respected paediatric experts supported that decision;
-- their opinion was logically defensible;
+- the trial judge accepted evidence that she would not have intubated.
+- respected paediatric experts supported that decision.
+- their opinion was logically defensible.
 - therefore failure to intubate would not itself have been negligent.
 
 Accordingly, the claimant could not prove that the admitted breach caused the catastrophic injury.
 
 The appeal was dismissed.
 
----
+<br>
 
-# Practical Significance
+### Practical significance
 
 **Bolitho** remains one of the most important authorities in clinical negligence law because it established that:
 
@@ -195,9 +188,9 @@ The appeal was dismissed.
 4. Clinicians must be able to justify decisions through a defensible risk-benefit analysis.
 5. Bolam and Bolitho operate together, not as competing tests.
 
----
+<br>
 
-# Modern Statement of the Principle
+### Modern statement of the principle
 
 The standard is commonly summarised as:
 

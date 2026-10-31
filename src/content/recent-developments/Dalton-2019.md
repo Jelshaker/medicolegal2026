@@ -1,4 +1,4 @@
----
+﻿---
 title: "Dalton (2019): breast assessment, imaging concordance and biopsy"
 description: "Whether benign clinical examination, mammography and ultrasound findings required core biopsy of a palpable breast lump, and whether biopsy would probably have detected an occult 3 mm carcinoma."
 pubDate: 2019-01-01
@@ -44,18 +44,18 @@ It was agreed that a carcinoma had already been present in March 2011 but measur
 
 Mrs Dalton alleged that the breast surgeon should have recognised discordance between:
 
-- a discrete palpable lump thought clinically to represent a cyst; and
+- a discrete palpable lump thought clinically to represent a cyst.
 - imaging that showed no discrete cyst or other lesion accounting for that lump.
 
 She argued that this discrepancy required tissue diagnosis by core biopsy. Had the initial biopsy been negative, she contended that the continuing absence of an explanation for the lump should have led to repeat tissue sampling or excision.
 
 The defendant maintained that:
 
-- clinical examination was benign;
-- mammography was normal;
-- ultrasound showed benign fibrocystic change;
-- the clinical and imaging assessments were concordant;
-- the applicable national guidelines did not mandate biopsy; and
+- clinical examination was benign.
+- mammography was normal.
+- ultrasound showed benign fibrocystic change.
+- the clinical and imaging assessments were concordant.
+- the applicable national guidelines did not mandate biopsy.
 - even a core biopsy would probably not have sampled the very small carcinoma.
 
 Damages were agreed at £145,000, subject to liability.
@@ -66,31 +66,31 @@ Damages were agreed at £145,000, subject to liability.
 
 The applicable national guidance used the multidisciplinary triple diagnostic method:
 
-1. clinical assessment;
-2. imaging assessment; and
+1. clinical assessment.
+2. imaging assessment.
 3. needle biopsy where indicated.
 
 The guidance did not require every patient to undergo all three elements. The investigations required depended on:
 
-- age;
-- presenting symptoms;
-- clinical findings;
-- imaging appearances; and
+- age.
+- presenting symptoms.
+- clinical findings.
+- imaging appearances.
 - concordance between the different stages of assessment.
 
 Clinical and imaging suspicion were recorded on scales from 1 to 5. Broadly:
 
-- 1 indicated a normal finding;
-- 2 indicated a benign finding;
-- 3 indicated uncertainty;
-- 4 indicated suspicion; and
+- 1 indicated a normal finding.
+- 2 indicated a benign finding.
+- 3 indicated uncertainty.
+- 4 indicated suspicion.
 - 5 indicated malignancy.
 
 Needle biopsy was generally required where:
 
-- clinical or imaging findings were uncertain or suspicious;
-- imaging demonstrated a solid lesion not possessing accepted benign features;
-- there was doubt about the nature of the abnormality; or
+- clinical or imaging findings were uncertain or suspicious.
+- imaging demonstrated a solid lesion not possessing accepted benign features.
+- there was doubt about the nature of the abnormality.
 - clinical and imaging findings were discordant.
 
 The central issue was therefore whether the palpable finding and benign imaging were genuinely discordant.
@@ -103,11 +103,11 @@ The claimant’s expert considered that the 3 mm carcinoma lay at the centre of 
 
 On that basis:
 
-- the palpable lump represented the carcinoma and compressed surrounding tissue;
-- benign fibrocystic change did not adequately explain the discrete lump;
-- failure to demonstrate a cyst on ultrasound contradicted the clinical assessment;
-- the findings were discordant;
-- core biopsy was mandatory; and
+- the palpable lump represented the carcinoma and compressed surrounding tissue.
+- benign fibrocystic change did not adequately explain the discrete lump.
+- failure to demonstrate a cyst on ultrasound contradicted the clinical assessment.
+- the findings were discordant.
+- core biopsy was mandatory.
 - a biopsy directed at the centre of the lump would probably have detected the cancer.
 
 He further maintained that a negative core biopsy would still have left the lump unexplained, requiring repeat biopsy, vacuum-assisted biopsy or surgical excision.
@@ -120,11 +120,11 @@ The defendant’s expert rejected the proposed compressed-tissue hypothesis.
 
 He explained that:
 
-- a carcinoma measuring only 3 mm would not ordinarily be palpable;
-- focal nodularity may feel like a discrete lump without producing a discrete ultrasound lesion;
-- dense or fibrocystic breast tissue can produce palpable benign abnormalities;
-- it is not uncommon for a clinically benign lump to have no matching discrete lesion on ultrasound;
-- the clinical examination, mammogram and ultrasound all pointed towards benign change; and
+- a carcinoma measuring only 3 mm would not ordinarily be palpable.
+- focal nodularity may feel like a discrete lump without producing a discrete ultrasound lesion.
+- dense or fibrocystic breast tissue can produce palpable benign abnormalities.
+- it is not uncommon for a clinically benign lump to have no matching discrete lesion on ultrasound.
+- the clinical examination, mammogram and ultrasound all pointed towards benign change.
 - the national pathway did not require biopsy where the clinical and imaging scores were benign and reasonably regarded as concordant.
 
 He considered that the claimant may have had a benign palpable abnormality with a separate, incidental 3 mm carcinoma in the same general region.
@@ -141,8 +141,8 @@ The surgeon would not be negligent if the decision not to biopsy was supported b
 
 The question was not simply:
 
-- whether the claimant’s expert would have performed a biopsy;
-- whether biopsy would have been a reasonable alternative; or
+- whether the claimant’s expert would have performed a biopsy.
+- whether biopsy would have been a reasonable alternative.
 - which of two respectable clinical approaches the judge personally preferred.
 
 The claimant had to establish that no responsible breast surgeon could reasonably have decided against biopsy in the circumstances.
@@ -157,10 +157,10 @@ The court accepted that national guidelines should not be applied mechanically. 
 
 However, the guidelines represented a structured, evidence-based approach intended to:
 
-- promote consistent assessment;
-- reduce unnecessary invasive procedures;
-- identify suspicious and uncertain lesions;
-- reserve biopsy for cases where it was clinically indicated; and
+- promote consistent assessment.
+- reduce unnecessary invasive procedures.
+- identify suspicious and uncertain lesions.
+- reserve biopsy for cases where it was clinically indicated.
 - minimise diagnostic surgical excision.
 
 The fact that a clinician followed the guideline pathway did not automatically exclude negligence. Equally, an expert could not establish negligence merely by asserting that common sense required a different result.
@@ -193,12 +193,12 @@ The claimant’s expert accepted that a literal application of the guidance supp
 
 The court found that:
 
-- the clinical examination was benign;
-- mammography showed no suspicious abnormality;
-- ultrasound showed benign fibrocystic change;
-- no discrete solid lesion requiring biopsy was identified;
-- a responsible body of breast surgeons would have regarded the findings as concordant;
-- that body of opinion had a logical and evidential basis; and
+- the clinical examination was benign.
+- mammography showed no suspicious abnormality.
+- ultrasound showed benign fibrocystic change.
+- no discrete solid lesion requiring biopsy was identified.
+- a responsible body of breast surgeons would have regarded the findings as concordant.
+- that body of opinion had a logical and evidential basis.
 - biopsy was not mandatory.
 
 There was therefore no breach of duty.
@@ -213,10 +213,10 @@ That did not establish negligence.
 
 The breast surgeon’s decision had to be assessed using the information reasonably available in 2011:
 
-- benign clinical findings;
-- a normal mammogram;
-- benign ultrasound findings;
-- no visible suspicious lesion; and
+- benign clinical findings.
+- a normal mammogram.
+- benign ultrasound findings.
+- no visible suspicious lesion.
 - an evidence-based diagnostic pathway that did not require biopsy in every patient with a palpable abnormality.
 
 The court expressed concern that the claimant expert’s reasoning had started with knowledge of the later cancer diagnosis and worked backwards to construct an explanation for the original palpable lump.
@@ -235,10 +235,10 @@ That requirement was not satisfied.
 
 The cancer was:
 
-- approximately 3 mm in diameter;
-- invisible on mammography;
-- invisible on ultrasound;
-- not available as an image-guided target; and
+- approximately 3 mm in diameter.
+- invisible on mammography.
+- invisible on ultrasound.
+- not available as an image-guided target.
 - potentially situated within or near a substantially larger area of benign palpable tissue.
 
 Any core biopsy would therefore have been freehand or blind. Even if the carcinoma lay within the palpable area, it represented only a small proportion of the tissue available for sampling.
@@ -259,9 +259,9 @@ The court rejected that alternative case.
 
 A responsible body of breast surgeons would have regarded a negative biopsy as concordant with:
 
-- benign clinical examination;
-- normal mammography;
-- benign ultrasound findings; and
+- benign clinical examination.
+- normal mammography.
+- benign ultrasound findings.
 - the absence of suspicious features.
 
 That opinion was logical and defensible. Failure to proceed to repeat biopsy or excision would therefore not have been negligent.
@@ -276,11 +276,11 @@ The defendant had alleged that Mrs Dalton delayed seeking re-referral after the 
 
 The court found that Mrs Dalton:
 
-- promptly consulted her GP when she first detected the lump;
-- attended the breast clinic as advised;
-- was reassured and discharged;
-- continued to monitor her breast;
-- sought advice about what changes should prompt review; and
+- promptly consulted her GP when she first detected the lump.
+- attended the breast clinic as advised.
+- was reassured and discharged.
+- continued to monitor her breast.
+- sought advice about what changes should prompt review.
 - returned promptly when new skin puckering and retraction developed.
 
 She reasonably understood that she should return if she noticed something new or different. That was consistent with the advice the surgeon said she would ordinarily provide.
@@ -295,11 +295,11 @@ It observed that findings of contributory negligence in clinical-negligence case
 
 The court held that:
 
-- the decision not to perform a core biopsy was supported by a responsible and logically defensible body of breast-surgical opinion;
-- the application of the national guidelines was not negligent;
-- the malignancy would not probably have been detected by a blind core biopsy;
-- a negative biopsy would not have mandated repeat biopsy or excision;
-- Mrs Dalton was not contributorily negligent; and
+- the decision not to perform a core biopsy was supported by a responsible and logically defensible body of breast-surgical opinion.
+- the application of the national guidelines was not negligent.
+- the malignancy would not probably have been detected by a blind core biopsy.
+- a negative biopsy would not have mandated repeat biopsy or excision.
+- Mrs Dalton was not contributorily negligent.
 - the claim should be dismissed.
 
 <br>
@@ -360,4 +360,4 @@ When reviewing a clinically palpable abnormality, consider:
 
 <br>
 
-> Educational case commentary only. It is not legal or medical advice and is not a substitute for the full judgment. The publication date above is the date of this commentary; judgment was delivered on 3 April 2019.
+> Educational case commentary only. It is not legal or medical advice and is not a substitute for the full judgment. The publication date above is the date of this commentary, judgment was delivered on 3 April 2019.

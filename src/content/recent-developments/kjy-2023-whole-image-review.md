@@ -48,16 +48,16 @@ The trial was confined to whether the radiologists had breached their duty of ca
 
 The parties agreed that:
 
-- all three radiographic examinations demonstrated abnormal hip alignment;
-- the examinations were of adequate diagnostic quality;
-- the radiologists were required to review the whole image;
-- every part of the image required professional and diligent assessment;
-- any identified abnormality or possible abnormality had to be reported;
-- incidental findings were not excluded merely because they were unrelated to the referral question;
-- the radiologists knew the important imaging features of developmental dysplasia of the hip;
-- neonatal radiographs are not the preferred investigation for diagnosing developmental dysplasia;
-- ultrasound is the preferred diagnostic modality in neonates;
-- hip abnormalities may nevertheless be visible on conventional radiographs; and
+- all three radiographic examinations demonstrated abnormal hip alignment.
+- the examinations were of adequate diagnostic quality.
+- the radiologists were required to review the whole image.
+- every part of the image required professional and diligent assessment.
+- any identified abnormality or possible abnormality had to be reported.
+- incidental findings were not excluded merely because they were unrelated to the referral question.
+- the radiologists knew the important imaging features of developmental dysplasia of the hip.
+- neonatal radiographs are not the preferred investigation for diagnosing developmental dysplasia.
+- ultrasound is the preferred diagnostic modality in neonates.
+- hip abnormalities may nevertheless be visible on conventional radiographs.
 - the radiologists were not required routinely to draw alignment lines, measure acetabular angles or make a definitive diagnosis of developmental dysplasia.
 
 The central dispute was therefore narrow: **were the abnormalities sufficiently apparent that no reasonable and responsible radiologist would have failed to identify and report them?**
@@ -80,8 +80,8 @@ The court applied the professional standard derived from *Bolam v Friern Hospita
 
 In a diagnostic case, the court must distinguish between:
 
-1. **what was objectively shown on the images;**
-2. **whether a reasonably careful radiologist could have failed to identify it; and**
+1. **what was objectively shown on the images.**
+2. **whether a reasonably careful radiologist could have failed to identify it.**
 3. **whether a reasonably competent radiologist could properly have treated the examination as showing no reportable abnormality.**
 
 The existence of competing expert opinions does not determine the outcome. The court must assess the reasoning supporting each opinion and decide the issue for itself. An expert’s view cannot protect a defendant merely because it is honestly held or expressed by an appropriately qualified practitioner. It must also be responsible, reasonable and logically defensible.
@@ -94,11 +94,11 @@ The correct formulation was not whether a reasonable body of radiologists **woul
 
 The applicable professional guidance required radiologists to:
 
-- address the clinical question;
-- assess the whole image for expected and unexpected findings;
-- use both active and passive observation;
-- identify unequivocal abnormalities;
-- identify findings that might be abnormal; and
+- address the clinical question.
+- assess the whole image for expected and unexpected findings.
+- use both active and passive observation.
+- identify unequivocal abnormalities.
+- identify findings that might be abnormal.
 - report relevant incidental pathology.
 
 The court accepted that professional standards are an important starting point rather than a conclusive legal test. Whether a departure amounts to negligence remains a matter for the court after considering all the evidence.
@@ -111,8 +111,8 @@ By the end of the trial, there was no material dispute that the entire image had
 
 The court identified three responsibilities when reviewing the neonatal radiographs:
 
-1. answer the clinical question;
-2. identify other clear abnormalities; and
+1. answer the clinical question.
+2. identify other clear abnormalities.
 3. identify findings that might represent an abnormality.
 
 A radiologist’s duty does not end once the referral question has been addressed. The review must extend to all anatomy included on the image.
@@ -127,8 +127,8 @@ The radiologists were not required to diagnose developmental dysplasia definitiv
 
 The relevant question was whether the images demonstrated:
 
-- abnormal alignment;
-- a possible abnormal relationship between the proximal femur and acetabulum; or
+- abnormal alignment.
+- a possible abnormal relationship between the proximal femur and acetabulum.
 - sufficient uncertainty to justify recording a possible abnormality.
 
 Radiology is often indicative rather than definitive. A reportable observation may therefore be that an abnormality **may** be present, with a recommendation for clinical correlation or targeted imaging.
@@ -143,9 +143,9 @@ The claimant’s expert, a consultant paediatric radiologist with musculoskeleta
 
 Her principal observations included:
 
-- abnormal orientation of the proximal femur;
-- malalignment between the femur and the expected position of the acetabulum;
-- an unusually wide relationship between the femur and ischium; and
+- abnormal orientation of the proximal femur.
+- malalignment between the femur and the expected position of the acetabulum.
+- an unusually wide relationship between the femur and ischium.
 - appearances that were, at minimum, suspicious for a hip abnormality.
 
 The expert used PACS annotations and alignment lines to demonstrate the abnormalities to the court. She did not suggest that the original radiologists were negligent because they had failed to draw those lines. The annotations illustrated the anatomical relationship supporting her opinion.
@@ -162,12 +162,12 @@ The defendant’s expert considered the abnormalities subtle and maintained that
 
 The court identified several significant difficulties with that evidence:
 
-- his report initially suggested that reviewing the hips was not a necessary part of assessing a neonatal abdominal radiograph;
-- that position was inconsistent with the governing professional standard and was modified at trial;
-- he moved between describing detection as “almost impossible” and “extremely difficult”;
-- he appeared to require near-dislocation before an abnormality became reportable;
-- he disclosed a personal practice of not reporting some observed signs of neonatal hip subluxation, relying instead on later clinical screening;
-- that approach was difficult to reconcile with the obligation to report an identified or possible abnormality; and
+- his report initially suggested that reviewing the hips was not a necessary part of assessing a neonatal abdominal radiograph.
+- that position was inconsistent with the governing professional standard and was modified at trial.
+- he moved between describing detection as “almost impossible” and “extremely difficult”.
+- he appeared to require near-dislocation before an abnormality became reportable.
+- he disclosed a personal practice of not reporting some observed signs of neonatal hip subluxation, relying instead on later clinical screening.
+- that approach was difficult to reconcile with the obligation to report an identified or possible abnormality.
 - his reasoning did not adequately accommodate the distinction between making a definitive diagnosis and identifying a possible abnormality.
 
 The court considered parts of his approach inconsistent, implausible and insufficiently aligned with accepted professional standards. It therefore rejected his opinion on the central issue.
@@ -178,23 +178,23 @@ The court considered parts of his approach inconsistent, implausible and insuffi
 
 The court strongly preferred the claimant’s expert evidence because it was:
 
-- consistent with the appearances on the images;
-- responsive to the applicable professional standards;
-- anatomically coherent;
-- appropriately focused on possible abnormality rather than definitive diagnosis;
-- internally consistent after proper concessions had been made; and
+- consistent with the appearances on the images.
+- responsive to the applicable professional standards.
+- anatomically coherent.
+- appropriately focused on possible abnormality rather than definitive diagnosis.
+- internally consistent after proper concessions had been made.
 - supported by the evidence of the reporting radiologists concerning their own training and usual practice.
 
 The court emphasised that expert evidence assists but does not replace judicial evaluation. The judge must test each opinion against:
 
-- the images and other objective evidence;
-- the contemporaneous documentation;
-- professional guidance;
-- the expert’s assumptions;
-- internal consistency;
-- concessions made during the proceedings;
-- changes of position;
-- the expert’s clinical experience; and
+- the images and other objective evidence.
+- the contemporaneous documentation.
+- professional guidance.
+- the expert’s assumptions.
+- internal consistency.
+- concessions made during the proceedings.
+- changes of position.
+- the expert’s clinical experience.
 - the logic of the conclusion.
 
 Qualifications and good faith are important but insufficient. The decisive consideration is whether the opinion withstands logical and evidential scrutiny.
@@ -219,17 +219,17 @@ The court found that the hip malalignment was clear enough that all reasonable a
 
 In relation to the first radiologist, the court found that:
 
-- the hip region was not examined with reasonable and sufficient care;
-- the abnormal alignment was missed;
-- the fact that developmental dysplasia was not specifically “on his mind” did not excuse the omission; and
+- the hip region was not examined with reasonable and sufficient care.
+- the abnormal alignment was missed.
+- the fact that developmental dysplasia was not specifically “on his mind” did not excuse the omission.
 - the appearances created at least an index of suspicion requiring reporting.
 
 In relation to the second radiologist, the court found that:
 
-- he had repeatedly reviewed the images;
-- he accepted that he examined the hip region and looked for subtle abnormalities;
-- the abnormalities were present on the relevant images;
-- he failed to identify any of them; and
+- he had repeatedly reviewed the images.
+- he accepted that he examined the hip region and looked for subtle abnormalities.
+- the abnormalities were present on the relevant images.
+- he failed to identify any of them.
 - no reasonable and responsible radiologist would have failed to recognise at least a possible hip abnormality.
 
 The defendant was therefore found to have breached its duty of care.
@@ -242,10 +242,10 @@ The judgment resolved breach of duty only.
 
 The court did not determine:
 
-- whether reporting the abnormality would have led to immediate ultrasound;
-- whether earlier investigation would have resulted in earlier treatment;
-- whether earlier treatment would have changed the claimant’s clinical outcome;
-- the extent of any avoidable injury; or
+- whether reporting the abnormality would have led to immediate ultrasound.
+- whether earlier investigation would have resulted in earlier treatment.
+- whether earlier treatment would have changed the claimant’s clinical outcome.
+- the extent of any avoidable injury.
 - the appropriate amount of damages.
 
 The seriousness of the claimant’s subsequent condition and treatment did not form part of the court’s reasoning on breach.
@@ -301,4 +301,4 @@ When assessing whether an incidental finding required reporting, consider:
 
 <br>
 
-> Educational case commentary only. It is not legal advice and is not a substitute for the full judgment. The claimant and his family remain protected by an anonymity order. The publication date above is the date of this commentary; judgment was delivered on 25 July 2023.
+> Educational case commentary only. It is not legal advice and is not a substitute for the full judgment. The claimant and his family remain protected by an anonymity order. The publication date above is the date of this commentary, and judgment was delivered on 25 July 2023.

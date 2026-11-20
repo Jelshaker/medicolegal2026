@@ -57,6 +57,7 @@ const readMinutes = readingTime(post.body);
             ? isoDate(post.data.updatedDate)
             : undefined,
         section: categoryLabel(post.data.category),
+        keywords: post.data.tags,
     }}
     breadcrumbs={[
         { name: 'Home', href: '/' },

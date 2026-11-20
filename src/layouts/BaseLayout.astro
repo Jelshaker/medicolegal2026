@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import TocSidebar from "../components/TocSidebar.astro";
-import type { ArticleMeta, BreadcrumbItem } from "../lib/seo";
+import type { ArticleMeta, BreadcrumbItem, FaqItem } from "../lib/seo";
 import { GTM_ID, gtmNoscriptSrc } from "../lib/google-tags";
 
 // Shared document shell for all pages. Pages supply their own <main> content
@@ -26,9 +26,10 @@ interface Props {
 	noindex?: boolean;
 	article?: ArticleMeta;
 	breadcrumbs?: BreadcrumbItem[];
+	faqs?: FaqItem[];
 }
 
-const { title, description, canonical, image, noindex, article, breadcrumbs } = Astro.props as Props;
+const { title, description, canonical, image, noindex, article, breadcrumbs, faqs } = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -42,6 +43,7 @@ const { title, description, canonical, image, noindex, article, breadcrumbs } = 
 			noindex={noindex}
 			article={article}
 			breadcrumbs={breadcrumbs}
+			faqs={faqs}
 		/>
 	</head>
 	<body class="page-shell">

@@ -7,7 +7,7 @@ import {
 	SITE_TITLE,
 	SITE_URL,
 } from "../consts";
-import type { ArticleMeta, BreadcrumbItem } from "../lib/seo";
+import type { ArticleMeta, BreadcrumbItem, FaqItem } from "../lib/seo";
 import { CONSENT_DEFAULTS } from "../lib/consent";
 import { GA_TAG_ID, GTM_ID, GOOGLE_TAGS_ENABLED, gtmLoader } from "../lib/google-tags";
 
@@ -24,6 +24,8 @@ interface Props {
 	article?: ArticleMeta;
 	/** Optional breadcrumb trail emitted as a `BreadcrumbList` JSON-LD node. */
 	breadcrumbs?: BreadcrumbItem[];
+	/** Optional FAQ items emitted as a `FAQPage` JSON-LD node. */
+	faqs?: FaqItem[];
 }
 
 const {
@@ -34,6 +36,7 @@ const {
 	noindex = false,
 	article,
 	breadcrumbs,
+	faqs,
 } = Astro.props as Props;
 
 // `Astro.site` is set from `site` in astro.config.mjs (which reads
@@ -121,11 +124,24 @@ const jsonLd = {
 			telephone: PRACTITIONER.phone,
 			email: PRACTITIONER.email,
 			medicalSpecialty: "Radiology",
+			areaServed: { "@type": "Country", name: "United Kingdom" },
 		},
 		{
 			"@type": "Person",
-			name: PRACTITIONER.name,
-			jobTitle: "Consultant Radiologist",
+			name: PRACTITIONER.shortName,
+			honorificSuffix: "MBChB MD FRCR LLM",
+			jobTitle: PRACTITIONER.title,
+			memberOf: {
+				"@type": "Organization",
+				name: "Royal College of Radiologists",
+			},
+			knowsAbout: [
+				"Diagnostic Radiology",
+				"Interventional Radiology",
+				"UK Clinical Negligence Law",
+				"IR(ME)R 2017",
+				"Radiological Expert Witness Evidence",
+			],
 			worksFor: { "@type": "MedicalBusiness", name: `${SITE_TITLE} — practice` },
 			url: siteUrl,
 		},
@@ -140,6 +156,7 @@ const jsonLd = {
 						datePublished: article.datePublished,
 						...(article.dateModified ? { dateModified: article.dateModified } : {}),
 						...(article.section ? { articleSection: article.section } : {}),
+						...(article.keywords?.length ? { keywords: article.keywords.join(", ") } : {}),
 						inLanguage: "en-GB",
 						url: canonical.href,
 						mainEntityOfPage: { "@type": "WebPage", "@id": canonical.href },
@@ -162,6 +179,21 @@ const jsonLd = {
 					},
 				]
 			: []),
+		...(faqs && faqs.length > 0
+			? [
+					{
+						"@type": "FAQPage",
+						mainEntity: faqs.map((faq) => ({
+							"@type": "Question",
+							name: faq.question,
+							acceptedAnswer: {
+								"@type": "Answer",
+								text: faq.answer,
+							},
+						})),
+					},
+				]
+			: []),
 	],
 };
 ---
@@ -179,6 +211,7 @@ const jsonLd = {
 <meta name="theme-color" content="#ffffff" />
 <link rel="canonical" href={canonical.href} />
 <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} — Recent Developments`} href="/rss.xml" />
 
 {/* Crawling. Every page is indexable except the `/login` access screen, which
      `src/pages/robots.txt.ts` disallows and which carries a `noindex` meta tag. */}

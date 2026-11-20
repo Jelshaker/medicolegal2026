@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageIntro from "../components/PageIntro.astro";
@@ -28,11 +28,15 @@ const instruments = [
         d: "Staff entitlements, training matrices, referral documentation, authorisation logs, exposure parameters, clinical evaluations, and formal incident investigations.",
       },
       {
+        n: "2024 Amendments",
+        d: "The Ionising Radiation (Medical Exposure) (Amendment) Regulations 2024 (in force 1 October 2024) explicitly classify software influencing radiation exposure as medical radiological equipment, introduce Regulation 6A duties for formal cooperation between employers (e.g. outsourced reporting), require documented actions from clinical audits, and clarify that a referral is a request rather than a direction.",
+      },
+      {
         n: "Enforcement",
         d: "Enforced under criminal law by national regulatory bodies. In England, regulatory compliance and enforcement are led by the Care Quality Commission.",
       },
     ],
-    note: "Ionising Radiation (Medical Exposure) Regulations 2017, SI 2017/1322, as amended. Separate statutory regulations apply in Northern Ireland.",
+    note: "Ionising Radiation (Medical Exposure) Regulations 2017, SI 2017/1322, as amended (including the 2024 Amendment Regulations). Separate statutory regulations apply in Northern Ireland.",
   },
   {
     id: "irr17",
@@ -183,7 +187,7 @@ const accentColors = [
 ---
 
 <BaseLayout
-  title={`Radiology Legislation | ${SITE_TITLE}`}
+  title="Radiology Legislation | Radiology Law"
   description="The principal statutory framework governing medical exposures, workplace radiation safety, radioactive substances, clinical governance, and health data."
 >
   <PageHero

@@ -31,8 +31,9 @@ const faqs = [
 ---
 
 <BaseLayout
-    title="How to Use the DICOM Viewer | Radiology & Medicolegal Law"
+    title="How to Use the DICOM Viewer | Radiology Law"
     description="A concise guide to opening and viewing DICOM images in the browser."
+    faqs={faqs.map((item) => ({ question: item.q, answer: item.a }))}
 >
     <PageHero
         eyebrow="Free tools · Guide"

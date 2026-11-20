@@ -14,11 +14,18 @@ export interface ArticleMeta {
 	dateModified?: string;
 	/** Subject area, e.g. "Negligence" — matches the BLOG_CATEGORIES labels. */
 	section?: string;
+	/** Optional topic keywords/tags for BlogPosting JSON-LD. */
+	keywords?: string[];
 }
 
 export interface BreadcrumbItem {
 	name: string;
 	href: string;
+}
+
+export interface FaqItem {
+	question: string;
+	answer: string;
 }
 
 /**

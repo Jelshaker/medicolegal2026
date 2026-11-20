@@ -7,7 +7,7 @@ import {
 	SITE_TITLE,
 	SITE_URL,
 } from "../consts";
-import type { ArticleMeta } from "../lib/seo";
+import type { ArticleMeta, BreadcrumbItem } from "../lib/seo";
 import { CONSENT_DEFAULTS } from "../lib/consent";
 import { GA_TAG_ID, GTM_ID, GOOGLE_TAGS_ENABLED, gtmLoader } from "../lib/google-tags";
 
@@ -22,6 +22,8 @@ interface Props {
 	noindex?: boolean;
 	/** Adds `article:` meta tags and a `BlogPosting` JSON-LD node. */
 	article?: ArticleMeta;
+	/** Optional breadcrumb trail emitted as a `BreadcrumbList` JSON-LD node. */
+	breadcrumbs?: BreadcrumbItem[];
 }
 
 const {
@@ -31,6 +33,7 @@ const {
 	image = DEFAULT_SOCIAL_IMAGE,
 	noindex = false,
 	article,
+	breadcrumbs,
 } = Astro.props as Props;
 
 // `Astro.site` is set from `site` in astro.config.mjs (which reads
@@ -143,6 +146,19 @@ const jsonLd = {
 						image: socialImage.href,
 						author: { "@type": "Person", name: PRACTITIONER.name },
 						publisher: { "@type": "Person", name: PRACTITIONER.name },
+					},
+				]
+			: []),
+		...(breadcrumbs && breadcrumbs.length > 0
+			? [
+					{
+						"@type": "BreadcrumbList",
+						itemListElement: breadcrumbs.map((crumb, index) => ({
+							"@type": "ListItem",
+							position: index + 1,
+							name: crumb.name,
+							item: new URL(crumb.href, site).href,
+						})),
 					},
 				]
 			: []),

@@ -16,6 +16,11 @@ export interface ArticleMeta {
 	section?: string;
 }
 
+export interface BreadcrumbItem {
+	name: string;
+	href: string;
+}
+
 /**
  * Content collections expose frontmatter dates as `Date` objects, but `article:`
  * and BlogPosting data expect ISO 8601, so normalise to `YYYY-MM-DD` — the

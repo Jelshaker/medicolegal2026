@@ -2,10 +2,10 @@
 
 // The site is framed as a reference resource, not a service brochure: the
 // library is the product, and the expert-witness practice sits behind it.
-export const SITE_TITLE = "Radiology Law — Legal Resources for Radiology Professionals";
+export const SITE_TITLE = "Radiology Law — UK Radiology & Medicolegal Resource";
 export const SITE_TAGLINE = "A small working resource on radiology and the law";
 export const SITE_DESCRIPTION =
-	"Expert legal resources and services for radiology professionals, imaging centers, and medical practices.";
+	"Independent UK radiology and medicolegal law resource for radiologists, clinicians, and legal professionals.";
 
 // Repeated site-branding strings — update once and propagate everywhere.
 export const SITE_BRAND_SUBTITLE = "Radiology &amp; medicolegal law";

@@ -58,6 +58,11 @@ const readMinutes = readingTime(post.body);
             : undefined,
         section: categoryLabel(post.data.category),
     }}
+    breadcrumbs={[
+        { name: 'Home', href: '/' },
+        { name: 'Recent developments', href: '/recent-developments/' },
+        { name: post.data.title, href: `/recent-developments/${post.slug}/` },
+    ]}
 >
     <PageHero
         heroImage={PAGE_HERO_IMAGES['/recent-developments'] || undefined}

@@ -10,7 +10,7 @@ import tailwindcss from "@tailwindcss/vite";
 // four can never disagree. Set PUBLIC_SITE_URL in `.env` (or as a build
 // environment variable); `src/consts.ts` → SITE_URL reads the same value.
 const env = loadEnv(process.env.NODE_ENV ?? "production", process.cwd(), "");
-const site = (env.PUBLIC_SITE_URL || "https://medicolegal2026.pages.dev").replace(/\/+$/, "");
+const site = (env.PUBLIC_SITE_URL || "https://radiologylaw.com").replace(/\/+$/, "");
 
 // https://astro.build/config
 export default defineConfig({

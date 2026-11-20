@@ -8,7 +8,7 @@ export const SITE_DESCRIPTION =
 	"Independent UK radiology and medicolegal law resource for radiologists, clinicians, and legal professionals.";
 
 // Repeated site-branding strings — update once and propagate everywhere.
-export const SITE_BRAND_SUBTITLE = "Radiology &amp; medicolegal law";
+export const SITE_BRAND_SUBTITLE = "Radiology & medicolegal law";
 
 // Canonical origin, with no trailing slash. Read at build time from
 // PUBLIC_SITE_URL (see `.env` / `.env.example`) and kept in step with `site` in

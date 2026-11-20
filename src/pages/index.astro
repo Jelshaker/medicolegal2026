@@ -17,9 +17,9 @@ const radiologyLegislationTitle = "Radiology Legislation";
 const radiologyCaseLawTitle = "Radiology Legal Cases";
 const importantNewCasesTitle = "Recent Developments";
 
-const allPosts = (await getCollection("recent-developments")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const allPosts = (await getCollection("recent-developments"))
+  .filter((post) => !post.data.tags.includes("Over the pond"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const categoryLabel = (id: string) =>
   BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 ---

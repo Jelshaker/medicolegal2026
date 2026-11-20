@@ -105,8 +105,16 @@ function normalizeCategory(category: string): string {
     return category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-const allPosts = (await getCollection('recent-developments')).sort(
+const allCollectionPosts = (await getCollection('recent-developments')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const allPosts = allCollectionPosts.filter(
+    (post) => !post.data.tags.includes('Over the pond')
+);
+
+const overThePondPosts = allCollectionPosts.filter((post) =>
+    post.data.tags.includes('Over the pond')
 );
 
 const usedCategories = Object.entries(categories);
@@ -133,6 +141,7 @@ const usedCategories = Object.entries(categories);
         contents={[
             { href: '#latest-commentary', label: 'Latest commentary' },
             { href: '#browse-by-subject', label: 'Browse by subject' },
+            { href: '#over-the-pond', label: 'Over the pond (US)' },
         ]}
         audience="For radiologists, solicitors, barristers, insurers and expert witnesses."
         reviewed="October 2026"
@@ -270,34 +279,41 @@ const usedCategories = Object.entries(categories);
         </div>
     </section>
 
-    <section class="section-white border-t border-slate-200">
+    <section id="over-the-pond" class="section-white border-t border-slate-200 scroll-mt-24">
         <div class="container-page doc">
             <div class="sec">
                 <p class="meta-label">Over the pond</p>
                 <h2 class="sec-title">Notable US verdicts (for context only)</h2>
                 <p class="para-sm text-slate-600">
                     This site focuses on UK medicolegal law and does not track US litigation in detail.
-                    Still, recent state jury verdicts highlight recurring radiological risks—whole-image
-                    review, fatigue, and closed-loop communication—that are equally relevant to UK practice:
+                    The brief notes below summarise high-profile US verdicts as a point of interest where
+                    the underlying radiological risks—whole-image review, fatigue, and closed-loop
+                    communication—are equally relevant to UK practice.
                 </p>
-                <ul class="list mt-4">
-                    <li>
-                        <strong>Missed incidental lung cancer on breast MRI (Oregon, 2026 — $8m verdict):</strong>
-                        Lung malignancy visible in the thoracic field of view went unreported, underscoring the duty to inspect all imaged structures.
-                    </li>
-                    <li>
-                        <strong>Missed oesophageal perforation on CT angiogram (South Carolina, 2026 — $24m verdict):</strong>
-                        Post-ablation CT angiogram reported as normal before fatal deterioration 12 days later.
-                    </li>
-                    <li>
-                        <strong>80-second chest X-ray review (Illinois, 2026 — $8.125m verdict):</strong>
-                        Missed early lung cancer progressed from Stage I to inoperable Stage III; short viewing time and fatigue were scrutinised at trial.
-                    </li>
-                    <li>
-                        <strong>Interventional procedural complication (Georgia, 2026 — $15m verdict):</strong>
-                        Misplaced suprapubic catheter causing an unrecognised chyle leak and fatal sepsis.
-                    </li>
-                </ul>
+
+                <div class="mt-6 divide-y divide-slate-200 border-t border-slate-200">
+                    {overThePondPosts.map((post) => (
+                        <article class="py-4">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <h3 class="font-serif text-base font-bold text-slate-900">
+                                    <a href={`/recent-developments/${post.slug}`} class="hover:underline">
+                                        {post.data.title}
+                                    </a>
+                                </h3>
+                                <time
+                                    class="text-xs text-muted-light"
+                                    datetime={post.data.pubDate.toISOString()}
+                                >
+                                    {formatDateShort(post.data.pubDate)}
+                                </time>
+                            </div>
+                            <p class="para-sm mt-1 text-slate-600">{post.data.description}</p>
+                            <p class="mt-2 text-sm">
+                                <a href={`/recent-developments/${post.slug}`}>Read summary &amp; references →</a>
+                            </p>
+                        </article>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
